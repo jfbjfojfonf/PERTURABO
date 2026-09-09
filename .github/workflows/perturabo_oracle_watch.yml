@@ -1,0 +1,53 @@
+name: PERTURABO ORACLE WATCH (v2-live)
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # Toutes les 5 minutes
+  workflow_dispatch:
+    inputs:
+      auto_dispatch:
+        description: "Déclencher le radar automatiquement (sans validation issue) ?"
+        required: false
+        default: "false"
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: oracle-watch
+  cancel-in-progress: false
+
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v2-live
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Config oracle (oracle_input.json)
+        run: |
+          cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/oracle_input.example.json \
+             MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/oracle_input.json
+
+      - name: Exécuter l'Oracle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+        run: |
+          cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+          ARGS=""
+          if [ "${{ github.event.inputs.auto_dispatch }}" = "true" ]; then
+            ARGS="--auto-dispatch"
+          fi
+          python3 oracle_watch.py $ARGS

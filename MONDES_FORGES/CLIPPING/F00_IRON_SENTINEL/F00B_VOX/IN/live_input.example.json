@@ -1,0 +1,41 @@
+{
+  "twitch_channels": ["aishahsofeyy"],
+  "kick_channels": [],
+  "session_duration_min": 240,
+  "helix_enabled": true,
+  "status_every_sec": 180,
+  "nb_clips_demandes": 10,
+  "duree_cible_sec": 30,
+  "duree_max_sec": 60,
+  "duree_min_sec": 15,
+  "pre_roll_sec": 2.0,
+  "post_roll_sec": 2.0,
+
+  "radar": {
+    "min_rate": 8,
+    "spike_factor": 3.0,
+    "pressure_threshold": 4,
+    "cooldown_sec": 120,
+    "warmup_sec": 30,
+    "baseline_window_sec": 300,
+    "pre_roll_sec": 10,
+    "post_roll_sec": 30
+  },
+
+  "gate_hybrid": {
+    "auto_score_min": 8.5,
+    "auto_intensity_min": 0.9,
+    "pending_score_min": 6.0,
+    "max_pending_warsmith": 12
+  },
+
+  "score_weights": null,
+
+  "_notes": {
+    "twitch_channels": "Un websocket IRC par chaîne — 2-3 lives simultanés OK dans un même job GH Actions (6h max)",
+    "session_duration_min": "Max 330 (6h job GH Actions moins marge de commit)",
+    "helix_enabled": "Nécessite secrets TWITCH_TOKEN (scope clips:edit) + TWITCH_CLIENT_ID ; sans token : timestamps seuls, segment VOD extrait après le live",
+    "gate_hybrid.auto_score_min": "Score >= 8.5 ET intensité >= 0.9 = trail immédiat, le live n'attend pas",
+    "score_weights": "null = poids par défaut de f00b_vox.py (6 critères)"
+  }
+}

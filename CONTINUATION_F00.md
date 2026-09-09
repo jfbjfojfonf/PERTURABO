@@ -518,3 +518,26 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
 - Gate Warsmith sur les packs EXPORT.
 - Si OK : lancer OMNIS_WATCH (rendu vidéo) depuis `EXPORT/`.
 - Brancher les candidats restants A04–A09 (VOX en a 9).
+
+## Session 2026-09-09 — Branche `v2-live` (le live en temps réel)
+
+### Décisions (figées, voir README_V2.md)
+- Copie exacte de main (base `8ee8c8b`) ; SEULE divergence : la couche live de VOX.
+- Radar GH Actions (`workflow_dispatch`, multi-chaînes, 6h max) + Oracle cron 5 min (issues `[ORACLE][chaîne]`).
+- Gate hybride : auto-approbation (score ≥ 8.5 + intensité ≥ 0.9), file d'attente pour le reste.
+- Clips Helix captés en direct (secrets TWITCH_TOKEN/TWITCH_CLIENT_ID) ; sans token : timestamps seuls.
+- Board GitHub Pages : `BOARD_LIVE/index.html` lit `BOARD_LIVE/data/live_status.json` (poussé toutes les 3 min).
+
+### Livré (branche v2-live)
+- `F00B_VOX/CODEBASE/libs/chat_pulse.py` : radar IRC Twitch anonyme (100% stdlib), baseline EMA 5 min, mots chauds, clip pressure, cooldown 120s/chaîne.
+- `F00B_VOX/CODEBASE/libs/helix_clipper.py` : Helix minimal (stream info + create_clip), stdlib urllib.
+- `F00B_VOX/CODEBASE/f00b_vox_live.py` : orchestrateur de session — scoring VOX réutilisé tel quel, gate hybride, OUT au même schéma que VOD (`trail.json` compatible F04/F06).
+- `.github/workflows/perturabo_live_radar.yml` + `perturabo_oracle_watch.yml`.
+- `BOARD_LIVE/index.html` (thème Iron Warriors, fallback inline pour test local).
+- Docs : `README_V2.md` (racine v2-live, checklist hebdo token CUT), guide `18_MODE_LIVE_V2.md`, logs à jour.
+
+### Reste (avant premier vrai live)
+- Secrets GH : `TWITCH_TOKEN` (scope clips:edit) + `TWITCH_CLIENT_ID`.
+- Activer GitHub Pages (branche v2-live) pour le board.
+- Session de calibration sur un live réel (seuils min_rate/spike_factor).
+- main ne bouge pas : toute correction F04/F06 se fait sur main puis se re-pousse sur v2-live.

@@ -22,6 +22,7 @@ Ici, **un guide par mode**. Chaque guide explique, étape par étape et avec les
 | `07_HORIZONS_RECHERCHE.md` | Recherche | ✅ Fenêtres 2h / 6h / 12h / 24h / 3d / 7d / 30d |
 | `08_DISCOVERY_MARKET_DEMONS_RED_BLUE.md` | Discovery | ✅ Marché, Démons, océans rouge/bleu et validation |
 | `09_DIRECTEUR_PROSPECTION_PREMIUM.md` | Discovery | ✅ Questions premium, collecte Oracle et anti-invention |
+| `18_MODE_LIVE_V2.md` | **live (branche `v2-live`)** | ✅ **Nouveau** — radar chat temps réel, gate hybride, board téléphone |
 | `_PIEGES_APPRIS.md` | Tous | ✅ Les leçons du siège test — **à lire avant chaque siège** |
 
 ## 🧭 Comment naviguer

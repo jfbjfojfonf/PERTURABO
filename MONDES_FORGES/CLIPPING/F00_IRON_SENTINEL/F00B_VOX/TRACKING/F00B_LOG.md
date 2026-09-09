@@ -220,3 +220,17 @@ fetch_chat GraphQL · réordonnancement · campaign_veto status · emote_signal 
 ### Reste (production)
 Run workflow complet sur NOUVELLE VOD = validation finale de production. Le premium est prêt
 (top_words → kimi-k3 → verdict ok/weak/skip).
+
+## 2026-09-09 — Branche v2-live : la couche LIVE de VOX
+
+**Statut** : ✅ Livrée (radar + session + gate hybride + board).
+
+- `libs/chat_pulse.py` : radar IRC anonyme (justinfan, aucun token), vitesse chat /10s, baseline EMA 5 min, mots chauds 30s, clip pressure, warm-up 30s + cooldown 120s/chaîne, PING→PONG géré.
+- `libs/helix_clipper.py` : get_stream_info + create_clip (TWITCH_TOKEN/TWITCH_CLIENT_ID en env — jamais de fichier).
+- `f00b_vox_live.py` : orchestrateur — réutilise `compute_score` de f00b_vox.py (zéro fork du moteur), gate hybride (auto ≥ 8.5 + intensité ≥ 0.9), OUT : live_moments / candidats_live / scoring_live / gate_live / trail / helix_clips / live_status, tous crash-safe (écrits à chaque moment).
+- `trail.json` au même schéma que VOD → F04/F06 ne voient aucune différence.
+- Hérésie respectée : 0 dépendance pip ajoutée (requirements_f00b.txt annoté).
+
+### Reste
+- Session de calibration sur live réel (seuils radar par taille de chaîne).
+- Kick (Pusher public) : prévu v2.1 (champ `kick_channels` déjà en place, non actif).

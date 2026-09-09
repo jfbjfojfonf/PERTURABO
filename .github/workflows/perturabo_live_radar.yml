@@ -1,0 +1,80 @@
+name: PERTURABO LIVE RADAR (v2-live)
+
+on:
+  workflow_dispatch:
+    inputs:
+      channels:
+        description: "Chaînes Twitch séparées par des virgules (ex : aishahsofeyy,kaiCenat)"
+        required: true
+        default: "aishahsofeyy"
+      duration_min:
+        description: "Durée de session (minutes, max 330)"
+        required: false
+        default: "240"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-radar-${{ github.event.inputs.channels }}
+  cancel-in-progress: false
+
+jobs:
+  live-radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v2-live
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Config session (live_input.json)
+        run: |
+          cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/live_input.example.json \
+             MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/live_input.json
+          python3 - <<'PY'
+          import json
+          p = "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/live_input.json"
+          cfg = json.load(open(p))
+          cfg["twitch_channels"] = [c.strip() for c in "${{ github.event.inputs.channels }}".split(",") if c.strip()]
+          cfg["session_duration_min"] = min(330, int("${{ github.event.inputs.duration_min }}" or 240))
+          json.dump(cfg, open(p, "w"), indent=2, ensure_ascii=False)
+          print("Session config :", cfg["twitch_channels"], cfg["session_duration_min"], "min")
+          PY
+
+      - name: Lancer la session LIVE VOX
+        env:
+          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+        run: |
+          cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+          python3 f00b_vox_live.py
+
+      - name: Publier le statut board + artefacts OUT
+        if: always()
+        run: |
+          mkdir -p BOARD_LIVE/data
+          if [ -f MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json ]; then
+            cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json BOARD_LIVE/data/
+          else
+            echo '{"error": "session terminee sans live_status (voir logs Actions)"}' > BOARD_LIVE/data/live_status.json
+          fi
+          git config --global user.name "VOX-Radar"
+          git config --global user.email "radar@perturabo.iron"
+          git add BOARD_LIVE/data/live_status.json
+          git commit -m "[v2-live] statut board — session ${{ github.event.inputs.channels }}" || echo "Rien à committer"
+          git push origin v2-live || echo "Push statut ignoré"
+
+      - name: Archiver les artefacts de session
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vox-live-session
+          path: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/
+          retention-days: 30

@@ -779,3 +779,12 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 - Packs calibrés A01/A02/A03 commités dans ARCHIVUM/montage/packs/ (commit de sortie 69f3da0).
 - Doublon `copywriting` corrigé dans director.py (retiré du bloc montage_instructions).
 - Packs PUR corrigés copiés dans EXPORT/ pour validation Warsmith.
+
+
+## [2026-09-09] v2-live — naissance de la branche du live
+
+- Branche `v2-live` = copie exacte de main (base `8ee8c8b`) ; seule divergence : la couche live de VOX.
+- Radar `chat_pulse` (IRC Twitch anonyme, baseline EMA 5 min, clip pressure, cooldown) — 100% stdlib.
+- `f00b_vox_live.py` : session live -> clip Helix immediat -> scoring VOX inchange -> gate hybride -> `trail.json` meme schema VOD.
+- Workflows radar (dispatch, 6h max, statut board /3 min) + Oracle (cron 5 min, issues Oracle).
+- `BOARD_LIVE/index.html` + docs (`README_V2.md`, guide 18, CONTINUATION, logs).

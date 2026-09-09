@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PERTURABO — Board Live v2</title>
+<style>
+  :root {
+    --iron: #0d0f12;
+    --iron-light: #161a20;
+    --steel: #232a33;
+    --bronze: #c9a227;
+    --bronze-dim: #8a6d1a;
+    --text: #d8dce2;
+    --text-dim: #7d8590;
+    --green: #3fb950;
+    --red: #f85149;
+    --amber: #d29922;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--iron);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  header { text-align: center; padding: 8px 0 16px; }
+  h1 { color: var(--bronze); font-size: 1.25rem; letter-spacing: 2px; }
+  .sub { color: var(--text-dim); font-size: .8rem; margin-top: 4px; }
+  .banner {
+    background: var(--iron-light);
+    border: 1px solid var(--steel);
+    border-left: 4px solid var(--bronze);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: .82rem;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .banner b { color: var(--bronze); }
+  .card {
+    background: var(--iron-light);
+    border: 1px solid var(--steel);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .card h2 {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--bronze-dim);
+    margin-bottom: 10px;
+  }
+  .status-line { display: flex; justify-content: space-between; padding: 6px 0; font-size: .88rem; }
+  .status-line .k { color: var(--text-dim); }
+  .num { font-weight: 700; font-size: 1.05rem; }
+  .n-moments { color: var(--bronze); }
+  .n-approved { color: var(--green); }
+  .n-pending { color: var(--amber); }
+  .n-rejected { color: var(--red); }
+  .n-clips { color: var(--text); }
+  .channel { padding: 8px 0; border-bottom: 1px solid var(--steel); font-size: .85rem; }
+  .channel:last-child { border-bottom: none; }
+  .ch-name { font-weight: 600; }
+  .ch-meta { color: var(--text-dim); font-size: .78rem; margin-top: 2px; }
+  .offline { color: var(--text-dim); font-style: italic; }
+  .queue-item { padding: 8px 10px; border: 1px solid var(--steel); border-radius: 6px; margin-bottom: 8px; font-size: .82rem; }
+  .queue-item .score { color: var(--amber); font-weight: 700; }
+  .queue-item .meta { color: var(--text-dim); font-size: .75rem; margin-top: 2px; }
+  .moment { padding: 6px 0; border-bottom: 1px dashed var(--steel); font-size: .8rem; }
+  .moment:last-child { border-bottom: none; }
+  .moment .words { color: var(--bronze); }
+  .empty { color: var(--text-dim); font-style: italic; font-size: .82rem; }
+  .updated { text-align: center; color: var(--text-dim); font-size: .72rem; margin: 10px 0 20px; }
+  .pct { color: var(--text-dim); font-size: .75rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚙️ PERTURABO — BOARD LIVE</h1>
+  <div class="sub">branche v2-live · le Fer qui Veille · <span id="countdown">—</span></div>
+</header>
+
+<div class="banner">
+  📋 <b>Rappel de session</b> — le radar n'écoute que les chaînes autorisées par les
+  campagnes actives (règles de source). Le Warsmith valide la file d'attente ici, puis
+  le bras armé (F04 → F06 → OMNIS_WATCH) produit les clips. Le watermark reste gelé.
+</div>
+
+<div class="card">
+  <h2>🔴 Compteurs de session</h2>
+  <div class="status-line"><span class="k">Moments détectés</span><span class="num n-moments" id="n-moments">—</span></div>
+  <div class="status-line"><span class="k">Clips Helix captés</span><span class="num n-clips" id="n-clips">—</span></div>
+  <div class="status-line"><span class="k">Auto-approuvés (trail immédiat)</span><span class="num n-approved" id="n-approved">—</span></div>
+  <div class="status-line"><span class="k">En attente Warsmith</span><span class="num n-pending" id="n-pending">—</span></div>
+  <div class="status-line"><span class="k">Rejetés</span><span class="num n-rejected" id="n-rejected">—</span></div>
+</div>
+
+<div class="card">
+  <h2>📡 Chaînes écoutées</h2>
+  <div id="channels"><p class="empty">Aucune donnée — lancez une session radar (Actions).</p></div>
+</div>
+
+<div class="card">
+  <h2>🚪 File d'attente Warsmith (gate hybride)</h2>
+  <div id="queue"><p class="empty">File vide — tout est déjà approuvé ou rien détecté.</p></div>
+</div>
+
+<div class="card">
+  <h2>🔥 Derniers moments</h2>
+  <div id="moments"><p class="empty">Aucun moment détecté pour l'instant.</p></div>
+</div>
+
+<div class="updated" id="updated">En attente de données…</div>
+
+<script>
+(async function () {
+  const dataEl = document.getElementById('data-status');
+  let data = null;
+  try {
+    const resp = await fetch('data/live_status.json', { cache: 'no-store' });
+    if (resp.ok) data = await resp.json();
+  } catch (e) { /* mode fichier local */ }
+  if (!data && dataEl) {
+    try { data = JSON.parse(dataEl.textContent); } catch (e) { data = null; }
+  }
+  if (!data) {
+    document.getElementById('updated').textContent =
+      'Aucun statut disponible — la page attend data/live_status.json (publiée par le radar).';
+    return;
+  }
+
+  const c = data.counters || {};
+  document.getElementById('n-moments').textContent = c.moments ?? '—';
+  document.getElementById('n-clips').textContent = c.helix_clips ?? '—';
+  document.getElementById('n-approved').textContent = c.approved ?? '—';
+  document.getElementById('n-pending').textContent = c.pending_warsmith ?? '—';
+  document.getElementById('n-rejected').textContent = c.rejected ?? '—';
+
+  const chans = (data.channels || []).map(ch => {
+    const live = ch.connected ? '' : ' class="offline"';
+    const ratio = ch.baseline ? (ch.rate_10s / Math.max(ch.baseline, 0.5)).toFixed(1) : '—';
+    return `<div class="channel"${live}>
+      <div class="ch-name">${ch.connected ? '🟢' : '⚪'} ${ch.channel}</div>
+      <div class="ch-meta">msg: ${ch.msgs_total} · taux/10s: ${ch.rate_10s} · baseline: ${ch.baseline ?? '—'} · ×${ratio} · moments: ${ch.moments}${ch.hot_words && ch.hot_words.length ? ' · chauds: ' + ch.hot_words.slice(0, 3).join(', ') : ''}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('channels').innerHTML = chans || '<p class="empty">Aucune chaîne.</p>';
+
+  const q = (data.gate_queue || []).slice(-10).reverse().map(v => `
+    <div class="queue-item">
+      <span class="score">${v.score}</span> · <b>${v.candidate_id}</b> · ${v.duration_sec}s · ${v.signal_type}
+      <div class="meta">${v.channel || ''} · ${v.helix_clip_id ? '🎬 ' + v.helix_clip_id : 'sans clip serveur'}</div>
+    </div>`).join('');
+  document.getElementById('queue').innerHTML =
+    q || '<p class="empty">File vide — tout est déjà approuvé ou rien détecté.</p>';
+
+  const mm = (data.recent_moments || []).slice(-6).reverse().map(m => `
+    <div class="moment">
+      <b>${m.channel}</b> · ×${m.baseline ? (m.rate / m.baseline).toFixed(1) : '—'} du baseline
+      ${m.hot_words && m.hot_words.length ? '· <span class="words">' + m.hot_words.slice(0, 3).join(', ') + '</span>' : ''}
+    </div>`).join('');
+  document.getElementById('moments').innerHTML = mm || '<p class="empty">Aucun moment.</p>';
+
+  const d = new Date(data.generated_at);
+  document.getElementById('updated').textContent = 'Dernier statut : ' + d.toLocaleString('fr-FR');
+})();
+</script>
+<script type="application/json" id="data-status">{"note": "données de test uniquement — remplacées par data/live_status.json publié par le radar"}</script>
+
+</body>
+</html>
