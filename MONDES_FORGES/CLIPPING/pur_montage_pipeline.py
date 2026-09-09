@@ -77,7 +77,7 @@ def load_overlay(angle_id):
 
 
 def build_pack(cand, overlay, angle_id, idx, total, camp_id, vod, platform, market, mode,
-               word_timings=()):
+               word_timings=(), montage_style="ranking"):
     text_payload = overlay or {
         "overlay_title": " ".join((cand.get("top_words") or "").split()[:8]),
         "overlay_lines": 2,
@@ -96,12 +96,14 @@ def build_pack(cand, overlay, angle_id, idx, total, camp_id, vod, platform, mark
         "word_timings": word_timings,
     }
     context = {"campaign_id": camp_id, "angle_id": angle_id,
-               "platform": platform, "market": market, "mode": "pur"}
+               "platform": platform, "market": market, "mode": "pur",
+               "montage_style": montage_style}
     montage = generate_montage_instructions(segment, text_payload, context)
     return {
         "pack_id": "%s-%s" % (camp_id or "PUR", angle_id),
         "generated_at": _now_iso(),
         "mode": "pur",
+        "montage_style": montage_style,
         "asset_mode": mode,
         "identite": {"campaign_id": camp_id, "angle_id": angle_id,
                      "pack_index": idx, "pack_total": total},
@@ -133,6 +135,8 @@ def main():
     ap.add_argument("--market", default="us_young_english")
     ap.add_argument("--nb-videos", type=int, default=1)
     ap.add_argument("--asset-mode", default="overlay_only")
+    ap.add_argument("--style", default="ranking", choices=["ranking", "reframing", "blur", "split_scene"],
+                    help="Style de montage PUR — stampé dans le pack, LACRIMAE l'exécute tel quel")
     ap.add_argument("--transcript", default=None)
     args = ap.parse_args()
 
@@ -153,18 +157,19 @@ def main():
         wt = _word_window(transcript_words, c.get("start_sec") or 0, c.get("end_sec") or 0)
         pack = build_pack(c, overlay, aid, i + 1, len(candidates),
                           camp_id, args.vod, args.platform, args.market, args.asset_mode,
-                          word_timings=wt)
+                          word_timings=wt, montage_style=args.style)
         out_p = os.path.join(PACKS_DIR, "production_pack_%s.json" % aid)
         save_json(out_p, pack)
         packs.append({"angle_id": aid, "file": os.path.basename(out_p)})
         m = pack["montage_instructions"]
-        print("[PUR_MONTAGE] %s : emotion=%s cuts=%d zooms=%d anti_detection=%d -> %s"
-              % (aid, m["segment"]["emotion"], len(m["body"]["cuts"]),
+        print("[PUR_MONTAGE] %s : style=%s emotion=%s cuts=%d zooms=%d anti_detection=%d -> %s"
+              % (aid, args.style, m["segment"]["emotion"], len(m["body"]["cuts"]),
                  len(m["body"]["zooms"]), len(m["anti_detection"]["techniques"]),
                  os.path.basename(out_p)))
 
     save_json(os.path.join(PACKS_DIR, "montage_pack_index.json"), {
         "campaign_id": camp_id, "mode": "pur", "asset_mode": args.asset_mode,
+        "montage_style": args.style,
         "pack_count": len(packs), "generated_at": _now_iso(), "packs": packs,
     })
     print("[PUR_MONTAGE] index -> montage_pack_index.json (%d packs)" % len(packs))

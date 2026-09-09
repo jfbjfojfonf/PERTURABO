@@ -7,8 +7,38 @@
 
 ## 📅 DERNIÈRE MISE À JOUR
 
-**Date** : 2026-09-06
-**Ajout** : Modal GPU + orchestration GH Actions + 1er test réussi + PLAN refonte VOX validé
+**Date** : 2026-09-09
+**Ajout** : Style de montage PUR stampé dans les packs (`montage_style`) + canonisation LACRIMAE dev10 comme bras armé PUR
+
+---
+
+## 🆕 0. ÉVOLUTION MAJEURE — LACRIMAE dev10 = bras armé PUR (2026-09-09)
+
+**LACRIMAE dev10** (`kioka8877-ux/LACRIMAE`, branche `dev10`) est canonisé comme
+**exécutant exclusif du mode PUR** : le pack PUR produit ici entre, le MP4 final
+sort là-bas, 100 % GitHub Actions (zéro Modal).
+
+### Contrat pack → dev10 (ce que LACRIMAE attend désormais)
+
+- **`montage_style`** au niveau racine du pack (`ranking | reframing | blur | split_scene`)
+  — **obligatoire**, ajouté ce jour : `pur_montage_pipeline.py --style ranking|reframing|blur|split_scene`
+  (défaut : `ranking`), propage dans `montage_instructions.metadata.style`.
+- Les packs plus anciens (A01-A03 du 2026-09-09 tôt) **n'ont pas ce champ** —
+  LACRIMAE les traite en `style_unknown` (rendu générique + avertissement).
+- L'opérateur LACRIMAE choisit UNIQUEMENT le canvas (9:16/16:9/1:1) — le style
+  est verrouillé ici, à la création du pack (doctrine FORGE respectée).
+
+### Ce qui a été modifié ici (commit de ce jour)
+
+1. `pur_montage_pipeline.py` : option `--style`, stamp `montage_style` racine + `metadata.style` + index.
+2. `F06_DIRECTOR/CODEBASE/director.py` : `generate_montage_instructions` propage `context.montage_style` → `metadata.style`.
+
+### Prochaine étape PUR côté PERTURABO
+
+- Générer un pack par style (4 packs) pour que LACRIMAE valide son routage
+  par style (Phase C de son plan) — l'opérateur LACRIMAE déclenchera les
+  rendus de contrôle **lorsqu'il donnera son GO** (règle : aucun run CI réel
+  sans autorisation explicite du Warsmith).
 
 ---
 
