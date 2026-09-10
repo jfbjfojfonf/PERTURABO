@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:28:03.579346",
+  "generated_at": "2026-09-10T21:31:03.586544",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 10067,
+  "seconds_remaining": 9887,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 13412,
-      "rate_10s": 21,
-      "baseline": 27.04,
+      "msgs_total": 13744,
+      "rate_10s": 18,
+      "baseline": 21.46,
       "clip_pressure": 0,
       "hot_words": [
-        "what",
-        "zeusysucc",
+        "joebarttheodore",
         "they",
         "that",
-        "zeusydeo"
+        "body",
+        "bratchat"
       ],
       "moments": 5,
       "last_moment_at": 1789074817.8687472,
