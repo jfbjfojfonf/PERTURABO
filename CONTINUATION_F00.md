@@ -541,3 +541,26 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
 - Activer GitHub Pages (branche v2-live) pour le board.
 - Session de calibration sur un live réel (seuils min_rate/spike_factor).
 - main ne bouge pas : toute correction F04/F06 se fait sur main puis se re-pousse sur v2-live.
+
+## Session 2026-09-10 — v2-live : les 3 premières chasses + le Garde de Fer
+
+### Sessions radar (artefacts analysés)
+| # | Chaîne | Résultat |
+|---|---|---|
+| 1 | e11ysa (60 min) | Pipeline OK, 0 msg — bug SSL `chat_pulse.py` corrigé (preuve : 47 msgs/30s en test) |
+| 2 | fps_shaka (45 min) | Tuée par le step refresh (`invalid client secret`) → refresh rendu NON bloquant (fallback token statique) |
+| 3 | fps_shaka (45 min) | ✅ 10 moments → 10 scorés → 10 auto-approuvés ; 0 clip Helix (`HTTP 500` — clipper expose maintenant le corps d'erreur, `has_delay=false` conforme doc) |
+
+### Garde de Fer (règles de campagne câblées)
+- `ARCHIVUM/campaign/live_campaigns.json` : registry machine chaîne → campagne (cycle inclus).
+- `F00B_VOX/CODEBASE/libs/campaign_gate.py` : resolve_channels / session_mode / campaign_fields — stdlib, tolérant aux pannes (registry absente → technical_test, jamais de crash).
+- `f00b_vox_live.py` : résolution au lancement (refus des sessions **mixtes**), chaque verdict porte `campaign_eligible` + `campaign_id` + `campaign_state`, propagés vers `gate_live.json`, `live_status.json` et le board.
+- Workflow radar : input `mode_override` (auto / technical_test / campaign).
+- Board : badge 🎯 CAMPAGNE (soumissible) vs 🧪 TEST TECHNIQUE (non soumissible) + raison par chaîne.
+- Docs : README_V2 (point 6 fait, journal des sessions), guide 18 (règle 1 automatique + section 7bis).
+
+### Reste (toujours ouvert)
+- `TWITCH_CLIENT_SECRET` invalide côté GH → refresh en échec depuis la session #2 (action opérateur).
+- Premier clip serveur Helix à conquérir (le 500 Twitch sera diagnostiqué à la session #4 grâce aux erreurs détaillées).
+- Calibration du scoring live : hiérarchiser les pics (ratio rate/baseline, clip_pressure) au lieu du profil fixe ~9.88.
+- Cycle Sofey expiré (07/31) → renouveler la directive Whop pour une session réelle.

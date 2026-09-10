@@ -95,11 +95,12 @@ Rien à apprendre : c'est le pipeline VOD, avec des candidats tout frais.
 
 ## 7. Les règles verrouillées
 
-- **Sources de campagne** : le radar n'écoute que les chaînes autorisées par les
-  directives actives. Hors campagne = non soumissible.
-  > **État réel (2026-09-10)** : la règle est appliquée **à la main** pour l'instant —
-  > les fichiers de campagne existent dans `MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/`
-  > mais le radar ne les lit pas encore tout seul. Câblage prévu (README_V2, point 6).
+- **Sources de campagne** : ✅ **automatique depuis le 2026-09-10** (Garde de Fer).
+  Au lancement, le radar lit `ARCHIVUM/campaign/live_campaigns.json` : chaque chaîne
+  est résolue (campagne active / cycle expiré / hors campagne), une session **mixte
+  est refusée**, et chaque verdict porte `campaign_eligible` + `campaign_id`.
+  L'input `mode_override` du workflow force un mode si besoin (auto / technical_test /
+  campaign). Nouvelle campagne = 1 entrée dans la registry, rien d'autre.
 - **Pas de trail sans verdict** (auto ou Warsmith) — comme en VOD.
 - **Cooldown 120s par chaîne** : pas de doublons de moments.
 - **6h max par job** : `duration_min` ≤ 330 (marge de commit).
@@ -119,7 +120,8 @@ sur `/helix/clips` est souvent temporaire. Le paramètre `has_delay=false` suit 
 
 ## 8. Checklist rapide avant chaque session
 
-- [ ] La chaîne est-elle autorisée par une campagne active ?
+- [x] La chaîne est-elle autorisée par une campagne active ? — **vérifié automatiquement**
+      par le Garde de Fer (badge sur le board : 🎯 CAMPAGNE vs 🧪 TEST)
 - [ ] Secrets `TWITCH_TOKEN`/`TWITCH_CLIENT_ID` présents ?
 - [ ] `duration_min` ≤ 330 ?
 - [ ] Board accessible sur https://kioka8877-ux.github.io/PERTURABO/ (ou artefacts Actions en secours) ?

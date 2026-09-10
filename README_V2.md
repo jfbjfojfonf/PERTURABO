@@ -108,9 +108,15 @@ Le radar **n'écoute que les chaînes autorisées par les campagnes actives**
    signal chat seul → tous les pics sortent à ~9.88, sans discrimination. Plan : scorer
    chaque pic d'après SA vraie force (ratio rate/baseline, clip_pressure, hot words,
    durée du pic) au lieu d'un profil fixe.
-6. **Câbler les règles de campagne dans le radar live** (les fichiers existent déjà
-   dans `MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/` — directive Aishah Sofey, parser,
-   watermarks) : filtre des chaînes autorisées + garde-fous au moment du gate.
+6. ~~**Câbler les règles de campagne dans le radar live**~~ ✅ **FAIT (2026-09-10)** —
+   Garde de Fer en place : `ARCHIVUM/campaign/live_campaigns.json` (registry chaîne →
+   campagne) + `libs/campaign_gate.py`. Au lancement, chaque chaîne est résolue
+   (campagne / cycle expiré / hors campagne), le mode `mixed` est **refusé**, et chaque
+   verdict porte `campaign_eligible` + `campaign_id` (propagés vers artefacts + board).
+   Override opérateur possible via l'input `mode_override` du workflow (auto /
+   technical_test / campaign). ⚠️ Le cycle Sofey étant expiré, toute session sur
+   `aishahsofeyy` ressort pour l'instant `technical_test` — renouveler la directive Whop
+   pour passer en campagne réelle.
 
 ---
 

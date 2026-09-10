@@ -11,6 +11,15 @@ on:
         description: "Durée de session (minutes, max 330)"
         required: false
         default: "240"
+      mode_override:
+        description: "auto = décidé par la registry des campagnes | technical_test = forcer non soumissible"
+        required: false
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - technical_test
+          - campaign
 
 permissions:
   contents: write
@@ -44,8 +53,9 @@ jobs:
           cfg = json.load(open(p))
           cfg["twitch_channels"] = [c.strip() for c in "${{ github.event.inputs.channels }}".split(",") if c.strip()]
           cfg["session_duration_min"] = min(330, int("${{ github.event.inputs.duration_min }}" or 240))
+          cfg["session_mode"] = "${{ github.event.inputs.mode_override }}" or "auto"
           json.dump(cfg, open(p, "w"), indent=2, ensure_ascii=False)
-          print("Session config :", cfg["twitch_channels"], cfg["session_duration_min"], "min")
+          print("Session config :", cfg["twitch_channels"], cfg["session_duration_min"], "min, mode:", cfg["session_mode"])
           PY
 
       - name: Rafraîchir le token Twitch (expire ~4h)

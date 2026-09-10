@@ -76,6 +76,10 @@
   .empty { color: var(--text-dim); font-style: italic; font-size: .82rem; }
   .updated { text-align: center; color: var(--text-dim); font-size: .72rem; margin: 10px 0 20px; }
   .pct { color: var(--text-dim); font-size: .75rem; }
+  .badge { display: inline-block; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: .85rem; }
+  .badge-campaign { background: rgba(46,160,67,.15); color: var(--green); border: 1px solid var(--green); }
+  .badge-test { background: rgba(248,81,73,.12); color: var(--red); border: 1px solid var(--red); }
+  .camp-ch { font-size: .8rem; color: var(--text-dim); margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -89,6 +93,11 @@
   📋 <b>Rappel de session</b> — le radar n'écoute que les chaînes autorisées par les
   campagnes actives (règles de source). Le Warsmith valide la file d'attente ici, puis
   le bras armé (F04 → F06 → OMNIS_WATCH) produit les clips. Le watermark reste gelé.
+</div>
+
+<div class="card" id="campaign-card" style="display:none">
+  <h2>🎯 Mode de session (Garde de Fer)</h2>
+  <div id="campaign-badge"></div>
 </div>
 
 <div class="card">
@@ -140,6 +149,17 @@
   document.getElementById('n-approved').textContent = c.approved ?? '—';
   document.getElementById('n-pending').textContent = c.pending_warsmith ?? '—';
   document.getElementById('n-rejected').textContent = c.rejected ?? '—';
+
+  const camp = data.campaign || {};
+  if (camp.session_mode) {
+    document.getElementById('campaign-card').style.display = '';
+    const isCamp = camp.session_mode === 'campaign';
+    const label = isCamp ? '🎯 CAMPAGNE — clips soumissibles' : '🧪 TEST TECHNIQUE — NON soumissible';
+    const chans = Object.entries(camp.channels || {}).map(([ch, r]) =>
+      `<div class="camp-ch">${ch} → ${r.reason || ''}</div>`).join('');
+    document.getElementById('campaign-badge').innerHTML =
+      `<span class="badge ${isCamp ? 'badge-campaign' : 'badge-test'}">${label}</span>${chans}`;
+  }
 
   const chans = (data.channels || []).map(ch => {
     const live = ch.connected ? '' : ' class="offline"';

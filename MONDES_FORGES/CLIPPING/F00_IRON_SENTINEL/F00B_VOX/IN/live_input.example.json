@@ -2,6 +2,7 @@
   "twitch_channels": ["aishahsofeyy"],
   "kick_channels": [],
   "session_duration_min": 240,
+  "session_mode": "auto",
   "helix_enabled": true,
   "status_every_sec": 180,
   "nb_clips_demandes": 10,
@@ -34,6 +35,7 @@
   "_notes": {
     "twitch_channels": "Un websocket IRC par chaîne — 2-3 lives simultanés OK dans un même job GH Actions (6h max)",
     "session_duration_min": "Max 330 (6h job GH Actions moins marge de commit)",
+    "session_mode": "auto = décidé par ARCHIVUM/campaign/live_campaigns.json (campaign / technical_test / refus si mixed) ; technical_test = forcer non soumissible",
     "helix_enabled": "Nécessite secrets TWITCH_TOKEN (scope clips:edit) + TWITCH_CLIENT_ID ; sans token : timestamps seuls, segment VOD extrait après le live",
     "gate_hybrid.auto_score_min": "Score >= 8.5 ET intensité >= 0.9 = trail immédiat, le live n'attend pas",
     "score_weights": "null = poids par défaut de f00b_vox.py (6 critères)"

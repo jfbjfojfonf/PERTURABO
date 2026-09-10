@@ -39,6 +39,7 @@ if _LIBS_DIR.exists():
     sys.path.insert(0, str(_LIBS_DIR))
 
 from chat_pulse import Radar, log_line  # noqa: E402
+import campaign_gate as cgate  # noqa: E402 — le Garde de Fer des campagnes
 
 # Réutilisation stricte du moteur VOX existant (même scoring, même doctrine)
 import f00b_vox as vox  # noqa: E402
@@ -141,6 +142,38 @@ def run_session(cfg):
         log_line("❌ Aucune chaîne dans twitch_channels. Rien à écouter.")
         sys.exit(1)
 
+    # ─── Garde de Fer des campagnes (registry → mode de session) ───
+    resolved = cgate.resolve_channels(channels)
+    mode = cgate.session_mode(resolved)
+    override = (cfg.get("session_mode") or "").strip()
+    if override in ("", "auto"):
+        override = None
+    for ch, r in resolved.items():
+        log_line(f"🏛️ {ch} → {r['reason']}")
+    if mode == "mixed" and override != "technical_test":
+        log_line("❌ Session MIXTE interdite (chaînes éligibles + non éligibles). "
+                 "Relance en une seule catégorie, ou avec mode_override=technical_test.")
+        sys.exit(1)
+    if override == "technical_test":
+        log_line("🧪 Override opérateur : session TECHNIQUE — clips marqués non soumissables.")
+        mode = "technical_test"
+    elif override == "campaign" and mode != "campaign":
+        log_line("❌ Override 'campaign' demandé mais aucune chaîne éligible "
+                 "(registry absente ou cycle expiré). Vérifier live_campaigns.json.")
+        sys.exit(1)
+    # La session entière porte son mode (verdicts + board)
+    cfg["_campaign"] = {
+        "session_mode": mode,
+        "channels": {
+            ch: {"campaign_id": r.get("campaign_id"), "eligible": r.get("eligible"),
+                 "reason": r.get("reason")}
+            for ch, r in resolved.items()
+        },
+    }
+    log_line(f"🎯 Mode session : {mode}"
+             + (" — clips soumissibles (campagne active)" if mode == "campaign"
+                else " — NON soumissible"))
+
     duration_min = cfg.get("session_duration_min", 240)
     deadline = time.time() + duration_min * 60
     status_every = cfg.get("status_every_sec", 180)
@@ -228,6 +261,13 @@ def run_session(cfg):
                     "detected_at": moment.get("detected_at"),
                     "helix_clip_id": (clip or {}).get("clip_id"),
                 }
+                # Éligibilité campagne (Garde de Fer) : la session technique
+                # dégrade TOUT en non soumissible, même une chaîne connue.
+                camp_f = cgate.campaign_fields(ch, resolved)
+                if mode != "campaign":
+                    camp_f["campaign_eligible"] = False
+                    camp_f["campaign_state"] = camp_f["campaign_state"] or "technical_test"
+                verdict.update(camp_f)
                 verdicts_all.append(verdict)
                 if status == "approved":
                     log_line(f"⚡ AUTO-APPROUVÉ {verdict['candidate_id']} "
@@ -317,6 +357,7 @@ def write_outputs(cfg, moments, candidats, scored_all, verdicts, clips,
         "type": "SOUS-FREGATE_GATE_HYBRIDE",
         "validateur": "auto (seuils) + Warsmith (file d'attente)",
         "regle_d_or": "Le live n'attend pas : excellents candidats auto-approuvés, le reste en file.",
+        "campaign": cfg.get("_campaign", {}),
         "total_candidates": len(verdicts),
         "approved": len(approved),
         "pending_warsmith": sum(1 for v in verdicts if v["status"] == "pending_warsmith"),
@@ -377,6 +418,7 @@ def write_status(channels, radar, moments, verdicts, clips, deadline,
         "mode": "v2-live",
         "session_final": final,
         "seconds_remaining": max(0, int(deadline - time.time())),
+        "campaign": cfg.get("_campaign", {}),
         "channels": radar.snapshot(),
         "counters": {
             "moments": len(moments),
