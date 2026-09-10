@@ -97,11 +97,25 @@ Rien à apprendre : c'est le pipeline VOD, avec des candidats tout frais.
 
 - **Sources de campagne** : le radar n'écoute que les chaînes autorisées par les
   directives actives. Hors campagne = non soumissible.
+  > **État réel (2026-09-10)** : la règle est appliquée **à la main** pour l'instant —
+  > les fichiers de campagne existent dans `MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/`
+  > mais le radar ne les lit pas encore tout seul. Câblage prévu (README_V2, point 6).
 - **Pas de trail sans verdict** (auto ou Warsmith) — comme en VOD.
 - **Cooldown 120s par chaîne** : pas de doublons de moments.
 - **6h max par job** : `duration_min` ≤ 330 (marge de commit).
 - **Budget transcription** : la transcription des segments reste sur Modal (burst GPU,
   centimes) — le radar lui-même est gratuit (IRC + Actions).
+
+## 7bis. Helix — diagnostic session #3
+
+10/10 clips refusés par Twitch (`HTTP 500`). Le clipper expose maintenant le corps des
+réponses d'erreur dans les logs → la session #4 dira la vraie raison. Suspicions :
+rate limit temporaire, app trop récente (quota restreint), ou quota du compte. Un 500
+sur `/helix/clips` est souvent temporaire. Le paramètre `has_delay=false` suit la doc.
+
+> **Scoring live — limite connue** : le score actuel repose sur le signal chat seul →
+> tous les pics sortent au même profil (~9.88). Calibration prévue : scorer chaque pic
+> d'après sa vraie force (ratio rate/baseline, clip_pressure, hot words, durée du pic).
 
 ## 8. Checklist rapide avant chaque session
 

@@ -94,9 +94,33 @@ Le radar **n'écoute que les chaînes autorisées par les campagnes actives**
    `TWITCH_TOKEN` scope `clips:edit`) — sans eux le radar fonctionne en timestamps seuls
    (pas de clip serveur immédiat). Le token user vit ~4 h : le refresh est automatique
    au début de chaque run (`refresh_twitch_token.py`).
+   ⚠️ Sessions #2 et #3 : le refresh a échoué (`invalid client secret`) → la valeur de
+   `TWITCH_CLIENT_SECRET` dans GitHub n'est pas la bonne. À corriger via dev.twitch.tv →
+   Manage → « Nouveau secret » → Update du secret dans GH.
 2. Activer GitHub Pages (Settings → Pages → branch `v2-live`, dossier `/docs`).
 3. Une session de test sur un live réel pour calibrer `min_rate` / `spike_factor`
    (une grande chaîne ≠ une petite : la baseline EMA s'adapte, mais les seuils se peaufinent).
+4. **Helix : premier clip serveur à conquérir.** Session #3 : 10/10 clips refusés par
+   Twitch (`HTTP 500`). Le clipper expose maintenant le corps des réponses d'erreur —
+   la prochaine session dira la vraie raison (suspicions : rate limit / app en trop jeune
+   / quota). Le pipeline lui-même est prouvé : 10 moments → 10 scorings → 10 approvals.
+5. **Calibration du scoring live (à venir).** En live, le score actuel repose sur le
+   signal chat seul → tous les pics sortent à ~9.88, sans discrimination. Plan : scorer
+   chaque pic d'après SA vraie force (ratio rate/baseline, clip_pressure, hot words,
+   durée du pic) au lieu d'un profil fixe.
+6. **Câbler les règles de campagne dans le radar live** (les fichiers existent déjà
+   dans `MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/` — directive Aishah Sofey, parser,
+   watermarks) : filtre des chaînes autorisées + garde-fous au moment du gate.
+
+---
+
+## 🧾 Journal des sessions (v2-live)
+
+| # | Date (UTC) | Chaîne | Résultat |
+|---|---|---|---|
+| 1 | 2026-09-10 | e11ysa (60 min) | Pipeline OK, 0 message — bug SSL `chat_pulse.py` trouvé et corrigé |
+| 2 | 2026-09-10 | fps_shaka (45 min) | Tuée par le step refresh (`invalid client secret`) → refresh rendu non bloquant |
+| 3 | 2026-09-10 | fps_shaka (45 min) | ✅ 10 moments détectés, 10 scorés, 10 approuvés — 0 clip Helix (`HTTP 500`, cause à confirmer) |
 
 ---
 
