@@ -1,1 +1,127 @@
-{"error": "session terminee sans live_status (voir logs Actions)"}
+{
+  "generated_at": "2026-09-10T17:48:48.598561",
+  "mode": "v2-live",
+  "session_final": true,
+  "seconds_remaining": 0,
+  "campaign": {
+    "session_mode": "technical_test",
+    "channels": {
+      "ohnepixel": {
+        "campaign_id": null,
+        "eligible": false,
+        "reason": "hors campagne — session technique, non soumissible"
+      }
+    }
+  },
+  "channels": [
+    {
+      "channel": "ohnepixel",
+      "connected": true,
+      "msgs_total": 17965,
+      "rate_10s": 36,
+      "baseline": 34.45,
+      "clip_pressure": 0,
+      "hot_words": [
+        "dans",
+        "massive",
+        "sade",
+        "wwwww",
+        "hateds2rave"
+      ],
+      "moments": 1,
+      "last_moment_at": 1789060403.0080585,
+      "cooldown_until": 1789060523.0080585
+    }
+  ],
+  "counters": {
+    "moments": 1,
+    "helix_clips": 1,
+    "approved": 0,
+    "pending_warsmith": 1,
+    "rejected": 0
+  },
+  "gate_queue": [
+    {
+      "candidate_id": "7059a5a78d",
+      "status": "pending_warsmith",
+      "score": 6.33,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 10071.0,
+      "end_sec": 10115.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "ohnepixel",
+      "detected_at": 1789060403.01,
+      "helix_clip_id": "DeafUnusualBisonKippa-P2wmcRHvQtNcV937",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    }
+  ],
+  "recent_moments": [
+    {
+      "channel": "ohnepixel",
+      "platform": "twitch",
+      "detected_at": 1789060403.01,
+      "start_epoch": 1789060393.01,
+      "end_epoch": 1789060433.01,
+      "rate": 58,
+      "baseline": 83.41,
+      "intensity": 5.8,
+      "hot_words": [
+        "leaked",
+        "sotarks",
+        "call",
+        "folder",
+        "goon"
+      ],
+      "clip_pressure": 4,
+      "trigger": "clip_pressure",
+      "helix_clip": {
+        "clip_id": "DeafUnusualBisonKippa-P2wmcRHvQtNcV937",
+        "edit_url": "https://www.twitch.tv/ohnepixel/clip/DeafUnusualBisonKippa-P2wmcRHvQtNcV937",
+        "url": "https://clips.twitch.tv/DeafUnusualBisonKippa-P2wmcRHvQtNcV937"
+      }
+    }
+  ],
+  "recent_scored": [
+    {
+      "candidate_id": "7059a5a78d",
+      "final_score": 6.33,
+      "raw_scores": {
+        "hook_force": 4.5,
+        "emotion": 5.0,
+        "clarity": 8.5,
+        "quotability": 9.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.12,
+      "spike_ratio": 0.7,
+      "clip_pressure": 4,
+      "hot_words": [
+        "leaked",
+        "sotarks",
+        "call",
+        "folder",
+        "goon"
+      ],
+      "channel": "ohnepixel",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789060403.01
+    }
+  ],
+  "clips": [
+    {
+      "clip_id": "DeafUnusualBisonKippa-P2wmcRHvQtNcV937",
+      "url": "https://clips.twitch.tv/DeafUnusualBisonKippa-P2wmcRHvQtNcV937",
+      "channel": "ohnepixel",
+      "detected_at": 1789060403.01,
+      "score": 6.33
+    }
+  ],
+  "stream_started": {
+    "ohnepixel": 1789050320.0
+  }
+}
