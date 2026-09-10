@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:13:24.200383",
+  "generated_at": "2026-09-10T23:16:25.338050",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 3747,
+  "seconds_remaining": 3565,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 25360,
-      "rate_10s": 26,
-      "baseline": 9.89,
+      "msgs_total": 25910,
+      "rate_10s": 11,
+      "baseline": 22.75,
       "clip_pressure": 0,
       "hot_words": [
-        "afsp",
-        "chat",
-        "https",
+        "this",
         "your",
-        "builds"
+        "mrpigonline",
+        "proximity",
+        "it's"
       ],
-      "moments": 11,
-      "last_moment_at": 1789079928.6066225,
-      "cooldown_until": 1789080048.6066225
+      "moments": 12,
+      "last_moment_at": 1789082004.991487,
+      "cooldown_until": 1789082124.991487
     }
   ],
   "counters": {
-    "moments": 11,
-    "helix_clips": 11,
+    "moments": 12,
+    "helix_clips": 12,
     "approved": 0,
-    "pending_warsmith": 11,
+    "pending_warsmith": 12,
     "rejected": 0
   },
   "gate_queue": [
@@ -216,33 +216,25 @@
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "69be71c159",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 14027.0,
+      "end_sec": 14071.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082004.99,
+      "helix_clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
     }
   ],
   "recent_moments": [
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789073896.05,
-      "start_epoch": 1789073886.05,
-      "end_epoch": 1789073926.05,
-      "rate": 56,
-      "baseline": 18.64,
-      "intensity": 1.0,
-      "hot_words": [
-        "watchtime",
-        "joebartselfie",
-        "just",
-        "watching",
-        "weird"
-      ],
-      "clip_pressure": 0,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
-        "url": "https://clips.twitch.tv/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX"
-      }
-    },
     {
       "channel": "joe_bartolozzi",
       "platform": "twitch",
@@ -410,35 +402,33 @@
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
         "url": "https://clips.twitch.tv/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI"
       }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789082004.99,
+      "start_epoch": 1789081994.99,
+      "end_epoch": 1789082034.99,
+      "rate": 30,
+      "baseline": 9.89,
+      "intensity": 1.0,
+      "hot_words": [
+        "afsp",
+        "chat",
+        "https",
+        "your",
+        "ball"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+        "url": "https://clips.twitch.tv/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX"
+      }
     }
   ],
   "recent_scored": [
-    {
-      "candidate_id": "66a7253f00",
-      "final_score": 6.35,
-      "raw_scores": {
-        "hook_force": 7.5,
-        "emotion": 6.0,
-        "clarity": 6.5,
-        "quotability": 4.0,
-        "timing": 7.0,
-        "format_fit": 6.5
-      },
-      "signal_intensity": 0.5,
-      "spike_ratio": 3.01,
-      "clip_pressure": 0,
-      "hot_words": [
-        "gift",
-        "idea",
-        "this",
-        "crypto",
-        "chopkuscream"
-      ],
-      "channel": "joe_bartolozzi",
-      "status": "pending_warsmith",
-      "campaign_eligible": false,
-      "detected_at": 1789072611.96
-    },
     {
       "candidate_id": "fd06bcadbb",
       "final_score": 6.35,
@@ -672,6 +662,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789079928.61
+    },
+    {
+      "candidate_id": "69be71c159",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.03,
+      "clip_pressure": 0,
+      "hot_words": [
+        "afsp",
+        "chat",
+        "https",
+        "your",
+        "ball"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789082004.99
     }
   ],
   "clips": [
@@ -751,6 +767,13 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789079928.61,
       "score": 6.88
+    },
+    {
+      "clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "url": "https://clips.twitch.tv/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082004.99,
+      "score": 6.35
     }
   ],
   "stream_started": {
