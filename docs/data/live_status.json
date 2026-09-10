@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:31:26.558487",
+  "generated_at": "2026-09-10T23:34:26.565709",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 2664,
+  "seconds_remaining": 2484,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 27010,
-      "rate_10s": 15,
-      "baseline": 11.64,
+      "msgs_total": 27235,
+      "rate_10s": 13,
+      "baseline": 12.64,
       "clip_pressure": 0,
       "hot_words": [
+        "said",
+        "bare",
         "kill",
-        "left",
-        "this",
-        "game",
-        "people"
+        "what",
+        "just"
       ],
       "moments": 13,
       "last_moment_at": 1789082561.0706234,
