@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:16:03.550345",
+  "generated_at": "2026-09-10T21:19:03.557838",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 10787,
+  "seconds_remaining": 10607,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 11140,
-      "rate_10s": 53,
-      "baseline": 35.93,
+      "msgs_total": 11845,
+      "rate_10s": 22,
+      "baseline": 43.9,
       "clip_pressure": 0,
       "hot_words": [
-        "joebartvibe",
-        "dinodance",
-        "bluesrdance",
-        "song",
-        "goty"
+        "joebart5head",
+        "twitchconhype",
+        "that",
+        "like",
+        "squid2"
       ],
       "moments": 5,
       "last_moment_at": 1789074817.8687472,
