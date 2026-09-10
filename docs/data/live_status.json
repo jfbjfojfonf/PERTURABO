@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:40:24.120649",
+  "generated_at": "2026-09-10T22:43:24.127676",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 5727,
+  "seconds_remaining": 5547,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 23413,
+      "msgs_total": 23624,
       "rate_10s": 10,
-      "baseline": 18.57,
-      "clip_pressure": 0,
+      "baseline": 16.83,
+      "clip_pressure": 1,
       "hot_words": [
-        "arrest",
-        "bratchat",
-        "what",
-        "heyguys",
-        "that"
+        "cant",
+        "police",
+        "bruh",
+        "t0xlnz",
+        "mosquitos"
       ],
       "moments": 11,
       "last_moment_at": 1789079928.6066225,
