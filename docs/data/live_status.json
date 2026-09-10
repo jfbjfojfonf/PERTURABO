@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:07:11.352666",
+  "generated_at": "2026-09-10T22:10:11.360420",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 7719,
+  "seconds_remaining": 7539,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 19480,
-      "rate_10s": 35,
-      "baseline": 25.34,
+      "msgs_total": 20058,
+      "rate_10s": 42,
+      "baseline": 27.28,
       "clip_pressure": 0,
       "hot_words": [
-        "afsp",
-        "pizza",
-        "chip",
-        "what",
-        "that"
+        "would",
+        "this",
+        "video",
+        "chat",
+        "just"
       ],
       "moments": 8,
       "last_moment_at": 1789077795.9834118,
