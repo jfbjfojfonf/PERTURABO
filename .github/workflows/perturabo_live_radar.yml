@@ -68,17 +68,38 @@ jobs:
           cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
           python3 refresh_twitch_token.py || echo "⚠️ Refresh non bloquant — la session continue (fallback token statique / timestamps seuls)."
 
-      - name: Lancer la session LIVE VOX
+      - name: Lancer la session LIVE VOX + statut temps reel
         env:
           TWITCH_TOKEN: ${{ env.TWITCH_TOKEN || secrets.TWITCH_TOKEN }}
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         run: |
+          git config --global user.name "VOX-Radar"
+          git config --global user.email "radar@perturabo.iron"
           cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
-          python3 f00b_vox_live.py
+          python3 f00b_vox_live.py &
+          SESSION_PID=$!
+          cd "$GITHUB_WORKSPACE"
+          OUT_JSON="MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json"
+          (
+            while kill -0 $SESSION_PID 2>/dev/null; do
+              sleep 180
+              if [ -f "$OUT_JSON" ]; then
+                mkdir -p docs/data
+                cp "$OUT_JSON" docs/data/live_status.json
+                git add docs/data/live_status.json
+                git commit -m "[v2-live] statut board (temps reel)" || echo "rien de neuf"
+                git push origin v2-live || echo "push temps reel ignore"
+              fi
+            done
+          ) &
+          WATCH_PID=$!
+          wait $SESSION_PID
+          kill $WATCH_PID 2>/dev/null || true
 
       - name: Publier le statut board + artefacts OUT
         if: always()
         run: |
+          git pull --rebase origin v2-live || echo "rebase non bloquant"
           mkdir -p docs/data
           if [ -f MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json ]; then
             cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json docs/data/
