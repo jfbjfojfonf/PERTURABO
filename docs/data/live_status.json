@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:46:07.517297",
+  "generated_at": "2026-09-10T21:49:07.524053",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 8983,
+  "seconds_remaining": 8803,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 16530,
-      "rate_10s": 44,
-      "baseline": 32.69,
+      "msgs_total": 16951,
+      "rate_10s": 24,
+      "baseline": 25.83,
       "clip_pressure": 0,
       "hot_words": [
-        "theilluminati",
-        "peter",
-        "antichrist",
-        "this",
-        "afsp"
+        "joebartlongneck",
+        "like",
+        "holy",
+        "bezos",
+        "clean"
       ],
       "moments": 7,
       "last_moment_at": 1789076442.1722815,
