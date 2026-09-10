@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:15:51.472353",
+  "generated_at": "2026-09-10T20:18:51.478794",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 14399,
+  "seconds_remaining": 14219,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -16,12 +16,18 @@
   "channels": [
     {
       "channel": "joe_bartolozzi",
-      "connected": false,
-      "msgs_total": 0,
-      "rate_10s": 0,
-      "baseline": null,
+      "connected": true,
+      "msgs_total": 902,
+      "rate_10s": 41,
+      "baseline": 47.61,
       "clip_pressure": 0,
-      "hot_words": [],
+      "hot_words": [
+        "homophobia",
+        "that",
+        "with",
+        "they",
+        "just"
+      ],
       "moments": 0,
       "last_moment_at": null,
       "cooldown_until": 0.0
