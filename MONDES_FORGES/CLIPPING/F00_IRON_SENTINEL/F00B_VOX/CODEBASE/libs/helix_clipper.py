@@ -90,7 +90,7 @@ def get_stream_info(login):
 
 def create_clip(broadcaster_id):
     """Capture un clip serveur MAINTENANT (30 dernières secondes du live)."""
-    data = _post("/clips", f"broadcaster_id={broadcaster_id}&is_delayed=false")
+    data = _post("/clips", f"broadcaster_id={broadcaster_id}&has_delay=false")
     clips = data.get("data", [])
     if not clips:
         return None
