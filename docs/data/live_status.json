@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:01:01.451494",
+  "generated_at": "2026-09-10T21:04:01.458703",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 11689,
+  "seconds_remaining": 11509,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 8322,
-      "rate_10s": 19,
-      "baseline": 22.39,
+      "msgs_total": 8756,
+      "rate_10s": 16,
+      "baseline": 22.96,
       "clip_pressure": 0,
       "hot_words": [
-        "counting",
-        "gang",
-        "violence",
-        "youtube",
-        "bratchat"
+        "that",
+        "they",
+        "been",
+        "witch",
+        "damn"
       ],
       "moments": 4,
       "last_moment_at": 1789073896.050424,
