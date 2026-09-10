@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-09-10T21:10:01.472932",
+  "generated_at": "2026-09-10T22:00:00Z",
   "source": "live_session_34524673636",
   "total_candidates": 4,
   "pending_warsmith": 4,
   "auto_rejected": 0,
+  "reset": "RÉINITIALISÉ sur ordre de l'opérateur — les validations antérieures (non autorisées) sont annulées. Aucun trail, aucun F04/F05 tant que le Warsmith n'a pas statué.",
   "verdicts": [
     {
       "candidate_id": "8e12ad2d58",
@@ -15,7 +16,7 @@
       "signal_type": "chat_spike",
       "channel": "joe_bartolozzi",
       "helix_clip_id": "AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
-      "motif": "file d'attente Warsmith (live joe_bartolozzi 2026-09-10)"
+      "motif": "en attente de décision Warsmith"
     },
     {
       "candidate_id": "66a7253f00",
@@ -27,7 +28,7 @@
       "signal_type": "chat_spike",
       "channel": "joe_bartolozzi",
       "helix_clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
-      "motif": "file d'attente Warsmith (live joe_bartolozzi 2026-09-10)"
+      "motif": "en attente de décision Warsmith"
     },
     {
       "candidate_id": "fd06bcadbb",
@@ -39,7 +40,7 @@
       "signal_type": "chat_spike",
       "channel": "joe_bartolozzi",
       "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
-      "motif": "file d'attente Warsmith (live joe_bartolozzi 2026-09-10)"
+      "motif": "en attente de décision Warsmith"
     },
     {
       "candidate_id": "0af35a0173",
@@ -51,7 +52,7 @@
       "signal_type": "chat_spike",
       "channel": "joe_bartolozzi",
       "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
-      "motif": "file d'attente Warsmith (live joe_bartolozzi 2026-09-10)"
+      "motif": "en attente de décision Warsmith"
     }
   ]
 }
