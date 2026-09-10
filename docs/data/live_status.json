@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:19:25.345271",
+  "generated_at": "2026-09-10T23:22:25.352294",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 3385,
+  "seconds_remaining": 3205,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 26074,
-      "rate_10s": 14,
-      "baseline": 9.96,
-      "clip_pressure": 0,
+      "msgs_total": 26296,
+      "rate_10s": 26,
+      "baseline": 10.79,
+      "clip_pressure": 1,
       "hot_words": [
-        "stalk",
         "them",
-        "grab",
-        "makes",
-        "mods"
+        "kill",
+        "thebig748kittyblast",
+        "stalk",
+        "while"
       ],
       "moments": 12,
       "last_moment_at": 1789082004.991487,
