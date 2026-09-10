@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:07:24.185663",
+  "generated_at": "2026-09-10T23:10:24.193028",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 4107,
+  "seconds_remaining": 3927,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 25007,
-      "rate_10s": 4,
-      "baseline": 8.41,
+      "msgs_total": 25166,
+      "rate_10s": 5,
+      "baseline": 8.44,
       "clip_pressure": 0,
       "hot_words": [
-        "exotic912",
-        "like",
-        "more",
+        "cowlosponderingmoo",
         "just",
-        "drive"
+        "afsp",
+        "https",
+        "game"
       ],
       "moments": 11,
       "last_moment_at": 1789079928.6066225,
