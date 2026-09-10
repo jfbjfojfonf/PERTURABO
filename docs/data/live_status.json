@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:58:07.546001",
+  "generated_at": "2026-09-10T22:01:07.553221",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 8263,
+  "seconds_remaining": 8083,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 18104,
-      "rate_10s": 23,
-      "baseline": 18.62,
-      "clip_pressure": 0,
+      "msgs_total": 18583,
+      "rate_10s": 25,
+      "baseline": 22.76,
+      "clip_pressure": 1,
       "hot_words": [
-        "elon",
-        "fuck",
-        "about",
-        "would",
-        "them"
+        "this",
+        "love",
+        "rats",
+        "animals",
+        "like"
       ],
       "moments": 7,
       "last_moment_at": 1789076442.1722815,
