@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:04:11.345423",
+  "generated_at": "2026-09-10T22:07:11.352666",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 7899,
+  "seconds_remaining": 7719,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 19116,
-      "rate_10s": 21,
-      "baseline": 28.69,
-      "clip_pressure": 1,
+      "msgs_total": 19480,
+      "rate_10s": 35,
+      "baseline": 25.34,
+      "clip_pressure": 0,
       "hot_words": [
-        "chat",
-        "that",
-        "would",
-        "heyguys",
-        "chinese"
+        "afsp",
+        "pizza",
+        "chip",
+        "what",
+        "that"
       ],
       "moments": 8,
       "last_moment_at": 1789077795.9834118,
