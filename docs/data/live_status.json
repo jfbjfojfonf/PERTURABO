@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:40:29.444780",
+  "generated_at": "2026-09-10T23:43:29.452025",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 2121,
+  "seconds_remaining": 1941,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 27655,
-      "rate_10s": 6,
-      "baseline": 10.82,
+      "msgs_total": 27803,
+      "rate_10s": 3,
+      "baseline": 8.86,
       "clip_pressure": 0,
       "hot_words": [
-        "free",
-        "just",
-        "this",
+        "better",
+        "goty",
+        "peruvianelk",
         "game",
-        "hello"
+        "than"
       ],
       "moments": 14,
       "last_moment_at": 1789083314.000893,
