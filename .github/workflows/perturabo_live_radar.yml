@@ -6,7 +6,7 @@ on:
       channels:
         description: "Chaînes Twitch séparées par des virgules (ex : aishahsofeyy,kaiCenat)"
         required: true
-        default: "aishahsofeyy"
+        default: "joe_bartolozzi"
       duration_min:
         description: "Durée de session (minutes, max 330)"
         required: false
