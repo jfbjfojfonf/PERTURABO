@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:25:15.702323",
+  "generated_at": "2026-09-10T22:28:15.709383",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 6635,
+  "seconds_remaining": 6455,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 22375,
+      "msgs_total": 22540,
       "rate_10s": 8,
-      "baseline": 18.0,
+      "baseline": 10.79,
       "clip_pressure": 0,
       "hot_words": [
-        "like",
-        "just",
-        "squid2",
-        "hate",
-        "guys"
+        "joebartlongneck",
+        "joebartlove",
+        "know",
+        "been",
+        "capr1son"
       ],
       "moments": 9,
       "last_moment_at": 1789078685.2440422,
