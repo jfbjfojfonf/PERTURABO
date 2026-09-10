@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:04:01.458703",
+  "generated_at": "2026-09-10T21:07:01.465789",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 11509,
+  "seconds_remaining": 11329,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 8756,
-      "rate_10s": 16,
-      "baseline": 22.96,
+      "msgs_total": 9456,
+      "rate_10s": 46,
+      "baseline": 32.66,
       "clip_pressure": 0,
       "hot_words": [
-        "that",
         "they",
-        "been",
-        "witch",
-        "damn"
+        "what",
+        "that",
+        "them",
+        "read"
       ],
       "moments": 4,
       "last_moment_at": 1789073896.050424,
