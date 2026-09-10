@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:27:54.680376",
+  "generated_at": "2026-09-10T20:30:54.688429",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 13676,
+  "seconds_remaining": 13496,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 3371,
-      "rate_10s": 27,
-      "baseline": 34.93,
+      "msgs_total": 3943,
+      "rate_10s": 47,
+      "baseline": 32.31,
       "clip_pressure": 0,
       "hot_words": [
-        "what",
-        "hiviseletsgoo",
-        "just",
-        "that",
-        "username"
+        "name",
+        "shit",
+        "poop",
+        "dick",
+        "shiasnack"
       ],
       "moments": 1,
       "last_moment_at": 1789071704.2865193,
