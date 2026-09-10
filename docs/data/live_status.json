@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:25:26.543783",
+  "generated_at": "2026-09-10T23:28:26.551155",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 3024,
+  "seconds_remaining": 2844,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 26609,
-      "rate_10s": 4,
-      "baseline": 16.11,
-      "clip_pressure": 0,
+      "msgs_total": 26796,
+      "rate_10s": 7,
+      "baseline": 13.26,
+      "clip_pressure": 1,
       "hot_words": [
-        "stalk",
-        "shut",
-        "it's",
-        "very",
-        "playing"
+        "they",
+        "joebartlocked",
+        "that",
+        "game",
+        "flashbang"
       ],
       "moments": 13,
       "last_moment_at": 1789082561.0706234,
