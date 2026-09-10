@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:37:04.164403",
+  "generated_at": "2026-09-10T21:40:04.171497",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 9527,
+  "seconds_remaining": 9347,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 14723,
-      "rate_10s": 12,
-      "baseline": 28.38,
+      "msgs_total": 15148,
+      "rate_10s": 13,
+      "baseline": 23.48,
       "clip_pressure": 0,
       "hot_words": [
-        "that",
         "what",
-        "this",
-        "still",
-        "from"
+        "that",
+        "loser",
+        "thats",
+        "does"
       ],
       "moments": 6,
       "last_moment_at": 1789076073.6863713,
