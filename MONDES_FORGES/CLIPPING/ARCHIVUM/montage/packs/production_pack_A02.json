@@ -1,10 +1,10 @@
 {
-  "pack_id": "pur-A02",
-  "generated_at": "2026-09-09T02:51:16Z",
+  "pack_id": "LIVE_JOE_BARTOLOZZI_20260910-A02",
+  "generated_at": "2026-09-10T21:21:29Z",
   "mode": "pur",
   "asset_mode": "overlay_only",
   "identite": {
-    "campaign_id": "pur",
+    "campaign_id": "LIVE_JOE_BARTOLOZZI_20260910",
     "angle_id": "A02",
     "pack_index": 2,
     "pack_total": 3
@@ -14,12 +14,12 @@
     "target_market": "us_young_english"
   },
   "source": {
-    "vod_url": "https://www.twitch.tv/videos/2864600351",
-    "start_sec": 819.23,
-    "end_sec": 849.23,
-    "duration_sec": 30.0,
-    "signal_type": "punchline",
-    "signal_intensity": 0.9,
+    "vod_url": "https://www.twitch.tv/videos/2869752708",
+    "start_sec": 4634.0,
+    "end_sec": 4678.0,
+    "duration_sec": 44.0,
+    "signal_type": "chat_spike",
+    "signal_intensity": 0.6,
     "source_permission": "campaign_provided"
   },
   "copywriting": {
@@ -29,21 +29,21 @@
   },
   "montage_instructions": {
     "metadata": {
-      "generated_at": "2026-09-09T02:51:16Z",
+      "generated_at": "2026-09-10T21:21:29Z",
       "generator": "F06_DIRECTOR",
       "version": "2.0.0-viral",
       "doctrine_source": "ARCHIVUM/montage/patterns/",
-      "campaign_id": "pur",
+      "campaign_id": "LIVE_JOE_BARTOLOZZI_20260910",
       "angle_id": "A02",
-      "segment_id": "5739554e54"
+      "segment_id": "66a7253f00"
     },
     "segment": {
-      "source_url": "https://www.twitch.tv/videos/2864600351",
-      "start_sec": 819.23,
-      "end_sec": 849.23,
-      "duration_sec": 30.0,
-      "signal_type": "punchline",
-      "signal_intensity": 0.9,
+      "source_url": "https://www.twitch.tv/videos/2869752708",
+      "start_sec": 4634.0,
+      "end_sec": 4678.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.6,
       "emotion": "shock"
     },
     "hook": {
@@ -56,62 +56,125 @@
       }
     },
     "body": {
-      "duration_sec": 27.0,
+      "duration_sec": 41.0,
       "cuts": [
         {
-          "type": "idea_cut",
-          "moment_sec": 1.92,
-          "word_anchor": "you",
-          "technique": "couper quand le speaker change d'idee"
-        },
-        {
           "type": "breath_cut",
-          "moment_sec": 5.18,
-          "word_anchor": "appreciate",
+          "moment_sec": 0.0,
           "technique": "couper exactement sur la respiration du speaker"
         },
         {
           "type": "breath_cut",
-          "moment_sec": 13.78,
-          "word_anchor": "funny",
+          "moment_sec": 3.0,
           "technique": "couper exactement sur la respiration du speaker"
         },
         {
           "type": "breath_cut",
-          "moment_sec": 20.17,
-          "word_anchor": "this",
+          "moment_sec": 6.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 9.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 12.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 15.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 18.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 21.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 24.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 27.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 30.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 33.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 36.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 39.0,
+          "technique": "couper exactement sur la respiration du speaker"
+        },
+        {
+          "type": "breath_cut",
+          "moment_sec": 42.0,
           "technique": "couper exactement sur la respiration du speaker"
         },
         {
           "type": "smash_cut",
-          "moment_sec": 20.17,
-          "word_anchor": "this",
+          "moment_sec": 37.4,
           "technique": "cut brutal zero transition sur la punchline",
           "sfx_sync": "whoosh_fast/impact"
+        },
+        {
+          "type": "idea_cut",
+          "moment_sec": 22.0,
+          "technique": "couper quand le speaker change d'idee"
         }
       ],
       "zooms": [
         {
           "type": "brutal_impact",
+          "moment_sec": 13.2,
           "intensity_pct": "108-115%",
           "duration_in": "0.1s (2-3 frames a 30fps)",
           "duration_out": "0.1s (retour immediat)",
           "easing": "NONE",
           "target": "centre du visage du speaker",
-          "sfx_sync": "impact (50-60%) synchronise frame-exacte",
-          "moment_sec": 13.78,
-          "word_anchor": "funny"
+          "sfx_sync": "impact (50-60%) synchronise frame-exacte"
         },
         {
           "type": "snap_zoom",
+          "moment_sec": 26.4,
           "intensity_pct": "115-130%",
           "duration_in": "1 frame (instantane)",
           "duration_out": "fade 0.3s",
           "easing": "NONE",
           "target": "centre du visage du speaker",
-          "sfx_sync": "boom (60%) + flash blanc subtil (1-2 frames)",
-          "moment_sec": 20.17,
-          "word_anchor": "this"
+          "sfx_sync": "boom (60%) + flash blanc subtil (1-2 frames)"
+        },
+        {
+          "type": "snap_zoom",
+          "moment_sec": 39.6,
+          "intensity_pct": "115-130%",
+          "duration_in": "1 frame (instantane)",
+          "duration_out": "fade 0.3s",
+          "easing": "NONE",
+          "target": "centre du visage du speaker",
+          "sfx_sync": "boom (60%) + flash blanc subtil (1-2 frames)"
         }
       ],
       "text_overlays": {
@@ -131,28 +194,17 @@
         },
         "captions": {
           "source": "TRANSCRIPT du speech (word-by-word)",
-          "text_sample": "Wow,  thank  you  So  much,  I  appreciate  that  anonymous  Really  appreciate  Do  you  know  how,  when  Will  Andres  be  left?  Why  are  you  asking  me  When  Andres  is  gonna  be  left  today",
+          "text_sample": "chat, joe_bartolozzi, clip, moment, insane",
           "font": "Montserrat Bold / Poppins Bold (700)",
           "color": "blanc outline sombre",
           "highlight": "mots-cles en accent (jaune/vert)",
           "animation": "word_by_word"
         },
-        "safe_zones": {
-          "top": "10% (titre de la vidéo)",
-          "bottom": "15% (boutons like/comment/share)",
-          "right": "5% (bouton subscribe)",
-          "safe_area": "centre 70% de l'écran"
-        }
+        "safe_zones": {}
       },
       "audio": {
         "principle": "La voix du speaker est TOUJOURS prioritaire.",
-        "volume_hierarchy": {
-          "1_speaker_voice": "0dB (référence — toujours le plus fort)",
-          "2_captions_sync": "sync avec la voix",
-          "3_sfx_impact": "-6dB à -12dB sous la voix",
-          "4_music_bed": "-15dB à -20dB sous la voix",
-          "5_sfx_background": "-20dB à -25dB (presque inaudible)"
-        },
+        "volume_hierarchy": {},
         "sfx_events": [
           {
             "name": "whoosh",
@@ -188,19 +240,19 @@
           "energy": 100
         },
         {
-          "moment": "0:06",
+          "moment": "0:08",
           "energy": 70
         },
         {
-          "moment": "0:15",
+          "moment": "0:22",
           "energy": 90
         },
         {
-          "moment": "0:25",
+          "moment": "0:37",
           "energy": 100
         },
         {
-          "moment": "0:30",
+          "moment": "0:44",
           "energy": 60
         }
       ],
