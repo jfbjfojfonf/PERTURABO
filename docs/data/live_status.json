@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:16:25.338050",
+  "generated_at": "2026-09-10T23:19:25.345271",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 3565,
+  "seconds_remaining": 3385,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 25910,
-      "rate_10s": 11,
-      "baseline": 22.75,
+      "msgs_total": 26074,
+      "rate_10s": 14,
+      "baseline": 9.96,
       "clip_pressure": 0,
       "hot_words": [
-        "this",
-        "your",
-        "mrpigonline",
-        "proximity",
-        "it's"
+        "stalk",
+        "them",
+        "grab",
+        "makes",
+        "mods"
       ],
       "moments": 12,
       "last_moment_at": 1789082004.991487,
