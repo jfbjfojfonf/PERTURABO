@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:57:59.758821",
+  "generated_at": "2026-09-10T21:01:01.451494",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 11871,
+  "seconds_remaining": 11689,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 7847,
-      "rate_10s": 21,
-      "baseline": 17.43,
+      "msgs_total": 8322,
+      "rate_10s": 19,
+      "baseline": 22.39,
       "clip_pressure": 0,
       "hot_words": [
-        "watchtime",
-        "watching",
-        "joebartselfie",
-        "yeah",
-        "spent"
+        "counting",
+        "gang",
+        "violence",
+        "youtube",
+        "bratchat"
       ],
-      "moments": 3,
-      "last_moment_at": 1789073139.3079605,
-      "cooldown_until": 1789073259.3079605
+      "moments": 4,
+      "last_moment_at": 1789073896.050424,
+      "cooldown_until": 1789074016.050424
     }
   ],
   "counters": {
-    "moments": 3,
-    "helix_clips": 3,
+    "moments": 4,
+    "helix_clips": 4,
     "approved": 0,
-    "pending_warsmith": 3,
+    "pending_warsmith": 4,
     "rejected": 0
   },
   "gate_queue": [
@@ -85,6 +85,22 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789073139.31,
       "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "0af35a0173",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 5919.0,
+      "end_sec": 5963.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073896.05,
+      "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
@@ -161,6 +177,30 @@
         "clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
         "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789073896.05,
+      "start_epoch": 1789073886.05,
+      "end_epoch": 1789073926.05,
+      "rate": 56,
+      "baseline": 18.64,
+      "intensity": 1.0,
+      "hot_words": [
+        "watchtime",
+        "joebartselfie",
+        "just",
+        "watching",
+        "weird"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+        "url": "https://clips.twitch.tv/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX"
       }
     }
   ],
@@ -242,6 +282,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789073139.31
+    },
+    {
+      "candidate_id": "0af35a0173",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.0,
+      "clip_pressure": 0,
+      "hot_words": [
+        "watchtime",
+        "joebartselfie",
+        "just",
+        "watching",
+        "weird"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789073896.05
     }
   ],
   "clips": [
@@ -264,6 +330,13 @@
       "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
       "channel": "joe_bartolozzi",
       "detected_at": 1789073139.31,
+      "score": 6.35
+    },
+    {
+      "clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "url": "https://clips.twitch.tv/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073896.05,
       "score": 6.35
     }
   ],
