@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:46:29.460325",
+  "generated_at": "2026-09-10T23:49:31.490136",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 1761,
+  "seconds_remaining": 1579,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,62 +17,30 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 27923,
-      "rate_10s": 7,
-      "baseline": 7.3,
+      "msgs_total": 28123,
+      "rate_10s": 23,
+      "baseline": 8.82,
       "clip_pressure": 0,
       "hot_words": [
-        "good",
-        "killing",
-        "that",
         "game",
-        "whats"
+        "better",
+        "this",
+        "watchtime",
+        "what"
       ],
-      "moments": 14,
-      "last_moment_at": 1789083314.000893,
-      "cooldown_until": 1789083434.000893
+      "moments": 16,
+      "last_moment_at": 1789084171.0847557,
+      "cooldown_until": 1789084291.0847557
     }
   ],
   "counters": {
-    "moments": 14,
-    "helix_clips": 14,
+    "moments": 16,
+    "helix_clips": 16,
     "approved": 0,
-    "pending_warsmith": 14,
+    "pending_warsmith": 16,
     "rejected": 0
   },
   "gate_queue": [
-    {
-      "candidate_id": "fd06bcadbb",
-      "status": "pending_warsmith",
-      "score": 6.35,
-      "motif": "file d'attente Warsmith",
-      "start_sec": 5162.0,
-      "end_sec": 5206.0,
-      "duration_sec": 44.0,
-      "signal_type": "chat_spike",
-      "channel": "joe_bartolozzi",
-      "detected_at": 1789073139.31,
-      "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
-      "campaign_eligible": false,
-      "campaign_id": null,
-      "campaign_state": "technical_test"
-    },
-    {
-      "candidate_id": "0af35a0173",
-      "status": "pending_warsmith",
-      "score": 6.35,
-      "motif": "file d'attente Warsmith",
-      "start_sec": 5919.0,
-      "end_sec": 5963.0,
-      "duration_sec": 44.0,
-      "signal_type": "chat_spike",
-      "channel": "joe_bartolozzi",
-      "detected_at": 1789073896.05,
-      "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
-      "campaign_eligible": false,
-      "campaign_id": null,
-      "campaign_state": "technical_test"
-    },
     {
       "candidate_id": "ef83727a6f",
       "status": "pending_warsmith",
@@ -232,57 +200,41 @@
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "b6e19ff5d2",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 16026.0,
+      "end_sec": 16070.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084003.84,
+      "helix_clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "20d6e7c40f",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 16194.0,
+      "end_sec": 16238.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084171.08,
+      "helix_clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
     }
   ],
   "recent_moments": [
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789076442.17,
-      "start_epoch": 1789076432.17,
-      "end_epoch": 1789076472.17,
-      "rate": 66,
-      "baseline": 22.0,
-      "intensity": 1.0,
-      "hot_words": [
-        "that",
-        "need",
-        "earnedit",
-        "damn",
-        "should"
-      ],
-      "clip_pressure": 0,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ",
-        "url": "https://clips.twitch.tv/CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ"
-      }
-    },
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789077795.98,
-      "start_epoch": 1789077785.98,
-      "end_epoch": 1789077825.98,
-      "rate": 72,
-      "baseline": 23.9,
-      "intensity": 1.0,
-      "hot_words": [
-        "this",
-        "china",
-        "elon",
-        "brain",
-        "chinese"
-      ],
-      "clip_pressure": 1,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
-        "url": "https://clips.twitch.tv/FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17"
-      }
-    },
     {
       "channel": "joe_bartolozzi",
       "platform": "twitch",
@@ -426,61 +378,57 @@
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
         "url": "https://clips.twitch.tv/PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z"
       }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789084003.84,
+      "start_epoch": 1789083993.84,
+      "end_epoch": 1789084033.84,
+      "rate": 22,
+      "baseline": 7.15,
+      "intensity": 1.0,
+      "hot_words": [
+        "points",
+        "killing",
+        "special",
+        "targets",
+        "good"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+        "url": "https://clips.twitch.tv/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789084171.08,
+      "start_epoch": 1789084161.08,
+      "end_epoch": 1789084201.08,
+      "rate": 25,
+      "baseline": 8.3,
+      "intensity": 1.0,
+      "hot_words": [
+        "game",
+        "better",
+        "this",
+        "watchtime",
+        "what"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+        "url": "https://clips.twitch.tv/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM"
+      }
     }
   ],
   "recent_scored": [
-    {
-      "candidate_id": "ef83727a6f",
-      "final_score": 6.85,
-      "raw_scores": {
-        "hook_force": 7.5,
-        "emotion": 8.0,
-        "clarity": 6.5,
-        "quotability": 4.0,
-        "timing": 7.0,
-        "format_fit": 6.5
-      },
-      "signal_intensity": 0.51,
-      "spike_ratio": 3.04,
-      "clip_pressure": 0,
-      "hot_words": [
-        "lmaooo",
-        "karl",
-        "marx",
-        "last",
-        "words"
-      ],
-      "channel": "joe_bartolozzi",
-      "status": "pending_warsmith",
-      "campaign_eligible": false,
-      "detected_at": 1789074817.87
-    },
-    {
-      "candidate_id": "377d89c5d7",
-      "final_score": 6.88,
-      "raw_scores": {
-        "hook_force": 7.5,
-        "emotion": 6.0,
-        "clarity": 6.5,
-        "quotability": 7.5,
-        "timing": 7.0,
-        "format_fit": 6.5
-      },
-      "signal_intensity": 0.51,
-      "spike_ratio": 3.03,
-      "clip_pressure": 1,
-      "hot_words": [
-        "this",
-        "that",
-        "green",
-        "giant",
-        "like"
-      ],
-      "channel": "joe_bartolozzi",
-      "status": "pending_warsmith",
-      "campaign_eligible": false,
-      "detected_at": 1789076073.69
-    },
     {
       "candidate_id": "03f8968cdd",
       "final_score": 6.35,
@@ -688,6 +636,58 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789083314.0
+    },
+    {
+      "candidate_id": "b6e19ff5d2",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.08,
+      "clip_pressure": 0,
+      "hot_words": [
+        "points",
+        "killing",
+        "special",
+        "targets",
+        "good"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789084003.84
+    },
+    {
+      "candidate_id": "20d6e7c40f",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.01,
+      "clip_pressure": 0,
+      "hot_words": [
+        "game",
+        "better",
+        "this",
+        "watchtime",
+        "what"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789084171.08
     }
   ],
   "clips": [
@@ -788,6 +788,20 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789083314.0,
       "score": 6.85
+    },
+    {
+      "clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "url": "https://clips.twitch.tv/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084003.84,
+      "score": 6.35
+    },
+    {
+      "clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "url": "https://clips.twitch.tv/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084171.08,
+      "score": 6.35
     }
   ],
   "stream_started": {
