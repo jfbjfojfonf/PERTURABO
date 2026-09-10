@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:37:29.437404",
+  "generated_at": "2026-09-10T23:40:29.444780",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 2301,
+  "seconds_remaining": 2121,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 27480,
-      "rate_10s": 12,
-      "baseline": 12.48,
+      "msgs_total": 27655,
+      "rate_10s": 6,
+      "baseline": 10.82,
       "clip_pressure": 0,
       "hot_words": [
-        "night",
-        "game",
-        "them",
+        "free",
+        "just",
         "this",
-        "your"
+        "game",
+        "hello"
       ],
       "moments": 14,
       "last_moment_at": 1789083314.000893,
