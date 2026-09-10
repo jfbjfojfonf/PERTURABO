@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:52:24.149145",
+  "generated_at": "2026-09-10T22:55:24.156073",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 5007,
+  "seconds_remaining": 4827,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 24244,
-      "rate_10s": 9,
-      "baseline": 10.68,
+      "msgs_total": 24373,
+      "rate_10s": 11,
+      "baseline": 8.58,
       "clip_pressure": 0,
       "hot_words": [
-        "play",
         "this",
-        "have",
-        "friday",
-        "13th"
+        "that",
+        "same",
+        "chat",
+        "they"
       ],
       "moments": 11,
       "last_moment_at": 1789079928.6066225,
