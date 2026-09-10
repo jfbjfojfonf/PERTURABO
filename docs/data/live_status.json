@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T23:01:24.170517",
+  "generated_at": "2026-09-10T23:04:24.177670",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 4467,
+  "seconds_remaining": 4287,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 24704,
-      "rate_10s": 8,
-      "baseline": 9.11,
+      "msgs_total": 24882,
+      "rate_10s": 4,
+      "baseline": 9.3,
       "clip_pressure": 0,
       "hot_words": [
-        "youtube",
-        "been",
-        "with",
-        "lawn",
-        "dart"
+        "game",
+        "play",
+        "lock",
+        "they",
+        "shit"
       ],
       "moments": 11,
       "last_moment_at": 1789079928.6066225,
