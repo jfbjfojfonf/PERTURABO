@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:10:01.472932",
+  "generated_at": "2026-09-10T21:13:01.480484",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 11149,
+  "seconds_remaining": 10969,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 9931,
-      "rate_10s": 52,
-      "baseline": 31.9,
+      "msgs_total": 10244,
+      "rate_10s": 11,
+      "baseline": 21.21,
       "clip_pressure": 0,
       "hot_words": [
-        "that",
-        "said",
-        "milk",
-        "this",
-        "just"
+        "love",
+        "joei",
+        "what",
+        "last",
+        "polo"
       ],
       "moments": 4,
       "last_moment_at": 1789073896.050424,
