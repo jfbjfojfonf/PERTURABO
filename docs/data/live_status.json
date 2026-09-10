@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:51:59.744032",
+  "generated_at": "2026-09-10T20:54:59.751256",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 12231,
+  "seconds_remaining": 12051,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 7198,
-      "rate_10s": 13,
-      "baseline": 38.52,
+      "msgs_total": 7533,
+      "rate_10s": 21,
+      "baseline": 26.03,
       "clip_pressure": 0,
       "hot_words": [
-        "this",
-        "like",
-        "tent",
-        "joebartsnoot",
-        "doritoschip"
+        "joebartpumpkinhead",
+        "that",
+        "what",
+        "pulling",
+        "would"
       ],
       "moments": 3,
       "last_moment_at": 1789073139.3079605,
