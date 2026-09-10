@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:10:11.360420",
+  "generated_at": "2026-09-10T22:13:11.367653",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 7539,
+  "seconds_remaining": 7359,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 20058,
-      "rate_10s": 42,
-      "baseline": 27.28,
+      "msgs_total": 20598,
+      "rate_10s": 16,
+      "baseline": 28.86,
       "clip_pressure": 0,
       "hot_words": [
-        "would",
-        "this",
-        "video",
-        "chat",
-        "just"
+        "halloween",
+        "have",
+        "been",
+        "group",
+        "this"
       ],
       "moments": 8,
       "last_moment_at": 1789077795.9834118,
