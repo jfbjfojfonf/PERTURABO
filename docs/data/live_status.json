@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:34:03.594144",
+  "generated_at": "2026-09-10T21:37:04.164403",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 9707,
+  "seconds_remaining": 9527,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 14138,
-      "rate_10s": 20,
-      "baseline": 20.45,
+      "msgs_total": 14723,
+      "rate_10s": 12,
+      "baseline": 28.38,
       "clip_pressure": 0,
       "hot_words": [
-        "would",
         "that",
-        "immortal",
-        "want",
-        "immortality"
+        "what",
+        "this",
+        "still",
+        "from"
       ],
-      "moments": 5,
-      "last_moment_at": 1789074817.8687472,
-      "cooldown_until": 1789074937.8687472
+      "moments": 6,
+      "last_moment_at": 1789076073.6863713,
+      "cooldown_until": 1789076193.6863713
     }
   ],
   "counters": {
-    "moments": 5,
-    "helix_clips": 5,
+    "moments": 6,
+    "helix_clips": 6,
     "approved": 0,
-    "pending_warsmith": 5,
+    "pending_warsmith": 6,
     "rejected": 0
   },
   "gate_queue": [
@@ -117,6 +117,22 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789074817.87,
       "helix_clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "377d89c5d7",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 8096.0,
+      "end_sec": 8140.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076073.69,
+      "helix_clip_id": "AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
@@ -241,6 +257,30 @@
         "clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
         "url": "https://clips.twitch.tv/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789076073.69,
+      "start_epoch": 1789076063.69,
+      "end_epoch": 1789076103.69,
+      "rate": 62,
+      "baseline": 20.46,
+      "intensity": 1.0,
+      "hot_words": [
+        "this",
+        "that",
+        "green",
+        "giant",
+        "like"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+        "url": "https://clips.twitch.tv/AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY"
       }
     }
   ],
@@ -374,6 +414,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789074817.87
+    },
+    {
+      "candidate_id": "377d89c5d7",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.03,
+      "clip_pressure": 1,
+      "hot_words": [
+        "this",
+        "that",
+        "green",
+        "giant",
+        "like"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789076073.69
     }
   ],
   "clips": [
@@ -411,6 +477,13 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789074817.87,
       "score": 6.85
+    },
+    {
+      "clip_id": "AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+      "url": "https://clips.twitch.tv/AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076073.69,
+      "score": 6.88
     }
   ],
   "stream_started": {
