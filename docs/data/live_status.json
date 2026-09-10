@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:13:11.367653",
+  "generated_at": "2026-09-10T22:16:11.374483",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 7359,
+  "seconds_remaining": 7179,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 20598,
-      "rate_10s": 16,
-      "baseline": 28.86,
+      "msgs_total": 21200,
+      "rate_10s": 25,
+      "baseline": 32.72,
       "clip_pressure": 0,
       "hot_words": [
-        "halloween",
-        "have",
-        "been",
-        "group",
-        "this"
+        "joebartvibe",
+        "lacydrew",
+        "song",
+        "dinodance",
+        "pogchamp"
       ],
       "moments": 8,
       "last_moment_at": 1789077795.9834118,
