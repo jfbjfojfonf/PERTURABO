@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:39:57.306838",
+  "generated_at": "2026-09-10T20:42:57.313932",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 12953,
+  "seconds_remaining": 12773,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 5041,
-      "rate_10s": 35,
-      "baseline": 17.86,
+      "msgs_total": 5414,
+      "rate_10s": 25,
+      "baseline": 18.86,
       "clip_pressure": 0,
       "hot_words": [
-        "frankerz",
-        "kreygasm",
-        "bart",
-        "used",
-        "what"
+        "burning",
+        "bartolozzi",
+        "like",
+        "that",
+        "poop"
       ],
       "moments": 2,
       "last_moment_at": 1789072611.9629014,
