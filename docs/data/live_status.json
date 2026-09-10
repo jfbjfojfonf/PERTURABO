@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:54:59.751256",
+  "generated_at": "2026-09-10T20:57:59.758821",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 12051,
+  "seconds_remaining": 11871,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 7533,
+      "msgs_total": 7847,
       "rate_10s": 21,
-      "baseline": 26.03,
+      "baseline": 17.43,
       "clip_pressure": 0,
       "hot_words": [
-        "joebartpumpkinhead",
-        "that",
-        "what",
-        "pulling",
-        "would"
+        "watchtime",
+        "watching",
+        "joebartselfie",
+        "yeah",
+        "spent"
       ],
       "moments": 3,
       "last_moment_at": 1789073139.3079605,
