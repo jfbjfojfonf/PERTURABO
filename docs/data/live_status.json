@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:55:07.538014",
+  "generated_at": "2026-09-10T21:58:07.546001",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 8443,
+  "seconds_remaining": 8263,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 17788,
-      "rate_10s": 21,
-      "baseline": 21.17,
+      "msgs_total": 18104,
+      "rate_10s": 23,
+      "baseline": 18.62,
       "clip_pressure": 0,
       "hot_words": [
-        "this",
-        "eugenics",
-        "make",
-        "they",
-        "would"
+        "elon",
+        "fuck",
+        "about",
+        "would",
+        "them"
       ],
       "moments": 7,
       "last_moment_at": 1789076442.1722815,
