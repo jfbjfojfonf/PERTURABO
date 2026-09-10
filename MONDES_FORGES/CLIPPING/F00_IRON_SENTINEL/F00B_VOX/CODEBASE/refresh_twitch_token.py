@@ -95,6 +95,15 @@ def main():
     })
     if status != 200 or "access_token" not in payload:
         print(f"❌ Refresh échoué : {payload.get('error')} — {payload.get('detail', '')}")
+        # Fallback : le token statique est-il encore valide ?
+        if current:
+            info = validate(current)
+            if info:
+                print(f"⚠️ Refresh impossible — token statique encore valide "
+                      f"({info.get('expires_in')}s restantes). La session continue avec.")
+                sys.exit(0)
+            print("⚠️ Refresh impossible et token statique expiré —")
+            print("   la session peut quand même tourner en timestamps seuls (sans clip Helix).")
         sys.exit(1)
 
     new_token = payload["access_token"]

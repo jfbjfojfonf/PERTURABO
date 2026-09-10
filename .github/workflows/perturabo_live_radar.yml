@@ -56,7 +56,7 @@ jobs:
           TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
         run: |
           cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
-          python3 refresh_twitch_token.py
+          python3 refresh_twitch_token.py || echo "⚠️ Refresh non bloquant — la session continue (fallback token statique / timestamps seuls)."
 
       - name: Lancer la session LIVE VOX
         env:
