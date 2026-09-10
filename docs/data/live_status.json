@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T20:42:57.313932",
+  "generated_at": "2026-09-10T20:45:59.728595",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 12773,
+  "seconds_remaining": 12591,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 5414,
-      "rate_10s": 25,
-      "baseline": 18.86,
+      "msgs_total": 5857,
+      "rate_10s": 54,
+      "baseline": 21.46,
       "clip_pressure": 0,
       "hot_words": [
-        "burning",
-        "bartolozzi",
-        "like",
+        "would",
         "that",
-        "poop"
+        "yesss",
+        "cinema",
+        "yessss"
       ],
-      "moments": 2,
-      "last_moment_at": 1789072611.9629014,
-      "cooldown_until": 1789072731.9629014
+      "moments": 3,
+      "last_moment_at": 1789073139.3079605,
+      "cooldown_until": 1789073259.3079605
     }
   ],
   "counters": {
-    "moments": 2,
-    "helix_clips": 2,
+    "moments": 3,
+    "helix_clips": 3,
     "approved": 0,
-    "pending_warsmith": 2,
+    "pending_warsmith": 3,
     "rejected": 0
   },
   "gate_queue": [
@@ -69,6 +69,22 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789072611.96,
       "helix_clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "fd06bcadbb",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 5162.0,
+      "end_sec": 5206.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073139.31,
+      "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
@@ -121,6 +137,30 @@
         "clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
         "url": "https://clips.twitch.tv/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789073139.31,
+      "start_epoch": 1789073129.31,
+      "end_epoch": 1789073169.31,
+      "rate": 55,
+      "baseline": 18.14,
+      "intensity": 1.0,
+      "hot_words": [
+        "what",
+        "yesss",
+        "have",
+        "like",
+        "think"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+        "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C"
       }
     }
   ],
@@ -176,6 +216,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789072611.96
+    },
+    {
+      "candidate_id": "fd06bcadbb",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.03,
+      "clip_pressure": 0,
+      "hot_words": [
+        "what",
+        "yesss",
+        "have",
+        "like",
+        "think"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789073139.31
     }
   ],
   "clips": [
@@ -191,6 +257,13 @@
       "url": "https://clips.twitch.tv/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
       "channel": "joe_bartolozzi",
       "detected_at": 1789072611.96,
+      "score": 6.35
+    },
+    {
+      "clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073139.31,
       "score": 6.35
     }
   ],
