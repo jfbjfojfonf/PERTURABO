@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:19:03.557838",
+  "generated_at": "2026-09-10T21:22:03.564863",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 10607,
+  "seconds_remaining": 10427,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 11845,
-      "rate_10s": 22,
-      "baseline": 43.9,
+      "msgs_total": 12430,
+      "rate_10s": 65,
+      "baseline": 35.03,
       "clip_pressure": 0,
       "hot_words": [
-        "joebart5head",
-        "twitchconhype",
+        "cancer",
         "that",
-        "like",
-        "squid2"
+        "lets",
+        "weup",
+        "yeah"
       ],
       "moments": 5,
       "last_moment_at": 1789074817.8687472,
