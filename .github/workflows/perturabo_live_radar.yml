@@ -48,9 +48,19 @@ jobs:
           print("Session config :", cfg["twitch_channels"], cfg["session_duration_min"], "min")
           PY
 
+      - name: Rafraîchir le token Twitch (expire ~4h)
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          TWITCH_REFRESH_TOKEN: ${{ secrets.TWITCH_REFRESH_TOKEN }}
+          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+        run: |
+          cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+          python3 refresh_twitch_token.py
+
       - name: Lancer la session LIVE VOX
         env:
-          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+          TWITCH_TOKEN: ${{ env.TWITCH_TOKEN || secrets.TWITCH_TOKEN }}
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         run: |
           cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
@@ -59,15 +69,15 @@ jobs:
       - name: Publier le statut board + artefacts OUT
         if: always()
         run: |
-          mkdir -p BOARD_LIVE/data
+          mkdir -p docs/data
           if [ -f MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json ]; then
-            cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json BOARD_LIVE/data/
+            cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT/live_status.json docs/data/
           else
-            echo '{"error": "session terminee sans live_status (voir logs Actions)"}' > BOARD_LIVE/data/live_status.json
+            echo '{"error": "session terminee sans live_status (voir logs Actions)"}' > docs/data/live_status.json
           fi
           git config --global user.name "VOX-Radar"
           git config --global user.email "radar@perturabo.iron"
-          git add BOARD_LIVE/data/live_status.json
+          git add docs/data/live_status.json
           git commit -m "[v2-live] statut board — session ${{ github.event.inputs.channels }}" || echo "Rien à committer"
           git push origin v2-live || echo "Push statut ignoré"
 

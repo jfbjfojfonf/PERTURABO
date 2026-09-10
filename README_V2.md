@@ -26,9 +26,13 @@ Le pipeline de sortie (`candidats` → `scoring` → `gate` → `trail.json`) pr
 1. **Branche `v2-live`** = copie exacte de `main` (base `8ee8c8b`). Seule divergence : la couche live de VOX.
 2. **Radar sur GitHub Actions** — `workflow_dispatch`, multi-chaînes (un IRC par chaîne), 6h max par job, gratuit.
 3. **Oracle en cron 5 min** — détecte les lives via Helix, ouvre une issue `[ORACLE][chaîne]`, le Warsmith valide, le radar se lève.
+   ⚠️ **Piège GitHub** : un cron ne tourne QUE sur la branche par défaut du repo.
+   Pour que l'Oracle se réveille tout seul, `v2-live` doit être la branche par défaut
+   (Settings → Branches → switch default branch — ça ne touche pas à `main`, c'est
+   réversible). Sinon : lancer l'Oracle à la main (Run workflow) quand tu veux vérifier.
 4. **Gate hybride** — score ≥ 8.5 + intensité ≥ 0.9 → auto-approuvé (le live n'attend pas) ; le reste en file d'attente Warsmith.
 5. **Clips Helix en direct** — capture serveur immédiate au moment détecté (secrets `TWITCH_TOKEN` + `TWITCH_CLIENT_ID`) ; sans token : timestamps seuls + segment VOD extrait après le live.
-6. **Board GitHub Pages** — `BOARD_LIVE/index.html` lit `data/live_status.json` (poussé par le radar toutes les 3 min). Consultable au téléphone.
+6. **Board GitHub Pages** — `docs/index.html` lit `data/live_status.json` (poussé par le radar toutes les 3 min). Consultable au téléphone. Pages sert le dossier `/docs` de la branche `v2-live`.
 7. **Le Warsmith reste le dernier contrôle humain** — la machine produit, l'humain publie.
 
 ---
@@ -60,11 +64,19 @@ Le pipeline de sortie (`candidats` → `scoring` → `gate` → `trail.json`) pr
       version indépendante, on ne dépend d'eux pour rien).
 - [ ] **Les campagnes actives** : quelles chaînes sont autorisées cette semaine ?
       Mettre à jour `IN/live_input.example.json` + `IN/oracle_input.example.json`.
-- [ ] **Secrets GH présents** : `TWITCH_TOKEN`, `TWITCH_CLIENT_ID` (Settings → Secrets).
+- [ ] **Les 4 secrets GH présents et valides** (Settings → Secrets → Actions) :
+      `TWITCH_CLIENT_ID` (fixe), `TWITCH_CLIENT_SECRET` (fixe), `TWITCH_REFRESH_TOKEN`
+      (longue durée) et `TWITCH_TOKEN`. Les workflows **rafraîchissent le token tout
+      seuls à chaque run** (`refresh_twitch_token.py`) : plus besoin d'y toucher, SAUF si
+      l'Oracle/le radar loggent « Refresh échoué » → alors seulement régénérer le token
+      via twitchtokengenerator.com (avec notre client ID/secret) et remettre à jour
+      `TWITCH_TOKEN` + `TWITCH_REFRESH_TOKEN`.
 - [ ] **Pages actives** : le board répond sur `https://kioka8877-ux.github.io/PERTURABO/` ?
-- [ ] **Fusion v2 → main ?** Si le radar a fait ses preuves sur plusieurs sessions :
-      refusionner `chat_pulse` dans `main` comme lib optionnelle (elle ne casse rien :
-      c'est juste un producteur de signaux en plus). La branche peut alors dormir.
+      (Settings → Pages → source = branche `v2-live`, dossier `/docs`)
+- [ ] **PAS de fusion v2 → main.** Décision du Warsmith : `main` reste la forge VOD
+      (elle est déjà pleine). `v2-live` vit sa vie sur sa propre branche. Si un jour le
+      radar fait ses preuves, on peut *copier* `chat_pulse` dans `main` comme lib
+      optionnelle — jamais de merge de branches.
 
 ---
 
@@ -78,9 +90,11 @@ Le radar **n'écoute que les chaînes autorisées par les campagnes actives**
 
 ## 🧱 Ce qu'il reste avant le premier vrai live
 
-1. Secrets GH : `TWITCH_TOKEN` (scope `clips:edit`) + `TWITCH_CLIENT_ID` — sans eux le radar
-   fonctionne en timestamps seuls (pas de clip serveur immédiat).
-2. Activer GitHub Pages (Settings → Pages → branch `v2-live`, dossier `BOARD_LIVE` ou `/`).
+1. Secrets GH : les 4 (`TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET`, `TWITCH_REFRESH_TOKEN`,
+   `TWITCH_TOKEN` scope `clips:edit`) — sans eux le radar fonctionne en timestamps seuls
+   (pas de clip serveur immédiat). Le token user vit ~4 h : le refresh est automatique
+   au début de chaque run (`refresh_twitch_token.py`).
+2. Activer GitHub Pages (Settings → Pages → branch `v2-live`, dossier `/docs`).
 3. Une session de test sur un live réel pour calibrer `min_rate` / `spike_factor`
    (une grande chaîne ≠ une petite : la baseline EMA s'adapte, mais les seuils se peaufinent).
 

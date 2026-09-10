@@ -18,9 +18,18 @@ le reste attend ta validation. À la fin, `trail.json` alimente F04/F06 comme en
 
 | Quoi | Où | Sans ça |
 |---|---|---|
-| `TWITCH_TOKEN` (scope `clips:edit`) | Secrets GitHub | Pas de clip serveur immédiat (timestamps seuls) |
-| `TWITCH_CLIENT_ID` | Secrets GitHub | idem |
-| GitHub Pages activé (branche `v2-live`) | Settings → Pages | Board inaccessible (le radar tourne quand même) |
+| `TWITCH_CLIENT_ID` + `TWITCH_CLIENT_SECRET` | Secrets GitHub | Refresh du token impossible |
+| `TWITCH_REFRESH_TOKEN` (longue durée) | Secrets GitHub | idem |
+| `TWITCH_TOKEN` (scope `clips:edit`, vit ~4 h) | Secrets GitHub | Pas de clip serveur immédiat (timestamps seuls) |
+| GitHub Pages activé (branche `v2-live`, dossier `/docs`) | Settings → Pages | Board inaccessible (le radar tourne quand même) |
+
+> **Le token vit ~4 h — et alors ?** Chaque workflow commence par
+> `refresh_twitch_token.py` : il échange le refresh token contre un token frais
+> (via client ID + secret) avant tout appel Twitch. Zéro maintenance au quotidien.
+> Si un jour les logs disent « Refresh échoué » : régénérer sur
+> twitchtokengenerator.com (avec notre client ID/secret, redirection
+> `https://twitchtokengenerator.com/oauth/callback`) et remettre à jour
+> `TWITCH_TOKEN` + `TWITCH_REFRESH_TOKEN`.
 
 ## 3. Le flow d'une session
 
@@ -58,8 +67,8 @@ cp IN/live_input.example.json IN/live_input.json   # éditer les chaînes
 cd CODEBASE && python3 f00b_vox_live.py
 ```
 
-Pendant la session : le statut est poussé sur `BOARD_LIVE/data/live_status.json`
-toutes les 3 min → le board (`index.html`) se rafraîchit depuis ton téléphone.
+Pendant la session : le statut est poussé sur `docs/data/live_status.json`
+toutes les 3 min → le board (`https://kioka8877-ux.github.io/PERTURABO/`) se rafraîchit depuis ton téléphone.
 
 ## 5. Valider la file d'attente Warsmith
 
@@ -99,7 +108,7 @@ Rien à apprendre : c'est le pipeline VOD, avec des candidats tout frais.
 - [ ] La chaîne est-elle autorisée par une campagne active ?
 - [ ] Secrets `TWITCH_TOKEN`/`TWITCH_CLIENT_ID` présents ?
 - [ ] `duration_min` ≤ 330 ?
-- [ ] Board accessible (ou artefacts Actions en secours) ?
+- [ ] Board accessible sur https://kioka8877-ux.github.io/PERTURABO/ (ou artefacts Actions en secours) ?
 - [ ] Après session : file validée → `trail` → F04/F06 → EXPORT → gate → bras armé.
 
 ---

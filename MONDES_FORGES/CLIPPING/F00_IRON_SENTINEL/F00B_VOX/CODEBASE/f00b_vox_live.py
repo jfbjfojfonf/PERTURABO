@@ -16,7 +16,7 @@ Flow d'une session :
            * score >= auto_score_min ET intensité >= auto_intensity_min
              → auto-approuvé (le live n'attend pas)
            * sinon → file d'attente Warsmith (validable depuis le téléphone)
-  4. Écriture continue de OUT/live_status.json (le BOARD_LIVE le lit)
+  4. Écriture continue de OUT/live_status.json (le board docs/index.html le lit)
   5. Fin de session : candidats_live.json + scoring_live.json + trail.json
      (même schéma que le mode VOD → F04/F06 ne voient AUCUNE différence)
 
@@ -243,11 +243,12 @@ def run_session(cfg):
     except KeyboardInterrupt:
         log_line("🛑 Interrompu — flush final")
     finally:
+        # Snapshot AVANT l'arrêt du radar : sinon connected=false dans le statut final
+        write_status(channels, radar, moments_all, verdicts_all, clips_all,
+                     deadline, stream_started, final=True)
         radar.stop()
         write_outputs(cfg, moments_all, candidats_live, scored_all, verdicts_all,
                       clips_all, channels, radar, final=True)
-        write_status(channels, radar, moments_all, verdicts_all, clips_all,
-                     deadline, stream_started, final=True)
         log_line(f"═══ Session terminée : {len(moments_all)} moments, "
                  f"{len(clips_all)} clips Helix, "
                  f"{sum(1 for v in verdicts_all if v['status'] == 'approved')} auto-approuvés ═══")

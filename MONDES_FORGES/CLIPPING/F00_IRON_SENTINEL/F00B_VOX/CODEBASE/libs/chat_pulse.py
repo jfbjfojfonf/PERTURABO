@@ -67,7 +67,8 @@ class ChannelMonitor(threading.Thread):
     # ── Connexion IRC ────────────────────────────────────────────────────────
     def _connect(self):
         raw = socket.create_connection((IRC_HOST, IRC_PORT), timeout=15)
-        sock = ssl.create_default_context().wrap_socket(raw)
+        ctx = ssl.create_default_context()
+        sock = ctx.wrap_socket(raw, server_hostname=IRC_HOST)
         nick = f"justinfan{int(time.time()) % 100000}"
         sock.sendall(f"NICK {nick}\r\n".encode())
         sock.sendall(f"JOIN #{self.channel}\r\n".encode())

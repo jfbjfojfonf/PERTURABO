@@ -38,11 +38,21 @@ jobs:
           cp MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/oracle_input.example.json \
              MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/oracle_input.json
 
+      - name: Rafraîchir le token Twitch (expire ~4h)
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          TWITCH_REFRESH_TOKEN: ${{ secrets.TWITCH_REFRESH_TOKEN }}
+          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+        run: |
+          cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+          python3 refresh_twitch_token.py
+
       - name: Exécuter l'Oracle
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-          TWITCH_TOKEN: ${{ secrets.TWITCH_TOKEN }}
+          TWITCH_TOKEN: ${{ env.TWITCH_TOKEN || secrets.TWITCH_TOKEN }}
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         run: |
           cd MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
