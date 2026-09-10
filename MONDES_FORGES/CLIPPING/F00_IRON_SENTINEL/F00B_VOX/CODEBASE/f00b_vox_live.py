@@ -215,7 +215,7 @@ def run_session(cfg):
             # Statut pour le board (toutes les N secondes)
             if now - last_status >= status_every:
                 write_status(channels, radar, moments_all, verdicts_all, clips_all,
-                             deadline, stream_started, cfg=cfg)
+                             deadline, stream_started, scored=scored_all, cfg=cfg)
                 last_status = now
 
             # Moments détectés (bloque 5s max)
@@ -285,7 +285,7 @@ def run_session(cfg):
     finally:
         # Snapshot AVANT l'arrêt du radar : sinon connected=false dans le statut final
         write_status(channels, radar, moments_all, verdicts_all, clips_all,
-                     deadline, stream_started, final=True, cfg=cfg)
+                     deadline, stream_started, scored=scored_all, final=True, cfg=cfg)
         radar.stop()
         write_outputs(cfg, moments_all, candidats_live, scored_all, verdicts_all,
                       clips_all, channels, radar, final=True)
@@ -541,7 +541,7 @@ def write_outputs(cfg, moments, candidats, scored_all, verdicts, clips,
 
 
 def write_status(channels, radar, moments, verdicts, clips, deadline,
-                 stream_started, final=False, cfg=None):
+                 stream_started, scored=(), final=False, cfg=None):
     save_json(OUT_DIR / "live_status.json", {
         "generated_at": datetime.now().isoformat(),
         "mode": "v2-live",
@@ -558,7 +558,7 @@ def write_status(channels, radar, moments, verdicts, clips, deadline,
         },
         "gate_queue": [v for v in verdicts if v["status"] == "pending_warsmith"][-12:],
         "recent_moments": moments[-8:],
-        "recent_scored": _recent_scored(scored_all, verdicts),
+        "recent_scored": _recent_scored(list(scored), verdicts),
         "clips": [
             {"clip_id": c["clip"].get("clip_id"), "url": c["clip"].get("url"),
              "channel": c["moment"]["channel"], "detected_at": c["moment"].get("detected_at"),
