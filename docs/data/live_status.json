@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:16:11.374483",
+  "generated_at": "2026-09-10T22:19:15.687700",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 7179,
+  "seconds_remaining": 6995,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 21200,
-      "rate_10s": 25,
-      "baseline": 32.72,
+      "msgs_total": 21724,
+      "rate_10s": 26,
+      "baseline": 32.55,
       "clip_pressure": 0,
       "hot_words": [
-        "joebartvibe",
-        "lacydrew",
-        "song",
-        "dinodance",
-        "pogchamp"
+        "kirk",
+        "chat",
+        "zawuji",
+        "with",
+        "this"
       ],
-      "moments": 8,
-      "last_moment_at": 1789077795.9834118,
-      "cooldown_until": 1789077915.9834118
+      "moments": 9,
+      "last_moment_at": 1789078685.2440422,
+      "cooldown_until": 1789078805.2440422
     }
   ],
   "counters": {
-    "moments": 8,
-    "helix_clips": 8,
+    "moments": 9,
+    "helix_clips": 9,
     "approved": 0,
-    "pending_warsmith": 8,
+    "pending_warsmith": 9,
     "rejected": 0
   },
   "gate_queue": [
@@ -168,33 +168,25 @@
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "99f9b64752",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 10708.0,
+      "end_sec": 10752.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789078685.24,
+      "helix_clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
     }
   ],
   "recent_moments": [
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789071704.29,
-      "start_epoch": 1789071694.29,
-      "end_epoch": 1789071734.29,
-      "rate": 145,
-      "baseline": 48.17,
-      "intensity": 1.0,
-      "hot_words": [
-        "wwww",
-        "wwwwwww",
-        "dono",
-        "holy",
-        "wwwww"
-      ],
-      "clip_pressure": 0,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
-        "url": "https://clips.twitch.tv/AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5"
-      }
-    },
     {
       "channel": "joe_bartolozzi",
       "platform": "twitch",
@@ -361,6 +353,30 @@
         "clip_id": "FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
         "url": "https://clips.twitch.tv/FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789078685.24,
+      "start_epoch": 1789078675.24,
+      "end_epoch": 1789078715.24,
+      "rate": 93,
+      "baseline": 30.72,
+      "intensity": 1.0,
+      "hot_words": [
+        "kirkmas",
+        "kirkaversary",
+        "kirk",
+        "merry",
+        "kirkiversary"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+        "url": "https://clips.twitch.tv/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-"
       }
     }
   ],
@@ -572,6 +588,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789077795.98
+    },
+    {
+      "candidate_id": "99f9b64752",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.03,
+      "clip_pressure": 0,
+      "hot_words": [
+        "kirkmas",
+        "kirkaversary",
+        "kirk",
+        "merry",
+        "kirkiversary"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789078685.24
     }
   ],
   "clips": [
@@ -630,6 +672,13 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789077795.98,
       "score": 6.88
+    },
+    {
+      "clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "url": "https://clips.twitch.tv/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789078685.24,
+      "score": 6.35
     }
   ],
   "stream_started": {
