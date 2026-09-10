@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:34:15.724825",
+  "generated_at": "2026-09-10T22:37:20.520622",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 6095,
+  "seconds_remaining": 5910,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 22782,
-      "rate_10s": 12,
-      "baseline": 6.62,
+      "msgs_total": 23038,
+      "rate_10s": 21,
+      "baseline": 10.7,
       "clip_pressure": 0,
       "hot_words": [
-        "slow",
-        "joebartpumpkinhead",
+        "lmao",
         "just",
-        "chat",
-        "this"
+        "game",
+        "play",
+        "afsp"
       ],
-      "moments": 9,
-      "last_moment_at": 1789078685.2440422,
-      "cooldown_until": 1789078805.2440422
+      "moments": 10,
+      "last_moment_at": 1789079799.8628767,
+      "cooldown_until": 1789079919.8628767
     }
   ],
   "counters": {
-    "moments": 9,
-    "helix_clips": 9,
+    "moments": 10,
+    "helix_clips": 10,
     "approved": 0,
-    "pending_warsmith": 9,
+    "pending_warsmith": 10,
     "rejected": 0
   },
   "gate_queue": [
@@ -184,33 +184,25 @@
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "82c47b2850",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 11822.0,
+      "end_sec": 11866.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079799.86,
+      "helix_clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
     }
   ],
   "recent_moments": [
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789072611.96,
-      "start_epoch": 1789072601.96,
-      "end_epoch": 1789072641.96,
-      "rate": 60,
-      "baseline": 19.96,
-      "intensity": 1.0,
-      "hot_words": [
-        "gift",
-        "idea",
-        "this",
-        "crypto",
-        "chopkuscream"
-      ],
-      "clip_pressure": 0,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
-        "url": "https://clips.twitch.tv/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k"
-      }
-    },
     {
       "channel": "joe_bartolozzi",
       "platform": "twitch",
@@ -377,6 +369,30 @@
         "clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
         "url": "https://clips.twitch.tv/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789079799.86,
+      "start_epoch": 1789079789.86,
+      "end_epoch": 1789079829.86,
+      "rate": 25,
+      "baseline": 8.33,
+      "intensity": 1.0,
+      "hot_words": [
+        "want",
+        "been",
+        "stream",
+        "that",
+        "beat"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+        "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV"
       }
     }
   ],
@@ -614,6 +630,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789078685.24
+    },
+    {
+      "candidate_id": "82c47b2850",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.0,
+      "clip_pressure": 1,
+      "hot_words": [
+        "want",
+        "been",
+        "stream",
+        "that",
+        "beat"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789079799.86
     }
   ],
   "clips": [
@@ -679,6 +721,13 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789078685.24,
       "score": 6.35
+    },
+    {
+      "clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079799.86,
+      "score": 6.88
     }
   ],
   "stream_started": {
