@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:37:20.520622",
+  "generated_at": "2026-09-10T22:40:24.120649",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 5910,
+  "seconds_remaining": 5727,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 23038,
-      "rate_10s": 21,
-      "baseline": 10.7,
+      "msgs_total": 23413,
+      "rate_10s": 10,
+      "baseline": 18.57,
       "clip_pressure": 0,
       "hot_words": [
-        "lmao",
-        "just",
-        "game",
-        "play",
-        "afsp"
+        "arrest",
+        "bratchat",
+        "what",
+        "heyguys",
+        "that"
       ],
-      "moments": 10,
-      "last_moment_at": 1789079799.8628767,
-      "cooldown_until": 1789079919.8628767
+      "moments": 11,
+      "last_moment_at": 1789079928.6066225,
+      "cooldown_until": 1789080048.6066225
     }
   ],
   "counters": {
-    "moments": 10,
-    "helix_clips": 10,
+    "moments": 11,
+    "helix_clips": 11,
     "approved": 0,
-    "pending_warsmith": 10,
+    "pending_warsmith": 11,
     "rejected": 0
   },
   "gate_queue": [
@@ -200,33 +200,25 @@
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "4d09bbdb79",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 11951.0,
+      "end_sec": 11995.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079928.61,
+      "helix_clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
     }
   ],
   "recent_moments": [
-    {
-      "channel": "joe_bartolozzi",
-      "platform": "twitch",
-      "detected_at": 1789073139.31,
-      "start_epoch": 1789073129.31,
-      "end_epoch": 1789073169.31,
-      "rate": 55,
-      "baseline": 18.14,
-      "intensity": 1.0,
-      "hot_words": [
-        "what",
-        "yesss",
-        "have",
-        "like",
-        "think"
-      ],
-      "clip_pressure": 0,
-      "trigger": "chat_spike",
-      "helix_clip": {
-        "clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
-        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
-        "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C"
-      }
-    },
     {
       "channel": "joe_bartolozzi",
       "platform": "twitch",
@@ -394,35 +386,33 @@
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
         "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV"
       }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789079928.61,
+      "start_epoch": 1789079918.61,
+      "end_epoch": 1789079958.61,
+      "rate": 39,
+      "baseline": 12.71,
+      "intensity": 1.0,
+      "hot_words": [
+        "arrest",
+        "save",
+        "game",
+        "libbyllol",
+        "them"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+        "url": "https://clips.twitch.tv/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI"
+      }
     }
   ],
   "recent_scored": [
-    {
-      "candidate_id": "8e12ad2d58",
-      "final_score": 7.22,
-      "raw_scores": {
-        "hook_force": 7.5,
-        "emotion": 9.5,
-        "clarity": 6.5,
-        "quotability": 4.0,
-        "timing": 7.0,
-        "format_fit": 6.5
-      },
-      "signal_intensity": 0.5,
-      "spike_ratio": 3.01,
-      "clip_pressure": 0,
-      "hot_words": [
-        "wwww",
-        "wwwwwww",
-        "dono",
-        "holy",
-        "wwwww"
-      ],
-      "channel": "joe_bartolozzi",
-      "status": "pending_warsmith",
-      "campaign_eligible": false,
-      "detected_at": 1789071704.29
-    },
     {
       "candidate_id": "66a7253f00",
       "final_score": 6.35,
@@ -656,6 +646,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789079799.86
+    },
+    {
+      "candidate_id": "4d09bbdb79",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.07,
+      "clip_pressure": 1,
+      "hot_words": [
+        "arrest",
+        "save",
+        "game",
+        "libbyllol",
+        "them"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789079928.61
     }
   ],
   "clips": [
@@ -727,6 +743,13 @@
       "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
       "channel": "joe_bartolozzi",
       "detected_at": 1789079799.86,
+      "score": 6.88
+    },
+    {
+      "clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "url": "https://clips.twitch.tv/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079928.61,
       "score": 6.88
     }
   ],
