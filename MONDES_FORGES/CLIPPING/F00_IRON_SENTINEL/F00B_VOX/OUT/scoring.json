@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-09-10T21:10:01.472932",
+  "source": "live_session_34524673636",
+  "formula": "score = Σ(weight_i × criteria_i) + bonus - malus",
+  "weights": {
+    "hook_force": 0.25,
+    "emotion": 0.2,
+    "clarity": 0.15,
+    "quotability": 0.15,
+    "timing": 0.15,
+    "format_fit": 0.1
+  },
+  "total_scored": 4,
+  "total_accepted": 4,
+  "total_auto_rejected": 0,
+  "candidates": [
+    {
+      "candidate_id": "8e12ad2d58",
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 9.5,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "base_score": 7.22,
+      "bonuses": [],
+      "maluses": [],
+      "bonus_total": 0,
+      "malus_total": 0,
+      "final_score": 7.22,
+      "start_sec": 3727.0,
+      "end_sec": 3771.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.5,
+      "status": "scored",
+      "channel": "joe_bartolozzi",
+      "helix_clip_id": "AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5"
+    },
+    {
+      "candidate_id": "66a7253f00",
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "base_score": 6.35,
+      "bonuses": [],
+      "maluses": [],
+      "bonus_total": 0,
+      "malus_total": 0,
+      "final_score": 6.35,
+      "start_sec": 4634.0,
+      "end_sec": 4678.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.5,
+      "status": "scored",
+      "channel": "joe_bartolozzi",
+      "helix_clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k"
+    },
+    {
+      "candidate_id": "fd06bcadbb",
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "base_score": 6.35,
+      "bonuses": [],
+      "maluses": [],
+      "bonus_total": 0,
+      "malus_total": 0,
+      "final_score": 6.35,
+      "start_sec": 5162.0,
+      "end_sec": 5206.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.51,
+      "status": "scored",
+      "channel": "joe_bartolozzi",
+      "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C"
+    },
+    {
+      "candidate_id": "0af35a0173",
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "base_score": 6.35,
+      "bonuses": [],
+      "maluses": [],
+      "bonus_total": 0,
+      "malus_total": 0,
+      "final_score": 6.35,
+      "start_sec": 5919.0,
+      "end_sec": 5963.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.5,
+      "status": "scored",
+      "channel": "joe_bartolozzi",
+      "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX"
+    }
+  ]
+}

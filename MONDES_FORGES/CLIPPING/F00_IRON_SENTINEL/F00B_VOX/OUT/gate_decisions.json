@@ -1,0 +1,24 @@
+{
+  "decisions": [
+    {
+      "candidate_id": "8e12ad2d58",
+      "status": "approved",
+      "motif": "Warsmith (opérateur) : passage de chaîne F04→F06→F05 testé sur ce lot"
+    },
+    {
+      "candidate_id": "66a7253f00",
+      "status": "approved",
+      "motif": "Warsmith (opérateur) : passage de chaîne F04→F06→F05 testé sur ce lot"
+    },
+    {
+      "candidate_id": "fd06bcadbb",
+      "status": "approved",
+      "motif": "Warsmith (opérateur) : passage de chaîne F04→F06→F05 testé sur ce lot"
+    },
+    {
+      "candidate_id": "0af35a0173",
+      "status": "approved",
+      "motif": "Warsmith (opérateur) : passage de chaîne F04→F06→F05 testé sur ce lot"
+    }
+  ]
+}
