@@ -114,9 +114,25 @@ réponses d'erreur dans les logs → la session #4 dira la vraie raison. Suspici
 rate limit temporaire, app trop récente (quota restreint), ou quota du compte. Un 500
 sur `/helix/clips` est souvent temporaire. Le paramètre `has_delay=false` suit la doc.
 
-> **Scoring live — limite connue** : le score actuel repose sur le signal chat seul →
-> tous les pics sortent au même profil (~9.88). Calibration prévue : scorer chaque pic
-> d'après sa vraie force (ratio rate/baseline, clip_pressure, hot words, durée du pic).
+> **Scoring live — calibré depuis le 2026-09-10** : chaque critère VOX est alimenté
+> par la force réelle du pic (ratio rate/baseline, hystérie du chat, clip_pressure,
+> durée). Les pics faibles ne passent plus l'auto-approbation → file Warsmith.
+> Le détail des 6 critères est visible en direct sur le board (Scoreur).
+
+## 7ter. La Salle de Contrôle du Siège (board)
+
+Le board (`docs/index.html`, servi par Pages) affiche en temps quasi-réel :
+
+| Panneau | Ce que tu y lis |
+|---|---|
+| 🗺 Carte du siège | un secteur par chaîne, muraille pulsante en or = chat en feu |
+| 🎯 Scoreur en direct | chaque obus scoré : jauge 0→10, détail des critères, tampon |
+| 📜 Manifeste des clips | clips Helix captés, lien cliable immédiat |
+| 🚪 Ordres en attente | la file Warsmith — à valider depuis le téléphone |
+| 📡 Télémétrie | lampes connecté/hors-ligne, msg/s, ×baseline |
+
+Rafraîchissement : le radar pousse le statut toutes les 3 min, le board se recharge
+toutes les 60 s (propagation Pages ~1-2 min). Session terminée = horloge « levé ».
 
 ## 8. Checklist rapide avant chaque session
 

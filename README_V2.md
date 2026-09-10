@@ -104,10 +104,13 @@ Le radar **n'écoute que les chaînes autorisées par les campagnes actives**
    Twitch (`HTTP 500`). Le clipper expose maintenant le corps des réponses d'erreur —
    la prochaine session dira la vraie raison (suspicions : rate limit / app en trop jeune
    / quota). Le pipeline lui-même est prouvé : 10 moments → 10 scorings → 10 approvals.
-5. **Calibration du scoring live (à venir).** En live, le score actuel repose sur le
-   signal chat seul → tous les pics sortent à ~9.88, sans discrimination. Plan : scorer
-   chaque pic d'après SA vraie force (ratio rate/baseline, clip_pressure, hot words,
-   durée du pic) au lieu d'un profil fixe.
+5. ~~**Calibration du scoring live**~~ ✅ **FAIT (2026-09-10)** — `compute_score_live()` :
+   chaque critère VOX est alimenté par la force RÉELLE du pic (ratio rate/baseline,
+   hystérie des mots chauds, clip_pressure, durée) au lieu du profil fixe. Preuve sur
+   les 10 moments de la session #3 : écart 0.0 → **3.25** (9.75 pour ratio ×5.56,
+   6.5 pour les pics faibles). Effet voulu : seuls les gros pics passent l'auto-
+   approbation (8.5), les moyens partent en file Warsmith. Moteur VOD de main intact.
+   Chaque score est publié en direct sur le board (détail des 6 critères).
 6. ~~**Câbler les règles de campagne dans le radar live**~~ ✅ **FAIT (2026-09-10)** —
    Garde de Fer en place : `ARCHIVUM/campaign/live_campaigns.json` (registry chaîne →
    campagne) + `libs/campaign_gate.py`. Au lancement, chaque chaîne est résolue
@@ -117,6 +120,26 @@ Le radar **n'écoute que les chaînes autorisées par les campagnes actives**
    technical_test / campaign). ⚠️ Le cycle Sofey étant expiré, toute session sur
    `aishahsofeyy` ressort pour l'instant `technical_test` — renouveler la directive Whop
    pour passer en campagne réelle.
+
+---
+
+## 🖥 La Salle de Contrôle du Siège (board v2)
+
+`docs/index.html` est désormais une salle de contrôle Iron Warriors (palette
+Boltgun Metal / Leadbelcher / Shining Gold / noir, bandes hazard, logo ⟨/⟩ SVG) :
+
+- **🗺 Carte du siège** — un secteur fortifié par chaîne (SVG), la muraille pulse
+  en or quand le chat s'enflamme (ratio ≥ 2.5)
+- **🎯 Scoreur en direct** — chaque obus scoré avec jauge or 0→10, détail des
+  6 critères (grâce au scoring calibré), tampon APPROUVÉ / EN FILE / REJETÉ
+- **📜 Manifeste des clips** — les pièces Helix captées avec lien cliable
+  immédiat, ou mention « timestamps seuls » si Helix indisponible
+- **🚪 Ordres en attente** — la file Warsmith à valider (depuis le téléphone)
+- **📡 Télémétrie** — lampes phosphore connecté/hors-ligne, ratio ×baseline
+- Horloge de siège, badge Garde de Fer, citation du maître du siège
+
+Données : le radar pousse `recent_scored` + `clips` dans `live_status.json` à
+chaque tick — le board se rafraîchit toutes les 60 s.
 
 ---
 

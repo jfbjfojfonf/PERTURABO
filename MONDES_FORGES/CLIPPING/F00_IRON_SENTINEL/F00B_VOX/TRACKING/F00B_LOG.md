@@ -234,3 +234,23 @@ Run workflow complet sur NOUVELLE VOD = validation finale de production. Le prem
 ### Reste
 - Session de calibration sur live réel (seuils radar par taille de chaîne).
 - Kick (Pusher public) : prévu v2.1 (champ `kick_channels` déjà en place, non actif).
+
+## 2026-09-10 — v2-live : scoring calibré + Salle de Contrôle + Garde de Fer
+
+**Statut** : ✅ Livré (commit miroir `df573fc`+ · PERTURABO `0b67aad8ff` → maj suivante).
+
+- **Garde de Fer** (`libs/campaign_gate.py` + `ARCHIVUM/campaign/live_campaigns.json`) :
+  résolution chaîne → campagne au lancement, sessions mixtes refusées, verdicts marqués
+  `campaign_eligible`/`campaign_id`/`campaign_state` (propagés artefacts + board).
+  Workflow : input `mode_override` (auto/technical_test/campaign).
+- **Scoring calibré** (`compute_score_live`) : critères alimentés par la force réelle
+  du pic (ratio rate/baseline, hystérie mots chauds, clip_pressure, durée). Profil fixe
+  ~9.88 supprimé — preuve session #3 : écart 0.0 → 3.25. Moteur VOD main intact.
+- **Fix** : `write_status()` recevait `cfg` sans paramètre (crash garanti session #4)
+  — signature corrigée, `cfg` passé aux 2 appels.
+- **Board « Salle de Contrôle du Siège »** (`docs/index.html`) : palette IW
+  (Boltgun/Leadbelcher/Shining Gold/noir + hazard), logo ⟨/⟩ SVG, carte du siège SVG
+  (muraille pulsante par pression chat), Scoreur en direct (jauge or + détail critères
+  + tampons), Manifeste des clips (liens Helix), file Warsmith, télémétrie lampes.
+- **Données board** : `live_status.json` publie désormais `recent_scored` (critères
+  détaillés) et `clips` (IDs/URLs Helix) à chaque tick ; refresh board 60 s.

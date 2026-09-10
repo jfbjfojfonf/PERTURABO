@@ -562,5 +562,29 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
 ### Reste (toujours ouvert)
 - `TWITCH_CLIENT_SECRET` invalide côté GH → refresh en échec depuis la session #2 (action opérateur).
 - Premier clip serveur Helix à conquérir (le 500 Twitch sera diagnostiqué à la session #4 grâce aux erreurs détaillées).
-- Calibration du scoring live : hiérarchiser les pics (ratio rate/baseline, clip_pressure) au lieu du profil fixe ~9.88.
 - Cycle Sofey expiré (07/31) → renouveler la directive Whop pour une session réelle.
+
+## Session 2026-09-10 (2) — Scoring calibré + Salle de Contrôle du Siège
+
+### Scoring live calibré (`compute_score_live`)
+- Fin du profil fixe ~9.88 : chaque critère VOX alimenté par la force réelle du pic
+  (ratio rate/baseline, hystérie des mots chauds www*/KEKW…, clip_pressure, durée).
+- Bonus/malus en miroir exact du moteur VOD (`vox.compute_score`) — main intact.
+- Intensité honnête : ratio ×6 → 1.0, ×3 → 0.5, ×1.5 → 0.25.
+- Preuve sur les 10 moments de la session #3 : écart 0.0 → 3.25 (9.75 à ×5.56,
+  6.5 pour les pics faibles). Seuls les gros pics passent l'auto-approbation 8.5.
+- Fix au passage : `write_status()` recevait `cfg` sans le déclarer ( aurait crashé
+  la session #4 au premier tick) — corrigé, `cfg` passé aux 2 appels.
+
+### Board « Salle de Contrôle du Siège » (`docs/index.html` réécrit)
+- Palette Iron Warriors : Boltgun Metal/Leadbelcher (aciers), Shining Gold/Nazdreg
+  (trim), noir (épaules), bandes hazard jaune/noir, logo ⟨/⟩ en SVG inline doré.
+- Panneaux : 🗺 Carte du siège (SVG, secteur par chaîne, muraille pulsante selon la
+  pression du chat) · 🎯 Scoreur en direct (jauge or 0→10, détail des 6 critères,
+  tampons APPROUVÉ/EN FILE/REJETÉ, marqueur NON SOUMISSIBLE) · 📜 Manifeste des
+  clips (liens Helix cliables / « timestamps seuls ») · 🚪 Ordres en attente (file
+  Warsmith) · 📡 Télémétrie (lampes phosphore, ×baseline).
+- Données : `live_status.json` publie désormais `recent_scored` (détail des critères)
+  et `clips` (IDs + URLs Helix) à chaque tick ; le board se recharge toutes les 60 s.
+- Validation : 15/15 vérifications statiques + rendu testé contre les données réelles
+  de la session #3 re-scored (1 auto-approuvé, 9 en file, 1 clip simulé).

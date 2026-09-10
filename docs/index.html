@@ -3,194 +3,504 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PERTURABO — Board Live v2</title>
+<title>PERTURABO — Salle de Contrôle du Siège</title>
 <style>
+  /* ═══════════ PERTURABO — SALLE DE CONTRÔLE DU SIÈGE ═══════════
+     Palette Iron Warriors :
+     Boltgun Metal #3a3f45 · Leadbelcher #6b7075 · Shining Gold #d4a017
+     Nazdreg Yellow #a67c00 · Noir épaules #0d0f11 · hazard jaune/noir  */
   :root {
-    --iron: #0d0f12;
-    --iron-light: #161a20;
-    --steel: #232a33;
-    --bronze: #c9a227;
-    --bronze-dim: #8a6d1a;
-    --text: #d8dce2;
-    --text-dim: #7d8590;
-    --green: #3fb950;
+    --boltgun: #3a3f45;
+    --leadbelcher: #6b7075;
+    --steel-dark: #23272c;
+    --steel-darkest: #17191d;
+    --gold: #d4a017;
+    --gold-dim: #a67c00;
+    --gold-bright: #f0c040;
+    --black-plate: #0d0f11;
+    --hazard: repeating-linear-gradient(45deg, #d4a017 0 14px, #0d0f11 14px 28px);
+    --text: #c9ced4;
+    --text-dim: #7d848c;
+    --green: #2ea043;
     --red: #f85149;
     --amber: #d29922;
+    --phosphor: #39d353;
+    --rivet: radial-gradient(circle at 30% 30%, #8a9099, #2a2e33 70%);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: var(--iron);
+    background:
+      linear-gradient(160deg, rgba(212,160,23,.04), transparent 30%),
+      linear-gradient(340deg, rgba(0,0,0,.5), transparent 40%),
+      var(--steel-dark);
     color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    padding: 16px;
-    max-width: 720px;
-    margin: 0 auto;
+    font-family: "Consolas", "JetBrains Mono", "Courier New", monospace;
+    min-height: 100vh;
+    padding-bottom: 40px;
   }
-  header { text-align: center; padding: 8px 0 16px; }
-  h1 { color: var(--bronze); font-size: 1.25rem; letter-spacing: 2px; }
-  .sub { color: var(--text-dim); font-size: .8rem; margin-top: 4px; }
-  .banner {
-    background: var(--iron-light);
-    border: 1px solid var(--steel);
-    border-left: 4px solid var(--bronze);
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: .82rem;
-    color: var(--text-dim);
-    margin-bottom: 14px;
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 14px; }
+
+  /* ─── En-tête « épaules » noires + hazard ─── */
+  header {
+    background: linear-gradient(180deg, #16181c, var(--black-plate));
+    border-bottom: 3px solid var(--gold-dim);
+    position: relative;
+    padding: 18px 0 14px;
   }
-  .banner b { color: var(--bronze); }
+  header::after {
+    content: ""; display: block; height: 8px; margin-top: 12px;
+    background: var(--hazard); opacity: .85;
+  }
+  .head-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .iw-logo { flex: 0 0 auto; filter: drop-shadow(0 0 6px rgba(212,160,23,.45)); }
+  h1 {
+    font-size: 1.35rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); text-shadow: 0 1px 0 #000;
+  }
+  .sub { color: var(--text-dim); font-size: .78rem; letter-spacing: 1px; margin-top: 3px; }
+  .sub b { color: var(--text); }
+  .head-right { margin-left: auto; text-align: right; }
+  .siege-clock {
+    font-size: 1.15rem; color: var(--gold-bright); font-weight: 700;
+    background: var(--steel-darkest); border: 1px solid var(--gold-dim);
+    padding: 6px 12px; border-radius: 4px; display: inline-block;
+  }
+  .siege-label { font-size: .7rem; color: var(--text-dim); letter-spacing: 2px; margin-top: 4px; }
+
+  /* ─── Badge campagne ─── */
+  .badge {
+    display: inline-block; padding: 7px 14px; border-radius: 4px;
+    font-weight: 700; font-size: .82rem; letter-spacing: 1px;
+  }
+  .badge-campaign { background: rgba(46,160,67,.14); color: var(--green); border: 1px solid var(--green); }
+  .badge-test { background: rgba(248,81,73,.12); color: var(--red); border: 1px solid var(--red); }
+  .camp-ch { font-size: .78rem; color: var(--text-dim); margin-top: 6px; }
+  #campaign-card { margin-top: 16px; }
+
+  /* ─── Cartes « plaques d'acier » rivetées ─── */
   .card {
-    background: var(--iron-light);
-    border: 1px solid var(--steel);
-    border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 12px;
+    background: linear-gradient(180deg, #3d434a, var(--boltgun));
+    border: 1px solid var(--leadbelcher);
+    border-top: 2px solid var(--gold-dim);
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 16px;
+    position: relative;
+    box-shadow: 0 4px 14px rgba(0,0,0,.45);
   }
+  .card::before, .card::after,
+  .card .rv-b::before, .card .rv-b::after {
+    content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--rivet); box-shadow: inset 0 -1px 2px rgba(0,0,0,.7);
+  }
+  .card::before { top: 7px; left: 7px; }
+  .card::after { top: 7px; right: 7px; }
+  .card .rv-b::before { bottom: 7px; left: 7px; }
+  .card .rv-b::after { bottom: 7px; right: 7px; }
+  .card.critique { border: 2px solid transparent; outline-offset: -2px; }
+  .card.critique { background:
+    linear-gradient(180deg, #3d434a, var(--boltgun)) padding-box,
+    var(--hazard) border-box; }
   .card h2 {
-    font-size: .75rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--bronze-dim);
-    margin-bottom: 10px;
+    font-size: .8rem; text-transform: uppercase; letter-spacing: 2.5px;
+    color: var(--gold-dim); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
   }
-  .status-line { display: flex; justify-content: space-between; padding: 6px 0; font-size: .88rem; }
-  .status-line .k { color: var(--text-dim); }
-  .num { font-weight: 700; font-size: 1.05rem; }
-  .n-moments { color: var(--bronze); }
+  .card h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold-dim), transparent); }
+
+  /* ─── Grille ─── */
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 16px; }
+  .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 0 16px; }
+  @media (max-width: 980px) { .grid, .grid-2 { grid-template-columns: 1fr; } }
+
+  /* ─── Compteurs ─── */
+  .counters { display: flex; gap: 10px; flex-wrap: wrap; }
+  .counter {
+    flex: 1 1 130px; background: var(--steel-darkest); border: 1px solid var(--steel-dark);
+    border-left: 3px solid var(--gold); padding: 10px 12px; border-radius: 4px;
+  }
+  .counter .n { font-size: 1.5rem; font-weight: 700; }
+  .counter .l { font-size: .68rem; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+  .n-moments { color: var(--gold-bright); }
   .n-approved { color: var(--green); }
   .n-pending { color: var(--amber); }
   .n-rejected { color: var(--red); }
   .n-clips { color: var(--text); }
-  .channel { padding: 8px 0; border-bottom: 1px solid var(--steel); font-size: .85rem; }
-  .channel:last-child { border-bottom: none; }
-  .ch-name { font-weight: 600; }
-  .ch-meta { color: var(--text-dim); font-size: .78rem; margin-top: 2px; }
-  .offline { color: var(--text-dim); font-style: italic; }
-  .queue-item { padding: 8px 10px; border: 1px solid var(--steel); border-radius: 6px; margin-bottom: 8px; font-size: .82rem; }
-  .queue-item .score { color: var(--amber); font-weight: 700; }
-  .queue-item .meta { color: var(--text-dim); font-size: .75rem; margin-top: 2px; }
-  .moment { padding: 6px 0; border-bottom: 1px dashed var(--steel); font-size: .8rem; }
-  .moment:last-child { border-bottom: none; }
-  .moment .words { color: var(--bronze); }
-  .empty { color: var(--text-dim); font-style: italic; font-size: .82rem; }
-  .updated { text-align: center; color: var(--text-dim); font-size: .72rem; margin: 10px 0 20px; }
-  .pct { color: var(--text-dim); font-size: .75rem; }
-  .badge { display: inline-block; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: .85rem; }
-  .badge-campaign { background: rgba(46,160,67,.15); color: var(--green); border: 1px solid var(--green); }
-  .badge-test { background: rgba(248,81,73,.12); color: var(--red); border: 1px solid var(--red); }
-  .camp-ch { font-size: .8rem; color: var(--text-dim); margin-top: 6px; }
+
+  /* ─── Carte du siège (SVG) ─── */
+  #siege-map svg { width: 100%; height: auto; display: block; background: var(--steel-darkest); border-radius: 4px; }
+  .sector-wall { fill: #2c3136; stroke: var(--leadbelcher); stroke-width: 2; }
+  .sector-hot { animation: pulse-hot 1.6s ease-in-out infinite; }
+  @keyframes pulse-hot { 0%,100% { stroke: var(--gold); } 50% { stroke: var(--gold-bright); stroke-width: 3.4; } }
+  .sector-label { fill: var(--text); font-size: 12px; font-family: inherit; font-weight: 700; }
+  .sector-meta { fill: var(--text-dim); font-size: 9.5px; font-family: inherit; }
+  .sector-flag { fill: var(--gold); font-size: 11px; font-family: inherit; }
+
+  /* ─── Scoreur en direct ─── */
+  .shot { display: flex; gap: 12px; padding: 10px 8px; border-bottom: 1px dashed #4a5058; align-items: stretch; }
+  .shot:last-child { border-bottom: none; }
+  .gauge {
+    width: 26px; min-height: 64px; background: var(--steel-darkest);
+    border: 1px solid var(--gold-dim); border-radius: 3px; position: relative; overflow: hidden;
+  }
+  .gauge .fill {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold-dim));
+  }
+  .gauge .mark { position: absolute; left: 0; right: 0; height: 1px; background: rgba(0,0,0,.5); }
+  .shot .info { flex: 1; min-width: 0; }
+  .shot .top-line { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .shot .score { color: var(--gold-bright); font-weight: 700; font-size: 1.1rem; }
+  .shot .cid { color: var(--text-dim); font-size: .72rem; }
+  .shot .crit { font-size: .7rem; color: var(--text-dim); margin-top: 4px; }
+  .shot .crit b { color: var(--text); }
+  .stamp {
+    align-self: center; font-size: .62rem; font-weight: 700; letter-spacing: 1px;
+    padding: 4px 7px; border-radius: 3px; border: 1.5px solid; transform: rotate(-4deg);
+    white-space: nowrap;
+  }
+  .stamp-ok { color: var(--green); border-color: var(--green); }
+  .stamp-wait { color: var(--amber); border-color: var(--amber); }
+  .stamp-no { color: var(--red); border-color: var(--red); }
+
+  /* ─── Manifeste des clips ─── */
+  .clip-row {
+    display: flex; gap: 10px; align-items: center; padding: 9px 8px;
+    border-bottom: 1px dashed #4a5058; font-size: .8rem; flex-wrap: wrap;
+  }
+  .clip-row:last-child { border-bottom: none; }
+  .clip-row .art { color: var(--gold); }
+  .clip-row a { color: var(--gold-bright); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); word-break: break-all; }
+  .clip-row .pending-only { color: var(--text-dim); font-style: italic; }
+
+  /* ─── File Warsmith ─── */
+  .scroll {
+    background: linear-gradient(180deg, #343a40, #2b3036);
+    border: 1px solid #4a5058; border-left: 3px solid var(--amber);
+    border-radius: 4px; padding: 10px 12px; margin-bottom: 10px; font-size: .8rem;
+  }
+  .scroll .s-top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .scroll .score { color: var(--amber); font-weight: 700; }
+  .scroll .meta { color: var(--text-dim); font-size: .72rem; margin-top: 4px; }
+  .empty { color: var(--text-dim); font-style: italic; font-size: .82rem; padding: 6px 2px; }
+
+  /* ─── Télémétrie ─── */
+  .lamp-row { display: flex; align-items: center; gap: 10px; padding: 8px 4px; border-bottom: 1px dashed #4a5058; font-size: .8rem; }
+  .lamp-row:last-child { border-bottom: none; }
+  .lamp { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto; }
+  .lamp.on { background: var(--phosphor); box-shadow: 0 0 8px var(--phosphor); animation: lamp-pulse 2.4s infinite; }
+  .lamp.off { background: #3a4046; box-shadow: inset 0 0 3px #000; }
+  @keyframes lamp-pulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
+  .tele { color: var(--text-dim); font-size: .72rem; margin-top: 2px; }
+  .needle { color: var(--gold-bright); font-weight: 700; }
+
+  /* ─── Pied de page ─── */
+  footer {
+    margin-top: 26px; background: var(--black-plate); border-top: 3px solid var(--gold-dim);
+    padding: 16px 0 0; position: relative;
+  }
+  footer::before { content: ""; display: block; height: 8px; margin-bottom: 14px; background: var(--hazard); opacity: .85; }
+  .quote { text-align: center; color: var(--gold-dim); font-style: italic; font-size: .85rem; letter-spacing: .5px; }
+  .updated { text-align: center; color: var(--text-dim); font-size: .72rem; margin: 8px 0 4px; }
+  .updated .iw-mark { color: var(--gold); }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>⚙️ PERTURABO — BOARD LIVE</h1>
-  <div class="sub">branche v2-live · le Fer qui Veille · <span id="countdown">—</span></div>
+  <div class="wrap">
+    <div class="head-row">
+      <!-- Tétragramme Iron Warriors — IV Légion (4 traits d'or) -->
+      <svg class="iw-logo" width="54" height="44" viewBox="0 0 54 44" aria-label="Iron Warriors">
+        <g stroke="#d4a017" stroke-width="5" stroke-linecap="square">
+          <line x1="8"  y1="40" x2="18" y2="4"/>
+          <line x1="20" y1="40" x2="30" y2="4"/>
+          <line x1="32" y1="40" x2="42" y2="4"/>
+          <line x1="44" y1="40" x2="50" y2="12"/>
+        </g>
+      </svg>
+      <div>
+        <h1>⚙ Salle de Contrôle du Siège</h1>
+        <div class="sub">branche <b>v2-live</b> · IV Légion veille · siège <span id="siege-day">Jour —</span></div>
+      </div>
+      <div class="head-right">
+        <div class="siege-clock" id="countdown">—:—:—</div>
+        <div class="siege-label">AVANT LEVÉE DU SIÈGE</div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<div class="banner">
-  📋 <b>Rappel de session</b> — le radar n'écoute que les chaînes autorisées par les
-  campagnes actives (règles de source). Le Warsmith valide la file d'attente ici, puis
-  le bras armé (F04 → F06 → OMNIS_WATCH) produit les clips. Le watermark reste gelé.
+<div class="wrap">
+
+  <div class="card rv-b" id="campaign-card" style="display:none">
+    <h2>🎯 Mode de session — Garde de Fer</h2>
+    <div id="campaign-badge"></div>
+  </div>
+
+  <div class="card rv-b">
+    <h2>🔴 Compteurs du siège</h2>
+    <div class="counters">
+      <div class="counter"><div class="n n-moments" id="n-moments">—</div><div class="l">Obus entrants</div></div>
+      <div class="counter"><div class="n n-clips" id="n-clips">—</div><div class="l">Clips Helix</div></div>
+      <div class="counter"><div class="n n-approved" id="n-approved">—</div><div class="l">Approuvés</div></div>
+      <div class="counter"><div class="n n-pending" id="n-pending">—</div><div class="l">File Warsmith</div></div>
+      <div class="counter"><div class="n n-rejected" id="n-rejected">—</div><div class="l">Rejetés</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card rv-b">
+      <h2>🗺 Carte du siège</h2>
+      <div id="siege-map"><p class="empty">Aucune donnée — lancez une session radar (Actions).</p></div>
+    </div>
+
+    <div class="card rv-b critique">
+      <h2>🎯 Scoreur en direct</h2>
+      <div id="scoreur"><p class="empty">Aucun obus scoré pour l'instant.</p></div>
+    </div>
+
+    <div class="card rv-b">
+      <h2>📜 Manifeste des clips</h2>
+      <div id="manifeste"><p class="empty">Aucune pièce capturée.</p></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card rv-b">
+      <h2>🚪 Ordres en attente — Warsmith</h2>
+      <div id="queue"><p class="empty">File vide — tout est déjà approuvé ou rien détecté.</p></div>
+    </div>
+
+    <div class="card rv-b">
+      <h2>📡 Télémétrie des secteurs</h2>
+      <div id="telemetrie"><p class="empty">Aucun secteur.</p></div>
+    </div>
+  </div>
+
 </div>
 
-<div class="card" id="campaign-card" style="display:none">
-  <h2>🎯 Mode de session (Garde de Fer)</h2>
-  <div id="campaign-badge"></div>
-</div>
+<footer>
+  <div class="wrap">
+    <div class="quote">« Aucune muraille ne résiste à la patience équipée d'artillerie. » — Perturabo</div>
+    <div class="updated" id="updated">En attente de données… <span class="iw-mark">⟨/⟩</span></div>
+  </div>
+</footer>
 
-<div class="card">
-  <h2>🔴 Compteurs de session</h2>
-  <div class="status-line"><span class="k">Moments détectés</span><span class="num n-moments" id="n-moments">—</span></div>
-  <div class="status-line"><span class="k">Clips Helix captés</span><span class="num n-clips" id="n-clips">—</span></div>
-  <div class="status-line"><span class="k">Auto-approuvés (trail immédiat)</span><span class="num n-approved" id="n-approved">—</span></div>
-  <div class="status-line"><span class="k">En attente Warsmith</span><span class="num n-pending" id="n-pending">—</span></div>
-  <div class="status-line"><span class="k">Rejetés</span><span class="num n-rejected" id="n-rejected">—</span></div>
-</div>
-
-<div class="card">
-  <h2>📡 Chaînes écoutées</h2>
-  <div id="channels"><p class="empty">Aucune donnée — lancez une session radar (Actions).</p></div>
-</div>
-
-<div class="card">
-  <h2>🚪 File d'attente Warsmith (gate hybride)</h2>
-  <div id="queue"><p class="empty">File vide — tout est déjà approuvé ou rien détecté.</p></div>
-</div>
-
-<div class="card">
-  <h2>🔥 Derniers moments</h2>
-  <div id="moments"><p class="empty">Aucun moment détecté pour l'instant.</p></div>
-</div>
-
-<div class="updated" id="updated">En attente de données…</div>
+<script type="application/json" id="data-status">{"note": "données de test uniquement — remplacées par data/live_status.json publié par le radar"}</script>
 
 <script>
-(async function () {
-  const dataEl = document.getElementById('data-status');
-  let data = null;
-  try {
-    const resp = await fetch('data/live_status.json', { cache: 'no-store' });
-    if (resp.ok) data = await resp.json();
-  } catch (e) { /* mode fichier local */ }
-  if (!data && dataEl) {
-    try { data = JSON.parse(dataEl.textContent); } catch (e) { data = null; }
-  }
-  if (!data) {
-    document.getElementById('updated').textContent =
-      'Aucun statut disponible — la page attend data/live_status.json (publiée par le radar).';
-    return;
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+
+  async function loadData() {
+    try {
+      const resp = await fetch('data/live_status.json', { cache: 'no-store' });
+      if (resp.ok) return await resp.json();
+    } catch (e) { /* mode fichier local */ }
+    const el = $('data-status');
+    if (el) { try { return JSON.parse(el.textContent); } catch (e) {} }
+    return null;
   }
 
-  const c = data.counters || {};
-  document.getElementById('n-moments').textContent = c.moments ?? '—';
-  document.getElementById('n-clips').textContent = c.helix_clips ?? '—';
-  document.getElementById('n-approved').textContent = c.approved ?? '—';
-  document.getElementById('n-pending').textContent = c.pending_warsmith ?? '—';
-  document.getElementById('n-rejected').textContent = c.rejected ?? '—';
-
-  const camp = data.campaign || {};
-  if (camp.session_mode) {
-    document.getElementById('campaign-card').style.display = '';
-    const isCamp = camp.session_mode === 'campaign';
-    const label = isCamp ? '🎯 CAMPAGNE — clips soumissibles' : '🧪 TEST TECHNIQUE — NON soumissible';
-    const chans = Object.entries(camp.channels || {}).map(([ch, r]) =>
-      `<div class="camp-ch">${ch} → ${r.reason || ''}</div>`).join('');
-    document.getElementById('campaign-badge').innerHTML =
-      `<span class="badge ${isCamp ? 'badge-campaign' : 'badge-test'}">${label}</span>${chans}`;
+  function fmtSiegeClock(sec) {
+    if (sec == null) return '—:—:—';
+    const h = String(Math.floor(sec / 3600)).padStart(2, '0');
+    const m = String(Math.floor((sec % 3600) / 60)).padStart(2, '0');
+    const s = String(sec % 60).padStart(2, '0');
+    return h + ':' + m + ':' + s;
   }
 
-  const chans = (data.channels || []).map(ch => {
-    const live = ch.connected ? '' : ' class="offline"';
-    const ratio = ch.baseline ? (ch.rate_10s / Math.max(ch.baseline, 0.5)).toFixed(1) : '—';
-    return `<div class="channel"${live}>
-      <div class="ch-name">${ch.connected ? '🟢' : '⚪'} ${ch.channel}</div>
-      <div class="ch-meta">msg: ${ch.msgs_total} · taux/10s: ${ch.rate_10s} · baseline: ${ch.baseline ?? '—'} · ×${ratio} · moments: ${ch.moments}${ch.hot_words && ch.hot_words.length ? ' · chauds: ' + ch.hot_words.slice(0, 3).join(', ') : ''}</div>
-    </div>`;
-  }).join('');
-  document.getElementById('channels').innerHTML = chans || '<p class="empty">Aucune chaîne.</p>';
+  /* ─── Carte du siège : un secteur fortifié par chaîne ─── */
+  function renderSiegeMap(channels) {
+    const host = $('siege-map');
+    if (!channels || !channels.length) {
+      host.innerHTML = '<p class="empty">Aucun secteur — aucune chaîne écoutée.</p>';
+      return;
+    }
+    const n = channels.length;
+    const cols = Math.min(n, 3);
+    const W = 300, H = 170;
+    const cw = W / cols, rows = Math.ceil(n / cols), chh = H / rows;
+    let svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg">';
+    channels.forEach((ch, i) => {
+      const cx = (i % cols) * cw, cy = Math.floor(i / cols) * chh;
+      const ratio = ch.baseline ? (ch.rate_10s / Math.max(ch.baseline, 0.5)) : 0;
+      const hot = ch.connected && ratio >= 2.5;
+      const warm = ch.connected && ratio >= 1.5 && !hot;
+      // couleur de muraille selon la pression du chat
+      const wall = !ch.connected ? '#2c3136'
+        : hot ? 'rgba(212,160,23,.30)'
+        : warm ? 'rgba(212,160,23,.14)' : '#2c3136';
+      svg += '<g>'
+        + '<rect class="sector-wall' + (hot ? ' sector-hot' : '') + '" '
+        + 'x="' + (cx + 8) + '" y="' + (cy + 8) + '" width="' + (cw - 16) + '" height="' + (chh - 16) + '" '
+        + 'rx="4" style="fill:' + wall + '"/>'
+        + '<text class="sector-flag" x="' + (cx + 16) + '" y="' + (cy + 26) + '">&#10216;/&#10217;</text>'
+        + '<text class="sector-label" x="' + (cx + 16) + '" y="' + (cy + 48) + '">'
+        + (ch.connected ? '&#128994; ' : '&#9898; ') + (ch.channel || '?') + '</text>'
+        + '<text class="sector-meta" x="' + (cx + 16) + '" y="' + (cy + 64) + '">'
+        + 'msg ' + (ch.msgs_total ?? '—') + ' &#183; ' + (ch.rate_10s ?? '—') + '/10s &#183; baseline ' + (ch.baseline ?? '—') + '</text>'
+        + '<text class="sector-meta" x="' + (cx + 16) + '" y="' + (cy + 78) + '">'
+        + 'moments ' + (ch.moments ?? 0) + (ch.hot_words && ch.hot_words.length ? ' &#183; ' + ch.hot_words.slice(0, 2).join(',') : '') + '</text>'
+        + '</g>';
+    });
+    svg += '</svg>';
+    host.innerHTML = svg;
+  }
 
-  const q = (data.gate_queue || []).slice(-10).reverse().map(v => `
-    <div class="queue-item">
-      <span class="score">${v.score}</span> · <b>${v.candidate_id}</b> · ${v.duration_sec}s · ${v.signal_type}
-      <div class="meta">${v.channel || ''} · ${v.helix_clip_id ? '🎬 ' + v.helix_clip_id : 'sans clip serveur'}</div>
-    </div>`).join('');
-  document.getElementById('queue').innerHTML =
-    q || '<p class="empty">File vide — tout est déjà approuvé ou rien détecté.</p>';
+  /* ─── Scoreur en direct : rapports d'obus + jauges + tampons ─── */
+  function renderScoreur(list) {
+    const host = $('scoreur');
+    if (!list || !list.length) {
+      host.innerHTML = '<p class="empty">Aucun obus scoré pour l\'instant.</p>';
+      return;
+    }
+    host.innerHTML = list.slice().reverse().map((s) => {
+      const sc = (s.final_score ?? 0);
+      const pct = Math.max(4, Math.min(100, sc * 10));
+      const stamps = {
+        approved: '<span class="stamp stamp-ok">APPROUV&#201;</span>',
+        pending_warsmith: '<span class="stamp stamp-wait">EN FILE</span>',
+        rejected: '<span class="stamp stamp-no">REJET&#201;</span>'
+      };
+      const stamp = stamps[s.status] || '<span class="stamp stamp-wait">?</span>';
+      const r = s.raw_scores || {};
+      const crit = [
+        'hook <b>' + (r.hook_force ?? '—') + '</b>',
+        '&#233;motion <b>' + (r.emotion ?? '—') + '</b>',
+        'clart&#233; <b>' + (r.clarity ?? '—') + '</b>',
+        'citation <b>' + (r.quotability ?? '—') + '</b>',
+        'timing <b>' + (r.timing ?? '—') + '</b>',
+        'format <b>' + (r.format_fit ?? '—') + '</b>'
+      ].join(' &#183; ');
+      const meta = [
+        s.spike_ratio != null ? '&#215;' + s.spike_ratio + ' baseline' : null,
+        s.clip_pressure ? 'CLIP &#215;' + s.clip_pressure : null,
+        s.hot_words && s.hot_words.length ? s.hot_words.slice(0, 3).join(',') : null
+      ].filter(Boolean).join(' &#183; ');
+      const marks = [25, 50, 75].map((p) =>
+        '<div class="mark" style="bottom:' + p + '%"></div>').join('');
+      return '<div class="shot">'
+        + '<div class="gauge"><div class="fill" style="height:' + pct + '%"></div>' + marks + '</div>'
+        + '<div class="info">'
+        +   '<div class="top-line"><span class="score">' + sc.toFixed(2) + '</span>'
+        +   '<span class="cid">' + (s.candidate_id || '') + ' &#183; ' + (s.channel || '') + '</span>'
+        +   (s.campaign_eligible === false ? '<span class="stamp stamp-no" style="transform:none">NON SOUMISSIBLE</span>' : '')
+        +   '</div>'
+        +   '<div class="crit">' + crit + '</div>'
+        +   (meta ? '<div class="crit">' + meta + '</div>' : '')
+        + '</div>'
+        + stamp
+        + '</div>';
+    }).join('');
+  }
 
-  const mm = (data.recent_moments || []).slice(-6).reverse().map(m => `
-    <div class="moment">
-      <b>${m.channel}</b> · ×${m.baseline ? (m.rate / m.baseline).toFixed(1) : '—'} du baseline
-      ${m.hot_words && m.hot_words.length ? '· <span class="words">' + m.hot_words.slice(0, 3).join(', ') + '</span>' : ''}
-    </div>`).join('');
-  document.getElementById('moments').innerHTML = mm || '<p class="empty">Aucun moment.</p>';
+  /* ─── Manifeste des clips ─── */
+  function renderManifeste(clips) {
+    const host = $('manifeste');
+    if (!clips || !clips.length) {
+      host.innerHTML = '<p class="empty">Aucune pi&#232;ce capturée — clips Helix ici d&#232;s leur prise.</p>';
+      return;
+    }
+    host.innerHTML = clips.slice().reverse().map((c) => {
+      const when = c.detected_at ? new Date(c.detected_at * 1000).toLocaleTimeString('fr-FR') : '—';
+      const art = '<span class="art">&#127909;</span>';
+      if (c.url) {
+        return '<div class="clip-row">' + art + '<a href="' + c.url + '" target="_blank" rel="noopener">'
+          + (c.clip_id || 'clip') + '</a><span>' + (c.channel || '') + '</span>'
+          + (c.score != null ? '<span class="needle">' + c.score.toFixed(2) + '</span>' : '')
+          + '<span class="pending-only">' + when + '</span></div>';
+      }
+      return '<div class="clip-row">' + art + '<span>' + (c.channel || '') + '</span>'
+        + '<span class="pending-only">&#9203; timestamps seuls — segment &#224; extraire</span></div>';
+    }).join('');
+  }
 
-  const d = new Date(data.generated_at);
-  document.getElementById('updated').textContent = 'Dernier statut : ' + d.toLocaleString('fr-FR');
+  /* ─── File Warsmith (parchemins d'ordonnance) ─── */
+  function renderQueue(list) {
+    const host = $('queue');
+    if (!list || !list.length) {
+      host.innerHTML = '<p class="empty">File vide — tout est d&#233;j&#224; approuv&#233; ou rien d&#233;tect&#233;.</p>';
+      return;
+    }
+    host.innerHTML = list.slice().reverse().map((v) =>
+      '<div class="scroll">'
+      + '<div class="s-top"><span><span class="score">' + (v.score ?? '—') + '</span> &#183; <b>'
+      + (v.candidate_id || '') + '</b></span><span>' + (v.duration_sec ?? '—') + 's &#183; '
+      + (v.signal_type || '') + '</span></div>'
+      + '<div class="meta">' + (v.channel || '') + ' &#183; '
+      + (v.helix_clip_id ? '&#127909; ' + v.helix_clip_id : 'sans clip serveur')
+      + (v.campaign_eligible === false ? ' &#183; NON SOUMISSIBLE' : '') + '</div>'
+      + '</div>').join('');
+  }
+
+  /* ─── Télémétrie (lampes de contrôle) ─── */
+  function renderTelemetrie(channels) {
+    const host = $('telemetrie');
+    if (!channels || !channels.length) {
+      host.innerHTML = '<p class="empty">Aucun secteur.</p>';
+      return;
+    }
+    host.innerHTML = channels.map((ch) => {
+      const ratio = ch.baseline ? (ch.rate_10s / Math.max(ch.baseline, 0.5)) : 0;
+      return '<div class="lamp-row">'
+        + '<div class="lamp ' + (ch.connected ? 'on' : 'off') + '"></div>'
+        + '<div><div><b>' + (ch.channel || '?') + '</b></div>'
+        + '<div class="tele">msg ' + (ch.msgs_total ?? '—') + ' &#183; ' + (ch.rate_10s ?? '—') + '/10s &#183; baseline '
+        + (ch.baseline ?? '—') + ' &#183; <span class="needle">&#215;' + ratio.toFixed(1) + '</span> &#183; moments ' + (ch.moments ?? 0) + '</div></div>'
+        + '</div>';
+    }).join('');
+  }
+
+  function render(data) {
+    if (!data) {
+      $('updated').innerHTML = 'Aucun statut — la page attend <b>data/live_status.json</b> (publi&#233; par le radar). <span class="iw-mark">&#10216;/&#10217;</span>';
+      return;
+    }
+
+    // Horloge de siège
+    $('countdown').textContent = fmtSiegeClock(data.seconds_remaining);
+    const mins = Math.floor((data.seconds_remaining || 0) / 60);
+    $('siege-day').textContent = data.session_final ? 'levé' : ('Jour 1 · ' + mins + ' min');
+
+    // Garde de Fer
+    const camp = data.campaign || {};
+    if (camp.session_mode) {
+      $('campaign-card').style.display = '';
+      const isCamp = camp.session_mode === 'campaign';
+      const label = isCamp ? '🎯 CAMPAGNE — clips soumissibles' : '🧪 TEST TECHNIQUE — NON soumissible';
+      const chans = Object.entries(camp.channels || {}).map(([ch, r]) =>
+        '<div class="camp-ch">' + ch + ' → ' + (r.reason || '') + '</div>').join('');
+      $('campaign-badge').innerHTML =
+        '<span class="badge ' + (isCamp ? 'badge-campaign' : 'badge-test') + '">' + label + '</span>' + chans;
+    }
+
+    // Compteurs
+    const c = data.counters || {};
+    $('n-moments').textContent = c.moments ?? '—';
+    $('n-clips').textContent = c.helix_clips ?? '—';
+    $('n-approved').textContent = c.approved ?? '—';
+    $('n-pending').textContent = c.pending_warsmith ?? '—';
+    $('n-rejected').textContent = c.rejected ?? '—';
+
+    // Panneaux
+    renderSiegeMap(data.channels || []);
+    renderScoreur(data.recent_scored || []);
+    renderManifeste(data.clips || []);
+    renderQueue(data.gate_queue || []);
+    renderTelemetrie(data.channels || []);
+
+    const d = new Date(data.generated_at);
+    $('updated').innerHTML = 'Dernier statut : ' + d.toLocaleString('fr-FR')
+      + ' <span class="iw-mark">&#10216;/&#10217;</span> IV Légion';
+  }
+
+  loadData().then(render);
+  // rafraîchissement doux (Pages CDN ~1-2 min de propagation)
+  setInterval(async () => { render(await loadData()); }, 60000);
 })();
 </script>
-<script type="application/json" id="data-status">{"note": "données de test uniquement — remplacées par data/live_status.json publié par le radar"}</script>
 
 </body>
 </html>

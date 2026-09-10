@@ -215,7 +215,7 @@ def run_session(cfg):
             # Statut pour le board (toutes les N secondes)
             if now - last_status >= status_every:
                 write_status(channels, radar, moments_all, verdicts_all, clips_all,
-                             deadline, stream_started)
+                             deadline, stream_started, cfg=cfg)
                 last_status = now
 
             # Moments détectés (bloque 5s max)
@@ -242,8 +242,8 @@ def run_session(cfg):
                 }
                 cand = build_candidate(sig, moment, cfg)
 
-                # 3. Scoring VOX réutilisé tel quel
-                scored = vox.compute_score(cand, cfg.get("score_weights"))
+                # 3. Scoring live calibré (force réelle du pic) — moteur VOD intact
+                scored = compute_score_live(cand, moment)
                 scored_all.append(scored)
 
                 # 4. Gate hybride
@@ -285,7 +285,7 @@ def run_session(cfg):
     finally:
         # Snapshot AVANT l'arrêt du radar : sinon connected=false dans le statut final
         write_status(channels, radar, moments_all, verdicts_all, clips_all,
-                     deadline, stream_started, final=True)
+                     deadline, stream_started, final=True, cfg=cfg)
         radar.stop()
         write_outputs(cfg, moments_all, candidats_live, scored_all, verdicts_all,
                       clips_all, channels, radar, final=True)
@@ -325,6 +325,135 @@ def build_candidate(sig, moment, cfg):
         "signal_intensity": sig["intensity"],
         "signal_start": sig["start"],
     }
+
+
+# ─── Scoring live calibré (la vraie force du pic, plus de profil fixe) ───────
+
+def _spike_ratio(moment):
+    """Ratio réel du pic : rate du chat / baseline EMA."""
+    return moment.get("rate", 0) / max(moment.get("baseline", 0.5) or 0.5, 0.5)
+
+
+def _hysteria_count(hot_words):
+    """Nombre de mots d'hystérie collective (www*, KEKW, LUL, Pog*, lol…)."""
+    import re
+    pat = re.compile(r"^(w{2,}|kekw|lul|lmao|pog|lol|ha{2,}|omg|woa|no ?way)", re.I)
+    return sum(1 for w in (hot_words or []) if pat.match(str(w)))
+
+
+def compute_score_live(cand, moment):
+    """
+    Scoring VOX adapté au live : chaque critère est alimenté par la FORCE RÉELLE
+    du pic (ratio vs baseline, mots chauds, clip_pressure, durée) au lieu d'un
+    profil fixe. Miroir exact du bloc bonus/malus de vox.compute_score
+    (moteur VOD de main intact — seule la couche live calcule différemment).
+    """
+    w = dict(vox.WEIGHTS)
+    ratio = _spike_ratio(moment)
+    pressure = moment.get("clip_pressure", 0) or 0
+    hot = moment.get("hot_words") or []
+    hysteria = _hysteria_count(hot)
+    dur = cand.get("duration_sec", 30)
+
+    # Intensité honnête : ratio 6+ → 1.0, ratio 3 → 0.5, ratio 1.5 → 0.25
+    intensity = min(1.0, round(ratio / 6.0, 2))
+
+    raw = {}
+    # hook_force ← ratio réel (×6+ = mur qui tombe)
+    if ratio >= 6:
+        raw["hook_force"] = 10.0
+    elif ratio >= 4:
+        raw["hook_force"] = 8.5
+    elif ratio >= 3:
+        raw["hook_force"] = 7.5
+    elif ratio >= 2:
+        raw["hook_force"] = 6.0
+    else:
+        raw["hook_force"] = 4.5
+    # emotion ← hystérie collective du chat
+    if hysteria >= 3:
+        raw["emotion"] = 9.5
+    elif hysteria >= 1:
+        raw["emotion"] = 8.0
+    else:
+        raw["emotion"] = 6.0 if ratio >= 3 else 5.0
+    # clarity ← pic massif ET/OR demandé par le chat
+    raw["clarity"] = 8.5 if (pressure >= 2 or ratio >= 4) else 6.5
+    # quotability ← le chat réclame le clip
+    if pressure >= 3:
+        raw["quotability"] = 9.5
+    elif pressure >= 1:
+        raw["quotability"] = 7.5
+    else:
+        raw["quotability"] = 5.0 if ratio >= 4 else 4.0
+    # timing ← durée de la fenêtre captée
+    if 20 <= dur <= 40:
+        raw["timing"] = 8.0
+    elif 10 <= dur <= 50:
+        raw["timing"] = 7.0
+    else:
+        raw["timing"] = 5.5
+    # format_fit ← 9:16 toujours faisable, durée idéale courte
+    raw["format_fit"] = 7.5 if dur <= 40 else (6.5 if dur <= 55 else 5.5)
+
+    base = sum(w[k] * raw[k] for k in raw)
+
+    # Bonus / malus — miroir de vox.compute_score, alimenté par l'intensité honnête
+    bonuses, maluses = [], []
+    if dur > 60:
+        maluses.append({"rule": "duree_gt_60", "delta": -3.0})
+    if dur < 15:
+        maluses.append({"rule": "duree_lt_15", "delta": -3.0})
+    if intensity >= 0.9:
+        bonuses.append({"rule": "moment_unique", "delta": 1.5})
+    if intensity >= 0.7:
+        bonuses.append({"rule": "haute_intensite", "delta": 1.0})
+
+    bonus_total = sum(b["delta"] for b in bonuses)
+    malus_total = sum(m["delta"] for m in maluses)
+    final = max(0, min(10, round(base + bonus_total + malus_total, 2)))
+
+    return {
+        "candidate_id": cand["candidate_id"],
+        "raw_scores": raw,
+        "base_score": round(base, 2),
+        "bonuses": bonuses,
+        "maluses": maluses,
+        "bonus_total": round(bonus_total, 2),
+        "malus_total": round(malus_total, 2),
+        "final_score": final,
+        "start_sec": cand["start_sec"],
+        "end_sec": cand["end_sec"],
+        "duration_sec": cand["duration_sec"],
+        "signal_type": cand.get("signal_type"),
+        "signal_intensity": intensity,
+        "spike_ratio": round(ratio, 2),
+        "clip_pressure": pressure,
+        "hot_words": hot[:6],
+        "status": "scored",
+    }
+
+
+def _recent_scored(scored_all, verdicts):
+    """10 derniers scores avec détail des critères (alimente le Scoreur du board)."""
+    by_id = {s["candidate_id"]: s for s in scored_all}
+    out = []
+    for v in verdicts[-10:]:
+        s = by_id.get(v.get("candidate_id"), {})
+        out.append({
+            "candidate_id": v.get("candidate_id"),
+            "final_score": v.get("score"),
+            "raw_scores": s.get("raw_scores", {}),
+            "signal_intensity": s.get("signal_intensity"),
+            "spike_ratio": s.get("spike_ratio"),
+            "clip_pressure": s.get("clip_pressure"),
+            "hot_words": s.get("hot_words", []),
+            "channel": v.get("channel"),
+            "status": v.get("status"),
+            "campaign_eligible": v.get("campaign_eligible"),
+            "detected_at": v.get("detected_at"),
+        })
+    return out
 
 
 # ─── Écritures (crash-safe : chaque tick laisse des fichiers valides) ───────
@@ -412,7 +541,7 @@ def write_outputs(cfg, moments, candidats, scored_all, verdicts, clips,
 
 
 def write_status(channels, radar, moments, verdicts, clips, deadline,
-                 stream_started, final=False):
+                 stream_started, final=False, cfg=None):
     save_json(OUT_DIR / "live_status.json", {
         "generated_at": datetime.now().isoformat(),
         "mode": "v2-live",
@@ -429,6 +558,15 @@ def write_status(channels, radar, moments, verdicts, clips, deadline,
         },
         "gate_queue": [v for v in verdicts if v["status"] == "pending_warsmith"][-12:],
         "recent_moments": moments[-8:],
+        "recent_scored": _recent_scored(scored_all, verdicts),
+        "clips": [
+            {"clip_id": c["clip"].get("clip_id"), "url": c["clip"].get("url"),
+             "channel": c["moment"]["channel"], "detected_at": c["moment"].get("detected_at"),
+             "score": next((v["score"] for v in verdicts
+                            if v.get("detected_at") == c["moment"].get("detected_at")
+                            and v.get("channel") == c["moment"].get("channel")), None)}
+            for c in clips
+        ][-20:],
         "stream_started": {ch: stream_started.get(ch) for ch in channels},
     })
 
