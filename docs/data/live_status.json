@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:52:07.530993",
+  "generated_at": "2026-09-10T21:55:07.538014",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 8623,
+  "seconds_remaining": 8443,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 17419,
-      "rate_10s": 15,
-      "baseline": 25.9,
+      "msgs_total": 17788,
+      "rate_10s": 21,
+      "baseline": 21.17,
       "clip_pressure": 0,
       "hot_words": [
-        "meth",
-        "just",
-        "that",
-        "clav",
-        "have"
+        "this",
+        "eugenics",
+        "make",
+        "they",
+        "would"
       ],
       "moments": 7,
       "last_moment_at": 1789076442.1722815,
