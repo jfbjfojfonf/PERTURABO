@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:22:03.564863",
+  "generated_at": "2026-09-10T21:25:03.572111",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 10427,
+  "seconds_remaining": 10247,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 12430,
-      "rate_10s": 65,
-      "baseline": 35.03,
+      "msgs_total": 12942,
+      "rate_10s": 22,
+      "baseline": 32.64,
       "clip_pressure": 0,
       "hot_words": [
-        "cancer",
-        "that",
-        "lets",
-        "weup",
-        "yeah"
+        "your",
+        "like",
+        "what",
+        "brain",
+        "same"
       ],
       "moments": 5,
       "last_moment_at": 1789074817.8687472,
