@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T21:13:01.480484",
+  "generated_at": "2026-09-10T21:16:03.550345",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 10969,
+  "seconds_remaining": 10787,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,27 +17,27 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 10244,
-      "rate_10s": 11,
-      "baseline": 21.21,
+      "msgs_total": 11140,
+      "rate_10s": 53,
+      "baseline": 35.93,
       "clip_pressure": 0,
       "hot_words": [
-        "love",
-        "joei",
-        "what",
-        "last",
-        "polo"
+        "joebartvibe",
+        "dinodance",
+        "bluesrdance",
+        "song",
+        "goty"
       ],
-      "moments": 4,
-      "last_moment_at": 1789073896.050424,
-      "cooldown_until": 1789074016.050424
+      "moments": 5,
+      "last_moment_at": 1789074817.8687472,
+      "cooldown_until": 1789074937.8687472
     }
   ],
   "counters": {
-    "moments": 4,
-    "helix_clips": 4,
+    "moments": 5,
+    "helix_clips": 5,
     "approved": 0,
-    "pending_warsmith": 4,
+    "pending_warsmith": 5,
     "rejected": 0
   },
   "gate_queue": [
@@ -101,6 +101,22 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789073896.05,
       "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "ef83727a6f",
+      "status": "pending_warsmith",
+      "score": 6.85,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 6840.0,
+      "end_sec": 6884.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789074817.87,
+      "helix_clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
       "campaign_eligible": false,
       "campaign_id": null,
       "campaign_state": "technical_test"
@@ -201,6 +217,30 @@
         "clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
         "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
         "url": "https://clips.twitch.tv/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789074817.87,
+      "start_epoch": 1789074807.87,
+      "end_epoch": 1789074847.87,
+      "rate": 64,
+      "baseline": 21.07,
+      "intensity": 1.0,
+      "hot_words": [
+        "lmaooo",
+        "karl",
+        "marx",
+        "last",
+        "words"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+        "url": "https://clips.twitch.tv/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc"
       }
     }
   ],
@@ -308,6 +348,32 @@
       "status": "pending_warsmith",
       "campaign_eligible": false,
       "detected_at": 1789073896.05
+    },
+    {
+      "candidate_id": "ef83727a6f",
+      "final_score": 6.85,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 8.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.04,
+      "clip_pressure": 0,
+      "hot_words": [
+        "lmaooo",
+        "karl",
+        "marx",
+        "last",
+        "words"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789074817.87
     }
   ],
   "clips": [
@@ -338,6 +404,13 @@
       "channel": "joe_bartolozzi",
       "detected_at": 1789073896.05,
       "score": 6.35
+    },
+    {
+      "clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+      "url": "https://clips.twitch.tv/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789074817.87,
+      "score": 6.85
     }
   ],
   "stream_started": {
