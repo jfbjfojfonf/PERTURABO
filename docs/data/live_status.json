@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-10T22:19:15.687700",
+  "generated_at": "2026-09-10T22:22:15.694954",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 6995,
+  "seconds_remaining": 6815,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 21724,
-      "rate_10s": 26,
-      "baseline": 32.55,
-      "clip_pressure": 0,
+      "msgs_total": 22106,
+      "rate_10s": 19,
+      "baseline": 26.45,
+      "clip_pressure": 1,
       "hot_words": [
-        "kirk",
-        "chat",
-        "zawuji",
-        "with",
-        "this"
+        "bigsad",
+        "that",
+        "game",
+        "people",
+        "really"
       ],
       "moments": 9,
       "last_moment_at": 1789078685.2440422,
