@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-09-10T21:14:15.586964+00:00",
+  "source": "f00b_vox_live session 34524673636 (joe_bartolozzi)",
+  "vod_url": "https://www.twitch.tv/videos/2869752708",
+  "campaign_id": "LIVE_JOE_BARTOLOZZI_20260910",
+  "total_candidates": 4,
+  "candidates": [
+    {
+      "candidate_id": "8e12ad2d58",
+      "source": "twitch_vod",
+      "vod_url": "https://www.twitch.tv/videos/2869752708",
+      "start_sec": 3727.0,
+      "end_sec": 3771.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.95,
+      "top_words": "chat, joe_bartolozzi, clip, moment, insane",
+      "final_score": 7.22,
+      "helix_clip_id": "AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
+      "channel": "joe_bartolozzi",
+      "internal_cuts": [
+        {
+          "at_sec": 3735.0,
+          "at_time": "01:02:15",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 3745.0,
+          "at_time": "01:02:25",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 3755.0,
+          "at_time": "01:02:35",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 3765.0,
+          "at_time": "01:02:45",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        }
+      ],
+      "hook_window": {
+        "start_sec": 3727.0,
+        "end_sec": 3730.0,
+        "note": "zone hook : 0-3s ou premier 15%"
+      }
+    },
+    {
+      "candidate_id": "66a7253f00",
+      "source": "twitch_vod",
+      "vod_url": "https://www.twitch.tv/videos/2869752708",
+      "start_sec": 4634.0,
+      "end_sec": 4678.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.6,
+      "top_words": "chat, joe_bartolozzi, clip, moment, insane",
+      "final_score": 6.35,
+      "helix_clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
+      "channel": "joe_bartolozzi",
+      "internal_cuts": [
+        {
+          "at_sec": 4642.0,
+          "at_time": "01:17:22",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 4652.0,
+          "at_time": "01:17:32",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 4662.0,
+          "at_time": "01:17:42",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 4672.0,
+          "at_time": "01:17:52",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        }
+      ],
+      "hook_window": {
+        "start_sec": 4634.0,
+        "end_sec": 4637.0,
+        "note": "zone hook : 0-3s ou premier 15%"
+      }
+    },
+    {
+      "candidate_id": "fd06bcadbb",
+      "source": "twitch_vod",
+      "vod_url": "https://www.twitch.tv/videos/2869752708",
+      "start_sec": 5162.0,
+      "end_sec": 5206.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.6,
+      "top_words": "chat, joe_bartolozzi, clip, moment, insane",
+      "final_score": 6.35,
+      "helix_clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "channel": "joe_bartolozzi",
+      "internal_cuts": [
+        {
+          "at_sec": 5170.0,
+          "at_time": "01:26:10",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5180.0,
+          "at_time": "01:26:20",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5190.0,
+          "at_time": "01:26:30",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5200.0,
+          "at_time": "01:26:40",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        }
+      ],
+      "hook_window": {
+        "start_sec": 5162.0,
+        "end_sec": 5165.0,
+        "note": "zone hook : 0-3s ou premier 15%"
+      }
+    },
+    {
+      "candidate_id": "0af35a0173",
+      "source": "twitch_vod",
+      "vod_url": "https://www.twitch.tv/videos/2869752708",
+      "start_sec": 5919.0,
+      "end_sec": 5963.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.6,
+      "top_words": "chat, joe_bartolozzi, clip, moment, insane",
+      "final_score": 6.35,
+      "helix_clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "channel": "joe_bartolozzi",
+      "internal_cuts": [
+        {
+          "at_sec": 5927.0,
+          "at_time": "01:38:47",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5937.0,
+          "at_time": "01:38:57",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5947.0,
+          "at_time": "01:39:07",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        },
+        {
+          "at_sec": 5957.0,
+          "at_time": "01:39:17",
+          "reason": "coupure potentielle (rythme interne)",
+          "action": "split_or_transition"
+        }
+      ],
+      "hook_window": {
+        "start_sec": 5919.0,
+        "end_sec": 5922.0,
+        "note": "zone hook : 0-3s ou premier 15%"
+      }
+    }
+  ]
+}
