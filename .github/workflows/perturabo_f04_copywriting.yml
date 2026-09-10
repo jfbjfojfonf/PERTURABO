@@ -43,6 +43,8 @@ jobs:
       CLIPPING_PREMIUM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: v2-live
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -146,4 +148,5 @@ jobs:
           done
 
           cd "$GITHUB_WORKSPACE"
-          git push origin HEAD:main || echo "::warning::push échoué"
+          git pull --rebase origin v2-live || true
+          git push origin HEAD:v2-live || echo "::warning::push échoué"
