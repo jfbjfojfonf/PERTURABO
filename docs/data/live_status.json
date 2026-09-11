@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-11T00:07:34.967506",
+  "generated_at": "2026-09-11T00:10:34.974782",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 496,
+  "seconds_remaining": 316,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 29513,
+      "msgs_total": 29518,
       "rate_10s": 0,
-      "baseline": 0.56,
+      "baseline": 0.15,
       "clip_pressure": 0,
       "hot_words": [
-        "subscribe",
+        "youtube",
         "https",
-        "twitch",
-        "subs",
-        "bartolozzi"
+        "bart",
+        "free",
+        "channels"
       ],
       "moments": 17,
       "last_moment_at": 1789084764.5384197,
