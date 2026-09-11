@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-11T00:04:34.960617",
+  "generated_at": "2026-09-11T00:07:34.967506",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 676,
+  "seconds_remaining": 496,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 29506,
+      "msgs_total": 29513,
       "rate_10s": 0,
-      "baseline": 26.78,
+      "baseline": 0.56,
       "clip_pressure": 0,
       "hot_words": [
-        "action",
-        "lucasl2020",
-        "went",
-        "lost",
-        "every"
+        "subscribe",
+        "https",
+        "twitch",
+        "subs",
+        "bartolozzi"
       ],
       "moments": 17,
       "last_moment_at": 1789084764.5384197,
