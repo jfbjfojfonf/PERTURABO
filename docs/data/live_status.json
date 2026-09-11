@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-11T00:13:34.981822",
+  "generated_at": "2026-09-11T00:15:54.987139",
   "mode": "v2-live",
-  "session_final": false,
-  "seconds_remaining": 136,
+  "session_final": true,
+  "seconds_remaining": 0,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -19,7 +19,7 @@
       "connected": true,
       "msgs_total": 29521,
       "rate_10s": 0,
-      "baseline": 0.14,
+      "baseline": 0.03,
       "clip_pressure": 0,
       "hot_words": [],
       "moments": 17,
