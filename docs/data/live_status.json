@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-11T00:01:34.953210",
+  "generated_at": "2026-09-11T00:04:34.960617",
   "mode": "v2-live",
   "session_final": false,
-  "seconds_remaining": 856,
+  "seconds_remaining": 676,
   "campaign": {
     "session_mode": "technical_test",
     "channels": {
@@ -17,16 +17,16 @@
     {
       "channel": "joe_bartolozzi",
       "connected": true,
-      "msgs_total": 29461,
-      "rate_10s": 35,
-      "baseline": 30.82,
+      "msgs_total": 29506,
+      "rate_10s": 0,
+      "baseline": 26.78,
       "clip_pressure": 0,
       "hot_words": [
-        "stream",
-        "byee",
-        "love",
-        "charity",
-        "byeee"
+        "action",
+        "lucasl2020",
+        "went",
+        "lost",
+        "every"
       ],
       "moments": 17,
       "last_moment_at": 1789084764.5384197,
