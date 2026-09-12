@@ -1,0 +1,817 @@
+{
+  "video_id": "i5bZ-Be9cAQ",
+  "title": "Your Videos Don't Have to Look Amateur Anymore (Claude + Remotion)",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 5483,
+  "outlier_score": 0.0,
+  "thumbnail": "https://i.ytimg.com/vi/i5bZ-Be9cAQ/maxresdefault.jpg",
+  "upload_date": "20260706",
+  "duration": 291,
+  "transcript": {
+    "text": "What if your videos could look as professional as the big channels you watch without ever learning how to edit? Well, now it's actually possible because every graphic, every animation that's popped up since this video started, I did not edit a single or make a single one of those. I just described what I wanted in plain English and Claude with Remotion built it for me. I'll walk you through the setup and stick around cuz you know we got to throw a actual pro level tip at the end which will take these graphics from just looking good to what is actually working in your niche. Look, everyone wants their videos to look professional but not everybody's got time to learn some complicated software. I've been editing videos for over 10 years and I've gotten pretty far without learning After Effects or Fusion. You know, motion graphics is just a whole different realm. But, lucky for you and me there's an easier way to get those motion graphic results without ever learning a complicated program. You tell Claude what you want and it pops up something that looks professional, on par with the other channels in your niche and for some of you honestly probably a step above. All right, so how does this actually work? It's actually pretty simple. We're going to grab a tool called Remotion and connect it to Claude. Remotion is just a tool that is made to build motion graphics. Now, little did I know much of motion graphics revolves around coding when you get into the inside but listen, I don't know anything about that and you don't have to know anything about that. Just know that because so much of motion graphics underneath the hood is actually coding, this is now something that you can do in Claude. All right, so let me show you the easy way to install this because this video is not a step-by-step tutorial. I just want you guys to know that this exists. This is now something that you can do to install it. It's actually super simple. I'll tell you what I did. I just went to Claude and said, \"How do I install?\" and it walked me through it. I will give you a heads up that one thing you'll need to download is the Node.js. Claude walks you through the whole process. There's one part where you have to open up the terminal which I never use it either on the instance. It kind of reminds me of that little part with Neo where the guy's talking to Neo for the first time. And this part where I got confused, I literally would just take screenshots, paste it, and say, \"Help me. HELP ME.\" BUT when you install it, it's going to give you some code to paste. It's going to ask you some questions, some folders where you want to set up your template. It's going to ask you if you want to install certain skills. Just make sure you say yes. So, let me show you what this actually looks like in a real video. Let's say you're a game creator and you're doing a video on the most underrated weapon of all time. And you're talking and you get to the part where you say a one gun has a 73% win rate. Now, normally those words would just have to live in your sentence. Or you say it and maybe, you know, it it floats by. Whatever you can manage to do with limited motion graphic skills. But now that you have Claw connected to Remotion, you can illustrate that in a bunch of ways. All by just typing in what you want and whatever your idea is. And if you need to edit anything, you edit it the same way. Let's say you are a cooking creator and you want to lay out the ingredients for your famous uh spaghetti. Brown sugar. Come on. Brother, uh you describe what you want, Claw builds it, and then you drop it into your timeline. Now, depending on what program you use, you still have to cut your footage and put it together like you always do. That part's the same. But if you're trying to keep someone's attention, you're trying to create an engaging video and you want motion graphics to pop up, you take the stuff that you're already saying and you let people see it, not just hear it. You make your information easy to follow and easy to lock on to. And again, you don't have to learn any complicated motion graphic skills to do it. All right. Now, if you like tech, this is great, but I don't I mean, I can make motion graphics, but I don't know what type of motion graphics to make. This is actually where you can kind of take it up a bit, right? You go to the VidiQ AI coach and you have it look at what's working in your niche. You have it watch the videos that are already put in your space and you ask what kind of graphics and what kind of visuals those videos are leaning on. And it gives you a pattern of the stuff that is actually landing in your niche. And it can advise you on how much graphics to use and when and where to pull it. Just give it your script and ask it to help you create an engaging video with motion graphics and they'll let you know what you should put and where. I'll drop a link to a prompt to do that in the description. That way you can copy and paste it along with the link to where you can download Node.js. And then you take what you get and you hand it to Claude. And then you're not just making random graphics, you're making ones that are guided to work for your content and your niche. And again, like I said, Claude will walk you through it. I ask Claude all the time to break things down to me like I'm 5 years old. >> All right, explain this to me like I'm a 2-year-old, okay? Because there's an element to this thing I just cannot get through my thick head. >> Then it breaks it down and I'm like, \"Dumber.\" It breaks it down some more. I'm like, \"Dumber.\" Till I eventually get it. And then you'll be good to go to help you create motion graphics to stand out in your niche until everyone starts doing it. So, you're better get on it now. All right, and if you want to learn about the secret strategy that is dominating YouTube, make sure you click this video right here.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "What if your videos could look as",
+        "duration": 3.0
+      },
+      {
+        "start": 1.24,
+        "text": "professional as the big channels you",
+        "duration": 3.84
+      },
+      {
+        "start": 3.0,
+        "text": "watch without ever learning how to edit?",
+        "duration": 3.72
+      },
+      {
+        "start": 5.08,
+        "text": "Well, now it's actually possible because",
+        "duration": 3.92
+      },
+      {
+        "start": 6.72,
+        "text": "every graphic, every animation that's",
+        "duration": 4.44
+      },
+      {
+        "start": 9.0,
+        "text": "popped up since this video started, I",
+        "duration": 4.92
+      },
+      {
+        "start": 11.16,
+        "text": "did not edit a single or make a single",
+        "duration": 4.92
+      },
+      {
+        "start": 13.92,
+        "text": "one of those. I just described what I",
+        "duration": 4.44
+      },
+      {
+        "start": 16.08,
+        "text": "wanted in plain English and Claude with",
+        "duration": 4.4
+      },
+      {
+        "start": 18.36,
+        "text": "Remotion built it for me. I'll walk you",
+        "duration": 3.84
+      },
+      {
+        "start": 20.48,
+        "text": "through the setup and stick around cuz",
+        "duration": 3.28
+      },
+      {
+        "start": 22.2,
+        "text": "you know we got to throw a actual pro",
+        "duration": 3.32
+      },
+      {
+        "start": 23.76,
+        "text": "level tip at the end which will take",
+        "duration": 3.68
+      },
+      {
+        "start": 25.52,
+        "text": "these graphics from just looking good to",
+        "duration": 4.8
+      },
+      {
+        "start": 27.44,
+        "text": "what is actually working in your niche.",
+        "duration": 4.76
+      },
+      {
+        "start": 30.32,
+        "text": "Look, everyone wants their videos to",
+        "duration": 3.24
+      },
+      {
+        "start": 32.2,
+        "text": "look professional but not everybody's",
+        "duration": 3.4
+      },
+      {
+        "start": 33.56,
+        "text": "got time to learn some complicated",
+        "duration": 4.16
+      },
+      {
+        "start": 35.6,
+        "text": "software. I've been editing videos for",
+        "duration": 4.2
+      },
+      {
+        "start": 37.72,
+        "text": "over 10 years and I've gotten pretty far",
+        "duration": 3.84
+      },
+      {
+        "start": 39.8,
+        "text": "without learning After Effects or",
+        "duration": 4.08
+      },
+      {
+        "start": 41.56,
+        "text": "Fusion. You know, motion graphics is",
+        "duration": 4.88
+      },
+      {
+        "start": 43.88,
+        "text": "just a whole different realm. But, lucky",
+        "duration": 3.84
+      },
+      {
+        "start": 46.44,
+        "text": "for you and me there's an easier way to",
+        "duration": 3.04
+      },
+      {
+        "start": 47.72,
+        "text": "get those motion graphic results without",
+        "duration": 3.48
+      },
+      {
+        "start": 49.48,
+        "text": "ever learning a complicated program. You",
+        "duration": 3.36
+      },
+      {
+        "start": 51.2,
+        "text": "tell Claude what you want and it pops up",
+        "duration": 3.36
+      },
+      {
+        "start": 52.84,
+        "text": "something that looks professional, on",
+        "duration": 2.88
+      },
+      {
+        "start": 54.56,
+        "text": "par with the other channels in your",
+        "duration": 2.68
+      },
+      {
+        "start": 55.72,
+        "text": "niche and for some of you honestly",
+        "duration": 3.28
+      },
+      {
+        "start": 57.24,
+        "text": "probably a step above. All right, so how",
+        "duration": 3.36
+      },
+      {
+        "start": 59.0,
+        "text": "does this actually work? It's actually",
+        "duration": 2.76
+      },
+      {
+        "start": 60.6,
+        "text": "pretty simple. We're going to grab a",
+        "duration": 3.52
+      },
+      {
+        "start": 61.76,
+        "text": "tool called Remotion and connect it to",
+        "duration": 4.52
+      },
+      {
+        "start": 64.12,
+        "text": "Claude. Remotion is just a tool that is",
+        "duration": 4.8
+      },
+      {
+        "start": 66.28,
+        "text": "made to build motion graphics. Now,",
+        "duration": 4.24
+      },
+      {
+        "start": 68.92,
+        "text": "little did I know much of motion",
+        "duration": 4.2
+      },
+      {
+        "start": 70.52,
+        "text": "graphics revolves around coding when you",
+        "duration": 4.28
+      },
+      {
+        "start": 73.12,
+        "text": "get into the inside but listen, I don't",
+        "duration": 2.96
+      },
+      {
+        "start": 74.8,
+        "text": "know anything about that and you don't",
+        "duration": 2.52
+      },
+      {
+        "start": 76.08,
+        "text": "have to know anything about that. Just",
+        "duration": 2.56
+      },
+      {
+        "start": 77.32,
+        "text": "know that because so much of motion",
+        "duration": 3.6
+      },
+      {
+        "start": 78.64,
+        "text": "graphics underneath the hood is actually",
+        "duration": 4.12
+      },
+      {
+        "start": 80.92,
+        "text": "coding, this is now something that you",
+        "duration": 3.2
+      },
+      {
+        "start": 82.76,
+        "text": "can do in Claude. All right, so let me",
+        "duration": 2.68
+      },
+      {
+        "start": 84.12,
+        "text": "show you the easy way to install this",
+        "duration": 3.32
+      },
+      {
+        "start": 85.44,
+        "text": "because this video is not a step-by-step",
+        "duration": 3.52
+      },
+      {
+        "start": 87.44,
+        "text": "tutorial. I just want you guys to know",
+        "duration": 3.4
+      },
+      {
+        "start": 88.96,
+        "text": "that this exists. This is now something",
+        "duration": 3.48
+      },
+      {
+        "start": 90.84,
+        "text": "that you can do to install it. It's",
+        "duration": 3.0
+      },
+      {
+        "start": 92.44,
+        "text": "actually super simple. I'll tell you",
+        "duration": 2.8
+      },
+      {
+        "start": 93.84,
+        "text": "what I did. I just went to Claude and",
+        "duration": 3.6
+      },
+      {
+        "start": 95.24,
+        "text": "said, \"How do I install?\" and it walked",
+        "duration": 3.52
+      },
+      {
+        "start": 97.44,
+        "text": "me through it. I will give you a heads",
+        "duration": 2.64
+      },
+      {
+        "start": 98.76,
+        "text": "up that one thing you'll need to",
+        "duration": 4.28
+      },
+      {
+        "start": 100.08,
+        "text": "download is the Node.js.",
+        "duration": 4.36
+      },
+      {
+        "start": 103.04,
+        "text": "Claude walks you through the whole",
+        "duration": 3.0
+      },
+      {
+        "start": 104.44,
+        "text": "process. There's one part where you have",
+        "duration": 4.08
+      },
+      {
+        "start": 106.04,
+        "text": "to open up the terminal which I never",
+        "duration": 4.36
+      },
+      {
+        "start": 108.52,
+        "text": "use it either on the instance. It kind",
+        "duration": 3.48
+      },
+      {
+        "start": 110.4,
+        "text": "of reminds me of that little part with",
+        "duration": 3.72
+      },
+      {
+        "start": 112.0,
+        "text": "Neo where the guy's talking to Neo for",
+        "duration": 3.76
+      },
+      {
+        "start": 114.12,
+        "text": "the first time. And this part where I",
+        "duration": 3.4
+      },
+      {
+        "start": 115.76,
+        "text": "got confused, I literally would just",
+        "duration": 3.32
+      },
+      {
+        "start": 117.52,
+        "text": "take screenshots, paste it, and say,",
+        "duration": 2.8
+      },
+      {
+        "start": 119.08,
+        "text": "\"Help me.",
+        "duration": 3.24
+      },
+      {
+        "start": 120.32,
+        "text": "HELP ME.\" BUT when you install it, it's",
+        "duration": 3.12
+      },
+      {
+        "start": 122.32,
+        "text": "going to give you some code to paste.",
+        "duration": 2.76
+      },
+      {
+        "start": 123.44,
+        "text": "It's going to ask you some questions,",
+        "duration": 2.88
+      },
+      {
+        "start": 125.08,
+        "text": "some folders where you want to set up",
+        "duration": 2.68
+      },
+      {
+        "start": 126.32,
+        "text": "your template. It's going to ask you if",
+        "duration": 3.079
+      },
+      {
+        "start": 127.76,
+        "text": "you want to install certain skills. Just",
+        "duration": 3.28
+      },
+      {
+        "start": 129.399,
+        "text": "make sure you say yes. So, let me show",
+        "duration": 3.041
+      },
+      {
+        "start": 131.04,
+        "text": "you what this actually looks like in a",
+        "duration": 2.88
+      },
+      {
+        "start": 132.44,
+        "text": "real video. Let's say you're a game",
+        "duration": 2.88
+      },
+      {
+        "start": 133.92,
+        "text": "creator and you're doing a video on the",
+        "duration": 3.44
+      },
+      {
+        "start": 135.32,
+        "text": "most underrated weapon of all time. And",
+        "duration": 3.32
+      },
+      {
+        "start": 137.36,
+        "text": "you're talking and you get to the part",
+        "duration": 5.08
+      },
+      {
+        "start": 138.64,
+        "text": "where you say a one gun has a 73% win",
+        "duration": 5.48
+      },
+      {
+        "start": 142.44,
+        "text": "rate. Now, normally those words would",
+        "duration": 3.76
+      },
+      {
+        "start": 144.12,
+        "text": "just have to live in your sentence. Or",
+        "duration": 3.96
+      },
+      {
+        "start": 146.2,
+        "text": "you say it and maybe, you know, it it",
+        "duration": 3.759
+      },
+      {
+        "start": 148.08,
+        "text": "floats by. Whatever you can manage to do",
+        "duration": 3.8
+      },
+      {
+        "start": 149.959,
+        "text": "with limited motion graphic skills. But",
+        "duration": 3.521
+      },
+      {
+        "start": 151.88,
+        "text": "now that you have Claw connected to",
+        "duration": 4.6
+      },
+      {
+        "start": 153.48,
+        "text": "Remotion, you can illustrate that in a",
+        "duration": 5.24
+      },
+      {
+        "start": 156.48,
+        "text": "bunch of ways. All by just typing in",
+        "duration": 4.4
+      },
+      {
+        "start": 158.72,
+        "text": "what you want and whatever your idea is.",
+        "duration": 4.0
+      },
+      {
+        "start": 160.88,
+        "text": "And if you need to edit anything, you",
+        "duration": 4.16
+      },
+      {
+        "start": 162.72,
+        "text": "edit it the same way. Let's say you are",
+        "duration": 3.72
+      },
+      {
+        "start": 165.04,
+        "text": "a cooking creator and you want to lay",
+        "duration": 4.36
+      },
+      {
+        "start": 166.44,
+        "text": "out the ingredients for your famous uh",
+        "duration": 4.44
+      },
+      {
+        "start": 169.4,
+        "text": "spaghetti.",
+        "duration": 5.52
+      },
+      {
+        "start": 170.88,
+        "text": "Brown sugar. Come on.",
+        "duration": 4.04
+      },
+      {
+        "start": 175.08,
+        "text": "Brother, uh",
+        "duration": 2.8
+      },
+      {
+        "start": 176.36,
+        "text": "you describe what you want, Claw builds",
+        "duration": 2.84
+      },
+      {
+        "start": 177.88,
+        "text": "it, and then you drop it into your",
+        "duration": 3.12
+      },
+      {
+        "start": 179.2,
+        "text": "timeline. Now, depending on what program",
+        "duration": 3.2
+      },
+      {
+        "start": 181.0,
+        "text": "you use, you still have to cut your",
+        "duration": 2.72
+      },
+      {
+        "start": 182.4,
+        "text": "footage and put it together like you",
+        "duration": 3.04
+      },
+      {
+        "start": 183.72,
+        "text": "always do. That part's the same. But if",
+        "duration": 2.56
+      },
+      {
+        "start": 185.44,
+        "text": "you're trying to keep someone's",
+        "duration": 2.28
+      },
+      {
+        "start": 186.28,
+        "text": "attention, you're trying to create an",
+        "duration": 2.92
+      },
+      {
+        "start": 187.72,
+        "text": "engaging video and you want motion",
+        "duration": 3.44
+      },
+      {
+        "start": 189.2,
+        "text": "graphics to pop up, you take the stuff",
+        "duration": 3.56
+      },
+      {
+        "start": 191.16,
+        "text": "that you're already saying and you let",
+        "duration": 3.28
+      },
+      {
+        "start": 192.76,
+        "text": "people see it, not just hear it. You",
+        "duration": 3.759
+      },
+      {
+        "start": 194.44,
+        "text": "make your information easy to follow and",
+        "duration": 4.0
+      },
+      {
+        "start": 196.519,
+        "text": "easy to lock on to. And again, you don't",
+        "duration": 3.961
+      },
+      {
+        "start": 198.44,
+        "text": "have to learn any complicated motion",
+        "duration": 3.6
+      },
+      {
+        "start": 200.48,
+        "text": "graphic skills to do it. All right. Now,",
+        "duration": 3.56
+      },
+      {
+        "start": 202.04,
+        "text": "if you like tech, this is great, but I",
+        "duration": 3.28
+      },
+      {
+        "start": 204.04,
+        "text": "don't I mean, I can make motion",
+        "duration": 2.6
+      },
+      {
+        "start": 205.32,
+        "text": "graphics, but I don't know what type of",
+        "duration": 4.16
+      },
+      {
+        "start": 206.64,
+        "text": "motion graphics to make. This is",
+        "duration": 5.36
+      },
+      {
+        "start": 209.48,
+        "text": "actually where you can kind of take it",
+        "duration": 4.479
+      },
+      {
+        "start": 212.0,
+        "text": "up a bit, right? You go to the VidiQ AI",
+        "duration": 3.88
+      },
+      {
+        "start": 213.959,
+        "text": "coach and you have it look at what's",
+        "duration": 3.201
+      },
+      {
+        "start": 215.88,
+        "text": "working in your niche. You have it watch",
+        "duration": 2.6
+      },
+      {
+        "start": 217.16,
+        "text": "the videos that are already put in your",
+        "duration": 3.24
+      },
+      {
+        "start": 218.48,
+        "text": "space and you ask what kind of graphics",
+        "duration": 3.44
+      },
+      {
+        "start": 220.4,
+        "text": "and what kind of visuals those videos",
+        "duration": 2.8
+      },
+      {
+        "start": 221.92,
+        "text": "are leaning on. And it gives you a",
+        "duration": 2.92
+      },
+      {
+        "start": 223.2,
+        "text": "pattern of the stuff that is actually",
+        "duration": 4.08
+      },
+      {
+        "start": 224.84,
+        "text": "landing in your niche. And it can advise",
+        "duration": 4.679
+      },
+      {
+        "start": 227.28,
+        "text": "you on how much graphics to use and when",
+        "duration": 3.8
+      },
+      {
+        "start": 229.519,
+        "text": "and where to pull it. Just give it your",
+        "duration": 3.521
+      },
+      {
+        "start": 231.08,
+        "text": "script and ask it to help you create an",
+        "duration": 4.08
+      },
+      {
+        "start": 233.04,
+        "text": "engaging video with motion graphics and",
+        "duration": 4.16
+      },
+      {
+        "start": 235.16,
+        "text": "they'll let you know what you should put",
+        "duration": 3.72
+      },
+      {
+        "start": 237.2,
+        "text": "and where. I'll drop a link to a prompt",
+        "duration": 3.0
+      },
+      {
+        "start": 238.88,
+        "text": "to do that in the description. That way",
+        "duration": 2.92
+      },
+      {
+        "start": 240.2,
+        "text": "you can copy and paste it along with the",
+        "duration": 4.76
+      },
+      {
+        "start": 241.8,
+        "text": "link to where you can download Node.js.",
+        "duration": 4.28
+      },
+      {
+        "start": 244.96,
+        "text": "And then you take what you get and you",
+        "duration": 2.36
+      },
+      {
+        "start": 246.08,
+        "text": "hand it to Claude. And then you're not",
+        "duration": 2.48
+      },
+      {
+        "start": 247.32,
+        "text": "just making random graphics, you're",
+        "duration": 3.56
+      },
+      {
+        "start": 248.56,
+        "text": "making ones that are guided to work for",
+        "duration": 4.36
+      },
+      {
+        "start": 250.88,
+        "text": "your content and your niche. And again,",
+        "duration": 3.32
+      },
+      {
+        "start": 252.92,
+        "text": "like I said, Claude will walk you",
+        "duration": 3.2
+      },
+      {
+        "start": 254.2,
+        "text": "through it. I ask Claude all the time to",
+        "duration": 5.08
+      },
+      {
+        "start": 256.12,
+        "text": "break things down to me like I'm 5",
+        "duration": 4.48
+      },
+      {
+        "start": 259.28,
+        "text": "years old.",
+        "duration": 2.84
+      },
+      {
+        "start": 260.6,
+        "text": ">> All right, explain this to me like I'm a",
+        "duration": 3.08
+      },
+      {
+        "start": 262.12,
+        "text": "2-year-old, okay? Because there's an",
+        "duration": 3.36
+      },
+      {
+        "start": 263.68,
+        "text": "element to this thing I just cannot get",
+        "duration": 2.8
+      },
+      {
+        "start": 265.48,
+        "text": "through my thick head.",
+        "duration": 2.439
+      },
+      {
+        "start": 266.48,
+        "text": ">> Then it breaks it down and I'm like,",
+        "duration": 3.64
+      },
+      {
+        "start": 267.919,
+        "text": "\"Dumber.\" It breaks it down some more.",
+        "duration": 5.081
+      },
+      {
+        "start": 270.12,
+        "text": "I'm like, \"Dumber.\" Till I eventually",
+        "duration": 4.68
+      },
+      {
+        "start": 273.0,
+        "text": "get it. And then you'll be good to go to",
+        "duration": 4.24
+      },
+      {
+        "start": 274.8,
+        "text": "help you create motion graphics to stand",
+        "duration": 5.16
+      },
+      {
+        "start": 277.24,
+        "text": "out in your niche until everyone starts",
+        "duration": 4.72
+      },
+      {
+        "start": 279.96,
+        "text": "doing it. So, you're better get on it",
+        "duration": 3.44
+      },
+      {
+        "start": 281.96,
+        "text": "now. All right, and if you want to learn",
+        "duration": 3.04
+      },
+      {
+        "start": 283.4,
+        "text": "about the secret strategy that is",
+        "duration": 3.36
+      },
+      {
+        "start": 285.0,
+        "text": "dominating YouTube, make sure you click",
+        "duration": 5.16
+      },
+      {
+        "start": 286.76,
+        "text": "this video right",
+        "duration": 5.84
+      },
+      {
+        "start": 290.16,
+        "text": "here.",
+        "duration": 2.44
+      }
+    ],
+    "status": "OK",
+    "segment_count": 159
+  },
+  "captured_at": "2026-07-09T21:35:00Z",
+  "captured_by": "CAPTEURS"
+}

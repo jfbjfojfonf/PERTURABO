@@ -1,0 +1,49 @@
+{
+  "campaign_id": "TS01_SANDOVAL",
+  "verdict": "GO",
+  "verdict_justification": "Specimen valide et exploitable : clip E! News 'How Tom SANDOVAL SCANDAL All Went Down' (310s, 105 231 vues, 2.61M abonnés chaîne, upload 04/2023) + transcript réellement capturé (ARCHIVUM/campaign/transcripts/transcript_xpG5sIW1jpA.json) + contexte article TMZ (2026-08-04) sur l'affaire Tom Sandoval / Victoria Lee Robinson. Le sujet = drama célébrité à fort potentiel engagement (outrage + débat) : parfait pour reframe émotionnel en clips 7s+ avec logo en superposition. RESERVE LEVEE (2026-08-04) : directive mise à jour par le Warsmith de 'POST ANY RUNESCAPE CONTENT' vers 'POST ANY VIRAL CONTENT' — le drama célébrité est desormais 100% conforme (durée min 7s, engagement min 0.8%). Fit plateforme YouTube = 7/10 (le drama célébrité surperforme en Shorts T1 US), fit marché us_young_english = 7/10. Saturation estimée : medium (drama célébrité dense mais le format 'scandal debrief + reframe' reste différenciant). CPM logo : à confirmer (casino_rules.md en squelette).",
+  "reference_skeleton": {
+    "hook_type": "scandal_debrief",
+    "emotion_dominante": "outrage_curiosite",
+    "structure_narrative": "chronologique_escalade",
+    "loop_technique": "tease_consequence",
+    "engagement_type": "debate_bait_commentaire",
+    "endroits_preuve": [
+      "F01_SCOUT/OUT/source_specimen.json (métriques réelles yt-dlp)",
+      "ARCHIVUM/campaign/transcripts/transcript_xpG5sIW1jpA.json",
+      "Article TMZ 2026-08-04 (context_article dans reference_clip.json)"
+    ],
+    "iron_status": "done",
+    "source_meta": {
+      "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+      "title": "How Tom SANDOVAL SCANDAL All Went Down | E! News",
+      "view_count": 105231,
+      "duration_sec": 310,
+      "platform": "youtube"
+    }
+  },
+  "demon_analysis": {
+    "demon_id": "CELEBRITY_DRAMA",
+    "dominant_emotion": "outrage",
+    "exploited_territories": [
+      "vanderpump_rules_drama",
+      "celebrity_breakup_scandal",
+      "restraining_order_case"
+    ],
+    "blue_ocean_unlocked": []
+  },
+  "direct_analysis": {
+    "campaign_fit_platform": 7,
+    "campaign_fit_market": 7,
+    "campaign_budget_remaining": null,
+    "cpm_expected": null,
+    "saturation_level": "medium",
+    "evidence": {
+      "platform_profile_present": false,
+      "market_profile_present": false,
+      "cartographie_present": false
+    }
+  },
+  "check_in_iw_custos": "2026-08-04T17:45:16Z",
+  "iron_status": "done"
+}

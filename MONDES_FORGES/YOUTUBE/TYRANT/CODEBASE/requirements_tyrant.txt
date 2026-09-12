@@ -1,0 +1,3 @@
+# TYRANT — Requirements
+# Zéro dépendance — l'IRON (Claude sandbox) fait l'analyse stratégique
+# Aucune librairie externe requise (stdlib uniquement)

@@ -96,6 +96,33 @@ def _candidate_id(vod_url, start_sec):
     return hashlib.md5(raw.encode()).hexdigest()[:10]
 
 
+def _segments_to_words(segments):
+    """Convertit segments (texte + start/end) → liste de pseudo-mots pour compatibilité.
+    Approximation: 1 mot ≈ 0.3s, réparti uniformément sur la durée du segment."""
+    words = []
+    for seg in segments:
+        text = seg.get("text", "").strip()
+        if not text:
+            continue
+        start = float(seg.get("start", 0))
+        end = float(seg.get("end", start))
+        dur = end - start
+        # Split en mots simples
+        word_list = text.split()
+        if not word_list:
+            continue
+        word_dur = dur / len(word_list) if len(word_list) > 0 else 0.3
+        for idx, w in enumerate(word_list):
+            w_start = start + idx * word_dur
+            w_end = w_start + word_dur
+            words.append({
+                "word": w,
+                "start": round(w_start, 3),
+                "end": round(w_end, 3),
+            })
+    return words
+
+
 def _load_json(path):
     if not os.path.exists(path):
         return {}
@@ -253,57 +280,71 @@ class PremiumTranscriber:
 # ─── Chat Replay ────────────────────────────────────────────────────────────
 
 def fetch_chat_replay(vod_url):
-    """Récupère le chat replay d'une VOD Twitch publique via l'API v5."""
+    """Récupère le chat replay d'une VOD Twitch publique via le GraphQL public
+    (successeur de l'API v5, désormais fermée). Pagination par offset (Int)."""
     m = re.search(r"videos/(\d+)", vod_url)
     if not m:
         _log("⚠️  Impossible d'extraire le video_id — chat ignoré")
         return []
     video_id = m.group(1)
-    _log(f"💬 Chat replay : video_id={video_id}")
+    _log(f"💬 Chat replay (GraphQL) : video_id={video_id}")
 
+    _GQL = "https://gql.twitch.tv/gql"
+    _QUERY = (
+        "query VidComments($videoID:ID!,$off:Int){video(id:$videoID){"
+        "comments(contentOffsetSeconds:$off){edges{node{"
+        "contentOffsetSeconds message{fragments{text emote{id}}}"
+        "}}}}}"
+    )
     messages = []
-    offset = 0.0
-    max_requests = 500  # garde-fou budget
-    seen_offsets = set()
+    offset = 0
+    max_requests = 400  # garde-fou budget
+    last_off = None
 
     for _ in range(max_requests):
-        url = (f"https://api.twitch.tv/v5/videos/{video_id}/comments"
-               f"?client_id={_TWITCH_CLIENT_ID}"
-               f"&content_offset_seconds={offset}")
+        payload = json.dumps({"operationName": "VidComments",
+                              "variables": {"videoID": video_id, "off": offset},
+                              "query": _QUERY}).encode("utf-8")
+        req = urllib.request.Request(_GQL, data=payload, method="POST", headers={
+            "Client-ID": _TWITCH_CLIENT_ID,
+            "Content-Type": "application/json",
+            "User-Agent": "PERTURABO-F00B-VOX",
+        })
         try:
-            req = urllib.request.Request(url, headers={
-                "User-Agent": "PERTURABO-F00B-VOX",
-            })
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=20) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
         except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError):
             break
 
-        comments = data.get("comments", [])
-        if not comments:
+        edges = (((((data.get("data") or {}).get("video")) or {}).get("comments")) or {}).get("edges") or []
+        if not edges:
             break
 
-        for c in comments:
-            body = c.get("message", {}).get("body", "")
-            emotes = [e.get("text", "") for e in c.get("message", {}).get("emoticons", [])]
-            offset_sec = c.get("content_offset_seconds", 0)
+        for e in edges:
+            node = e.get("node") or {}
+            off_sec = node.get("contentOffsetSeconds", 0)
+            frags = ((node.get("message") or {}).get("fragments")) or []
+            body_parts = []
+            emotes = []
+            for fr in frags:
+                txt = fr.get("text")
+                if txt:
+                    body_parts.append(str(txt))
+                em = fr.get("emote")
+                if em:
+                    emotes.append(str(em.get("id", "")))
             messages.append({
-                "offset_sec": round(offset_sec, 2),
-                "body": body,
+                "offset_sec": round(float(off_sec), 2),
+                "body": " ".join(body_parts).strip(),
                 "emotes": emotes,
             })
 
-        next_offset = data.get("_next")
-        if not next_offset or next_offset in seen_offsets:
+        new_last = edges[-1]["node"].get("contentOffsetSeconds", offset)
+        if last_off is not None and new_last <= last_off:
             break
-        seen_offsets.add(next_offset)
-        # Le paramètre _next est un offset opaque mais on utilise
-        # content_offset_seconds pour la pagination
-        last_offset = comments[-1].get("content_offset_seconds", offset)
-        if last_offset <= offset:
-            break
-        offset = last_offset + 1
-        time.sleep(0.1)  # politesse
+        last_off = new_last
+        offset = int(new_last) + 1
+        time.sleep(0.05)  # politesse
 
     _log(f"💬 {len(messages)} messages chat récupérés")
     return messages
@@ -520,42 +561,51 @@ WEIGHTS = {
 def score_candidates(candidates, words, chat_messages, vod_url):
     """Score chaque candidat avec des critères réels (speech + chat)."""
     scored = []
-    duration = float(words[-1].get("end", 0)) if words else 0
+    has_words = len(words) > 0
+    duration = float(words[-1].get("end", 0)) if has_words else 0
 
     for cand in candidates:
         start, end = cand["start"], cand["end"]
         dur = cand["duration"]
 
-        # Mots dans la fenêtre
-        win_words = [w for w in words
-                     if float(w.get("start", 0)) >= start
-                     and float(w.get("start", 0)) < end]
-        win_text = " ".join(w.get("word", "") for w in win_words)
+        # Mots dans la fenêtre (si disponibles)
+        if has_words:
+            win_words = [w for w in words
+                         if float(w.get("start", 0)) >= start
+                         and float(w.get("start", 0)) < end]
+            win_text = " ".join(w.get("word", "") for w in win_words)
+
+            # Hook force : mots triggers dans les 3 premières secondes
+            hook_zone = [w for w in win_words
+                         if float(w.get("start", 0)) - start <= 3.0]
+            hook_text = " ".join(w.get("word", "") for w in hook_zone).lower()
+            hook_hits = sum(1 for tw in TRIGGER_WORDS if tw in hook_text)
+            hook_score = min(10, 4.0 + hook_hits * 2.5 + (1.5 if cand["type"] == "punchline" else 0))
+
+            # Clarté : densité de mots dans la fenêtre
+            word_density = len(win_words) / dur if dur > 0 else 0
+            clarity_score = min(10, 5.0 + word_density * 2)
+
+            # Quotability : punchlines + triggers
+            excl_count = win_text.count("!") + win_text.count("?")
+            quotability_score = min(10, 3.0 + excl_count * 1.5 + hook_hits * 1.5)
+        else:
+            # Mode fallback sans mots : scoring basé sur type de signal + chat
+            win_text = ""
+            hook_hits = 0
+            hook_score = 4.0 + (1.5 if cand["type"] == "punchline" else 0) + (1.0 if cand["type"] == "trigger_word" else 0)
+            clarity_score = 5.0
+            quotability_score = 3.0
 
         # Messages chat dans la fenêtre
         win_chat = [m for m in chat_messages
                     if m.get("offset_sec", 0) >= start
                     and m.get("offset_sec", 0) < end]
 
-        # Hook force : mots triggers dans les 3 premières secondes
-        hook_zone = [w for w in win_words
-                     if float(w.get("start", 0)) - start <= 3.0]
-        hook_text = " ".join(w.get("word", "") for w in hook_zone).lower()
-        hook_hits = sum(1 for tw in TRIGGER_WORDS if tw in hook_text)
-        hook_score = min(10, 4.0 + hook_hits * 2.5 + (1.5 if cand["type"] == "punchline" else 0))
-
         # Émotion : intensité du chat + type de signal
         chat_intensity = cand.get("intensity", 0.5)
         chat_count = len(win_chat)
         emotion_score = min(10, 3.0 + chat_intensity * 4 + min(3, chat_count / 10))
-
-        # Clarté : densité de mots dans la fenêtre
-        word_density = len(win_words) / dur if dur > 0 else 0
-        clarity_score = min(10, 5.0 + word_density * 2)
-
-        # Quotability : punchlines + triggers
-        excl_count = win_text.count("!") + win_text.count("?")
-        quotability_score = min(10, 3.0 + excl_count * 1.5 + hook_hits * 1.5)
 
         # Timing : durée optimale
         if 20 <= dur <= 35:
@@ -585,6 +635,7 @@ def score_candidates(candidates, words, chat_messages, vod_url):
         bonuses = []
         maluses = []
         reasons = []
+        tos_hits = 0
 
         if dur > 60:
             maluses.append({"rule": "duree_gt_60", "delta": -3.0})
@@ -597,14 +648,15 @@ def score_candidates(candidates, words, chat_messages, vod_url):
         if hook_hits >= 2:
             bonuses.append({"rule": "multi_trigger", "delta": 1.0})
 
-        # TOS risk
-        tos_hits = sum(1 for tw in TOS_RISK_WORDS if tw in win_text.lower())
-        if tos_hits:
-            maluses.append({"rule": "tos_risk", "delta": -2.0 * tos_hits})
-            reasons.append("tos_risk")
+        # TOS risk (si mots disponibles)
+        if has_words and win_text:
+            tos_hits = sum(1 for tw in TOS_RISK_WORDS if tw in win_text.lower())
+            if tos_hits:
+                maluses.append({"rule": "tos_risk", "delta": -2.0 * tos_hits})
+                reasons.append("tos_risk")
 
-        # Silences longs (> 3s sans parole)
-        if win_words:
+        # Silences longs (si mots disponibles)
+        if has_words and win_words:
             gaps = []
             prev_end = start
             for w in sorted(win_words, key=lambda x: float(x.get("start", 0))):
@@ -624,7 +676,7 @@ def score_candidates(candidates, words, chat_messages, vod_url):
 
         # Statut
         status = "scored"
-        if final < 4.0 or tos_hits:
+        if final < 4.0 or (has_words and tos_hits):
             status = "auto_rejected"
             reasons.append("score_lt_4" if final < 4.0 else "tos_risk")
 
@@ -672,6 +724,8 @@ def build_candidats_json(scored_candidates, vod_url, words):
             "signal_type": c["signal_type"],
             "signal_intensity": c["signal_intensity"],
             "signal_start": c["signal_start"],
+            "top_words": c.get("top_words", ""),
+            "score": c.get("score"),
         })
 
     return {
@@ -735,7 +789,7 @@ def run_auto_detect(forge_root, vod_url, nb_clips=5,
         vod_url,
     ]
     try:
-        subprocess.run(dl_cmd, capture_output=True, text=True, timeout=300, check=True)
+        subprocess.run(dl_cmd, capture_output=True, text=True, timeout=1800, check=True)
         if os.path.exists(audio_path):
             audio_size_mb = os.path.getsize(audio_path) / (1024 * 1024)
             _log(f"  Audio: {audio_size_mb:.1f} Mo")
@@ -772,26 +826,74 @@ def run_auto_detect(forge_root, vod_url, nb_clips=5,
     _log(f"  {len(chunks)} chunks créés")
 
     # ── 4. Transcription word-level ─────────────────────────────────────
-    _log("📝 Transcription word-level (clé premium)...")
+    _log("📝 Transcription (clé premium)...")
     transcriber = PremiumTranscriber(forge_root)
     all_words = []
+    all_segments = []
+    transcription_mode = "none"
 
     for i, chunk_path in enumerate(chunks):
         _log(f"  Chunk {i+1}/{len(chunks)} ({os.path.getsize(chunk_path) / (1024*1024):.1f} Mo)...")
         try:
             result = transcriber.transcribe_chunk(chunk_path)
             chunk_offset = i * chunk_sec
-            for w in result.get("words", []):
-                all_words.append({
-                    "word": w.get("word", ""),
-                    "start": round(w.get("start", 0) + chunk_offset, 3),
-                    "end": round(w.get("end", 0) + chunk_offset, 3),
+
+            # Cas 1: word-level timestamps (format OpenAI verbose_json avec timestamp_granularities=word)
+            if "words" in result and result["words"]:
+                transcription_mode = "words"
+                for w in result.get("words", []):
+                    all_words.append({
+                        "word": w.get("word", ""),
+                        "start": round(w.get("start", 0) + chunk_offset, 3),
+                        "end": round(w.get("end", 0) + chunk_offset, 3),
+                    })
+
+            # Cas 2: segments avec timestamps (format verbose_json standard)
+            elif "segments" in result and result["segments"]:
+                transcription_mode = "segments"
+                for seg in result.get("segments", []):
+                    all_segments.append({
+                        "text": seg.get("text", "").strip(),
+                        "start": round(seg.get("start", 0) + chunk_offset, 3),
+                        "end": round(seg.get("end", 0) + chunk_offset, 3),
+                    })
+
+            # Cas 3: texte seul (fallback)
+            elif "text" in result and result["text"]:
+                transcription_mode = "text"
+                # On stocke le texte brut par chunk pour référence
+                all_segments.append({
+                    "text": result["text"].strip(),
+                    "start": chunk_offset,
+                    "end": chunk_offset + chunk_sec,
                 })
+
+            else:
+                _log(f"  ⚠️  Chunk {i+1}: format de réponse inattendu")
+
         except Exception as e:
             _log(f"  ⚠️  Erreur chunk {i+1}: {e}")
             continue
 
-    _log(f"  {len(all_words)} mots transcrits (durée totale: {_fmt_time(all_words[-1]['end']) if all_words else '0'})")
+    _log(f"  Mode transcription: {transcription_mode}")
+
+    # Construire all_words selon le mode disponible
+    if transcription_mode == "words":
+        _log(f"  {len(all_words)} mots transcrits (durée: {_fmt_time(all_words[-1]['end']) if all_words else '0'})")
+
+    elif transcription_mode == "segments":
+        _log(f"  {len(all_segments)} segments transcrits")
+        # Convertir segments → pseudo-mots pour compatibilité analyse existante
+        all_words = _segments_to_words(all_segments)
+        _log(f"  Converti en {len(all_words)} pseudo-mots pour analyse")
+
+    elif transcription_mode == "text":
+        _log(f"  ⚠️  Texte seul — analyse word-level impossible, fallback chat-only")
+        # Pas de mots → on ne peut pas faire analyze_speech
+        # Le pipeline continuera avec chat replay uniquement
+
+    else:
+        raise RuntimeError("Échec transcription: aucun format reconnu (ni words, ni segments, ni text)")
 
     # Sauvegarder le transcript
     transcript_path = os.path.join(out_dir, "transcript.json")
@@ -801,8 +903,10 @@ def run_auto_detect(forge_root, vod_url, nb_clips=5,
         "vod_title": vod_title,
         "vod_duration": vod_duration,
         "upload_date": upload_date,
+        "transcription_mode": transcription_mode,
         "total_words": len(all_words),
         "words": all_words,
+        "segments": all_segments if all_segments else None,
     })
     _log(f"  Transcript sauvegardé → {transcript_path}")
 
@@ -823,22 +927,94 @@ def run_auto_detect(forge_root, vod_url, nb_clips=5,
         _log("  Chat ignoré (--no-chat)")
 
     # ── 6. Analyse speech + chat → peaks ────────────────────────────────
-    _log("🔍 Analyse speech (triggers + punchlines + densité)...")
-    speech_peaks = analyze_speech(all_words)
-    _log(f"  {len(speech_peaks)} speech peaks")
+    if all_words:
+        _log("🔍 Analyse speech (triggers + punchlines + densité)...")
+        speech_peaks = analyze_speech(all_words)
+        _log(f"  {len(speech_peaks)} speech peaks")
+    else:
+        _log("⚠️  Aucun mot timestampé — analyse speech ignorée")
+        speech_peaks = []
 
     _log("🔍 Analyse chat (pics d'engagement)...")
     chat_peaks = analyze_chat(chat_messages, vod_duration)
     _log(f"  {len(chat_peaks)} chat peaks")
+
+    if not speech_peaks and not chat_peaks:
+        raise RuntimeError("Aucun signal détecté (ni speech, ni chat) — impossible de générer des candidats")
 
     # ── 7. Fusion → candidats ───────────────────────────────────────────
     _log(f"🎯 Fusion des pics → {nb_clips * 2} candidats max...")
     candidates = fuse_candidates(speech_peaks, chat_peaks, nb_clips)
     _log(f"  {len(candidates)} candidats après fusion + déduplication")
 
+    # ── 8a. Intensité réelle + tableau brut (P2-P6) ────────────────────
+    try:
+        from vox_refonte import build_raw_table
+        # P4 : injecter le chemin audio (déjà téléchargé) + une tranche vidéo
+        # basse résolution PAR FENÊTRE (jamais la VOD complète — règle d'or).
+        for _c in candidates:
+            _c["_audio_path"] = audio_path
+            if not keep_audio and not os.path.exists(audio_path):
+                _c["_audio_path"] = None
+        # P2 : capteur clips communautaires (GraphQL public, zéro clé).
+        _clips = []
+        try:
+            _vm = re.search(r"videos/(\d+)", vod_url)
+            _video_id = _vm.group(1) if _vm else None
+            _login = (metadata.get("uploader_id")
+                       or metadata.get("channel_id")
+                       or metadata.get("channel")
+                       or metadata.get("uploader"))
+            if not _login and _video_id:
+                _login = None
+            if _video_id and _login:
+                from clips_heatmap import fetch_channel_clips
+                _clips = fetch_channel_clips(_login, _video_id, limit=100)
+                _log(f"🪤 {len(_clips)} clips communautaires alignés sur la VOD")
+        except Exception as _ce:
+            _log(f"  ⚠️ capteur clips indisponible ({_ce}) — heatmap ignorée")
+        candidates, _raw_table = build_raw_table(
+            candidates, all_words, chat_messages, TRIGGER_WORDS, vod_duration, clips=_clips
+        )
+        _raw_path = os.path.join(out_dir, "raw_table.json")
+        _save_json(_raw_path, _raw_table)
+        _log(f"🧮 Intensité réelle calculée ({len(_raw_table)} fenêtres) → raw_table.json")
+    except Exception as _e:
+        _log(f"  ⚠️ refonte capteurs indisponible ({_e}) — intensité legacy conservée")
+
     # ── 8. Scoring ──────────────────────────────────────────────────────
     _log("📊 Scoring multicritère...")
     scored = score_candidates(candidates, all_words, chat_messages, vod_url)
+
+    # ── 8b. Veto directive campagne (P1 — refonte VOX) ──────────────────
+    try:
+        from campaign_veto import (
+            find_campaign_directive_md, load_campaign_directive, apply_campaign_veto,
+        )
+        md_path = find_campaign_directive_md(forge_root)
+        if md_path:
+            with open(md_path, "r", encoding="utf-8") as _f:
+                _directive_md = _f.read()
+            _directive = load_campaign_directive(_directive_md)
+            _cid = _directive.get("campaign_id") or "?"
+            _log(f"🛡️  Directive campagne: {_cid} | plateformes={_directive.get('platforms')}")
+            scored, _veto = apply_campaign_veto(scored, _directive, platform, upload_date)
+            _log(f"  {_veto} veto(s) campagne appliqué(s)")
+        else:
+            _log("  (aucune directive campagne — veto ignoré)")
+    except Exception as _e:
+        _log(f"  ⚠️ veto campagne indisponible ({_e}) — continué sans veto")
+
+    # ── 8c. Arbitrage premium sur les survivants (P5) ──────────────────
+    _survivors = [c for c in scored if c["status"] == "scored"]
+    try:
+        from vox_premium import arbitrate
+        _survivors = arbitrate(_survivors)
+        scored = [c for c in scored if c["status"] != "scored"] + _survivors
+        _log(f"  🧠 Arbitrage premium: verdicts {[c.get('verdict') for c in _survivors]}")
+    except Exception as _e:
+        _log(f"  ⚠️ arbitrage premium indisponible ({_e}) — continué sans premium")
+
     accepted = [c for c in scored if c["status"] == "scored"]
     rejected = [c for c in scored if c["status"] == "auto_rejected"]
     _log(f"  {len(accepted)} acceptés, {len(rejected)} auto-rejetés")
@@ -863,7 +1039,9 @@ def run_auto_detect(forge_root, vod_url, nb_clips=5,
         "transcription": {
             "engine": transcriber.model_id,
             "provider": transcriber._config.get("provider", "unknown"),
+            "mode": transcription_mode,
             "total_words": len(all_words),
+            "total_segments": len(all_segments),
             "chunks_processed": len(chunks),
             "audio_size_mb": round(os.path.getsize(audio_path) / (1024*1024), 1) if os.path.exists(audio_path) else 0,
         },

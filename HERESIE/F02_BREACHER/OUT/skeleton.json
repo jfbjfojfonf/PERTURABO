@@ -1,0 +1,46 @@
+{
+  "source_video_id": "specimen_bluntlyexplained_star",
+  "source_title": "Every Type Of Star Explained in 10 minutes",
+  "skeleton_type": "PURE_ESCALATION_TAXONOMY",
+  "skeleton": {
+    "Hook": {
+      "type_hook": "AUCUN — le titre fait tout",
+      "phrase_exacte": "N/A — pas de hook verbal",
+      "emotion_cible": "curiosité via le titre"
+    },
+    "Promise": {
+      "promesse_explicite": "Dans le titre — 'Every Type Of X in Y minutes'",
+      "promesse_implicite": "Tu vas connaître TOUS les types"
+    },
+    "Rehook_1": {
+      "type_rehook": "AUCUN — l'escalade EST la rétention",
+      "phrase_exacte": "N/A"
+    },
+    "Rehook_2": {
+      "type_rehook": "AUCUN",
+      "phrase_exacte": "N/A"
+    },
+    "Body_Structure": {
+      "type_structure": "liste_ordonnee_escalade",
+      "nombre_sections": 18,
+      "rythme": "métronomique ~35s par type",
+      "pattern_par_section": "Nom → Définition → Chiffres → Fait dingue → Type suivant (zéro transition)"
+    },
+    "Payoff": {
+      "reponse_promesse": "Tous les types sont couverts du plus commun au plus extrême",
+      "satisfaction_cible": "complète"
+    },
+    "CTA": {
+      "type_cta": "AUCUN — la vidéo s'arrête net",
+      "phrase_exacte": "N/A",
+      "lien_sujet": "N/A"
+    }
+  },
+  "escalation_arc": "commun → familier → exotique → massif → extrême → hypothétique",
+  "mind_blow_frequency": "tous les 2-3 types",
+  "analysis_notes": "Format atypique — pas de hook, pas de rehook, pas de CTA. L'escalade taxonomique est le moteur unique de rétention. Le titre fait 100% du travail d'acquisition.",
+  "f02_meta": {
+    "extracted_at": "2026-07-10T00:48:00Z",
+    "model_used": "claude-sandbox"
+  }
+}

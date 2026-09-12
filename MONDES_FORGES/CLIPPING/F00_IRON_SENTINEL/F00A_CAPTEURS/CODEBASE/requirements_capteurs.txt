@@ -1,0 +1,11 @@
+# F00_CAPTEURS — requirements
+# Stdlib requis (urllib) : fetch de base sans dépendance, zéro installation.
+# Requis pour --scrap-youtube (scrap de chaînes YouTube commandité) :
+yt-dlp>=2024.1.0
+youtube-transcript-api>=0.6.2
+# Ce qui suit est OPTIONNEL — activé par le Warsmith selon les sites
+# commandités dans clipping_sites_to_scrap.json (scrape_method).
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+playwright>=1.40.0
+selenium>=4.20.0

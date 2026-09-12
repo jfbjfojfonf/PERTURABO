@@ -1,0 +1,21 @@
+{
+  "channels": [
+    {
+      "name": "Viqq",
+      "url": "https://youtube.com/@Viqq",
+      "category": "education_youtube"
+    },
+    {
+      "name": "Tim",
+      "url": "https://youtube.com/@Tim",
+      "category": "faceless_channels"
+    },
+    {
+      "name": "Stickman Hogwarts",
+      "url": "https://youtube.com/@StickmanHogwarts",
+      "category": "competitor_direct"
+    }
+  ],
+  "sweep_frequency": "daily",
+  "last_sweep": null
+}

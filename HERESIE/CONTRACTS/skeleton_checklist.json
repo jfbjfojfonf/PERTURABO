@@ -1,0 +1,125 @@
+{
+  "viral_skeleton_elements": [
+    {
+      "element": "Hook",
+      "timeframe": "0-5s",
+      "description": "Accroche qui crée un vide cognitif ou une statistique choquante. Pas de 'Bonjour à tous'. Le spectateur doit se dire 'Je dois savoir la suite'.",
+      "extraction_fields": ["type_hook", "phrase_exacte", "emotion_cible"]
+    },
+    {
+      "element": "Promise",
+      "timeframe": "5-15s",
+      "description": "Annonce claire de la valeur de la vidéo sans tout dévoiler. Le spectateur sait ce qu'il gagne à rester.",
+      "extraction_fields": ["promesse_explicite", "promesse_implicite"]
+    },
+    {
+      "element": "Rehook_1",
+      "timeframe": "60-90s",
+      "description": "Relance d'attention (open loop, changement de rythme, révélation partielle). Empêche le drop-off.",
+      "extraction_fields": ["type_rehook", "phrase_exacte"]
+    },
+    {
+      "element": "Rehook_2",
+      "timeframe": "milieu",
+      "description": "Second point de rétention. Peut être un cliffhanger, une question, ou un changement de sujet.",
+      "extraction_fields": ["type_rehook", "phrase_exacte"]
+    },
+    {
+      "element": "Body_Structure",
+      "timeframe": "global",
+      "description": "Structure narrative globale (ex: liste ordonnée, storytelling chronologique, problème-solution, avant-après).",
+      "extraction_fields": ["type_structure", "nombre_sections", "rythme"]
+    },
+    {
+      "element": "Payoff",
+      "timeframe": "fin",
+      "description": "Réponse concrète à la promesse du début. Le spectateur doit sentir que sa question est résolue.",
+      "extraction_fields": ["reponse_promesse", "satisfaction_cible"]
+    },
+    {
+      "element": "CTA",
+      "timeframe": "très fin",
+      "description": "Appel à l'action intégré au contexte de la vidéo (pas juste 'abonne-toi'). Lié au sujet.",
+      "extraction_fields": ["type_cta", "phrase_exacte", "lien_sujet"]
+    }
+  ],
+  "thumbnail_skeleton_elements": [
+    {
+      "element": "Composition",
+      "description": "Position des éléments (ex: personnage à gauche, objet à droite, texte centré).",
+      "extraction_fields": ["sujet_position", "objet_position", "texte_position", "fond_type"]
+    },
+    {
+      "element": "Contraste_Couleurs",
+      "description": "Palette dominante, niveau de contraste, lisibilité sur mobile.",
+      "extraction_fields": ["palette_dominante", "couleurs_accent", "contraste_niveau"],
+      "quantitative_metrics": {
+        "brightness_target": "0-255 (mean pixel brightness)",
+        "dark_pct_target": "% de pixels < 50 brightness",
+        "bright_pct_target": "% de pixels > 200 brightness",
+        "saturation_target": "0-255 (mean saturation = max_rgb - min_rgb)",
+        "vibrant_pct_target": "% de pixels avec saturation > 80",
+        "tolerance": "±20% sur chaque métrique"
+      }
+    },
+    {
+      "element": "Emotion_Expression",
+      "description": "Expression du visage, posture, intensité émotionnelle.",
+      "extraction_fields": ["emotion_primaire", "intensite", "registre"]
+    },
+    {
+      "element": "Texte_Image",
+      "description": "Mots affichés (max 3-4), police, couleur, encadré.",
+      "extraction_fields": ["mots", "police", "couleur", "position", "encadre"]
+    },
+    {
+      "element": "Curiosity_Gap",
+      "description": "Élément visuel qui crée un mystère (objet flouté, flèche, zone illuminée).",
+      "extraction_fields": ["type_gap", "element_cle", "pourquoi_ca_clic"]
+    },
+    {
+      "element": "Distribution_Spatiale",
+      "description": "Répartition de la luminosité et des couleurs dans l'image (quadrants).",
+      "extraction_fields": ["quadrant_top_left", "quadrant_top_right", "quadrant_bottom_left", "quadrant_bottom_right"],
+      "quantitative_metrics": {
+        "method": "Diviser l'image en 4 quadrants. Mesurer la brightness moyenne de chacun.",
+        "purpose": "Détecter où le sujet et le texte se concentrent."
+      }
+    },
+    {
+      "element": "Couleurs_Dominantes",
+      "description": "Top 5 couleurs dominantes quantifiées (par buckets de 32).",
+      "extraction_fields": ["color_1_rgb_pct", "color_2_rgb_pct", "color_3_rgb_pct", "color_4_rgb_pct", "color_5_rgb_pct"],
+      "quantitative_metrics": {
+        "method": "Quantifier les pixels par buckets de 32 (RGB // 32 * 32). Compter le top 5.",
+        "purpose": "Reproduire la palette exacte du Démon."
+      }
+    }
+  ],
+  "thumbnail_validation_rules": {
+    "description": "Règles de validation post-génération. L'image générée doit matcher le visual skeleton extrait du Démon.",
+    "metrics_to_compare": [
+      {"metric": "brightness", "tolerance": 30, "unit": "0-255"},
+      {"metric": "dark_pct", "tolerance": 20, "unit": "%"},
+      {"metric": "bright_pct", "tolerance": 20, "unit": "%"},
+      {"metric": "saturation", "tolerance": 25, "unit": "0-255"},
+      {"metric": "vibrant_pct", "tolerance": 15, "unit": "%"}
+    ],
+    "pass_threshold": "4/5 métriques dans la tolérance = PASS. Sinon = FAIL → re-générer.",
+    "comparison_method": "Comparer les métriques de l'image générée vs les métriques extraites du Démon. Si FAIL, ajuster le prompt et re-générer."
+  },
+  "metadata_elements": [
+    {
+      "element": "Title",
+      "description": "Titre optimisé : curiosité + clarté + mots-clés. Max 60 caractères visibles."
+    },
+    {
+      "element": "Description",
+      "description": "Description avec hook répété, chapitres, liens, SEO."
+    },
+    {
+      "element": "Tags",
+      "description": "Tags pertinents (mix large + spécifique)."
+    }
+  ]
+}

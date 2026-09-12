@@ -1,0 +1,3 @@
+# F05_GRAND_COMPASS — Requirements
+requests>=2.31.0
+# Zéro dépendance IA — l'IRON (Claude sandbox) fait l'analyse stratégique

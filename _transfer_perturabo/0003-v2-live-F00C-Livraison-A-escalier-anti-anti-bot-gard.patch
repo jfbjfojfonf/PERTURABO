@@ -1,0 +1,415 @@
+From 8004290a1ab80abf78cc71bdeaa9160893690974 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sat, 12 Sep 2026 22:18:32 +0000
+Subject: [PATCH 3/3] =?UTF-8?q?[v2-live]=20F00C=20Livraison=20A=20?=
+ =?UTF-8?q?=E2=80=94=20escalier=20anti-anti-bot=20+=20garde-fou=20+=20cont?=
+ =?UTF-8?q?rat=20d=C3=A9coupl=C3=A9?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- f00c_vox.py : download_media() à 3 marches (player_client=ios,mweb →
+  yt-dlp nu → --cookies), formats video-only height<=144 (heatmap 64x36,
+  ~30-60 Mo/h), contrat --media-source (métadonnées ≠ média), CLI
+  --cookies-file, garde-fou CLI exit 2 (budget > 0 sans status full ou
+  0 candidat → échec explicite)
+- Workflow : secret YT_COOKIES_BASE64 → /tmp/yt_cookies.txt (umask 077)
+  → --cookies-file → détruit en fin de job (if: always()); étape GUARD
+  exit 1 "Analyse fonctionnelle échouée" ; input media_source ;
+  pip install --upgrade yt-dlp
+- Tests : 17/17 verts (régression zéro)
+- Docs : guide 19 (mur anti-bot + escalier + protocole cookies burner +
+  2 hérésies), requirements_f00c.txt, F00C_LOG (entrée Livraison A),
+  PLAN_SALLE_DE_GUERRE (statut en cours), CONTINUATION_F00
+
+Generated with Codebuff 🤖
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../workflows/perturabo_vox_c_analysis.yml    | 57 ++++++++++++-
+ CONTINUATION_F00.md                           | 19 +++--
+ .../F00C_VOX/CODEBASE/f00c_vox.py             | 79 +++++++++++++++----
+ .../F00C_VOX/CODEBASE/requirements_f00c.txt   |  8 +-
+ .../F00C_VOX/PLAN_SALLE_DE_GUERRE.md          |  3 +-
+ .../F00C_VOX/TRACKING/F00C_LOG.md             | 23 ++++++
+ .../19_MODE_VOX_C_YOUTUBE.md                  | 39 +++++++++
+ 7 files changed, 203 insertions(+), 25 deletions(-)
+
+diff --git a/.github/workflows/perturabo_vox_c_analysis.yml b/.github/workflows/perturabo_vox_c_analysis.yml
+index 1331fe3..0a61408 100644
+--- a/.github/workflows/perturabo_vox_c_analysis.yml
++++ b/.github/workflows/perturabo_vox_c_analysis.yml
+@@ -22,6 +22,10 @@ on:
+         description: "Limiter aux N meilleurs segments (0 = tous)"
+         required: false
+         default: "0"
++      media_source:
++        description: "Média séparé de la source (chemin/URL directe) — optionnel, contrat découplé"
++        required: false
++        default: ""
+ 
+ permissions:
+   contents: read
+@@ -45,7 +49,19 @@ jobs:
+           python-version: '3.11'
+ 
+       - name: Installer yt-dlp + numpy (ffmpeg est préinstallé sur le runner)
+-        run: pip install --quiet yt-dlp numpy
++        run: pip install --quiet --upgrade yt-dlp numpy
++
++      - name: Restaurer cookies burner (secret YT_COOKIES_BASE64, si présent)
++        env:
++          YT_COOKIES_BASE64: ${{ secrets.YT_COOKIES_BASE64 }}
++        run: |
++          if [ -z "$YT_COOKIES_BASE64" ]; then
++            echo "Pas de cookies configurés — essais sans session (player_client + comportement yt-dlp)."
++            exit 0
++          fi
++          umask 077
++          echo "$YT_COOKIES_BASE64" | base64 -d > /tmp/yt_cookies.txt
++          echo "Cookies restaurés ($(wc -l < /tmp/yt_cookies.txt) lignes) — session burner, jamais loggée."
+ 
+       - name: Gate L0 — la source doit être résoluble
+         run: |
+@@ -72,6 +88,12 @@ jobs:
+               EXTRA="$EXTRA --top ${{ github.event.inputs.top_n }}"
+             fi
+           fi
++          if [ -f /tmp/yt_cookies.txt ]; then
++            EXTRA="$EXTRA --cookies-file /tmp/yt_cookies.txt"
++          fi
++          if [ -n "${{ github.event.inputs.media_source }}" ]; then
++            EXTRA="$EXTRA --media-source ${{ github.event.inputs.media_source }}"
++          fi
+           python3 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py \
+             "${{ github.event.inputs.source_url }}" \
+             --out MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/live_analysis.json \
+@@ -79,6 +101,39 @@ jobs:
+             --download-budget-seconds ${{ github.event.inputs.download_budget_seconds }} \
+             $EXTRA
+ 
++      - name: GUARD — succès technique ≠ succès réel (exit 1 si média absent)
++        if: always()
++        run: |
++          python3 - <<'PY'
++          import json, pathlib, sys
++          manifest_path = pathlib.Path("MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/live_analysis.json")
++          if not manifest_path.exists():
++              print("GUARD-FAIL : aucun manifeste produit.")
++              sys.exit(1)
++          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
++          budget = float("${{ github.event.inputs.download_budget_seconds }}" or 0)
++          media_source = "${{ github.event.inputs.media_source }}"
++          to_candidats = "${{ github.event.inputs.to_candidats }}" == "true"
++          n_segments = len(manifest.get("viral_segments") or [])
++          problems = []
++          if not media_source and budget > 0 and manifest.get("status") != "full":
++              problems.append(f"budget > 0 mais status={manifest.get('status')} — média non obtenu (anti-bot). Fournir YT_COOKIES_BASE64 ou media_source.")
++          if to_candidats and budget > 0 and n_segments == 0:
++              problems.append("budget > 0 mais 0 segment viral — heatmap absente ou plate.")
++          if problems:
++              for problem in problems:
++                  print(f"GUARD-FAIL : {problem}")
++              print("::error::Analyse fonctionnelle échouée : média non récupéré, heatmap absente ou aucun candidat produit.")
++              sys.exit(1)
++          print("GUARD : OK — analyse fonctionnelle réelle.")
++          PY
++
++      - name: Détruire les cookies burner (jamais laissés sur le runner)
++        if: always()
++        run: |
++          rm -f /tmp/yt_cookies.txt
++          echo "Cookies détruits."
++
+       - name: Résumé du manifeste (gate L1)
+         run: |
+           python3 - <<'PY'
+diff --git a/CONTINUATION_F00.md b/CONTINUATION_F00.md
+index 67b48eb..d2cc99a 100644
+--- a/CONTINUATION_F00.md
++++ b/CONTINUATION_F00.md
+@@ -8,13 +8,18 @@
+ ## 📅 DERNIÈRE MISE À JOUR
+ 
+ **Date** : 2026-09-12
+-**Ajout** : PLAN_SALLE_DE_GUERRE (F00C) — correctif anti-bot + Le Prince Voit Tout (dashboard temps réel)
+-
+-> 🆕 **Nouveau document de référence** : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md` — plan d'implémentation validé par le Warsmith.
+-> 4 livraisons (A→D) : garde-fou anti-faux-vert, contrat `--media-source` découplé, cookies burner (secret `YT_COOKIES_BASE64`),
+-> Most Replayed (barre rouge YouTube), webhook Convex, Salle de Guerre `/war-room` (timeline heatmap + barre rouge + candidats,
+-> mode VOD et mode LIVE, gate GO/NO-GO inline). Phase DOCS et protocole commit/push définis dans le plan (sections 6-7).
+-> **Prochaine étape** : Livraison A (Phases 0-4 du plan) dès le GO du Warsmith.
++**Ajout** : LIVRAISON A (Salle de Guerre) — escalier anti-anti-bot + garde-fou + contrat découplé F00C
++
++> 🆕 **Livraison A faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
++> `download_media` à 3 marches (`player_client=ios,mweb` → yt-dlp nu → cookies),
++> formats video-only 144p, contrat `--media-source` (métadonnées ≠ média),
++> CLI `--cookies-file`, **garde-fou anti-faux-vert** (CLI exit 2, workflow exit 1 :
++> « Analyse fonctionnelle échouée »), secret `YT_COOKIES_BASE64` → `/tmp` → détruit
++> en fin de job. 17/17 tests verts. Guide 19 + F00C_LOG + requirements à jour.
++> **Reste (Warsmith)** : compte burner + secret `YT_COOKIES_BASE64` + rotation hebdo.
++> **Prochaine étape** : relancer le run Sophie Rain — attendu `status: full`, sinon
++> le job échoue explicitement. Puis Livraisons B (barre rouge + webhook) et C/D
++> (Salle de Guerre `/war-room` dans le workspace Freebuff).
+ 
+ ---
+ 
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
+index 08bbb50..0085181 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
+@@ -284,24 +284,44 @@ def top_viral_segments(heatmap: list[dict], count: int = 5, min_gap_seconds: flo
+ # Téléchargement média optionnel (yt-dlp) pour analyse locale d'une URL
+ # ─────────────────────────────────────────────────────────────────────────────
+ 
+-def download_media(url: str, out_dir: Path, max_duration_seconds: float = 0) -> Path | None:
+-    """Télécharge via yt-dlp si disponible. Retourne None sinon (metadata_only)."""
++def download_media(url: str, out_dir: Path, max_duration_seconds: float = 0,
++                   cookies_path: Path | None = None,
++                   player_clients: str = "ios,mweb",
++                   max_height: int = 144) -> Path | None:
++    """Télécharge via yt-dlp si disponible. Retourne None sinon (metadata_only).
++
++    Escalier anti-anti-bot (PLAN_SALLE_DE_GUERRE, Livraison A) :
++      1. Essais ``player_client=ios,mweb`` (gratuits, parfois suffisants) ;
++      2. Nouvel essai sans extractor-args (comportement yt-dlp courant) ;
++      3. Si cookies fournis : essai avec session autorisée (--cookies).
++    Sans succès : None → metadata_only — le garde-fou du CLI transforme
++    ce cas en échec explicite (succès technique ≠ succès réel).
++
++    Formats : video-only ``height<=max_height`` (défaut 144p) — la heatmap
++    réduit à 64x36 et l'audio est inutile : le fichier pèse ~30-60 Mo/h au
++    lieu de Go (doctrine : jamais de VOD complète).
++    """
+     if shutil.which("yt-dlp") is None:
+         return None
+     out_dir.mkdir(parents=True, exist_ok=True)
+-    cmd = [
+-        "yt-dlp", "--no-playlist", "-q", "-f", "bv*[height<=720]+ba/b[height<=720]/b",
+-        "--merge-output-format", "mp4", "--no-part",
+-        "-o", str(out_dir / "%(id)s.%(ext)s"),
++    fmt = f"bv*[height<={max_height}]/b[height<={max_height}]/b"
++    base = ["yt-dlp", "--no-playlist", "-q", "-f", fmt, "--no-part",
++            "--merge-output-format", "mp4", "-o", str(out_dir / "%(id)s.%(ext)s")]
++    cookie_args = ["--cookies", str(cookies_path)] if cookies_path and Path(cookies_path).is_file() else []
++    attempts = [
++        base + ["--extractor-args", f"youtube:player_client={player_clients}"] + cookie_args,
++        base + cookie_args,
+     ]
+     if max_duration_seconds > 0:
+-        cmd += ["--download-sections", f"*0-{int(max_duration_seconds)}"]
+-    cmd.append(url)
+-    code = subprocess.call(cmd)
+-    if code != 0:
+-        return None
+-    files = sorted(out_dir.glob("*.mp4"))
+-    return files[-1] if files else None
++        for attempt in attempts:
++            attempt += ["--download-sections", f"*0-{int(max_duration_seconds)}"]
++    for attempt in attempts:
++        attempt.append(url)
++        if subprocess.call(attempt) == 0:
++            files = sorted(out_dir.glob("*.mp4"))
++            if files:
++                return files[-1]
++    return None
+ 
+ 
+ # ─────────────────────────────────────────────────────────────────────────────
+@@ -332,7 +352,8 @@ def emit_candidats(manifest: dict, out_path: Path, top: int | None = None) -> di
+ 
+ 
+ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+-            heatmap_buckets: int = 120, download_budget_seconds: float = 0) -> dict:
++            heatmap_buckets: int = 120, download_budget_seconds: float = 0,
++            cookies_path: Path | None = None, media_source: str | None = None) -> dict:
+     started = datetime.now(timezone.utc)
+     work_dir = Path(work_dir or out_path.parent / "live_media")
+     resolved = resolve_source(reference)
+@@ -355,8 +376,17 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+         content_type = "live_ongoing"
+ 
+     media_path: Path | None = Path(resolved["path"]) if kind == "local" else None
++    if media_source:
++        # Contrat découplé (Livraison A) : la source porte les métadonnées,
++        # le média peut venir d'ailleurs (fichier local ou URL directe).
++        media_resolved = resolve_source(media_source)
++        if media_resolved["kind"] != "local":
++            raise ValueError("--media-source doit être un fichier local ou une URL directe vers le média")
++        media_path = Path(media_resolved["path"])
++        metadata["media_source"] = media_source
+     if media_path is None and download_budget_seconds > 0:
+-        media_path = download_media(resolved.get("url"), work_dir, download_budget_seconds)
++        media_path = download_media(resolved.get("url"), work_dir,
++                                    download_budget_seconds, cookies_path)
+ 
+     heatmap: list[dict] = []
+     segments: list[dict] = []
+@@ -412,6 +442,10 @@ def main(argv: list[str] | None = None) -> int:
+     parser.add_argument("--heatmap-buckets", type=int, default=120)
+     parser.add_argument("--download-budget-seconds", type=float, default=0,
+                         help="Si > 0, tente yt-dlp pour analyser le média localement")
++    parser.add_argument("--cookies-file", default=None,
++                        help="Fichier cookies Netscape d'une session autorisée (yt-dlp --cookies)")
++    parser.add_argument("--media-source", default=None,
++                        help="Média séparé de la source : chemin local ou URL directe (métadonnées = source)")
+     parser.add_argument("--to-candidats", action="store_true",
+                         help="Émet OUT/candidats.json au schéma canonique PUR (pont vers le tronc)")
+     parser.add_argument("--candidats-out", default=str(OUT_DIR / "candidats.json"),
+@@ -423,6 +457,8 @@ def main(argv: list[str] | None = None) -> int:
+         manifest = analyze(
+             args.source, Path(args.out), Path(args.work_dir) if args.work_dir else None,
+             args.heatmap_buckets, args.download_budget_seconds,
++            cookies_path=Path(args.cookies_file) if args.cookies_file else None,
++            media_source=args.media_source,
+         )
+         summary = {"status": manifest["status"], "out": str(args.out)}
+         if args.to_candidats:
+@@ -440,6 +476,19 @@ def main(argv: list[str] | None = None) -> int:
+         print(f"F00C_VOX: erreur — {exc}", file=sys.stderr)
+         return 1
+     print(json.dumps(summary, ensure_ascii=False))
++    if args.download_budget_seconds > 0:
++        guard_problems = []
++        if not args.media_source and manifest["status"] != "full":
++            guard_problems.append(
++                f"budget > 0 mais status={manifest['status']} — média non obtenu "
++                "(anti-bot YouTube) : fournir YT_COOKIES_BASE64 ou --media-source."
++            )
++        if args.to_candidats and summary.get("n_candidates", 0) == 0:
++            guard_problems.append("budget > 0 mais 0 candidat produit (heatmap absente ou plate).")
++        if guard_problems:
++            for problem in guard_problems:
++                print(f"F00C_VOX: GUARD-FAIL — {problem}", file=sys.stderr)
++            return 2
+     return 0
+ 
+ 
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/requirements_f00c.txt b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/requirements_f00c.txt
+index fdbddd6..250b7eb 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/requirements_f00c.txt
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/requirements_f00c.txt
+@@ -11,8 +11,14 @@
+ # sans numpy, dégradation propre en metadata_only (documentée dans le code).
+ 
+ # === Ingest média (obligatoire pour le mode --download-budget-seconds > 0) ===
+-# yt-dlp>=2024.08.06
++# yt-dlp>=2024.08.06   (installer avec --upgrade : la course anti-bot impose la dernière version)
+ # ffmpeg (système, pas un package pip)
++#
++# === Anti-anti-bot (Livraison A — PLAN_SALLE_DE_GUERRE) ===
++# Escalier de download_media : 1) player_client=ios,mweb (gratuit) ; 2) yt-dlp nu ;
++# 3) --cookies (session burner, secret GH YT_COOKIES_BASE64 → /tmp, détruit en fin de job).
++# Formats : video-only height<=144 (défaut) — la heatmap réduit à 64x36, ~30-60 Mo/h.
++# Garde-fou : budget > 0 sans média → exit 1/2 (succès technique ≠ succès réel).
+ 
+ # === Heatmap d'attention (optionnel mais recommandé) ===
+ numpy
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+index 3ff1d1b..95c516e 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+@@ -1,6 +1,7 @@
+ # PLAN_SALLE_DE_GUERRE — Correctif F00C + Le Prince Voit Tout
+ 
+-> **Statut : 📋 PLAN VALIDÉ PAR LE WARSMITH — implémentation à venir (Livraisons A→D).**
++> **Statut : 🔄 EN COURS — Livraison A ✅ (escalier anti-anti-bot + garde-fou + contrat découplé).
++> Restent B (barre rouge + webhook), C (Salle de Guerre VOD), D (mode LIVE + gate inline).**
+ > Document de référence avant toute ligne de code. Ne rien modifier ici sans revalidation du Warsmith.
+ > Prédécesseurs : `PLAN_REFONTE_VOX.md` (F00B, ✅), Note 20 (pont PUR F00C, ✅).
+ 
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+index 0417f45..251bcee 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+@@ -8,6 +8,29 @@
+ 
+ ## Entrées de mise en service
+ 
++### 2026-09-12 — LIVRAISON A : escalier anti-anti-bot + garde-fou + contrat découplé
++
++- **Code (`f00c_vox.py`)** :
++  - `download_media()` réécrite — escalier 3 marches : `player_client=ios,mweb`
++    (gratuit) → yt-dlp nu → `--cookies` (session burner). Formats video-only
++    `height<=144` (défaut) : la heatmap réduit à 64×36, ~30-60 Mo/h au lieu de Go.
++  - **Contrat découplé** `--media-source` : métadonnées = URL source, média =
++    fichier local séparé (piste fichier disponible sans dépendre de YouTube).
++  - **CLI `--cookies-file`** pour la session burner.
++- **Garde-fou anti-faux-vert** : CLI exit 2 si `download_budget_seconds > 0` et
++  (`status != "full"` sans `--media-source`, ou 0 candidat avec `--to-candidats`).
++  Workflow : étape GUARD dédiée (exit 1, message « Analyse fonctionnelle échouée… »)
++  + `if: always()` pour couvrir les échecs d'étapes amont.
++- **Workflow** : secret `YT_COOKIES_BASE64` → `/tmp/yt_cookies.txt` (`umask 077`,
++  jamais loggé) → `--cookies-file` → **détruit en fin de job** (`if: always()`).
++  Input `media_source` ajouté. `pip install --upgrade yt-dlp` (course anti-bot).
++- **Tests** : 17/17 verts (9 bridge + 8 voxc) — régression zéro.
++- **Docs** : guide 19 (section « Le mur anti-bot et l'escalier » + protocole cookies
++  burner + 2 hérésies), `requirements_f00c.txt` (escalier documenté), CONTINUATION.
++- **Reste côté Warsmith** : créer le burner, coller `YT_COOKIES_BASE64` dans les
++  secrets GH, rotation hebdo. Ensuite : relancer le run Sophie Rain (86400 s) —
++  attendu `status: full` sinon échec explicite.
++
+ ### 2026-09-11 — PORTAGE INITIAL (lot 1+2)
+ 
+ - **Origine** : `f00_live.py` porté depuis LACRIMAE `dev10-v3-live`
+diff --git a/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md b/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
+index fdec7c6..7f888c6 100644
+--- a/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
++++ b/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
+@@ -49,8 +49,45 @@ python3 CODEBASE/f00c_vox.py /chemin/clip.mp4 --out OUT/live_analysis.json
+ # 4. Twitch (VOD ou chaîne en live)
+ python3 CODEBASE/f00c_vox.py "https://www.twitch.tv/videos/<ID>"
+ python3 CODEBASE/f00c_vox.py "https://www.twitch.tv/<channel>"
++
++# 5. Contrat découplé : métadonnées = URL YouTube, média = fichier local
++python3 CODEBASE/f00c_vox.py "https://www.youtube.com/watch?v=<VIDEO_ID>" \
++  --media-source /chemin/video.mp4 --to-candidats
++
++# 6. Session autorisée (cookies burner — secret YT_COOKIES_BASE64 restauré en /tmp)
++python3 CODEBASE/f00c_vox.py "https://www.youtube.com/watch?v=<VIDEO_ID>" \
++  --download-budget-seconds 3600 --cookies-file /tmp/yt_cookies.txt --to-candidats
+ ```
+ 
++## Le mur anti-bot et l'escalier (Livraison A)
++
++> Depuis un runner GitHub (IP datacenter), YouTube répond
++> **« Sign in to confirm you're not a bot »** : c'est un mur **identitaire**, pas une
++> panne de configuration. Aucun paramètre de budget ne le contourne.
++
++`download_media` monte maintenant un **escalier à 3 marches** :
++
++1. **`player_client=ios,mweb`** (gratuit, parfois suffisant — toujours essayé en premier) ;
++2. **yt-dlp nu** (comportement courant de l'outil) ;
++3. **`--cookies-file`** (session burner autorisée — la vraie clé).
++
++Formats : **video-only 144p** (la heatmap réduit à 64×36, l'audio est inutile →
++~30-60 Mo/h au lieu de Go). En cas d'échec complet : `metadata_only` — mais le
++**garde-fou** transforme ce cas en **échec explicite** (CLI exit 2, workflow exit 1) :
++
++> `Analyse fonctionnelle échouée : média non récupéré, heatmap absente ou aucun candidat produit.`
++
++**Succès technique ≠ succès réel.** Un workflow vert n'a de valeur que si
++`status: full` (ou si le média a été fourni via `--media-source`).
++
++### Cookies burner — protocole du Warsmith
++
++1. Compte Google **burner** (jamais le compte de publication), profil navigateur dédié ;
++2. Connexion YouTube → extension « Get cookies.txt LOCALLY » → export **Netscape** de youtube.com ;
++3. `base64 -w0 cookies.txt` → coller dans le secret GitHub **`YT_COOKIES_BASE64`** ;
++4. Le workflow restaure le secret dans `/tmp/yt_cookies.txt` (`umask 077`) et le **détruit en fin de job** ;
++5. Rotation hebdomadaire, révocation immédiate si alerte. **Jamais dans le chat, un commit ou un log.**
++
+ ## Via GitHub Actions (sans machine locale)
+ 
+ Actions → **« PERTURABO VOX-C ANALYSIS (F00C) »** → Run workflow :
+@@ -126,6 +163,8 @@ Voir `TRACKING/F00C_GATES.md` (L0 source → L1 metadata → L2 heatmap → L3 s
+ - ❌ Jamais de recompression (stream copy)
+ - ❌ Jamais de manifeste vide : même en metadata_only, l'Oracle reçoit un livrable
+ - ❌ Jamais de run CI sans GO explicite du Warsmith
++- ❌ Jamais de **faux vert** : budget > 0 sans `status: full` → le job ÉCHOUE (garde-fou, Livraison A)
++- ❌ Jamais de cookies de session dans un commit, un log ou le chat (secret GH uniquement, détruit en fin de job)
+ 
+ ## Origine
+ 
+-- 
+2.34.1
+

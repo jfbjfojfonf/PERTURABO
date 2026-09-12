@@ -1,0 +1,90 @@
+From a4668731f2864f49406e1517dc36ae53e5dd3f3a Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sat, 12 Sep 2026 22:01:43 +0000
+Subject: [PATCH 2/3] =?UTF-8?q?[v2-live]=20PLAN=5FSALLE=5FDE=5FGUERRE=20?=
+ =?UTF-8?q?=E2=80=94=20section=207=20renforc=C3=A9e=20:=20protocole=20comm?=
+ =?UTF-8?q?it/push=20sur=20LES=20DEUX=20repos?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Règle absolue : rien n'est terminé tant que ce n'est pas commité ET poussé
+- 7.1 : les deux repos identifiés (PERTURABO v2-live-vox-c + Salle de Guerre kbkjhjhl main)
+- 7.2 : checklist obligatoire en 6 étapes (vérif → docs → push PERTURABO vérifié
+  → push Salle de Guerre vérifié → rapport SHA au Warsmith → 1 commit/livraison)
+- 7.3 : hygiène (pas de force-push, secrets hors commits, média copyright hors repo)
+- Livraisons B/C/D : mention explicite du repo Salle de Guerre
+
+Generated with Codebuff 🤖
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../F00C_VOX/PLAN_SALLE_DE_GUERRE.md          | 40 ++++++++++++++-----
+ 1 file changed, 30 insertions(+), 10 deletions(-)
+
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+index 0165128..3ff1d1b 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+@@ -67,15 +67,15 @@ Concrètement, deux chantiers indissociables :
+ | # | Quoi | Qui | Fichiers |
+ |---|---|---|---|
+ | 5 | **Most Replayed** : la heatmap comportementale YouTube (points `start_time/end_time/value` exposés par yt-dlp) récupérée avec les cookies, fusionnée avec la heatmap vidéo → c'est le croisement le plus puissant du projet (ton capteur × des millions d'humains réels) | Moi | `f00c_vox.py` |
+-| 6 | **Webhook Convex v1** : POST du manifeste + candidats + courbes, auth `X-Siege-Token` (secret partagé), idempotent par `run_id` | Moi | `convex/http.ts`, `f00c_vox.py` (`--webhook-url`) |
++| 6 | **Webhook Convex v1** : POST du manifeste + candidats + courbes, auth `X-Siege-Token` (secret partagé), idempotent par `run_id` — **dans le repo Salle de Guerre (`kbkjhjhl`) + script d'envoi webhook dans PERTURABO** | Moi | `convex/http.ts`, `f00c_vox.py` (`--webhook-url`) |
+ 
+ ### Livraison C — La Salle de Guerre (mode VOD)
+ 
+ | # | Quoi | Qui |
+ |---|---|---|
+-| 7 | Schéma Convex : tables `sieges`, `candidats`, `heatmap`, `replayed_curve`, `events` | Moi |
+-| 8 | Dashboard `/war-room` (protégé auth, thème Iron Warriors) : **timeline maîtresse** (heatmap vidéo en aire + barre rouge Most Replayed superposée + marqueurs pics + blocs candidats), clic bloc → détail (score, décomposition critères, timestamps, plateformes), **toggle DONNÉES BRUTES** affichant les JSON complets | Moi |
+-| 9 | Mode **VOD** : tout arrive d'un coup → tous les clips enfilés triés par score, rétrospective de siège | Moi |
++| 7 | Schéma Convex : tables `sieges`, `candidats`, `heatmap`, `replayed_curve`, `events` — **repo Salle de Guerre** | Moi |
++| 8 | Dashboard `/war-room` (protégé auth, thème Iron Warriors) : **timeline maîtresse** (heatmap vidéo en aire + barre rouge Most Replayed superposée + marqueurs pics + blocs candidats), clic bloc → détail (score, décomposition critères, timestamps, plateformes), **toggle DONNÉES BRUTES** affichant les JSON complets — **repo Salle de Guerre** | Moi |
++| 9 | Mode **VOD** : tout arrive d'un coup → tous les clips enfilés triés par score, rétrospective de siège — **repo Salle de Guerre** | Moi |
+ 
+ ### Livraison D — Mode LIVE + cockpit de gate
+ 
+@@ -137,13 +137,33 @@ Aucune livraison n'est « terminée » tant que la docs ne suit pas. À chaque l
+ 
+ ---
+ 
+-## 7. Protocole COMMIT / PUSH (par livraison)
++## 7. Protocole COMMIT / PUSH — LES DEUX REPOS, TOUT CE QUI EST PRODUIT
+ 
+-1. Un **commit par livraison** (A, B, C, D), jamais un méga-commit. Message format repo : `feat(F00C): ...` / `[v2-live] docs ...` — corps court listant les fichiers.
+-2. **Avant commit** : `python3 -m py_compile` sur tout `.py` touché + relecture du diff (`git diff --stat`).
+-3. Code ET docs dans le même commit (la doctrine n'existe pas sans son livre).
+-4. Push : `git push origin v2-live-vox-c` — jamais de force-push, jamais de reset destructive. Si le remote refuse (permissions), ne pas contourner : signaler et laisser le Warsmith reconnecter le repo.
+-5. Secrets, cookies, tokens : **jamais** dans un commit, un log ou le chat.
++> **Règle absolue : RIEN n'est terminé tant que ce n'est pas commité ET poussé.**
++> Une livraison "finie dans le workspace" n'existe pas — si elle n'est pas sur GitHub,
++> elle sera perdue au prochain reset. Chaque livraison se termine par un push vérifié.
++
++### 7.1 Les deux repos de ce plan
++
++| Repo | Contenu | Branche | Ce qui y est commité |
++|---|---|---|---|
++| **PERTURABO** (`jfbjfojfonf/PERTURABO`) | Python F00C + workflow GH + guides + tracking | `v2-live-vox-c` | `f00c_vox.py`, tests, workflow YAML, guides, `F00C_LOG.md`, `CONTINUATION_F00.md` |
++| **Salle de Guerre** (`tresa5932-cmd/kbkjhjhl`, workspace Freebuff connecté) | Dashboard Vite+React+Convex | `main` | schéma Convex, `http.ts` (webhook), composants `/war-room`, tests, README/CHANGELOG interne |
++
++### 7.2 Checklist de fin de livraison (OBLIGATOIRE, dans l'ordre)
++
++1. **Vérification** : `python3 -m py_compile` sur tout `.py` touché · `bun tsc -b --noEmit` (repo Salle de Guerre) · tests verts · relecture `git diff --stat`.
++2. **Docs à jour** (section 6) — le commit de code NE part JAMAIS sans ses docs.
++3. **PERTURABO** : `git add` explicite des fichiers de la livraison (jamais `git add .` aveugle) → commit (format repo) → `git push origin v2-live-vox-c` → **vérifier la sortie du push** (doit finir sans erreur) → `git log origin/v2-live-vox-c -1` pour confirmer.
++4. **Salle de Guerre** (si la livraison y touche) : même protocole sur `main` → `git push origin main` → vérification identique.
++5. **Rapport au Warsmith** : SHA des commits, fichiers inclus, résultat du push (réussi ou bloqué). Un push bloqué (403) n'est **jamais contourné** (pas de PAT, pas d'API REST) : il est signalé et le Warsmith reconnecte le repo — le commit attend local, prêt à repartir.
++6. **Un commit par livraison, jamais un méga-commit.** Si une livraison touche les deux repos : deux commits (un par repo), rapportés ensemble.
++
++### 7.3 Hygiène
++
++- Jamais de force-push, jamais de reset destructive, jamais d'historique réécrit.
++- Secrets, cookies, tokens : **jamais** dans un commit, un log ou le chat.
++- Fichiers média (copyright) : jamais commités — uniquement les données d'analyse (JSON/CSV de courbes et scores).
+ 
+ ---
+ 
+-- 
+2.34.1
+

@@ -1,0 +1,54 @@
+{
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 38.0,
+      "text": "Tropical storm..."
+    },
+    {
+      "id": 2,
+      "start": 38.0,
+      "end": 78.0,
+      "text": "Category 1 hurricane..."
+    },
+    {
+      "id": 3,
+      "start": 78.0,
+      "end": 121.0,
+      "text": "Category 3 hurricane..."
+    },
+    {
+      "id": 4,
+      "start": 121.0,
+      "end": 174.0,
+      "text": "Category 5 hurricane..."
+    },
+    {
+      "id": 5,
+      "start": 174.0,
+      "end": 217.0,
+      "text": "Super typhoon..."
+    },
+    {
+      "id": 6,
+      "start": 217.0,
+      "end": 249.0,
+      "text": "Cyclone..."
+    },
+    {
+      "id": 7,
+      "start": 249.0,
+      "end": 284.0,
+      "text": "Bomb cyclone..."
+    },
+    {
+      "id": 8,
+      "start": 284.0,
+      "end": 322.0,
+      "text": "Hypercane..."
+    }
+  ],
+  "total_duration": 322.0,
+  "format": "LONG"
+}

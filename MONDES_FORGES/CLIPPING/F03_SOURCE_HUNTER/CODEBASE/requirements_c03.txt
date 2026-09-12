@@ -1,0 +1,7 @@
+# requirements_c03.txt — F03_SOURCE_HUNTER (forge CLIPPING)
+# Sélection d'assets + segments : stdlib pure (json, re, os, glob, subprocess).
+# Les transcripts sont produits par F01_SCOUT (libs/scribe.py) — dépendances
+# optionnelles si le Warsmith veut retranscrire localement avant la sélection :
+yt-dlp>=2024.1.1
+youtube-transcript-api>=0.6.1
+# Note : mode auto et finalize fonctionnent sans aucune dépendance tierce.

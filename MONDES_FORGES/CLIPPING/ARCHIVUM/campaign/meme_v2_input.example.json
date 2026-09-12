@@ -1,0 +1,24 @@
+{
+  "campaign_id": "siege_<YYYYMMDD>_<HHMMSS>",
+  "source_post": {
+    "text": "<copie textuelle fournie par le Champion — input interne F01>",
+    "screenshot_png": "<chemin vers la capture PNG>",
+    "url": "https://<source-url>",
+    "author": "<auteur ou subreddit>",
+    "observed_at": "<UTC timestamp>",
+    "metrics": {
+      "likes": null,
+      "views": null,
+      "comments": null,
+      "reposts": null
+    },
+    "credit_display": "Source: <auteur>"
+  },
+  "operator_bindings": {
+    "A01": {
+      "clip_id": "<clip-id-dans-la-release-LACRIMAE>",
+      "meme_tag": "<tag-fourni-par-l-operateur>",
+      "channel_id": "<chaine-fournie-par-l-operateur>"
+    }
+  }
+}

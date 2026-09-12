@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0b0f"/>
+      <stop offset="50%" stop-color="#14141c"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="lime" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d6ff3d"/>
+      <stop offset="100%" stop-color="#a3e000"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5d73"/>
+      <stop offset="100%" stop-color="#ff2e55"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ef5d4"/>
+      <stop offset="100%" stop-color="#00d4b3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="2560" height="1440" fill="url(#bg)"/>
+
+  <!-- diagonal color wash -->
+  <rect x="-200" y="900" width="2800" height="700" fill="url(#coral)" opacity="0.07" transform="rotate(-8 1280 720)"/>
+  <rect x="-200" y="860" width="2800" height="700" fill="url(#lime)" opacity="0.06" transform="rotate(6 1280 720)"/>
+
+  <!-- floating meme dots -->
+  <g fill="#d6ff3d" opacity="0.5">
+    <circle cx="200" cy="180" r="6"/>
+    <circle cx="520" cy="300" r="4"/>
+    <circle cx="900" cy="140" r="5"/>
+    <circle cx="1700" cy="160" r="4"/>
+    <circle cx="2150" cy="280" r="6"/>
+    <circle cx="2380" cy="130" r="4"/>
+    <circle cx="320" cy="1150" r="5"/>
+    <circle cx="760" cy="1280" r="4"/>
+    <circle cx="1500" cy="1320" r="5"/>
+    <circle cx="2100" cy="1210" r="4"/>
+    <circle cx="2320" cy="1300" r="5"/>
+    <circle cx="1200" cy="200" r="3"/>
+  </g>
+
+  <!-- cocktail shaker -->
+  <g transform="translate(1280, 740)">
+    <g transform="rotate(-14 0 0)">
+      <!-- body -->
+      <path d="M-150,-240 L150,-240 L170,120 L-170,120 Z" fill="url(#lime)" opacity="0.92"/>
+      <path d="M-170,120 L-165,220 L165,220 L170,120 Z" fill="#1a1a1a" opacity="0.85"/>
+      <!-- lid -->
+      <rect x="-165" y="-320" width="330" height="90" rx="18" fill="#e8e8f0" opacity="0.95"/>
+      <!-- cap knob -->
+      <circle cx="0" cy="-330" r="26" fill="url(#cyan)"/>
+      <!-- shine -->
+      <rect x="-130" y="-210" width="52" height="300" rx="26" fill="#ffffff" opacity="0.14"/>
+    </g>
+    <!-- splashes -->
+    <g>
+      <circle cx="-260" cy="-420" r="46" fill="url(#coral)"/>
+      <circle cx="300" cy="-470" r="34" fill="url(#cyan)"/>
+      <circle cx="380" cy="-340" r="20" fill="url(#lime)"/>
+      <ellipse cx="-330" cy="-360" rx="26" ry="40" fill="url(#cyan)" transform="rotate(30 -330 -360)"/>
+    </g>
+  </g>
+
+  <!-- meme icons -->
+  <!-- laughing emoji face -->
+  <g transform="translate(430, 520)">
+    <circle cx="0" cy="0" r="72" fill="#ffd34d"/>
+    <path d="M-30,-12 Q-15,-34 0,-12 Q15,-34 30,-12" stroke="#3a2b00" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M-44,22 Q-16,58 0,58 Q16,58 44,22" fill="#3a2b00" opacity="0.85"/>
+  </g>
+
+  <!-- trending up arrow -->
+  <g transform="translate(2130, 400)">
+    <polygon points="-40,95 90,95 40,-35" fill="url(#lime)"/>
+    <polygon points="40,-35 -40,95 -80,40" fill="url(#cyan)"/>
+    <circle cx="60" cy="-60" r="26" fill="url(#coral)"/>
+  </g>
+
+  <!-- speech bubble -->
+  <g transform="translate(600, 1150)">
+    <rect x="-90" y="-60" width="180" height="120" rx="26" fill="url(#coral)"/>
+    <polygon points="-40,60 -70,140 -10,60" fill="url(#coral)"/>
+    <circle cx="-30" cy="0" r="12" fill="#ffffff" opacity="0.9"/>
+    <circle cx="25" cy="0" r="12" fill="#ffffff" opacity="0.9"/>
+    <path d="M-55,34 Q-5,70 55,34" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- smartphone with viral short -->
+  <g transform="translate(2050, 1050)">
+    <rect x="-58" y="-115" width="116" height="200" rx="20" fill="#e8e8f0"/>
+    <rect x="-46" y="-95" width="92" height="160" rx="10" fill="#0b0b0f"/>
+    <polygon points="-8,-40 34,-18 -8,6" fill="url(#cyan)"/>
+    <circle cx="28" cy="70" r="14" fill="url(#coral)"/>
+  </g>
+</svg>

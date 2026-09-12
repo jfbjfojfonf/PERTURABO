@@ -1,0 +1,3 @@
+# PUR Mode dependencies
+# No external dependencies required - uses only Python standard library
+# json, re, os, sys, argparse, datetime, pathlib, shutil

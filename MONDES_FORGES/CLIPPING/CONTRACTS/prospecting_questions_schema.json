@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PERTURABO Prospecting Questions",
+  "type": "object",
+  "required": ["questions"],
+  "properties": {
+    "questions": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["question_id", "objective", "question", "queries", "sources_allowed", "expected_evidence"],
+        "properties": {
+          "question_id": {"type": "string"},
+          "objective": {"type": "string"},
+          "question": {"type": "string"},
+          "queries": {"type": "array", "maxItems": 6, "items": {"type": "string", "minLength": 1}},
+          "sources_allowed": {"type": "array", "items": {"enum": ["youtube", "reddit", "trends", "suggest", "rss"]}},
+          "priority": {"enum": ["high", "medium", "low"]},
+          "expected_evidence": {"type": "array", "items": {"type": "string"}},
+          "status": {"enum": ["proposed", "executed", "blocked", "answered"]}
+        }
+      }
+    }
+  }
+}

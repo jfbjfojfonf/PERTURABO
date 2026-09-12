@@ -1,0 +1,17 @@
+# PERTURABO — Requirements globaux
+# Chaque frégate peut avoir son propre requirements_fXX.txt pour isolation
+
+# === OSINT (F01 SENTINEL, CAPTEURS) ===
+yt-dlp>=2024.1.0
+youtube-transcript-api>=0.6.2
+requests>=2.31.0
+
+# === AI Engine (F02-F05, TYRANT) ===
+openai>=1.0.0
+anthropic>=0.18.0
+
+# === Interface (ORCHESTRATOR) ===
+streamlit>=1.30.0
+
+# === Utils ===
+python-dotenv>=1.0.0

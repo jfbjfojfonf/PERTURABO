@@ -1,0 +1,41 @@
+{
+  "campaign_id": "NBA_WESTBROOK",
+  "verdict": "GO",
+  "verdict_justification": "GO — assets fournis par la campagne présents, verdict provisoire (IRON sandbox requis pour validation finale)",
+  "reference_skeleton": {
+    "hook_type": null,
+    "emotion_dominante": null,
+    "structure_narrative": null,
+    "loop_technique": null,
+    "engagement_type": null,
+    "endroits_preuve": [],
+    "iron_status": "pending",
+    "source_meta": {
+      "url": "https://www.youtube.com/watch?v=5XJUyMct2eQ",
+      "title": "Russell Westbrook Retirement Tribute Backlash Explained",
+      "view_count": 161044,
+      "duration_sec": null,
+      "platform": "youtube"
+    }
+  },
+  "demon_analysis": {
+    "demon_id": null,
+    "dominant_emotion": null,
+    "exploited_territories": [],
+    "blue_ocean_unlocked": []
+  },
+  "direct_analysis": {
+    "campaign_fit_platform": 5,
+    "campaign_fit_market": 5,
+    "campaign_budget_remaining": null,
+    "cpm_expected": null,
+    "saturation_level": "unknown",
+    "evidence": {
+      "platform_profile_present": false,
+      "market_profile_present": false,
+      "cartographie_present": false
+    }
+  },
+  "check_in_iw_custos": "2026-08-15T09:34:48Z",
+  "iron_status": "auto"
+}

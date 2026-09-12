@@ -1,0 +1,9 @@
+# F04_COPYWRITER — requirements
+# =============================
+# Client premium : stdlib uniquement (urllib) — compatible OpenAI / OpenRouter /
+# Anthropic via base_url + provider (copywriter_secrets.json, gitignored).
+# Aucune dépendance obligatoire — le poste Warsmith reste léger.
+#
+# Optionnel (pas requis — stdlib suffit) :
+#   requests>=2.31.0      # alternative au client urllib
+#   openai>=1.30.0        # si le Warsmith préfère le SDK officiel (provider openai)

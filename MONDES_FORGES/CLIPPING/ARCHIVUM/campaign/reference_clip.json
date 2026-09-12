@@ -1,0 +1,22 @@
+{
+  "source_type": "market_discovery",
+  "sub_mode": "meme",
+  "keyword": null,
+  "celebrity_or_subject": "@Zdak",
+  "niche": "meme",
+  "market": "US residents age 25-45 interested in @Zdak",
+  "platform": "youtube_shorts",
+  "language": "en-US",
+  "discovery_horizon": "3d",
+  "candidate_limit": 30,
+  "red_blue_policy": "balanced",
+  "words_per_pack": 2,
+  "angles": {
+    "total": 10,
+    "blue": 6,
+    "red": 4
+  },
+  "note": "Market-first discovery. No keyword is imposed. F00 and the Prospection Director must derive candidates only from observed evidence.",
+  "reference_clip_required": false,
+  "timecodes": {}
+}

@@ -1,0 +1,787 @@
+{
+  "video_id": "dilqV_AGdEE",
+  "title": "YouTube Launches BIG AI Update - It's a Good One!",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 61245,
+  "outlier_score": 0.03,
+  "thumbnail": "https://i.ytimg.com/vi/dilqV_AGdEE/maxresdefault.jpg",
+  "upload_date": "20260528",
+  "duration": 322,
+  "transcript": {
+    "text": "YouTube is fundamentally changing the way we all watch AI content on the platform. Yes, this is definitely good news. So, up until now, if you used realistic AI in your videos, or as YouTube puts it, altered and synthetic content, you had to disclose it yourself. Tick a box in the YouTube studio, and that label would appear in the video description. Where nobody saw it. Well, apparently, YouTube noticed this. >> You've told us you want transparency. >> Took a while, but they got there in the end. >> Starting today, YouTube is streamlining how AI labels work to make them even more intuitive for everyone. >> So, going forward, long-form videos, the label now sits directly below the player where the title is, visible before anybody watches a single second of a video. For shorts, it's an overlay on the video player itself. That is quite a simple, yet highly significant update. What do you think? Let us know in the comments below. But, here's the incredible thing about this label, no matter where it goes. Up until now, it's been voluntary. Yeah, whenever you upload, you can completely ignore that question and publish a video anyway. I still quite haven't figured out why that's the case. Well, there's an update to that as well. >> If YouTube systems detect significant photorealistic AI, and it hasn't been disclosed, we'll now apply that label automatically. >> Now, if you're properly disclosing your AI content already, then there's nothing to be worried about. And hopefully, fingers well and truly crossed, it does identify these channels which are using photorealistic AI and not declaring it. But, if you spend any amount of time on this platform as a creator, you will be fully aware of YouTube's systems and their somewhat complicated relationship with the term accuracy. Unless you've been living under a rock for the last 6 months, you'll probably be aware of the demonetization and inauthentic saga that we're currently going through. But, that's a conversation for another video. And to be fair to YouTube, they do say that if there are any false flag AI detections with your content, you have the opportunity to fix it. >> If you think that the system has gotten it wrong, if a label is applied incorrectly, you can jump into studio and update the status yourself. >> But, there are exceptions. If you use YouTube's own AI tools, such as Dream Scream or VO3, or if the video file itself includes metadata that confirms it's AI generated, then that label is staying no matter what. Which sounds fair to me. >> And you know what's also fair? Is some of the vidIQ upload assistance tools that can be found on the same page that generate thumbnails based on the content of the video and preview what your video packaging will look like on YouTube before you even press publish. So, do make sure you have the best tools to grow your YouTube channel by heading over to vidIQ.com/start. >> Now, going back to this AI update, when you read the YouTube blog about it, there is a little bit of a gray area about the context of this AI. It states the following, \"For content that is unrealistic, animated, or slightly altered, viewers can find the disclosure in the expanded description.\" So, I guess that means that you can still make AI content that isn't prominently disclosed in the video if it's obviously AI. That sounds like a really interesting challenge for YouTube's automated systems to try and determine, doesn't it? >> But, hey, come on, Rob. I need to stop wrapping myself up in the particulars. I'm sure everyone here will agree that this is the right move. YouTube is no longer tip-toeing around the subject. They're no longer calling it altered or synthetic content. Who has ever called it that? Now, YouTube is quite rightly labeling these videos as AI generated. And they're putting a stamp on the video that should leave a viewer in no doubt as to whether something is real or not. And creators should not be afraid to disclose this information. YouTube is very clear that these labels do not impact how the video is recommended or whether or not you earn revenue from them. Now, of course, it may impact how the viewer reacts to the content if it has that label. But, that's the exact type of transparency we want from the platform, isn't it? There is, however, an inevitable question that always comes up whenever YouTube do something that is perceived to be universally good. Could they have gone further? I mean, sure, we now have an AI label clearly visible on the video itself. But, what if for long-form videos there was an AI label on the thumbnail? So, the viewer didn't even need to go into the video to find out whether or not it was AI generated. Although, yeah, when I think about that, it would probably put off too many creators from even disclosing that the content is AI generated because my guess is there's a lot of stigma attached to such a label. And the other idea might be to hand some reporting controls to viewers who could alert YouTube to a video that looks AI generated but is not labeled as such. But, I appreciate that what we're doing now is descending into the realm of never being happy even when YouTube have done something really good, especially for users of the platform. Going forward, there should be little doubt or confusion over whether the content you are watching on YouTube is AI generated, which should massively reduce the amount of misleading content that you encounter. As for creators and that demonetization question over inauthentic content, well, I did say that was for another video, which you can join me in over here if you wish, right now.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "YouTube is fundamentally changing the",
+        "duration": 4.44
+      },
+      {
+        "start": 2.4,
+        "text": "way we all watch AI content on the",
+        "duration": 3.4
+      },
+      {
+        "start": 4.44,
+        "text": "platform.",
+        "duration": 3.48
+      },
+      {
+        "start": 5.8,
+        "text": "Yes, this is definitely good news. So,",
+        "duration": 4.48
+      },
+      {
+        "start": 7.92,
+        "text": "up until now, if you used realistic AI",
+        "duration": 4.52
+      },
+      {
+        "start": 10.28,
+        "text": "in your videos, or as YouTube puts it,",
+        "duration": 4.48
+      },
+      {
+        "start": 12.44,
+        "text": "altered and synthetic content, you had",
+        "duration": 4.2
+      },
+      {
+        "start": 14.76,
+        "text": "to disclose it yourself. Tick a box in",
+        "duration": 3.84
+      },
+      {
+        "start": 16.64,
+        "text": "the YouTube studio, and that label would",
+        "duration": 4.68
+      },
+      {
+        "start": 18.6,
+        "text": "appear in the video description.",
+        "duration": 4.88
+      },
+      {
+        "start": 21.32,
+        "text": "Where nobody saw it. Well, apparently,",
+        "duration": 4.0
+      },
+      {
+        "start": 23.48,
+        "text": "YouTube noticed this.",
+        "duration": 3.8
+      },
+      {
+        "start": 25.32,
+        "text": ">> You've told us you want transparency.",
+        "duration": 3.28
+      },
+      {
+        "start": 27.28,
+        "text": ">> Took a while, but they got there in the",
+        "duration": 1.68
+      },
+      {
+        "start": 28.6,
+        "text": "end.",
+        "duration": 2.44
+      },
+      {
+        "start": 28.96,
+        "text": ">> Starting today, YouTube is streamlining",
+        "duration": 4.12
+      },
+      {
+        "start": 31.04,
+        "text": "how AI labels work to make them even",
+        "duration": 3.72
+      },
+      {
+        "start": 33.08,
+        "text": "more intuitive for everyone.",
+        "duration": 3.84
+      },
+      {
+        "start": 34.76,
+        "text": ">> So, going forward, long-form videos, the",
+        "duration": 5.2
+      },
+      {
+        "start": 36.92,
+        "text": "label now sits directly below the player",
+        "duration": 5.24
+      },
+      {
+        "start": 39.96,
+        "text": "where the title is, visible before",
+        "duration": 4.4
+      },
+      {
+        "start": 42.16,
+        "text": "anybody watches a single second of a",
+        "duration": 4.44
+      },
+      {
+        "start": 44.36,
+        "text": "video. For shorts, it's an overlay on",
+        "duration": 4.08
+      },
+      {
+        "start": 46.6,
+        "text": "the video player itself. That is quite a",
+        "duration": 4.52
+      },
+      {
+        "start": 48.44,
+        "text": "simple, yet highly significant update.",
+        "duration": 4.04
+      },
+      {
+        "start": 51.12,
+        "text": "What do you think? Let us know in the",
+        "duration": 2.4
+      },
+      {
+        "start": 52.48,
+        "text": "comments below. But, here's the",
+        "duration": 2.76
+      },
+      {
+        "start": 53.52,
+        "text": "incredible thing about this label, no",
+        "duration": 4.08
+      },
+      {
+        "start": 55.24,
+        "text": "matter where it goes. Up until now, it's",
+        "duration": 4.36
+      },
+      {
+        "start": 57.6,
+        "text": "been voluntary. Yeah, whenever you",
+        "duration": 3.88
+      },
+      {
+        "start": 59.6,
+        "text": "upload, you can completely ignore that",
+        "duration": 4.44
+      },
+      {
+        "start": 61.48,
+        "text": "question and publish a video anyway. I",
+        "duration": 4.08
+      },
+      {
+        "start": 64.04,
+        "text": "still quite haven't figured out why",
+        "duration": 3.12
+      },
+      {
+        "start": 65.56,
+        "text": "that's the case.",
+        "duration": 3.2
+      },
+      {
+        "start": 67.16,
+        "text": "Well, there's an update to that as well.",
+        "duration": 3.68
+      },
+      {
+        "start": 68.76,
+        "text": ">> If YouTube systems detect significant",
+        "duration": 4.24
+      },
+      {
+        "start": 70.84,
+        "text": "photorealistic AI, and it hasn't been",
+        "duration": 4.28
+      },
+      {
+        "start": 73.0,
+        "text": "disclosed, we'll now apply that label",
+        "duration": 2.92
+      },
+      {
+        "start": 75.12,
+        "text": "automatically.",
+        "duration": 2.92
+      },
+      {
+        "start": 75.92,
+        "text": ">> Now, if you're properly disclosing your",
+        "duration": 3.96
+      },
+      {
+        "start": 78.04,
+        "text": "AI content already, then there's nothing",
+        "duration": 4.28
+      },
+      {
+        "start": 79.88,
+        "text": "to be worried about. And hopefully,",
+        "duration": 4.8
+      },
+      {
+        "start": 82.32,
+        "text": "fingers well and truly crossed, it does",
+        "duration": 4.32
+      },
+      {
+        "start": 84.68,
+        "text": "identify these channels which are using",
+        "duration": 5.2
+      },
+      {
+        "start": 86.64,
+        "text": "photorealistic AI and not declaring it.",
+        "duration": 5.48
+      },
+      {
+        "start": 89.88,
+        "text": "But, if you spend any amount of time on",
+        "duration": 5.12
+      },
+      {
+        "start": 92.12,
+        "text": "this platform as a creator, you will be",
+        "duration": 6.52
+      },
+      {
+        "start": 95.0,
+        "text": "fully aware of YouTube's systems and",
+        "duration": 6.76
+      },
+      {
+        "start": 98.64,
+        "text": "their somewhat complicated relationship",
+        "duration": 5.44
+      },
+      {
+        "start": 101.76,
+        "text": "with the term accuracy. Unless you've",
+        "duration": 4.2
+      },
+      {
+        "start": 104.08,
+        "text": "been living under a rock for the last 6",
+        "duration": 4.2
+      },
+      {
+        "start": 105.96,
+        "text": "months, you'll probably be aware of the",
+        "duration": 5.04
+      },
+      {
+        "start": 108.28,
+        "text": "demonetization and inauthentic saga that",
+        "duration": 4.12
+      },
+      {
+        "start": 111.0,
+        "text": "we're currently going through. But,",
+        "duration": 3.6
+      },
+      {
+        "start": 112.4,
+        "text": "that's a conversation for another video.",
+        "duration": 4.28
+      },
+      {
+        "start": 114.6,
+        "text": "And to be fair to YouTube, they do say",
+        "duration": 4.12
+      },
+      {
+        "start": 116.68,
+        "text": "that if there are any false flag AI",
+        "duration": 4.2
+      },
+      {
+        "start": 118.72,
+        "text": "detections with your content, you have",
+        "duration": 3.44
+      },
+      {
+        "start": 120.88,
+        "text": "the opportunity to fix it.",
+        "duration": 2.599
+      },
+      {
+        "start": 122.16,
+        "text": ">> If you think that the system has gotten",
+        "duration": 2.96
+      },
+      {
+        "start": 123.479,
+        "text": "it wrong, if a label is applied",
+        "duration": 3.641
+      },
+      {
+        "start": 125.12,
+        "text": "incorrectly, you can jump into studio",
+        "duration": 3.48
+      },
+      {
+        "start": 127.12,
+        "text": "and update the status yourself.",
+        "duration": 3.8
+      },
+      {
+        "start": 128.6,
+        "text": ">> But, there are exceptions. If you use",
+        "duration": 4.84
+      },
+      {
+        "start": 130.92,
+        "text": "YouTube's own AI tools, such as Dream",
+        "duration": 6.039
+      },
+      {
+        "start": 133.44,
+        "text": "Scream or VO3, or if the video file",
+        "duration": 6.04
+      },
+      {
+        "start": 136.959,
+        "text": "itself includes metadata that confirms",
+        "duration": 4.801
+      },
+      {
+        "start": 139.48,
+        "text": "it's AI generated, then that label is",
+        "duration": 4.16
+      },
+      {
+        "start": 141.76,
+        "text": "staying no matter what. Which sounds",
+        "duration": 2.4
+      },
+      {
+        "start": 143.64,
+        "text": "fair to me.",
+        "duration": 2.64
+      },
+      {
+        "start": 144.16,
+        "text": ">> And you know what's also fair? Is some",
+        "duration": 4.4
+      },
+      {
+        "start": 146.28,
+        "text": "of the vidIQ upload assistance tools",
+        "duration": 3.96
+      },
+      {
+        "start": 148.56,
+        "text": "that can be found on the same page that",
+        "duration": 3.48
+      },
+      {
+        "start": 150.24,
+        "text": "generate thumbnails based on the content",
+        "duration": 4.12
+      },
+      {
+        "start": 152.04,
+        "text": "of the video and preview what your video",
+        "duration": 4.2
+      },
+      {
+        "start": 154.36,
+        "text": "packaging will look like on YouTube",
+        "duration": 3.599
+      },
+      {
+        "start": 156.24,
+        "text": "before you even press publish. So, do",
+        "duration": 3.12
+      },
+      {
+        "start": 157.959,
+        "text": "make sure you have the best tools to",
+        "duration": 2.961
+      },
+      {
+        "start": 159.36,
+        "text": "grow your YouTube channel by heading",
+        "duration": 4.12
+      },
+      {
+        "start": 160.92,
+        "text": "over to vidIQ.com/start.",
+        "duration": 4.8
+      },
+      {
+        "start": 163.48,
+        "text": ">> Now, going back to this AI update, when",
+        "duration": 4.04
+      },
+      {
+        "start": 165.72,
+        "text": "you read the YouTube blog about it,",
+        "duration": 4.04
+      },
+      {
+        "start": 167.52,
+        "text": "there is a little bit of a gray area",
+        "duration": 5.04
+      },
+      {
+        "start": 169.76,
+        "text": "about the context of this AI. It states",
+        "duration": 4.92
+      },
+      {
+        "start": 172.56,
+        "text": "the following, \"For content that is",
+        "duration": 4.88
+      },
+      {
+        "start": 174.68,
+        "text": "unrealistic, animated, or slightly",
+        "duration": 5.04
+      },
+      {
+        "start": 177.44,
+        "text": "altered, viewers can find the disclosure",
+        "duration": 4.28
+      },
+      {
+        "start": 179.72,
+        "text": "in the expanded description.\" So, I",
+        "duration": 3.88
+      },
+      {
+        "start": 181.72,
+        "text": "guess that means that you can still make",
+        "duration": 4.28
+      },
+      {
+        "start": 183.6,
+        "text": "AI content that isn't prominently",
+        "duration": 6.12
+      },
+      {
+        "start": 186.0,
+        "text": "disclosed in the video if it's obviously",
+        "duration": 5.6
+      },
+      {
+        "start": 189.72,
+        "text": "AI. That sounds like a really",
+        "duration": 3.76
+      },
+      {
+        "start": 191.6,
+        "text": "interesting challenge for YouTube's",
+        "duration": 4.8
+      },
+      {
+        "start": 193.48,
+        "text": "automated systems to try and determine,",
+        "duration": 3.36
+      },
+      {
+        "start": 196.4,
+        "text": "doesn't it?",
+        "duration": 2.24
+      },
+      {
+        "start": 196.84,
+        "text": ">> But, hey, come on, Rob. I need to stop",
+        "duration": 3.44
+      },
+      {
+        "start": 198.64,
+        "text": "wrapping myself up in the particulars.",
+        "duration": 3.84
+      },
+      {
+        "start": 200.28,
+        "text": "I'm sure everyone here will agree that",
+        "duration": 4.12
+      },
+      {
+        "start": 202.48,
+        "text": "this is the right move. YouTube is no",
+        "duration": 3.8
+      },
+      {
+        "start": 204.4,
+        "text": "longer tip-toeing around the subject.",
+        "duration": 3.52
+      },
+      {
+        "start": 206.28,
+        "text": "They're no longer calling it altered or",
+        "duration": 4.08
+      },
+      {
+        "start": 207.92,
+        "text": "synthetic content. Who has ever called",
+        "duration": 5.36
+      },
+      {
+        "start": 210.36,
+        "text": "it that? Now, YouTube is quite rightly",
+        "duration": 5.12
+      },
+      {
+        "start": 213.28,
+        "text": "labeling these videos as AI generated.",
+        "duration": 4.48
+      },
+      {
+        "start": 215.48,
+        "text": "And they're putting a stamp on the video",
+        "duration": 4.12
+      },
+      {
+        "start": 217.76,
+        "text": "that should leave a viewer in no doubt",
+        "duration": 4.04
+      },
+      {
+        "start": 219.6,
+        "text": "as to whether something is real or not.",
+        "duration": 4.72
+      },
+      {
+        "start": 221.8,
+        "text": "And creators should not be afraid to",
+        "duration": 4.4
+      },
+      {
+        "start": 224.32,
+        "text": "disclose this information. YouTube is",
+        "duration": 3.919
+      },
+      {
+        "start": 226.2,
+        "text": "very clear that these labels do not",
+        "duration": 4.68
+      },
+      {
+        "start": 228.239,
+        "text": "impact how the video is recommended or",
+        "duration": 4.241
+      },
+      {
+        "start": 230.88,
+        "text": "whether or not you earn revenue from",
+        "duration": 4.08
+      },
+      {
+        "start": 232.48,
+        "text": "them. Now, of course, it may impact how",
+        "duration": 5.2
+      },
+      {
+        "start": 234.96,
+        "text": "the viewer reacts to the content if it",
+        "duration": 5.08
+      },
+      {
+        "start": 237.68,
+        "text": "has that label. But, that's the exact",
+        "duration": 4.0
+      },
+      {
+        "start": 240.04,
+        "text": "type of transparency we want from the",
+        "duration": 3.44
+      },
+      {
+        "start": 241.68,
+        "text": "platform, isn't it? There is, however,",
+        "duration": 4.2
+      },
+      {
+        "start": 243.48,
+        "text": "an inevitable question that always comes",
+        "duration": 4.32
+      },
+      {
+        "start": 245.88,
+        "text": "up whenever YouTube do something that is",
+        "duration": 4.68
+      },
+      {
+        "start": 247.8,
+        "text": "perceived to be universally good.",
+        "duration": 4.0
+      },
+      {
+        "start": 250.56,
+        "text": "Could they have gone further? I mean,",
+        "duration": 3.64
+      },
+      {
+        "start": 251.8,
+        "text": "sure, we now have an AI label clearly",
+        "duration": 6.36
+      },
+      {
+        "start": 254.2,
+        "text": "visible on the video itself. But, what",
+        "duration": 6.599
+      },
+      {
+        "start": 258.16,
+        "text": "if for long-form videos there was an AI",
+        "duration": 4.72
+      },
+      {
+        "start": 260.799,
+        "text": "label on the thumbnail? So, the viewer",
+        "duration": 4.361
+      },
+      {
+        "start": 262.88,
+        "text": "didn't even need to go into the video to",
+        "duration": 3.72
+      },
+      {
+        "start": 265.16,
+        "text": "find out whether or not it was AI",
+        "duration": 3.96
+      },
+      {
+        "start": 266.6,
+        "text": "generated. Although, yeah, when I think",
+        "duration": 4.72
+      },
+      {
+        "start": 269.12,
+        "text": "about that, it would probably put off",
+        "duration": 4.24
+      },
+      {
+        "start": 271.32,
+        "text": "too many creators from even disclosing",
+        "duration": 5.0
+      },
+      {
+        "start": 273.36,
+        "text": "that the content is AI generated because",
+        "duration": 5.2
+      },
+      {
+        "start": 276.32,
+        "text": "my guess is there's a lot of stigma",
+        "duration": 4.04
+      },
+      {
+        "start": 278.56,
+        "text": "attached to such a label. And the other",
+        "duration": 3.56
+      },
+      {
+        "start": 280.36,
+        "text": "idea might be to hand some reporting",
+        "duration": 3.88
+      },
+      {
+        "start": 282.12,
+        "text": "controls to viewers who could alert",
+        "duration": 4.28
+      },
+      {
+        "start": 284.24,
+        "text": "YouTube to a video that looks AI",
+        "duration": 4.56
+      },
+      {
+        "start": 286.4,
+        "text": "generated but is not labeled as such.",
+        "duration": 3.92
+      },
+      {
+        "start": 288.8,
+        "text": "But, I appreciate that what we're doing",
+        "duration": 3.92
+      },
+      {
+        "start": 290.32,
+        "text": "now is descending into the realm of",
+        "duration": 4.84
+      },
+      {
+        "start": 292.72,
+        "text": "never being happy even when YouTube have",
+        "duration": 4.68
+      },
+      {
+        "start": 295.16,
+        "text": "done something really good, especially",
+        "duration": 3.72
+      },
+      {
+        "start": 297.4,
+        "text": "for users of the platform. Going",
+        "duration": 3.2
+      },
+      {
+        "start": 298.88,
+        "text": "forward, there should be little doubt or",
+        "duration": 3.64
+      },
+      {
+        "start": 300.6,
+        "text": "confusion over whether the content you",
+        "duration": 4.2
+      },
+      {
+        "start": 302.52,
+        "text": "are watching on YouTube is AI generated,",
+        "duration": 4.72
+      },
+      {
+        "start": 304.8,
+        "text": "which should massively reduce the amount",
+        "duration": 4.2
+      },
+      {
+        "start": 307.24,
+        "text": "of misleading content that you",
+        "duration": 4.08
+      },
+      {
+        "start": 309.0,
+        "text": "encounter. As for creators and that",
+        "duration": 4.48
+      },
+      {
+        "start": 311.32,
+        "text": "demonetization question over inauthentic",
+        "duration": 3.2
+      },
+      {
+        "start": 313.48,
+        "text": "content,",
+        "duration": 2.24
+      },
+      {
+        "start": 314.52,
+        "text": "well, I did say that was for another",
+        "duration": 3.56
+      },
+      {
+        "start": 315.72,
+        "text": "video, which you can join me in over",
+        "duration": 6.6
+      },
+      {
+        "start": 318.08,
+        "text": "here if you wish, right now.",
+        "duration": 4.24
+      }
+    ],
+    "status": "OK",
+    "segment_count": 153
+  },
+  "captured_at": "2026-07-09T21:35:00Z",
+  "captured_by": "CAPTEURS"
+}

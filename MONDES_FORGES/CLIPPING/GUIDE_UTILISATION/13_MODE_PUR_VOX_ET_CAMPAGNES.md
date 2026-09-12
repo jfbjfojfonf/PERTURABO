@@ -1,25 +1,31 @@
 # 13 — Mode PUR : VOX + Campagnes Clipify
 
-> Le mode PUR extrait des clips viraux depuis des VODs Twitch.
-> VOX est la sous-frégate qui ingère, détecte, score et trail les candidats.
-> Les campagnes Clipify/Whop définissent les règles de publication et de payout.
+> Le mode PUR extrait des clips viraux depuis une source VOX.
+> **2 entrées possibles : F00B (Twitch chat/VOD) ou F00C (YouTube / Twitch / local).**
+> Un seul tronc ensuite. Détail du pont F00C : guide 20.
 
 ---
 
 ## 1. Vue d'ensemble
 
+**PUR direct (recommandé, VOX a déjà détecté/scoré/sélectionné) :**
+F01 / F02 / F03 sont SKIPPÉS.
+
 ```
-Warsmith → URLs VODs + nb clips + directive campagne
+Twitch  : F00B (radar live / auto_detect) → OUT/candidats.json ─┐
+                                                               ├→ pur_adapter_direct
+YouTube : F00C (f00c_vox.py --to-candidats) → OUT/candidats.json┘
     ↓
-F00B_VOX → ingest → detect → score → gate → trail
-    ↓ (trail.json)
-F01_SCOUT → F02_TYRANT_CAMP → F03 → F04 → F05 → F06
+F04_COPYWRITER → pur_montage_pipeline (F06 inline) → pack
     ↓
-Opérateur → poster + soumettre Whop
+⛔ GATE Warsmith → EXPORT/ → OMNIS_WATCH → Opérateur
 ```
 
-**Ordre PUR mis à jour :**
-F00B_VOX → F01 → F02 → F03 → F04 → F05 → F06
+Styles (`--asset-mode`) : `ranking` | `blur` | `split` | `overlay_only` (PUR).
+
+**PUR long-form (podcast, 4 gates, F05)** : autre flux, voir guide 11.
+
+Guide opérateur (les deux entrées) : guide 14. Note technique du pont : guide 20.
 
 ---
 
@@ -63,7 +69,7 @@ F00B_VOX → F01 → F02 → F03 → F04 → F05 → F06
 F00B détecte automatiquement les moments viraux sans input humain :
 
 ```bash
-# Étape 0 — Auto-detect (audio + transcription word-level + chat replay + scoring)
+# Étape 0 — Auto-detect (audio + transcription + chat replay + scoring)
 python F00B_VOX/CODEBASE/f00b_vox.py auto_detect --nb-clips 5
 python F00B_VOX/CODEBASE/f00b_vox.py auto_detect --keep-audio --no-chat
 python F00B_VOX/CODEBASE/f00b_vox.py auto_detect --market us_young_english --platform youtube_shorts
@@ -71,7 +77,14 @@ python F00B_VOX/CODEBASE/f00b_vox.py auto_detect --market us_young_english --pla
 
 **Prérequis :** yt-dlp + ffmpeg installés, clé premium configurée.
 **Clé premium :** `CONTRACTS/f00b_secrets.json` ou env `CLIPPING_F00B_API_KEY` / `AI_GATEWAY_API_KEY`.
+
+**Modes de transcription supportés (auto-détectés) :**
+1. **Word-level** (optimal) — `words[]` avec timestamps mot par mot → analyse speech complète
+2. **Segments** — `segments[]` avec timestamps début/fin → conversion en pseudo-mots, analyse speech
+3. **Texte seul** (fallback) — `text` brut sans timestamps → **analyse speech désactivée**, scoring basé chat uniquement
+
 **Sortie :** `OUT/candidats.json` (même schéma que detect → score/gate/trail inchangés).
+**Rapport :** `OUT/auto_detect_report.json` avec `transcription.mode` indiquant le mode utilisé.
 
 ### Mode Manuel (legacy)
 ```bash
@@ -194,3 +207,46 @@ python ARCHIVUM/campaign/campaign_directive_parser.py \
 ---
 
 *Fer au-dedans, Fer au-dehors. Le siège continue.* 🔩
+
+
+---
+
+## Contrat opérateur F04 (2026-09-08) — assets à la demande
+
+L'opérateur décide CE QUE F04 produit via les inputs du workflow
+GitHub Actions (aucune édition manuelle de fichier) :
+
+| Input | Valeurs | Effet |
+|---|---|---|
+| `nb_videos` | 1-10 | Nombre de vidéos finales = nombre d'angles/clip packs |
+| `asset_mode` | `ranking` / `blur` / `split` / `overlay_only` | Type de contenu |
+| `example_description` | texte libre | Guide la description du pack ranking |
+| `platform` / `market` | inchangé | Cibles |
+
+Livrables F04 selon le mode :
+
+- **blur / split / overlay_only** → `overlay_payload_<angle>.json/.md` :
+  UN titre overlay de **1-2 lignes** par clip (porte tout le sens, rend le
+  clip viral — l'image est floutée/découpée).
+- **ranking** → `overlay_payload_<angle>.json/.md` avec 3 blocs :
+  1. `overlay_title` : **max 4 mots** (règle ranking stricte — validation
+     IRON refuse au-delà)
+  2. `labels` : titre pour chaque numéro de classement
+  3. `metadata_title` + `description` (modèle directive) + `tags` +
+     `hashtags` (issus des directives) + compliance FTC
+
+Dans TOUS les modes : jamais de script/narration — la voix est déjà sur le
+clip (on coupe une séquence, on ne produit pas une vidéo).
+
+Commandes locales équivalentes :
+
+```bash
+python MONDES_FORGES/CLIPPING/pur_adapter_direct.py \
+  --candidats <candidats.json> --vod <url> \
+  --nb-videos 5 --asset-mode blur
+
+cd F04_COPYWRITER/CODEBASE
+python copywriter.py --setup-context   --angle A01 --platform youtube_shorts --market us_young_english
+python copywriter.py --generate-overlay --angle A01 --asset-mode blur
+python copywriter.py --finalize-overlay --angle A01 --asset-mode blur
+```

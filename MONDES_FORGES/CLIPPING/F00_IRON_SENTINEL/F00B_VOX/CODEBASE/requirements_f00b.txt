@@ -21,6 +21,13 @@
 # === Chat replay (auto_detect, optionnel) ===
 # Endpoint public v5 Twitch — aucune auth, aucune dépendance.
 
+# === Session LIVE (branche v2-live) ===
+# f00b_vox_live.py + libs/chat_pulse.py + libs/helix_clipper.py :
+#   100% stdlib (socket, ssl, threading, urllib). AUCUNE dépendance pip.
+#   - Radar chat : IRC Twitch anonyme (justinfan), sans token
+#   - Clip serveur : API Helix via TWITCH_TOKEN + TWITCH_CLIENT_ID (env/secret GH)
+#   - Oracle : GITHUB_TOKEN (secret GITHUB_TOKEN fourni par Actions)
+
 # === Note doctrine ===
 # F00B est 100% stdlib pour l'exécution. Aucun pip install nécessaire
 # au-delà de yt-dlp + ffmpeg (système). La clé premium est lue depuis

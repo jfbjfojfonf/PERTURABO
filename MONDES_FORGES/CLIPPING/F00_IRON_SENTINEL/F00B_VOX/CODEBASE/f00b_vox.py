@@ -766,8 +766,9 @@ def cmd_auto_detect(args):
     keep_audio = getattr(args, "keep_audio", False)
     no_chat = getattr(args, "no_chat", False)
 
-    # Calcul du FORGE_ROOT (4 niveaux au-dessus de f00b_vox.py)
-    forge_root = str(BASE.parent.parent.parent)
+    # Calcul de la racine du dépôt (4 niveaux au-dessus de F00B_VOX/)
+    # run_auto_detect attend la racine du dépôt pour retrouver MONDES_FORGES/.
+    forge_root = str(BASE.parent.parent.parent.parent)
 
     run_auto_detect(
         forge_root=forge_root,

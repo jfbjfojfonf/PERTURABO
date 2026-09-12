@@ -1,0 +1,142 @@
+{
+  "version": "1.0.0",
+  "description": "Bibliothèque de presets audio (SFX) pour les clips PUR — qui, quand, volume",
+  "last_updated": "2026-09-03",
+
+  "audio_principle": "La voix du speaker est TOUJOURS prioritaire. Les SFX ne servent qu'à AMPLIFIER un moment, jamais à le remplacer.",
+
+  "volume_hierarchy": {
+    "1_speaker_voice": "0dB (référence — toujours le plus fort)",
+    "2_captions_sync": "sync avec la voix",
+    "3_sfx_impact": "-6dB à -12dB sous la voix",
+    "4_music_bed": "-15dB à -20dB sous la voix",
+    "5_sfx_background": "-20dB à -25dB (presque inaudible)"
+  },
+
+  "sfx_library": {
+
+    "whoosh": {
+      "description": "Transition rapide entre deux clips ou deux plans",
+      "quand": "Chaque changement de clip dans un ranking, chaque changement de zone_bas en split",
+      "volume": "-12dB (40% relatif)",
+      "durée": "0.3-0.5s",
+      "types": ["whoosh_fast", "whoosh_heavy", "whoosh_light"],
+      "par_style": {
+        "ranking": "whoosh_fast entre chaque clip",
+        "blur": "whoosh_light au changement de b_roll",
+        "split_scene": "whoosh_light au changement de zone_bas",
+        "reframing": "whooch_light au cut principal"
+      }
+    },
+
+    "impact": {
+      "description": "Moment fort — chiffre, punchline, révélation",
+      "quand": "AU moment exact du zoom brutal",
+      "volume": "-8dB (60% relatif)",
+      "durée": "0.2-0.4s",
+      "types": ["boom", "hit", "slam", "thud"],
+      "sync": "Frame EXACTE du zoom — pas de décalage"
+    },
+
+    "pop": {
+      "description": "Apparition d'un élément — chiffre, emoji, texte",
+      "quand": "Quand un élément visuel apparaît à l'écran",
+      "volume": "-10dB (50%)",
+      "durée": "0.1-0.2s",
+      "types": ["pop_bubble", "pop_click", "pop_soft"],
+      "sync": "Frame exacte de l'apparition"
+    },
+
+    "tick": {
+      "description": "Compteur / countdown — tick d'horloge",
+      "quand": "Chaque changement de numéro dans un ranking (#5 → #4 → #3)",
+      "volume": "-10dB (50%)",
+      "durée": "0.1s",
+      "types": ["tick_clock", "tick_digital"],
+      "sync": "Frame exacte de l'apparition du numéro"
+    },
+
+    "cha_ching": {
+      "description": "Son de caisse enregistreuse — argent, business, prix",
+      "quand": "Moment lié à l'argent ou à la réussite financière",
+      "volume": "-10dB (50%)",
+      "durée": "0.5s",
+      "types": ["cha_ching_classic", "cha_ching_coins"],
+      "sync": "Au mot 'money', 'dollars', 'income', 'revenue'"
+    },
+
+    "riser": {
+      "description": "Montée en tension — anticipation avant la révélation",
+      "quand": "2-3 secondes AVANT le moment fort",
+      "volume": "-18dB → -10dB (montée progressive)",
+      "durée": "2-3 secondes",
+      "types": ["riser_synthetic", "riser_cymbal", "riser_string"],
+      "sync": "Commence 2-3s avant l'impact, culmine sur l'impact"
+    },
+
+    "eagle_scream": {
+      "description": "Cri d'aigle — moment viral, chiffre shocking",
+      "quand": "Moment le plus shocking du clip (chiffre géant, twist)",
+      "volume": "-8dB (60%)",
+      "durée": "1-2s",
+      "note": "Utilisé dans le Short de référence au moment du $450,000"
+    },
+
+    "room_tone": {
+      "description": "Bruit de fond continu — ambience de pièce",
+      "quand": "Tout au long du clip (anti-detection)",
+      "volume": "-25dB (10-15%)",
+      "durée": "tout le clip",
+      "types": ["room_ambience", "vinyl_crackle", "soft_noise"],
+      "note": "Inaudible mais change l'empreinte audio"
+    },
+
+    "music_bed": {
+      "description": "Musique de fond très basse — rythmée mais discrète",
+      "quand": "Optionnel — certains clips en ont, d'autres non",
+      "volume": "-20dB (20-30%)",
+      "types": ["trap_beat_lofi", "ambient_cinematic", "upbeat_pop"],
+      "rules": [
+        "JAMAIS plus fort que la voix",
+        "Boucle courte (15-30s)",
+        "Pas de paroles",
+        "Même musique pour tous les clips d'un même ranking"
+      ]
+    }
+  },
+
+  "audio_presets_by_style": {
+    "ranking": {
+      "sfx_par_clip": ["whoosh (transition)", "tick (countdown)", "impact (moment fort)"],
+      "musique": "trap_beat_lofi ou upbeat_pop",
+      "room_tone": "OBLIGATOIRE"
+    },
+    "blur": {
+      "sfx_par_clip": ["whoosh_light (b_roll change)", "pop (zoom)", "riser (avant révélation)"],
+      "musique": "ambient_cinematic ou aucune",
+      "room_tone": "OBLIGATOIRE"
+    },
+    "split_scene": {
+      "sfx_par_clip": ["whoosh_light (zone_bas change)", "impact (zoom)"],
+      "musique": "selon le contenu de zone_bas",
+      "room_tone": "OBLIGATOIRE"
+    },
+    "reframing": {
+      "sfx_par_clip": ["whoosh_light (cut principal)", "impact_doux (zoom émotionnel)"],
+      "musique": "ambient_cinematic ou aucune",
+      "room_tone": "OBLIGATOIRE",
+      "note": "Moins de SFX que les autres styles — laisser la parole respirer"
+    }
+  },
+
+  "audio_mixing_rules": [
+    "La voix est TOUJOURS à 0dB — ne jamais la comprimer",
+    "Les SFX ne doivent JAMAIS masquer la voix",
+    "Le riser doit monter en volume mais ne jamais atteindre celui de la voix",
+    "La musique est un FOND, pas un élément principal",
+    "Vérifier l'écoute sur CASQUE et sur TÉLÉPHONE",
+    "Le room_tone est constant — pas de variation de volume"
+  ],
+
+  "source": "guide_shorts_podcast_complet.md (Section 10 — Sound design) + transcripts montage"
+}

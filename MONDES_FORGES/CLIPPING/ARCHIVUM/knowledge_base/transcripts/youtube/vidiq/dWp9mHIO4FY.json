@@ -1,0 +1,887 @@
+{
+  "video_id": "dWp9mHIO4FY",
+  "title": "This YouTube Update Could Change Everything",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 19545,
+  "outlier_score": 0.01,
+  "thumbnail": "https://i.ytimg.com/vi/dWp9mHIO4FY/maxresdefault.jpg",
+  "upload_date": "20260520",
+  "duration": 377,
+  "transcript": {
+    "text": "Can you remember these? You do a search on Google and if there was the perfect answer in a YouTube video, Google would take a snippet of that video and put it right here for you. Well, that is now coming directly to YouTube. And it could change everything. So, obviously, we need to ask a question. Just what is Ask YouTube? People come to YouTube every day to ask a lot of questions. There's a lot of great videos. Sometimes it's hard to know where to start. >> So, this is the CEO of Google, not YouTube. This is Neal Mohan's boss and he was doing a keynote speech at the recent Google IO presentation and we happened across this new feature. Now, the first observation, which is a bit of a relief to be honest, is that it looks as if the search bar itself is not going away. There is a dedicated Ask YouTube button. I'm not sure if it's there all of the time or if it appears once you've done a search. Say you want to teach your 3-year-old how to ride a pedal bike and they already know how to ride a balance bike. Just ask YouTube. Okay, this is already interesting in the fact that it's essentially going to try and re-educate us on how to do searches on YouTube, not the usual dumb basic searches. It wants more nuance, more context and it will give us answers that look akin to a Google search page, if I'm honest. >> The information is digestible and easy to navigate. You get an overview and helpful tips. Boo. You know what you don't see is any of the creator's original packaging for the video. I'm not seeing any thumbnails and the titles aren't prominent either. It's more an AI summary of the video itself. >> [sighs] >> Which is going to be quite interesting, isn't it? >> You will see videos that best match your interest. So, if you want to try a specific method of teaching, you can go deeper there. And best of all, it jumps right to the part of the video most relevant for you. This is what brings back the memories of the snippets of videos from Google search, but it also sets off alarm bells for creators. Let's take these two search results from the Ask YouTube feature. What are you not seeing? Timestamps. Presumably, as a viewer, you don't need to know if this video is 20 minutes long or 2 minutes long because when you click on it, it's going to take you to the exact point that you need to see. And in this particular result, it looks like it's taking out about 80% of the entire video. So, yeah, from a creator's perspective, what's that going to do to my watch time? Now, yes, I hear you. This might be the antiquated way of looking at YouTube and analytics. Packaging, thumbnails, titles, watch time. Does that really matter in 2026 when we have these AI summaries and the key point of YouTube is to satisfy the viewer? I can only go off the limited screenshots that I'm seeing here, but it feels like the Ask YouTube feature is going to rely a lot, lot less on metadata, things outside the video, the title, the thumbnail, the description, the tags, and so on. What I think you're seeing in these search pages are summaries of a video based on the transcripts and also the most relevant and important freeze frames visuals from the videos themselves. Now, this may end up being frontier gibberish in a year's time, but it seems to me as if the external components of a video, the thumbnail and the title, metadata, are going to eventually be completely irrelevant. And what's going to be vastly more important is what you say and what you show in the videos because that's the context this new feature is going to grab everything from. >> It remembers the context, so you can follow up with questions like, \"Should I buy one with handbrakes or pedal brakes. Making it an ongoing conversation. It even lays out the information in a table, so it's easy to compare. So again, this is really interesting and also a little scary in how the Ask YouTube feature is stripping out components of a video and listing them on the page. You You even have to click into the video to watch it. So with searches potentially going into this amount of detail, and I'll start to think about whether videos of the future may be all about micro moments. If I give you an example, if I do a search for iPhone 17 Pro right now, it also completes all of these results. Now, usually I would pick one of these and make a video about that topic. But now, maybe I do want to unbox it, and I want to show you a case, and I want to compare it to the Samsung S26 Ultra and all of the colors. Specifically targeting all of those moments in the video, so that if somebody searches for it, I come up as a result, and a key 45-second moment in that video is perfect for the viewer. >> We are starting to test Ask YouTube now, and it'll roll out broadly in the US this summer. As of time of recording, I don't have access to this feature yet. If you do, let us know in the comments below and your opinion of it. I'm just fascinated to know the differences between these search results with standard YouTube searches and this new Ask YouTube feature. I think the differences between the two will inform us a lot on how we might make videos in the future. But since we're now starting to think about how AI is going to summarize our video content, these were some of the ideas that were jumping into our heads. At this stage, I don't want you to take anything as gospel, but we have to think about a brand new audience for the content, which is an AI summary feature from YouTube. And my guess is the more clear and direct your answers are to questions that are being asked using this feature will help AI index your content a lot more easily. Given how fundamental search is to the YouTube platform. This represents a massive change {slash} upgrade, and it's something that you simply cannot ignore if you're a creator, especially one that gets a lot of search traffic on their videos. Now, literally as I was finishing this video, I went to youtube.com/new, and I discovered that I can turn this feature on now if I want to. It doesn't mean that this video was completely redundant, but what it does mean is that you'll see my full testing of this feature over here when it's ready.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "Can you remember these? You do a search",
+        "duration": 5.24
+      },
+      {
+        "start": 2.96,
+        "text": "on Google and if there was the perfect",
+        "duration": 4.32
+      },
+      {
+        "start": 5.24,
+        "text": "answer in a YouTube video, Google would",
+        "duration": 4.0
+      },
+      {
+        "start": 7.28,
+        "text": "take a snippet of that video and put it",
+        "duration": 4.08
+      },
+      {
+        "start": 9.24,
+        "text": "right here for you. Well, that is now",
+        "duration": 6.04
+      },
+      {
+        "start": 11.36,
+        "text": "coming directly to YouTube. And it could",
+        "duration": 6.04
+      },
+      {
+        "start": 15.28,
+        "text": "change everything. So, obviously, we",
+        "duration": 5.6
+      },
+      {
+        "start": 17.4,
+        "text": "need to ask a question. Just what is Ask",
+        "duration": 4.68
+      },
+      {
+        "start": 20.88,
+        "text": "YouTube?",
+        "duration": 3.44
+      },
+      {
+        "start": 22.08,
+        "text": "People come to YouTube every day to ask",
+        "duration": 3.84
+      },
+      {
+        "start": 24.32,
+        "text": "a lot of questions.",
+        "duration": 3.6
+      },
+      {
+        "start": 25.92,
+        "text": "There's a lot of great videos.",
+        "duration": 3.84
+      },
+      {
+        "start": 27.92,
+        "text": "Sometimes it's hard to know where to",
+        "duration": 2.28
+      },
+      {
+        "start": 29.76,
+        "text": "start.",
+        "duration": 4.04
+      },
+      {
+        "start": 30.2,
+        "text": ">> So, this is the CEO of Google, not",
+        "duration": 6.28
+      },
+      {
+        "start": 33.8,
+        "text": "YouTube. This is Neal Mohan's boss and",
+        "duration": 4.84
+      },
+      {
+        "start": 36.48,
+        "text": "he was doing a keynote speech at the",
+        "duration": 5.0
+      },
+      {
+        "start": 38.64,
+        "text": "recent Google IO presentation and we",
+        "duration": 4.68
+      },
+      {
+        "start": 41.48,
+        "text": "happened across this new feature. Now,",
+        "duration": 3.68
+      },
+      {
+        "start": 43.32,
+        "text": "the first observation, which is a bit of",
+        "duration": 3.44
+      },
+      {
+        "start": 45.16,
+        "text": "a relief to be honest, is that it looks",
+        "duration": 3.76
+      },
+      {
+        "start": 46.76,
+        "text": "as if the search bar itself is not going",
+        "duration": 5.28
+      },
+      {
+        "start": 48.92,
+        "text": "away. There is a dedicated Ask YouTube",
+        "duration": 4.2
+      },
+      {
+        "start": 52.04,
+        "text": "button.",
+        "duration": 2.28
+      },
+      {
+        "start": 53.12,
+        "text": "I'm not sure if it's there all of the",
+        "duration": 3.8
+      },
+      {
+        "start": 54.32,
+        "text": "time or if it appears once you've done a",
+        "duration": 4.4
+      },
+      {
+        "start": 56.92,
+        "text": "search. Say you want to teach your",
+        "duration": 4.52
+      },
+      {
+        "start": 58.72,
+        "text": "3-year-old how to ride a pedal bike",
+        "duration": 4.2
+      },
+      {
+        "start": 61.44,
+        "text": "and they already know how to ride a",
+        "duration": 2.84
+      },
+      {
+        "start": 62.92,
+        "text": "balance bike.",
+        "duration": 4.8
+      },
+      {
+        "start": 64.28,
+        "text": "Just ask YouTube. Okay, this is already",
+        "duration": 5.0
+      },
+      {
+        "start": 67.72,
+        "text": "interesting in the fact that it's",
+        "duration": 3.36
+      },
+      {
+        "start": 69.28,
+        "text": "essentially going to try and re-educate",
+        "duration": 4.36
+      },
+      {
+        "start": 71.08,
+        "text": "us on how to do searches on YouTube, not",
+        "duration": 6.56
+      },
+      {
+        "start": 73.64,
+        "text": "the usual dumb basic searches. It wants",
+        "duration": 6.48
+      },
+      {
+        "start": 77.64,
+        "text": "more nuance, more context and it will",
+        "duration": 3.92
+      },
+      {
+        "start": 80.12,
+        "text": "give us",
+        "duration": 4.92
+      },
+      {
+        "start": 81.56,
+        "text": "answers that look akin to a Google",
+        "duration": 4.76
+      },
+      {
+        "start": 85.04,
+        "text": "search page, if I'm honest.",
+        "duration": 3.68
+      },
+      {
+        "start": 86.32,
+        "text": ">> The information is digestible and easy",
+        "duration": 3.88
+      },
+      {
+        "start": 88.72,
+        "text": "to navigate.",
+        "duration": 3.8
+      },
+      {
+        "start": 90.2,
+        "text": "You get an overview and helpful tips.",
+        "duration": 5.08
+      },
+      {
+        "start": 92.52,
+        "text": "Boo. You know what you don't see is any",
+        "duration": 5.28
+      },
+      {
+        "start": 95.28,
+        "text": "of the creator's original packaging for",
+        "duration": 5.8
+      },
+      {
+        "start": 97.8,
+        "text": "the video. I'm not seeing any thumbnails",
+        "duration": 5.64
+      },
+      {
+        "start": 101.08,
+        "text": "and the titles aren't prominent either.",
+        "duration": 5.68
+      },
+      {
+        "start": 103.44,
+        "text": "It's more an AI summary of the video",
+        "duration": 4.636
+      },
+      {
+        "start": 106.76,
+        "text": "itself.",
+        "duration": 2.4
+      },
+      {
+        "start": 108.076,
+        "text": ">> [sighs]",
+        "duration": 2.524
+      },
+      {
+        "start": 109.16,
+        "text": ">> Which is going to be quite interesting,",
+        "duration": 1.92
+      },
+      {
+        "start": 110.6,
+        "text": "isn't it?",
+        "duration": 2.4
+      },
+      {
+        "start": 111.08,
+        "text": ">> You will see videos that best match your",
+        "duration": 3.96
+      },
+      {
+        "start": 113.0,
+        "text": "interest. So, if you want to try a",
+        "duration": 4.2
+      },
+      {
+        "start": 115.04,
+        "text": "specific method of teaching, you can go",
+        "duration": 3.48
+      },
+      {
+        "start": 117.2,
+        "text": "deeper there.",
+        "duration": 3.24
+      },
+      {
+        "start": 118.52,
+        "text": "And best of all, it jumps right to the",
+        "duration": 4.32
+      },
+      {
+        "start": 120.44,
+        "text": "part of the video most relevant for you.",
+        "duration": 5.6
+      },
+      {
+        "start": 122.84,
+        "text": "This is what brings back the memories of",
+        "duration": 5.08
+      },
+      {
+        "start": 126.04,
+        "text": "the snippets of videos from Google",
+        "duration": 5.28
+      },
+      {
+        "start": 127.92,
+        "text": "search, but it also sets off alarm bells",
+        "duration": 5.48
+      },
+      {
+        "start": 131.32,
+        "text": "for creators. Let's take these two",
+        "duration": 3.36
+      },
+      {
+        "start": 133.4,
+        "text": "search results from the Ask YouTube",
+        "duration": 4.12
+      },
+      {
+        "start": 134.68,
+        "text": "feature. What are you not seeing?",
+        "duration": 5.16
+      },
+      {
+        "start": 137.52,
+        "text": "Timestamps. Presumably, as a viewer, you",
+        "duration": 4.2
+      },
+      {
+        "start": 139.84,
+        "text": "don't need to know if this video is 20",
+        "duration": 4.119
+      },
+      {
+        "start": 141.72,
+        "text": "minutes long or 2 minutes long because",
+        "duration": 3.56
+      },
+      {
+        "start": 143.959,
+        "text": "when you click on it, it's going to take",
+        "duration": 2.921
+      },
+      {
+        "start": 145.28,
+        "text": "you to the exact point that you need to",
+        "duration": 3.36
+      },
+      {
+        "start": 146.88,
+        "text": "see. And in this particular result, it",
+        "duration": 4.4
+      },
+      {
+        "start": 148.64,
+        "text": "looks like it's taking out about 80% of",
+        "duration": 4.36
+      },
+      {
+        "start": 151.28,
+        "text": "the entire video.",
+        "duration": 3.8
+      },
+      {
+        "start": 153.0,
+        "text": "So, yeah, from a creator's perspective,",
+        "duration": 3.56
+      },
+      {
+        "start": 155.08,
+        "text": "what's that going to do to my watch",
+        "duration": 3.84
+      },
+      {
+        "start": 156.56,
+        "text": "time? Now, yes, I hear you. This might",
+        "duration": 4.76
+      },
+      {
+        "start": 158.92,
+        "text": "be the antiquated way of looking at",
+        "duration": 4.48
+      },
+      {
+        "start": 161.32,
+        "text": "YouTube and analytics. Packaging,",
+        "duration": 4.92
+      },
+      {
+        "start": 163.4,
+        "text": "thumbnails, titles, watch time. Does",
+        "duration": 6.08
+      },
+      {
+        "start": 166.24,
+        "text": "that really matter in 2026 when we have",
+        "duration": 6.48
+      },
+      {
+        "start": 169.48,
+        "text": "these AI summaries and the key point of",
+        "duration": 5.52
+      },
+      {
+        "start": 172.72,
+        "text": "YouTube is to satisfy the viewer? I can",
+        "duration": 3.76
+      },
+      {
+        "start": 175.0,
+        "text": "only go off the limited screenshots that",
+        "duration": 4.56
+      },
+      {
+        "start": 176.48,
+        "text": "I'm seeing here, but it feels like the",
+        "duration": 6.12
+      },
+      {
+        "start": 179.56,
+        "text": "Ask YouTube feature is going to rely a",
+        "duration": 6.28
+      },
+      {
+        "start": 182.6,
+        "text": "lot, lot less on metadata, things",
+        "duration": 5.52
+      },
+      {
+        "start": 185.84,
+        "text": "outside the video, the title, the",
+        "duration": 4.44
+      },
+      {
+        "start": 188.12,
+        "text": "thumbnail, the description, the tags,",
+        "duration": 4.119
+      },
+      {
+        "start": 190.28,
+        "text": "and so on. What I think you're seeing in",
+        "duration": 4.56
+      },
+      {
+        "start": 192.239,
+        "text": "these search pages are summaries of a",
+        "duration": 5.961
+      },
+      {
+        "start": 194.84,
+        "text": "video based on the transcripts and also",
+        "duration": 6.2
+      },
+      {
+        "start": 198.2,
+        "text": "the most relevant and important freeze",
+        "duration": 4.759
+      },
+      {
+        "start": 201.04,
+        "text": "frames visuals from the videos",
+        "duration": 3.84
+      },
+      {
+        "start": 202.959,
+        "text": "themselves. Now, this may end up being",
+        "duration": 4.041
+      },
+      {
+        "start": 204.88,
+        "text": "frontier gibberish in a year's time, but",
+        "duration": 4.44
+      },
+      {
+        "start": 207.0,
+        "text": "it seems to me as if the external",
+        "duration": 4.68
+      },
+      {
+        "start": 209.32,
+        "text": "components of a video, the thumbnail and",
+        "duration": 4.84
+      },
+      {
+        "start": 211.68,
+        "text": "the title, metadata, are going to",
+        "duration": 4.44
+      },
+      {
+        "start": 214.16,
+        "text": "eventually be completely irrelevant. And",
+        "duration": 3.92
+      },
+      {
+        "start": 216.12,
+        "text": "what's going to be vastly more important",
+        "duration": 5.0
+      },
+      {
+        "start": 218.08,
+        "text": "is what you say and what you show in the",
+        "duration": 5.72
+      },
+      {
+        "start": 221.12,
+        "text": "videos because that's the context this",
+        "duration": 4.76
+      },
+      {
+        "start": 223.8,
+        "text": "new feature is going to grab everything",
+        "duration": 2.52
+      },
+      {
+        "start": 225.88,
+        "text": "from.",
+        "duration": 2.28
+      },
+      {
+        "start": 226.32,
+        "text": ">> It remembers the context, so you can",
+        "duration": 3.56
+      },
+      {
+        "start": 228.16,
+        "text": "follow up with questions like, \"Should I",
+        "duration": 4.44
+      },
+      {
+        "start": 229.88,
+        "text": "buy one with handbrakes or pedal brakes.",
+        "duration": 5.24
+      },
+      {
+        "start": 232.6,
+        "text": "Making it an ongoing conversation.",
+        "duration": 4.64
+      },
+      {
+        "start": 235.12,
+        "text": "It even lays out the information in a",
+        "duration": 4.24
+      },
+      {
+        "start": 237.24,
+        "text": "table, so it's easy to compare. So",
+        "duration": 3.56
+      },
+      {
+        "start": 239.36,
+        "text": "again, this is really interesting and",
+        "duration": 3.8
+      },
+      {
+        "start": 240.8,
+        "text": "also a little scary in how the Ask",
+        "duration": 4.04
+      },
+      {
+        "start": 243.16,
+        "text": "YouTube feature is stripping out",
+        "duration": 4.28
+      },
+      {
+        "start": 244.84,
+        "text": "components of a video and listing them",
+        "duration": 4.96
+      },
+      {
+        "start": 247.44,
+        "text": "on the page. You You even have to click",
+        "duration": 4.0
+      },
+      {
+        "start": 249.8,
+        "text": "into the video to watch it. So with",
+        "duration": 3.48
+      },
+      {
+        "start": 251.44,
+        "text": "searches potentially going into this",
+        "duration": 3.28
+      },
+      {
+        "start": 253.28,
+        "text": "amount of detail, and I'll start to",
+        "duration": 3.32
+      },
+      {
+        "start": 254.72,
+        "text": "think about whether videos of the future",
+        "duration": 4.079
+      },
+      {
+        "start": 256.6,
+        "text": "may be all about micro moments. If I",
+        "duration": 4.4
+      },
+      {
+        "start": 258.799,
+        "text": "give you an example, if I do a search",
+        "duration": 5.001
+      },
+      {
+        "start": 261.0,
+        "text": "for iPhone 17 Pro right now, it also",
+        "duration": 4.88
+      },
+      {
+        "start": 263.8,
+        "text": "completes all of these results. Now,",
+        "duration": 3.76
+      },
+      {
+        "start": 265.88,
+        "text": "usually I would pick one of these and",
+        "duration": 3.92
+      },
+      {
+        "start": 267.56,
+        "text": "make a video about that topic. But now,",
+        "duration": 5.2
+      },
+      {
+        "start": 269.8,
+        "text": "maybe I do want to unbox it, and I want",
+        "duration": 4.52
+      },
+      {
+        "start": 272.76,
+        "text": "to show you a case, and I want to",
+        "duration": 4.6
+      },
+      {
+        "start": 274.32,
+        "text": "compare it to the Samsung S26 Ultra and",
+        "duration": 4.8
+      },
+      {
+        "start": 277.36,
+        "text": "all of the colors. Specifically",
+        "duration": 4.2
+      },
+      {
+        "start": 279.12,
+        "text": "targeting all of those moments in the",
+        "duration": 4.4
+      },
+      {
+        "start": 281.56,
+        "text": "video, so that if somebody searches for",
+        "duration": 5.56
+      },
+      {
+        "start": 283.52,
+        "text": "it, I come up as a result, and a key",
+        "duration": 5.64
+      },
+      {
+        "start": 287.12,
+        "text": "45-second moment in that video is",
+        "duration": 3.0
+      },
+      {
+        "start": 289.16,
+        "text": "perfect for the viewer.",
+        "duration": 3.32
+      },
+      {
+        "start": 290.12,
+        "text": ">> We are starting to test Ask YouTube now,",
+        "duration": 4.64
+      },
+      {
+        "start": 292.48,
+        "text": "and it'll roll out broadly in the US",
+        "duration": 4.12
+      },
+      {
+        "start": 294.76,
+        "text": "this summer. As of time of recording, I",
+        "duration": 3.52
+      },
+      {
+        "start": 296.6,
+        "text": "don't have access to this feature yet.",
+        "duration": 3.28
+      },
+      {
+        "start": 298.28,
+        "text": "If you do, let us know in the comments",
+        "duration": 3.92
+      },
+      {
+        "start": 299.88,
+        "text": "below and your opinion of it. I'm just",
+        "duration": 4.6
+      },
+      {
+        "start": 302.2,
+        "text": "fascinated to know the differences",
+        "duration": 3.84
+      },
+      {
+        "start": 304.48,
+        "text": "between these search results with",
+        "duration": 4.48
+      },
+      {
+        "start": 306.04,
+        "text": "standard YouTube searches and this new",
+        "duration": 4.84
+      },
+      {
+        "start": 308.96,
+        "text": "Ask YouTube feature. I think the",
+        "duration": 3.6
+      },
+      {
+        "start": 310.88,
+        "text": "differences between the two will inform",
+        "duration": 3.64
+      },
+      {
+        "start": 312.56,
+        "text": "us a lot on how we might make videos in",
+        "duration": 3.6
+      },
+      {
+        "start": 314.52,
+        "text": "the future. But since we're now starting",
+        "duration": 3.96
+      },
+      {
+        "start": 316.16,
+        "text": "to think about how AI is going to",
+        "duration": 4.96
+      },
+      {
+        "start": 318.48,
+        "text": "summarize our video content, these were",
+        "duration": 4.4
+      },
+      {
+        "start": 321.12,
+        "text": "some of the ideas that were jumping into",
+        "duration": 3.12
+      },
+      {
+        "start": 322.88,
+        "text": "our heads. At this stage, I don't want",
+        "duration": 3.52
+      },
+      {
+        "start": 324.24,
+        "text": "you to take anything as gospel, but we",
+        "duration": 5.0
+      },
+      {
+        "start": 326.4,
+        "text": "have to think about a brand new audience",
+        "duration": 6.16
+      },
+      {
+        "start": 329.24,
+        "text": "for the content, which is an AI summary",
+        "duration": 5.28
+      },
+      {
+        "start": 332.56,
+        "text": "feature from YouTube. And my guess is",
+        "duration": 4.72
+      },
+      {
+        "start": 334.52,
+        "text": "the more clear and direct your answers",
+        "duration": 5.04
+      },
+      {
+        "start": 337.28,
+        "text": "are to questions that are being asked",
+        "duration": 5.0
+      },
+      {
+        "start": 339.56,
+        "text": "using this feature will help AI index",
+        "duration": 4.96
+      },
+      {
+        "start": 342.28,
+        "text": "your content a lot more easily. Given",
+        "duration": 4.72
+      },
+      {
+        "start": 344.52,
+        "text": "how fundamental search is to the YouTube",
+        "duration": 4.96
+      },
+      {
+        "start": 347.0,
+        "text": "platform. This represents a massive",
+        "duration": 5.44
+      },
+      {
+        "start": 349.48,
+        "text": "change {slash} upgrade, and it's",
+        "duration": 4.88
+      },
+      {
+        "start": 352.44,
+        "text": "something that you simply cannot ignore",
+        "duration": 3.68
+      },
+      {
+        "start": 354.36,
+        "text": "if you're a creator, especially one that",
+        "duration": 3.36
+      },
+      {
+        "start": 356.12,
+        "text": "gets a lot of search traffic on their",
+        "duration": 3.32
+      },
+      {
+        "start": 357.72,
+        "text": "videos. Now, literally as I was",
+        "duration": 3.04
+      },
+      {
+        "start": 359.44,
+        "text": "finishing this video, I went to",
+        "duration": 3.16
+      },
+      {
+        "start": 360.76,
+        "text": "youtube.com/new,",
+        "duration": 4.12
+      },
+      {
+        "start": 362.6,
+        "text": "and I discovered that I can turn this",
+        "duration": 5.2
+      },
+      {
+        "start": 364.88,
+        "text": "feature on now if I want to.",
+        "duration": 4.0
+      },
+      {
+        "start": 367.8,
+        "text": "It doesn't mean that this video was",
+        "duration": 2.96
+      },
+      {
+        "start": 368.88,
+        "text": "completely redundant, but what it does",
+        "duration": 4.0
+      },
+      {
+        "start": 370.76,
+        "text": "mean is that you'll see my full testing",
+        "duration": 4.28
+      },
+      {
+        "start": 372.88,
+        "text": "of this feature over here",
+        "duration": 4.92
+      },
+      {
+        "start": 375.04,
+        "text": "when it's ready.",
+        "duration": 2.76
+      }
+    ],
+    "status": "OK",
+    "segment_count": 173
+  },
+  "captured_at": "2026-07-09T21:40:00Z",
+  "captured_by": "CAPTEURS"
+}

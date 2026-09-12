@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "description": "Règles de gestion des watermarks pour les campagnes Clipify/Whop",
+  
+  "defaults": {
+    "format": "png",
+    "opacity_min": 0.75,
+    "opacity_recommended": 0.80,
+    "position": "center",
+    "size_pct_min": 10,
+    "size_pct_recommended": 15,
+    "resolution_min_width_px": 300,
+    "background": "transparent",
+    "max_height_pct": 25
+  },
+  
+  "platforms": {
+    "tiktok": {
+      "watermark_required": true,
+      "opacity_min": 0.75,
+      "position": "center",
+      "notes": "Visible sur toute la durée"
+    },
+    "instagram_reels": {
+      "watermark_required": true,
+      "opacity_min": 0.75,
+      "position": "center",
+      "notes": "Pas de caption modifiée acceptée"
+    },
+    "youtube_shorts": {
+      "watermark_required": true,
+      "opacity_min": 0.75,
+      "position": "center",
+      "notes": "Handle tag obligatoire en plus"
+    },
+    "twitter_x": {
+      "watermark_required": false,
+      "opacity_min": 0.75,
+      "position": "center",
+      "notes": "Optionnel — tag en commentaire, pas en caption"
+    }
+  },
+  
+  "validation_rules": [
+    "opacity >= opacity_min pour chaque plateforme",
+    "position == 'center' (pas de position alternative)",
+    "resolution >= resolution_min_width_px",
+    "format == 'png' (pas jpg, pas webp)",
+    "pas d'autre logo/promotion visible sur le watermark",
+    "taille >= size_pct_min% de la largeur vidéo",
+    "taille <= max_height_pct% de la hauteur vidéo"
+  ],
+  
+  "checklist": [
+    "Watermark visible sur toute la durée du clip",
+    "Opacité >= 75% (test fond sombre + clair)",
+    "Lisible sur écran mobile (test 360p)",
+    "Aucun autre logo visible",
+    "Position centrée (pas décalé)"
+  ]
+}

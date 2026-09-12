@@ -1,0 +1,27 @@
+{
+  "video_number": 1,
+  "siege_id": "perturabo_siege_001",
+  "title": "Every Category Of Hurricane Explained in 5 minutes",
+  "niche": "Hurricanes US",
+  "format": "LONG",
+  "duration": "5:22",
+  "types_count": 8,
+  "status": "ready_for_production",
+  "created_at": "2026-07-10T23:08:57Z",
+  "files": {
+    "script": "F03_FORGEWARD/OUT/script.json",
+    "timing": "F03_FORGEWARD/OUT/timing.json",
+    "script_raw": "F03_FORGEWARD/OUT/script_raw.txt",
+    "metadata": "F03_FORGEWARD/OUT/metadata.txt",
+    "thumbnail_concept": "F04_HERALD/OUT/thumbnail_concept.json",
+    "thumbnail_image": "F04_HERALD/OUT/thumbnail.png"
+  },
+  "performance": {
+    "published": false,
+    "published_at": null,
+    "views": null,
+    "ctr": null,
+    "retention": null,
+    "outlier_score": null
+  }
+}

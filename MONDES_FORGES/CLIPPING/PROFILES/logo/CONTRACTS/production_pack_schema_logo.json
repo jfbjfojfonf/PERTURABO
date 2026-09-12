@@ -1,0 +1,637 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "production_pack_schema_logo",
+  "_description": "Profil LOGO v2. Pack TEXTE ONLY produit par PERTURABO/CLIPPING. Deux sous-modes : informatif (article + video background illustratif) et humour (blague/meme + cuts operateur). LACRIMAE gere le rendu video + le logo (image transparente fournie par la campagne).",
+  "_mode": "logo",
+  "_clip_source_provided_by": "warsmith",
+  "type": "object",
+  "required": [
+    "pack_id",
+    "siege_id",
+    "mode",
+    "sub_mode",
+    "clip_source_ref",
+    "angles",
+    "videos"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "pack_id": {
+      "type": "string"
+    },
+    "siege_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "const": "logo"
+    },
+    "sub_mode": {
+      "type": "string",
+      "enum": [
+        "informatif",
+        "humour",
+        "meme",
+        "meme_v2"
+      ],
+      "_description": "meme_v2 utilise une source sociale fournie par le Champion ; F00 en pause, F01 archive, F04 forge et F05 assemble. meme conserve la compatibilité V1 historique."
+    },
+    "clip_source_ref": {
+      "type": "object",
+      "_description": "Reference au clip source (fourni par le Warsmith). Perturabo ne fait que le referencer.",
+      "required": [
+        "source_type",
+        "reference"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "youtube",
+            "tiktok",
+            "instagram",
+            "custom_footage",
+            "url",
+            "meme_keyword",
+            "meme_v2_social"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "_description": "URL ou fichier local (mode meme : vide — sources dans meme_source.virality_scan)"
+        },
+        "celebrity_or_subject": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "_description": "Mode meme : le mot-cle du siege"
+        },
+        "niche": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "_description": "Mode meme : niche derivee du mot-cle"
+        },
+        "duration_sec": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "timecodes": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "article_source": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "_description": "Mode informatif : l'article qui est le VRAI sujet de la video. Le clip source n'est qu'un background illustratif (aucun lien avec le sujet).",
+      "additionalProperties": false,
+      "properties": {
+        "reference": {
+          "type": "string",
+          "_description": "URL ou texte de l'article"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "celebrity_or_subject": {
+          "type": "string"
+        }
+      }
+    },
+    "joke_source": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "_description": "Mode humour : la blague/citation + capture tweet/reddit. PERTURABO en sort N blagues (une par angle).",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "meme_type": {
+          "type": "string",
+          "enum": [
+            "tweet",
+            "reddit",
+            "citation",
+            "texte"
+          ]
+        },
+        "reference": {
+          "type": "string"
+        }
+      }
+    },
+    "meme_source": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "_description": "Mode meme : le mot-cle venu du Warsmith + la scan viralite F00 (multi-sources, sans clip telecharge). Pack = textes + emotion + duree + reference guide 04_MODE_MEME.md. F01/F03 SKIP.",
+      "additionalProperties": false,
+      "required": [
+        "keyword"
+      ],
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "_description": "Mot-cle fourni par l'operateur"
+        },
+        "virality_scan": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "_description": "Ce qui est viral US pour ce mot-cle : sources reelles (YouTube stats, Google Trends, RSS, Reddit...). Jamais invente.",
+          "properties": {
+            "sources_scanned": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "signals": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "evidence_urls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "scanned_at": {
+              "type": "string"
+            }
+          }
+        },
+        "montage_guide_ref": {
+          "type": "string",
+          "_description": "Chemin du guide de montage charge par LACRIMAE (doctrine 6 couches).",
+          "const": "GUIDE_UTILISATION/04_MODE_MEME.md"
+        }
+      }
+    },
+    "reference_clip_style": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "_description": "Analyse du top clip viral fourni par le Warsmith : style de montage, ratio, blur, regles, ref. Perturabo apprend les assets et sort N videos.",
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "_description": "URL du clip viral de reference"
+        },
+        "ratio": {
+          "type": "string",
+          "_description": "ex: 9:16"
+        },
+        "blur": {
+          "type": "boolean",
+          "_description": "blur background ou pas"
+        },
+        "editing_style": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ref": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "angles": {
+      "type": "array",
+      "minItems": 1,
+      "_description": "Les N angles d'attaque (conserve de la v1). Chaque angle = 1 video du pack.",
+      "items": {
+        "type": "object",
+        "required": [
+          "angle_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "angle_id": {
+            "type": "string"
+          },
+          "genre": {
+            "type": "string",
+            "enum": [
+              "humoristique",
+              "triste",
+              "joyeux",
+              "dramatique",
+              "informatif"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "on_screen_text": {
+            "type": "string"
+          },
+          "seo_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12
+          },
+          "reframe_type": {
+            "type": "string",
+            "enum": [
+              "emotion-pivot",
+              "context-shift",
+              "stake-raiser",
+              "factual-explainer",
+              "outrage-reframe",
+              "wholesome-twist"
+            ]
+          },
+          "zone": {
+            "type": "string"
+          },
+          "angle_family": {
+            "type": "string"
+          },
+          "emotion_mode": {
+            "type": "string"
+          },
+          "engagement_type": {
+            "type": "string"
+          },
+          "reframe_dim": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "videos": {
+      "type": "array",
+      "minItems": 1,
+      "_description": "Les N assets finaux (un par angle) : titre viral, paragraphe, metadonnees, cuts precis, placement logo. LACRIMAE consomme ce bloc.",
+      "items": {
+        "type": "object",
+        "required": [
+          "video_index",
+          "angle_id",
+          "title"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "video_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "angle_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "_description": "Titre viral : max 6 mots (~60 chars)."
+          },
+          "viral_paragraph": {
+            "type": "string",
+            "maxLength": 400,
+            "_description": "Paragraphe viral : max 4 lignes, resume de l'article selon le registre de viralite du copywriting."
+          },
+          "metadata": {
+            "type": "object",
+            "required": [
+              "title",
+              "description",
+              "tags"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string",
+                "_description": "Titre viral de la video creee"
+              },
+              "description": {
+                "type": "string",
+                "_description": "2 paragraphes : 1) resume de l'article en 2 lignes 2) note fair use (videos/images utilisees seulement pour l'illustration)."
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^#"
+                },
+                "maxItems": 15
+              }
+            }
+          },
+          "cut": {
+            "type": "object",
+            "required": [
+              "start_sec",
+              "end_sec",
+              "duration_sec",
+              "cut_source"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "start_sec": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "end_sec": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "duration_sec": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "cut_source": {
+                "type": "string",
+                "enum": [
+                  "operator",
+                  "perturabo_proposed",
+                  "perturabo_validated"
+                ],
+                "_description": "humour = operator (cuts fournis par le Warsmith). informatif = perturabo_proposed -> validation Warsmith -> perturabo_validated."
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          },
+          "logo_placement": {
+            "type": "string",
+            "_description": "Le logo appartient a la campagne (image transparente). Perturabo instruit LACRIMAE d'utiliser cette image transparente contenant le logo (placement campagne 1080x1920)."
+          },
+          "on_screen_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "emotion": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Mode meme : l'emotion de cet angle (anti-spam : max 2 angles avec la meme emotion)."
+          },
+          "meme": {
+            "type": [
+              "string",
+              "null"
+            ],
+          "enum": [
+            "meme_001",
+            "meme_002",
+                          "meme_003",
+              "M1",
+              "M7"
+
+          ],
+            "_description": "Mode meme : fichier existant de la memetheque LACRIMAE. A01-A04 -> meme_003, A05-A06 -> meme_002, A07-A08 -> meme_003 (jamais meme_1/meme_2/meme_3)."
+          },
+          "tweet": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "_description": "Mode meme : fake tweet max 3 lignes affiche comme faux post quart haut."
+              },
+              "keywords_style": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "green": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "_description": "Mots seuls a colorer en vert (valeur/espoir)."
+                  },
+                  "red": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "_description": "Mots seuls a colorer en rouge (danger/absurde)."
+                  }
+                },
+                "_description": "Format LACRIMAE v2.5 : DICT a cles anglaises green/red, chaque entree = un mot seul present mot a mot dans tweet.text (ponctuation ignoree). Une liste [{word,color}] = aucune couleur."
+              }
+            },
+            "_description": "Mode meme : le tweet affiche en surimpression (quart haut) + la coloration des mots-clés (vert/rouge)."
+          },
+          "text_emotion": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Mode meme : texte d'emotion au milieu (max 4 mots), se termine par ':'."
+          },
+          "watermark": {
+            "type": "string",
+            "_description": "Mode meme : filigrane texte semi-transparent bas-gauche, ex: '@memecocktail'."
+          },
+          "duration_sec": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 5,
+            "maximum": 30,
+            "_description": "Mode meme : duree du clip en secondes (default 8, plage 5-30)."
+          },
+          "clip_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Référence du clip mème déjà présent dans la release LACRIMAE."
+          },
+          "meme_tag": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Tag du clip fourni par l opérateur, par exemple M1."
+          },
+          "channel_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Chaîne de destination fournie par l opérateur."
+          },
+          "source_post": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "_description": "Capture PNG et provenance du post source à afficher au-dessus du clip."
+          },
+          "reaction_tweet": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "_description": "Réaction originale PERTURABO, distincte du texte source."
+          }
+        },
+        "_description": "MEME V2 ajoute source_post, reaction_tweet, clip_id, meme_tag et channel_id ; les anciens champs restent compatibles."
+      }
+    },
+    "checklist": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "factual_verified": {
+          "type": "boolean"
+        },
+        "no_defamation": {
+          "type": "boolean"
+        },
+        "no_fabricated_breaking": {
+          "type": "boolean"
+        },
+        "seo_optimized": {
+          "type": "boolean"
+        }
+      }
+    },
+    "meme_v2": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "_description": "Contrat MEME V2 : source sociale avec capture PNG, reaction PERTURABO, clip mème et bindings opérateur.",
+      "additionalProperties": false,
+      "required": [
+        "source_post",
+        "operator_bindings"
+      ],
+      "properties": {
+        "source_post": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "screenshot_png"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "screenshot_png": {
+              "type": "string"
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "author": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "observed_at": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "metrics": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": true
+            },
+            "credit_display": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "operator_bindings": {
+          "type": "object",
+          "_description": "Mapping angle_id vers clip_id, meme_tag et channel_id fournis par l operateur.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "clip_id",
+              "meme_tag",
+              "channel_id"
+            ],
+            "properties": {
+              "clip_id": {
+                "type": "string"
+              },
+              "meme_tag": {
+                "type": "string",
+                "minLength": 1
+              },
+              "channel_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
