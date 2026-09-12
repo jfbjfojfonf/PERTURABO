@@ -1,0 +1,111 @@
+name: PERTURABO VOX-C ANALYSIS (F00C)
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_url:
+        description: "URL YouTube (watch/youtu.be/live/shorts), Twitch (videos/<id> ou /<channel>) ou chemin local"
+        required: true
+      download_budget_seconds:
+        description: "Budget de téléchargement en secondes (0 = metadata_only, > 0 = tranche analysée par heatmap)"
+        required: false
+        default: "0"
+      heatmap_buckets:
+        description: "Nombre de buckets de la heatmap (défaut 120)"
+        required: false
+        default: "120"
+      to_candidats:
+        description: "Émettre OUT/candidats.json au schéma canonique PUR (pont vers le tronc)"
+        required: false
+        default: "true"
+      top_n:
+        description: "Limiter aux N meilleurs segments (0 = tous)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: voxc-analysis-${{ github.event.inputs.source_url }}
+  cancel-in-progress: false
+
+jobs:
+  voxc-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer yt-dlp + numpy (ffmpeg est préinstallé sur le runner)
+        run: pip install --quiet yt-dlp numpy
+
+      - name: Gate L0 — la source doit être résoluble
+        run: |
+          python3 - <<'PY'
+          import importlib.util, pathlib, sys
+          base = pathlib.Path("MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE")
+          spec = importlib.util.spec_from_file_location("f00c_vox", base / "f00c_vox.py")
+          module = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(module)
+          try:
+              resolved = module.resolve_source("${{ github.event.inputs.source_url }}")
+          except Exception as exc:
+              print(f"GATE L0 : ÉCHOUÉ — {exc}")
+              sys.exit(1)
+          print(f"GATE L0 : OK — kind={resolved['kind']} platform={resolved['platform']} id={resolved.get('id')}")
+          PY
+
+      - name: Analyse F00C_VOX (metadata + heatmap si budget > 0)
+        run: |
+          EXTRA=""
+          if [ "${{ github.event.inputs.to_candidats }}" = "true" ]; then
+            EXTRA="--to-candidats --candidats-out MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/candidats.json"
+            if [ "${{ github.event.inputs.top_n }}" != "0" ] && [ -n "${{ github.event.inputs.top_n }}" ]; then
+              EXTRA="$EXTRA --top ${{ github.event.inputs.top_n }}"
+            fi
+          fi
+          python3 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py \
+            "${{ github.event.inputs.source_url }}" \
+            --out MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/live_analysis.json \
+            --heatmap-buckets ${{ github.event.inputs.heatmap_buckets }} \
+            --download-budget-seconds ${{ github.event.inputs.download_budget_seconds }} \
+            $EXTRA
+
+      - name: Résumé du manifeste (gate L1)
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          manifest_path = pathlib.Path("MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/live_analysis.json")
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          print(f"Schéma      : {manifest['schema_version']}")
+          print(f"Statut      : {manifest['status']}")
+          print(f"Plateforme  : {manifest['source']['platform']} | type : {manifest['source']['content_type']}")
+          print(f"Segments    : {len(manifest['viral_segments'])}")
+          for seg in manifest["viral_segments"][:5]:
+              print(f"  #{seg['rank']} {seg['start_sec']}s → {seg['end_sec']}s (attention {seg['attention_norm']})")
+          if manifest["status"] == "metadata_only" and not manifest["viral_segments"]:
+              print("Note : metadata_only — relancer avec download_budget_seconds > 0 pour la heatmap.")
+          PY
+
+      - name: Artefact voxc-analysis (manifeste)
+        uses: actions/upload-artifact@v4
+        with:
+          name: voxc-analysis-${{ github.run_id }}
+          path: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/live_analysis.json
+          if-no-files-found: error
+
+      - name: Artefact voxc-candidats (schéma canonique PUR)
+        if: ${{ github.event.inputs.to_candidats == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: voxc-candidats-${{ github.run_id }}
+          path: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/candidats.json
+          if-no-files-found: warn
