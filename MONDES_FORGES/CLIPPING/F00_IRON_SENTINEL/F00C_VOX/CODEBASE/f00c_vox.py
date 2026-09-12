@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -325,6 +326,131 @@ def download_media(url: str, out_dir: Path, max_duration_seconds: float = 0,
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Livraison B — barre rouge (Most Replayed), fusion, webhook Salle de Guerre
+# ─────────────────────────────────────────────────────────────────────────────
+
+FUSION_WEIGHTS = {"video": 0.6, "replayed": 0.4}
+
+
+def _yt_dlp_json(url: str, cookies_path: Path | None = None,
+                 player_clients: str = "ios,mweb") -> dict | None:
+    """JSON yt-dlp (--dump-json : AUCUN média téléchargé) via l'escalier habituel."""
+    if shutil.which("yt-dlp") is None:
+        return None
+    cookie_args = ["--cookies", str(cookies_path)] if cookies_path and Path(cookies_path).is_file() else []
+    attempts = [
+        ["yt-dlp", "--no-playlist", "--dump-json",
+         "--extractor-args", f"youtube:player_client={player_clients}"] + cookie_args,
+        ["yt-dlp", "--no-playlist", "--dump-json"] + cookie_args,
+    ]
+    for attempt in attempts:
+        attempt.append(url)
+        try:
+            proc = subprocess.run(attempt, capture_output=True, text=True, timeout=120)
+        except subprocess.TimeoutExpired:
+            continue
+        if proc.returncode == 0 and proc.stdout.strip():
+            try:
+                return json.loads(proc.stdout.strip().splitlines()[-1])
+            except json.JSONDecodeError:
+                continue
+    return None
+
+
+def fetch_replayed_curve(url: str, cookies_path: Path | None = None) -> tuple[list[dict], str | None]:
+    """Barre rouge YouTube (Most Replayed) via yt-dlp --dump-json.
+
+    La seule courbe d'attention basée sur le comportement RÉEL de millions de
+    spectateurs. Retourne (curve, note) : curve = [{start, end, value}] (peut
+    être vide), note = raison humaine si vide (jamais de silence).
+    """
+    data = _yt_dlp_json(url, cookies_path)
+    if data is None:
+        return [], ("yt-dlp n'a pas pu lire les métadonnées (anti-bot ou absent) "
+                    "— barre rouge indisponible")
+    raw = data.get("heatmap") or []
+    curve = []
+    for seg in raw:
+        if not isinstance(seg, dict):
+            continue
+        try:
+            curve.append({
+                "start": round(float(seg.get("start_time", 0)), 3),
+                "end": round(float(seg.get("end_time", 0)), 3),
+                "value": round(float(seg.get("value", 0)), 6),
+            })
+        except (TypeError, ValueError):
+            continue
+    if not curve:
+        return [], "pas de Most Replayed exposé (live en cours, vidéo trop récente ou non supportée)"
+    return curve, None
+
+
+def fuse_heatmaps(video_heatmap: list[dict], replayed_curve: list[dict],
+                  weights: dict | None = None) -> list[dict]:
+    """Fusionne le capteur F00C (heatmap vidéo) et le comportement humain réel (barre rouge).
+
+    fused = w_video * attention_norm + w_replayed * replayed_norm, où
+    replayed_norm = moyenne des segments Most Replayed chevauchant le bucket
+    (normalisée au max de la courbe). Sans barre rouge : dégradation propre,
+    fused_norm = attention_norm, replayed_applied = False.
+    """
+    weights = weights or FUSION_WEIGHTS
+    fused: list[dict] = []
+    if not replayed_curve:
+        for row in video_heatmap:
+            out = dict(row)
+            out["fused_norm"] = out.get("attention_norm", 0.0)
+            out["replayed_applied"] = False
+            fused.append(out)
+        return fused
+    max_value = max((seg.get("value", 0.0) for seg in replayed_curve), default=0.0) or 1.0
+    for row in video_heatmap:
+        start, end = row.get("start_sec", 0.0), row.get("end_sec", 0.0)
+        overlaps = [seg.get("value", 0.0) / max_value for seg in replayed_curve
+                    if seg.get("start", 0.0) < end and seg.get("end", 0.0) > start]
+        replayed_norm = (sum(overlaps) / len(overlaps)) if overlaps else 0.0
+        fused_norm = (weights.get("video", 0.6) * row.get("attention_norm", 0.0)
+                      + weights.get("replayed", 0.4) * replayed_norm)
+        fused.append({**row,
+                      "replayed_norm": round(replayed_norm, 6),
+                      "fused_norm": round(fused_norm, 6),
+                      "replayed_applied": True})
+    return fused
+
+
+def build_webhook_payload(manifest: dict, candidates: list[dict] | None = None,
+                          run_id: str | None = None) -> dict:
+    """Contrat Salle de Guerre (PLAN_SALLE_DE_GUERRE §4) : le Prince voit tout."""
+    source = manifest.get("source") or {}
+    return {
+        "run_id": run_id or os.environ.get("GH_RUN_ID")
+                  or f"f00c_{(manifest.get('generated_at') or '').replace(':', '')}",
+        "siege_id": source.get("reference") or source.get("id") or "",
+        "mode": "live" if source.get("content_type") == "live_ongoing" else "vod",
+        "status": manifest.get("status"),
+        "source": source,
+        "heatmap": manifest.get("attention_heatmap") or [],
+        "replayed_curve": manifest.get("replayed_curve") or [],
+        "fused_heatmap": manifest.get("fused_heatmap") or [],
+        "candidates": candidates or [],
+        "pushed_at": datetime.now(timezone.utc).isoformat(),
+    }
+
+
+def push_webhook(url: str, payload: dict, token: str | None = None,
+                 timeout: float = 15.0) -> bool:
+    """POST HTTPS vers la Salle de Guerre. Auth : en-tête X-Siege-Token."""
+    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    headers = {"Content-Type": "application/json", "User-Agent": "PERTURABO-F00C/1.1"}
+    if token:
+        headers["X-Siege-Token"] = token
+    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    with urllib.request.urlopen(request, timeout=timeout) as response:  # nosec B310
+        return response.status in (200, 201, 202, 204)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Analyse unifiée
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -353,7 +479,8 @@ def emit_candidats(manifest: dict, out_path: Path, top: int | None = None) -> di
 
 def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
             heatmap_buckets: int = 120, download_budget_seconds: float = 0,
-            cookies_path: Path | None = None, media_source: str | None = None) -> dict:
+            cookies_path: Path | None = None, media_source: str | None = None,
+            fetch_replayed: bool = False) -> dict:
     started = datetime.now(timezone.utc)
     work_dir = Path(work_dir or out_path.parent / "live_media")
     resolved = resolve_source(reference)
@@ -374,6 +501,11 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
     content_type = "video"
     if metadata.get("is_live"):
         content_type = "live_ongoing"
+
+    replayed_curve: list[dict] = []
+    replayed_note: str | None = None
+    if fetch_replayed and platform == "youtube":
+        replayed_curve, replayed_note = fetch_replayed_curve(resolved.get("url"), cookies_path)
 
     media_path: Path | None = Path(resolved["path"]) if kind == "local" else None
     if media_source:
@@ -399,6 +531,7 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
             media_error = str(exc)
 
     status = "full" if heatmap else ("metadata_only" if not media_error else "metadata_only_media_error")
+    fused_heatmap = fuse_heatmaps(heatmap, replayed_curve)
     manifest = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": started.isoformat(),
@@ -413,6 +546,10 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
         },
         "metadata": metadata,
         "attention_heatmap": heatmap,
+        "replayed_curve": replayed_curve,
+        "replayed_note": replayed_note,
+        "fused_heatmap": fused_heatmap,
+        "fusion_weights": FUSION_WEIGHTS,
         "viral_segments": segments,
         "raw_data": {
             "note": "Données brutes plateforme pour l'Oracle (aucune valeur calculée).",
@@ -446,6 +583,12 @@ def main(argv: list[str] | None = None) -> int:
                         help="Fichier cookies Netscape d'une session autorisée (yt-dlp --cookies)")
     parser.add_argument("--media-source", default=None,
                         help="Média séparé de la source : chemin local ou URL directe (métadonnées = source)")
+    parser.add_argument("--fetch-replayed", action="store_true",
+                        help="Récupérer la barre rouge YouTube (Most Replayed via yt-dlp --dump-json)")
+    parser.add_argument("--webhook-url", default=None,
+                        help="URL du webhook Salle de Guerre (POST du payload complet)")
+    parser.add_argument("--webhook-token", default=None,
+                        help="Token X-Siege-Token (défaut : env SIEGE_WEBHOOK_TOKEN)")
     parser.add_argument("--to-candidats", action="store_true",
                         help="Émet OUT/candidats.json au schéma canonique PUR (pont vers le tronc)")
     parser.add_argument("--candidats-out", default=str(OUT_DIR / "candidats.json"),
@@ -459,6 +602,7 @@ def main(argv: list[str] | None = None) -> int:
             args.heatmap_buckets, args.download_budget_seconds,
             cookies_path=Path(args.cookies_file) if args.cookies_file else None,
             media_source=args.media_source,
+            fetch_replayed=args.fetch_replayed,
         )
         summary = {"status": manifest["status"], "out": str(args.out)}
         if args.to_candidats:
@@ -476,6 +620,19 @@ def main(argv: list[str] | None = None) -> int:
         print(f"F00C_VOX: erreur — {exc}", file=sys.stderr)
         return 1
     print(json.dumps(summary, ensure_ascii=False))
+    if args.webhook_url:
+        payload = build_webhook_payload(
+            manifest,
+            candidates=(doc.get("candidates") or []) if args.to_candidats else [],
+        )
+        token = args.webhook_token or os.environ.get("SIEGE_WEBHOOK_TOKEN")
+        try:
+            pushed = push_webhook(args.webhook_url, payload, token)
+            summary["webhook"] = "pushed" if pushed else "push_failed"
+            print(f"F00C_VOX: SALLE DE GUERRE — {summary['webhook']}", file=sys.stderr)
+        except Exception as exc:  # noqa: BLE001 - le webhook ne doit jamais bloquer le livrable
+            summary["webhook"] = f"push_failed: {exc}"
+            print(f"F00C_VOX: webhook échec — {exc} (le manifeste local reste le livrable)", file=sys.stderr)
     if args.download_budget_seconds > 0:
         guard_problems = []
         if not args.media_source and manifest["status"] != "full":

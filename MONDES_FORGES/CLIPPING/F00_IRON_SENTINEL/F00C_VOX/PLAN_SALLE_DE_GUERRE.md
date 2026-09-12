@@ -1,7 +1,7 @@
 # PLAN_SALLE_DE_GUERRE — Correctif F00C + Le Prince Voit Tout
 
-> **Statut : 🔄 EN COURS — Livraison A ✅ (escalier anti-anti-bot + garde-fou + contrat découplé).
-> Restent B (barre rouge + webhook), C (Salle de Guerre VOD), D (mode LIVE + gate inline).**
+> **Statut : 🔄 EN COURS — Livraisons A ✅ + B ✅ (barre rouge Most Replayed + webhook Salle de Guerre).
+> Restent C (Salle de Guerre VOD — dashboard), D (mode LIVE + gate inline).**
 > Document de référence avant toute ligne de code. Ne rien modifier ici sans revalidation du Warsmith.
 > Prédécesseurs : `PLAN_REFONTE_VOX.md` (F00B, ✅), Note 20 (pont PUR F00C, ✅).
 

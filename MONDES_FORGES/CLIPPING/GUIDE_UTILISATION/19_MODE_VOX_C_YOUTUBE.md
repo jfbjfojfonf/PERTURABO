@@ -80,6 +80,37 @@ Formats : **video-only 144p** (la heatmap réduit à 64×36, l'audio est inutile
 **Succès technique ≠ succès réel.** Un workflow vert n'a de valeur que si
 `status: full` (ou si le média a été fourni via `--media-source`).
 
+### La barre rouge et le webhook (Livraison B)
+
+**`--fetch-replayed`** récupère la **barre rouge YouTube** (Most Replayed) via
+`yt-dlp --dump-json` — **aucun média téléchargé** — et la stocke dans
+`replayed_curve` du manifeste. Si elle est indisponible, `replayed_note`
+explique pourquoi (jamais de silence).
+
+La **fusion** (`fused_heatmap`) croise les deux mondes :
+
+```
+fused = 0.6 × attention_norm (capteur F00C) + 0.4 × replayed_norm (humains réels)
+```
+
+C'est le croisement le plus puissant du projet : ton capteur × le comportement
+de millions de spectateurs. Sans barre rouge, dégradation propre
+(`fused = attention_norm`, `replayed_applied: false`).
+
+**`--webhook-url`** pousse le payload complet (contrat §4 du plan) vers la
+**Salle de Guerre** avec l'en-tête `X-Siege-Token` (secret partagé,
+défaut : env `SIEGE_WEBHOOK_TOKEN`). Le webhook ne bloque jamais le livrable
+local en cas d'échec réseau.
+
+```bash
+python3 CODEBASE/f00c_vox.py "https://www.youtube.com/watch?v=<ID>" \
+  --fetch-replayed --to-candidats \
+  --webhook-url https://<salle-de-guerre>/hook
+```
+
+Récepteur de référence : `war_room/receiver.py` (repo kbkjhjhl) —
+self-test, validation stricte du contrat, `GET /api/war-room` pour le dashboard.
+
 ### Cookies burner — protocole du Warsmith
 
 1. Compte Google **burner** (jamais le compte de publication), profil navigateur dédié ;

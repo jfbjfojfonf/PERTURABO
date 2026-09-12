@@ -1,0 +1,547 @@
+From 098a1197daffc9d83afc76186b787757a667dd14 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sat, 12 Sep 2026 23:00:27 +0000
+Subject: [PATCH] =?UTF-8?q?[v2-live]=20F00C=20Livraison=20B=20=E2=80=94=20?=
+ =?UTF-8?q?barre=20rouge=20Most=20Replayed=20+=20webhook=20Salle=20de=20Gu?=
+ =?UTF-8?q?erre?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- f00c_vox.py : fetch_replayed_curve() via yt-dlp --dump-json (zéro média),
+  replayed_curve + replayed_note (jamais de silence) dans le manifeste ;
+  fuse_heatmaps() — fused = 0.6 × capteur + 0.4 × humains réels, dégradation
+  propre sans barre rouge ; build_webhook_payload() (contrat §4 : run_id,
+  siege_id, mode vod|live, courbes, candidats) ; push_webhook() avec
+  X-Siege-Token ; CLI --fetch-replayed / --webhook-url / --webhook-token
+- Workflow : --fetch-replayed actif, input webhook_url + secret
+  SIEGE_WEBHOOK_TOKEN
+- Tests : 23/23 verts (6 nouveaux : parsing dump-json, note non silencieuse,
+  fusion ± barre rouge, payload canonique, envoi token)
+- Récepteur de référence : war_room/receiver.py (repo kbkjhjhl) — validation
+  stricte, 401/422, GET /api/war-room, 8/8 tests + self-test
+- Docs : guide 19 (barre rouge + webhook), F00C_LOG, PLAN (A✅ B✅), CONTINUATION
+
+Generated with Codebuff 🤖
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../workflows/perturabo_vox_c_analysis.yml    |  11 +-
+ CONTINUATION_F00.md                           |  26 +--
+ .../F00C_VOX/CODEBASE/f00c_vox.py             | 159 +++++++++++++++++-
+ .../F00C_VOX/CODEBASE/tests/test_f00c_vox.py  | 114 +++++++++++++
+ .../F00C_VOX/PLAN_SALLE_DE_GUERRE.md          |   4 +-
+ .../F00C_VOX/TRACKING/F00C_LOG.md             |  23 +++
+ .../19_MODE_VOX_C_YOUTUBE.md                  |  31 ++++
+ 7 files changed, 352 insertions(+), 16 deletions(-)
+
+diff --git a/.github/workflows/perturabo_vox_c_analysis.yml b/.github/workflows/perturabo_vox_c_analysis.yml
+index 0a61408..d59ee43 100644
+--- a/.github/workflows/perturabo_vox_c_analysis.yml
++++ b/.github/workflows/perturabo_vox_c_analysis.yml
+@@ -26,6 +26,10 @@ on:
+         description: "Média séparé de la source (chemin/URL directe) — optionnel, contrat découplé"
+         required: false
+         default: ""
++      webhook_url:
++        description: "URL du webhook Salle de Guerre (vide = pas de poussée)"
++        required: false
++        default: ""
+ 
+ permissions:
+   contents: read
+@@ -80,8 +84,13 @@ jobs:
+           PY
+ 
+       - name: Analyse F00C_VOX (metadata + heatmap si budget > 0)
++        env:
++          SIEGE_WEBHOOK_TOKEN: ${{ secrets.SIEGE_WEBHOOK_TOKEN }}
+         run: |
+-          EXTRA=""
++          EXTRA="--fetch-replayed"
++          if [ -n "${{ github.event.inputs.webhook_url }}" ]; then
++            EXTRA="$EXTRA --webhook-url ${{ github.event.inputs.webhook_url }}"
++          fi
+           if [ "${{ github.event.inputs.to_candidats }}" = "true" ]; then
+             EXTRA="--to-candidats --candidats-out MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/OUT/candidats.json"
+             if [ "${{ github.event.inputs.top_n }}" != "0" ] && [ -n "${{ github.event.inputs.top_n }}" ]; then
+diff --git a/CONTINUATION_F00.md b/CONTINUATION_F00.md
+index d2cc99a..4b960dc 100644
+--- a/CONTINUATION_F00.md
++++ b/CONTINUATION_F00.md
+@@ -8,18 +8,20 @@
+ ## 📅 DERNIÈRE MISE À JOUR
+ 
+ **Date** : 2026-09-12
+-**Ajout** : LIVRAISON A (Salle de Guerre) — escalier anti-anti-bot + garde-fou + contrat découplé F00C
+-
+-> 🆕 **Livraison A faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
+-> `download_media` à 3 marches (`player_client=ios,mweb` → yt-dlp nu → cookies),
+-> formats video-only 144p, contrat `--media-source` (métadonnées ≠ média),
+-> CLI `--cookies-file`, **garde-fou anti-faux-vert** (CLI exit 2, workflow exit 1 :
+-> « Analyse fonctionnelle échouée »), secret `YT_COOKIES_BASE64` → `/tmp` → détruit
+-> en fin de job. 17/17 tests verts. Guide 19 + F00C_LOG + requirements à jour.
+-> **Reste (Warsmith)** : compte burner + secret `YT_COOKIES_BASE64` + rotation hebdo.
+-> **Prochaine étape** : relancer le run Sophie Rain — attendu `status: full`, sinon
+-> le job échoue explicitement. Puis Livraisons B (barre rouge + webhook) et C/D
+-> (Salle de Guerre `/war-room` dans le workspace Freebuff).
++**Ajout** : LIVRAISON B (Salle de Guerre) — barre rouge Most Replayed + webhook F00C → dashboard
++
++> 🆕 **Livraison B faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
++> `--fetch-replayed` (barre rouge YouTube via yt-dlp --dump-json, zéro média),
++> fusion `fused_heatmap = 0.6 × capteur + 0.4 × humains réels`, `--webhook-url`
++> + `X-Siege-Token` (env `SIEGE_WEBHOOK_TOKEN`) → contrat §4 complet
++> (mode vod|live, candidats, courbes). Récepteur de référence :
++> `war_room/receiver.py` dans le repo kbkjhjhl (validation stricte, historique,
++> `GET /api/war-room`). 23/23 tests verts côté F00C, 8/8 côté récepteur.
++> **Prochaine étape** : Livraison C — dashboard `/war-room` dans la preview
++> Freebuff (timeline heatmap + barre rouge + candidats, toggle DONNÉES BRUTES,
++> mode VOD), puis Livraison D (mode LIVE + gate GO/NO-GO inline).
++> Rappel : Livraison A ✅ (escalier anti-bot, garde-fou, --media-source, cookies
++> burner — secret `YT_COOKIES_BASE64` à créer côté Warsmith).
+ 
+ ---
+ 
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
+index 0085181..8e199c8 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/f00c_vox.py
+@@ -28,6 +28,7 @@ from __future__ import annotations
+ 
+ import argparse
+ import json
++import os
+ import re
+ import shutil
+ import subprocess
+@@ -324,6 +325,131 @@ def download_media(url: str, out_dir: Path, max_duration_seconds: float = 0,
+     return None
+ 
+ 
++# ─────────────────────────────────────────────────────────────────────────────
++# Livraison B — barre rouge (Most Replayed), fusion, webhook Salle de Guerre
++# ─────────────────────────────────────────────────────────────────────────────
++
++FUSION_WEIGHTS = {"video": 0.6, "replayed": 0.4}
++
++
++def _yt_dlp_json(url: str, cookies_path: Path | None = None,
++                 player_clients: str = "ios,mweb") -> dict | None:
++    """JSON yt-dlp (--dump-json : AUCUN média téléchargé) via l'escalier habituel."""
++    if shutil.which("yt-dlp") is None:
++        return None
++    cookie_args = ["--cookies", str(cookies_path)] if cookies_path and Path(cookies_path).is_file() else []
++    attempts = [
++        ["yt-dlp", "--no-playlist", "--dump-json",
++         "--extractor-args", f"youtube:player_client={player_clients}"] + cookie_args,
++        ["yt-dlp", "--no-playlist", "--dump-json"] + cookie_args,
++    ]
++    for attempt in attempts:
++        attempt.append(url)
++        try:
++            proc = subprocess.run(attempt, capture_output=True, text=True, timeout=120)
++        except subprocess.TimeoutExpired:
++            continue
++        if proc.returncode == 0 and proc.stdout.strip():
++            try:
++                return json.loads(proc.stdout.strip().splitlines()[-1])
++            except json.JSONDecodeError:
++                continue
++    return None
++
++
++def fetch_replayed_curve(url: str, cookies_path: Path | None = None) -> tuple[list[dict], str | None]:
++    """Barre rouge YouTube (Most Replayed) via yt-dlp --dump-json.
++
++    La seule courbe d'attention basée sur le comportement RÉEL de millions de
++    spectateurs. Retourne (curve, note) : curve = [{start, end, value}] (peut
++    être vide), note = raison humaine si vide (jamais de silence).
++    """
++    data = _yt_dlp_json(url, cookies_path)
++    if data is None:
++        return [], ("yt-dlp n'a pas pu lire les métadonnées (anti-bot ou absent) "
++                    "— barre rouge indisponible")
++    raw = data.get("heatmap") or []
++    curve = []
++    for seg in raw:
++        if not isinstance(seg, dict):
++            continue
++        try:
++            curve.append({
++                "start": round(float(seg.get("start_time", 0)), 3),
++                "end": round(float(seg.get("end_time", 0)), 3),
++                "value": round(float(seg.get("value", 0)), 6),
++            })
++        except (TypeError, ValueError):
++            continue
++    if not curve:
++        return [], "pas de Most Replayed exposé (live en cours, vidéo trop récente ou non supportée)"
++    return curve, None
++
++
++def fuse_heatmaps(video_heatmap: list[dict], replayed_curve: list[dict],
++                  weights: dict | None = None) -> list[dict]:
++    """Fusionne le capteur F00C (heatmap vidéo) et le comportement humain réel (barre rouge).
++
++    fused = w_video * attention_norm + w_replayed * replayed_norm, où
++    replayed_norm = moyenne des segments Most Replayed chevauchant le bucket
++    (normalisée au max de la courbe). Sans barre rouge : dégradation propre,
++    fused_norm = attention_norm, replayed_applied = False.
++    """
++    weights = weights or FUSION_WEIGHTS
++    fused: list[dict] = []
++    if not replayed_curve:
++        for row in video_heatmap:
++            out = dict(row)
++            out["fused_norm"] = out.get("attention_norm", 0.0)
++            out["replayed_applied"] = False
++            fused.append(out)
++        return fused
++    max_value = max((seg.get("value", 0.0) for seg in replayed_curve), default=0.0) or 1.0
++    for row in video_heatmap:
++        start, end = row.get("start_sec", 0.0), row.get("end_sec", 0.0)
++        overlaps = [seg.get("value", 0.0) / max_value for seg in replayed_curve
++                    if seg.get("start", 0.0) < end and seg.get("end", 0.0) > start]
++        replayed_norm = (sum(overlaps) / len(overlaps)) if overlaps else 0.0
++        fused_norm = (weights.get("video", 0.6) * row.get("attention_norm", 0.0)
++                      + weights.get("replayed", 0.4) * replayed_norm)
++        fused.append({**row,
++                      "replayed_norm": round(replayed_norm, 6),
++                      "fused_norm": round(fused_norm, 6),
++                      "replayed_applied": True})
++    return fused
++
++
++def build_webhook_payload(manifest: dict, candidates: list[dict] | None = None,
++                          run_id: str | None = None) -> dict:
++    """Contrat Salle de Guerre (PLAN_SALLE_DE_GUERRE §4) : le Prince voit tout."""
++    source = manifest.get("source") or {}
++    return {
++        "run_id": run_id or os.environ.get("GH_RUN_ID")
++                  or f"f00c_{(manifest.get('generated_at') or '').replace(':', '')}",
++        "siege_id": source.get("reference") or source.get("id") or "",
++        "mode": "live" if source.get("content_type") == "live_ongoing" else "vod",
++        "status": manifest.get("status"),
++        "source": source,
++        "heatmap": manifest.get("attention_heatmap") or [],
++        "replayed_curve": manifest.get("replayed_curve") or [],
++        "fused_heatmap": manifest.get("fused_heatmap") or [],
++        "candidates": candidates or [],
++        "pushed_at": datetime.now(timezone.utc).isoformat(),
++    }
++
++
++def push_webhook(url: str, payload: dict, token: str | None = None,
++                 timeout: float = 15.0) -> bool:
++    """POST HTTPS vers la Salle de Guerre. Auth : en-tête X-Siege-Token."""
++    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
++    headers = {"Content-Type": "application/json", "User-Agent": "PERTURABO-F00C/1.1"}
++    if token:
++        headers["X-Siege-Token"] = token
++    request = urllib.request.Request(url, data=body, headers=headers, method="POST")
++    with urllib.request.urlopen(request, timeout=timeout) as response:  # nosec B310
++        return response.status in (200, 201, 202, 204)
++
++
+ # ─────────────────────────────────────────────────────────────────────────────
+ # Analyse unifiée
+ # ─────────────────────────────────────────────────────────────────────────────
+@@ -353,7 +479,8 @@ def emit_candidats(manifest: dict, out_path: Path, top: int | None = None) -> di
+ 
+ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+             heatmap_buckets: int = 120, download_budget_seconds: float = 0,
+-            cookies_path: Path | None = None, media_source: str | None = None) -> dict:
++            cookies_path: Path | None = None, media_source: str | None = None,
++            fetch_replayed: bool = False) -> dict:
+     started = datetime.now(timezone.utc)
+     work_dir = Path(work_dir or out_path.parent / "live_media")
+     resolved = resolve_source(reference)
+@@ -375,6 +502,11 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+     if metadata.get("is_live"):
+         content_type = "live_ongoing"
+ 
++    replayed_curve: list[dict] = []
++    replayed_note: str | None = None
++    if fetch_replayed and platform == "youtube":
++        replayed_curve, replayed_note = fetch_replayed_curve(resolved.get("url"), cookies_path)
++
+     media_path: Path | None = Path(resolved["path"]) if kind == "local" else None
+     if media_source:
+         # Contrat découplé (Livraison A) : la source porte les métadonnées,
+@@ -399,6 +531,7 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+             media_error = str(exc)
+ 
+     status = "full" if heatmap else ("metadata_only" if not media_error else "metadata_only_media_error")
++    fused_heatmap = fuse_heatmaps(heatmap, replayed_curve)
+     manifest = {
+         "schema_version": SCHEMA_VERSION,
+         "generated_at": started.isoformat(),
+@@ -413,6 +546,10 @@ def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+         },
+         "metadata": metadata,
+         "attention_heatmap": heatmap,
++        "replayed_curve": replayed_curve,
++        "replayed_note": replayed_note,
++        "fused_heatmap": fused_heatmap,
++        "fusion_weights": FUSION_WEIGHTS,
+         "viral_segments": segments,
+         "raw_data": {
+             "note": "Données brutes plateforme pour l'Oracle (aucune valeur calculée).",
+@@ -446,6 +583,12 @@ def main(argv: list[str] | None = None) -> int:
+                         help="Fichier cookies Netscape d'une session autorisée (yt-dlp --cookies)")
+     parser.add_argument("--media-source", default=None,
+                         help="Média séparé de la source : chemin local ou URL directe (métadonnées = source)")
++    parser.add_argument("--fetch-replayed", action="store_true",
++                        help="Récupérer la barre rouge YouTube (Most Replayed via yt-dlp --dump-json)")
++    parser.add_argument("--webhook-url", default=None,
++                        help="URL du webhook Salle de Guerre (POST du payload complet)")
++    parser.add_argument("--webhook-token", default=None,
++                        help="Token X-Siege-Token (défaut : env SIEGE_WEBHOOK_TOKEN)")
+     parser.add_argument("--to-candidats", action="store_true",
+                         help="Émet OUT/candidats.json au schéma canonique PUR (pont vers le tronc)")
+     parser.add_argument("--candidats-out", default=str(OUT_DIR / "candidats.json"),
+@@ -459,6 +602,7 @@ def main(argv: list[str] | None = None) -> int:
+             args.heatmap_buckets, args.download_budget_seconds,
+             cookies_path=Path(args.cookies_file) if args.cookies_file else None,
+             media_source=args.media_source,
++            fetch_replayed=args.fetch_replayed,
+         )
+         summary = {"status": manifest["status"], "out": str(args.out)}
+         if args.to_candidats:
+@@ -476,6 +620,19 @@ def main(argv: list[str] | None = None) -> int:
+         print(f"F00C_VOX: erreur — {exc}", file=sys.stderr)
+         return 1
+     print(json.dumps(summary, ensure_ascii=False))
++    if args.webhook_url:
++        payload = build_webhook_payload(
++            manifest,
++            candidates=(doc.get("candidates") or []) if args.to_candidats else [],
++        )
++        token = args.webhook_token or os.environ.get("SIEGE_WEBHOOK_TOKEN")
++        try:
++            pushed = push_webhook(args.webhook_url, payload, token)
++            summary["webhook"] = "pushed" if pushed else "push_failed"
++            print(f"F00C_VOX: SALLE DE GUERRE — {summary['webhook']}", file=sys.stderr)
++        except Exception as exc:  # noqa: BLE001 - le webhook ne doit jamais bloquer le livrable
++            summary["webhook"] = f"push_failed: {exc}"
++            print(f"F00C_VOX: webhook échec — {exc} (le manifeste local reste le livrable)", file=sys.stderr)
+     if args.download_budget_seconds > 0:
+         guard_problems = []
+         if not args.media_source and manifest["status"] != "full":
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/tests/test_f00c_vox.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/tests/test_f00c_vox.py
+index d521f90..18aab3f 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/tests/test_f00c_vox.py
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/CODEBASE/tests/test_f00c_vox.py
+@@ -100,6 +100,120 @@ def test_fetch_twitch_metadata_vod(tmp_path, monkeypatch):
+     assert meta["is_live"] is False
+ 
+ 
++# ─── Livraison B : barre rouge, fusion, webhook ───
++
++REPLAYED_YTDLP_JSON = {
++    "id": "dQw4w9WgXcQ", "title": "Vidéo test",
++    "heatmap": [
++        {"start_time": 0.0, "end_time": 20.0, "value": 0.2},
++        {"start_time": 20.0, "end_time": 40.0, "value": 0.9},
++        {"start_time": 40.0, "end_time": 60.0, "value": 0.4},
++    ],
++}
++
++
++def test_fetch_replayed_curve_parses_ytdlp_heatmap(tmp_path, monkeypatch):
++    calls = []
++
++    def fake_run(attempt, capture_output=True, text=True, timeout=None):
++        calls.append(attempt)
++        class P:
++            returncode = 0
++            stdout = json.dumps(REPLAYED_YTDLP_JSON)
++            stderr = ""
++        return P()
++
++    monkeypatch.setattr(module.shutil, "which", lambda _: "/usr/bin/yt-dlp")
++    monkeypatch.setattr(module.subprocess, "run", fake_run)
++    curve, note = module.fetch_replayed_curve("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
++    assert len(calls) == 1  # premier essai de l'escalier suffit
++    assert note is None
++    assert curve[1] == {"start": 20.0, "end": 40.0, "value": 0.9}
++
++
++def test_fetch_replayed_curve_empty_note_never_silent(tmp_path, monkeypatch):
++    monkeypatch.setattr(module.shutil, "which", lambda _: None)  # yt-dlp absent
++    curve, note = module.fetch_replayed_curve("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
++    assert curve == []
++    assert note and "yt-dlp" in note  # jamais de silence
++
++
++def test_fuse_heatmaps_with_replayed():
++    video = [
++        {"bucket": 0, "start_sec": 0.0, "end_sec": 20.0, "attention": 0.5, "attention_norm": 1.0},
++        {"bucket": 1, "start_sec": 20.0, "end_sec": 40.0, "attention": 0.25, "attention_norm": 0.5},
++    ]
++    replayed = [
++        {"start": 0.0, "end": 20.0, "value": 1.0},
++        {"start": 20.0, "end": 40.0, "value": 0.5},
++    ]
++    fused = module.fuse_heatmaps(video, replayed)
++    assert fused[0]["replayed_applied"] is True
++    assert fused[0]["replayed_norm"] == 1.0
++    assert fused[0]["fused_norm"] == round(0.6 * 1.0 + 0.4 * 1.0, 6)
++    assert fused[1]["replayed_norm"] == 0.5
++    assert fused[1]["fused_norm"] == round(0.6 * 0.5 + 0.4 * 0.5, 6)
++
++
++def test_fuse_heatmaps_degrades_cleanly_without_replayed():
++    video = [
++        {"bucket": 0, "start_sec": 0.0, "end_sec": 20.0, "attention": 0.5, "attention_norm": 0.8},
++    ]
++    fused = module.fuse_heatmaps(video, [])
++    assert fused[0]["replayed_applied"] is False
++    assert fused[0]["fused_norm"] == 0.8
++
++
++def test_build_webhook_payload_canonical():
++    manifest = {
++        "generated_at": "2026-09-12T10:00:00+00:00",
++        "status": "full",
++        "source": {"reference": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
++                   "platform": "youtube", "content_type": "video", "id": "dQw4w9WgXcQ"},
++        "attention_heatmap": [{"bucket": 0, "start_sec": 0.0, "end_sec": 1.0,
++                               "attention": 0.5, "attention_norm": 1.0}],
++        "replayed_curve": [{"start": 0.0, "end": 1.0, "value": 0.7}],
++        "fused_heatmap": [],
++    }
++    payload = module.build_webhook_payload(manifest, candidates=[{"id": "clip_01", "rank": 1}])
++    assert payload["run_id"] and payload["run_id"].startswith("f00c_")
++    assert payload["mode"] == "vod"
++    assert payload["status"] == "full"
++    assert payload["candidates"][0]["id"] == "clip_01"
++    assert payload["heatmap"][0]["attention_norm"] == 1.0
++    assert payload["replayed_curve"][0]["value"] == 0.7
++    assert "pushed_at" in payload
++
++
++def test_push_webhook_sends_token_and_payload(tmp_path, monkeypatch):
++    captured = {}
++
++    class FakeResponse:
++        def __enter__(self):
++            return self
++
++        def __exit__(self, *args):
++            return False
++
++        status = 200
++
++        def read(self):
++            return b""
++
++    def fake_urlopen(request, timeout=None):
++        captured["url"] = request.full_url
++        captured["headers"] = dict(request.headers)
++        captured["body"] = request.data
++        return FakeResponse()
++
++    monkeypatch.setattr(module.urllib.request, "urlopen", fake_urlopen)
++    ok = module.push_webhook("https://war-room.example/hook", {"run_id": "x"}, token="SECRET")
++    assert ok is True
++    assert captured["url"] == "https://war-room.example/hook"
++    assert any(v == "SECRET" for v in captured["headers"].values())
++    assert json.loads(captured["body"].decode()) == {"run_id": "x"}
++
++
+ def test_top_viral_segments_spacing():
+     heatmap = [
+         {"bucket": i, "start_sec": float(i), "end_sec": float(i + 1),
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+index 95c516e..12fe8eb 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/PLAN_SALLE_DE_GUERRE.md
+@@ -1,7 +1,7 @@
+ # PLAN_SALLE_DE_GUERRE — Correctif F00C + Le Prince Voit Tout
+ 
+-> **Statut : 🔄 EN COURS — Livraison A ✅ (escalier anti-anti-bot + garde-fou + contrat découplé).
+-> Restent B (barre rouge + webhook), C (Salle de Guerre VOD), D (mode LIVE + gate inline).**
++> **Statut : 🔄 EN COURS — Livraisons A ✅ + B ✅ (barre rouge Most Replayed + webhook Salle de Guerre).
++> Restent C (Salle de Guerre VOD — dashboard), D (mode LIVE + gate inline).**
+ > Document de référence avant toute ligne de code. Ne rien modifier ici sans revalidation du Warsmith.
+ > Prédécesseurs : `PLAN_REFONTE_VOX.md` (F00B, ✅), Note 20 (pont PUR F00C, ✅).
+ 
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+index 251bcee..3551695 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+@@ -8,6 +8,29 @@
+ 
+ ## Entrées de mise en service
+ 
++### 2026-09-12 — LIVRAISON B : barre rouge Most Replayed + webhook Salle de Guerre
++
++- **Barre rouge** : `--fetch-replayed` → `yt-dlp --dump-json` (zéro média
++  téléchargé, escalier habituel) → `replayed_curve` [{start, end, value}] dans
++  le manifeste. Indisponible ⇒ `replayed_note` explicite (jamais de silence).
++- **Fusion** : `fused_heatmap = 0.6 × attention_norm (capteur) + 0.4 ×
++  replayed_norm (humains réels)` — le croisement capteur × comportement.
++  Sans barre rouge : `fused = attention_norm`, `replayed_applied: false`.
++- **Webhook** : `--webhook-url` (+ `X-Siege-Token`, défaut env
++  `SIEGE_WEBHOOK_TOKEN`) → payload contrat §4 (run_id, siege_id, mode
++  vod|live, status, heatmap, replayed_curve, fused_heatmap, candidates,
++  pushed_at). Échec réseau = warning, le manifeste local reste le livrable.
++- **Workflow** : `--fetch-replayed` toujours actif, input `webhook_url` +
++  secret `SIEGE_WEBHOOK_TOKEN`.
++- **Récepteur de référence** (repo kbkjhjhl) : `war_room/receiver.py` —
++  validation stricte (422 si payload invalide, 401 si token), stockage
++  `docs/data/war_room.json` (last_run + historique), `GET /api/war-room`
++  pour le dashboard. 8/8 tests + self-test round-trip verts.
++- **Tests** : 23/23 verts côté F00C (6 nouveaux : parsing dump-json,
++  note non silencieuse, fusion avec/sans barre rouge, payload canonique,
++  envoi token+payload).
++- **Docs** : guide 19 (section « barre rouge et webhook »).
++
+ ### 2026-09-12 — LIVRAISON A : escalier anti-anti-bot + garde-fou + contrat découplé
+ 
+ - **Code (`f00c_vox.py`)** :
+diff --git a/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md b/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
+index 7f888c6..519666b 100644
+--- a/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
++++ b/MONDES_FORGES/CLIPPING/GUIDE_UTILISATION/19_MODE_VOX_C_YOUTUBE.md
+@@ -80,6 +80,37 @@ Formats : **video-only 144p** (la heatmap réduit à 64×36, l'audio est inutile
+ **Succès technique ≠ succès réel.** Un workflow vert n'a de valeur que si
+ `status: full` (ou si le média a été fourni via `--media-source`).
+ 
++### La barre rouge et le webhook (Livraison B)
++
++**`--fetch-replayed`** récupère la **barre rouge YouTube** (Most Replayed) via
++`yt-dlp --dump-json` — **aucun média téléchargé** — et la stocke dans
++`replayed_curve` du manifeste. Si elle est indisponible, `replayed_note`
++explique pourquoi (jamais de silence).
++
++La **fusion** (`fused_heatmap`) croise les deux mondes :
++
++```
++fused = 0.6 × attention_norm (capteur F00C) + 0.4 × replayed_norm (humains réels)
++```
++
++C'est le croisement le plus puissant du projet : ton capteur × le comportement
++de millions de spectateurs. Sans barre rouge, dégradation propre
++(`fused = attention_norm`, `replayed_applied: false`).
++
++**`--webhook-url`** pousse le payload complet (contrat §4 du plan) vers la
++**Salle de Guerre** avec l'en-tête `X-Siege-Token` (secret partagé,
++défaut : env `SIEGE_WEBHOOK_TOKEN`). Le webhook ne bloque jamais le livrable
++local en cas d'échec réseau.
++
++```bash
++python3 CODEBASE/f00c_vox.py "https://www.youtube.com/watch?v=<ID>" \
++  --fetch-replayed --to-candidats \
++  --webhook-url https://<salle-de-guerre>/hook
++```
++
++Récepteur de référence : `war_room/receiver.py` (repo kbkjhjhl) —
++self-test, validation stricte du contrat, `GET /api/war-room` pour le dashboard.
++
+ ### Cookies burner — protocole du Warsmith
+ 
+ 1. Compte Google **burner** (jamais le compte de publication), profil navigateur dédié ;
+-- 
+2.34.1
+

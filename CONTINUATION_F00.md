@@ -8,18 +8,20 @@
 ## 📅 DERNIÈRE MISE À JOUR
 
 **Date** : 2026-09-12
-**Ajout** : LIVRAISON A (Salle de Guerre) — escalier anti-anti-bot + garde-fou + contrat découplé F00C
+**Ajout** : LIVRAISON B (Salle de Guerre) — barre rouge Most Replayed + webhook F00C → dashboard
 
-> 🆕 **Livraison A faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
-> `download_media` à 3 marches (`player_client=ios,mweb` → yt-dlp nu → cookies),
-> formats video-only 144p, contrat `--media-source` (métadonnées ≠ média),
-> CLI `--cookies-file`, **garde-fou anti-faux-vert** (CLI exit 2, workflow exit 1 :
-> « Analyse fonctionnelle échouée »), secret `YT_COOKIES_BASE64` → `/tmp` → détruit
-> en fin de job. 17/17 tests verts. Guide 19 + F00C_LOG + requirements à jour.
-> **Reste (Warsmith)** : compte burner + secret `YT_COOKIES_BASE64` + rotation hebdo.
-> **Prochaine étape** : relancer le run Sophie Rain — attendu `status: full`, sinon
-> le job échoue explicitement. Puis Livraisons B (barre rouge + webhook) et C/D
-> (Salle de Guerre `/war-room` dans le workspace Freebuff).
+> 🆕 **Livraison B faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
+> `--fetch-replayed` (barre rouge YouTube via yt-dlp --dump-json, zéro média),
+> fusion `fused_heatmap = 0.6 × capteur + 0.4 × humains réels`, `--webhook-url`
+> + `X-Siege-Token` (env `SIEGE_WEBHOOK_TOKEN`) → contrat §4 complet
+> (mode vod|live, candidats, courbes). Récepteur de référence :
+> `war_room/receiver.py` dans le repo kbkjhjhl (validation stricte, historique,
+> `GET /api/war-room`). 23/23 tests verts côté F00C, 8/8 côté récepteur.
+> **Prochaine étape** : Livraison C — dashboard `/war-room` dans la preview
+> Freebuff (timeline heatmap + barre rouge + candidats, toggle DONNÉES BRUTES,
+> mode VOD), puis Livraison D (mode LIVE + gate GO/NO-GO inline).
+> Rappel : Livraison A ✅ (escalier anti-bot, garde-fou, --media-source, cookies
+> burner — secret `YT_COOKIES_BASE64` à créer côté Warsmith).
 
 ---
 

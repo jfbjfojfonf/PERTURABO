@@ -100,6 +100,120 @@ def test_fetch_twitch_metadata_vod(tmp_path, monkeypatch):
     assert meta["is_live"] is False
 
 
+# ─── Livraison B : barre rouge, fusion, webhook ───
+
+REPLAYED_YTDLP_JSON = {
+    "id": "dQw4w9WgXcQ", "title": "Vidéo test",
+    "heatmap": [
+        {"start_time": 0.0, "end_time": 20.0, "value": 0.2},
+        {"start_time": 20.0, "end_time": 40.0, "value": 0.9},
+        {"start_time": 40.0, "end_time": 60.0, "value": 0.4},
+    ],
+}
+
+
+def test_fetch_replayed_curve_parses_ytdlp_heatmap(tmp_path, monkeypatch):
+    calls = []
+
+    def fake_run(attempt, capture_output=True, text=True, timeout=None):
+        calls.append(attempt)
+        class P:
+            returncode = 0
+            stdout = json.dumps(REPLAYED_YTDLP_JSON)
+            stderr = ""
+        return P()
+
+    monkeypatch.setattr(module.shutil, "which", lambda _: "/usr/bin/yt-dlp")
+    monkeypatch.setattr(module.subprocess, "run", fake_run)
+    curve, note = module.fetch_replayed_curve("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    assert len(calls) == 1  # premier essai de l'escalier suffit
+    assert note is None
+    assert curve[1] == {"start": 20.0, "end": 40.0, "value": 0.9}
+
+
+def test_fetch_replayed_curve_empty_note_never_silent(tmp_path, monkeypatch):
+    monkeypatch.setattr(module.shutil, "which", lambda _: None)  # yt-dlp absent
+    curve, note = module.fetch_replayed_curve("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    assert curve == []
+    assert note and "yt-dlp" in note  # jamais de silence
+
+
+def test_fuse_heatmaps_with_replayed():
+    video = [
+        {"bucket": 0, "start_sec": 0.0, "end_sec": 20.0, "attention": 0.5, "attention_norm": 1.0},
+        {"bucket": 1, "start_sec": 20.0, "end_sec": 40.0, "attention": 0.25, "attention_norm": 0.5},
+    ]
+    replayed = [
+        {"start": 0.0, "end": 20.0, "value": 1.0},
+        {"start": 20.0, "end": 40.0, "value": 0.5},
+    ]
+    fused = module.fuse_heatmaps(video, replayed)
+    assert fused[0]["replayed_applied"] is True
+    assert fused[0]["replayed_norm"] == 1.0
+    assert fused[0]["fused_norm"] == round(0.6 * 1.0 + 0.4 * 1.0, 6)
+    assert fused[1]["replayed_norm"] == 0.5
+    assert fused[1]["fused_norm"] == round(0.6 * 0.5 + 0.4 * 0.5, 6)
+
+
+def test_fuse_heatmaps_degrades_cleanly_without_replayed():
+    video = [
+        {"bucket": 0, "start_sec": 0.0, "end_sec": 20.0, "attention": 0.5, "attention_norm": 0.8},
+    ]
+    fused = module.fuse_heatmaps(video, [])
+    assert fused[0]["replayed_applied"] is False
+    assert fused[0]["fused_norm"] == 0.8
+
+
+def test_build_webhook_payload_canonical():
+    manifest = {
+        "generated_at": "2026-09-12T10:00:00+00:00",
+        "status": "full",
+        "source": {"reference": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                   "platform": "youtube", "content_type": "video", "id": "dQw4w9WgXcQ"},
+        "attention_heatmap": [{"bucket": 0, "start_sec": 0.0, "end_sec": 1.0,
+                               "attention": 0.5, "attention_norm": 1.0}],
+        "replayed_curve": [{"start": 0.0, "end": 1.0, "value": 0.7}],
+        "fused_heatmap": [],
+    }
+    payload = module.build_webhook_payload(manifest, candidates=[{"id": "clip_01", "rank": 1}])
+    assert payload["run_id"] and payload["run_id"].startswith("f00c_")
+    assert payload["mode"] == "vod"
+    assert payload["status"] == "full"
+    assert payload["candidates"][0]["id"] == "clip_01"
+    assert payload["heatmap"][0]["attention_norm"] == 1.0
+    assert payload["replayed_curve"][0]["value"] == 0.7
+    assert "pushed_at" in payload
+
+
+def test_push_webhook_sends_token_and_payload(tmp_path, monkeypatch):
+    captured = {}
+
+    class FakeResponse:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        status = 200
+
+        def read(self):
+            return b""
+
+    def fake_urlopen(request, timeout=None):
+        captured["url"] = request.full_url
+        captured["headers"] = dict(request.headers)
+        captured["body"] = request.data
+        return FakeResponse()
+
+    monkeypatch.setattr(module.urllib.request, "urlopen", fake_urlopen)
+    ok = module.push_webhook("https://war-room.example/hook", {"run_id": "x"}, token="SECRET")
+    assert ok is True
+    assert captured["url"] == "https://war-room.example/hook"
+    assert any(v == "SECRET" for v in captured["headers"].values())
+    assert json.loads(captured["body"].decode()) == {"run_id": "x"}
+
+
 def test_top_viral_segments_spacing():
     heatmap = [
         {"bucket": i, "start_sec": float(i), "end_sec": float(i + 1),

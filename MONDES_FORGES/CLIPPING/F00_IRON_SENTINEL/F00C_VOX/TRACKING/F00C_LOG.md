@@ -8,6 +8,29 @@
 
 ## Entrées de mise en service
 
+### 2026-09-12 — LIVRAISON B : barre rouge Most Replayed + webhook Salle de Guerre
+
+- **Barre rouge** : `--fetch-replayed` → `yt-dlp --dump-json` (zéro média
+  téléchargé, escalier habituel) → `replayed_curve` [{start, end, value}] dans
+  le manifeste. Indisponible ⇒ `replayed_note` explicite (jamais de silence).
+- **Fusion** : `fused_heatmap = 0.6 × attention_norm (capteur) + 0.4 ×
+  replayed_norm (humains réels)` — le croisement capteur × comportement.
+  Sans barre rouge : `fused = attention_norm`, `replayed_applied: false`.
+- **Webhook** : `--webhook-url` (+ `X-Siege-Token`, défaut env
+  `SIEGE_WEBHOOK_TOKEN`) → payload contrat §4 (run_id, siege_id, mode
+  vod|live, status, heatmap, replayed_curve, fused_heatmap, candidates,
+  pushed_at). Échec réseau = warning, le manifeste local reste le livrable.
+- **Workflow** : `--fetch-replayed` toujours actif, input `webhook_url` +
+  secret `SIEGE_WEBHOOK_TOKEN`.
+- **Récepteur de référence** (repo kbkjhjhl) : `war_room/receiver.py` —
+  validation stricte (422 si payload invalide, 401 si token), stockage
+  `docs/data/war_room.json` (last_run + historique), `GET /api/war-room`
+  pour le dashboard. 8/8 tests + self-test round-trip verts.
+- **Tests** : 23/23 verts côté F00C (6 nouveaux : parsing dump-json,
+  note non silencieuse, fusion avec/sans barre rouge, payload canonique,
+  envoi token+payload).
+- **Docs** : guide 19 (section « barre rouge et webhook »).
+
 ### 2026-09-12 — LIVRAISON A : escalier anti-anti-bot + garde-fou + contrat découplé
 
 - **Code (`f00c_vox.py`)** :

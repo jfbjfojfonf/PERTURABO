@@ -1,0 +1,35 @@
+{
+  "run_id": "EXAMPLE_F00C_RUN_001",
+  "siege_id": "SOPHIE_RAIN_CLIPIFY_2026-09",
+  "mode": "vod",
+  "status": "full",
+  "source": {
+    "reference": "https://www.youtube.com/watch?v=qm3E3cchBmQ",
+    "kind": "youtube_video",
+    "platform": "youtube",
+    "content_type": "video",
+    "source_kind": "remote",
+    "id": "qm3E3cchBmQ"
+  },
+  "heatmap": [
+    {"bucket": 0, "start_sec": 0.0, "end_sec": 30.0, "attention": 0.42, "attention_norm": 0.44},
+    {"bucket": 1, "start_sec": 30.0, "end_sec": 60.0, "attention": 0.95, "attention_norm": 1.0},
+    {"bucket": 2, "start_sec": 60.0, "end_sec": 90.0, "attention": 0.31, "attention_norm": 0.33}
+  ],
+  "replayed_curve": [
+    {"start": 0.0, "end": 30.0, "value": 0.3},
+    {"start": 30.0, "end": 60.0, "value": 1.0},
+    {"start": 60.0, "end": 90.0, "value": 0.5}
+  ],
+  "replayed_note": null,
+  "fused_heatmap": [
+    {"bucket": 0, "start_sec": 0.0, "end_sec": 30.0, "attention_norm": 0.44, "replayed_norm": 0.3, "fused_norm": 0.384, "replayed_applied": true},
+    {"bucket": 1, "start_sec": 30.0, "end_sec": 60.0, "attention_norm": 1.0, "replayed_norm": 1.0, "fused_norm": 1.0, "replayed_applied": true},
+    {"bucket": 2, "start_sec": 60.0, "end_sec": 90.0, "attention_norm": 0.33, "replayed_norm": 0.5, "fused_norm": 0.398, "replayed_applied": true}
+  ],
+  "candidates": [
+    {"id": "clip_01", "rank": 1, "start_sec": 30.0, "end_sec": 60.0, "attention_norm": 1.0,
+     "signal_type": "platform_heat", "platforms": ["youtube_shorts", "tiktok", "instagram_reels", "x"]}
+  ],
+  "pushed_at": "2026-09-12T22:30:00+00:00"
+}
