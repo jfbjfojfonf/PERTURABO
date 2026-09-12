@@ -35,9 +35,37 @@ python3 war_room/receiver.py --self-test
 # Tests
 python3 -m pytest war_room/tests/ -q
 
-# Serveur (accepte les POST de F00C, sert GET /api/war-room)
-SIEGE_WEBHOOK_TOKEN=mon-secret python3 war_room/receiver.py --port 8787
+# Démo reproductible (remplit le dashboard sans attendre le run GitHub)
+python3 war_room/seed_demo.py
+
+# Serveur (accepte les POST de F00C, sert le dashboard + GET /api/war-room)
+SIEGE_WEBHOOK_TOKEN=mon-secret python3 war_room/receiver.py
+# Port : --port N, sinon env PORT, sinon 8787
 ```
+
+## Endpoints (Livraisons C et D livrées)
+
+| Route | Méthode | Rôle |
+|---|---|---|
+| `/` | GET | **Dashboard Salle de Guerre** (`docs/war_room.html`) |
+| `/api/war-room` | GET | JSON complet — polling du dashboard (2 s en LIVE) |
+| `/api/gate` | POST | Verdict Warsmith `{run_id, candidate_id, verdict: approved\|rejected}` |
+| `/` | POST | Webhook F00C (payload complet, `X-Siege-Token` requis si configuré) |
+
+**La boucle de retour Livraison D est fermée** : le dashboard poste les
+verdicts sur `/api/gate`, le récepteur les stocke dans `war_room.json`
+(`gates`, idempotents — re-voter la même chose ne gonfle pas les compteurs,
+une inversion remplace proprement le compteur précédent), et le pipeline
+PERTURABO relit `GET /api/war-room` pour connaître les clips GO.
+
+## Le dashboard (docs/war_room.html)
+
+- **Timeline SVG** : heatmap capteur (or) + barre rouge Most Replayed (rouge
+  pointillé) + fusion 0.6/0.4 (or vif) + blocs verts des candidats
+- **Cartes candidats** triées par score avec boutons **GO / NO-GO** (gate)
+- **Mode LIVE** : badge pulsé, nouveaux candidats marqués `NEW`, polling continu
+- **Toggle DONNÉES BRUTES** : le JSON réel, rien que le JSON réel — doctrine
+  « le Primarque voit tout », sans fard
 
 ## Côté F00C (PERTURABO) — envoi
 
@@ -52,9 +80,11 @@ Côté GitHub Actions : input `webhook_url` + secret `SIEGE_WEBHOOK_TOKEN`.
 
 ## Données exposées
 
-`docs/data/war_room.json` — dernier run + historique des runs. C'est la source
-que lira le dashboard `/war-room` (Livraisons C et D) : timeline heatmap +
-barre rouge + candidats, toggle DONNÉES BRUTES, gate GO/NO-GO.
+`docs/data/war_room.json` — dernier run + historique des runs + verdicts de
+gate. C'est la source du dashboard `/war-room` et de la boucle de retour PERTURABO.
+Le dépôt embarque un **seed démo Sophie Rain** (`war_room/seed_demo.py`) :
+3 candidats, heatmap 100 buckets, barre rouge — l'état affiché tant que le
+run réel n'a pas poussé.
 
 ## Sécurité
 

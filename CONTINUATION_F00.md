@@ -8,20 +8,22 @@
 ## 📅 DERNIÈRE MISE À JOUR
 
 **Date** : 2026-09-12
-**Ajout** : LIVRAISON B (Salle de Guerre) — barre rouge Most Replayed + webhook F00C → dashboard
+**Ajout** : LIVRAISONS C+D (Salle de Guerre complète) — dashboard + mode LIVE + gate GO/NO-GO cockpit
 
-> 🆕 **Livraison B faite** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
-> `--fetch-replayed` (barre rouge YouTube via yt-dlp --dump-json, zéro média),
-> fusion `fused_heatmap = 0.6 × capteur + 0.4 × humains réels`, `--webhook-url`
-> + `X-Siege-Token` (env `SIEGE_WEBHOOK_TOKEN`) → contrat §4 complet
-> (mode vod|live, candidats, courbes). Récepteur de référence :
-> `war_room/receiver.py` dans le repo kbkjhjhl (validation stricte, historique,
-> `GET /api/war-room`). 23/23 tests verts côté F00C, 8/8 côté récepteur.
-> **Prochaine étape** : Livraison C — dashboard `/war-room` dans la preview
-> Freebuff (timeline heatmap + barre rouge + candidats, toggle DONNÉES BRUTES,
-> mode VOD), puis Livraison D (mode LIVE + gate GO/NO-GO inline).
-> Rappel : Livraison A ✅ (escalier anti-bot, garde-fou, --media-source, cookies
-> burner — secret `YT_COOKIES_BASE64` à créer côté Warsmith).
+> 🆕 **Livraisons C et D faites** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
+> la Salle de Guerre est **complète**. Récepteur v2 (`WAR_ROOM/receiver.py`,
+> miroir dans ce repo) : dashboard servi sur `GET /`, polling `GET
+> /api/war-room`, verdicts Warsmith `POST /api/gate`, webhook F00C `POST /`
+> (X-Siege-Token), port env `PORT`. Dashboard `docs/war_room.html` : timeline
+> SVG (heatmap + barre rouge + fusion + blocs candidats), cartes triées par
+> score, boutons **GO / NO-GO** sur chaque carte, badge LIVE pulsé avec
+> nouveaux candidats `NEW`, **toggle DONNÉES BRUTES** (JSON réel). Boucle de
+> retour fermée : verdicts stockés idempotents, relis par le pipeline.
+> Démo immédiate : `python3 WAR_ROOM/seed_demo.py` (payload Sophie Rain,
+> 3 candidats). 11/11 tests récepteur + self-test verts, 23/23 côté F00C.
+> **Prochaine étape** : run réel Sophie Rain (secret `YT_COOKIES_BASE64`
+> côté Warsmith) → la Salle de Guerre affichera les données réelles.
+> Livraisons A ✅ B ✅ C ✅ D ✅ — le Prince voit tout.
 
 ---
 

@@ -1,7 +1,7 @@
 # PLAN_SALLE_DE_GUERRE — Correctif F00C + Le Prince Voit Tout
 
-> **Statut : 🔄 EN COURS — Livraisons A ✅ + B ✅ (barre rouge Most Replayed + webhook Salle de Guerre).
-> Restent C (Salle de Guerre VOD — dashboard), D (mode LIVE + gate inline).**
+> **Statut : ✅ COMPLET — Livraisons A + B + C + D livrées (escalier anti-bot, barre rouge + webhook, dashboard Salle de Guerre, mode LIVE + gate cockpit).
+> Reste : le run réel Sophie Rain (secret `YT_COOKIES_BASE64` côté Warsmith).**
 > Document de référence avant toute ligne de code. Ne rien modifier ici sans revalidation du Warsmith.
 > Prédécesseurs : `PLAN_REFONTE_VOX.md` (F00B, ✅), Note 20 (pont PUR F00C, ✅).
 

@@ -81,3 +81,28 @@ def test_store_payload_survives_corrupt_existing_file(tmp_path, monkeypatch):
 def test_self_test_round_trip(tmp_path, monkeypatch):
     monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
     assert module.self_test() == 0
+
+
+def test_store_gate_rejects_unknown_run(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    _, reason = module.store_gate("run_inconnu", "clip_01", "approved")
+    assert reason.startswith("run_id inconnu")
+
+
+def test_store_gate_rejects_unknown_candidate(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    _, reason = module.store_gate("f00c_test_1", "clip_fantome", "approved")
+    assert reason.startswith("candidate_id inconnu")
+
+
+def test_store_gate_counts_are_idempotent(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    doc, _ = module.store_gate("f00c_test_1", "clip_01", "approved")
+    doc, _ = module.store_gate("f00c_test_1", "clip_01", "approved")  # re-vote identique
+    assert doc["gate_counts"]["approved"] == 1
+    doc, _ = module.store_gate("f00c_test_1", "clip_01", "rejected")  # inversion
+    assert doc["gate_counts"]["approved"] == 0
+    assert doc["gate_counts"]["rejected"] == 1
+    assert doc["gates"]["f00c_test_1"]["clip_01"]["verdict"] == "rejected"

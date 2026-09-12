@@ -8,6 +8,28 @@
 
 ## Entrées de mise en service
 
+### 2026-09-12 — LIVRAISONS C+D : Salle de Guerre complète (dashboard + mode LIVE + gate cockpit)
+
+- **Récepteur v2** (`WAR_ROOM/receiver.py`, miroir dans ce repo) : sert le
+  dashboard (`GET /` → `docs/war_room.html`), `GET /api/war-room` (polling),
+  `POST /api/gate` (verdicts Warsmith, sans token — cockpit navigateur),
+  `POST /` webhook F00C (X-Siege-Token). Port : `--port` > env `PORT` > 8787.
+- **Boucle de retour Livraison D fermée** : le dashboard poste GO/NO-GO sur
+  `/api/gate` → stocké dans `war_room.json` (`gates`, idempotent : re-voter
+  identique ne gonfle pas les compteurs, une inversion remplace le compteur
+  précédent) → le pipeline PERTURABO relit `GET /api/war-room` pour connaître
+  les clips GO.
+- **Dashboard** (`docs/war_room.html`, thème Iron Warriors) : timeline SVG
+  (heatmap capteur or + barre rouge most-replayed pointillée + fusion or vif +
+  blocs candidats), cartes triées par score avec boutons **GO / NO-GO**,
+  badge mode VOD/LIVE pulsé (poll 2 s), nouveaux candidats marqués `NEW` en
+  LIVE, **toggle DONNÉES BRUTES** (le JSON réel affiché tel quel).
+- **Seed démo** (`WAR_ROOM/seed_demo.py`) : payload Sophie Rain synthétique
+  conforme au contrat (100 buckets, barre rouge 25 pas, fusion 0.6/0.4,
+  3 candidats) — l'état affiché tant que le run réel n'a pas poussé.
+- **Tests** : 11/11 verts côté récepteur (gate inconnue, candidate fantôme,
+  idempotence des compteurs) + self-test round-trip.
+
 ### 2026-09-12 — LIVRAISON B : barre rouge Most Replayed + webhook Salle de Guerre
 
 - **Barre rouge** : `--fetch-replayed` → `yt-dlp --dump-json` (zéro média
