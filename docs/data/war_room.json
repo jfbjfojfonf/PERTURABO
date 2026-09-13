@@ -2690,11 +2690,25 @@
     }
   },
   "total_runs": 1,
-  "gates": {},
+  "gates": {
+    "f00c_2026-09-13T073944.152576+0000": {
+      "voxc-3": {
+        "verdict": "approved",
+        "decided_at": "2026-09-13T11:57:58.298038+00:00"
+      },
+      "voxc-4": {
+        "verdict": "approved",
+        "decided_at": "2026-09-13T11:58:13.859380+00:00"
+      }
+    }
+  },
   "gate_counts": {
-    "approved": 0,
+    "approved": 2,
     "rejected": 0,
     "pending": 0
   },
-  "last_verdicts": {}
+  "last_verdicts": {
+    "f00c_2026-09-13T073944.152576+0000/voxc-3": "approved",
+    "f00c_2026-09-13T073944.152576+0000/voxc-4": "approved"
+  }
 }

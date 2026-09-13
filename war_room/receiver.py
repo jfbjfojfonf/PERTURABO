@@ -31,6 +31,10 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = REPO_ROOT / "docs"
 DATA_PATH = DOCS_DIR / "data" / "war_room.json"
+# Manifestes caviar émis par F00D (frégate compositeur) — indexés par candidat
+CAVIAR_DIR = REPO_ROOT / "PERTURABO" / "MONDES_FORGES" / "CLIPPING" / \
+    "F00_IRON_SENTINEL" / "F00D_NARRATIVUM" / "OUT"
+CAVIAR_INDEX = REPO_ROOT / "docs" / "data" / "caviar_index.json"
 REQUIRED_KEYS = ("run_id", "siege_id", "mode", "status", "source",
                  "heatmap", "replayed_curve", "fused_heatmap", "candidates", "pushed_at")
 GATE_VERDICTS = ("approved", "rejected")
@@ -38,6 +42,30 @@ GATE_VERDICTS = ("approved", "rejected")
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _load_caviar_index() -> dict:
+    """Manifestes caviar disponibles (candidate_id → manifeste ou refus).
+
+    Le mapping candidat → fichier est écrit dans docs/data/caviar_index.json
+    (par l'opérateur ou l'outil d'émission) ; cette fonction résout et charge.
+    """
+    if not CAVIAR_INDEX.exists():
+        return {}
+    try:
+        index = json.loads(CAVIAR_INDEX.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    out = {}
+    for candidate_id, rel in (index.get("manifests") or {}).items():
+        p = Path(rel)
+        if not p.is_absolute():
+            p = REPO_ROOT / rel
+        try:
+            out[candidate_id] = json.loads(p.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            out[candidate_id] = {"refused": True, "reason": f"manifeste illisible: {rel}"}
+    return out
 
 
 def _load_doc() -> dict:
@@ -186,6 +214,7 @@ def make_handler(token: str):
             path = self.path.split("?")[0]
             if path.startswith("/api/war-room"):
                 doc = _load_doc()
+                doc["caviar_manifests"] = _load_caviar_index()
                 # compteur pending recalculé (vérité depuis les données)
                 last = doc.get("last_run") or {}
                 gates = (doc.get("gates") or {}).get(last.get("run_id", ""), {})

@@ -1,0 +1,104 @@
+From 040d9b12eddab8890e3491ffe1a4c158347f7f93 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sun, 13 Sep 2026 12:28:55 +0000
+Subject: [PATCH] =?UTF-8?q?[v2-live-vox-c][F00D]=20Phase=202=20=E2=80=94?=
+ =?UTF-8?q?=20premier=20manifeste=20caviar=20r=C3=A9el=20(voxc-3)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Candidat voxc-3 (score 100, gate GO Warsmith) du run réel Sophie Rain 1h42 :
+segment 51,2 s extrait, heatmap réelle en entrée, caviar_manifest.json émis
+(style reframing, climax 28,16 s — règle climax ≥ 3 s ajoutée au directeur,
+résolution 40,96 s, budget 8 u/55 u, smash audio -12 dB au climax).
+gate_history enrichi (verdict → émission traçable).
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ ARCHIVUM/montage/narrativum/gate_history.json | 16 ++++++++++--
+ .../CODEBASE/caviar_director.py               | 10 +++++--
+ .../IN/caviar_input_voxc3_real.json           | 26 +++++++++++++++++++
+ 3 files changed, 48 insertions(+), 4 deletions(-)
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input_voxc3_real.json
+
+diff --git a/ARCHIVUM/montage/narrativum/gate_history.json b/ARCHIVUM/montage/narrativum/gate_history.json
+index 402de92..3fea378 100644
+--- a/ARCHIVUM/montage/narrativum/gate_history.json
++++ b/ARCHIVUM/montage/narrativum/gate_history.json
+@@ -1,4 +1,16 @@
+ {
+   "note": "Verdicts opérateur (GO/NO-GO) sur les manifestes caviar + raisons. La frégate apprend les goûts du Warsmith ici.",
+-  "verdicts": []
+-}
++  "verdicts": [
++    {
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "candidate_id": "voxc-3",
++      "verdict": "approved",
++      "decided_by": "warsmith",
++      "caviar_emitted": true,
++      "manifest": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc3.json",
++      "style": "reframing",
++      "spent_units": 8,
++      "note": "Phase 2 — premier manifeste caviar réel"
++    }
++  ]
++}
+\ No newline at end of file
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
+index 3f41cc2..7d06b94 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
+@@ -185,8 +185,14 @@ def compose(input_doc: dict, media: str | Path, budget: dict) -> tuple[dict | No
+         peaks = [{"start_sec": round(b["start_sec"], 3), "intensity": b["attention_norm"]}
+                  for b in heatmap if b.get("attention_norm", 0) >= 0.85][:4]
+ 
+-    # Climax = pic dominant ; résolution à ~80 % de la durée
+-    climax = peaks[0]["start_sec"] if peaks else round(duration * 0.55, 3)
++    # Climax = pic dominant, JAMAIS avant 3 s (l'enjeu doit s'installer) ni
++    # après la zone de résolution. Fallback : ~55 % de la durée.
++    CLIMAX_MIN_SEC = 3.0
++    climax_candidates = [p["start_sec"] for p in peaks
++                         if p["start_sec"] >= CLIMAX_MIN_SEC]
++    climax = (climax_candidates[0] if climax_candidates
++              else round(duration * 0.55, 3))
++    climax = min(climax, round(duration * 0.8, 3))
+     resolution_at = round(duration * 0.8, 3)
+ 
+     # Punch-ins : jusqu'à 4 pics (hors climax), espacés ≥ min_gap
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input_voxc3_real.json b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input_voxc3_real.json
+new file mode 100644
+index 0000000..c2348f6
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input_voxc3_real.json
+@@ -0,0 +1,26 @@
++{
++  "schema_version": "caviar_input.v1",
++  "candidate": {
++    "run_id": "f00c_2026-09-13T073944.152576+0000",
++    "candidate_id": "voxc-3",
++    "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
++    "title": "How Sophie Rain Makes (And Spends) $100,000,000 Per Year",
++    "start_sec_source": 1847.2,
++    "end_sec_source": 1898.4,
++    "duration_sec": 51.2,
++    "score": 100.0,
++    "gate": "approved",
++    "gate_decided_by": "warsmith",
++    "style_hint": "reframing"
++  },
++  "segment_media": "/tmp/f00d_test/voxc3_segment.mp4",
++  "segment_heatmap": [
++    { "start_sec": 0.0, "end_sec": 25.6, "attention_norm": 1.0 },
++    { "start_sec": 25.6, "end_sec": 51.2, "attention_norm": 0.64 }
++  ],
++  "constraints": {
++    "target_duration_sec": 30,
++    "style": "reframing",
++    "broll_index_version": "lacrimae_broll.v1"
++  }
++}
+-- 
+2.34.1
+

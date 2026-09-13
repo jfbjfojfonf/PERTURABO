@@ -158,6 +158,19 @@
   .hist .bin span { font-size: 9.5px; color: var(--text-dim); }
   .hist .bin b { font-size: 10.5px; color: var(--text); font-weight: 600; }
   .hist-lbl { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--text-dim); margin-top: 4px; }
+  /* ── Section CAVIAR (manifeste F00D) ── */
+  .caviar { background: var(--black-plate); border: 1px solid var(--gold-dim); border-radius: 5px;
+            padding: 12px 16px; margin-top: 10px; font-size: 12.5px; }
+  .caviar h3 { color: var(--gold-bright); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .caviar .kv { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .caviar .kv span { background: #14161a; border: 1px solid var(--boltgun); border-radius: 3px; padding: 3px 8px; color: var(--text); }
+  .caviar .kv span b { color: var(--gold-bright); }
+  .caviar .ev { display: grid; grid-template-columns: 90px 1fr; gap: 4px 12px; margin-top: 6px; }
+  .caviar .ev .t { color: var(--phosphor); font-weight: 600; }
+  .caviar .ev .d { color: var(--text-dim); }
+  .caviar .refuse { color: var(--red); }
+  .caviar pre { max-height: 220px; overflow: auto; margin-top: 8px; font-size: 10.5px; color: #9ecbff; }
+
   details.rawsec { border: 1px solid var(--boltgun); border-radius: 4px; margin-top: 10px; background: var(--black-plate); }
   details.rawsec summary { cursor: pointer; padding: 9px 14px; color: var(--text-dim); font-size: 12px; letter-spacing: .5px; }
   details.rawsec summary b { color: var(--gold-dim); }
@@ -233,6 +246,7 @@
     <details class="rawsec"><summary><b>▸ JSON — manifeste complet du run</b> (curves, métadonnées, notes)</summary><pre id="raw-run"></pre></details>
     <details class="rawsec"><summary><b>▸ JSON — candidats enrichis</b> (scores, timestamps exacts, plateformes)</summary><pre id="raw-cands"></pre></details>
     <details class="rawsec"><summary><b>▸ JSON — verdicts de la Gate</b> (boucle de retour Warsmith)</summary><pre id="raw-gates"></pre></details>
+    <div class="caviar" id="caviar-panel" style="display:none"></div>
   </div>
 </main>
 
@@ -502,6 +516,52 @@ function renderRaw(doc) {
   $('raw-gates').textContent = JSON.stringify({ counts: doc.gate_counts, verdicts: doc.last_verdicts || {}, gates: doc.gates || {} }, null, 2);
 }
 
+/* ══════════ CAVIAR : affichage du manifeste F00D (candidats gate GO) ══════════ */
+function renderCaviar(doc) {
+  const panel = $('caviar-panel');
+  const run = doc.last_run || {};
+  const gates = (doc.gates || {})[run.run_id || ''] || {};
+  const approved = (run.candidates || []).filter(c => gates[c.id] && gates[c.id].verdict === 'approved');
+  const manifests = doc.caviar_manifests || {};
+  const entries = approved.map(c => ({ cand: c, man: manifests[c.id] }));
+  if (!approved.length) { panel.style.display = 'none'; panel.innerHTML = ''; return; }
+  panel.style.display = 'block';
+  let html = '<h3>⚗ Caviar F00D — candidats GO</h3>';
+  for (const { cand, man } of entries) {
+    if (!man) {
+      html += `<div class="kv"><span><b>${esc(cand.id)}</b> GO — manifeste caviar pas encore émis (F00D attend le segment)</span></div>`;
+      continue;
+    }
+    if (man.refused) {
+      html += `<div class="kv"><span class="refuse"><b>${esc(cand.id)}</b> REFUSÉ par F00D : ${esc(man.reason)}</span></div>`;
+      continue;
+    }
+    const st = man.budget_state || {};
+    html += `<div class="kv">
+      <span><b>${esc(cand.id)}</b> — style <b>${esc(man.style)}</b></span>
+      <span>climax <b>${(man.narrative?.is_climax || []).map(fmtClock).join(', ') || '—'}</b></span>
+      <span>rupture/résolution <b>${fmtClock(man.narrative?.resolution_at)}</b></span>
+      <span>budget <b>${st.spent_units ?? '?'} u</b> / ${st.ceiling_units ?? '?'} u</span>
+      <span>respiration <b>${st.breathing_units ?? '?'} u</b></span>
+    </div>
+    <div class="ev">`;
+    (man.silence_trims || []).forEach(s => {
+      html += `<div class="t">⏱ ${fmtClock(s.start_sec)}</div><div class="d">Jump Cut — silence ${s.duration_sec}s tronqué</div>`;
+    });
+    (man.events?.punch_ins || []).forEach(p => {
+      html += `<div class="t">⏱ ${fmtClock(p.at_sec)}</div><div class="d">Punch-in ×${p.scale} (${p.duration_sec}s) — ${esc(p.cause || 'pic')}</div>`;
+    });
+    (man.events?.broll || []).forEach(b => {
+      html += `<div class="t">⏱ ${fmtClock(b.start_sec)}</div><div class="d">TRIO B-roll ${esc(b.broll_id)} + flash ${b.entry_flash ? '✔' : '✘'} + SFX ${esc(b.sfx || '—')} (${b.duration_frames} frames) — émotion : ${esc(b.emotion_requested || '?')}</div>`;
+    });
+    (man.events?.smash_audio || []).forEach(s => {
+      html += `<div class="t">⏱ ${fmtClock(s.at_sec)}</div><div class="d">Smash audio ${s.duck_db} dB (${s.duration_sec}s)</div>`;
+    });
+    html += '</div><details class="rawsec"><summary>▸ JSON du manifeste</summary><pre>' + esc(JSON.stringify(man, null, 2)) + '</pre></details>';
+  }
+  panel.innerHTML = html;
+}
+
 /* ══════════ RENDU GLOBAL ══════════ */
 function render(doc) {
   const run = doc.last_run || {};
@@ -536,6 +596,7 @@ function render(doc) {
 
   renderTimeline(run);
   renderCandidates(run, gates);
+  renderCaviar(doc);
   renderRaw(doc);
 }
 

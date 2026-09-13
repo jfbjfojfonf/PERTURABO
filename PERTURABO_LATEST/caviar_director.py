@@ -185,8 +185,14 @@ def compose(input_doc: dict, media: str | Path, budget: dict) -> tuple[dict | No
         peaks = [{"start_sec": round(b["start_sec"], 3), "intensity": b["attention_norm"]}
                  for b in heatmap if b.get("attention_norm", 0) >= 0.85][:4]
 
-    # Climax = pic dominant ; résolution à ~80 % de la durée
-    climax = peaks[0]["start_sec"] if peaks else round(duration * 0.55, 3)
+    # Climax = pic dominant, JAMAIS avant 3 s (l'enjeu doit s'installer) ni
+    # après la zone de résolution. Fallback : ~55 % de la durée.
+    CLIMAX_MIN_SEC = 3.0
+    climax_candidates = [p["start_sec"] for p in peaks
+                         if p["start_sec"] >= CLIMAX_MIN_SEC]
+    climax = (climax_candidates[0] if climax_candidates
+              else round(duration * 0.55, 3))
+    climax = min(climax, round(duration * 0.8, 3))
     resolution_at = round(duration * 0.8, 3)
 
     # Punch-ins : jusqu'à 4 pics (hors climax), espacés ≥ min_gap

@@ -1,0 +1,6 @@
+{
+  "note": "Mapping candidate_id → chemin du caviar_manifest.json émis par F00D. Chemins relatifs à la racine du repo connecté.",
+  "manifests": {
+    "voxc-3": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc3.json"
+  }
+}
