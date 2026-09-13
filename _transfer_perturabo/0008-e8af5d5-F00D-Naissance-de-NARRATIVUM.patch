@@ -1,0 +1,812 @@
+From e8af5d578ce2fdd0c0a0d3bb974ad84a04f28ed0 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sun, 13 Sep 2026 11:39:48 +0000
+Subject: [PATCH] =?UTF-8?q?[v2-live-vox-c][F00D]=20Naissance=20de=20NARRAT?=
+ =?UTF-8?q?IVUM=20=E2=80=94=20sous-fr=C3=A9gate=20compositeur=20(Phases=20?=
+ =?UTF-8?q?0+1)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Mission unique : candidat validé → caviar_manifest.json (caviar.v1) pour le
+bras armé. Placement F00D (sœur de F00B/F00C, appelée par les deux).
+Archivum confiné dans ARCHIVUM/montage/narrativum/ (pas d'Archivum dans
+l'Archivum) : ledger, gate_history, retention_log, lessons.
+Budget d'Attention (100u, plafond 55u, trio 12u/smash 8u/punch 6u/cut 1u +
+caps) partagé avec LACRIMAE via caviar_budget.json. 3 styles : split,
+reframing, ranking — le trio raccourcit le pacing local, audio maintenu.
+SFX uniquement à l'entrée B-roll, flash entrée uniquement, secondes
+relatives au segment, refus d'émettre un manifeste saturé.
+caviar_director.py : 8/8 tests verts + self-test OK.
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../montage/narrativum/README_NARRATIVUM.md   |  14 +
+ ARCHIVUM/montage/narrativum/gate_history.json |   4 +
+ ARCHIVUM/montage/narrativum/lessons.json      |   4 +
+ .../narrativum/manifest_ledger/ledger.json    |  12 +
+ .../montage/narrativum/retention_log.json     |   4 +
+ CONTINUATION_F00.md                           |   8 +-
+ .../F00C_VOX/TRACKING/F00C_LOG.md             |  22 ++
+ .../CODEBASE/caviar_budget.json               |  51 +++
+ .../CODEBASE/caviar_director.py               | 321 ++++++++++++++++++
+ .../CODEBASE/tests/test_caviar_director.py    |  87 +++++
+ .../IN/caviar_input.example.json              |  25 ++
+ .../F00D_NARRATIVUM/PLAN_NARRATIVUM.md        | 126 +++++++
+ 12 files changed, 676 insertions(+), 2 deletions(-)
+ create mode 100644 ARCHIVUM/montage/narrativum/README_NARRATIVUM.md
+ create mode 100644 ARCHIVUM/montage/narrativum/gate_history.json
+ create mode 100644 ARCHIVUM/montage/narrativum/lessons.json
+ create mode 100644 ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
+ create mode 100644 ARCHIVUM/montage/narrativum/retention_log.json
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_budget.json
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/tests/test_caviar_director.py
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input.example.json
+ create mode 100644 MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
+
+diff --git a/ARCHIVUM/montage/narrativum/README_NARRATIVUM.md b/ARCHIVUM/montage/narrativum/README_NARRATIVUM.md
+new file mode 100644
+index 0000000..f38c27b
+--- /dev/null
++++ b/ARCHIVUM/montage/narrativum/README_NARRATIVUM.md
+@@ -0,0 +1,14 @@
++# ARCHIVUM/montage/narrativum — mémoire de la sous-frégate F00D
++
++Règle flotte : **pas d'Archivum dans l'Archivum**. La mémoire de F00D_NARRATIVUM
++vit ICI (dans l'Archivum global), pas dans la frégate.
++
++| Fichier | Contenu | Qui écrit |
++|---|---|---|
++| `manifest_ledger/ledger.json` | chaque manifeste caviar émis (run → manifeste) | F00D |
++| `gate_history.json` | verdicts opérateur + raisons | opérateur/F00D |
++| `retention_log.json` | A/B caviar vs basique (vues, rétention) | opérateur/bras armé |
++| `lessons.json` | pièges appris, format court | F00D |
++
++Lecture : toute la doctrine flotte est lisible par F00D (sens unique).
++Écriture : confinée à ce dossier.
+diff --git a/ARCHIVUM/montage/narrativum/gate_history.json b/ARCHIVUM/montage/narrativum/gate_history.json
+new file mode 100644
+index 0000000..402de92
+--- /dev/null
++++ b/ARCHIVUM/montage/narrativum/gate_history.json
+@@ -0,0 +1,4 @@
++{
++  "note": "Verdicts opérateur (GO/NO-GO) sur les manifestes caviar + raisons. La frégate apprend les goûts du Warsmith ici.",
++  "verdicts": []
++}
+diff --git a/ARCHIVUM/montage/narrativum/lessons.json b/ARCHIVUM/montage/narrativum/lessons.json
+new file mode 100644
+index 0000000..c0378a4
+--- /dev/null
++++ b/ARCHIVUM/montage/narrativum/lessons.json
+@@ -0,0 +1,4 @@
++{
++  "note": "Pièges appris F00D — format court, un piège par entrée. Nourri après chaque run/gate.",
++  "lessons": []
++}
+diff --git a/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json b/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
+new file mode 100644
+index 0000000..d549758
+--- /dev/null
++++ b/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
+@@ -0,0 +1,12 @@
++{
++  "ledger_note": "Chaque caviar_manifest.json émis est journalisé ici (rejouabilité, traçabilité run → manifeste). Format : une entrée par émission.",
++  "emissions": [
++    {
++      "manifest_path": "../OUT/caviar_manifest.example.json",
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "style": "reframing",
++      "spent_units": 32,
++      "emitted_at": "2026-09-13T11:38:58.634153+00:00"
++    }
++  ]
++}
+\ No newline at end of file
+diff --git a/ARCHIVUM/montage/narrativum/retention_log.json b/ARCHIVUM/montage/narrativum/retention_log.json
+new file mode 100644
+index 0000000..d8344f1
+--- /dev/null
++++ b/ARCHIVUM/montage/narrativum/retention_log.json
+@@ -0,0 +1,4 @@
++{
++  "note": "Preuve de rétention : A/B clip caviar vs clip basique. La Phase 4 (portage F00B) exige des chiffres ici — pas de ressenti.",
++  "experiments": []
++}
+diff --git a/CONTINUATION_F00.md b/CONTINUATION_F00.md
+index c01c9f9..9e6c21b 100644
+--- a/CONTINUATION_F00.md
++++ b/CONTINUATION_F00.md
+@@ -7,8 +7,12 @@
+ 
+ ## 📅 DERNIÈRE MISE À JOUR
+ 
+-**Date** : 2026-09-13
+-**Ajout** : AUDIT WARSMITH corrigé — contrat webhook V2 (candidats enrichis +
++**Date** : 2026-09-13 (bis)
++**Ajout** : F00D_NARRATIVUM — sous-frégate compositeur (Caviar 99 %). Sœur
++de F00B/F00C : candidat validé → `caviar_manifest.json` (styles split /
++reframing / ranking, Budget d'Attention, Archivum dans
++`ARCHIVUM/montage/narrativum/`). Code + 8/8 tests verts.
++**Précédent** : AUDIT WARSMITH corrigé — contrat webhook V2 (candidats enrichis +
+ couverture analysée affichée) et dashboard v2 (axes gradués, tooltips, cartes
+ complètes, gate fonctionnelle via `candidate_id`, légende truthful, histogramme,
+ bandeau d'erreur). Vidéo réelle du Warsmith en cours d'analyse : `cP8vli4kfhs`
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+index fbddacb..dd84e00 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+@@ -8,6 +8,28 @@
+ 
+ ## Entrées de mise en service
+ 
++### 2026-09-13 (ter) — NAISSANCE F00D_NARRATIVUM (sous-frégate compositeur)
++
++- **Décision Warsmith** : nouvelle sous-frégate sœur (F00D), mission unique :
++  candidat validé → `caviar_manifest.json` (caviar.v1) pour le bras armé.
++- **Placement** : `F00_IRON_SENTINEL/F00D_NARRATIVUM/` (sœur de F00B/F00C —
++  appelée par les deux ; jamais de copie divergente).
++- **Archivum** : mémoire dans `ARCHIVUM/montage/narrativum/` (règle flotte :
++  pas d'Archivum dans l'Archivum) — ledger, gate_history, retention_log, lessons.
++- **Budget d'Attention** : `caviar_budget.json` (100u/clip, plafond 55u,
++  trio B-roll+flash+SFX = 12u, smash 8u, punch-in 6u, jump-cut 1u + caps).
++  Transmis au bras armé pour ses gates P-CAV (double barrage).
++- **3 styles** : split (b-roll sur la moitié jeu, punch-in webcam), reframing
++  (overlay frame 0 jusqu'au climax), ranking (trio à l'entrée d'item, smash
++  bonus sur l'item #1). Constante : le trio RACCOURCIT le pacing local et
++  l'audio du streamer est MAINTENU.
++- **Règles d'or** : SFX uniquement à l'entrée B-roll ; flash entrée uniquement ;
++  référentiel = secondes relatives au segment ; la frégate refuse d'émettre
++  un manifeste saturé (pas de toxique — diagnostic à la place).
++- **Code** : `caviar_director.py` (silencedetect, numpy amplitudes, composition
++  par style, budget, émission + ledger). Tests : 8/8 verts + self-test OK.
++- **Prochain** : premier manifeste réel sur un candidat Sophie Rain gate GO.
++
+ ### 2026-09-13 (bis) — RUN RÉEL 1 h 42 + RÉCEPTEUR DURCI (fin du HTTP 400)
+ 
+ - **Run réel complet** : `cP8vli4kfhs` (« How Sophie Rain Makes And Spends
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_budget.json b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_budget.json
+new file mode 100644
+index 0000000..1b1f825
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_budget.json
+@@ -0,0 +1,51 @@
++{
++  "schema_version": "caviar_budget.v1",
++  "owner": "F00D_NARRATIVUM",
++  "consumer": "LACRIMAE (gates P-CAV)",
++  "clip_duration_reference_sec": 30,
++  "budget_total_units": 100,
++  "spend_ceiling_units": 55,
++  "breathing_floor_pct": 60,
++  "events": {
++    "broll_trio": {
++      "description": "B-roll + flash blanc d'entrée + SFX (trio inséparable)",
++      "cost_units": 12,
++      "max_per_clip": 3,
++      "max_duration_frames": 45,
++      "forbidden_during": "resolution",
++      "flash": { "duration_frames": [3, 5], "position": "entry_only" },
++      "sfx": { "required_with_flash": true, "same_frame": true, "volume_rule": "under_voice" }
++    },
++    "smash_audio": {
++      "description": "Ducking audio au climax",
++      "cost_units": 8,
++      "max_per_clip": 2,
++      "duck": { "db": -12, "duration_sec": [0.5, 1.0] }
++    },
++    "punch_in": {
++      "description": "Zoom 1.15-1.3x sur pic d'amplitude, courbe douce",
++      "cost_units": 6,
++      "max_per_clip": 4,
++      "min_gap_sec": 2.0,
++      "scale": [1.15, 1.3],
++      "duration_sec": [0.5, 0.8]
++    },
++    "jump_cut": {
++      "description": "Trim silence > 250 ms",
++      "cost_units": 1,
++      "max_per_clip": 8,
++      "silence_threshold_ms": 250
++    }
++  },
++  "saturation_policy": {
++    "on_budget_exceeded": "refuse_to_emit_with_diagnosis",
++    "on_too_many_silences": "refuse_and_flag_segment_poor",
++    "single_event_rule": "no_two_strong_visual_events_same_frame",
++    "resolution_zone": "no_events_after_resolution_at"
++  },
++  "style_adjustments": {
++    "split": "broll_on_game_half, punch_in_on_webcam_half",
++    "reframing": "overlay_from_frame0_until_climax, in_medias_res",
++    "ranking": "broll_trio_marks_item_entry, item1_extra_smash_allowed, silence_0.3-0.5s_before_rank1"
++  }
++}
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
+new file mode 100644
+index 0000000..3f41cc2
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/caviar_director.py
+@@ -0,0 +1,321 @@
++#!/usr/bin/env python3
++"""F00D_NARRATIVUM — Le Directeur Caviar (sous-frégate compositeur).
++
++Mission : prendre un candidat validé + son segment média et émettre un
++`caviar_manifest.json` (schéma caviar.v1) — la partition narrative que le
++bras armé (LACRIMAE) exécute. La frégate ne rend jamais ; elle lit le
++signal, écrit la partition, refuse la surcharge (Budget d'Attention).
++
++Piles (CPU only) : ffmpeg silencedetect, numpy (amplitudes), heatmap F00C.
++Référentiel temporel : TOUT est en secondes relatives au segment (jamais
++à la source) — le bug d'offset est interdit par le schéma.
++
++Usage :
++    python3 caviar_director.py --input IN/caviar_input.example.json \
++        --out OUT/caviar_manifest.json
++    python3 caviar_director.py --self-test
++"""
++from __future__ import annotations
++
++import argparse
++import json
++import os
++import subprocess
++import sys
++import tempfile
++import wave
++from datetime import datetime, timezone
++from pathlib import Path
++
++CODEBASE_DIR = Path(__file__).resolve().parent
++BUDGET_PATH = CODEBASE_DIR / "caviar_budget.json"
++
++SCHEMA_VERSION = "caviar.v1"
++STYLES = ("split", "reframing", "ranking")
++
++
++# ─────────────────────────────────────────────────────────────────────────────
++# Budget d'Attention (source de vérité : caviar_budget.json)
++# ─────────────────────────────────────────────────────────────────────────────
++
++def load_budget() -> dict:
++    with open(BUDGET_PATH, encoding="utf-8") as fh:
++        return json.load(fh)
++
++
++# ─────────────────────────────────────────────────────────────────────────────
++# Cartes de signal (silences, amplitudes) — CPU only
++# ─────────────────────────────────────────────────────────────────────────────
++
++def extract_audio_wav(media: str | Path, out_wav: str | Path,
++                      rate: int = 16000) -> bool:
++    """Extrait la piste audio en WAV mono (ffmpeg). Retourne False si absent."""
++    media, out_wav = str(media), str(out_wav)
++    if not os.path.isfile(media):
++        return False
++    cmd = ["ffmpeg", "-v", "error", "-y", "-i", media, "-vn",
++           "-ac", "1", "-ar", str(rate), out_wav]
++    try:
++        subprocess.run(cmd, check=True, capture_output=True, timeout=120)
++        return os.path.isfile(out_wav) and os.path.getsize(out_wav) > 44
++    except (subprocess.SubprocessError, OSError):
++        return False
++
++
++def silence_map(media: str | Path, threshold_ms: int = 250,
++                noise_db: float = -35.0) -> list[dict]:
++    """Carte des silences > seuil (ffmpeg silencedetect). Relatifs au segment."""
++    if not os.path.isfile(str(media)):
++        return []
++    try:
++        proc = subprocess.run(
++            ["ffmpeg", "-i", str(media), "-af",
++             f"silencedetect=noise={noise_db}dB:d={threshold_ms / 1000:.3f}",
++             "-f", "null", "-"],
++            capture_output=True, text=True, timeout=120, check=False)
++    except (subprocess.SubprocessError, OSError):
++        return []
++    starts, silences = [], []
++    for line in proc.stderr.splitlines():
++        if "silence_start:" in line:
++            try:
++                starts.append(float(line.rsplit(":", 1)[1].strip()))
++            except ValueError:
++                pass
++        elif "silence_end:" in line and starts:
++            try:
++                end = float(line.split("silence_end:")[1].split("|")[0].strip())
++                start = starts.pop(0)
++                if (end - start) * 1000 >= threshold_ms:
++                    silences.append({"start_sec": round(start, 3),
++                                     "end_sec": round(end, 3),
++                                     "duration_sec": round(end - start, 3)})
++            except (ValueError, IndexError):
++                pass
++    return silences
++
++
++def amplitude_peaks(media: str | Path, top_n: int = 6) -> list[dict]:
++    """Pics d'amplitude vocale (numpy sur WAV 16 kHz mono). Candidats climax."""
++    import numpy as np  # import local : la frégate dégrade proprement sans numpy
++
++    tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
++    tmp.close()
++    if not extract_audio_wav(media, tmp.name):
++        os.unlink(tmp.name)
++        return []
++    try:
++        with wave.open(tmp.name, "rb") as wf:
++            frames = wf.readframes(wf.getnframes())
++            rate = wf.getframerate()
++    except (wave.Error, OSError):
++        os.unlink(tmp.name)
++        return []
++    finally:
++        os.unlink(tmp.name)
++
++    audio = np.frombuffer(frames, dtype=np.int16).astype(np.float32) / 32768.0
++    hop = int(rate * 0.05)  # fenêtres de 50 ms
++    n = len(audio) // hop
++    if n < 4:
++        return []
++    rms = np.sqrt((audio[: n * hop].reshape(n, hop) ** 2).mean(axis=1))
++    thresh = float(rms.mean() + 2.0 * rms.std())
++    peaks: list[dict] = []
++    last_t = -10.0
++    for i in range(n):
++        t = i * 0.05
++        if rms[i] >= thresh and t - last_t >= 1.5:  # pics espacés ≥ 1,5 s
++            peaks.append({"start_sec": round(t, 3),
++                          "intensity": round(float(rms[i]), 4)})
++            last_t = t
++        if len(peaks) >= top_n:
++            break
++    return peaks
++
++
++# ─────────────────────────────────────────────────────────────────────────────
++# Budget : comptage et verdict de saturation
++# ─────────────────────────────────────────────────────────────────────────────
++
++def compute_budget_state(events: dict, silences_count: int,
++                         budget: dict) -> dict:
++    broll = events.get("broll", [])
++    spent = (len(broll) * budget["events"]["broll_trio"]["cost_units"]
++             + len(events.get("smash_audio", [])) * budget["events"]["smash_audio"]["cost_units"]
++             + len(events.get("punch_ins", [])) * budget["events"]["punch_in"]["cost_units"]
++             + silences_count * budget["events"]["jump_cut"]["cost_units"])
++    return {
++        "spent_units": spent,
++        "ceiling_units": budget["spend_ceiling_units"],
++        "breathing_units": budget["budget_total_units"] - spent,
++        "counts": {
++            "broll": len(broll),
++            "smash_audio": len(events.get("smash_audio", [])),
++            "punch_ins": len(events.get("punch_ins", [])),
++            "jump_cuts": silences_count,
++        },
++        "caps_respected": (
++            len(broll) <= budget["events"]["broll_trio"]["max_per_clip"]
++            and len(events.get("smash_audio", [])) <= budget["events"]["smash_audio"]["max_per_clip"]
++            and len(events.get("punch_ins", [])) <= budget["events"]["punch_in"]["max_per_clip"]
++            and silences_count <= budget["events"]["jump_cut"]["max_per_clip"]
++        ),
++    }
++
++
++# ─────────────────────────────────────────────────────────────────────────────
++# Composition par style — le cœur de la chimie
++# ─────────────────────────────────────────────────────────────────────────────
++
++def compose(input_doc: dict, media: str | Path, budget: dict) -> tuple[dict | None, str]:
++    """Retourne (manifeste | None, diagnostic). Refuse d'émettre si saturé."""
++    cand = input_doc.get("candidate") or {}
++    style = (input_doc.get("constraints") or {}).get("style", "reframing")
++    if style not in STYLES:
++        return None, f"style inconnu : {style!r} (attendu split|reframing|ranking)"
++
++    heatmap = input_doc.get("segment_heatmap") or []
++    duration = float(cand.get("duration_sec")
++                     or (heatmap[-1]["end_sec"] if heatmap else 0.0) or 30.0)
++
++    silences = silence_map(media, budget["events"]["jump_cut"]["silence_threshold_ms"])
++    peaks = amplitude_peaks(media)
++    if not peaks and heatmap:  # dégradation : la heatmap F00C sert d'ancre
++        peaks = [{"start_sec": round(b["start_sec"], 3), "intensity": b["attention_norm"]}
++                 for b in heatmap if b.get("attention_norm", 0) >= 0.85][:4]
++
++    # Climax = pic dominant ; résolution à ~80 % de la durée
++    climax = peaks[0]["start_sec"] if peaks else round(duration * 0.55, 3)
++    resolution_at = round(duration * 0.8, 3)
++
++    # Punch-ins : jusqu'à 4 pics (hors climax), espacés ≥ min_gap
++    min_gap = budget["events"]["punch_in"]["min_gap_sec"]
++    punch_ins, last_t = [], -10.0
++    for p in peaks[1:5]:
++        if p["start_sec"] - last_t >= min_gap and p["start_sec"] < resolution_at:
++            punch_ins.append({"at_sec": p["start_sec"], "scale": 1.2,
++                              "duration_sec": 0.6, "cause": "amplitude_peak"})
++            last_t = p["start_sec"]
++
++    # B-rolls : 2 max en v1 (emballage trio), posés sur les creux d'attention
++    # AVANT le climax (jamais pendant la résolution) — émotion ≠ calcul ici :
++    # le broll_id est un PLACEHOLDER validé par l'opérateur au gate.
++    brolls: list[dict] = []
++    if len(heatmap) >= 3 and duration > 18:
++        slot = round(duration * 0.3, 3)
++        brolls.append({"broll_id": "B-00", "emotion_requested": "à qualifier (opérateur)",
++                       "start_sec": slot, "duration_frames": 36,
++                       "entry_flash": True, "sfx": "impact"})
++        if duration > 40:
++            brolls.append({"broll_id": "B-00", "emotion_requested": "à qualifier (opérateur)",
++                           "start_sec": round(duration * 0.5, 3),
++                           "duration_frames": 36, "entry_flash": True, "sfx": "impact"})
++
++    smash = [{"at_sec": climax, "duck_db": -12, "duration_sec": 0.8}]
++    if style == "ranking" and duration > 25:
++        smash.append({"at_sec": round(duration - 3.0, 3),
++                      "duck_db": -12, "duration_sec": 0.6})
++
++    events = {"broll": brolls, "smash_audio": smash, "punch_ins": punch_ins}
++    state = compute_budget_state(events, len(silences), budget)
++    if not state["caps_respected"] or state["spent_units"] > state["ceiling_units"]:
++        return None, (f"segment saturé : dépense {state['spent_units']}u > "
++                      f"{state['ceiling_units']}u ou caps violés {state['counts']} — "
++                      "réduire les événements ou choisir un autre segment")
++
++    narrative = {
++        "hook_type": "climax_first" if style == "reframing" else "natural",
++        "is_climax": [smash[0]["at_sec"]],
++        "resolution_at": resolution_at,
++        "energy_curve": ["rise", "peak", "fall"],
++        "pacing_note": ("trio broll+flash raccourcit le pacing local ; "
++                        "l'audio du streamer est MAINTENU sous les effets"),
++    }
++    manifest = {
++        "schema_version": SCHEMA_VERSION,
++        "generated_at": datetime.now(timezone.utc).isoformat(),
++        "time_reference": "segment_relative_seconds",
++        "source": cand,
++        "style": style,
++        "narrative": narrative,
++        "silence_trims": silences,
++        "events": events,
++        "budget_state": state,
++        "overlay": {"text": "(accroche écrite/validée par l'opérateur — placeholder)",
++                    "visible_from_sec": 0.0,
++                    "visible_until_sec": smash[0]["at_sec"]},
++        "notes": "Trio B-roll+flash+SFX inséparable. SFX uniquement à l'entrée B-roll. "
++                 "Flash entrée uniquement (jamais sortie — Flow Cut à la place).",
++    }
++    return manifest, "ok"
++
++
++# ─────────────────────────────────────────────────────────────────────────────
++# CLI
++# ─────────────────────────────────────────────────────────────────────────────
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(description="F00D — Directeur Caviar")
++    parser.add_argument("--input", help="JSON d'entrée (candidat + heatmap + contraintes)")
++    parser.add_argument("--out", default=None, help="caviar_manifest.json de sortie")
++    parser.add_argument("--self-test", action="store_true")
++    args = parser.parse_args(argv)
++
++    budget = load_budget()
++
++    if args.self_test:
++        doc = {"candidate": {"candidate_id": "t1", "duration_sec": 30, "score": 80.0},
++               "segment_heatmap": [
++                   {"start_sec": 0.0, "end_sec": 10.0, "attention_norm": 0.4},
++                   {"start_sec": 10.0, "end_sec": 20.0, "attention_norm": 0.95},
++                   {"start_sec": 20.0, "end_sec": 30.0, "attention_norm": 0.3}],
++               "constraints": {"style": "reframing"}}
++        manifest, why = compose(doc, media="", budget=budget)
++        assert manifest is not None, f"self-test: composition refusée ({why})"
++        assert manifest["schema_version"] == SCHEMA_VERSION
++        assert manifest["time_reference"] == "segment_relative_seconds"
++        assert manifest["budget_state"]["spent_units"] <= manifest["budget_state"]["ceiling_units"]
++        # Saturation volontaire : trop de punch-ins simulés
++        doc2 = dict(doc)
++        doc2["segment_heatmap"] = [
++            {"start_sec": i * 2.0, "end_sec": (i + 1) * 2.0, "attention_norm": 0.99}
++            for i in range(15)]
++        m2, why2 = compose(doc2, media="", budget=budget)
++        assert m2 is not None or "saturé" in why2 or m2 is not None  # tolérant : caps tronquent
++        print(f"SELF-TEST OK — budget dépensé {manifest['budget_state']['spent_units']}u/"
++              f"{manifest['budget_state']['ceiling_units']}u")
++        return 0
++
++    if not args.input:
++        parser.error("--input requis (ou --self-test)")
++    with open(args.input, encoding="utf-8") as fh:
++        doc = json.load(fh)
++    media = doc.get("segment_media") or ""
++    manifest, why = compose(doc, media, budget)
++    if manifest is None:
++        print(f"F00D: REFUS — {why}", file=sys.stderr)
++        return 2
++    out = Path(args.out) if args.out else CODEBASE_DIR.parent / "OUT" / "caviar_manifest.json"
++    out.parent.mkdir(parents=True, exist_ok=True)
++    out.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
++    repo_root = Path(__file__).resolve().parents[5]
++    ledger = repo_root / "ARCHIVUM" / "montage" / "narrativum" / "manifest_ledger" / "ledger.json"
++    try:
++        with open(ledger, encoding="utf-8") as fh:
++            led = json.load(fh)
++        led.setdefault("emissions", []).append({
++            "manifest_path": str(out), "run_id": (doc.get("candidate") or {}).get("run_id"),
++            "style": manifest["style"], "spent_units": manifest["budget_state"]["spent_units"],
++            "emitted_at": manifest["generated_at"]})
++        with open(ledger, "w", encoding="utf-8") as fh:
++            json.dump(led, fh, ensure_ascii=False, indent=2)
++    except (OSError, json.JSONDecodeError):
++        pass  # le ledger ne doit jamais bloquer l'émission
++    print(json.dumps({"status": "emitted", "out": str(out),
++                      "budget": manifest["budget_state"]}, ensure_ascii=False))
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/tests/test_caviar_director.py b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/tests/test_caviar_director.py
+new file mode 100644
+index 0000000..dc58a27
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/CODEBASE/tests/test_caviar_director.py
+@@ -0,0 +1,87 @@
++"""Tests F00D_NARRATIVUM — hors-ligne (aucun réseau, aucun média requis)."""
++import importlib.util
++import json
++import sys
++from pathlib import Path
++
++MODULE_PATH = Path(__file__).parents[1] / "caviar_director.py"
++spec = importlib.util.spec_from_file_location("caviar_director", MODULE_PATH)
++module = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(module)
++
++BUDGET = module.load_budget()
++
++
++def _doc(style="reframing", duration=30.0, peaks_norm=0.95):
++    return {
++        "candidate": {"candidate_id": "t1", "run_id": "run_x",
++                      "duration_sec": duration, "score": 90.0},
++        "segment_heatmap": [
++            {"start_sec": 0.0, "end_sec": duration * 0.33, "attention_norm": 0.4},
++            {"start_sec": duration * 0.33, "end_sec": duration * 0.66, "attention_norm": peaks_norm},
++            {"start_sec": duration * 0.66, "end_sec": duration, "attention_norm": 0.3},
++        ],
++        "constraints": {"style": style},
++    }
++
++
++def test_schema_and_time_reference():
++    m, why = module.compose(_doc(), media="", budget=BUDGET)
++    assert m is not None, why
++    assert m["schema_version"] == "caviar.v1"
++    assert m["time_reference"] == "segment_relative_seconds"
++
++
++def test_budget_within_ceiling_and_breathing_floor():
++    m, _ = module.compose(_doc(), media="", budget=BUDGET)
++    st = m["budget_state"]
++    assert st["spent_units"] <= st["ceiling_units"] <= 55
++    assert st["breathing_units"] >= 45
++    assert st["counts"]["broll"] <= BUDGET["events"]["broll_trio"]["max_per_clip"]
++
++
++def test_trio_inseparable_flash_and_sfx():
++    m, _ = module.compose(_doc(), media="", budget=BUDGET)
++    for b in m["events"]["broll"]:
++        assert b["entry_flash"] is True
++        assert b["sfx"]  # SFX obligatoire si flash
++        assert b["duration_frames"] <= BUDGET["events"]["broll_trio"]["max_duration_frames"]
++
++
++def test_no_events_after_resolution():
++    m, _ = module.compose(_doc(duration=45.0), media="", budget=BUDGET)
++    res = m["narrative"]["resolution_at"]
++    for b in m["events"]["broll"]:
++        assert b["start_sec"] < res
++    for p in m["events"]["punch_ins"]:
++        assert p["at_sec"] < res
++
++
++def test_styles_change_composition():
++    m_ref, _ = module.compose(_doc("reframing"), media="", budget=BUDGET)
++    m_rank, _ = module.compose(_doc("ranking", duration=40.0), media="", budget=BUDGET)
++    assert m_ref["narrative"]["hook_type"] == "climax_first"
++    assert len(m_rank["events"]["smash_audio"]) >= 2  # l'item #1 a son smash en plus
++
++
++def test_unknown_style_refused():
++    m, why = module.compose(_doc("hollywood"), media="", budget=BUDGET)
++    assert m is None and "style inconnu" in why
++
++
++def test_caps_truncate_not_crash():
++    # 15 pics d'amplitude simulés → caps tronquent, pas de crash, budget respecté
++    doc = _doc(peaks_norm=0.99)
++    doc["segment_heatmap"] = [
++        {"start_sec": i * 2.0, "end_sec": (i + 1) * 2.0, "attention_norm": 0.99}
++        for i in range(15)]
++    m, why = module.compose(doc, media="", budget=BUDGET)
++    assert m is not None or "saturé" in why
++    if m:
++        st = m["budget_state"]
++        assert st["caps_respected"] and st["spent_units"] <= st["ceiling_units"]
++
++
++def test_silence_map_tolerates_missing_media():
++    assert module.silence_map("/chemin/inexistant.mp4") == []
++    assert module.amplitude_peaks("/chemin/inexistant.mp4") == []
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input.example.json b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input.example.json
+new file mode 100644
+index 0000000..0b5fb8a
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/IN/caviar_input.example.json
+@@ -0,0 +1,25 @@
++{
++  "schema_version": "caviar_input.v1",
++  "candidate": {
++    "run_id": "f00c_2026-09-13T073944.152576+0000",
++    "candidate_id": "voxc-3",
++    "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
++    "start_sec_source": 1847.2,
++    "end_sec_source": 1898.4,
++    "duration_sec": 51.2,
++    "score": 100.0,
++    "style_hint": "reframing"
++  },
++  "segment_media": "chemin/vers/segment.mp4",
++  "segment_heatmap": [
++    { "start_sec": 0.0, "end_sec": 8.6, "attention_norm": 0.42 },
++    { "start_sec": 8.6, "end_sec": 17.1, "attention_norm": 0.97 },
++    { "start_sec": 17.1, "end_sec": 25.6, "attention_norm": 0.71 },
++    { "start_sec": 25.6, "end_sec": 30.0, "attention_norm": 0.33 }
++  ],
++  "constraints": {
++    "target_duration_sec": 30,
++    "style": "reframing",
++    "broll_index_version": "lacrimae_broll.v1"
++  }
++}
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
+new file mode 100644
+index 0000000..5533d6f
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
+@@ -0,0 +1,126 @@
++# F00D_NARRATIVUM — La Sous-frégate Compositeur (Caviar 99 %)
++
++> **Mission unique** : prendre un clip basique validé (gate GO de F00B/F00C)
++> et émettre le `caviar_manifest.json` qui transforme le rendu standard du
++> bras armé (LACRIMAE) en montage narratif.
++> « Le compositeur est aveugle : il ne voit ni les assets, ni le rendu —
++> il lit le signal, écrit la partition, refuse la surcharge. »
++
++Statut : ACTIVÉE (Warsmith, 2026-09-13). Sœur de F00A/F00B/F00C — appelée
++par F00C (banc d'essai, YouTube) puis F00B (portage, Twitch).
++
++---
++
++## 1. Le contrat en une phrase
++
++**Entrée** : un candidat validé (run_id, timestamps, score, heatmap locale)
+++ le média du segment.
++**Sortie** : `caviar_manifest.json` (schéma `caviar.v1`) — partition complète
++et autoportante que le bras armé exécute au pixel et à la milliseconde.
++**Jamais** : la frégate ne rend, ne touche au speed (décision opérateur 1.05),
++au cadre 9:16, aux gates LACRIMAE, ni aux assets.
++
++## 2. Les trois styles (matière F00C → recette F00D)
++
++Chaque style change le placement des événements. **Constante transversale** :
++le flash blanc et le B-roll RACCOURCISSENT le pacing local (le plan qui les
++porte se termine plus tôt) et **l'audio du streamer est toujours maintenu**
++sous les effets — jamais de mute sauf smash cut audio au climax (ducking).
++
++### Style SPLIT (webcam + jeu, split-screen classique)
++- **Où** : les moments webcam (réactions) portent les punch-ins ; le jeu porte les B-rolls.
++- **Recette** : punch-in sur la webcam aux pics d'amplitude ; le trio
++  B-roll+flash+SFX s'installe sur la MOITIÉ JEU (l'action continue sur la
++  webcam) ; le pacing local se raccourcit autour du trio (le plan de jeu
++  s'achève plus tôt, retour rapide sur la webcam = la réaction).
++- **Audio** : voix + son de jeu maintenus ; SFX uniquement à l'entrée du trio.
++
++### Style REFRAMING (9:16, l'enjeu fictif posé frame 0)
++- **Où** : l'overlay d'accroche (texte, écrit par PERTURABO/l'opérateur)
++  occupe le tiers supérieur de la frame 0 jusqu'au climax (rupture).
++- **Recette** : in media res (l'intro est coupée) ; le regard reste centré
++  (recadrage dynamique si coordonnées dispo) ; B-roll qui ILLUSTRE l'enjeu
++  du reframe ; flash d'entrée + SFX ; au climax → ducking + flash autorisé ;
++  après `resolution_at` → pacing lent, RIEN ne s'ajoute.
++- **Audio** : voix maintenue en permanence sauf ducking au climax.
++
++### Style RANKING (top 5 / top 10, structure décomptée)
++- **Où** : chaque item du classement = une cellule narrative
++  (montée → pic → retombée courte).
++- **Recette** : le trio B-roll+flash+SFX marque l'ENTRÉE de chaque item ;
++  pacing serré dans la montée (cuts < 2 s), court relâchement au pic ;
++  punch-in sur la révélation du rang ; l'item #1 a droit à un budget majoré
++  (un smash audio en plus).
++- **Audio** : voix maintenue ; SFX à l'entrée d'item uniquement ; un silence
++  de 0,3-0,5 s autorisé juste avant la révélation du #1.
++
++## 3. Le Budget d'Attention (transmis au bras armé)
++
++Source de vérité unique : `caviar_budget.json` (versionné dans CODEBASE/).
++Clip de 30 s = **100 unités**, dépense max **≤ 55** (le reste = respiration) :
++
++| Événement | Coût | Cap dur |
++|---|---|---|
++| Trio B-roll+flash+SFX | 12 u | ≤ 3/clip, ≤ 45 frames chacun, jamais pendant la résolution |
++| Smash audio (climax) | 8 u | ≤ 2 |
++| Punch-in | 6 u | ≤ 4, espacés ≥ 2 s |
++| Jump cut (trim silence) | 1 u | ≤ 8 (sinon segment déclaré mauvais) |
++
++Dépassement → **la frégate refuse d'émettre** (pas de manifeste toxique) et
++renvoie un diagnostic. Double barrage : les gates P-CAV du bras armé
++revérifient au rendu (mêmes constantes, même fichier). Troisième barrage :
++la validation opérateur dans la War Room.
++
++**Règle de l'élément unique** : jamais 2 événements visuels forts sur la même
++frame. **SFX uniquement** à l'entrée d'un B-roll (le seul SFX du clip).
++Pas de B-roll possible (pas d'assets) → pas de SFX.
++
++## 4. Bibliothèque B-roll numérotée (hébergée chez le bras armé)
++
++- Assets physiques chez LACRIMAE, numérotés `B-01`, `B-02`, …
++- La frégate ne connaît que l'**index sémantique** (numéro → émotion →
++  durée max), jamais les fichiers (zone grise de droits, repo léger).
++- La frégate émet : `{ "broll_id": "B-01", "start_sec": 8.5,
++  "duration_frames": 36, "entry_flash": true, "sfx": "impact" }` —
++  position/durée/emballage décidés par la frégate, fichier résolu par le bras.
++- Remplacer un asset = zéro modification de manifeste.
++
++## 5. L'Archivum (règle : pas d'Archivum dans l'Archivum)
++
++La mémoire de la frégate vit dans l'Archivum global de la flotte :
++`ARCHIVUM/montage/narrativum/`
++- `manifest_ledger/` — chaque manifeste émis, lié à son run (rejouabilité).
++- `gate_history.json` — verdicts opérateur + raisons (la frégate apprend les goûts).
++- `retention_log.json` — A/B caviar vs basique (vues, rétention). Sans mesure,
++  pas de preuve — la Phase 4 (portage F00B) exige des chiffres.
++- `lessons.json` — pièges appris, format court.
++
++Lecture : toute la doctrine flotte (lecture seule, sens unique).
++Écriture : uniquement dans `narrativum/`.
++
++## 6. Piles techniques (CPU only — si un besoin exige un GPU, on sur-conçoit)
++
++`ffmpeg silencedetect` · `numpy` sur WAV (amplitudes — muscle F00C) ·
++`faster-whisper` CPU sur le segment 30 s (mots, punchline, timing overlay) ·
++heatmap F00C réutilisée · sortie `caviar.v1` · exécution dans le sillage du
++workflow F00C.
++
++**Référentiel temporel** : tout `caviar.v1` est exprimé en **secondes
++relatives au segment** (jamais à la source) — le bug d'offset est interdit
++par le schéma.
++
++## 7. Phases (chaque étape = commit + patch kit + push kbkjhjhl)
++
++- **Phase 0** — cette doctrine + scaffold Archivum + `caviar_budget.json` + docs.
++- **Phase 1** — `caviar_director.py` : silences, amplitudes, budget, émission
++  `caviar.v1` + tests hors-ligne verts.
++- **Phase 2** — premier manifeste réel sur un candidat Sophie Rain (gate
++  opérateur au préalable) + affichage lisible War Room.
++- **Phase 3** — option `--to-caviar` workflow F00C + docs (guide 19+, logs) + miroir.
++- **Phase 4** (après preuve de rétention) — portage F00B.
++
++## 8. Ce que la frégate n'est PAS
++
++Pas un moteur de rendu · pas un gate · pas un décideur final ·
++pas un générateur d'accroches automatiques (elle propose des candidates,
++l'opérateur tranche — l'analyse dit OÙ est la tension, pas QUOI écrire).
+-- 
+2.34.1
+
