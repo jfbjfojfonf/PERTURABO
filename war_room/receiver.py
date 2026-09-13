@@ -20,6 +20,7 @@ Test sans serveur :
 from __future__ import annotations
 
 import argparse
+import traceback
 import json
 import os
 import sys
@@ -122,6 +123,18 @@ def store_gate(run_id: str, candidate_id: str, verdict: str) -> tuple[dict, str]
 def make_handler(token: str):
     class SiegeHandler(BaseHTTPRequestHandler):
         def do_POST(self):  # noqa: N802 - API http.server
+            try:
+                self._do_POST_safe()
+            except (BrokenPipeError, ConnectionResetError):
+                pass  # client parti avant la réponse : rien à faire
+            except Exception as exc:  # noqa: BLE001 - une erreur ne tue jamais le serveur
+                traceback.print_exc()
+                try:
+                    self._reply(500, {"error": f"erreur interne récepteur : {exc}"})
+                except Exception:  # noqa: BLE001
+                    pass
+
+        def _do_POST_safe(self):  # noqa: N802 - API http.server
             length = int(self.headers.get("Content-Length") or 0)
             raw = self.rfile.read(length) if length else b"{}"
             # Le token partagé protège le webhook F00C (POST /). La gate du
@@ -158,6 +171,18 @@ def make_handler(token: str):
                               "total_runs": doc["total_runs"], "existing_gates": gates})
 
         def do_GET(self):  # noqa: N802
+            try:
+                self._do_GET_safe()
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+            except Exception as exc:  # noqa: BLE001 - une erreur ne tue jamais le serveur
+                traceback.print_exc()
+                try:
+                    self._reply(500, {"error": f"erreur interne récepteur : {exc}"})
+                except Exception:  # noqa: BLE001
+                    pass
+
+        def _do_GET_safe(self):  # noqa: N802
             path = self.path.split("?")[0]
             if path.startswith("/api/war-room"):
                 doc = _load_doc()
@@ -212,7 +237,11 @@ def make_handler(token: str):
 
 
 def self_test() -> int:
-    """Round-trip complet : payload → validation → stockage → gate."""
+    """Round-trip complet : payload → validation → stockage → gate.
+
+    Non destructif : l'état réel (docs/data/war_room.json) est restauré après.
+    """
+    real_doc = _load_doc()  # sauvegarde — le test ne doit jamais écraser le réel
     sample = {
         "run_id": "f00c_selftest",
         "siege_id": "SOPHIE_RAIN_TEST",
@@ -239,7 +268,9 @@ def self_test() -> int:
     assert doc["gates"]["f00c_selftest"]["clip_01"]["verdict"] == "approved"
     doc, reason = store_gate("f00c_selftest", "clip_01", "maybe")
     assert reason != "ok", "un verdict inconnu doit être rejeté"
-    print(f"SELF-TEST OK — {DATA_PATH} (runs: {doc['total_runs']})")
+    DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DATA_PATH.write_text(json.dumps(real_doc, ensure_ascii=False, indent=2), encoding="utf-8")  # restauration
+    print(f"SELF-TEST OK — {DATA_PATH} (runs: {doc['total_runs']}, état réel restauré)")
     return 0
 
 

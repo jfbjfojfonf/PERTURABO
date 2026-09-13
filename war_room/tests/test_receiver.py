@@ -1,4 +1,4 @@
-"""Tests WAR ROOM receiver — hors-ligne (aucun réseau)."""
+"""Tests WAR ROOM receiver — hors-ligne (aucun réseau, état réel jamais touché)."""
 import importlib.util
 import json
 import sys
@@ -8,6 +8,11 @@ MODULE_PATH = Path(__file__).parents[1] / "receiver.py"
 spec = importlib.util.spec_from_file_location("war_room_receiver", MODULE_PATH)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
+
+# Les tests écrivent dans un fichier temporaire — JAMAIS dans docs/data/war_room.json
+import tempfile
+_TMP = tempfile.mkdtemp(prefix="war_room_tests_")
+module.DATA_PATH = Path(_TMP) / "war_room.json"
 
 
 def _sample(mode="vod", status="full"):
