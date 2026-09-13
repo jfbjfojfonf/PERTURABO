@@ -185,6 +185,50 @@ def test_build_webhook_payload_canonical():
     assert "pushed_at" in payload
 
 
+def test_build_webhook_payload_v2_enrichment():
+    """Audit 2026-09-13 : le dashboard ne devine plus — candidats enrichis + couverture."""
+    manifest = {
+        "generated_at": "2026-09-13T10:00:00+00:00",
+        "status": "full",
+        "source": {"reference": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+                   "platform": "youtube", "content_type": "video", "id": "cP8vli4kfhs"},
+        "attention_heatmap": [
+            {"bucket": 0, "start_sec": 0.0, "end_sec": 10.0,
+             "attention": 0.2, "attention_norm": 0.4},
+            {"bucket": 1, "start_sec": 10.0, "end_sec": 20.0,
+             "attention": 0.8, "attention_norm": 1.0},
+        ],
+        "replayed_note": "pas de Most Replayed exposé (test)",
+        "fused_heatmap": [],
+        "raw_data": {"metadata_raw": {"duration": 20}},
+    }
+    raw_candidate = {"candidate_id": "voxc-1", "start_sec": 10.0, "end_sec": 20.0,
+                     "duration_sec": 10.0, "signal_type": "platform_heat",
+                     "signal_intensity": 1.0}
+    payload = module.build_webhook_payload(manifest, candidates=[raw_candidate])
+    c = payload["candidates"][0]
+    # Champs que le dashboard lit — verrouillés par contrat
+    assert c["id"] == "voxc-1" and c["rank"] == 1
+    assert c["score"] == 100.0
+    assert c["start_label"] == "0:10" and c["end_label"] == "0:20"
+    assert c["vs_mean_pct"] == 42.9          # intensité 1.0 vs moyenne 0.7 → +42,9 %
+    assert "shorts" in c["platforms"]
+    # Couverture analysée — le doute « 8 min sur plus » ne revient jamais
+    assert payload["duration_total_sec"] == 20
+    assert payload["analyzed_duration_sec"] == 20.0
+    assert payload["coverage_pct"] == 100.0
+    assert payload["mean_attention"] == 0.7
+    assert payload["replayed_note"] == "pas de Most Replayed exposé (test)"
+
+
+def test_fmt_clock_labels():
+    assert module._fmt_clock(0) == "0:00"
+    assert module._fmt_clock(8.563) == "0:09"      # arrondi
+    assert module._fmt_clock(453.84) == "7:34"
+    assert module._fmt_clock(3661) == "1:01:01"
+    assert module._fmt_clock(None) == "?"
+
+
 def test_push_webhook_sends_token_and_payload(tmp_path, monkeypatch):
     captured = {}
 

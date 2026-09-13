@@ -419,21 +419,73 @@ def fuse_heatmaps(video_heatmap: list[dict], replayed_curve: list[dict],
     return fused
 
 
+def _fmt_clock(seconds: float | None) -> str:
+    """453.84 → '7:34' ; 3661 → '1:01:01'. Labels lisibles pour la Salle de Guerre."""
+    if seconds is None:
+        return "?"
+    total = int(round(seconds))
+    h, rem = divmod(total, 3600)
+    m, s = divmod(rem, 60)
+    return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
+
+
 def build_webhook_payload(manifest: dict, candidates: list[dict] | None = None,
                           run_id: str | None = None) -> dict:
-    """Contrat Salle de Guerre (PLAN_SALLE_DE_GUERRE §4) : le Prince voit tout."""
+    """Contrat Salle de Guerre (PLAN_SALLE_DE_GUERRE §4) : le Prince voit tout.
+
+    V2 (audit 2026-09-13) : le dashboard ne doit plus jamais deviner.
+    Chaque candidat part avec id/rank/score/labels/vs_mean/plateformes ; le run
+    porte duration_total_sec, analyzed_duration_sec et coverage_pct — la durée
+    analysée est vérifiable d'un coup d'œil (fini le doute « 8 min sur plus »).
+    """
     source = manifest.get("source") or {}
+    heat = manifest.get("attention_heatmap") or []
+    analyzed = heat[-1].get("end_sec") if heat else None
+    raw_meta = (manifest.get("raw_data") or {}).get("metadata_raw") or {}
+    duration_total = raw_meta.get("duration") or analyzed
+    atts = [float(b.get("attention_norm") or 0) for b in heat]
+    mean_att = (sum(atts) / len(atts)) if atts else 0.0
+
+    enriched: list[dict] = []
+    for i, cand in enumerate(candidates or [], 1):
+        item = dict(cand)
+        item.setdefault("id", cand.get("candidate_id") or f"voxc-{i}")
+        item.setdefault("rank", cand.get("rank") or i)
+        score = cand.get("score")
+        if score is None:
+            score = round(float(cand.get("signal_intensity") or 0) * 100, 2)
+        item.setdefault("score", score)
+        item.setdefault("duration_sec", cand.get("duration_sec"))
+        item.setdefault("start_label", _fmt_clock(cand.get("start_sec")))
+        item.setdefault("end_label", _fmt_clock(cand.get("end_sec")))
+        inten = float(cand.get("signal_intensity") or 0)
+        item.setdefault("vs_mean_pct",
+                        round((inten - mean_att) / mean_att * 100, 1) if mean_att else None)
+        item.setdefault("platforms", ["shorts", "tiktok", "reels", "x"])
+        enriched.append(item)
+
+    coverage = None
+    if analyzed and duration_total:
+        coverage = round(float(analyzed) / float(duration_total) * 100, 1)
+
     return {
         "run_id": run_id or os.environ.get("GH_RUN_ID")
                   or f"f00c_{(manifest.get('generated_at') or '').replace(':', '')}",
         "siege_id": source.get("reference") or source.get("id") or "",
+        "title": raw_meta.get("title"),
+        "channel": raw_meta.get("channel") or raw_meta.get("uploader"),
         "mode": "live" if source.get("content_type") == "live_ongoing" else "vod",
         "status": manifest.get("status"),
         "source": source,
-        "heatmap": manifest.get("attention_heatmap") or [],
+        "duration_total_sec": duration_total,
+        "analyzed_duration_sec": analyzed,
+        "coverage_pct": coverage,
+        "mean_attention": round(mean_att, 4) if atts else None,
+        "heatmap": heat,
         "replayed_curve": manifest.get("replayed_curve") or [],
+        "replayed_note": manifest.get("replayed_note"),
         "fused_heatmap": manifest.get("fused_heatmap") or [],
-        "candidates": candidates or [],
+        "candidates": enriched,
         "pushed_at": datetime.now(timezone.utc).isoformat(),
     }
 

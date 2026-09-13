@@ -7,8 +7,13 @@
 
 ## 📅 DERNIÈRE MISE À JOUR
 
-**Date** : 2026-09-12
-**Ajout** : LIVRAISONS C+D (Salle de Guerre complète) — dashboard + mode LIVE + gate GO/NO-GO cockpit
+**Date** : 2026-09-13
+**Ajout** : AUDIT WARSMITH corrigé — contrat webhook V2 (candidats enrichis +
+couverture analysée affichée) et dashboard v2 (axes gradués, tooltips, cartes
+complètes, gate fonctionnelle via `candidate_id`, légende truthful, histogramme,
+bandeau d'erreur). Vidéo réelle du Warsmith en cours d'analyse : `cP8vli4kfhs`
+(1 h 42, « How Sophie Rain Makes And Spends $100,000,000 Per Year »).
+F00B non touché (territoire respecté).
 
 > 🆕 **Livraisons C et D faites** (plan : `F00C_VOX/PLAN_SALLE_DE_GUERRE.md`) :
 > la Salle de Guerre est **complète**. Récepteur v2 (`WAR_ROOM/receiver.py`,

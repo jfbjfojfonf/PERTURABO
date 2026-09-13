@@ -8,6 +8,30 @@
 
 ## Entrées de mise en service
 
+### 2026-09-13 — AUDIT WARSMITH + CONTRAT V2 (le dashboard ne devine plus)
+
+- **Audit du Warsmith sur la preview** : file des candidats vide, pas d'axes,
+  rien de cliquable, légende mensongère, doute « 8 min sur une vidéo plus longue ».
+- **Cause racine (bug bloquant)** : le dashboard lisait `c.id`/`c.score`/`c.rank`
+  tandis que F00C pousse `candidate_id`/`signal_intensity` — TypeError JS avalé
+  en silence par `catch(_)` → liste vide, gate envoyant `undefined`.
+- **Fait établi** : la 1re URL (`qm3E3cchBmQ`) = 514 s réels (`not_live`, confirmé
+  yt-dlp) — F00C a analysé 100 % de cette vidéo. Le doute venait de l'absence de
+  durée affichée. Nouvelle URL du Warsmith (`cP8vli4kfhs`) = 6156 s (1 h 42).
+- **Contrat V2 (`build_webhook_payload`)** : chaque candidat part avec `id`,
+  `rank`, `score /100`, `start_label`/`end_label` (m:ss), `vs_mean_pct`,
+  `platforms` ; le run porte `title`, `channel`, `duration_total_sec`,
+  `analyzed_duration_sec`, `coverage_pct`, `mean_attention`, `replayed_note`.
+- **Dashboard v2 (docs/war_room.html)** : axe X gradué (m:ss), axe Y 0→1,
+  tooltips exacts au survol, candidats cliquables ↔ timeline, cartes complètes
+  (durée, position %, intensité vs moyenne, barre métrique), légende truthful
+  (présente/absente), histogramme de distribution, bandeau couverture
+  (« analysé X / Y — ✔ complet »), bandeau d'erreur (fini le silence).
+- **Workflow runner** : installation de deno ajoutée (runtime JS exigé par
+  yt-dlp pour les challenges n/sig — warning observé au test local).
+- **Tests** : 25/25 verts (2 nouveaux : enrichissement V2 + labels m:ss).
+- **Territoire intact** : F00B (docs/index.html + radar) NON touché.
+
 ### 2026-09-12 — LIVRAISONS C+D : Salle de Guerre complète (dashboard + mode LIVE + gate cockpit)
 
 - **Récepteur v2** (`WAR_ROOM/receiver.py`, miroir dans ce repo) : sert le
