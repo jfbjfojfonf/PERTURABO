@@ -1,0 +1,3250 @@
+From 36e304b0dd36c8df1db4b3ab37486480e3c85336 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sun, 13 Sep 2026 12:00:46 +0000
+Subject: [PATCH] =?UTF-8?q?[v2-live-vox-c][F00D]=20R=C3=A9colte=20Tim=20Ru?=
+ =?UTF-8?q?nia=20:=204=20transcripts=20+=20sources=20d'autorit=C3=A9?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Transcripts Archivum : 7 cuts (J0ydlAqg6_8), 5 secrets storytelling
+(dhpazqW_OaU), 21 erreurs fatales (oiNnWm8Z5l4) + transcript de session
+Warsmith structuré au vocabulaire contractuel F00D. _INDEX.md à jour (14).
+PLAN_NARRATIVUM §5bis : la frégate charge les patterns existants du
+CLIPPING ARCHIVUM comme contraintes (styles, broll_integration, cuts,
+énergie, audio) — budget caviar prime en cas de conflit, conflit consigné.
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../transcripts/7_cuts_session_warsmith.json  |   62 +
+ .../transcripts/J0ydlAqg6_8_tim_runia.json    |  745 ++++++++++
+ .../ARCHIVUM/montage/transcripts/_INDEX.md    |   19 +-
+ .../transcripts/dhpazqW_OaU_tim_runia.json    | 1045 ++++++++++++++
+ .../transcripts/oiNnWm8Z5l4_tim_runia.json    | 1269 +++++++++++++++++
+ .../F00D_NARRATIVUM/PLAN_NARRATIVUM.md        |   23 +
+ 6 files changed, 3161 insertions(+), 2 deletions(-)
+ create mode 100644 MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/7_cuts_session_warsmith.json
+ create mode 100644 MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/J0ydlAqg6_8_tim_runia.json
+ create mode 100644 MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/dhpazqW_OaU_tim_runia.json
+ create mode 100644 MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/oiNnWm8Z5l4_tim_runia.json
+
+diff --git a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/7_cuts_session_warsmith.json b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/7_cuts_session_warsmith.json
+new file mode 100644
+index 0000000..9385ff3
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/7_cuts_session_warsmith.json
+@@ -0,0 +1,62 @@
++{
++ "title": "The ONLY 7 Cuts You Need To Tell Any Story (Tim Runia) — transcript de session Warsmith",
++ "source": "https://www.youtube.com/watch?v=J0ydlAqg6_8",
++ "duration_sec": 563,
++ "transcript": [
++  {"timestamp": "0:00", "text": "I used to think that a good edit had a lot of layers, a lot of effects, and even more transitions."},
++  {"timestamp": "0:05", "text": "But after 15 years of being a filmmaker and editing hundreds if not thousands of videos, I realized that great storytelling doesn't come from complicated edits."},
++  {"timestamp": "0:15", "text": "It comes from simple, intentional cuts that actually make the story feel like a story."},
++  {"timestamp": "0:20", "text": "So today I will walk you through the only seven cuts you really need with editing, because these are cuts that I keep coming back to no matter what kind of video I'm making."},
++  {"timestamp": "0:30", "text": "So let's start with one of my favorites. The flow cut."},
++  {"timestamp": "0:33", "text": "This is when your shots feel like they're dancing together. It's smooth and invisible."},
++  {"timestamp": "0:39", "text": "When something moves in your frame, like a person or an object, or it could even be the camera itself, your viewer's eyes start to follow that motion."},
++  {"timestamp": "0:48", "text": "And if your next shot picks up that movement in the same direction, their eyes just keep going effortlessly."},
++  {"timestamp": "1:08", "text": "If instead the first motion goes up and the next shot starts going to the opposite corner or going sideways, that's friction and the viewer will feel the cut."},
++  {"timestamp": "1:20", "text": "Start thinking of editing a bit more like choreography. If you guide the eyes naturally, the viewer won't notice the cuts and they will just stay inside of the story."},
++  {"timestamp": "1:42", "text": "Where the flow cut is really about smooth transitions, this one is about disruption actually."},
++  {"timestamp": "1:48", "text": "A smash cut is when you intentionally break the rhythm. It's a sudden cut from one scene to a completely different one."},
++  {"timestamp": "1:57", "text": "And it often works best when music or the sound cuts out too, because that really grabs attention."},
++  {"timestamp": "2:03", "text": "And it creates contrast and it tells the viewer, hey, pay attention, because something just changed."},
++  {"timestamp": "2:27", "text": "What makes this cut really powerful is the emotional reset it adds. And this can add humor or tension or simply just keep the viewer from falling into a predictable rhythm."},
++  {"timestamp": "2:45", "text": "Just don't overdo it because, you know, surprise only works if it's, well, surprising."},
++  {"timestamp": "3:07", "text": "But now let's talk about the jump cut."},
++  {"timestamp": "3:11", "text": "The jump cut gets a bad reputation because it's used like this in talking head videos. But it's actually one of the most practical cuts there is because you're staying in the same shots, but you skip forward in time."},
++  {"timestamp": "3:30", "text": "This is also one of those cuts that I really like to land on exactly the beat. Because that just feels good sometimes."},
++  {"timestamp": "3:39", "text": "So it's a great way to show progress repetition or speed something up."},
++  {"timestamp": "3:54", "text": "So the action cut is all about editing in the middle of movement."},
++  {"timestamp": "3:58", "text": "So when you cut during an action, like sitting down for example, the motion continues across the cut. It feels smooth and it feels natural because your viewer's brain is already following the movement."},
++  {"timestamp": "4:24", "text": "The key here is again to guide the viewer's eyes. If their attention stays on the same spot in the frame, the cut becomes almost invisible."},
++  {"timestamp": "4:43", "text": "And sometimes, you know, just a few frames earlier or later can really make the difference. So really pay attention to that."},
++  {"timestamp": "5:01", "text": "So yeah, this is actually not a single cut. It's more like a sequence of cuts that work together so you can guide the viewer through a moment."},
++  {"timestamp": "5:13", "text": "I'm talking about the wide medium close pattern."},
++  {"timestamp": "5:17", "text": "So you start with a wide shot to show us where we are, then a medium to show what's happening, and then a closeup to show details or show emotion."},
++  {"timestamp": "5:30", "text": "And this gives your story structure and it gives your audience clarity."},
++  {"timestamp": "5:44", "text": "Maybe you will skip the medium entirely for a more of emotional kind of hit going from wide to close immediately."},
++  {"timestamp": "5:51", "text": "Or you flip it around and you start close to only reveal the full picture in the end to surprise the viewer."},
++  {"timestamp": "6:16", "text": "So this is one of the most satisfying cuts when you pull it off right. It's called a match cut."},
++  {"timestamp": "6:21", "text": "And it connects two shots using something visually similar. So that could be a shape or subject in the same position within the frame."},
++  {"timestamp": "6:35", "text": "So it can link moments in time or places, or you can use it to create metaphors."},
++  {"timestamp": "6:55", "text": "And if you're matching people, there's one trick that's really important to remember, and it's that you try to match the eye position across the cut."},
++  {"timestamp": "7:02", "text": "Because when the eyes stay in the same place on the screen, the transition will feel way more natural."},
++  {"timestamp": "7:15", "text": "You know, sometimes the most important part of a cut is when it actually happens."},
++  {"timestamp": "7:20", "text": "Editing is rhythm. And if your video moves at the same pace the whole time, your audience will sure start to tune out."},
++  {"timestamp": "7:28", "text": "So paying attention to the speed of your cuts is how you keep them engaged by shifting the tempo."},
++  {"timestamp": "7:33", "text": "The faster cuts here are building tension, and the slower cuts are there to let something land emotionally."},
++  {"timestamp": "7:41", "text": "It's all about contrast. Just like music, it needs climax, and it needs a release."},
++  {"timestamp": "7:46", "text": "And I use this when I want to change the energy of a scene or guide the viewer into how I want them to feel: exciting or calm or emotional or chaotic."},
++  {"timestamp": "8:57", "text": "You don't need to cram all these seven cuts into one video. Just ask yourself, what does this moment need? Does it need a smooth flow, a surprise, or a shift in rhythm maybe?"},
++  {"timestamp": "9:12", "text": "From there, you can always build further."}
++ ],
++ "key_techniques": [
++  "flow_cut",
++  "smash_cut",
++  "jump_cut",
++  "action_cut",
++  "wide_medium_close",
++  "match_cut",
++  "pacing_cut",
++  "eye_position_match",
++  "sound_cut_with_smash",
++  "cut_on_beat"
++ ]
++}
+diff --git a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/J0ydlAqg6_8_tim_runia.json b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/J0ydlAqg6_8_tim_runia.json
+new file mode 100644
+index 0000000..96a598c
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/J0ydlAqg6_8_tim_runia.json
+@@ -0,0 +1,745 @@
++{
++ "title": "The ONLY 7 Cuts You Need To Tell Any Story (Tim Runia)",
++ "source": "https://www.youtube.com/watch?v=J0ydlAqg6_8",
++ "duration_sec": 559,
++ "transcript": [
++  {
++   "timestamp": "0:00",
++   "text": "I used to think that a good edit had a lot of layers, a lot of effects,"
++  },
++  {
++   "timestamp": "0:04",
++   "text": "and even more transitions."
++  },
++  {
++   "timestamp": "0:05",
++   "text": "But after 15 years of being a filmmaker and editing hundreds"
++  },
++  {
++   "timestamp": "0:09",
++   "text": "if not thousands of videos, I realized that great storytelling"
++  },
++  {
++   "timestamp": "0:13",
++   "text": "doesn't come from complicated edits."
++  },
++  {
++   "timestamp": "0:15",
++   "text": "It comes from simple, intentional cuts that actually make the story"
++  },
++  {
++   "timestamp": "0:19",
++   "text": "feel like a story."
++  },
++  {
++   "timestamp": "0:20",
++   "text": "So today I will walk you through the only seven cuts"
++  },
++  {
++   "timestamp": "0:22",
++   "text": "you really need with editing, because these are cuts"
++  },
++  {
++   "timestamp": "0:24",
++   "text": "that I keep coming back to no matter what kind of video I'm making."
++  },
++  {
++   "timestamp": "0:28",
++   "text": "So let's start with one of my favorites."
++  },
++  {
++   "timestamp": "0:30",
++   "text": "The flow cut."
++  },
++  {
++   "timestamp": "0:33",
++   "text": "This is when your shots feel like they're dancing together."
++  },
++  {
++   "timestamp": "0:36",
++   "text": "It's smooth and invisible."
++  },
++  {
++   "timestamp": "0:38",
++   "text": "So here's the basic idea."
++  },
++  {
++   "timestamp": "0:39",
++   "text": "When something moves in your frame,"
++  },
++  {
++   "timestamp": "0:41",
++   "text": "like a person or an object, or it could even be the camera itself,"
++  },
++  {
++   "timestamp": "0:45",
++   "text": "your viewer’s eyes start to follow that motion."
++  },
++  {
++   "timestamp": "0:48",
++   "text": "And if your next shot picks up that movement"
++  },
++  {
++   "timestamp": "0:50",
++   "text": "in the same direction, their eyes just keep going effortlessly."
++  },
++  {
++   "timestamp": "0:54",
++   "text": "For example, this marker being dragged up, followed"
++  },
++  {
++   "timestamp": "0:57",
++   "text": "by a new shot that continuous the upward motion from the camera."
++  },
++  {
++   "timestamp": "1:01",
++   "text": "You can notice here: my hand goes up in the first shot and in the next...."
++  },
++  {
++   "timestamp": "1:05",
++   "text": "That upward motion continues with the camera movement."
++  },
++  {
++   "timestamp": "1:08",
++   "text": "So your eyes are guided upwards If instead the first motion"
++  },
++  {
++   "timestamp": "1:12",
++   "text": "goes up and the next shot starts going to the opposite corner"
++  },
++  {
++   "timestamp": "1:15",
++   "text": "or going sideways, that's friction and the viewer will feel the cut."
++  },
++  {
++   "timestamp": "1:19",
++   "text": "So..."
++  },
++  {
++   "timestamp": "1:20",
++   "text": "Start thinking of editing a bit more like choreography."
++  },
++  {
++   "timestamp": "1:23",
++   "text": "You know, if you guide the eyes naturally, the viewer won't"
++  },
++  {
++   "timestamp": "1:26",
++   "text": "notice the cuts and they will just stay inside of the story."
++  },
++  {
++   "timestamp": "1:29",
++   "text": "That's what you want."
++  },
++  {
++   "timestamp": "1:31",
++   "text": "So the next time you edit, look for flow in the motion."
++  },
++  {
++   "timestamp": "1:34",
++   "text": "Is your subject moving? Is your camera moving?"
++  },
++  {
++   "timestamp": "1:37",
++   "text": "And can you connect those directions from one shot to the next?"
++  },
++  {
++   "timestamp": "1:42",
++   "text": "Where the"
++  },
++  {
++   "timestamp": "1:42",
++   "text": "flow cut is really about smooth transitions."
++  },
++  {
++   "timestamp": "1:45",
++   "text": "This one is about disruption actually."
++  },
++  {
++   "timestamp": "1:48",
++   "text": "And that's really why it works so well,"
++  },
++  {
++   "timestamp": "1:50",
++   "text": "because a smash cut is when you intentionally break the rhythm,"
++  },
++  {
++   "timestamp": "1:54",
++   "text": "So it's a sudden cut from one scene to a completely different one."
++  },
++  {
++   "timestamp": "1:57",
++   "text": "And it's often works best when music or the sound cuts out too,"
++  },
++  {
++   "timestamp": "2:01",
++   "text": "because that's really grabs attention."
++  },
++  {
++   "timestamp": "2:03",
++   "text": "And it creates contrast and it tells the viewer, hey,"
++  },
++  {
++   "timestamp": "2:06",
++   "text": "pay attention, because something just changed."
++  },
++  {
++   "timestamp": "2:09",
++   "text": "What started out as random fun projects with a friend..."
++  },
++  {
++   "timestamp": "2:11",
++   "text": "turned into a full blown creative video agency"
++  },
++  {
++   "timestamp": "2:14",
++   "text": "Small jobs became bigger ones..."
++  },
++  {
++   "timestamp": "2:16",
++   "text": "but as things got bigger..."
++  },
++  {
++   "timestamp": "2:18",
++   "text": "I guess something changed..."
++  },
++  {
++   "timestamp": "2:27",
++   "text": "So what makes this cut really powerful is the emotional reset it adds."
++  },
++  {
++   "timestamp": "2:30",
++   "text": "And this can add humor or tension or simply"
++  },
++  {
++   "timestamp": "2:34",
++   "text": "just keep the viewer from falling into a predictable rhythm."
++  },
++  {
++   "timestamp": "2:37",
++   "text": "So yeah, really try to use this when you want to create energy or surprise"
++  },
++  {
++   "timestamp": "2:41",
++   "text": "or highlight a turning point and really get the viewer's attention."
++  },
++  {
++   "timestamp": "2:45",
++   "text": "Just don't overdo it because, you know, surprise only works if it's,"
++  },
++  {
++   "timestamp": "2:50",
++   "text": "well, surprising."
++  },
++  {
++   "timestamp": "2:56",
++   "text": "by the way, if you ever get stuck on figuring out what to shoot"
++  },
++  {
++   "timestamp": "2:58",
++   "text": "or how to shape your story before editing, I made something that might help."
++  },
++  {
++   "timestamp": "3:02",
++   "text": "And it's called the Story Starter Kit."
++  },
++  {
++   "timestamp": "3:04",
++   "text": "So if that sounds interesting, you can find more info in the description."
++  },
++  {
++   "timestamp": "3:07",
++   "text": "But now let's talk about the jump cut."
++  },
++  {
++   "timestamp": "3:11",
++   "text": "the jump cut gets a bad reputation because it's used like this"
++  },
++  {
++   "timestamp": "3:14",
++   "text": "in talking head videos."
++  },
++  {
++   "timestamp": "3:16",
++   "text": "But it's actually one of the most practical cuts there is because you're"
++  },
++  {
++   "timestamp": "3:19",
++   "text": "staying in the same shots, but you skip forward in time."
++  },
++  {
++   "timestamp": "3:23",
++   "text": "like here where I'm sitting down to work and I'm being frustrated"
++  },
++  {
++   "timestamp": "3:26",
++   "text": "for not getting anything done."
++  },
++  {
++   "timestamp": "3:27",
++   "text": "Same frame, different moments, quick jumps."
++  },
++  {
++   "timestamp": "3:30",
++   "text": "This is also one of those cuts that I really like to land on exactly the beat."
++  },
++  {
++   "timestamp": "3:34",
++   "text": "Because that just feels good sometimes."
++  },
++  {
++   "timestamp": "3:39",
++   "text": "So it's a great way"
++  },
++  {
++   "timestamp": "3:40",
++   "text": "to show progress repetition or speed something up."
++  },
++  {
++   "timestamp": "3:44",
++   "text": "And you can use it to make a scene fast or chaotic or also for fun."
++  },
++  {
++   "timestamp": "3:48",
++   "text": "That energy is exactly what keeps it interesting, I think."
++  },
++  {
++   "timestamp": "3:54",
++   "text": "So the action cut is all about editing in the middle of movement."
++  },
++  {
++   "timestamp": "3:58",
++   "text": "So when you cut during an action, like sitting down, for example,"
++  },
++  {
++   "timestamp": "4:01",
++   "text": "the motion continuous across the cut."
++  },
++  {
++   "timestamp": "4:04",
++   "text": "It feels smooth and it feels natural because your viewers brain"
++  },
++  {
++   "timestamp": "4:07",
++   "text": "is already following the movement."
++  },
++  {
++   "timestamp": "4:09",
++   "text": "Just like in a flow cut."
++  },
++  {
++   "timestamp": "4:11",
++   "text": "Here, I'm sitting down and right at the moment of sitting..."
++  },
++  {
++   "timestamp": "4:14",
++   "text": "I cut to the closed shot in the action."
++  },
++  {
++   "timestamp": "4:16",
++   "text": "And you know, it doesn't have to be fast or dramatic."
++  },
++  {
++   "timestamp": "4:18",
++   "text": "Even a slow calm action can really go fluid,if"
++  },
++  {
++   "timestamp": "4:22",
++   "text": "you cut it right in the middle of it,."
++  },
++  {
++   "timestamp": "4:24",
++   "text": "The key here is again to guide the viewer's eyes."
++  },
++  {
++   "timestamp": "4:27",
++   "text": "If their attention stays"
++  },
++  {
++   "timestamp": "4:28",
++   "text": "on the same spot in the frame, the cut becomes almost invisible."
++  },
++  {
++   "timestamp": "4:32",
++   "text": "Like here, this balloon is floating slowly."
++  },
++  {
++   "timestamp": "4:34",
++   "text": "And then I cut to a close up."
++  },
++  {
++   "timestamp": "4:36",
++   "text": "But because the dream sticker stays in the exact same place on the screen,"
++  },
++  {
++   "timestamp": "4:40",
++   "text": "your eyes don't have to move. So the cut feels right."
++  },
++  {
++   "timestamp": "4:43",
++   "text": "And sometimes, you know, just a few frames"
++  },
++  {
++   "timestamp": "4:44",
++   "text": "earlier or later can really make the difference."
++  },
++  {
++   "timestamp": "4:47",
++   "text": "So really pay attention to that."
++  },
++  {
++   "timestamp": "4:49",
++   "text": "But yeah, that's the magic of the action cut."
++  },
++  {
++   "timestamp": "4:51",
++   "text": "And it can really make everything feel alive."
++  },
++  {
++   "timestamp": "4:53",
++   "text": "So try this in your next is"
++  },
++  {
++   "timestamp": "4:55",
++   "text": "because it might only take a few frames, to make your story click a lot better."
++  },
++  {
++   "timestamp": "5:01",
++   "text": "So yeah, this is actually not a single cut."
++  },
++  {
++   "timestamp": "5:03",
++   "text": "It's more like a sequence of cuts that work together"
++  },
++  {
++   "timestamp": "5:06",
++   "text": "so you can guide the viewer through a moment."
++  },
++  {
++   "timestamp": "5:08",
++   "text": "And it's super basic,"
++  },
++  {
++   "timestamp": "5:09",
++   "text": "but basic doesn't have to mean boring and I use it all of the time."
++  },
++  {
++   "timestamp": "5:13",
++   "text": "I’m talking about the wide medium close pattern."
++  },
++  {
++   "timestamp": "5:17",
++   "text": "So you start with a wide shot to show us where we are, then a medium to show"
++  },
++  {
++   "timestamp": "5:22",
++   "text": "what's happening, and then a closeup to show details or show emotion."
++  },
++  {
++   "timestamp": "5:27",
++   "text": "So from wide to medium to close."
++  },
++  {
++   "timestamp": "5:30",
++   "text": "And this gives your story structure and it gives your audience clarity."
++  },
++  {
++   "timestamp": "5:34",
++   "text": "And it just works because clarity is really important."
++  },
++  {
++   "timestamp": "5:37",
++   "text": "And I still use this combination all of the time."
++  },
++  {
++   "timestamp": "5:40",
++   "text": "And once you've used this enough you will start to feel"
++  },
++  {
++   "timestamp": "5:43",
++   "text": "when to change it up."
++  },
++  {
++   "timestamp": "5:44",
++   "text": "You know, maybe you will skip the medium entirely for a more of emotional"
++  },
++  {
++   "timestamp": "5:48",
++   "text": "kind of hit going from wide to close immediately."
++  },
++  {
++   "timestamp": "5:51",
++   "text": "Or you flip it around and you start close to only reveal the full picture"
++  },
++  {
++   "timestamp": "5:55",
++   "text": "in the end to surprise"
++  },
++  {
++   "timestamp": "5:57",
++   "text": "the viewer that someone is actually in a desert, for example."
++  },
++  {
++   "timestamp": "6:00",
++   "text": "I didn't even recognize where I was anymore."
++  },
++  {
++   "timestamp": "6:04",
++   "text": "But before you break the pattern, maybe start working with it first, because"
++  },
++  {
++   "timestamp": "6:07",
++   "text": "it's really one of the most easiest ways to bring some clarity into your edit."
++  },
++  {
++   "timestamp": "6:12",
++   "text": "And that clarity is really important for your viewers."
++  },
++  {
++   "timestamp": "6:16",
++   "text": "So this is one of the"
++  },
++  {
++   "timestamp": "6:17",
++   "text": "most satisfying cuts when you pull it off right."
++  },
++  {
++   "timestamp": "6:20",
++   "text": "It's called a match cut."
++  },
++  {
++   "timestamp": "6:21",
++   "text": "And it connects two shots using something visually similar."
++  },
++  {
++   "timestamp": "6:25",
++   "text": "So that could be a shape or subject in the same position within the frame."
++  },
++  {
++   "timestamp": "6:30",
++   "text": "And it's kind of a way to say that these two things belong together."
++  },
++  {
++   "timestamp": "6:35",
++   "text": "So it can link moments in time or places, or you can use it to create metaphors"
++  },
++  {
++   "timestamp": "6:41",
++   "text": "I really use this when I want to show a connection"
++  },
++  {
++   "timestamp": "6:43",
++   "text": "between things, like a past version of me turning it to the present one,"
++  },
++  {
++   "timestamp": "6:47",
++   "text": "or to have a smooth transition between two completely different scenes."
++  },
++  {
++   "timestamp": "6:51",
++   "text": "...that I wanted to be a YouTuber just like half of the world today."
++  },
++  {
++   "timestamp": "6:55",
++   "text": "And if you're matching people, there's one trick that's"
++  },
++  {
++   "timestamp": "6:57",
++   "text": "really important to remember, and it's that you try to match the eye position"
++  },
++  {
++   "timestamp": "7:01",
++   "text": "across the cut."
++  },
++  {
++   "timestamp": "7:02",
++   "text": "Because when the eyes stay"
++  },
++  {
++   "timestamp": "7:04",
++   "text": "in the same place on the screen, the transition will feel way more natural."
++  },
++  {
++   "timestamp": "7:07",
++   "text": "So, try using a match cut next time to intentionally connect two things"
++  },
++  {
++   "timestamp": "7:12",
++   "text": "that mean something together."
++  },
++  {
++   "timestamp": "7:15",
++   "text": "You know, sometimes the most important part of a cut"
++  },
++  {
++   "timestamp": "7:18",
++   "text": "is when it's actually happens."
++  },
++  {
++   "timestamp": "7:20",
++   "text": "Editing is rhythm."
++  },
++  {
++   "timestamp": "7:22",
++   "text": "And if your video moves at the same pace the whole time,"
++  },
++  {
++   "timestamp": "7:25",
++   "text": "your audience will sure start to tune out."
++  },
++  {
++   "timestamp": "7:28",
++   "text": "So paying attention to the speed of your cuts"
++  },
++  {
++   "timestamp": "7:30",
++   "text": "is how you keep them engaged by shifting the tempo."
++  },
++  {
++   "timestamp": "7:33",
++   "text": "The faster cuts here are building tension, and the slower cuts"
++  },
++  {
++   "timestamp": "7:36",
++   "text": "are there to let something land emotionally."
++  },
++  {
++   "timestamp": "7:41",
++   "text": "it's all about contrast."
++  },
++  {
++   "timestamp": "7:43",
++   "text": "Just like music, it needs climax, and it needs a release."
++  },
++  {
++   "timestamp": "7:46",
++   "text": "And I use this when I want to change the energy of a scene or guide the viewer"
++  },
++  {
++   "timestamp": "7:50",
++   "text": "into how I want them to feel: exciting or calm or emotional or chaotic."
++  },
++  {
++   "timestamp": "7:55",
++   "text": "And if your video feels too flat or too chaotic, try"
++  },
++  {
++   "timestamp": "7:59",
++   "text": "playing with the speed of your cuts."
++  },
++  {
++   "timestamp": "8:01",
++   "text": "It's really one of the easiest ways to shape emotion. And you know..."
++  },
++  {
++   "timestamp": "8:05",
++   "text": "the truth is, editing is always a bit of a puzzle, and there's"
++  },
++  {
++   "timestamp": "8:09",
++   "text": "always a point where it feels like it's not going to work."
++  },
++  {
++   "timestamp": "8:12",
++   "text": "But I want you to know that that's really normal,"
++  },
++  {
++   "timestamp": "8:14",
++   "text": "because if you're hitting a wall, it probably means that you're close"
++  },
++  {
++   "timestamp": "8:17",
++   "text": "to something special or something meaningful."
++  },
++  {
++   "timestamp": "8:20",
++   "text": "And if you do want some help from start to finish, if you're unsure"
++  },
++  {
++   "timestamp": "8:23",
++   "text": "what to shoot or how to shape a story that's actually flows."
++  },
++  {
++   "timestamp": "8:27",
++   "text": "That's exactly why I created the Story Starter Kit."
++  },
++  {
++   "timestamp": "8:30",
++   "text": "it gives you a simple, repeatable storytelling method."
++  },
++  {
++   "timestamp": "8:33",
++   "text": "You will write your story with clear templates,"
++  },
++  {
++   "timestamp": "8:35",
++   "text": "Plan your shots with the visual guide, and then move into the edit with confidence"
++  },
++  {
++   "timestamp": "8:38",
++   "text": "using my pre-built editing templates and a step by step video walkthrough."
++  },
++  {
++   "timestamp": "8:43",
++   "text": "and I also just upgraded the kit with the 7-Cuts Guide."
++  },
++  {
++   "timestamp": "8:47",
++   "text": "It's a seven page guide"
++  },
++  {
++   "timestamp": "8:48",
++   "text": "with a summary and extra information about the seven cuts in this video,"
++  },
++  {
++   "timestamp": "8:52",
++   "text": "so the link is in the description if that sounds helpful."
++  },
++  {
++   "timestamp": "8:54",
++   "text": "And one last tip before we wrap up."
++  },
++  {
++   "timestamp": "8:57",
++   "text": "You don't need to cram all these seven cuts into one video."
++  },
++  {
++   "timestamp": "9:01",
++   "text": "Just ask yourself, what does this moment need?"
++  },
++  {
++   "timestamp": "9:04",
++   "text": "Does it need a smooth flow, a surprise, or a shift in rhythm maybe?"
++  },
++  {
++   "timestamp": "9:08",
++   "text": "And just pick the cut that serves that moment best."
++  },
++  {
++   "timestamp": "9:12",
++   "text": "From there, you can always build further."
++  },
++  {
++   "timestamp": "9:14",
++   "text": "Now if you want to learn how to shape that story"
++  },
++  {
++   "timestamp": "9:16",
++   "text": "from the very beginning, check out this video next where"
++  },
++  {
++   "timestamp": "9:19",
++   "text": "I'll walk you through the 5-line story method that I use to write every script."
++  }
++ ],
++ "key_techniques": [
++  "flow_cut",
++  "smash_cut",
++  "jump_cut",
++  "action_cut",
++  "wide_medium_close",
++  "match_cut",
++  "pacing_cut",
++  "eye_position_match"
++ ]
++}
+\ No newline at end of file
+diff --git a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/_INDEX.md b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/_INDEX.md
+index 5f3d5b4..bbea164 100644
+--- a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/_INDEX.md
++++ b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/_INDEX.md
+@@ -83,6 +83,21 @@ ARCHIVUM/montage/transcripts/
+ 
+ ---
+ 
++## 📋 Transcripts Tim Runia (4) — source F00D_NARRATIVUM (13 septembre 2026)
++
++| Fichier | Sujet | Lien |
++|---------|-------|------|
++| `J0ydlAqg6_8_tim_runia.json` | The ONLY 7 Cuts You Need To Tell Any Story | youtube.com/watch?v=J0ydlAqg6_8 |
++| `dhpazqW_OaU_tim_runia.json` | The ONLY 5 Editing Secrets (storytelling) | youtube.com/watch?v=dhpazqW_OaU |
++| `oiNnWm8Z5l4_tim_runia.json` | 21 Mistakes That Kill Your Video | youtube.com/watch?v=oiNnWm8Z5l4 |
++| `7_cuts_session_warsmith.json` | Les 7 cuts (transcript de session Warsmith, structuré avec les termes du contrat F00D) | = J0ydlAqg6_8 |
++
++**Concepts clés** (vocabulaire contractuel F00D) : flow_cut · smash_cut ·
++jump_cut · action_cut · wide_medium_close · match_cut · pacing_cut ·
++eye_position_match · sound_cut_with_smash · cut_on_beat.
++
++---
++
+ ## 📋 Transcripts existants (5)
+ 
+ | Fichier | Sujet | Langue |
+@@ -112,5 +127,5 @@ ARCHIVUM/montage/transcripts/
+ 
+ ---
+ 
+-*Dernière mise à jour : 3 septembre 2026*
+-*Total : 10 transcripts (~150 Ko de données)*
++*Dernière mise à jour : 13 septembre 2026*
++*Total : 14 transcripts (~150 Ko de données) — dont 4 Tim Runia (socle F00D_NARRATIVUM)*
+diff --git a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/dhpazqW_OaU_tim_runia.json b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/dhpazqW_OaU_tim_runia.json
+new file mode 100644
+index 0000000..525a7af
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/dhpazqW_OaU_tim_runia.json
+@@ -0,0 +1,1045 @@
++{
++ "title": "The ONLY 5 Editing Secrets You Need to Tell Any Story (Tim Runia)",
++ "source": "https://www.youtube.com/watch?v=dhpazqW_OaU",
++ "duration_sec": 914,
++ "transcript": [
++  {
++   "timestamp": "0:00",
++   "text": "So you had this great idea for a video."
++  },
++  {
++   "timestamp": "0:05",
++   "text": "You wrote your script."
++  },
++  {
++   "timestamp": "0:06",
++   "text": "Planned your shots."
++  },
++  {
++   "timestamp": "0:07",
++   "text": "And actually got out in the wild filming those shots."
++  },
++  {
++   "timestamp": "0:10",
++   "text": "And now you're finally ready to edit."
++  },
++  {
++   "timestamp": "0:12",
++   "text": "But now everything falls apart."
++  },
++  {
++   "timestamp": "0:15",
++   "text": "Should I use this shot?"
++  },
++  {
++   "timestamp": "0:16",
++   "text": "Am I cutting too soon?"
++  },
++  {
++   "timestamp": "0:17",
++   "text": "Where should this go?  - Why does it feel off? - What am I doing!?"
++  },
++  {
++   "timestamp": "0:20",
++   "text": "Of course."
++  },
++  {
++   "timestamp": "0:21",
++   "text": "Because editing can be the most overwhelming part of filmmaking."
++  },
++  {
++   "timestamp": "0:25",
++   "text": "but I've been editing for over 15 years, and today..."
++  },
++  {
++   "timestamp": "0:28",
++   "text": "I’m sharing some of my most valuable editing tricks.."
++  },
++  {
++   "timestamp": "0:31",
++   "text": "that will make the difference between a bunch of clips stacked together.."
++  },
++  {
++   "timestamp": "0:34",
++   "text": "and a story that actually flows."
++  },
++  {
++   "timestamp": "0:36",
++   "text": "And that will feel good."
++  },
++  {
++   "timestamp": "0:38",
++   "text": "Just like that first time when you had that idea."
++  },
++  {
++   "timestamp": "0:41",
++   "text": "Now let's get into it."
++  },
++  {
++   "timestamp": "0:45",
++   "text": "What I want to share here..."
++  },
++  {
++   "timestamp": "0:46",
++   "text": "are the editing choices that actually make your story flow."
++  },
++  {
++   "timestamp": "0:49",
++   "text": "Things that keep people watching because they want to..."
++  },
++  {
++   "timestamp": "0:52",
++   "text": "and because they lean into your story."
++  },
++  {
++   "timestamp": "0:54",
++   "text": "These are simple but powerful secrets."
++  },
++  {
++   "timestamp": "0:56",
++   "text": "And even if you only use one of them, your videos will already feel stronger."
++  },
++  {
++   "timestamp": "1:00",
++   "text": "And also, stick around to the end,"
++  },
++  {
++   "timestamp": "1:01",
++   "text": "because I will share one bonus tip that took me way too long figure out."
++  },
++  {
++   "timestamp": "1:05",
++   "text": "But once I did, it really made my editing way faster and less stressful."
++  },
++  {
++   "timestamp": "1:10",
++   "text": "So here's the first secret that completely changed my process."
++  },
++  {
++   "timestamp": "1:14",
++   "text": "Back when I started, I would shoot everything..."
++  },
++  {
++   "timestamp": "1:17",
++   "text": "and then I would dive straight into the edit and just try to make things work."
++  },
++  {
++   "timestamp": "1:21",
++   "text": "And every time my timeline was a mess."
++  },
++  {
++   "timestamp": "1:23",
++   "text": "so after many painful re-edits, I realized this: that your voice over, your music"
++  },
++  {
++   "timestamp": "1:28",
++   "text": "and even your sound effects are way more important than most people think."
++  },
++  {
++   "timestamp": "1:32",
++   "text": "So now I start my edits with only audio before I touch a single clip."
++  },
++  {
++   "timestamp": "1:36",
++   "text": "Yeah, you really heard that well."
++  },
++  {
++   "timestamp": "1:37",
++   "text": "But believe me, it will really change your edits."
++  },
++  {
++   "timestamp": "1:40",
++   "text": "So here's how I do it: for YouTube..."
++  },
++  {
++   "timestamp": "1:42",
++   "text": "I record my hook and my intro voiceover before I even start shooting."
++  },
++  {
++   "timestamp": "1:47",
++   "text": "then I find music that matches the energy that I have in my head,"
++  },
++  {
++   "timestamp": "1:50",
++   "text": "and I will even add a few sound effects And right away I see where my voice over"
++  },
++  {
++   "timestamp": "1:53",
++   "text": "is too long, where things don't work, or where I should work on the pacing."
++  },
++  {
++   "timestamp": "1:57",
++   "text": "and even better..."
++  },
++  {
++   "timestamp": "1:58",
++   "text": "It always gives me new inspiration and new ideas for shots."
++  },
++  {
++   "timestamp": "2:02",
++   "text": "And because I haven't shot anything yet, I can still add those shots to my shotlist."
++  },
++  {
++   "timestamp": "2:06",
++   "text": "For example, in this video, I did exactly that,"
++  },
++  {
++   "timestamp": "2:09",
++   "text": "Laying down my voice over with music showed me that my voice over was too long"
++  },
++  {
++   "timestamp": "2:14",
++   "text": "That build-up can be much quicker..."
++  },
++  {
++   "timestamp": "2:16",
++   "text": "Because I don't need 7 seconds to explain  that we're overwhelmed."
++  },
++  {
++   "timestamp": "2:21",
++   "text": "We can do that much quicker."
++  },
++  {
++   "timestamp": "2:22",
++   "text": "And the rhythm of the track that inspired me to do that paper toss scene on the beat."
++  },
++  {
++   "timestamp": "2:28",
++   "text": "And another great thing about this is that once you've shot everything,"
++  },
++  {
++   "timestamp": "2:31",
++   "text": "the edit is already halfway done because the pacing is there,"
++  },
++  {
++   "timestamp": "2:35",
++   "text": "the voiceover is there, and the music is there."
++  },
++  {
++   "timestamp": "2:37",
++   "text": "So the only thing you basically have left to do is add the shots in."
++  },
++  {
++   "timestamp": "2:40",
++   "text": "So ,the next video you're working on, lock in your audio first,"
++  },
++  {
++   "timestamp": "2:43",
++   "text": "because you will spot some time issues instantly."
++  },
++  {
++   "timestamp": "2:46",
++   "text": "And the more you do this, you know, the more your brain will practice"
++  },
++  {
++   "timestamp": "2:50",
++   "text": "creating a story in your head before even filming."
++  },
++  {
++   "timestamp": "2:52",
++   "text": "And that actually is one of the most useful skills"
++  },
++  {
++   "timestamp": "2:55",
++   "text": "you can build as a filmmaker."
++  },
++  {
++   "timestamp": "2:58",
++   "text": "If there's one thing"
++  },
++  {
++   "timestamp": "2:59",
++   "text": "that makes or breaks your video, it's pacing."
++  },
++  {
++   "timestamp": "3:02",
++   "text": "Your edit’s speed is your storytelling pulse."
++  },
++  {
++   "timestamp": "3:05",
++   "text": "And I think it’s one of the biggest mistakes that I see even from experience editors."
++  },
++  {
++   "timestamp": "3:09",
++   "text": "It's that they're staying in the same pace for too long."
++  },
++  {
++   "timestamp": "3:13",
++   "text": "So here are three things that I think really shape pacing."
++  },
++  {
++   "timestamp": "3:16",
++   "text": "The first one is shot length because short and snappy"
++  },
++  {
++   "timestamp": "3:18",
++   "text": "cuts make things fast or increase the tension, and longer shots"
++  },
++  {
++   "timestamp": "3:22",
++   "text": "are more for emotion or producing calmness."
++  },
++  {
++   "timestamp": "3:26",
++   "text": "Then the second one is shot motion."
++  },
++  {
++   "timestamp": "3:28",
++   "text": "You have chaotic handheld movements that can really add energy,"
++  },
++  {
++   "timestamp": "3:33",
++   "text": "or smooth and stable frames that really calm things down."
++  },
++  {
++   "timestamp": "3:36",
++   "text": "And I think mixing those in the right way can be really strong."
++  },
++  {
++   "timestamp": "3:40",
++   "text": "And then there's a third,"
++  },
++  {
++   "timestamp": "3:41",
++   "text": "which is music and sound, because your soundtrack really sets"
++  },
++  {
++   "timestamp": "3:44",
++   "text": "the heartbeat as well you know..."
++  },
++  {
++   "timestamp": "3:45",
++   "text": "A driving beat really pushes the story forward"
++  },
++  {
++   "timestamp": "3:48",
++   "text": "and softer music is really what can let it breathe as well."
++  },
++  {
++   "timestamp": "3:52",
++   "text": "And of course, sometimes..."
++  },
++  {
++   "timestamp": "3:54",
++   "text": "a silence can be really strong as well."
++  },
++  {
++   "timestamp": "3:58",
++   "text": "Anyway, if you keep the pace high the entire time,"
++  },
++  {
++   "timestamp": "4:01",
++   "text": "people will get overwhelmed."
++  },
++  {
++   "timestamp": "4:02",
++   "text": "And if it stays slow, they will get bored."
++  },
++  {
++   "timestamp": "4:05",
++   "text": "So yeah, it's really good to time that change and energy."
++  },
++  {
++   "timestamp": "4:09",
++   "text": "Because that really snaps the attention back..."
++  },
++  {
++   "timestamp": "4:11",
++   "text": "or it really puts people in the right emotion when you want to."
++  },
++  {
++   "timestamp": "4:16",
++   "text": "For example, listen to the first 30 seconds of this video."
++  },
++  {
++   "timestamp": "4:19",
++   "text": "We start with no music."
++  },
++  {
++   "timestamp": "4:21",
++   "text": "tension rising with a sound effect, then pause for a second,"
++  },
++  {
++   "timestamp": "4:25",
++   "text": "then full energy, quick shots, fast music,"
++  },
++  {
++   "timestamp": "4:31",
++   "text": "then a short break, a longer shot."
++  },
++  {
++   "timestamp": "4:33",
++   "text": "Tension is building again."
++  },
++  {
++   "timestamp": "4:35",
++   "text": "Then energy back up with fast cuts."
++  },
++  {
++   "timestamp": "4:39",
++   "text": "Then we release into slower shots and no music."
++  },
++  {
++   "timestamp": "4:42",
++   "text": "Finally we settle into a neutral pacing. And that variation is really"
++  },
++  {
++   "timestamp": "4:45",
++   "text": "what keeps a hook like that really alive."
++  },
++  {
++   "timestamp": "4:48",
++   "text": "So the next time you edit, just spend a little more time on pacing."
++  },
++  {
++   "timestamp": "4:51",
++   "text": "Just mark your big moments and your quiet moments,"
++  },
++  {
++   "timestamp": "4:54",
++   "text": "and then let your cuts, your movements, and your music flow between them."
++  },
++  {
++   "timestamp": "4:58",
++   "text": "Your audience..."
++  },
++  {
++   "timestamp": "4:59",
++   "text": "They will stick with you much longer. I'm sure."
++  },
++  {
++   "timestamp": "5:03",
++   "text": "you know,"
++  },
++  {
++   "timestamp": "5:03",
++   "text": "one of the hardest things, but also one of the most important things"
++  },
++  {
++   "timestamp": "5:06",
++   "text": "about editing is finding music that actually fits the mood of your story."
++  },
++  {
++   "timestamp": "5:11",
++   "text": "You really don't want to know"
++  },
++  {
++   "timestamp": "5:12",
++   "text": "how much time I spent on tweaking music in my edits, just so it fits perfectly."
++  },
++  {
++   "timestamp": "5:16",
++   "text": "But sometimes you wish you could just tweak a song a bit..."
++  },
++  {
++   "timestamp": "5:19",
++   "text": "..maybe take out the vocals or take out the guitar."
++  },
++  {
++   "timestamp": "5:22",
++   "text": "Well, you can do that now because Audiio released Elements 2.0 a while ago"
++  },
++  {
++   "timestamp": "5:27",
++   "text": "and it's a really huge upgrade because now you can separate every part of the track"
++  },
++  {
++   "timestamp": "5:32",
++   "text": "the vocals, the drums, the bass, piano,"
++  },
++  {
++   "timestamp": "5:35",
++   "text": "guitar... even the strings, all in studio quality."
++  },
++  {
++   "timestamp": "5:38",
++   "text": "So for me, that means that I can take a track that I already love."
++  },
++  {
++   "timestamp": "5:41",
++   "text": "Just strip it down completely, or build it back up with all those different pieces"
++  },
++  {
++   "timestamp": "5:46",
++   "text": "and that just makes it really much easier to adjust the music"
++  },
++  {
++   "timestamp": "5:49",
++   "text": "to whatever fits the rhythm or the pacing that I'm looking for."
++  },
++  {
++   "timestamp": "5:53",
++   "text": "So if you want to try that out, go explore Elements 2.0 and get 70% off"
++  },
++  {
++   "timestamp": "5:57",
++   "text": "your first year of Audiio Pro at audiio.com/timrunia"
++  },
++  {
++   "timestamp": "6:02",
++   "text": "using the code at checkout."
++  },
++  {
++   "timestamp": "6:04",
++   "text": "And of course you'll find the link in the description as well."
++  },
++  {
++   "timestamp": "6:08",
++   "text": "So when I first started out creating videos,"
++  },
++  {
++   "timestamp": "6:11",
++   "text": "once I got to the editing process, before I knew it, I would spend two days"
++  },
++  {
++   "timestamp": "6:15",
++   "text": "perfecting the first 30s, you know, adding sound effects or maybe already color grading..."
++  },
++  {
++   "timestamp": "6:21",
++   "text": "And I would totally forget what I was making."
++  },
++  {
++   "timestamp": "6:24",
++   "text": "But then I discovered the power of the assembly edit."
++  },
++  {
++   "timestamp": "6:27",
++   "text": "And that's basically"
++  },
++  {
++   "timestamp": "6:27",
++   "text": "like sketching before you paint, or outlining a book before you write."
++  },
++  {
++   "timestamp": "6:32",
++   "text": "It's all about getting a rough shape down first and then start refining."
++  },
++  {
++   "timestamp": "6:36",
++   "text": "So if you've already created the hook and the intro of your video"
++  },
++  {
++   "timestamp": "6:40",
++   "text": "with an audio blueprint..."
++  },
++  {
++   "timestamp": "6:41",
++   "text": "then you can use the assembly edit to shape the rest of your story fast."
++  },
++  {
++   "timestamp": "6:45",
++   "text": "So here's how I do it."
++  },
++  {
++   "timestamp": "6:47",
++   "text": "First, I spot the footage that tells the story."
++  },
++  {
++   "timestamp": "6:49",
++   "text": "So spotting just means cut out the junk and keep the clips you will actually use."
++  },
++  {
++   "timestamp": "6:54",
++   "text": "Then I drag some of them into the timeline in the rough story order,"
++  },
++  {
++   "timestamp": "6:58",
++   "text": "with a beginning, a middle, and an end."
++  },
++  {
++   "timestamp": "7:00",
++   "text": "And I'm not polishing anything yet."
++  },
++  {
++   "timestamp": "7:01",
++   "text": "If I already recorded my voiceover, I will drop that in too."
++  },
++  {
++   "timestamp": "7:04",
++   "text": "And then I spent time finding music that matches the pace."
++  },
++  {
++   "timestamp": "7:07",
++   "text": "You know, sometimes"
++  },
++  {
++   "timestamp": "7:08",
++   "text": "it’s temporary music, but sometimes I can already find the real track."
++  },
++  {
++   "timestamp": "7:12",
++   "text": "Then I just play everything back from the beginning to the end,"
++  },
++  {
++   "timestamp": "7:15",
++   "text": "and I can really watch the rough story unfold."
++  },
++  {
++   "timestamp": "7:18",
++   "text": "And I just really pay attention and immediately"
++  },
++  {
++   "timestamp": "7:20",
++   "text": "I will see where the gaps are, the pacing feels off,"
++  },
++  {
++   "timestamp": "7:24",
++   "text": "or what kind of shots I'm still missing, or sometimes what I can really get rid of."
++  },
++  {
++   "timestamp": "7:28",
++   "text": "So before you dive into polishing, build your assembly edit."
++  },
++  {
++   "timestamp": "7:32",
++   "text": "Drag your key clips into a story order and then refine after that."
++  },
++  {
++   "timestamp": "7:36",
++   "text": "It will save you hours of frustration"
++  },
++  {
++   "timestamp": "7:38",
++   "text": "and I'm sure it will give you way more clarity on where your edit is heading."
++  },
++  {
++   "timestamp": "7:42",
++   "text": "And where your story is heading."
++  },
++  {
++   "timestamp": "7:45",
++   "text": "So with my first edits..."
++  },
++  {
++   "timestamp": "7:46",
++   "text": "I loved picking a song and just cutting on the beat."
++  },
++  {
++   "timestamp": "7:49",
++   "text": "We've all probably done those edits and they feel nice,"
++  },
++  {
++   "timestamp": "7:53",
++   "text": "but it gets repetitive pretty fast."
++  },
++  {
++   "timestamp": "7:57",
++   "text": "And I think real flow goes way deeper."
++  },
++  {
++   "timestamp": "8:00",
++   "text": "So here are just a few ways to create flow."
++  },
++  {
++   "timestamp": "8:02",
++   "text": "The first one cut intentionally."
++  },
++  {
++   "timestamp": "8:05",
++   "text": "Don't just throw clips together."
++  },
++  {
++   "timestamp": "8:07",
++   "text": "Just think about where the eyes of your audience"
++  },
++  {
++   "timestamp": "8:10",
++   "text": "are on the screen and how the movements of the eyes"
++  },
++  {
++   "timestamp": "8:14",
++   "text": "flow from one shot to the next, or how one shot flows to the next."
++  },
++  {
++   "timestamp": "8:19",
++   "text": "Then the second one is beat accents, because instead of cutting on the beat,"
++  },
++  {
++   "timestamp": "8:23",
++   "text": "you can land an action with the beat like when you're dropping something,"
++  },
++  {
++   "timestamp": "8:29",
++   "text": "or when you're stepping in a frame, or even raising an eyebrow..."
++  },
++  {
++   "timestamp": "8:33",
++   "text": "I will show you an example in a bit."
++  },
++  {
++   "timestamp": "8:35",
++   "text": ", Then the third audio transitions."
++  },
++  {
++   "timestamp": "8:37",
++   "text": "Because a sound effects across two shots can really glue them together."
++  },
++  {
++   "timestamp": "8:42",
++   "text": "And sometimes a sound effect does that even much better than the shots themselves."
++  },
++  {
++   "timestamp": "8:48",
++   "text": "And a combination is even better."
++  },
++  {
++   "timestamp": "8:50",
++   "text": "So, for example, in the intro of this video,"
++  },
++  {
++   "timestamp": "8:52",
++   "text": "I cut the movement going out of the shot from the right to the left."
++  },
++  {
++   "timestamp": "8:57",
++   "text": "Then coming in from the right to the left."
++  },
++  {
++   "timestamp": "8:59",
++   "text": "So it feels fast but smooth."
++  },
++  {
++   "timestamp": "9:01",
++   "text": "Then I hit beat accents."
++  },
++  {
++   "timestamp": "9:03",
++   "text": "Me coming on to the desk or raising my eyebrows right on the beat."
++  },
++  {
++   "timestamp": "9:07",
++   "text": "So instead of cutting on the beat, the action itself matches the beat."
++  },
++  {
++   "timestamp": "9:16",
++   "text": "So next time you edit..."
++  },
++  {
++   "timestamp": "9:17",
++   "text": "don't just think about speed, think about movements."
++  },
++  {
++   "timestamp": "9:19",
++   "text": "Where are the eyes going? Where's the rhythm pulling?"
++  },
++  {
++   "timestamp": "9:22",
++   "text": "Just try one intentional cut, maybe one beat accent and one audio transition."
++  },
++  {
++   "timestamp": "9:27",
++   "text": "And I'm sure your edit will feel much..."
++  },
++  {
++   "timestamp": "9:30",
++   "text": "smoother instantly."
++  },
++  {
++   "timestamp": "9:34",
++   "text": "if your edit feels predictable, people tune out."
++  },
++  {
++   "timestamp": "9:36",
++   "text": "And that's why I like to break my own rhythm with a quick sudden cut..."
++  },
++  {
++   "timestamp": "9:40",
++   "text": "or a change of scene, or just something completely unexpected."
++  },
++  {
++   "timestamp": "9:43",
++   "text": "So that contrast, that's really what can bring people back"
++  },
++  {
++   "timestamp": "9:48",
++   "text": "into your story, even a small surprise creates a little spike of focus."
++  },
++  {
++   "timestamp": "9:52",
++   "text": "And those tiny spikes are really what keep people watching."
++  },
++  {
++   "timestamp": "9:56",
++   "text": "As long as it's not too forced and it's part of your story"
++  },
++  {
++   "timestamp": "10:01",
++   "text": "You can use contrast..."
++  },
++  {
++   "timestamp": "10:02",
++   "text": "This can be anything, loud versus quiet"
++  },
++  {
++   "timestamp": "10:05",
++   "text": "or fast versus slow"
++  },
++  {
++   "timestamp": "10:07",
++   "text": "or bright versus dark"
++  },
++  {
++   "timestamp": "10:08",
++   "text": "Or, I add suprise."
++  },
++  {
++   "timestamp": "10:10",
++   "text": "Just something playful or something abrupt that no one saw coming."
++  },
++  {
++   "timestamp": "10:16",
++   "text": "For example, in this video's hook,"
++  },
++  {
++   "timestamp": "10:18",
++   "text": "I froze the frame"
++  },
++  {
++   "timestamp": "10:19",
++   "text": "and dropped in text before you expected it because it was like in the first three seconds..."
++  },
++  {
++   "timestamp": "10:24",
++   "text": "and that tiny break already made you pay much more attention."
++  },
++  {
++   "timestamp": "10:28",
++   "text": "And then later I cut to silence when I'm at the empty desk and that sudden"
++  },
++  {
++   "timestamp": "10:32",
++   "text": "shift in energy that instantly makes you think, hey, what just happened there?"
++  },
++  {
++   "timestamp": "10:38",
++   "text": "But really try to make it a part of the story."
++  },
++  {
++   "timestamp": "10:40",
++   "text": "So in your next edit, just try to find one spot to add contrast or surprise."
++  },
++  {
++   "timestamp": "10:45",
++   "text": "Maybe it's a freeze frame or a quick silence or an unexpected cut."
++  },
++  {
++   "timestamp": "10:49",
++   "text": "You really don't need many of those."
++  },
++  {
++   "timestamp": "10:51",
++   "text": "But you know, really, one well-placed surprise can already make your"
++  },
++  {
++   "timestamp": "10:55",
++   "text": "story pretty unforgettable."
++  },
++  {
++   "timestamp": "10:57",
++   "text": "You know, editing will always be a puzzle."
++  },
++  {
++   "timestamp": "11:00",
++   "text": "No matter how many tricks you learn, how many secrets you learned,"
++  },
++  {
++   "timestamp": "11:03",
++   "text": "there will always be these moments where it feels like"
++  },
++  {
++   "timestamp": "11:06",
++   "text": "things are not going to work."
++  },
++  {
++   "timestamp": "11:07",
++   "text": "And that's really normal because filmmaking is really hard."
++  },
++  {
++   "timestamp": "11:12",
++   "text": "But when your story finally comes together in the edit, it's always worth it."
++  },
++  {
++   "timestamp": "11:16",
++   "text": "But if you find it hard to finish your own videos,"
++  },
++  {
++   "timestamp": "11:20",
++   "text": "check out my Story Starter Kit, the link’s in the description."
++  },
++  {
++   "timestamp": "11:23",
++   "text": "And I really designed this to make filmmaking simple and take you"
++  },
++  {
++   "timestamp": "11:26",
++   "text": "from staring at a messy timeline to finally finishing a video you’re proud of."
++  },
++  {
++   "timestamp": "11:31",
++   "text": "The link is in the description and it's the most affordable way to finally finish, I think,"
++  },
++  {
++   "timestamp": "11:36",
++   "text": "and get your ideas out of your head onto the screen."
++  },
++  {
++   "timestamp": "11:39",
++   "text": "Now, my last bonus secrets is “be ruthless”."
++  },
++  {
++   "timestamp": "11:43",
++   "text": "when I started out editing, I could spend days trying to squeeze"
++  },
++  {
++   "timestamp": "11:47",
++   "text": "in every shot that I filmed just because I filmed the shot and the shot was nice,"
++  },
++  {
++   "timestamp": "11:52",
++   "text": "but now I really try to make my selections really fast."
++  },
++  {
++   "timestamp": "11:56",
++   "text": "Kill Your Darlings is how they call it, and it's really true."
++  },
++  {
++   "timestamp": "11:59",
++   "text": "You will have to say goodbye to a lot of great shots,"
++  },
++  {
++   "timestamp": "12:02",
++   "text": "but the faster you will learn to cut what doesn't serve the story,"
++  },
++  {
++   "timestamp": "12:06",
++   "text": "the more energy you will have to shape the story itself."
++  },
++  {
++   "timestamp": "12:09",
++   "text": "that's also where the assembly edit from earlier really helps,"
++  },
++  {
++   "timestamp": "12:11",
++   "text": "because it really forces you to make decisions quickly."
++  },
++  {
++   "timestamp": "12:14",
++   "text": "And the more ruthless you are, the better edits will be."
++  },
++  {
++   "timestamp": "12:18",
++   "text": "And now that you've got all this fresh knowledge to dive into your edit..."
++  },
++  {
++   "timestamp": "12:21",
++   "text": "check out this video next"
++  },
++  {
++   "timestamp": "12:23",
++   "text": "where I will show you the kind of cuts you need to apply this into your edits."
++  },
++  {
++   "timestamp": "12:28",
++   "text": "Good luck!"
++  },
++  {
++   "timestamp": "12:30",
++   "text": "You can do it!"
++  },
++  {
++   "timestamp": "12:32",
++   "text": "Go edit, edit that thing."
++  },
++  {
++   "timestamp": "12:56",
++   "text": "No matter how many tricks or secrets you know, there will always be a moment"
++  },
++  {
++   "timestamp": "12:59",
++   "text": "where it feels like it's not going to work."
++  },
++  {
++   "timestamp": "13:02",
++   "text": "And that is normal because filmmaking is hard."
++  },
++  {
++   "timestamp": "13:04",
++   "text": "But when a story finally comes together, it's always worth it."
++  },
++  {
++   "timestamp": "13:08",
++   "text": "if you find it hard to start and finish your own story"
++  },
++  {
++   "timestamp": "13:11",
++   "text": "straight from video, be sure to check out my Story Starter kit."
++  },
++  {
++   "timestamp": "13:14",
++   "text": "Because it's the science to make filmmaking simple and take you from"
++  },
++  {
++   "timestamp": "13:18",
++   "text": "staring at a blank timeline to actually finishing a video that you're proud of"
++  },
++  {
++   "timestamp": "13:23",
++   "text": "gives you a simple structure to turn an ID into a clear story,"
++  },
++  {
++   "timestamp": "13:26",
++   "text": "plan your shots without overthinking, and edit smoothly"
++  },
++  {
++   "timestamp": "13:29",
++   "text": "until you hit export the links in the description."
++  },
++  {
++   "timestamp": "13:33",
++   "text": "I think it's a really affordable way to finally get your ideas out of your"
++  },
++  {
++   "timestamp": "13:37",
++   "text": "head and onto the screen,"
++  },
++  {
++   "timestamp": "14:51",
++   "text": "You know, editing is always a puzzle."
++  },
++  {
++   "timestamp": "14:52",
++   "text": "No matter how many tricks or secrets you learn,"
++  },
++  {
++   "timestamp": "14:55",
++   "text": "there will always be moments that it feels like it's not going to work."
++  },
++  {
++   "timestamp": "14:59",
++   "text": "And that's normal because filmmaking is hard."
++  },
++  {
++   "timestamp": "15:01",
++   "text": "But when the story finally comes together, it's always worth it."
++  },
++  {
++   "timestamp": "15:05",
++   "text": "And if you find it hard to even start or finish your own story driven videos,"
++  },
++  {
++   "timestamp": "15:09",
++   "text": "check out my story start a Case because it's designed to."
++  },
++  {
++   "timestamp": "15:14",
++   "text": "Yeah. Hello?"
++  }
++ ],
++ "key_techniques": [
++  "story_structure",
++  "tension_release",
++  "broll_usage",
++  "sound_design"
++ ]
++}
+\ No newline at end of file
+diff --git a/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/oiNnWm8Z5l4_tim_runia.json b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/oiNnWm8Z5l4_tim_runia.json
+new file mode 100644
+index 0000000..41ffcb2
+--- /dev/null
++++ b/MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/oiNnWm8Z5l4_tim_runia.json
+@@ -0,0 +1,1269 @@
++{
++ "title": "21 Mistakes That Kill Your Video (Tim Runia)",
++ "source": "https://www.youtube.com/watch?v=oiNnWm8Z5l4",
++ "duration_sec": 976,
++ "transcript": [
++  {
++   "timestamp": "0:01",
++   "text": "So, this is the part where I usually create an engaging hook and tell you"
++  },
++  {
++   "timestamp": "0:06",
++   "text": "all about my filmmaking experience and why you should listen to me."
++  },
++  {
++   "timestamp": "0:09",
++   "text": "But today, I'm just going to dive straight in, and tell you all about"
++  },
++  {
++   "timestamp": "0:18",
++   "text": "You know, when I started out, all I was focused on"
++  },
++  {
++   "timestamp": "0:21",
++   "text": "was getting beautiful shots, lens flares, shallow depth of field."
++  },
++  {
++   "timestamp": "0:25",
++   "text": "And when you put that all together, it sure looks beautiful"
++  },
++  {
++   "timestamp": "0:27",
++   "text": "and it can be good enough to enjoy watching,"
++  },
++  {
++   "timestamp": "0:30",
++   "text": "but it can also feel completely empty because story..."
++  },
++  {
++   "timestamp": "0:34",
++   "text": "That's really what makes people care"
++  },
++  {
++   "timestamp": "0:35",
++   "text": "and a good story can make average footage feel really magical."
++  },
++  {
++   "timestamp": "0:39",
++   "text": "But a bad story can really make the perfect shot feel completely meaningless."
++  },
++  {
++   "timestamp": "0:43",
++   "text": "So focus on the story."
++  },
++  {
++   "timestamp": "0:46",
++   "text": "Filmmaking is already pretty hard,"
++  },
++  {
++   "timestamp": "0:50",
++   "text": "so my advice would be to not make it harder."
++  },
++  {
++   "timestamp": "0:53",
++   "text": "That's something that I was very good at,"
++  },
++  {
++   "timestamp": "0:55",
++   "text": "I always thought, I had to make things more complicated,"
++  },
++  {
++   "timestamp": "0:58",
++   "text": "to give it more meaning and to make it feel more professional."
++  },
++  {
++   "timestamp": "1:01",
++   "text": "But most of the time, really, the simple version is the best version."
++  },
++  {
++   "timestamp": "1:05",
++   "text": "Especially when you just start out, you know"
++  },
++  {
++   "timestamp": "1:07",
++   "text": "the audience really doesn't care how complex your setup was."
++  },
++  {
++   "timestamp": "1:10",
++   "text": "They really care about how you made them feel."
++  },
++  {
++   "timestamp": "1:13",
++   "text": "So really think about, are you complicating things"
++  },
++  {
++   "timestamp": "1:16",
++   "text": "because the story needs it, or just because you think you have to?"
++  },
++  {
++   "timestamp": "1:20",
++   "text": "There's a really big difference."
++  },
++  {
++   "timestamp": "1:23",
++   "text": "They say that a film is made"
++  },
++  {
++   "timestamp": "1:24",
++   "text": "three times when you write it, when you shoot it, and when you edit it."
++  },
++  {
++   "timestamp": "1:28",
++   "text": "And it's so true because early on I used to completely panic"
++  },
++  {
++   "timestamp": "1:32",
++   "text": "when my shoot didn't go exactly as planned."
++  },
++  {
++   "timestamp": "1:34",
++   "text": "But now I kind of expect it because that's just how it goes every time."
++  },
++  {
++   "timestamp": "1:38",
++   "text": "no matter if you're shooting solo"
++  },
++  {
++   "timestamp": "1:40",
++   "text": "or you're directing a big film, you have to be able to adapt on set."
++  },
++  {
++   "timestamp": "1:44",
++   "text": "That's really part of the job, and it's also what makes it fun."
++  },
++  {
++   "timestamp": "1:47",
++   "text": "You know, it's also the creative part of it."
++  },
++  {
++   "timestamp": "1:49",
++   "text": "So if you just let go a little, the film usually gets better"
++  },
++  {
++   "timestamp": "1:52",
++   "text": "and so do you as a filmmaker."
++  },
++  {
++   "timestamp": "1:56",
++   "text": "It is very tempting"
++  },
++  {
++   "timestamp": "1:57",
++   "text": "that once you start shooting to keep shooting, I'm very guilty of this,"
++  },
++  {
++   "timestamp": "2:01",
++   "text": "especially when I'm shooting abroad, because planning is usually harder,"
++  },
++  {
++   "timestamp": "2:04",
++   "text": "and when you get a little bit uncertain it feels like"
++  },
++  {
++   "timestamp": "2:08",
++   "text": "it's more safe to just film everything, but let me tell you, it's not because more"
++  },
++  {
++   "timestamp": "2:13",
++   "text": "footage doesn't make your story better, it just makes the editing take forever."
++  },
++  {
++   "timestamp": "2:18",
++   "text": "So try to shoot with intention."
++  },
++  {
++   "timestamp": "2:20",
++   "text": "because if you know why you're filming something, you will shoot less, but"
++  },
++  {
++   "timestamp": "2:24",
++   "text": "you will be able to tell more with the footage that you have."
++  },
++  {
++   "timestamp": "2:28",
++   "text": "on the flip side, sometimes you think you've got the shots"
++  },
++  {
++   "timestamp": "2:31",
++   "text": "after just one shot,"
++  },
++  {
++   "timestamp": "2:32",
++   "text": "and then you go to the edit and you're stuck"
++  },
++  {
++   "timestamp": "2:34",
++   "text": "because there's no different angle to cut to."
++  },
++  {
++   "timestamp": "2:36",
++   "text": "if you want to make this as simple as it gets, go for a wide, a medium and a close."
++  },
++  {
++   "timestamp": "2:42",
++   "text": "Always."
++  },
++  {
++   "timestamp": "2:42",
++   "text": "It's filmmaking 101, but it makes your edits"
++  },
++  {
++   "timestamp": "2:44",
++   "text": "look instantly more professional and it gives you the options"
++  },
++  {
++   "timestamp": "2:47",
++   "text": "when you're piecing the story together later in the edit."
++  },
++  {
++   "timestamp": "2:50",
++   "text": "And it's really nice to have that."
++  },
++  {
++   "timestamp": "2:52",
++   "text": "It might not always be the most fun part, but it really is"
++  },
++  {
++   "timestamp": "2:55",
++   "text": "one of the most important ones."
++  },
++  {
++   "timestamp": "2:57",
++   "text": "Create your shotlist."
++  },
++  {
++   "timestamp": "2:59",
++   "text": "Improvising feels really fun until you sit down in the edit"
++  },
++  {
++   "timestamp": "3:02",
++   "text": "and realize that nothing connects."
++  },
++  {
++   "timestamp": "3:04",
++   "text": "And believe me, I've done full shoots where I forgot to film one key moment"
++  },
++  {
++   "timestamp": "3:09",
++   "text": "and suddenly I'm trying to stitch"
++  },
++  {
++   "timestamp": "3:10",
++   "text": "the whole story together with random B-roll and crazy editing tricks."
++  },
++  {
++   "timestamp": "3:14",
++   "text": "Fix it in post."
++  },
++  {
++   "timestamp": "3:15",
++   "text": "That's how we call it. But it's not fun."
++  },
++  {
++   "timestamp": "3:17",
++   "text": "And you don't need a huge plan."
++  },
++  {
++   "timestamp": "3:19",
++   "text": "Just a few notes or a simple shotlist makes the whole process much smoother."
++  },
++  {
++   "timestamp": "3:24",
++   "text": "So this really is why you want to create a shotlist and to make it easier for you."
++  },
++  {
++   "timestamp": "3:27",
++   "text": "Last month I created a tool with which you can easily create shot"
++  },
++  {
++   "timestamp": "3:31",
++   "text": "lists on your desktop or on your phone or sync together."
++  },
++  {
++   "timestamp": "3:35",
++   "text": "And then you can export the list to PDF,"
++  },
++  {
++   "timestamp": "3:37",
++   "text": "or just use it on your phone to take off the shots as you go."
++  },
++  {
++   "timestamp": "3:40",
++   "text": "There's also a bit of help and guidance, and it's for each shot,"
++  },
++  {
++   "timestamp": "3:43",
++   "text": "and it's free to use for the most part."
++  },
++  {
++   "timestamp": "3:44",
++   "text": "And if you want a full version, that's part of the Story Starter Kit,"
++  },
++  {
++   "timestamp": "3:47",
++   "text": "but the free version will really get you far enough."
++  },
++  {
++   "timestamp": "3:51",
++   "text": "You don't need another tutorial."
++  },
++  {
++   "timestamp": "3:53",
++   "text": "You need a project because a project forces you to learn and practice"
++  },
++  {
++   "timestamp": "3:58",
++   "text": "and to face problems, to make mistakes and to figure things out along the way."
++  },
++  {
++   "timestamp": "4:02",
++   "text": "And that is when theory actually clicks inside of your head."
++  },
++  {
++   "timestamp": "4:05",
++   "text": "And of course you will still watch tutorials, but this time they are to"
++  },
++  {
++   "timestamp": "4:09",
++   "text": "to fix specific problems inside your project instead of random tips"
++  },
++  {
++   "timestamp": "4:14",
++   "text": "like this video."
++  },
++  {
++   "timestamp": "4:15",
++   "text": "So yeah, I guess don't watch more videos like this after this one of course."
++  },
++  {
++   "timestamp": "4:20",
++   "text": "But seriously, every project you finish teaches you ten times more,"
++  },
++  {
++   "timestamp": "4:24",
++   "text": "at least than any tutorial ever could."
++  },
++  {
++   "timestamp": "4:29",
++   "text": "At one point, I went through something that I call my zoom transition era"
++  },
++  {
++   "timestamp": "4:32",
++   "text": "because every other shots"
++  },
++  {
++   "timestamp": "4:33",
++   "text": "had a creative transition in it, especially those hyper zoom transitions."
++  },
++  {
++   "timestamp": "4:38",
++   "text": "back then, it wasn't a lot of work to create those yourself."
++  },
++  {
++   "timestamp": "4:40",
++   "text": "But now there are so many plug ins and it's really easy to do,"
++  },
++  {
++   "timestamp": "4:44",
++   "text": "and it may feel creative, but most of the time it's just noise."
++  },
++  {
++   "timestamp": "4:48",
++   "text": "Clean cuts usually tell the story much better."
++  },
++  {
++   "timestamp": "4:51",
++   "text": "So yeah, really try to make those do the talking and not all those"
++  },
++  {
++   "timestamp": "4:54",
++   "text": "plug ins and fancy editing transitions."
++  },
++  {
++   "timestamp": "4:59",
++   "text": "Especially when you're just starting out..."
++  },
++  {
++   "timestamp": "5:00",
++   "text": "You will learn way faster and become a much better storyteller"
++  },
++  {
++   "timestamp": "5:04",
++   "text": "and filmmaker without those."
++  },
++  {
++   "timestamp": "5:08",
++   "text": "It is"
++  },
++  {
++   "timestamp": "5:08",
++   "text": "so easy to get caught up in the flow of shooting that you just assume"
++  },
++  {
++   "timestamp": "5:12",
++   "text": "that everything looks and sounds fine,"
++  },
++  {
++   "timestamp": "5:14",
++   "text": "and then you come home, you drop it in the edit and you realize that one shot is"
++  },
++  {
++   "timestamp": "5:18",
++   "text": "out of focus, or the mic was recording too loud, or you mixed up words."
++  },
++  {
++   "timestamp": "5:22",
++   "text": "And I've done that too many times."
++  },
++  {
++   "timestamp": "5:24",
++   "text": "And to be honest, it still happens sometimes."
++  },
++  {
++   "timestamp": "5:26",
++   "text": "Also with these YouTube videos."
++  },
++  {
++   "timestamp": "5:28",
++   "text": "But if you can..."
++  },
++  {
++   "timestamp": "5:29",
++   "text": "just take a minute between setups or when you're changing gear"
++  },
++  {
++   "timestamp": "5:33",
++   "text": "to just check the playback. Zoom in."
++  },
++  {
++   "timestamp": "5:35",
++   "text": "Just listen back and just make sure it's all there,"
++  },
++  {
++   "timestamp": "5:37",
++   "text": "because that will really save you from bumping your heads into your desk later."
++  },
++  {
++   "timestamp": "5:43",
++   "text": "So about 8 year ago, I was moving to Amsterdam."
++  },
++  {
++   "timestamp": "5:46",
++   "text": "And I know this is insanely stupid that I put all my camera gear together"
++  },
++  {
++   "timestamp": "5:51",
++   "text": "with my hard drive full of client footage in a box"
++  },
++  {
++   "timestamp": "5:54",
++   "text": "in this net that we pull up three stories high."
++  },
++  {
++   "timestamp": "5:57",
++   "text": "But that's just how people move places in Amsterdam."
++  },
++  {
++   "timestamp": "6:00",
++   "text": "So of course you can guess what happened."
++  },
++  {
++   "timestamp": "6:03",
++   "text": "The box fell out, and my completely new gh4"
++  },
++  {
++   "timestamp": "6:06",
++   "text": "with lenses and everything and a hard drive fell down."
++  },
++  {
++   "timestamp": "6:10",
++   "text": "And I still don't know how exactly, but the camera itself and the lenses,"
++  },
++  {
++   "timestamp": "6:15",
++   "text": "they all survived..."
++  },
++  {
++   "timestamp": "6:15",
++   "text": "I think because the hard drive was on the bottom,"
++  },
++  {
++   "timestamp": "6:19",
++   "text": "so the hard drive didn't survive."
++  },
++  {
++   "timestamp": "6:21",
++   "text": "And you will only have to learn this lesson once, most people will learn it"
++  },
++  {
++   "timestamp": "6:25",
++   "text": "the hard way. So let me tell you this once."
++  },
++  {
++   "timestamp": "6:28",
++   "text": "Back up your footage twice because you will"
++  },
++  {
++   "timestamp": "6:32",
++   "text": "be forever grateful when something happens."
++  },
++  {
++   "timestamp": "6:34",
++   "text": "And of course, never put your hard drives in a net."
++  },
++  {
++   "timestamp": "6:38",
++   "text": "That was so &amp;^# stupid."
++  },
++  {
++   "timestamp": "6:41",
++   "text": "Probably every filmmaker, learns this lesson"
++  },
++  {
++   "timestamp": "6:43",
++   "text": "that great visuals with bad sound is unwatchable."
++  },
++  {
++   "timestamp": "6:48",
++   "text": "You can shoot on your phone from 2015, and things are fine if the audio is good."
++  },
++  {
++   "timestamp": "6:53",
++   "text": "But the moment that someone can't hear you properly, they instantly click away."
++  },
++  {
++   "timestamp": "6:57",
++   "text": "So really be sure to check your audio before you start recording."
++  },
++  {
++   "timestamp": "7:00",
++   "text": "And also in the edit."
++  },
++  {
++   "timestamp": "7:01",
++   "text": "Spent enough time on balancing it out and listen to it on different devices"
++  },
++  {
++   "timestamp": "7:05",
++   "text": "just to be sure that it sounds good enough."
++  },
++  {
++   "timestamp": "7:08",
++   "text": "So yeah, sound is really a big part of your story."
++  },
++  {
++   "timestamp": "7:10",
++   "text": "And that's why I care a lot about the tools that I use for it."
++  },
++  {
++   "timestamp": "7:13",
++   "text": "And this video is sponsored by Audiio."
++  },
++  {
++   "timestamp": "7:15",
++   "text": "They've just released LinkMatch 2.0."
++  },
++  {
++   "timestamp": "7:18",
++   "text": "It's a rebuilt version of their music"
++  },
++  {
++   "timestamp": "7:20",
++   "text": "matching tool that makes finding the right soundtrack way easier."
++  },
++  {
++   "timestamp": "7:24",
++   "text": "You can drop in any song link that you like from Spotify or YouTube,"
++  },
++  {
++   "timestamp": "7:28",
++   "text": "for example, and it will instantly give you similar tracks from their library."
++  },
++  {
++   "timestamp": "7:32",
++   "text": "So if you already know the kind of vibe you want,"
++  },
++  {
++   "timestamp": "7:34",
++   "text": "it really helps you to find something that fits fast."
++  },
++  {
++   "timestamp": "7:37",
++   "text": "You can even refine it by a specific part of the song, like the intro"
++  },
++  {
++   "timestamp": "7:41",
++   "text": "or the chorus, and it shows you exactly which section matches your reference."
++  },
++  {
++   "timestamp": "7:45",
++   "text": "if you want to try it out for free, go to audiio.com/linkmatch."
++  },
++  {
++   "timestamp": "7:49",
++   "text": "And if you decide to get the full version, use my link...."
++  },
++  {
++   "timestamp": "7:51",
++   "text": "Audiio.com/timrunia and the code “Tim"
++  },
++  {
++   "timestamp": "7:55",
++   "text": "Runia” to get 70% off your first year of Audiio Pro."
++  },
++  {
++   "timestamp": "7:58",
++   "text": "Now let's go to the next mistake"
++  },
++  {
++   "timestamp": "8:02",
++   "text": "if your timeline looks like a"
++  },
++  {
++   "timestamp": "8:03",
++   "text": "big spaghetti mess, I really get it because it can become extremely chaotic."
++  },
++  {
++   "timestamp": "8:08",
++   "text": "And when I was starting out, I didn't think it mattered that much."
++  },
++  {
++   "timestamp": "8:12",
++   "text": "I thought it was pretty cool with all these layers."
++  },
++  {
++   "timestamp": "8:14",
++   "text": "But once you start editing longer projects, organization becomes everything,"
++  },
++  {
++   "timestamp": "8:18",
++   "text": "especially when you're a bit chaotic."
++  },
++  {
++   "timestamp": "8:20",
++   "text": "And most creative people are."
++  },
++  {
++   "timestamp": "8:21",
++   "text": "So yeah, use color codes to structure name your sequences properly"
++  },
++  {
++   "timestamp": "8:26",
++   "text": "and just find full structures that work for you."
++  },
++  {
++   "timestamp": "8:29",
++   "text": "Creating these habits will really make editing feel much smoother and way"
++  },
++  {
++   "timestamp": "8:33",
++   "text": "less stressful, because your brain can now stay focused on the creative parts"
++  },
++  {
++   "timestamp": "8:37",
++   "text": "instead of constantly having to search for stuff."
++  },
++  {
++   "timestamp": "8:41",
++   "text": "And that's much better."
++  },
++  {
++   "timestamp": "8:42",
++   "text": "So create that habit."
++  },
++  {
++   "timestamp": "8:45",
++   "text": "The best filmmakers are good editors."
++  },
++  {
++   "timestamp": "8:48",
++   "text": "A lot of people think editing is just the boring part, and that it's necessary."
++  },
++  {
++   "timestamp": "8:52",
++   "text": "And I understand why,"
++  },
++  {
++   "timestamp": "8:53",
++   "text": "because sometimes editing can feel very repetitive, very frustrating."
++  },
++  {
++   "timestamp": "8:57",
++   "text": "But editing is not the finishing touch."
++  },
++  {
++   "timestamp": "9:00",
++   "text": "It's really where the story comes alive."
++  },
++  {
++   "timestamp": "9:01",
++   "text": "So for me, I've always loved editing, and it's always been"
++  },
++  {
++   "timestamp": "9:05",
++   "text": "the part where I really find the story."
++  },
++  {
++   "timestamp": "9:08",
++   "text": "You know, random shots start to make sense, or the metaphors"
++  },
++  {
++   "timestamp": "9:11",
++   "text": "that I thought of in the script really come alive, and the music does"
++  },
++  {
++   "timestamp": "9:14",
++   "text": "its job perfectly, and that's really the magic of it."
++  },
++  {
++   "timestamp": "9:17",
++   "text": "So if you start to hate editing, please remember"
++  },
++  {
++   "timestamp": "9:21",
++   "text": "that it's not just post-production, it's really story creation."
++  },
++  {
++   "timestamp": "9:25",
++   "text": "And the better you can imagine your edit before"
++  },
++  {
++   "timestamp": "9:26",
++   "text": "you start filming, the easier it will be as a filmmaker."
++  },
++  {
++   "timestamp": "9:30",
++   "text": "So go practice."
++  },
++  {
++   "timestamp": "9:33",
++   "text": "So yeah, I think that there's this phase that every filmmaker"
++  },
++  {
++   "timestamp": "9:36",
++   "text": "goes through trying to make videos that look like everyone else's."
++  },
++  {
++   "timestamp": "9:39",
++   "text": "Because you copy other creators, you copy their shots, you use the same LUTs..."
++  },
++  {
++   "timestamp": "9:43",
++   "text": "And of course, this is fine because it can teach you a lot, but it is very possible"
++  },
++  {
++   "timestamp": "9:48",
++   "text": "that one day you suddenly realize that it doesn't feel like you."
++  },
++  {
++   "timestamp": "9:52",
++   "text": "Now, I don't think you have to be original on purpose, but just following"
++  },
++  {
++   "timestamp": "9:56",
++   "text": "what you really find beautiful, that really develops your own taste,"
++  },
++  {
++   "timestamp": "9:59",
++   "text": "you know you can really use your own taste as your compass."
++  },
++  {
++   "timestamp": "10:02",
++   "text": "Because that is what eventually will make you stand out from the crowd,"
++  },
++  {
++   "timestamp": "10:06",
++   "text": "your own taste."
++  },
++  {
++   "timestamp": "10:07",
++   "text": "So follow it."
++  },
++  {
++   "timestamp": "10:10",
++   "text": "Most people fall into this trap, and it's really a problem"
++  },
++  {
++   "timestamp": "10:12",
++   "text": "because most beginners want their first video"
++  },
++  {
++   "timestamp": "10:14",
++   "text": "to look like some sort of cinematic short film that only more"
++  },
++  {
++   "timestamp": "10:17",
++   "text": "experienced people can make, so then they never finish."
++  },
++  {
++   "timestamp": "10:20",
++   "text": "Especially if you're someone who's starting out."
++  },
++  {
++   "timestamp": "10:22",
++   "text": "Or maybe if you're"
++  },
++  {
++   "timestamp": "10:23",
++   "text": "someone who does have experience but is starting to create a different"
++  },
++  {
++   "timestamp": "10:26",
++   "text": "kind of video, you know, maybe you're starting"
++  },
++  {
++   "timestamp": "10:28",
++   "text": "in front of the camera for the first time because you're doing YouTube"
++  },
++  {
++   "timestamp": "10:31",
++   "text": "or you're acting or whatever..."
++  },
++  {
++   "timestamp": "10:33",
++   "text": "your first video isn’t"
++  },
++  {
++   "timestamp": "10:34",
++   "text": "supposed to be perfect."
++  },
++  {
++   "timestamp": "10:36",
++   "text": "It's really not."
++  },
++  {
++   "timestamp": "10:37",
++   "text": "And the faster you finish one project, the faster you will grow."
++  },
++  {
++   "timestamp": "10:41",
++   "text": "Really, believe me."
++  },
++  {
++   "timestamp": "10:44",
++   "text": "I've seen this happen so many times, even to people who are really good."
++  },
++  {
++   "timestamp": "10:47",
++   "text": "A friend of mine who I share this office space with."
++  },
++  {
++   "timestamp": "10:50",
++   "text": "He shot all this beautiful footage for a documentary is creating"
++  },
++  {
++   "timestamp": "10:54",
++   "text": "and it's really amazing stuff."
++  },
++  {
++   "timestamp": "10:55",
++   "text": "But then suddenly client work took over"
++  },
++  {
++   "timestamp": "10:59",
++   "text": "and months went by and I know that's just how it goes."
++  },
++  {
++   "timestamp": "11:03",
++   "text": "And yes, I'm talking to you, Ruben..."
++  },
++  {
++   "timestamp": "11:05",
++   "text": "And I really get it."
++  },
++  {
++   "timestamp": "11:06",
++   "text": "It's happened to me so many times as well."
++  },
++  {
++   "timestamp": "11:08",
++   "text": "And that's just how it goes."
++  },
++  {
++   "timestamp": "11:10",
++   "text": "But what I've learned is that"
++  },
++  {
++   "timestamp": "11:11",
++   "text": "if you want to keep a project alive, you need to keep momentum,"
++  },
++  {
++   "timestamp": "11:15",
++   "text": "even if it's just 15 minutes a day or two hours a week."
++  },
++  {
++   "timestamp": "11:19",
++   "text": "You know, just selecting a few good clips or writing a sentence for the voiceover."
++  },
++  {
++   "timestamp": "11:24",
++   "text": "It doesn't really matter what it's all about."
++  },
++  {
++   "timestamp": "11:26",
++   "text": "Keeping a project inside your head, because once you stop completely,"
++  },
++  {
++   "timestamp": "11:30",
++   "text": "it all fades out of your mind very quickly."
++  },
++  {
++   "timestamp": "11:32",
++   "text": "And the difference between finishing something and"
++  },
++  {
++   "timestamp": "11:35",
++   "text": "abandoning it completely,"
++  },
++  {
++   "timestamp": "11:38",
++   "text": "is just usually staying connected to it long enough"
++  },
++  {
++   "timestamp": "11:41",
++   "text": "to give it a push across the finish line."
++  },
++  {
++   "timestamp": "11:45",
++   "text": "Yeah."
++  },
++  {
++   "timestamp": "11:46",
++   "text": "So this one's really painful because I did it for years myself as well."
++  },
++  {
++   "timestamp": "11:50",
++   "text": "I would spend weeks working on something and then it would be ready"
++  },
++  {
++   "timestamp": "11:54",
++   "text": "and I would convince myself that it wasn't ready or that it wasn't good enough."
++  },
++  {
++   "timestamp": "11:58",
++   "text": "But let me tell you that nothing will ever be ready, and nothing will"
++  },
++  {
++   "timestamp": "12:02",
++   "text": "especially not be good enough."
++  },
++  {
++   "timestamp": "12:04",
++   "text": "And sharing your work will always feel vulnerable."
++  },
++  {
++   "timestamp": "12:06",
++   "text": "But in the moment when you share your work, when you start creating,"
++  },
++  {
++   "timestamp": "12:10",
++   "text": "you will find out what actually connects with people, what part of you"
++  },
++  {
++   "timestamp": "12:14",
++   "text": "actually connects with people."
++  },
++  {
++   "timestamp": "12:15",
++   "text": "And that is really how you grow as a creator, or how you grow as a filmmaker."
++  },
++  {
++   "timestamp": "12:22",
++   "text": "Comparison really kills creativity faster than anything,"
++  },
++  {
++   "timestamp": "12:25",
++   "text": "and I've wasted so much time scrolling through other people's videos"
++  },
++  {
++   "timestamp": "12:29",
++   "text": "or websites wondering why they look so damn professional."
++  },
++  {
++   "timestamp": "12:33",
++   "text": "But this kind of comparison is never fair, because you always have"
++  },
++  {
++   "timestamp": "12:36",
++   "text": "a different look on your own work than someone else's."
++  },
++  {
++   "timestamp": "12:41",
++   "text": "Always."
++  },
++  {
++   "timestamp": "12:41",
++   "text": "Because with your own work, you were there the whole process."
++  },
++  {
++   "timestamp": "12:44",
++   "text": "You know all about your own messy stuff that went on behind the scenes."
++  },
++  {
++   "timestamp": "12:49",
++   "text": "But you never see other people's"
++  },
++  {
++   "timestamp": "12:50",
++   "text": "first ideas, bad takes, and what went wrong during the shoot."
++  },
++  {
++   "timestamp": "12:54",
++   "text": "And that's really why it feels so different"
++  },
++  {
++   "timestamp": "12:57",
++   "text": "when you watch your own stuff compared to someone else's stuff."
++  },
++  {
++   "timestamp": "13:00",
++   "text": "It's always a highlight that you're watching, So take inspiration"
++  },
++  {
++   "timestamp": "13:03",
++   "text": "from it, but don't compare because you can just never live up to it."
++  },
++  {
++   "timestamp": "13:08",
++   "text": "Seriously dare to ask for help."
++  },
++  {
++   "timestamp": "13:11",
++   "text": "I really had a problem with this because I was really afraid"
++  },
++  {
++   "timestamp": "13:14",
++   "text": "that people wouldn't get my ideas or they thought it would be cringe."
++  },
++  {
++   "timestamp": "13:17",
++   "text": "Especially as a commercial director moving to YouTube videos"
++  },
++  {
++   "timestamp": "13:20",
++   "text": "where I'm sometimes asking myself, it felt so weird and vulnerable."
++  },
++  {
++   "timestamp": "13:24",
++   "text": "But of course, it's really turns out that people love to help."
++  },
++  {
++   "timestamp": "13:28",
++   "text": "And collaboration is what always makes the work better."
++  },
++  {
++   "timestamp": "13:32",
++   "text": "But also the experience is much more fun."
++  },
++  {
++   "timestamp": "13:35",
++   "text": "You don't have to do it all alone."
++  },
++  {
++   "timestamp": "13:37",
++   "text": "So please ask for help and you will be surprised how helpful"
++  },
++  {
++   "timestamp": "13:42",
++   "text": "people actually are, especially when they share the same passion as you."
++  },
++  {
++   "timestamp": "13:46",
++   "text": "It's it's really energizing."
++  },
++  {
++   "timestamp": "13:49",
++   "text": "So this one's a thin line, I think, because ignoring feedback keeps you stuck,"
++  },
++  {
++   "timestamp": "13:53",
++   "text": "but taking advice from the wrong people can also pull you in the wrong direction."
++  },
++  {
++   "timestamp": "13:57",
++   "text": "I used to be very bad at receiving feedback."
++  },
++  {
++   "timestamp": "14:00",
++   "text": "Because making videos can feel really personal."
++  },
++  {
++   "timestamp": "14:03",
++   "text": "So feedback can feel really personal as well."
++  },
++  {
++   "timestamp": "14:05",
++   "text": "And of course, not everyone understands your vision and your taste."
++  },
++  {
++   "timestamp": "14:08",
++   "text": "So that's okay."
++  },
++  {
++   "timestamp": "14:09",
++   "text": "So if you get feedback that doesn't feel right, you don't have to follow it."
++  },
++  {
++   "timestamp": "14:13",
++   "text": "But if multiple people mentioned the same thing,"
++  },
++  {
++   "timestamp": "14:15",
++   "text": "you just might have to pay a little attention."
++  },
++  {
++   "timestamp": "14:18",
++   "text": "So learning to tell the difference between"
++  },
++  {
++   "timestamp": "14:19",
++   "text": "those two is really how you can grow a lot."
++  },
++  {
++   "timestamp": "14:21",
++   "text": "So at least be open to feedback."
++  },
++  {
++   "timestamp": "14:25",
++   "text": "Last one."
++  },
++  {
++   "timestamp": "14:26",
++   "text": "Also the most important one."
++  },
++  {
++   "timestamp": "14:28",
++   "text": "Filmmaking can be really stressful because of deadlines,"
++  },
++  {
++   "timestamp": "14:31",
++   "text": "because of all the self-doubt, gear problems or algorithm pressure."
++  },
++  {
++   "timestamp": "14:34",
++   "text": "You know, all of it can drive you completely crazy."
++  },
++  {
++   "timestamp": "14:37",
++   "text": "But at the end of the day, you started this because you love doing it."
++  },
++  {
++   "timestamp": "14:40",
++   "text": "And I'm kind of talking to myself here."
++  },
++  {
++   "timestamp": "14:43",
++   "text": "But really, guys, you know, making something from nothing"
++  },
++  {
++   "timestamp": "14:45",
++   "text": "that is really kind of magic."
++  },
++  {
++   "timestamp": "14:47",
++   "text": "And it's easy to forget that when you're deep in a project."
++  },
++  {
++   "timestamp": "14:49",
++   "text": "But that joy and it's curiosity is really what makes the work good"
++  },
++  {
++   "timestamp": "14:53",
++   "text": "in the first place."
++  },
++  {
++   "timestamp": "14:54",
++   "text": "So please don't lose that trying to be perfect."
++  },
++  {
++   "timestamp": "14:58",
++   "text": "And if you're stuck at mistake number two:"
++  },
++  {
++   "timestamp": "15:00",
++   "text": "no story or number one: watching tutorials instead of creating,"
++  },
++  {
++   "timestamp": "15:03",
++   "text": "well, that's literally what I built the Story Starter Kit for..."
++  },
++  {
++   "timestamp": "15:07",
++   "text": "Because it helps"
++  },
++  {
++   "timestamp": "15:07",
++   "text": "you create your video from idea to final edit with one simple structure."
++  },
++  {
++   "timestamp": "15:12",
++   "text": "So the link is in the description check it out."
++  },
++  {
++   "timestamp": "15:13",
++   "text": "And if you choose to ignore my number one tip to stop watching tutorials, fine."
++  },
++  {
++   "timestamp": "15:17",
++   "text": "But then at least watch this one,"
++  },
++  {
++   "timestamp": "15:18",
++   "text": "because that will actually teach you how to write a story"
++  },
++  {
++   "timestamp": "15:21",
++   "text": "and that is the most important thing in filmmaking."
++  },
++  {
++   "timestamp": "15:23",
++   "text": "So thank you for watching."
++  },
++  {
++   "timestamp": "15:25",
++   "text": "I really appreciate you very much and I hope to see you in the next,"
++  },
++  {
++   "timestamp": "15:30",
++   "text": "because the next video will be a big one."
++  },
++  {
++   "timestamp": "15:33",
++   "text": "Yes, it's going to be nice."
++  },
++  {
++   "timestamp": "15:38",
++   "text": "But I have to film still a lot,"
++  },
++  {
++   "timestamp": "15:39",
++   "text": "so go watch this one."
++  },
++  {
++   "timestamp": "16:05",
++   "text": "it's in fact also one of the reasons why I want to make this video,"
++  },
++  {
++   "timestamp": "16:07",
++   "text": "not to create a perfect video, but just to create something quick"
++  },
++  {
++   "timestamp": "16:11",
++   "text": "and hopefully useful for you."
++  },
++  {
++   "timestamp": "16:13",
++   "text": "So please let me know in the comments which tip resonates most with you?"
++  },
++  {
++   "timestamp": "16:16",
++   "text": "Because I would really love to hear that. And I read everything."
++  }
++ ],
++ "key_techniques": [
++  "common_mistakes",
++  "pacing_errors",
++  "hook_errors",
++  "audio_errors"
++ ]
++}
+\ No newline at end of file
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
+index 5533d6f..ccfbc0b 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/PLAN_NARRATIVUM.md
+@@ -98,6 +98,29 @@ La mémoire de la frégate vit dans l'Archivum global de la flotte :
+ Lecture : toute la doctrine flotte (lecture seule, sens unique).
+ Écriture : uniquement dans `narrativum/`.
+ 
++### 5bis. Sources d'autorité (la frégate hérite de la sagesse de la flotte)
++
++La frégate ne réinvente rien : elle charge en CONTRAINTES les règles déjà
++actées de l'Archivum du CLIPPING (`MONDES_FORGES/CLIPPING/ARCHIVUM/montage/`) :
++
++| Fichier (patterns/) | Ce que la frégate en tire |
++|---|---|
++| `style_split_scene.json` | layout split : clip en haut, hook au centre, contenu bas |
++| `style_ranking.json` | structure top N, caps b-roll par durée, stratégie d'items |
++| `style_reframing_916.json` (+ racine ARCHIVUM/montage/patterns/reframing_916.json) | reframe 9:16, hook non-broll, placement sujet |
++| `broll_integration.json` | scoring intelligent, hook jamais b-roll, caps par durée |
++| `cut_patterns.json` · `energy_patterns.json` · `zoom_patterns.json` · `audio_presets.json` | grammaire des cuts, courbes d'énergie, presets son |
++| `hooks_psychology.json` · `text_overlay_patterns.json` | psychologie d'accroche, styles d'overlay |
++
++Sources narratives (transcripts/ — socle de la chimie, récolte Warsmith) :
++`J0ydlAqg6_8_tim_runia.json` (7 cuts), `dhpazqW_OaU_tim_runia.json`
++(5 secrets storytelling), `oiNnWm8Z5l4_tim_runia.json` (21 erreurs fatales),
++`7_cuts_session_warsmith.json` (vocabulaire contractuel).
++
++En cas de conflit entre un pattern et `caviar_budget.json`, le budget gagne
++(il est plus récent et plus strict) — et le conflit est consigné dans
++`lessons.json`.
++
+ ## 6. Piles techniques (CPU only — si un besoin exige un GPU, on sur-conçoit)
+ 
+ `ffmpeg silencedetect` · `numpy` sur WAV (amplitudes — muscle F00C) ·
+-- 
+2.34.1
+
