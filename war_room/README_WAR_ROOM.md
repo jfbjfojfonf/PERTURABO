@@ -43,13 +43,15 @@ SIEGE_WEBHOOK_TOKEN=mon-secret python3 war_room/receiver.py
 # Port : --port N, sinon env PORT, sinon 8787
 ```
 
-## Endpoints (Livraisons C et D livrées)
+## Endpoints (War Room v3)
 
 | Route | Méthode | Rôle |
 |---|---|---|
 | `/` | GET | **Dashboard Salle de Guerre** (`docs/war_room.html`) |
 | `/api/war-room` | GET | JSON complet — polling du dashboard (2 s en LIVE) |
-| `/api/gate` | POST | Verdict Warsmith `{run_id, candidate_id, verdict: approved\|rejected}` |
+| `/api/gate` | POST | Verdict `{run_id, candidate_id, verdict: approved\|rejected\|clear}` — `clear` **révoque** un verdict |
+| `/api/reset` | POST | **RESET** — purge tous les verdicts + compteurs (`{"full":true}` vide aussi les runs) |
+| `/api/transcript` | GET | `?candidate=<id>&run_id=<id>` → transcript **bilingue FR/EN** du clip |
 | `/` | POST | Webhook F00C (payload complet, `X-Siege-Token` requis si configuré) |
 
 **La boucle de retour Livraison D est fermée** : le dashboard poste les
@@ -57,6 +59,33 @@ verdicts sur `/api/gate`, le récepteur les stocke dans `war_room.json`
 (`gates`, idempotents — re-voter la même chose ne gonfle pas les compteurs,
 une inversion remplace proprement le compteur précédent), et le pipeline
 PERTURABO relit `GET /api/war-room` pour connaître les clips GO.
+
+## Contrôle opérateur (v3)
+
+- **⟲ RESET** (bouton rouge du header, avec confirmation) : remettre tous les
+  verdicts à zéro. Les runs et les manifestes caviar sont conservés — seule la
+  gate repart de zéro.
+- **Révocation individuelle** : cliquer le tag « ✔ GO » / « ✘ NO-GO » d'une
+  carte (ou son bouton « ✕ retirer ») → `verdict: "clear"` → la carte redevient
+  en attente, le compteur se décrémente.
+- **Garde-fou anti-mélange de runs** : les manifestes caviar d'un run précédent
+  ne sont jamais servis sur un nouveau run (même si les ids de candidats se
+  répètent) — le cockpit ne voit que du vrai.
+
+## Transcripts bilingues (v3)
+
+Au clic sur une carte candidat, le panneau **Transcript** affiche le texte du
+clip en deux colonnes **FR | EN**, horodaté relativement au début du clip.
+
+- Source : sous-titres YouTube FR/EN téléchargés **une fois** par vidéo via
+  `yt-dlp` (vendored dans `war_room/_vendor/` — aucune installation requise).
+- Cache : `docs/data/transcripts/{run_id}/{candidate}.{fr|en}.json`.
+- **Préchauffage automatique** : dès qu'un run arrive (POST `/`), tous les
+  transcripts des candidats se téléchargent en tâche de fond — le clic reste
+  instantané.
+- Rate-limit YouTube (HTTP 429) : message lisible + cooldown 10 min, nouvel
+  essai automatique — jamais de crash.
+- Sous-titres absents : « transcript indisponible pour ce clip » — propre.
 
 ## Le dashboard (docs/war_room.html)
 
@@ -85,6 +114,14 @@ gate. C'est la source du dashboard `/war-room` et de la boucle de retour PERTURA
 Le dépôt embarque un **seed démo Sophie Rain** (`war_room/seed_demo.py`) :
 3 candidats, heatmap 100 buckets, barre rouge — l'état affiché tant que le
 run réel n'a pas poussé.
+
+## Tests
+
+```bash
+python3 -m pytest war_room/tests/ -q
+python3 war_room/receiver.py --self-test
+python3 war_room/transcripts.py   # parsing VTT (manuel + auto)
+```
 
 ## Sécurité
 

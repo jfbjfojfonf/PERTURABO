@@ -20,6 +20,7 @@ Test sans serveur :
 from __future__ import annotations
 
 import argparse
+import threading
 import traceback
 import json
 import os
@@ -27,6 +28,12 @@ import sys
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+
+try:  # transcripts bilingues (yt-dlp) — optionnel : le dashboard doit rester debout sans
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import transcripts as transcripts_mod
+except Exception:  # noqa: BLE001 - dégradation propre si le module manque
+    transcripts_mod = None
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = REPO_ROOT / "docs"
@@ -44,11 +51,14 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _load_caviar_index() -> dict:
+def _load_caviar_index(current_run_id: str = "") -> dict:
     """Manifestes caviar disponibles (candidate_id → manifeste ou refus).
 
     Le mapping candidat → fichier est écrit dans docs/data/caviar_index.json
     (par l'opérateur ou l'outil d'émission) ; cette fonction résout et charge.
+    Garde-fou anti-mélange de runs : un manifeste émis pour un autre run que
+    le run courant n'est PAS servi (les mêmes ids de candidats réapparaissent
+    d'un run à l'autre — servir l'ancien serait mentir au cockpit).
     """
     if not CAVIAR_INDEX.exists():
         return {}
@@ -62,9 +72,14 @@ def _load_caviar_index() -> dict:
         if not p.is_absolute():
             p = REPO_ROOT / rel
         try:
-            out[candidate_id] = json.loads(p.read_text(encoding="utf-8"))
+            man = json.loads(p.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             out[candidate_id] = {"refused": True, "reason": f"manifeste illisible: {rel}"}
+            continue
+        man_run = str((man.get("source") or {}).get("run_id") or "")
+        if current_run_id and man_run and man_run != current_run_id:
+            continue  # manifeste d'un run précédent : hors sujet pour ce run
+        out[candidate_id] = man
     return out
 
 
@@ -115,7 +130,32 @@ def store_payload(payload: dict) -> dict:
     doc["total_runs"] = len(history)
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
     DATA_PATH.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+    _warm_transcripts_async(payload)
     return doc
+
+
+def _warm_transcripts_async(payload: dict) -> None:
+    """Préchauffe les transcripts FR/EN de tous les candidats en arrière-plan.
+
+    Objectif : quand l'opérateur clique une carte, le transcript est déjà en
+    cache — le clic reste instantané même si yt-dlp met 30 s (ou rate-limit).
+    """
+    if transcripts_mod is None:
+        return
+    source = (payload.get("source") or {}).get("reference") or ""
+    run_id = payload.get("run_id") or ""
+    cands = [c for c in (payload.get("candidates") or [])
+             if c.get("id") and c.get("start_sec") is not None]
+    if not source or not run_id or not cands:
+        return
+
+    def _warm():
+        for cand in cands:
+            try:
+                transcripts_mod.build_candidate_transcript(source, run_id, cand)
+            except Exception:  # noqa: BLE001 - le préchauffage ne casse jamais le récepteur
+                pass
+    threading.Thread(target=_warm, daemon=True, name="warm-transcripts").start()
 
 
 def store_gate(run_id: str, candidate_id: str, verdict: str) -> tuple[dict, str]:
@@ -148,6 +188,38 @@ def store_gate(run_id: str, candidate_id: str, verdict: str) -> tuple[dict, str]
     return doc, "ok"
 
 
+def clear_gate(run_id: str, candidate_id: str) -> tuple[dict, str]:
+    """Révoque un verdict (bouton « retirer ») : la carte redevient en attente."""
+    doc = _load_doc()
+    gates = doc.get("gates", {}).get(run_id, {})
+    entry = gates.get(candidate_id)
+    if not entry:
+        return doc, f"pas de verdict à retirer pour {candidate_id!r} dans {run_id!r}"
+    verdict = entry.get("verdict")
+    doc["gates"][run_id].pop(candidate_id, None)
+    doc.get("last_verdicts", {}).pop(f"{run_id}/{candidate_id}", None)
+    counts = doc.setdefault("gate_counts", {"approved": 0, "rejected": 0, "pending": 0})
+    if verdict in counts:
+        counts[verdict] = max(0, counts[verdict] - 1)
+    DATA_PATH.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+    return doc, "ok"
+
+
+def reset_all(full: bool = False) -> dict:
+    """Bouton RESET : verdicts + compteurs à zéro. full=True vide aussi les runs.
+
+    Les manifestes caviar déjà émis sont conservés (traçables dans l'Archivum
+    F00D) ; le cockpit repart à zéro, l'historique reste chez la frégate.
+    """
+    doc = _load_doc()
+    keep = {"last_pushed_at": doc.get("last_pushed_at")}
+    if not full:
+        keep.update({k: doc.get(k) for k in ("last_run", "runs", "total_runs") if k in doc})
+    DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DATA_PATH.write_text(json.dumps(keep, ensure_ascii=False, indent=2), encoding="utf-8")
+    return keep
+
+
 def make_handler(token: str):
     class SiegeHandler(BaseHTTPRequestHandler):
         def do_POST(self):  # noqa: N802 - API http.server
@@ -177,10 +249,25 @@ def make_handler(token: str):
             except json.JSONDecodeError as exc:
                 self._reply(400, {"error": f"JSON invalide : {exc}"})
                 return
+            if self.path.startswith("/api/reset"):
+                full = "full=1" in (self.path or "") or bool(payload.get("full"))
+                doc = reset_all(full=full)
+                self._reply(200, {"accepted": True, "reset": "full" if full else "gates",
+                                  "gate_counts": {"approved": 0, "rejected": 0, "pending": 0}})
+                return
             if self.path.startswith("/api/gate"):
                 run_id = payload.get("run_id") or ""
                 candidate_id = payload.get("candidate_id") or ""
                 verdict = payload.get("verdict") or ""
+                if verdict == "clear":
+                    doc, reason = clear_gate(run_id, candidate_id)
+                    if reason != "ok":
+                        self._reply(422, {"error": reason})
+                        return
+                    self._reply(200, {"accepted": True, "run_id": run_id,
+                                      "candidate_id": candidate_id, "verdict": "clear",
+                                      "gate_counts": doc.get("gate_counts")})
+                    return
                 doc, reason = store_gate(run_id, candidate_id, verdict)
                 if reason != "ok":
                     self._reply(422, {"error": reason})
@@ -212,9 +299,13 @@ def make_handler(token: str):
 
         def _do_GET_safe(self):  # noqa: N802
             path = self.path.split("?")[0]
+            if path.startswith("/api/transcript"):
+                self._handle_transcript(self.path)  # self.path = query incluse
+                return
             if path.startswith("/api/war-room"):
                 doc = _load_doc()
-                doc["caviar_manifests"] = _load_caviar_index()
+                last_run_id = ((doc.get("last_run") or {}).get("run_id")) or ""
+                doc["caviar_manifests"] = _load_caviar_index(last_run_id)
                 # compteur pending recalculé (vérité depuis les données)
                 last = doc.get("last_run") or {}
                 gates = (doc.get("gates") or {}).get(last.get("run_id", ""), {})
@@ -234,6 +325,40 @@ def make_handler(token: str):
                 self._serve_file(safe)
                 return
             self._reply(404, {"error": "route inconnue (POST /, /api/gate ; GET /api/war-room, /)"})
+
+        def _handle_transcript(self, path: str) -> None:
+            """GET /api/transcript?candidate=voxc-2[&run_id=…] → {fr, en, …}"""
+            if transcripts_mod is None:
+                self._reply(200, {"available": False,
+                                  "note": "module transcripts indisponible côté serveur"})
+                return
+            from urllib.parse import parse_qs, urlparse
+            qs = parse_qs(urlparse(path).query)
+            run_id = (qs.get("run_id") or [""])[0]
+            candidate_id = (qs.get("candidate") or [""])[0]
+            doc = _load_doc()
+            last = doc.get("last_run") or {}
+            if run_id and run_id != last.get("run_id"):
+                # run précis demandé mais pas le dernier : on cherche dans l'historique léger
+                self._reply(200, {"available": False,
+                                  "note": f"run {run_id!r} non servi en transcript (dernier run : {last.get('run_id')!r})"})
+                return
+            cand = next((c for c in last.get("candidates") or []
+                         if c.get("id") == candidate_id), None)
+            if cand is None:
+                self._reply(422, {"error": f"candidat inconnu : {candidate_id!r}"})
+                return
+            source = (last.get("source") or {}).get("reference") or ""
+            if not source:
+                self._reply(200, {"available": False, "note": "source inconnue"})
+                return
+            try:
+                out = transcripts_mod.build_candidate_transcript(
+                    source, last["run_id"], cand)
+            except Exception as exc:  # noqa: BLE001 - repli propre (429, réseau…)
+                out = {"available": False,
+                       "note": f"transcript indisponible : {exc}"}
+            self._reply(200, out)
 
         def _serve_file(self, file_path: Path) -> None:
             types = {".html": "text/html", ".json": "application/json",
@@ -318,7 +443,7 @@ def main(argv: list[str] | None = None) -> int:
               file=sys.stderr)
     server = ThreadingHTTPServer(("0.0.0.0", port), make_handler(token))
     print(f"WAR ROOM prêt sur 0.0.0.0:{port} — dashboard /, POST / (X-Siege-Token), "
-          "POST /api/gate, GET /api/war-room")
+          "POST /api/gate, GET /api/transcript, GET /api/war-room")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

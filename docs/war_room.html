@@ -149,6 +149,32 @@
   .verdict-tag { font-size: 11px; letter-spacing: 1px; padding: 4px 10px; border-radius: 3px; }
   .verdict-tag.approved { background: rgba(46,160,67,.15); color: var(--green); }
   .verdict-tag.rejected { background: rgba(248,81,73,.15); color: var(--red); }
+  /* ── RESET global + révocation de verdict ── */
+  button.reset-btn { padding: 8px 18px; border-radius: 4px; border: 1px solid var(--red); color: var(--red);
+                     background: transparent; font-weight: 800; letter-spacing: 2px; cursor: pointer;
+                     font-size: 12px; transition: .15s; }
+  button.reset-btn:hover { background: var(--red); color: var(--black-plate); }
+  .verdict-tag { cursor: pointer; transition: .15s; }
+  .verdict-tag:hover { outline: 1px dashed currentColor; }
+  .gate-btn.clear { color: var(--text-dim); border-color: var(--boltgun); font-size: 11px; padding: 6px 10px; }
+  .gate-btn.clear:hover:not(:disabled) { background: var(--boltgun); color: var(--black-plate); }
+  /* ── Panneau transcript bilingue (clic carte) ── */
+  .transcript-panel { background: var(--black-plate); border: 1px solid var(--gold-dim); border-radius: 5px;
+                      padding: 14px 18px; margin-top: 14px; display: none; }
+  .transcript-panel h3 { color: var(--gold-bright); font-size: 12px; letter-spacing: 1.5px;
+                         text-transform: uppercase; margin-bottom: 10px; }
+  .transcript-panel .t-close { float: right; color: var(--text-dim); cursor: pointer; font-size: 12px;
+                               border: 1px solid var(--boltgun); border-radius: 3px; padding: 2px 8px; }
+  .transcript-panel .t-close:hover { color: var(--text); border-color: var(--text-dim); }
+  .transcript-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .transcript-cols .col-h { font-size: 11px; letter-spacing: 1px; color: var(--leadbelcher);
+                            border-bottom: 1px solid var(--boltgun); padding-bottom: 4px; margin-bottom: 6px; }
+  .tline { display: flex; gap: 10px; padding: 3px 4px; border-radius: 3px; font-size: 12.5px;
+           color: var(--text); line-height: 1.45; }
+  .tline .ts { color: var(--text-dim); font-variant-numeric: tabular-nums; min-width: 52px; }
+  .tline.in-clip { background: rgba(57,211,83,.10); outline: 1px solid rgba(57,211,83,.35); }
+  .tline.in-clip .ts { color: var(--phosphor); }
+  .t-note { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
 
   /* ── Données brutes : distribution + JSON ── */
   .hist { display: flex; align-items: flex-end; gap: 4px; height: 110px; padding: 6px 2px 0; }
@@ -191,6 +217,7 @@
     <div class="sub">« Le Primarque voit tous les points d'intérêt depuis son siège. »</div>
   </div>
   <div id="mode-badge" class="badge vod">MODE VOD</div>
+  <button class="reset-btn" id="reset-btn" title="Remettre tous les verdicts à zéro">⟲ RESET</button>
 </header>
 
 <main>
@@ -235,7 +262,13 @@
   <div class="panel">
     <h2>File des candidats <span class="hint">— la Gate Warsmith commande ici · clique une carte pour la situer sur la timeline</span></h2>
     <div class="cand-list" id="cand-list"></div>
-    <div class="note">Verdicts enregistrés via <b>POST /api/gate</b> — le pipeline lit la boucle de retour.</div>
+    <div class="note">Verdicts enregistrés via <b>POST /api/gate</b> — clique un verdict pour le retirer · le pipeline lit la boucle de retour.</div>
+  </div>
+
+  <div class="transcript-panel" id="transcript-panel">
+    <span class="t-close" id="t-close">✕ fermer</span>
+    <h3 id="t-title">Transcript</h3>
+    <div id="t-body"></div>
   </div>
 
   <div class="panel">
@@ -409,6 +442,50 @@ function selectCandidate(index) {
   document.querySelectorAll('.cand-block').forEach(b => b.setAttribute('fill', 'rgba(57,211,83,.15)'));
   const block = document.querySelector(`.cand-block[data-ci="${index}"]`);
   if (block) block.setAttribute('fill', 'rgba(57,211,83,.45)');
+  const cand = (chartState && chartState.cands) ? chartState.cands[index] : null;
+  if (cand) showTranscript(cand);
+}
+
+/* ══════════ TRANSCRIPT BILINGUE (clic carte) ══════════ */
+let transcriptToken = 0;   // invalide les réponses tardives (clics rapides)
+
+function tRel(s) {
+  const v = Math.round(s ?? 0);
+  return `${String(Math.floor(v / 60)).padStart(2, '0')}:${String(v % 60).padStart(2, '0')}`;
+}
+
+async function showTranscript(cand) {
+  const panel = $('transcript-panel'), body = $('t-body');
+  const token = ++transcriptToken;
+  panel.style.display = 'block';
+  $('t-title').textContent = `Transcript — ${esc(cand.id)} (${esc(cand.start_label ?? fmtClock(cand.start_sec))} → ${esc(cand.end_label ?? fmtClock(cand.end_sec))})`;
+  body.innerHTML = '<div class="t-note">⏳ chargement du transcript…</div>';
+  let data;
+  try {
+    const res = await fetch(`/api/transcript?candidate=${encodeURIComponent(cand.id)}&run_id=${encodeURIComponent(currentRunId || '')}`);
+    data = await res.json();
+  } catch (err) {
+    if (token === transcriptToken) body.innerHTML = `<div class="t-note">⚠ transcript indisponible : ${esc(err.message)}</div>`;
+    return;
+  }
+  if (token !== transcriptToken) return;   // un autre candidat a été cliqué entre-temps
+  if (!data.available) {
+    body.innerHTML = `<div class="t-note">✗ ${esc(data.note || 'transcript indisponible pour ce clip')}</div>`;
+    return;
+  }
+  const col = (lang, label) => {
+    const L = data[lang];
+    if (!L || !L.available) return '';
+    return `<div><div class="col-h">${label}</div>` + L.lines.map(l =>
+      `<div class="tline in-clip"><span class="ts">+${tRel(l.t_rel)}</span><span>${esc(l.text)}</span></div>`
+    ).join('') + '</div>';
+  };
+  const both = data.fr && data.fr.available && data.en && data.en.available;
+  body.innerHTML =
+    (both ? '<div class="transcript-cols">' : '') +
+    col('fr', '🇫🇷 Français') + col('en', '🇬🇧 English') +
+    (both ? '</div>' : '') +
+    (data.note ? `<div class="t-note">ℹ ${esc(data.note)}</div>` : '');
 }
 
 /* ══════════ CANDIDATS : cartes complètes ══════════ */
@@ -451,7 +528,15 @@ function renderCandidates(run, gates) {
     const gate = document.createElement('div');
     gate.className = 'gate';
     if (g) {
-      gate.innerHTML = `<span class="verdict-tag ${g.verdict}">${g.verdict === 'approved' ? '✔ GO' : '✘ NO-GO'}</span>`;
+      const tag = document.createElement('span');
+      tag.className = 'verdict-tag ' + g.verdict;
+      tag.textContent = g.verdict === 'approved' ? '✔ GO' : '✘ NO-GO';
+      tag.title = 'Cliquer pour retirer le verdict (redevient en attente)';
+      tag.onclick = (ev) => { ev.stopPropagation(); clearVerdict(c.id, tag); };
+      const clearBtn = document.createElement('button');
+      clearBtn.className = 'gate-btn clear'; clearBtn.textContent = '✕ retirer';
+      clearBtn.onclick = (ev) => { ev.stopPropagation(); clearVerdict(c.id, clearBtn); };
+      gate.append(tag, clearBtn);
     } else {
       const ok = document.createElement('button');
       ok.className = 'gate-btn approve'; ok.textContent = 'GO';
@@ -473,7 +558,46 @@ function pctOf(c, run) {
   return Math.round(c.start_sec / dur * 100) + ' %';
 }
 
+/* ══════════ RESET GLOBAL ══════════ */
+function bindReset() {
+  const btn = $('reset-btn');
+  if (!btn || btn.dataset.bound) return;
+  btn.dataset.bound = '1';
+  btn.onclick = async () => {
+    if (!confirm('RESET — remettre TOUS les verdicts de la gate à zéro ?\nCette action retire tous les GO et NO-GO (les runs et manifestes caviar sont conservés).')) return;
+    btn.disabled = true;
+    try {
+      const res = await fetch('/api/reset', { method: 'POST' });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || ('HTTP ' + res.status));
+      }
+      await refresh();
+    } catch (err) {
+      showError('Reset refusé par le serveur : ' + err.message);
+    } finally { btn.disabled = false; }
+  };
+}
+
 /* ══════════ GATE ══════════ */
+async function clearVerdict(candidateId, btn) {
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/gate', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ run_id: currentRunId, candidate_id: candidateId, verdict: 'clear' })
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body.error || ('HTTP ' + res.status));
+    }
+    await refresh();
+  } catch (err) {
+    showError('Révocation refusée par le serveur : ' + err.message);
+    btn.disabled = false;
+  }
+}
+
 async function decide(candidateId, verdict, okBtn, noBtn) {
   okBtn.disabled = noBtn.disabled = true;
   try {
@@ -612,6 +736,8 @@ async function refresh() {
 }
 
 bindChartHover();
+bindReset();
+$('t-close').onclick = () => { $('transcript-panel').style.display = 'none'; };
 refresh();
 setInterval(refresh, POLL_MS);
 </script>

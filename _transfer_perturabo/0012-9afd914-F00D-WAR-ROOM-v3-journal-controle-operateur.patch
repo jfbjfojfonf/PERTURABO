@@ -1,0 +1,109 @@
+From 9afd914e90900d2874279eda94d2b31fd5e47ed0 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Sun, 13 Sep 2026 13:37:14 +0000
+Subject: [PATCH] =?UTF-8?q?[F00D][WAR-ROOM-v3]=20Journal=20contr=C3=B4le?=
+ =?UTF-8?q?=20op=C3=A9rateur=20+=20le=C3=A7on=20L001=20rate-limit=20YouTub?=
+ =?UTF-8?q?e?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- F00C_LOG : RESET global, révocation de verdict, transcripts FR/EN
+  (yt-dlp vendored, préchauffage, cache), garde-fou anti-mélange de runs,
+  21/21 tests verts.
+- CONTINUATION : entrée du jour (War Room v3).
+- Archivum F00D lessons L001 : sous-titres YouTube = cache + cooldown +
+  retry asynchrone, jamais de téléchargement bloquant au clic.
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ ARCHIVUM/montage/narrativum/lessons.json      | 11 +++++++-
+ CONTINUATION_F00.md                           | 15 +++++++----
+ .../F00C_VOX/TRACKING/F00C_LOG.md             | 25 +++++++++++++++++++
+ 3 files changed, 45 insertions(+), 6 deletions(-)
+
+diff --git a/ARCHIVUM/montage/narrativum/lessons.json b/ARCHIVUM/montage/narrativum/lessons.json
+index c0378a4..a46d104 100644
+--- a/ARCHIVUM/montage/narrativum/lessons.json
++++ b/ARCHIVUM/montage/narrativum/lessons.json
+@@ -1,4 +1,13 @@
+ {
+   "note": "Pièges appris F00D — format court, un piège par entrée. Nourri après chaque run/gate.",
+-  "lessons": []
++  "lessons": [
++    {
++      "id": "L001",
++      "date": "2026-09-13",
++      "piege": "YouTube rate-limite les IPs de datacenters sur le téléchargement de sous-titres (HTTP 429)",
++      "lecon": "Toujours prévoir cache par vidéo + cooldown (~10 min) + retry asynchrone en tâche de fond ; ne jamais télécharger au clic opérateur (bloquant).",
++      "source": "war_room v3 — implémentation transcripts FR/EN, 429 rencontré en réel",
++      "application": "war_room/transcripts.py (cooldown .cooldown + préchauffage daemon)"
++    }
++  ]
+ }
+diff --git a/CONTINUATION_F00.md b/CONTINUATION_F00.md
+index 9e6c21b..b246c07 100644
+--- a/CONTINUATION_F00.md
++++ b/CONTINUATION_F00.md
+@@ -7,11 +7,16 @@
+ 
+ ## 📅 DERNIÈRE MISE À JOUR
+ 
+-**Date** : 2026-09-13 (bis)
+-**Ajout** : F00D_NARRATIVUM — sous-frégate compositeur (Caviar 99 %). Sœur
+-de F00B/F00C : candidat validé → `caviar_manifest.json` (styles split /
+-reframing / ranking, Budget d'Attention, Archivum dans
+-`ARCHIVUM/montage/narrativum/`). Code + 8/8 tests verts.
++**Date** : 2026-09-13 (ter)
++**Ajout** : **War Room v3 — contrôle total + lecture opérateur** (workspace
++`kbkjhjhl`, miroir doctrinal ici). RESET global (bouton rouge + confirmation,
++`POST /api/reset`), révocation individuelle d'un verdict (tag cliquable ou
++« ✕ retirer » → `verdict: "clear"`), **transcripts bilingues FR | EN** au clic
++sur une carte (sous-titres YouTube via yt-dlp vendu dans le repo, préchauffage
++automatique à l'arrivée du run, cache par run/candidat, rate-limit 429 géré
++proprement avec cooldown 10 min), garde-fou anti-mélange de runs (les
++manifestes caviar d'un ancien run ne sont jamais servis sur un nouveau).
++21/21 tests verts. Détruit aussi les anciens GO d'un run précédent au RESET.
+ **Précédent** : AUDIT WARSMITH corrigé — contrat webhook V2 (candidats enrichis +
+ couverture analysée affichée) et dashboard v2 (axes gradués, tooltips, cartes
+ complètes, gate fonctionnelle via `candidate_id`, légende truthful, histogramme,
+diff --git a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+index dd84e00..4f55e51 100644
+--- a/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
++++ b/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00C_VOX/TRACKING/F00C_LOG.md
+@@ -6,6 +6,31 @@
+ |---|---|---|---|---|---|
+ | — | — | — | — | — | — |
+ 
++### 2026-09-13 — WAR ROOM v3 : contrôle opérateur + transcripts bilingues
++
++- **RESET global** : bouton rouge dans le header (confirmation obligatoire) →
++  `POST /api/reset` purge tous les verdicts + compteurs (`{"full":true}` vide
++  aussi les runs). Les manifestes caviar restent traçables côté F00D.
++- **Révocation individuelle** : tag « ✔ GO » / « ✘ NO-GO » cliquable + bouton
++  « ✕ retirer » sur chaque carte votée → `verdict: "clear"` → la carte redevient
++  en attente, compteurs décrémentés proprement.
++- **Transcripts FR | EN** : clic sur une carte → panneau bilingue horodaté
++  (plage du clip surlignée). Source : sous-titres YouTube (manuels puis auto)
++  via **yt-dlp vendored** (`war_room/_vendor/`, aucune installation requise).
++  Cache : `docs/data/transcripts/{run_id}/{candidate}.{fr|en}.json`.
++- **Préchauffage** : à l'arrivée d'un run, tous les transcripts se téléchargent
++  en tâche de fond (thread daemon) — le clic opérateur reste instantané.
++- **Rate-limit 429** (survenu en réel pendant l'implémentation) : message
++  lisible « YouTube limite le débit de cette IP — nouvel essai dans ~10 min »
++  + cooldown par vidéo ; le préchauffage retente après expiration. Zéro crash.
++- **Garde-fou anti-mélange de runs** : `_load_caviar_index(run_id)` refuse les
++  manifestes caviar émis pour un autre run (les ids voxc-N se répètent d'un
++  run à l'autre — ne jamais servir l'ancien au cockpit).
++- **Tests** : 21/21 verts (récepteur + gate/reset + transcripts). Self-tests
++  `receiver.py` et `transcripts.py` OK.
++- **Leçon → Archivum F00D** : YouTube rate-limite les IPs datacenter sur les
++  sous-titres → toujours prévoir cache + cooldown + retry asynchrone, jamais
++  de téléchargement bloquant au clic.
+ ## Entrées de mise en service
+ 
+ ### 2026-09-13 (ter) — NAISSANCE F00D_NARRATIVUM (sous-frégate compositeur)
+-- 
+2.34.1
+

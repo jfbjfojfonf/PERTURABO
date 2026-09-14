@@ -111,3 +111,38 @@ def test_store_gate_counts_are_idempotent(tmp_path, monkeypatch):
     assert doc["gate_counts"]["approved"] == 0
     assert doc["gate_counts"]["rejected"] == 1
     assert doc["gates"]["f00c_test_1"]["clip_01"]["verdict"] == "rejected"
+
+
+def test_clear_gate_revokes_verdict(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    module.store_gate("f00c_test_1", "clip_01", "approved")
+    doc, reason = module.clear_gate("f00c_test_1", "clip_01")
+    assert reason == "ok"
+    assert "clip_01" not in doc["gates"]["f00c_test_1"]
+    assert doc["gate_counts"]["approved"] == 0
+    assert "f00c_test_1/clip_01" not in doc["last_verdicts"]
+
+
+def test_clear_gate_without_verdict_fails_cleanly(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    _, reason = module.clear_gate("f00c_test_1", "clip_01")
+    assert "pas de verdict" in reason
+
+
+def test_reset_all_purges_gates_keeps_runs(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    module.store_gate("f00c_test_1", "clip_01", "approved")
+    doc = module.reset_all(full=False)
+    assert doc.get("gates") is None and doc.get("last_verdicts") is None
+    assert doc.get("gate_counts", {}).get("approved", 0) == 0
+    assert doc.get("last_run", {}).get("run_id") == "f00c_test_1"  # runs conservés
+
+
+def test_reset_full_purges_runs(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    doc = module.reset_all(full=True)
+    assert doc.get("last_run") is None and doc.get("runs") is None

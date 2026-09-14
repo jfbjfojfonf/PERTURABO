@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.env.local
+/tmp/
+*.mp3
+*.wav
+*.mp4
+CONTRACTS/youtube_secrets.json
+CONTRACTS/youtube_secrets.local.json
+**/CONTRACTS/youtube_secrets.json
+**/CONTRACTS/youtube_secrets.local.json
+# Transcripts : artefacts de cache locaux (VTT bruts + cooldowns) — jamais le JSON de service
+docs/data/transcripts/_subs/

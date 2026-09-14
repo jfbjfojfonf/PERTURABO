@@ -1,0 +1,63 @@
+From b3e1c59205353d76da54f3cb4750dba2ec3963c8 Mon Sep 17 00:00:00 2001
+From: kioka8877 <kioka8877@users.noreply.github.com>
+Date: Mon, 14 Sep 2026 08:02:28 +0000
+Subject: [PATCH] =?UTF-8?q?[F00D][LEDGER]=203=20=C3=A9missions=20caviar=20?=
+ =?UTF-8?q?consign=C3=A9es=20(voxc-3,=20voxc-2,=20voxc-4)=20=E2=80=94=20bo?=
+ =?UTF-8?q?ucle=20compl=C3=A8te=20trac=C3=A9e?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Le manifest_ledger enregistre désormais les 3 manifestes réels émis par la
+frégate compositeur lors de la Phase 2, avec run_id, style et budget dépensé.
+Traçabilité bout en bout : gate GO → F00D émet → bras armé recevra.
+
+🤖 Generated with Codebuff
+Co-Authored-By: Codebuff <noreply@codebuff.com>
+---
+ .../narrativum/manifest_ledger/ledger.json    | 28 +++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+diff --git a/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json b/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
+index d549758..c52a5f7 100644
+--- a/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
++++ b/ARCHIVUM/montage/narrativum/manifest_ledger/ledger.json
+@@ -7,6 +7,34 @@
+       "style": "reframing",
+       "spent_units": 32,
+       "emitted_at": "2026-09-13T11:38:58.634153+00:00"
++    },
++    {
++      "manifest_path": "../OUT/caviar_manifest_voxc3.json",
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "style": "reframing",
++      "spent_units": 8,
++      "emitted_at": "2026-09-13T12:24:10.182149+00:00"
++    },
++    {
++      "manifest_path": "../OUT/caviar_manifest_voxc3.json",
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "style": "reframing",
++      "spent_units": 8,
++      "emitted_at": "2026-09-13T12:24:47.165940+00:00"
++    },
++    {
++      "manifest_path": "../OUT/caviar_manifest_voxc2.json",
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "style": "reframing",
++      "spent_units": 8,
++      "emitted_at": "2026-09-13T12:36:19.678610+00:00"
++    },
++    {
++      "manifest_path": "../OUT/caviar_manifest_voxc4.json",
++      "run_id": "f00c_2026-09-13T073944.152576+0000",
++      "style": "reframing",
++      "spent_units": 8,
++      "emitted_at": "2026-09-13T12:36:20.376440+00:00"
+     }
+   ]
+ }
+\ No newline at end of file
+-- 
+2.34.1
+
