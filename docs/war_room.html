@@ -476,7 +476,8 @@ async function showTranscript(cand) {
   const col = (lang, label) => {
     const L = data[lang];
     if (!L || !L.available) return '';
-    return `<div><div class="col-h">${label}</div>` + L.lines.map(l =>
+    const prov = L.provider === 'operator' ? ' · 📁 opérateur' : L.provider === 'whisper' ? ' · 🎙 whisper' : ' · ▶ youtube';
+    return `<div><div class="col-h">${label}${prov}</div>` + L.lines.map(l =>
       `<div class="tline in-clip"><span class="ts">+${tRel(l.t_rel)}</span><span>${esc(l.text)}</span></div>`
     ).join('') + '</div>';
   };

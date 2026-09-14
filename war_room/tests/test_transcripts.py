@@ -60,7 +60,7 @@ def test_build_candidate_transcript_reads_cache(tmp_path, monkeypatch):
 
 
 def test_build_candidate_transcript_rate_limit_is_clean(tmp_path, monkeypatch):
-    """429 → exception propre avec message lisible (jamais de crash serveur)."""
+    """429 → aucune exception, résultat dégradé lisible (contrat v2 : absorbé par langue)."""
     monkeypatch.setattr(module, "TRANSCRIPTS_DIR", tmp_path)
     monkeypatch.setattr(module, "SUBS_DIR", tmp_path / "_subs")
 
@@ -68,13 +68,11 @@ def test_build_candidate_transcript_rate_limit_is_clean(tmp_path, monkeypatch):
         raise RuntimeError("YouTube limite le débit de cette IP — nouvel essai dans ~10 min")
     monkeypatch.setattr(module, "_download_subs", boom)
     cand = {"id": "voxc-y", "start_sec": 0.0, "end_sec": 5.0}
-    try:
-        module.build_candidate_transcript("https://example.invalid/v", "run", cand)
-        raised = False
-    except RuntimeError as exc:
-        raised = True
-        assert "limite le débit" in str(exc)
-    assert raised
+    out = module.build_candidate_transcript("https://example.invalid/v", "run", cand)
+    assert out["available"] is False
+    # le message de rate-limit doit être tracé (erreur par langue ou note Whisper)
+    errors = " ".join(str((out.get(l) or {}).get("error") or "") for l in ("fr", "en"))
+    assert "limite le débit" in errors or out.get("whisper_note") or out.get("note")
 
 
 def test_self_test():

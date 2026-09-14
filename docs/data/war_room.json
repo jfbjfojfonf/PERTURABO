@@ -2689,5 +2689,14 @@
       "received_at": "2026-09-13T08:52:56.676551+00:00"
     }
   },
-  "total_runs": 1
+  "total_runs": 1,
+  "gates": {
+    "f00c_2026-09-13T073944.152576+0000": {}
+  },
+  "gate_counts": {
+    "approved": 0,
+    "rejected": 0,
+    "pending": 0
+  },
+  "last_verdicts": {}
 }

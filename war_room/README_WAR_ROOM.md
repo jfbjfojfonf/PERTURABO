@@ -26,6 +26,20 @@ le token partagé et les rend disponibles pour le dashboard `/war-room`.
 Auth : en-tête **`X-Siege-Token`** (secret partagé `SIEGE_WEBHOOK_TOKEN`).
 Un payload invalide est rejeté en 422 — jamais de silence.
 
+## Transcripts bilingues FR/EN — chaîne de résolution
+
+`GET /api/transcript?candidate=voxc-2[&run_id=…]` résout dans cet ordre :
+
+1. **Source opérateur** — `war_room/transcripts_in/{video_id}.fr.srt|vtt|txt` (idem `.en`)
+   : transcript complet déposé par l'opérateur, découpé par clip. Priorité absolue,
+   jamais rate-limité. Convention détaillée : `transcripts_in/LISEZMOI.md`.
+2. **Cache** d'un téléchargement antérieur (`docs/data/transcripts/{run_id}/`).
+3. **Sous-titres YouTube** (yt-dlp vendu, cooldown 10 min si rate-limit 429).
+4. **Filet Whisper local** (faster-whisper CPU, si installé) — dernier recours.
+
+Chaque langue affichée porte son `provider` (opérateur / youtube / whisper).
+Un échec YouTube n'absorbe jamais les autres sources (absorbé par langue).
+
 ## Usage
 
 ```bash

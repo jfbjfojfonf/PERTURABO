@@ -32,6 +32,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 TRANSCRIPTS_DIR = REPO_ROOT / "docs" / "data" / "transcripts"
 SUBS_DIR = TRANSCRIPTS_DIR / "_subs"
 VENDOR_DIR = Path(__file__).resolve().parent / "_vendor"  # wheel yt-dlp vendue (autonome)
+# Source opérateur : la frégate ne dépend plus de YouTube seul — l'opérateur
+# dépose ici un transcript complet de la vidéo (SRT/VTT/TXT, FR et/ou EN),
+# prioritaire sur tout téléchargement. Autonomie garantie face au rate-limit.
+OPERATOR_DIR = REPO_ROOT / "war_room" / "transcripts_in"
 YT_DLP = "yt-dlp"
 DOWNLOAD_TIMEOUT = 180  # secondes — sous-titres seulement, jamais la vidéo
 COOLDOWN_SEC = 600      # après un rate-limit YouTube, on laisse souffler 10 min
@@ -57,6 +61,108 @@ def _clean_cue_text(raw: str) -> str:
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+# ── Source opérateur (transcripts_in) ────────────────────────────────────────
+
+def parse_srt_or_vtt(text: str) -> list[dict]:
+    """Parse un sous-titrage SRT ou VTT déposé par l'opérateur.
+
+    Tolérant : en-tête WEBVTT optionnel, index numériques SRT ignorés,
+    point ou virgule dans les timestamps, blocs séparés par lignes vides.
+    """
+    cues: list[dict] = []
+    pattern = re.compile(
+        r"(\d{1,2}:\d{2}:\d{2}[.,]\d{1,3}|\d{1,2}:\d{2}[.,]\d{1,3})"
+        r"\s*-->\s*"
+        r"(\d{1,2}:\d{2}:\d{2}[.,]\d{1,3}|\d{1,2}:\d{2}[.,]\d{1,3})")
+    for block in re.split(r"\n\s*\n", text):
+        lines = [ln.strip() for ln in block.splitlines() if ln.strip()]
+        # trouve la ligne d'horodatage dans le bloc (index SRT ou en-tête avant)
+        idx = next((i for i, ln in enumerate(lines) if "-->" in ln), None)
+        if idx is None:
+            continue
+        m = pattern.search(lines[idx])
+        if not m:
+            continue
+        start, end = _ts_to_sec(m.group(1).replace(",", ".")), \
+            _ts_to_sec(m.group(2).replace(",", "."))
+        text = _clean_cue_text(" ".join(lines[idx + 1:]))
+        if text and end > start:
+            cues.append({"start": start, "end": end, "text": text})
+    return cues
+
+
+def parse_plain_text(text: str, sec_per_line: float = 3.0) -> list[dict]:
+    """Parse un transcript brut (TXT) : 1 ligne = 1 cue de `sec_per_line` s.
+
+    Convention de dépôt : la ligne N couvre [N*sec_per_line, (N+1)*sec_per_line).
+    Suffisant pour la lecture opérateur ; la précision fine reste du ressort
+    des fichiers SRT/VTT quand ils existent.
+    """
+    cues: list[dict] = []
+    for n, line in enumerate(l for l in text.splitlines() if l.strip()):
+        clean = _clean_cue_text(line)
+        if not clean:
+            continue
+        cues.append({"start": n * sec_per_line, "end": (n + 1) * sec_per_line,
+                     "text": clean})
+    return cues
+
+
+def _operator_files_for(source_url: str) -> dict[str, Path]:
+    """Fichiers opérateur pour cette vidéo → {"fr": path?, "en": path?}.
+
+    Convention de nommage : transcripts_in/{video_id}.fr.srt|vtt|txt
+    (idem .en) — le video_id est extrait de l'URL YouTube.
+    """
+    vid = _youtube_video_id(source_url)
+    out: dict[str, Path] = {}
+    if not vid:
+        return out
+    for lang in ("fr", "en"):
+        for ext in ("srt", "vtt", "txt"):
+            p = OPERATOR_DIR / f"{vid}.{lang}.{ext}"
+            if p.is_file():
+                out[lang] = p
+                break
+    return out
+
+
+def _youtube_video_id(source_url: str) -> str:
+    m = re.search(r"(?:v=|youtu\.be/|shorts/|embed/)([A-Za-z0-9_-]{6,20})", source_url or "")
+    return m.group(1) if m else ""
+
+
+def _detect_language(text: str) -> str:
+    """Détection heuristique FR vs EN (mots fonctionnels) — suffisant ici."""
+    low = f" {text.lower()} "
+    fr_marks = [" le ", " la ", " les ", " un ", " une ", " des ", " et ",
+                " je ", " tu ", " il ", " elle ", " on ", " nous ", " vous ",
+                " est ", " pas ", " que ", " qui ", " pour ", " avec ",
+                " dans ", " mais ", " c'est ", " j'ai ", " ça ", " oui ",
+                " très ", " être ", " fait ", " on "]
+    en_marks = [" the ", " a ", " an ", " and ", " or ", " i ", " you ", " he ",
+                " she ", " it ", " we ", " they ", " is ", " are ", " was ",
+                " not ", " that ", " this ", " with ", " for ", " to ",
+                " of ", " don't ", " i'm ", " yeah ", " right ", " know "]
+    score_fr = sum(low.count(w) for w in fr_marks)
+    score_en = sum(low.count(w) for w in en_marks)
+    return "fr" if score_fr >= score_en else "en"
+
+
+def _load_operator_cues(source_url: str, lang_prefix: str) -> list[dict] | None:
+    """Charge le transcript opérateur d'une langue si déposé. Cues dédoublonnés."""
+    path = _operator_files_for(source_url).get(lang_prefix)
+    if path is None:
+        return None
+    try:
+        raw = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return None
+    cues = parse_srt_or_vtt(raw) if path.suffix.lower() in (".srt", ".vtt") \
+        else parse_plain_text(raw)
+    return _merge_duplicates(cues) if cues else None
 
 
 def parse_vtt_cues(vtt_text: str) -> list[dict]:
@@ -217,8 +323,101 @@ def _slug(candidate_id: str) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]", "_", candidate_id)
 
 
+# ── Filet de sécurité Whisper (transcription locale, optionnelle) ───────────
+
+def _whisper_available() -> bool:
+    try:
+        import faster_whisper  # noqa: F401,PLC0415 — import paresseux, optionnel
+        return True
+    except ImportError:
+        return False
+
+
+def _download_audio_short(source_url: str, timeout: int = 90) -> Path:
+    """Télécharge la piste audio seule (fenêtre courte, jamais bloquant).
+
+    Si le téléchargement dépasse `timeout` → RuntimeError lisible ; le fichier
+    partiel sera repris au prochain passage (préchauffage en fond).
+    """
+    key = hashlib.sha1(source_url.encode()).hexdigest()[:12]
+    out_dir = SUBS_DIR / key
+    out_dir.mkdir(parents=True, exist_ok=True)
+    existing = sorted(out_dir.glob("audio.*"))
+    if existing:
+        return existing[0]
+    cooldown = out_dir / ".cooldown"
+    if cooldown.exists():
+        try:
+            until = float(cooldown.read_text().strip())
+            if time.time() < until:
+                raise RuntimeError("rate-limit actif — audio pas encore téléchargeable")
+            cooldown.unlink()
+        except ValueError:
+            cooldown.unlink(missing_ok=True)
+    cmd, cmd_env = _resolve_yt_dlp()
+    cmd = cmd + ["-f", "bestaudio", "-o", str(out_dir / "audio.%(ext)s"), source_url]
+    try:
+        subprocess.run(cmd, capture_output=True, text=True,
+                       timeout=timeout, env=cmd_env)
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("audio pas encore prêt — le préchauffage le récupère en fond")
+    except FileNotFoundError:
+        raise RuntimeError("yt-dlp introuvable — audio indisponible")
+    audio = sorted(out_dir.glob("audio.*"))
+    if not audio:
+        raise RuntimeError("téléchargement audio impossible (plateforme)")
+    return audio[0]
+
+
+def _whisper_cues(source_url: str, sec_per_cue: float = 2.0) -> list[dict]:
+    """Transcrit l'audio localement (faster-whisper CPU) → cues horodatés.
+
+    Une seule exécution par vidéo : le résultat est mis en cache en VTT
+    (audio.whisper.vtt) et relu ensuite comme n'importe quel sous-titre.
+    """
+    if not _whisper_available():
+        raise RuntimeError("Whisper non installé sur ce poste — filet inactif")
+    key = hashlib.sha1(source_url.encode()).hexdigest()[:12]
+    out_dir = SUBS_DIR / key
+    cache_vtt = out_dir / "audio.whisper.vtt"
+    if cache_vtt.is_file():
+        cues = parse_vtt_cues(cache_vtt.read_text(encoding="utf-8", errors="replace"))
+        if cues:
+            return _merge_duplicates(cues)
+    from faster_whisper import WhisperModel  # noqa: PLC0415 — déjà vérifié dispo
+    audio_path = _download_audio_short(source_url)
+    model = WhisperModel("base", device="cpu", compute_type="int8")
+    segments, _info = model.transcribe(str(audio_path), vad_filter=True)
+    lines = ["WEBVTT", ""]
+    for seg in segments:
+        def _stamp(t: float) -> str:
+            h, rem = divmod(t, 3600)
+            m, s = divmod(rem, 60)
+            return f"{int(h):02d}:{int(m):02d}:{s:06.3f}"
+        text = _clean_cue_text(seg.text or "")
+        if not text:
+            continue
+        lines.append(f"{_stamp(seg.start)} --> {_stamp(seg.end)}")
+        lines.append(text)
+        lines.append("")
+    cache_vtt.write_text("\n".join(lines), encoding="utf-8")
+    cues = parse_vtt_cues(cache_vtt.read_text(encoding="utf-8", errors="replace"))
+    return _merge_duplicates(cues)
+
+
 def _cache_path(run_id: str, candidate_id: str, lang: str) -> Path:
     return TRANSCRIPTS_DIR / _slug(run_id) / f"{_slug(candidate_id)}.{lang}.json"
+
+
+def _slice_lines(cues: list[dict], start: float, end: float) -> list[dict]:
+    """Découpe des cues dans la fenêtre [start, end] du clip → lignes affichables."""
+    window = [c for c in cues if c["start"] < end and c["end"] > start]
+    return [{
+        "t_abs": round(c["start"], 2),
+        "t_rel": round(max(c["start"] - start, 0.0), 2),
+        "end_rel": round(min(c["end"], end) - start, 2),
+        "text": c["text"],
+    } for c in _chunk_lines(window)]
 
 
 def build_candidate_transcript(source_url: str, run_id: str, candidate: dict) -> dict:
@@ -234,9 +433,28 @@ def build_candidate_transcript(source_url: str, run_id: str, candidate: dict) ->
     result: dict = {"fr": None, "en": None, "available": False, "note": ""}
     langs_found = 0
     subs_dir: Path | None = None
+    operator = _operator_files_for(source_url)
+    if operator:
+        result["operator_sources"] = {k: p.name for k, p in operator.items()}
 
     for lang, prefix in (("fr", "fr"), ("en", "en")):
         cache = _cache_path(run_id, cand_id, lang)
+
+        # 1) source opérateur — prioritaire, jamais écrasée par un cache négatif
+        if lang in operator:
+            cues = _load_operator_cues(source_url, prefix)
+            if cues:
+                lines = _slice_lines(cues, start, end)
+                result[lang] = {"available": bool(lines), "lines": lines,
+                                "provider": "operator"}
+                _write_cache(cache, source_url, run_id, cand_id, start, end,
+                             lang, bool(lines), lines, provider="operator")
+                if lines:
+                    langs_found += 1
+                continue
+            # fichier présent mais illisible → on retombe sur YouTube
+
+        # 2) cache (résultat d'un précédent téléchargement YouTube)
         if cache.exists():
             try:
                 result[lang] = json.loads(cache.read_text(encoding="utf-8"))
@@ -245,46 +463,66 @@ def build_candidate_transcript(source_url: str, run_id: str, candidate: dict) ->
                 continue
             except (json.JSONDecodeError, OSError):
                 pass  # cache corrompu → rebuild
-        if subs_dir is None:
-            subs_dir = _download_subs(source_url)
-        cues = _load_lang_cues(subs_dir, prefix)
+
+        # 3) YouTube (yt-dlp) — un échec réseau ne doit JAMAIS tuer les autres
+        #    sources : l'opérateur garde son transcript même si YouTube rate.
+        try:
+            if subs_dir is None:
+                subs_dir = _download_subs(source_url)
+            cues = _load_lang_cues(subs_dir, prefix)
+        except Exception as exc:  # noqa: BLE001 — 429, réseau, timeout…
+            result[lang] = {"available": False, "lines": [],
+                            "provider": "youtube", "error": str(exc)}
+            continue
         if not cues:
-            result[lang] = {"available": False, "lines": []}
+            result[lang] = {"available": False, "lines": [], "provider": "youtube"}
             _write_cache(cache, source_url, run_id, cand_id, start, end, lang,
                          False, [])
             continue
-        # fenêtre du clip : tout cue qui chevauche [start, end]
-        window = [c for c in cues if c["start"] < end and c["end"] > start]
-        lines = [{
-            "t_abs": round(c["start"], 2),
-            "t_rel": round(max(c["start"] - start, 0.0), 2),
-            "end_rel": round(min(c["end"], end) - start, 2),
-            "text": c["text"],
-        } for c in _chunk_lines(window)]
-        payload = {"available": bool(lines), "lines": lines}
-        result[lang] = payload
+        lines = _slice_lines(cues, start, end)
+        result[lang] = {"available": bool(lines), "lines": lines,
+                        "provider": "youtube"}
         _write_cache(cache, source_url, run_id, cand_id, start, end, lang,
                      bool(lines), lines)
         if lines:
             langs_found += 1
 
+    # 4) filet Whisper — uniquement si aucune langue n'a été obtenue
+    if langs_found == 0 and "whisper_attempted" not in result:
+        result["whisper_attempted"] = True
+        try:
+            cues = _whisper_cues(source_url)
+            if cues:
+                lang = _detect_language(" ".join(c["text"] for c in cues))
+                lines = _slice_lines(cues, start, end)
+                result[lang] = {"available": bool(lines), "lines": lines,
+                                "provider": "whisper"}
+                _write_cache(_cache_path(run_id, cand_id, lang), source_url,
+                             run_id, cand_id, start, end, lang,
+                             bool(lines), lines, provider="whisper")
+                if lines:
+                    langs_found += 1
+        except Exception as exc:  # noqa: BLE001 — le filet ne casse jamais la chaîne
+            result["whisper_note"] = f"filet Whisper inactif : {exc}"
+
     result["available"] = langs_found > 0
     if not result["available"]:
-        result["note"] = ("aucun sous-titre FR/EN disponible pour cette vidéo — "
-                          "transcript indisponible pour ce clip")
+        result["note"] = ("aucun transcript FR/EN (ni opérateur, ni YouTube) — "
+                          "déposez un transcript dans war_room/transcripts_in/ "
+                          "ou attendez la fin du rate-limit")
     elif langs_found == 1:
         missing = "FR" if (result["fr"] is None or not result["fr"]["available"]) else "EN"
-        result["note"] = f"sous-titres {missing} indisponibles — une seule langue affichée"
+        result["note"] = f"transcript {missing} indisponible — une seule langue affichée"
     return result
 
 
 def _write_cache(path: Path, source_url: str, run_id: str, cand_id: str,
                  start: float, end: float, lang: str, available: bool,
-                 lines: list[dict]) -> None:
+                 lines: list[dict], provider: str = "youtube") -> None:
     doc = {
         "candidate_id": cand_id, "run_id": run_id, "lang": lang,
         "source": source_url, "window": {"start": start, "end": end},
-        "available": available, "lines": lines,
+        "provider": provider, "available": available, "lines": lines,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
