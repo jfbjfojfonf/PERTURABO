@@ -172,7 +172,6 @@ def _download_subs(source_url: str) -> Path:
     last_err = ""
     for attempt in range(3):  # 429 transitoire côté YouTube → backoff et retry
         if attempt:
-            import time
             time.sleep(20 * attempt)
         cmd, cmd_env = _resolve_yt_dlp()
         cmd = cmd + [
