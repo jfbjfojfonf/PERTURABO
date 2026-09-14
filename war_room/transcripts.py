@@ -97,15 +97,39 @@ def parse_srt_or_vtt(text: str) -> list[dict]:
     return cues
 
 
-def parse_plain_text(text: str, sec_per_line: float = 3.0) -> list[dict]:
-    """Parse un transcript brut (TXT) : 1 ligne = 1 cue de `sec_per_line` s.
+_TS_LINE = re.compile(r"^\[(\d{1,2}:\d{2}(?::\d{2})?)\]\s*(.*)$")
 
-    Convention de dépôt : la ligne N couvre [N*sec_per_line, (N+1)*sec_per_line).
-    Suffisant pour la lecture opérateur ; la précision fine reste du ressort
-    des fichiers SRT/VTT quand ils existent.
+
+def parse_plain_text(text: str, sec_per_line: float = 3.0) -> list[dict]:
+    """Parse un transcript brut (TXT) déposé par l'opérateur.
+
+    Deux formats reconnus :
+    - horodaté : "[00:01:23] texte" ou "[01:23] texte" (export « transcription »
+      de YouTube) — fin du cue = début de la ligne suivante, précision exacte ;
+    - brut : 1 ligne = 1 cue de `sec_per_line` secondes (fallback).
     """
-    cues: list[dict] = []
-    for n, line in enumerate(l for l in text.splitlines() if l.strip()):
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    if not lines:
+        return []
+    stamped = [_TS_LINE.match(ln) for ln in lines]
+    if sum(1 for m in stamped if m) >= max(2, len(lines) // 2):
+        items: list[list] = []
+        for ln, m in zip(lines, stamped):
+            if m:
+                items.append([_ts_to_sec(m.group(1)), _clean_cue_text(m.group(2))])
+            elif items:
+                items[-1][1] = (items[-1][1] + " " + _clean_cue_text(ln)).strip()
+        cues: list[dict] = []
+        for i, (start, txt) in enumerate(items):
+            if not txt:
+                continue
+            end = items[i + 1][0] if i + 1 < len(items) else start + sec_per_line
+            if end <= start:
+                end = start + 0.5
+            cues.append({"start": start, "end": end, "text": txt})
+        return cues
+    cues = []
+    for n, line in enumerate(lines):
         clean = _clean_cue_text(line)
         if not clean:
             continue

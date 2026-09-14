@@ -47,6 +47,19 @@ def test_parse_plain_text_timespan():
     assert cues[2]["start"] == 6.0
 
 
+def test_parse_plain_text_stamped():
+    """Format [MM:SS] / [HH:MM:SS] (export « transcription » YouTube) : exact."""
+    txt = """[00:00:00] Bonjour à tous
+[00:00:02] ici on parle viral
+[00:01:10] deuxième minute
+"""
+    cues = T.parse_plain_text(txt)
+    assert len(cues) == 3, cues
+    assert cues[0]["start"] == 0.0 and abs(cues[0]["end"] - 2.0) < 0.01
+    assert abs(cues[2]["start"] - 70.0) < 0.01
+    assert cues[0]["text"] == "Bonjour à tous"
+
+
 def test_youtube_video_id():
     assert T._youtube_video_id("https://www.youtube.com/watch?v=cP8vli4kfhs") == "cP8vli4kfhs"
     assert T._youtube_video_id("https://youtu.be/dQw4w9WgXcQ") == "dQw4w9WgXcQ"
