@@ -1,0 +1,138 @@
+{
+  "fleet_status": "pending_reconnaissance",
+  "siege_id": null,
+  "monde": "api",
+  "warsmith_brief": {
+    "mode": "enclenche",
+    "categorie_hint": null,
+    "target_hint": null,
+    "notes": null
+  },
+  "tyrant_report": {
+    "status": "pending",
+    "territoire": {
+      "categorie": null,
+      "leader": null,
+      "score_popularite": null,
+      "concentration": null
+    },
+    "demon": {
+      "nom": null,
+      "latence_ms": null,
+      "tier_dominant_prix": null,
+      "taux_succes_pct": null
+    },
+    "faille": {
+      "type": null,
+      "preuve": null,
+      "magnitude": null
+    },
+    "signal_agents": {
+      "repos_github": null,
+      "wrappers_actifs": null,
+      "verdict": null
+    },
+    "cartographie_prix": {
+      "gratuit_leader": null,
+      "payant_dominant": null,
+      "zone_attaque": null
+    },
+    "score_global": null,
+    "recommandation": null,
+    "justification": null,
+    "output_path": null
+  },
+  "f01_sentinel": {
+    "status": "pending",
+    "output_path": null,
+    "raw_intel_hash": null,
+    "sources_scraped": {
+      "rapidapi_listings": 0,
+      "github_repos": 0,
+      "web_docs": 0
+    }
+  },
+  "f02_breacher": {
+    "status": "pending",
+    "output_path": null,
+    "cible": null,
+    "score": null,
+    "score_breakdown": {
+      "popularite": null,
+      "latence": null,
+      "wrappers": null,
+      "frustration_pricing": null
+    },
+    "angles_attaque": [],
+    "angles_hash": null
+  },
+  "f03_forgeward": {
+    "status": "pending",
+    "output_path": null,
+    "ironwarriors_count": 0,
+    "ironwarriors_ready": 0,
+    "ironwarriors_hash": null
+  },
+  "f04_herald": {
+    "status": "pending",
+    "output_path": null,
+    "listings_count": 0,
+    "listings_ready": 0,
+    "listings_hash": null
+  },
+  "f05_grand_compass": {
+    "status": "pending",
+    "output_path": null,
+    "blue_ocean_validated": false,
+    "deploy_urls": [],
+    "deployed_count": 0,
+    "github_repos_created": []
+  },
+  "f06_capteurs": {
+    "status": "idle",
+    "last_sweep": null,
+    "ironwarriors_monitored": 0,
+    "survivors_count": 0,
+    "ledger_path": null
+  },
+  "iw_custos": {
+    "last_validation": null,
+    "errors": []
+  },
+  "gate_decisions": {
+    "gate_1": {
+      "label": "Validation cible TYRANT",
+      "validated": false,
+      "timestamp": null,
+      "notes": null
+    },
+    "gate_2": {
+      "label": "Validation 20 angles d'attaque BREACHER",
+      "validated": false,
+      "timestamp": null,
+      "notes": null
+    },
+    "gate_3": {
+      "label": "Review code Iron Warriors FORGEWARD",
+      "validated": false,
+      "timestamp": null,
+      "notes": null
+    },
+    "gate_4": {
+      "label": "Validation listings RapidAPI + README HERALD",
+      "validated": false,
+      "timestamp": null,
+      "notes": null
+    }
+  },
+  "siege_timestamps": {
+    "start": null,
+    "tyrant_done": null,
+    "intel_done": null,
+    "breach_done": null,
+    "forge_done": null,
+    "herald_done": null,
+    "deploy_done": null,
+    "end": null
+  }
+}

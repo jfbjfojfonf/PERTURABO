@@ -1,0 +1,113 @@
+name: PERTURABO — F00B_VOX Transcript (Oracle)
+
+on:
+  workflow_dispatch:
+    inputs:
+      vod_url:
+        description: 'URL de la VOD Twitch'
+        required: true
+        type: string
+        default: 'https://www.twitch.tv/videos/2864600351'
+      nb_clips:
+        description: 'Nombre de clips à scorer'
+        required: false
+        type: string
+        default: '5'
+      market:
+        description: 'Marché cible'
+        required: false
+        type: string
+        default: 'us_young_english'
+      platform:
+        description: 'Plateforme cible'
+        required: false
+        type: string
+        default: 'youtube_shorts'
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          pip install --upgrade pip
+          pip install yt-dlp modal fastapi python-multipart opencv-python-headless
+
+      - name: Deploy Modal transcription service
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/MODAL
+        env:
+          MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+          MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+        run: |
+          set +e
+          modal deploy transcribe.py 2>&1 | tee /tmp/modal_deploy.log
+          RC=${PIPESTATUS[0]}
+          if [ $RC -ne 0 ]; then
+            echo "::error::modal deploy failed rc=$RC"
+            exit $RC
+          fi
+          URL=$(grep -oE 'https://[a-zA-Z0-9.-]+\.modal\.run' /tmp/modal_deploy.log | head -1)
+          if [ -z "$URL" ]; then
+            echo "::error::Aucune URL .modal.run trouvee dans la sortie du deploy"
+            exit 1
+          fi
+          echo "MODAL_URL=$URL" >> "$GITHUB_ENV"
+          echo "Deployed at: $URL"
+
+      - name: Write f00b_secrets.json (route to Modal)
+        env:
+          MODAL_URL: ${{ env.MODAL_URL }}
+        run: |
+          mkdir -p MONDES_FORGES/CLIPPING/CONTRACTS
+          jq -n --arg url "$MODAL_URL" \
+            '{env_var_name:"MODAL_TOKEN_ID", model_id:"medium", provider:"other", base_url:$url, language:"en"}' \
+            > MONDES_FORGES/CLIPPING/CONTRACTS/f00b_secrets.json
+          echo "f00b_secrets.json -> $MODAL_URL"
+
+      - name: Write vox_input.json
+        env:
+          VOD_URL: ${{ inputs.vod_url }}
+          NB_CLIPS: ${{ inputs.nb_clips }}
+          PLATFORM: ${{ inputs.platform }}
+        run: |
+          mkdir -p MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN
+          jq -n --arg url "$VOD_URL" --argjson n "$NB_CLIPS" --arg plat "$PLATFORM" \
+            '{vod_urls:[{url:$url}], nb_clips_demandes:$n, plateforme:$plat}' \
+            > MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/IN/vox_input.json
+          echo "vox_input.json -> $VOD_URL (nb_clips=$NB_CLIPS)"
+
+      - name: Run F00B_VOX auto_detect
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+        env:
+          MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+          NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
+          NVIDIA_NIM_MODEL: moonshotai/kimi-k3
+        run: |
+          python f00b_vox.py auto_detect \
+            --nb-clips "${{ inputs.nb_clips }}" \
+            --market "${{ inputs.market }}" \
+            --platform "${{ inputs.platform }}"
+
+      - name: Commit transcript + candidats to ARCHIVUM
+        run: |
+          VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
+          DEST="MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts"
+          SRC="MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/OUT"
+          mkdir -p "$DEST"
+          [ -f "$SRC/transcript.json" ] && cp "$SRC/transcript.json" "$DEST/v${VODID}_transcript.json" || echo "no transcript"
+          [ -f "$SRC/candidats.json" ] && cp "$SRC/candidats.json" "$DEST/v${VODID}_candidats.json" || echo "no candidats"
+          git config user.name "OracleF00B"
+          git config user.email "oracle@perturabo.iron"
+          git add "$DEST"
+          git commit -m "[F00B_VOX] auto_detect v${VODID}: transcript + candidats" || echo "nothing to commit"
+          git push origin HEAD:main

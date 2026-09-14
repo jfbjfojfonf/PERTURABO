@@ -1,0 +1,13 @@
+{
+  "signals": [
+    {"start": "02:14:25", "end": "02:14:45", "type": "chat_spike", "intensity": 0.9},
+    {"start": "03:45:30", "end": "03:45:50", "type": "punchline", "intensity": 1.0},
+    {"start": "05:12:10", "end": "05:12:40", "type": "trigger_word", "intensity": 0.85},
+    {"start": "06:30:20", "end": "06:30:45", "type": "energy", "intensity": 0.7}
+  ],
+  "pre_roll_sec": 2.0,
+  "post_roll_sec": 2.0,
+  "duree_cible_sec": 30,
+  "duree_max_sec": 60,
+  "duree_min_sec": 15
+}

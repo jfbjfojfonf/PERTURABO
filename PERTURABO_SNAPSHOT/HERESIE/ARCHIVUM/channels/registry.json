@@ -1,0 +1,29 @@
+{
+  "channels": {
+    "the_stormist": {
+      "name": "The Stormist",
+      "slug": "the_stormist",
+      "handle": "@thestormist",
+      "niche": "Hurricanes US — Météo extrême américaine",
+      "concept": "Taxonomie exhaustive avec escalade",
+      "created_at": "2026-07-10T19:00:13Z",
+      "videos_count": 1,
+      "first_video": "Every Category Of Hurricane Explained in 5 minutes"
+    }
+  },
+    "golden_moment": {
+      "name": "Golden Moment",
+      "slug": "golden_moment",
+      "handle": "@goldenmoment",
+      "niche": "Micro-moments d'athlètes US élites — intimité famille, vulnérabilité, off-field",
+      "concept": "Compilation wholesome de moments familiaux sourcés depuis comptes perso entourage — jamais broadcast officiel",
+      "created_at": "2026-07-22T00:00:00Z",
+      "videos_count": 0,
+      "first_video": null,
+      "siege_number": 2,
+      "target_audience": "Femmes 18-45 US",
+      "demon": "Wishness / House of Highlights",
+      "tyrant_score": 8.75
+    }
+  }
+}

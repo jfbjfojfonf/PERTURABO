@@ -1,0 +1,75 @@
+{
+  "pattern_name": "hooks_psychology",
+  "description": "Hook psychology and formulas for maximum retention",
+  "source_transcripts": ["LmXpbP7dD48", "5Nc1Bwd3OAk", "iK7zGXt9mOo", "2YAdtN7GTtk"],
+  "source_creator": "LmXpbP7dD48 - content creator with nearly 1M followers, billions of views",
+  "core_concept": "Curiosity Loop - make viewer watch first line, feel compelled to watch second, then third, etc.",
+  "three_step_hook_formula": {
+    "step_1_context_lean": {
+      "name": "Context + Lean In",
+      "purpose": "Two things: (1) Topic clarity - what the video is about, (2) Get them leaning in",
+      "clarity": "Signal the topic immediately so viewers self-select in or out",
+      "lean_in_techniques": [
+        "Establish common ground",
+        "Reference a benefit or pain point they have",
+        "Use a metaphor to simplify complex idea",
+        "Tell them something so interesting it blows their mind"
+      ],
+      "example": "The tech in the Vegas sphere is insane - biggest screen ever built, 20x bigger than IMAX"
+    },
+    "step_2_curiosity_deepen": {
+      "name": "Deepen the Curiosity",
+      "purpose": "Add a twist, new info, or reframe that makes them NEED to keep watching",
+      "techniques": [
+        "Introduce a surprising contrast",
+        "Create a knowledge gap",
+        "Tease what's coming next",
+        "Challenge their assumption"
+      ]
+    },
+    "step_3_payoff_tease": {
+      "name": "Payoff Tease / Transition",
+      "purpose": "Deliver a mini-payoff OR transition into the main content",
+      "note": "Don't give everything away - keep enough curiosity to continue"
+    }
+  },
+  "hook_types": {
+    "controversial": {
+      "pattern": "Bold/controversial statement in first 2 seconds",
+      "example": "We're here because my wife got pregnant by a man",
+      "when_to_use": "Podcast clips, drama, reactions"
+    },
+    "halo_effect": {
+      "pattern": "Show recognizable person/name immediately",
+      "example": "Tristan Tate's face → stops scrolling because people know him",
+      "when_to_use": "Clips with famous people, influencers"
+    },
+    "question_hook": {
+      "pattern": "Ask a question that demands an answer",
+      "example": "Did you know this about X?",
+      "when_to_use": "Educational, informational clips"
+    },
+    "shock_value": {
+      "pattern": "Start with the most shocking moment",
+      "example": "Begin with the climax, then explain",
+      "when_to_use": "Drama, conflict, viral moments"
+    },
+    "story_hook": {
+      "pattern": "Start mid-story to create immediate investment",
+      "example": "So this guy walks into...",
+      "when_to_use": "Storytelling, narrative clips"
+    }
+  },
+  "pur_mode_reference": {
+    "description": "Pour le mode PUR, consulter hooks_pur.json — le titre TRANSFORME le contenu au lieu de le décrire",
+    "key_difference": "hooks_psychology = descriptif (informatif, meme). hooks_pur = reframing narratif (le titre change le sens)",
+    "referenced_patterns": ["hooks_pur.json", "copywriting_pur.json"]
+  },
+  "critical_rules": {
+    "first_2_seconds": "MUST have a hook - high energy, controversial, or recognizable",
+    "cut_frequency": "Change shots every 2-3 seconds for retention",
+    "no_boring_parts": "Cut ALL dead space, silent moments, boring transitions",
+    "title_card": "Always add bold title card at top for context",
+    "caption_style": "Consistent caption style across all clips (same font, colors, position)"
+  }
+}

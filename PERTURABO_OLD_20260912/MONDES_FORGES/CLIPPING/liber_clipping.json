@@ -1,0 +1,109 @@
+{
+  "siege_id": "siege_20260824_093035_wayvee_meme_v2",
+  "campaign_id": "wayvee_phone_bounce_20260819",
+  "campaign_status": "closed",
+  "current_porte": "closed",
+  "fleet_status": "closed",
+  "mode": "logo",
+  "sub_mode": "meme_v2",
+  "inputs_warsmith": {
+    "platform_target": "youtube_shorts",
+    "market_target": "US",
+    "language_target": "en-US",
+    "age_target": "29-30",
+    "n_angles": 5,
+    "duration_sec": 5,
+    "meme_tag": "M7",
+    "channel_id": "cocktail_meme",
+    "source_author": "Wayvee (@wayveeofficial)",
+    "source_post": "When you throw your phone on the bed but it bounces and lands on the floor"
+  },
+  "fregates_status": {
+    "f00_capteurs": "paused_by_warsmith",
+    "f01_scout": "validated",
+    "f01_scout_output": "F01_SCOUT/OUT/source_specimen.json",
+    "f02_anglesmith": "validated",
+    "f02_anglesmith_output": "F02_TYRANT_CAMP/OUT/angles.json",
+    "f03_source_hunter": "skipped_meme_v2",
+    "f04_copywriter": "validated_oracle_backup",
+    "f04_copywriter_output": "F04_COPYWRITER/OUT/text_payload_A01-A05.json",
+    "f05_packager": "closed_exported",
+    "f05_packager_output": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/F05_PACKAGER/OUT/packager_summary.md"
+  },
+  "portes_validated": [
+    "Gate 1",
+    "Gate 2",
+    "Gate 3",
+    "Gate 4"
+  ],
+  "gate_decisions": {
+    "Gate 1": "validated",
+    "Gate 2": "validated",
+    "Gate 3": "validated",
+    "Gate 4": "validated"
+  },
+  "packs_expedies_count": 1,
+  "packs_posted_count": 0,
+  "packs_submitted_whop_count": 0,
+  "last_event": "campaign_closed_after_gate4_validation",
+  "siege_started_at": "2026-08-24T09:30:35Z",
+  "siege_closed_at": "2026-08-24T09:36:06Z",
+  "log_event": [
+    {
+      "at": "2026-08-21T22:39:47Z",
+      "event": "siege_started",
+      "angle_id": null
+    },
+    {
+      "at": "2026-08-21T22:39:47Z",
+      "event": "siege_started",
+      "angle_id": null
+    },
+    {
+      "at": "2026-08-24T09:30:35Z",
+      "event": "previous_siege_archived",
+      "siege_id": "siege_20260821_223947"
+    },
+    {
+      "at": "2026-08-24T09:30:35Z",
+      "event": "meme_v2_wayvee_initialized",
+      "siege_id": "siege_20260824_093035_wayvee_meme_v2"
+    },
+    {
+      "at": "2026-08-24T09:36:06Z",
+      "event": "pack_exported_and_siege_closed",
+      "pack": "EXPORT/production_pack_meme_wayvee_phone_bounce.json"
+    }
+  ],
+  "iw_custos": {
+    "last_validation": "2026-08-24T09:36:06Z",
+    "errors": []
+  },
+  "previous_siege": {
+    "siege_id": "siege_20260821_223947",
+    "ledger_archive": "ARCHIVUM/sieges/siege_20260821_223947_ledger.json"
+  },
+  "f05_export_path": "EXPORT/production_pack_meme_wayvee_phone_bounce.json",
+  "mode_pur": {
+    "enabled": true,
+    "label": "PUR",
+    "description": "Directives de montage générées sans toucher à la vidéo ni publier",
+    "frigate": "F06_DIRECTOR",
+    "status": "integrated",
+    "input_contract": {
+      "segment": "F03_SOURCE_HUNTER/OUT/segment.json",
+      "text_payload": "F04_COPYWRITER/OUT/text_payload.json",
+      "context": "F06_DIRECTOR/IN/context.json"
+    },
+    "output": "F06_DIRECTOR/OUT/montage_instructions.json",
+    "platforms": ["youtube_shorts", "tiktok", "instagram_reels"],
+    "passive_boundary": "F06_DIRECTOR ne touche jamais à la vidéo et ne poste jamais"
+  },
+  "f06_director": {
+    "status": "integrated",
+    "codebase": "F06_DIRECTOR/CODEBASE",
+    "rules": "ARCHIVUM/montage/rules",
+    "patterns": "ARCHIVUM/montage/patterns",
+    "next_consumer": "F05_PACKAGER"
+  }
+}

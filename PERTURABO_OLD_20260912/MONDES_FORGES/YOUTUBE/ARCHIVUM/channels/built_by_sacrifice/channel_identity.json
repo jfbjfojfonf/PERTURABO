@@ -1,0 +1,127 @@
+{
+  "niche": "Moments wholesome de pères travailleurs manuels (camionneurs, soudeurs, agriculteurs, pompiers, pêcheurs) avec leurs enfants — sourcés depuis TikTok anonymes",
+  "concept": "Sourcer du footage TikTok de pères blue-collar (#TruckerDad #WelderDad #FarmerDad etc.) et le transformer en compilations wholesome père-enfant sur YouTube. Différenciateur vs Wishness : anonymes authentiques au lieu de célébrités — zéro Content ID.",
+  "channel_names": [
+    {
+      "rank": 1,
+      "name": "Built by Sacrifice",
+      "rationale": "Métaphore double : le père construit (travail manuel) + le sacrifice comme acte d'amour. Court, mémorable, fort émotionnellement, universel aux US.",
+      "memorability_score": 9,
+      "seo_score": 7,
+      "brand_score": 9
+    }
+  ],
+  "chosen_name": "Built by Sacrifice",
+  "chosen_handle": "@builtbysacrifice",
+  "description": "Built by Sacrifice — Every Hour is Love ❤️\n\nMeet the real heroes. Truck drivers. Welders. Farmers. Firefighters. Fishermen. Miners. Men who clock in before dawn, work through the pain, and come home exhausted—all for their kids.\n\nWe source authentic footage of blue-collar fathers in their element and transform it into heartwarming moments that remind us: sacrifice isn't just what they do—it's who they are.\n\n✅ Professionally edited to capture raw emotion and authenticity\n✅ Edited using Adobe After Effects for cinematic quality\n\n📩 Contact: builtbysacrifice.yt@gmail.com\n\nCopyright Disclaimer:\nUnder Section 107 of the Copyright Act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, teaching, scholarship, and research.",
+  "tags": [
+    "blue collar dads",
+    "heartwarming family moments",
+    "truck driver dad",
+    "wholesome videos",
+    "hardworking fathers",
+    "firefighter family",
+    "farmer and kids",
+    "welder dad",
+    "fishing with dad",
+    "miner father",
+    "father son bonding",
+    "blue collar lifestyle",
+    "family values",
+    "dad and kids",
+    "inspirational working dads"
+  ],
+  "tone_of_voice": {
+    "register": "Chaleureux, émotionnel, authentique. Zéro voix off, zéro jugement. Le sacrifice ordinaire mérite d'être vu.",
+    "rhythm": "Clips 15-45 secondes. Musique country/folk/émotionnelle synchro. Super-titre court en 3-5 mots.",
+    "signature_vocabulary": "Titres: action concrète du travail → lien avec l'enfant. Ex: 'He Built It Himself ❤️', 'First Lesson From Dad ✨', 'Saved By Dad 🔥'",
+    "personality": "Témoin silencieux et bienveillant. On montre le travail, on révèle l'amour derrière. Jamais sensationnaliste.",
+    "never_does": [
+      "Jamais de footage broadcast officiel ou médiatisé",
+      "Jamais de célébrités (c'est le différenciateur vs Golden Moment)",
+      "Jamais de voix off ou narration",
+      "Jamais de texte polémique ou négatif",
+      "Jamais de contenu qui ridiculise le travail manuel"
+    ]
+  },
+  "visual_codes": {
+    "color_palette": "Brun foncé + acier (#5C3A1E, #8B7355, #D4A853) + blanc. Chaleur terreuse, authenticité.",
+    "graphic_style": "Documentaire warm. Super-titre en bold blanc centré. Grain cinématique léger. Style TikTok authentique premium.",
+    "thumbnail_template": "Freeze frame du moment de connexion père-enfant (regard, main tenue, étreinte). Texte haut: métier du père. Texte bas: action/émotion. Palette chaude, pas criarde.",
+    "typography": "Bold sans-serif blanc (Bebas Neue ou Impact). Emoji sobre intégré."
+  },
+  "format_standard": {
+    "target_duration": "15-45 secondes (Shorts)",
+    "clips_per_video": 1,
+    "structure": "Hook 0-3s (moment travail fort) → Révélation 3-20s (contexte père) → Climax émotionnel 20-40s → Freeze titre final",
+    "publish_frequency": "5-8 Shorts par semaine"
+  },
+  "sourcing_strategy": {
+    "tiktok_hashtags": [
+      "#TruckerDad", "#WelderDad", "#FarmerDad", "#FirefighterDad",
+      "#MinerDad", "#FisherDad", "#ConstructionDad", "#ElectricianDad",
+      "#CabinLife", "#RanchLife", "#HardWorkingDad", "#BlueCollarDad",
+      "#DadLife", "#WorkingDad", "#TruckerLife"
+    ],
+    "target_creators": "Anonymes TikTok — pères qui filment eux-mêmes ou familles qui les filment au travail",
+    "copyright_risk": "Quasi nul — créateurs anonymes, aucun Content ID actif",
+    "credit_policy": "Description: 'Original by [@source] | Celebrating working dads everywhere 💪'"
+  },
+  "archetypes_7": [
+    {"name": "Camionneur", "tiktok": "#TruckerDad #CabinLife", "count_angles": 5},
+    {"name": "Soudeur", "tiktok": "#WelderDad", "count_angles": 3},
+    {"name": "Agriculteur", "tiktok": "#FarmerDad #RanchLife", "count_angles": 3},
+    {"name": "Pompier", "tiktok": "#FirefighterDad", "count_angles": 2},
+    {"name": "Pêcheur", "tiktok": "#FisherDad", "count_angles": 3},
+    {"name": "Électricien", "tiktok": "#ElectricianDad", "count_angles": 2},
+    {"name": "Mineur", "tiktok": "#MinerDad", "count_angles": 2}
+  ],
+  "angles_20": [
+    {"id": 1, "hook": "Dad welds her a bicycle from scratch", "archetype": "Soudeur", "super_titre": "HE BUILT IT HIMSELF", "emotional_trigger": "sacrifice", "score_viral": 9.8, "tiktok_source": "#WelderDad #DadBuilds"},
+    {"id": 2, "hook": "Trucker teaches son to drive at 5", "archetype": "Camionneur", "super_titre": "FIRST LESSON FROM DAD", "emotional_trigger": "tendresse", "score_viral": 9.7, "tiktok_source": "#TruckerDad #CabinLife"},
+    {"id": 3, "hook": "Firefighter catches daughter mid-jump", "archetype": "Pompier", "super_titre": "SAVED BY DAD", "emotional_trigger": "rédemption", "score_viral": 9.6, "tiktok_source": "#FirefighterDad #BraveHeart"},
+    {"id": 4, "hook": "Farmer son rides horse for first time", "archetype": "Agriculteur", "super_titre": "LAND RUNS IN BLOOD", "emotional_trigger": "fierté", "score_viral": 9.5, "tiktok_source": "#FarmerDad #RanchLife"},
+    {"id": 5, "hook": "Dad electrician fixes daughter's toy", "archetype": "Électricien", "super_titre": "DADDY FIXED IT MAGIC", "emotional_trigger": "tendresse", "score_viral": 9.4, "tiktok_source": "#ElectricianDad #FixIt"},
+    {"id": 6, "hook": "Trucker turns cab into Christmas for kids", "archetype": "Camionneur", "super_titre": "HOME IS WHEREVER DAD IS", "emotional_trigger": "sacrifice", "score_viral": 9.3, "tiktok_source": "#TruckerDad #TruckersOfTikTok"},
+    {"id": 7, "hook": "Fisherman surprises daughter at school pickup", "archetype": "Pêcheur", "super_titre": "3 WEEKS AT SEA FOR THIS", "emotional_trigger": "rédemption", "score_viral": 9.2, "tiktok_source": "#FisherDad #CommercialFishing"},
+    {"id": 8, "hook": "Coal miner reads bedtime story in full gear", "archetype": "Mineur", "super_titre": "STILL A FATHER FIRST", "emotional_trigger": "sacrifice", "score_viral": 9.2, "tiktok_source": "#MinerDad #CoalMiner"},
+    {"id": 9, "hook": "Farmer teaches daughter to drive a tractor", "archetype": "Agriculteur", "super_titre": "THE NEXT GENERATION", "emotional_trigger": "fierté", "score_viral": 9.1, "tiktok_source": "#FarmerDad #FarmLife"},
+    {"id": 10, "hook": "Trucker pulls over to call son on birthday", "archetype": "Camionneur", "super_titre": "HE NEVER MISSES ONE", "emotional_trigger": "sacrifice", "score_viral": 9.0, "tiktok_source": "#TruckerDad #DadLife"},
+    {"id": 11, "hook": "Welder makes daughter a prom tiara from scrap metal", "archetype": "Soudeur", "super_titre": "WORTH MORE THAN DIAMONDS", "emotional_trigger": "sacrifice", "score_viral": 9.0, "tiktok_source": "#WelderDad #ProudDad"},
+    {"id": 12, "hook": "Construction worker son follows dad to site", "archetype": "Ouvrier", "super_titre": "SON WANTS TO BE JUST LIKE DAD", "emotional_trigger": "fierté", "score_viral": 8.9, "tiktok_source": "#ConstructionDad #BlueCollar"},
+    {"id": 13, "hook": "Fisherman teaches toddler to cast a line", "archetype": "Pêcheur", "super_titre": "THE FIRST CAST", "emotional_trigger": "tendresse", "score_viral": 8.8, "tiktok_source": "#FisherDad #FishingWithKids"},
+    {"id": 14, "hook": "Trucker son falls asleep on shoulder in cabin", "archetype": "Camionneur", "super_titre": "BEST CO-PILOT EVER", "emotional_trigger": "tendresse", "score_viral": 8.8, "tiktok_source": "#TruckerDad #CabinLife"},
+    {"id": 15, "hook": "Farmer skips harvest party to watch daughter dance", "archetype": "Agriculteur", "super_titre": "HIS PRIORITY IS CLEAR", "emotional_trigger": "sacrifice", "score_viral": 8.7, "tiktok_source": "#FarmerDad #GirlDad"},
+    {"id": 16, "hook": "Electrician dad fixes son's broken bike at midnight", "archetype": "Électricien", "super_titre": "AFTER A 12-HOUR SHIFT", "emotional_trigger": "sacrifice", "score_viral": 8.7, "tiktok_source": "#ElectricianDad #HardWorkingDad"},
+    {"id": 17, "hook": "Firefighter walks daughter down the aisle in uniform", "archetype": "Pompier", "super_titre": "STRAIGHT FROM THE STATION", "emotional_trigger": "rédemption", "score_viral": 8.6, "tiktok_source": "#FirefighterDad #ProudDad"},
+    {"id": 18, "hook": "Miner carries sleeping son out of truck after long shift", "archetype": "Mineur", "super_titre": "TIRED BUT NEVER TOO TIRED", "emotional_trigger": "sacrifice", "score_viral": 8.5, "tiktok_source": "#MinerDad #BlueCollarDad"},
+    {"id": 19, "hook": "Welder engraves son's baseball helmet by hand", "archetype": "Soudeur", "super_titre": "PRECISION IS HIS LOVE LANGUAGE", "emotional_trigger": "tendresse", "score_viral": 8.4, "tiktok_source": "#WelderDad #CustomDad"},
+    {"id": 20, "hook": "Trucker sings lullaby over CB radio to calm daughter", "archetype": "Camionneur", "super_titre": "500 MILES AWAY BUT STILL THERE", "emotional_trigger": "sacrifice", "score_viral": 8.3, "tiktok_source": "#TruckerDad #LongHaulDad"}
+  ],
+  "demon_analysis": {
+    "name": "Wishness",
+    "handle": "@Wishness",
+    "specimen_url": "https://www.youtube.com/shorts/K7XnPCGj2KM",
+    "specimen_views": 424000,
+    "specimen_days": 10,
+    "specimen_content": "Camionneur anonyme (source @franya910) dormant dans sa cabine avec son fils — exacte preuve de concept de Built by Sacrifice",
+    "what_we_copy": "Format Short émotionnel, super-titre, sourcing depuis anonymes TikTok, description fair use",
+    "what_we_dont_copy": "Wishness mixe célébrités + anonymes de façon générique — Built by Sacrifice = spécialiste pères travailleurs uniquement",
+    "our_edge": "Niche ultra-ciblée blue-collar fathers, pipeline TikTok #TruckerDad/#WelderDad inexploité sur YouTube, identité éditoriale forte",
+    "secondary_demon": "The Blue Collar Father (@thebluecollarfather7494) — 7.4K subs, format vlog mort, aucune compilation, aucun algo actif"
+  },
+  "f06_meta": {
+    "forged_at": "2026-07-23T00:00:00Z",
+    "model_used": "oracle-mode",
+    "specimen_source": "https://www.youtube.com/shorts/K7XnPCGj2KM — Wishness / source @franya910",
+    "demon_analyzed": "Wishness @Wishness (2M subs, $74K-222K/mois)",
+    "rules_applied": [
+      "Règle 5: Océan Bleu = seul chemin (TikTok anonymes non indexés)",
+      "Règle 8: Validation avant production",
+      "Règle copyright: jamais broadcast officiel",
+      "Règle doctrine: aucune fregate sautée, aucune Gate omise"
+    ],
+    "tyrant_score": 8.1,
+    "breacher_score": 8.75
+  }
+}

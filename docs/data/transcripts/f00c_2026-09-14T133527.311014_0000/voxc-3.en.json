@@ -1,0 +1,32 @@
+{
+  "candidate_id": "voxc-3",
+  "run_id": "f00c_2026-09-14T133527.311014+0000",
+  "lang": "en",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 1846.805,
+    "end": 1898.105
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 1826.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Um, it can be anything you want it to be. Like truly, like it's not all adult content on the site. There's other people on the site. Now, thinning hair isn't just an annoying side effect of aging. It could seriously affect your confidence and happiness. So many products claim to restore your hair to what it used to be. But few actually get the job done. In the end, many men just give up on their hair. And even if you're not ready to give up, trips to Turkey can drain your bank account and leave your hair looking worse than it did before. If you're noticing thinning, your crown starting to go, or your hairline moving back, you don't have to do all of that, thanks to our sponsor, Hims. HIMS gives you access to doctor trusted hair loss treatments with ingredients that work like finasteride and minoxidil. And they can help stop further hair loss and even regrow hair in as little as 3 to 6 months. And it's all done 100% online. No waiting rooms, no awkward pharmacy visits, no flying across the world. It's personalized care on your schedule, which compared to a transplant trip is kind of a no-brainer. For simple online access to personalized and affordable care for hair loss, ED, weight loss, and more, visit hims.com/istic. That's hims.com/istic for your free online visit. hims.com/istic. Featured products include compounded drug products which the FDA does not approve or verify for safety, effectiveness, or quality. Prescription required. See website for full details, restrictions, and important safety information. Individual results may vary based on studies of topical and oral minoxidil and finasteride."
+    },
+    {
+      "t_abs": 422.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> I think some of the appeal is that uh you're single."
+    },
+    {
+      "t_abs": 1589.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Then I'm adding in the fact that you've been investing the money an extra 15% over the last 2 years,"
+    }
+  ]
+}

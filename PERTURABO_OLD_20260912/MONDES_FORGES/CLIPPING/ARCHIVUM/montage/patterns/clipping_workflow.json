@@ -1,0 +1,99 @@
+{
+  "pattern_name": "clipping_workflow",
+  "description": "Complete workflow for clipping podcasts/long-form into viral short-form",
+  "source_transcripts": ["5Nc1Bwd3OAk", "2YAdtN7GTtk", "iK7zGXt9mOo", "hhTjwKwq8xs", "EAtAWaUcI9g"],
+  "workflow": {
+    "step_1_find_viral_moments": {
+      "methods": [
+        {
+          "name": "Manual watching",
+          "description": "Watch podcast, note timestamps of viral moments",
+          "what_to_look_for": [
+            "New question being asked",
+            "Bold statement",
+            "Controversial take",
+            "Engaging hook moment",
+            "Emotional reaction",
+            "Surprising revelation"
+          ]
+        },
+        {
+          "name": "YouTube transcript search",
+          "description": "Ctrl+F in YouTube transcript to find keywords",
+          "keywords_to_search": "Keywords from comments, intro/trailer, or description",
+          "example": "Search 'flirting' in Caleb Hammer podcast transcript"
+        },
+        {
+          "name": "Comments scraping",
+          "description": "Check YouTube comments for timestamps people highlight",
+          "note": "If people comment on it, it's likely viral material"
+        },
+        {
+          "name": "AI detection",
+          "description": "Use tools like Way in Video to auto-detect viral moments",
+          "output": "Scores each clip with viral score, ranks them",
+          "example": "Way in Video found 41 viral moments from one podcast"
+        }
+      ]
+    },
+    "step_2_select_segment": {
+      "criteria": [
+        "Has a strong hook in first 2 seconds",
+        "Contains high energy/controversy/emotion",
+        "Can stand alone without context",
+        "Matches platform rules (campaign guidelines)"
+      ],
+      "duration": "20-40 seconds sweet spot for clips",
+      "minimum": "10 seconds (for Creator Rewards payout)",
+      "maximum": "60 seconds (longer = lower watch time %)"
+    },
+    "step_3_edit_clip": {
+      "tool": "CapCut (primary), Way in Video, Opus Clip",
+      "steps": [
+        "1. Import long-form video",
+        "2. Cut to the selected segment",
+        "3. Trim ALL boring/silent parts (cut every 2-3 seconds)",
+        "4. Change aspect ratio to 9:16",
+        "5. Add zoom on speaker/reaction",
+        "6. Add title card overlay (bold, contextual)",
+        "7. Add captions (dynamic, centered)",
+        "8. Add background music (subtle, matching mood)",
+        "9. Add sound effects at key moments",
+        "10. Export at 1080p"
+      ],
+      "caption_rules": {
+        "style": "Dynamic word-by-word captions",
+        "position": "Center of frame",
+        "font": "Bold, readable (Montserrat, Bebas Neue)",
+        "colors": "White text with dark outline or background"
+      }
+    },
+    "step_4_post_and_track": {
+      "posting_schedule": {
+        "week_1": "1 clip per day (build algorithm trust)",
+        "week_2": "2-3 clips per day (space them apart)",
+        "week_3_plus": "Unlimited (algorithm trusts you)"
+      },
+      "hashtag_strategy": "Use relevant hashtags, tag original creator",
+      "description": "Add context + controversial/engaging caption",
+      "doubling_down": {
+        "method": "When a clip goes viral (1M+ views), make 3 variations",
+        "variations": "Change title, caption style, music",
+        "result": "Same clip can generate 2-5M+ total views across versions"
+      }
+    },
+    "step_5_batch_system": {
+      "friday_30min": "Find ideas/clips to clip (save viral templates)",
+      "saturday": "Batch download + trim into segments (7-15 clips)",
+      "wednesday": "Batch edit (add titles, captions, music)",
+      "daily_3min": "Post one clip per day from batch"
+    }
+  },
+  "tools_mentioned": {
+    "capcut": "Primary editor (free, beginner-friendly)",
+    "way_in_video": "AI viral moment detection + auto reframe",
+    "opus_clip": "AI clip generation + B-roll + captions",
+    "clipify": "Clipping deals/campaigns platform",
+    "snipping_tool": "Screen recording for podcast timestamps"
+  }
+}

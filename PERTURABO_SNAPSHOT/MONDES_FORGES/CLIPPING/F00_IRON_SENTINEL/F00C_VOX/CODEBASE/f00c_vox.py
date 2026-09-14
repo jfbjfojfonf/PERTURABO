@@ -1,0 +1,496 @@
+#!/usr/bin/env python3
+"""
+F00C_VOX — La Voix des Plateformes (YouTube / Twitch / local).
+Sous-frégate de F00_CAPTEURS, aux côtés de F00A (scan de prospection)
+et F00B (l'Oreille Absolue, chat Twitch).
+
+La plateforme sait déjà ce qui est viral. F00C lit cette mémoire :
+heatmap d'attention, segments viraux, données brutes — live EN COURS
+ou vidéo FINIE, même pipeline, même manifeste, même schéma.
+
+Origine : porté depuis LACRIMAE dev10-v3-live (f00_live.py, commit d1b182c,
+8/8 tests verts) et adapté aux conventions F00B de PERTURABO.
+
+Pipeline : resolve → metadata → (heat) → manifest [→ candidats canoniques]
+Sortie : OUT/live_analysis.json — schéma `perturabo.voxc.v1` — prêt pour l'Oracle
+         et le gate hybride (même chaîne de décision que F00B).
+         Avec --to-candidats : OUT/candidats.json au schéma canonique PUR
+         (clé `candidates`, signal_type=platform_heat) — pont vers le tronc.
+
+Hérésies interdites :
+❌ Jamais de téléchargement complet de VOD (--download-sections uniquement)
+❌ Jamais de recompression (stream copy / merge mp4 natif)
+❌ Jamais de manifeste vide : même en metadata_only, l'Oracle reçoit un livrable
+❌ Jamais de dépendance réseau pour la heatmap (elle vit sur le fichier local)
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import shutil
+import subprocess
+import sys
+import urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+try:  # numpy sert à la heatmap ; sans lui : dégradation propre en metadata_only
+    import numpy as np
+except Exception:  # pragma: no cover - environnement sans numpy
+    np = None
+
+
+SCHEMA_VERSION = "perturabo.voxc.v1"
+
+# ─── Paths (gabarit F00B) ────────────────────────────────────────────────────
+CODEBASE_DIR = Path(__file__).resolve().parent
+BASE = CODEBASE_DIR.parent          # F00C_VOX/
+IN_DIR = BASE / "IN"
+OUT_DIR = BASE / "OUT"
+INGEST_DIR = BASE / "vox_ingest"
+CLIPPING_ROOT = CODEBASE_DIR.parents[2]  # MONDES_FORGES/CLIPPING
+
+sys.path.insert(0, str(CLIPPING_ROOT / "SHARED"))
+try:
+    from candidates_reader import viral_segments_to_candidates  # noqa: E402
+except Exception:  # pragma: no cover - path fallback if SHARED is elsewhere
+    viral_segments_to_candidates = None
+
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Résolution de source
+# ─────────────────────────────────────────────────────────────────────────────
+
+YOUTUBE_PATTERNS = (
+    re.compile(r"youtu\.be/([\w-]{11})"),
+    re.compile(r"youtube\.com/watch\?v=([\w-]{11})"),
+    re.compile(r"youtube\.com/live/([\w-]{11})"),
+    re.compile(r"youtube\.com/shorts/([\w-]{11})"),
+    re.compile(r"youtube\.com/embed/([\w-]{11})"),
+)
+TWITCH_VOD_PATTERN = re.compile(r"twitch\.tv/videos/(\d+)")
+TWITCH_CHANNEL_PATTERN = re.compile(r"twitch\.tv/([\w]{3,25})/?$")
+
+
+def resolve_source(reference: str) -> dict:
+    """Classifie la référence et retourne {kind, platform, ...}.
+
+    kind : ``local`` | ``youtube_video`` | ``twitch_video`` | ``twitch_channel``
+    """
+    ref = (reference or "").strip()
+    if not ref:
+        raise ValueError("Référence de source vide (chemin local ou URL attendu)")
+    candidate = Path(ref)
+    if "://" not in ref:
+        if candidate.exists() and candidate.is_file():
+            return {"kind": "local", "platform": "local", "path": str(candidate), "id": candidate.stem}
+        raise FileNotFoundError(f"Fichier introuvable : {ref}")
+    lowered = ref.lower()
+    if "youtube.com" in lowered or "youtu.be" in lowered:
+        for pattern in YOUTUBE_PATTERNS:
+            match = pattern.search(ref)
+            if match:
+                return {"kind": "youtube_video", "platform": "youtube", "id": match.group(1), "url": ref}
+        raise ValueError(f"URL YouTube sans ID de vidéo exploitable : {ref}")
+    if "twitch.tv" in lowered:
+        vod = TWITCH_VOD_PATTERN.search(ref)
+        if vod:
+            return {"kind": "twitch_video", "platform": "twitch", "id": vod.group(1), "url": ref}
+        channel = TWITCH_CHANNEL_PATTERN.search(ref)
+        if channel:
+            return {"kind": "twitch_channel", "platform": "twitch", "id": channel.group(1), "url": ref}
+        raise ValueError(f"URL Twitch non reconnue : {ref}")
+    raise ValueError(f"Plateforme non supportée par F00C_VOX : {ref}")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Métadonnées plateforme (sans clé API : pages publiques)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _http_get(url: str, timeout: float = 15.0) -> bytes:
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(request, timeout=timeout) as response:  # nosec B310
+        return response.read()
+
+
+def fetch_youtube_metadata(video_id: str) -> dict:
+    """Lit la page watch publique — suffit pour is_live, titre, durée, stats."""
+    html = _http_get(f"https://www.youtube.com/watch?v={video_id}").decode("utf-8", "replace")
+    meta: dict = {"video_id": video_id, "url": f"https://www.youtube.com/watch?v={video_id}"}
+    match_title = re.search(r'<meta name="title" content="([^"]*)"', html)
+    if match_title:
+        meta["title"] = match_title.group(1)
+    # ytInitialPlayerResponse contient videoDetails (l'ordre des clés est stable)
+    player = re.search(r"ytInitialPlayerResponse\s*=\s*(\{.+?\})\s*;\s*(?:var\s|</script>)", html, re.S)
+    if player:
+        try:
+            data = json.loads(player.group(1))
+            details = data.get("videoDetails") or {}
+            meta.setdefault("title", details.get("title"))
+            meta["author"] = details.get("author")
+            meta["duration_seconds"] = details.get("lengthSeconds")
+            meta["view_count"] = details.get("viewCount")
+            meta["is_live"] = bool(details.get("isLiveContent"))
+            status = ((data.get("playabilityStatus") or {}).get("status") or "").upper()
+            meta["playable"] = status == "OK"
+        except json.JSONDecodeError:
+            pass
+    match_live = re.search(r'"isLive":\s*(true|false)', html) or re.search(
+        r"itemprop=\"isLiveBroadcast\"\s+content=\"(True|False)\"", html
+    )
+    if match_live:
+        raw = match_live.group(1)
+        meta["is_live"] = raw in ("true", "True")
+    meta.setdefault("is_live", False)
+    meta.setdefault("playable", None)
+    return meta
+
+
+TWITCH_GQL_URL = "https://gql.twitch.tv/gql"
+TWITCH_GQL_CLIENT_ID = "kd1unb4b3q4t58fwlpcbzcbnm76a8fp"  # client_id web public
+
+
+def fetch_twitch_metadata(kind: str, resource_id: str) -> dict:
+    """Métadonnées publiques Twitch via GQL (client_id web public, sans OAuth)."""
+    if kind == "twitch_video":
+        payload = {
+            "query": "query($id:ID!){user:video(id:$id){id title lengthSeconds viewCount "
+                     "owner{login displayName} game{displayName} createdAt}}",
+            "variables": {"id": resource_id},
+        }
+    else:
+        payload = {
+            "query": "query($login:String!){user(login:$login){login displayName "
+                     "stream{id title viewersCount game{displayName} createdAt} "
+                     "followers{totalCount}}}",
+            "variables": {"login": resource_id},
+        }
+    request = urllib.request.Request(
+        TWITCH_GQL_URL,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Client-ID": TWITCH_GQL_CLIENT_ID, "Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=15) as response:  # nosec B310
+        body = json.loads(response.read().decode("utf-8"))
+    user = (body.get("data") or {}).get("user") or {}
+    meta: dict = {"id": resource_id, "is_live": False}
+    if kind == "twitch_video":
+        meta.update({"title": user.get("title"), "duration_seconds": user.get("lengthSeconds"),
+                     "view_count": user.get("viewCount"), "channel": (user.get("owner") or {}).get("login"),
+                     "game": (user.get("game") or {}).get("displayName")})
+    else:
+        stream = user.get("stream") or {}
+        meta.update({"title": stream.get("title") or user.get("displayName"),
+                     "channel": user.get("login"),
+                     "is_live": bool(stream), "viewers_count": stream.get("viewersCount"),
+                     "game": (stream.get("game") or {}).get("displayName"),
+                     "followers": (user.get("followers") or {}).get("totalCount")})
+    return meta
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Heatmap d'attention (fichier local) — équivalent de la barre rouge YouTube
+# ─────────────────────────────────────────────────────────────────────────────
+
+def compute_attention_heatmap(path: Path, buckets: int = 120) -> list[dict]:
+    """Échantillonne la vidéo et produit une heatmap d'attention par bucket.
+
+    Score par bucket = variation visuelle (mouvement) + contraste. Les pics
+    marquent les moments forts — même sémantique que la barre rouge YouTube,
+    mais calculée depuis la source pour rester disponible sur toute vidéo.
+    """
+    if np is None:
+        raise RuntimeError("numpy indisponible : heatmap impossible")
+    probe_cmd = [
+        "ffprobe", "-v", "error", "-select_streams", "v:0",
+        "-show_entries", "stream=duration,avg_frame_rate",
+        "-of", "json", str(path),
+    ]
+    probe = json.loads(subprocess.check_output(probe_cmd, text=True))["streams"][0]
+    duration = float(probe.get("duration") or 0)
+    if duration <= 0:
+        raise ValueError("Durée média inconnue : heatmap impossible")
+    buckets = max(10, min(int(buckets), int(duration) or 1))
+    cmd = [
+        "ffmpeg", "-v", "error", "-i", str(path), "-vf",
+        f"fps={max(1.0, buckets / duration):.4f},scale=64:36,format=gray",
+        "-f", "rawvideo", "-pix_fmt", "gray", "pipe:1",
+    ]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+    frame_bytes = 64 * 36
+    scores: list[float] = []
+    previous: "np.ndarray | None" = None
+    assert proc.stdout is not None
+    while True:
+        raw = proc.stdout.read(frame_bytes)
+        if len(raw) != frame_bytes:
+            break
+        frame = np.frombuffer(raw, dtype=np.uint8).astype(np.float32) / 255.0
+        motion = float(0.0) if previous is None else float(np.abs(frame - previous).mean())
+        scores.append(motion + float(frame.std()) * 0.5)
+        previous = frame
+    proc.wait()
+    if not scores:
+        raise RuntimeError("Aucune frame échantillonnée : ffmpeg a échoué")
+    per_bucket = max(1, len(scores) // buckets)
+    heatmap: list[dict] = []
+    for index in range(buckets):
+        chunk = scores[index * per_bucket:(index + 1) * per_bucket]
+        if not chunk:
+            chunk = [0.0]
+        heatmap.append({
+            "bucket": index,
+            "start_sec": round(index * duration / buckets, 3),
+            "end_sec": round((index + 1) * duration / buckets, 3),
+            "attention": round(sum(chunk) / len(chunk), 6),
+        })
+    return _normalize_heatmap(heatmap)
+
+
+def _normalize_heatmap(heatmap: list[dict]) -> list[dict]:
+    max_attention = max((row["attention"] for row in heatmap), default=0.0) or 1.0
+    for row in heatmap:
+        row["attention_norm"] = round(row["attention"] / max_attention, 6)
+    return heatmap
+
+
+def top_viral_segments(heatmap: list[dict], count: int = 5, min_gap_seconds: float = 5.0) -> list[dict]:
+    """Retourne les `count` pics d'attention espacés d'au moins min_gap_seconds."""
+    ranked = sorted(heatmap, key=lambda row: row["attention"], reverse=True)
+    picked: list[dict] = []
+    for row in ranked:
+        if all(abs(row["start_sec"] - other["start_sec"]) >= min_gap_seconds for other in picked):
+            picked.append(row)
+        if len(picked) >= count:
+            break
+    picked.sort(key=lambda row: row["start_sec"])
+    return [{
+        "start_sec": row["start_sec"],
+        "end_sec": row["end_sec"],
+        "attention_norm": row["attention_norm"],
+        "rank": index + 1,
+    } for index, row in enumerate(picked)]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Téléchargement média optionnel (yt-dlp) pour analyse locale d'une URL
+# ─────────────────────────────────────────────────────────────────────────────
+
+def download_media(url: str, out_dir: Path, max_duration_seconds: float = 0,
+                   cookies_path: Path | None = None,
+                   player_clients: str = "ios,mweb",
+                   max_height: int = 144) -> Path | None:
+    """Télécharge via yt-dlp si disponible. Retourne None sinon (metadata_only).
+
+    Escalier anti-anti-bot (PLAN_SALLE_DE_GUERRE, Livraison A) :
+      1. Essais ``player_client=ios,mweb`` (gratuits, parfois suffisants) ;
+      2. Nouvel essai sans extractor-args (comportement yt-dlp courant) ;
+      3. Si cookies fournis : essai avec session autorisée (--cookies).
+    Sans succès : None → metadata_only — le garde-fou du CLI transforme
+    ce cas en échec explicite (succès technique ≠ succès réel).
+
+    Formats : video-only ``height<=max_height`` (défaut 144p) — la heatmap
+    réduit à 64x36 et l'audio est inutile : le fichier pèse ~30-60 Mo/h au
+    lieu de Go (doctrine : jamais de VOD complète).
+    """
+    if shutil.which("yt-dlp") is None:
+        return None
+    out_dir.mkdir(parents=True, exist_ok=True)
+    fmt = f"bv*[height<={max_height}]/b[height<={max_height}]/b"
+    base = ["yt-dlp", "--no-playlist", "-q", "-f", fmt, "--no-part",
+            "--merge-output-format", "mp4", "-o", str(out_dir / "%(id)s.%(ext)s")]
+    cookie_args = ["--cookies", str(cookies_path)] if cookies_path and Path(cookies_path).is_file() else []
+    attempts = [
+        base + ["--extractor-args", f"youtube:player_client={player_clients}"] + cookie_args,
+        base + cookie_args,
+    ]
+    if max_duration_seconds > 0:
+        for attempt in attempts:
+            attempt += ["--download-sections", f"*0-{int(max_duration_seconds)}"]
+    for attempt in attempts:
+        attempt.append(url)
+        if subprocess.call(attempt) == 0:
+            files = sorted(out_dir.glob("*.mp4"))
+            if files:
+                return files[-1]
+    return None
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Analyse unifiée
+# ─────────────────────────────────────────────────────────────────────────────
+
+def emit_candidats(manifest: dict, out_path: Path, top: int | None = None) -> dict:
+    """Pont F00C → tronc PUR : viral_segments → schéma canonique {candidates: [...]}.
+
+    Le manifeste reste inchangé (l'Oracle garde ses données brutes).
+    """
+    if viral_segments_to_candidates is None:
+        raise RuntimeError("candidates_reader indisponible — SHARED/candidates_reader.py manquant")
+    source = ""
+    src = manifest.get("source") or {}
+    if isinstance(src, dict):
+        source = src.get("reference") or src.get("id") or ""
+    doc = viral_segments_to_candidates(
+        manifest.get("viral_segments") or [],
+        generated_at=manifest.get("generated_at"),
+        source=source,
+        engine="f00c_vox",
+        top=top,
+    )
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+    return doc
+
+
+def analyze(reference: str, out_path: Path, work_dir: Path | None = None,
+            heatmap_buckets: int = 120, download_budget_seconds: float = 0,
+            cookies_path: Path | None = None, media_source: str | None = None) -> dict:
+    started = datetime.now(timezone.utc)
+    work_dir = Path(work_dir or out_path.parent / "live_media")
+    resolved = resolve_source(reference)
+    kind = resolved["kind"]
+    platform = resolved["platform"]
+
+    metadata: dict = {}
+    source_kind = "remote"
+    if kind == "local":
+        source_kind = "local"
+        metadata = {"file": resolved["path"], "id": resolved["id"]}
+    elif kind == "youtube_video":
+        metadata = fetch_youtube_metadata(resolved["id"])
+    elif kind in ("twitch_video", "twitch_channel"):
+        metadata = fetch_twitch_metadata(kind, resolved["id"])
+        metadata["url"] = resolved["url"]
+
+    content_type = "video"
+    if metadata.get("is_live"):
+        content_type = "live_ongoing"
+
+    media_path: Path | None = Path(resolved["path"]) if kind == "local" else None
+    if media_source:
+        # Contrat découplé (Livraison A) : la source porte les métadonnées,
+        # le média peut venir d'ailleurs (fichier local ou URL directe).
+        media_resolved = resolve_source(media_source)
+        if media_resolved["kind"] != "local":
+            raise ValueError("--media-source doit être un fichier local ou une URL directe vers le média")
+        media_path = Path(media_resolved["path"])
+        metadata["media_source"] = media_source
+    if media_path is None and download_budget_seconds > 0:
+        media_path = download_media(resolved.get("url"), work_dir,
+                                    download_budget_seconds, cookies_path)
+
+    heatmap: list[dict] = []
+    segments: list[dict] = []
+    media_error = None
+    if media_path is not None:
+        try:
+            heatmap = compute_attention_heatmap(media_path, heatmap_buckets)
+            segments = top_viral_segments(heatmap)
+        except Exception as exc:  # noqa: BLE001 - l'analyse média ne doit jamais bloquer le livrable
+            media_error = str(exc)
+
+    status = "full" if heatmap else ("metadata_only" if not media_error else "metadata_only_media_error")
+    manifest = {
+        "schema_version": SCHEMA_VERSION,
+        "generated_at": started.isoformat(),
+        "status": status,
+        "source": {
+            "reference": reference,
+            "kind": kind,
+            "platform": platform,
+            "content_type": content_type,
+            "source_kind": source_kind,
+            "id": resolved.get("id"),
+        },
+        "metadata": metadata,
+        "attention_heatmap": heatmap,
+        "viral_segments": segments,
+        "raw_data": {
+            "note": "Données brutes plateforme pour l'Oracle (aucune valeur calculée).",
+            "metadata_raw": metadata,
+        },
+        "media_error": media_error,
+        "pipeline": {
+            "name": "F00C_VOX",
+            "version": "1.0.0",
+            "same_branch_preview": True,  # décision v3 : live ET vidéo finie, même manifeste
+        },
+    }
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    return manifest
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI
+# ─────────────────────────────────────────────────────────────────────────────
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="F00C_VOX — analyse live/vidéo YouTube-Twitch-local")
+    parser.add_argument("source", help="URL YouTube/Twitch ou chemin local")
+    parser.add_argument("--out", default=str(OUT_DIR / "live_analysis.json"))
+    parser.add_argument("--work-dir", default=None)
+    parser.add_argument("--heatmap-buckets", type=int, default=120)
+    parser.add_argument("--download-budget-seconds", type=float, default=0,
+                        help="Si > 0, tente yt-dlp pour analyser le média localement")
+    parser.add_argument("--cookies-file", default=None,
+                        help="Fichier cookies Netscape d'une session autorisée (yt-dlp --cookies)")
+    parser.add_argument("--media-source", default=None,
+                        help="Média séparé de la source : chemin local ou URL directe (métadonnées = source)")
+    parser.add_argument("--to-candidats", action="store_true",
+                        help="Émet OUT/candidats.json au schéma canonique PUR (pont vers le tronc)")
+    parser.add_argument("--candidats-out", default=str(OUT_DIR / "candidats.json"),
+                        help="Chemin du candidats.json (avec --to-candidats)")
+    parser.add_argument("--top", type=int, default=0,
+                        help="Limiter aux N meilleurs segments (0 = tous)")
+    args = parser.parse_args(argv)
+    try:
+        manifest = analyze(
+            args.source, Path(args.out), Path(args.work_dir) if args.work_dir else None,
+            args.heatmap_buckets, args.download_budget_seconds,
+            cookies_path=Path(args.cookies_file) if args.cookies_file else None,
+            media_source=args.media_source,
+        )
+        summary = {"status": manifest["status"], "out": str(args.out)}
+        if args.to_candidats:
+            top = args.top if args.top and args.top > 0 else None
+            doc = emit_candidats(manifest, Path(args.candidats_out), top=top)
+            summary["candidats"] = str(args.candidats_out)
+            summary["n_candidates"] = len(doc.get("candidates") or [])
+            if summary["n_candidates"] == 0:
+                print(
+                    "F00C_VOX: WARNING — 0 candidat (heatmap absente ou plate). "
+                    "Relancer avec --download-budget-seconds > 0. Pas de silence : le fichier est vide.",
+                    file=sys.stderr,
+                )
+    except (ValueError, FileNotFoundError, RuntimeError, subprocess.CalledProcessError) as exc:
+        print(f"F00C_VOX: erreur — {exc}", file=sys.stderr)
+        return 1
+    print(json.dumps(summary, ensure_ascii=False))
+    if args.download_budget_seconds > 0:
+        guard_problems = []
+        if not args.media_source and manifest["status"] != "full":
+            guard_problems.append(
+                f"budget > 0 mais status={manifest['status']} — média non obtenu "
+                "(anti-bot YouTube) : fournir YT_COOKIES_BASE64 ou --media-source."
+            )
+        if args.to_candidats and summary.get("n_candidates", 0) == 0:
+            guard_problems.append("budget > 0 mais 0 candidat produit (heatmap absente ou plate).")
+        if guard_problems:
+            for problem in guard_problems:
+                print(f"F00C_VOX: GUARD-FAIL — {problem}", file=sys.stderr)
+            return 2
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

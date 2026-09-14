@@ -1,0 +1,5113 @@
+{
+  "discovery_id": "DISC-7ac203f126",
+  "discovered_at": "2026-08-21T22:51:47Z",
+  "market_input": {
+    "market": "US residents age 25-45 interested in @Zdak",
+    "platform": "youtube_shorts",
+    "horizon": "3d",
+    "language": "en-US",
+    "production_niche": "meme",
+    "angle_request": {
+      "requested_total": 10,
+      "requested_blue": 6,
+      "requested_red": 4,
+      "available_blue_candidates": 0,
+      "available_red_candidates": 0,
+      "status": "insufficient_candidates",
+      "decision": "warsmith_review"
+    }
+  },
+  "research_profile": {
+    "horizon_hours": 72,
+    "probe_queries": [
+      "#funny",
+      "#funny meme",
+      "#funnymemes",
+      "#funnymemes meme",
+      "#meme",
+      "#meme meme",
+      "#memes",
+      "#memes meme",
+      "#school",
+      "#school meme",
+      "#shorts",
+      "#shorts meme",
+      "#teacher",
+      "#teacher meme",
+      "#worldofwarships",
+      "#worldofwarships meme",
+      "#wowsmoments",
+      "#wowsmoments meme",
+      "@Zdak",
+      "Zdak meme"
+    ],
+    "candidate_limit": 30,
+    "candidate_policy": "observed_youtube_meme_only"
+  },
+  "demon_map": [
+    {
+      "demon_id": "DEMON-43e76c12",
+      "type": "creator_or_channel",
+      "identity": "ClassicMan D",
+      "territory": [
+        "Thing Players Are Tank Royalty In Rivals #shorts #meme",
+        "My Thoughts On Black Myth Zhong Kui Trailer #shorts #meme",
+        "Why Are Wolverine Skins This Ugly #shorts #meme"
+      ],
+      "evidence_urls": [
+        "https://youtube.com/watch?v=cTPh9SRIpJ4",
+        "https://youtube.com/watch?v=CaHZ1g7puhk",
+        "https://youtube.com/watch?v=R8q2uos7oFc"
+      ],
+      "observed_video_count": 3,
+      "observed_views": 423174,
+      "pressure_score": 40,
+      "status": "observed"
+    },
+    {
+      "demon_id": "DEMON-aa841835",
+      "type": "creator_or_channel",
+      "identity": "Yodabeibi",
+      "territory": [
+        "No hay salvación 💀 #humor #meme",
+        "Primer y último trabajo 💀 #humor #meme"
+      ],
+      "evidence_urls": [
+        "https://youtube.com/watch?v=jrg1dZcOknM",
+        "https://youtube.com/watch?v=smpawFjQEw4"
+      ],
+      "observed_video_count": 2,
+      "observed_views": 2290546,
+      "pressure_score": 46,
+      "status": "observed"
+    },
+    {
+      "demon_id": "DEMON-14e3ea46",
+      "type": "creator_or_channel",
+      "identity": "Tyler Vitelli",
+      "territory": [
+        "This was NOT easy to do #relatablestories #comedy #funnymemes",
+        "I Tried A Bag of Air from 2018.. #relatablestories #comedy #funnymemes"
+      ],
+      "evidence_urls": [
+        "https://youtube.com/watch?v=r-qQbjy4Kzo",
+        "https://youtube.com/watch?v=thBbEHIR_4c"
+      ],
+      "observed_video_count": 2,
+      "observed_views": 2216128,
+      "pressure_score": 46,
+      "status": "observed"
+    },
+    {
+      "demon_id": "DEMON-ad468adc",
+      "type": "creator_or_channel",
+      "identity": "HINA PURE",
+      "territory": [
+        "😹😹😹#funny #memehub #like #mems #comedy #funnymemes #jokes #subscribe #share #support",
+        "😹😹😹#funny #memehub #like #mems #comedy #funnymemes #jokes #subscribe #share #support"
+      ],
+      "evidence_urls": [
+        "https://youtube.com/watch?v=duZOEnJqC70",
+        "https://youtube.com/watch?v=b35RD3vOwaA"
+      ],
+      "observed_video_count": 2,
+      "observed_views": 177597,
+      "pressure_score": 25,
+      "status": "observed"
+    }
+  ],
+  "candidate_clusters": {
+    "unique_count": 49,
+    "removed_duplicates": [],
+    "rejected_signals": [
+      {
+        "candidate_id": "CAND-632c7558",
+        "keyword": "BOOST MOON BALL 🧋🌕⚾ #shorts #youtubeshorts #cricket #unboxing #ball #funny",
+        "normalized_key": "boost moon ball youtubeshorts cricket unboxing ball funny",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=1GebsCjUlCc"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 5865215,
+        "youtube_total_views": 5865215,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Box Of Vengeance"
+        ],
+        "observed_hashtags": [
+          "#amazon",
+          "#amazonproducts",
+          "#amazonunboxing",
+          "#ball",
+          "#collection",
+          "#cricket",
+          "#cricketball",
+          "#cricketbat",
+          "#cricketlover",
+          "#firstyoutubeincome",
+          "#funny",
+          "#gaming",
+          "#indiancricket",
+          "#shorts",
+          "#unboxing",
+          "#unboxingindia",
+          "#unboxingshorts",
+          "#unboxingvideo",
+          "#youtubeshorts"
+        ],
+        "observed_tags": [
+          "ball",
+          "ball collector",
+          "ball collector new shorts",
+          "ball collector new video",
+          "ball collector shorts",
+          "bol",
+          "boost energy drink",
+          "bouncing ball",
+          "box of vengeance",
+          "box of vengeance ball collection",
+          "box of vengeance giveaway",
+          "box of vengeance shorts",
+          "comedy video",
+          "flying ball",
+          "free ball",
+          "fukra insaan",
+          "funny shorts",
+          "funny video",
+          "gadgets",
+          "moon ball",
+          "ms dhoni",
+          "mujhe kaalu pasand",
+          "mujhe kalu pasand",
+          "shorts",
+          "sourav joshi vlogs",
+          "techno gamerz shorts",
+          "trending",
+          "unique",
+          "viral",
+          "youtube unboxing"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-4be0de3a",
+        "keyword": "Wait for end 😁 #kisanbhai #comedy #friends #funny #harshpushptode #khetikisani #kisanbhai #kisani",
+        "normalized_key": "wait end kisanbhai comedy friends funny harshpushptode khetikisani kisanbhai kisani",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=bTmYnYRUGD0"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 5083168,
+        "youtube_total_views": 5083168,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Harsh Pushptode"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#friends",
+          "#funny",
+          "#harshpushptode",
+          "#khetikisani",
+          "#kisanbhai",
+          "#kisani"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-b0eab3b2",
+        "keyword": "Big bro’s friends be like : 💀 #shorts #robloxanimation #roblox #fypp #memes",
+        "normalized_key": "big bro s friends be robloxanimation roblox fypp memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=2Q6U2JO_o1M"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 2700397,
+        "youtube_total_views": 2700397,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 12,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Clutchmaker"
+        ],
+        "observed_hashtags": [
+          "#fypp",
+          "#memes",
+          "#roblox",
+          "#robloxanimation",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-479b5f83",
+        "keyword": "Chintu pahucha मेलापुर | #comedy #funny #memes #papa #chintu",
+        "normalized_key": "chintu pahucha comedy funny memes papa chintu",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=dl7AO5MJFLY"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 2349382,
+        "youtube_total_views": 2349382,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Laughingggodha"
+        ],
+        "observed_hashtags": [
+          "#chintu",
+          "#comedy",
+          "#funny",
+          "#memes",
+          "#papa"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-7917fd3e",
+        "keyword": "Arpit ka padai #comedy #funny #shortvideo",
+        "normalized_key": "arpit ka padai comedy funny shortvideo",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=zownOt5tYfg"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 2209286,
+        "youtube_total_views": 2209286,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Angrej babu "
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#funny",
+          "#shortvideo"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-d662c75c",
+        "keyword": "bird talking with me 🤣 #funny #funnyvideo",
+        "normalized_key": "bird talking me funny funnyvideo",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=ABic5jCRIzs"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 2075620,
+        "youtube_total_views": 2075620,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "RRR777"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#funnyvideo",
+          "#viral",
+          "#viralvideo"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-2a2638ca",
+        "keyword": "The 1st one girl is Hits different🥵❌ #short #funny #dance #kpop #ateez #trio",
+        "normalized_key": "1st one girl is hits different short funny dance kpop",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=VZS88V8Ftk0"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 2020829,
+        "youtube_total_views": 2020829,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Sha Trio"
+        ],
+        "observed_hashtags": [
+          "#ateez",
+          "#dance",
+          "#funny",
+          "#kpop",
+          "#short",
+          "#trio"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-432b7fa1",
+        "keyword": "Niyayatha ketta mudiya pudikiraanga sir😖#comedy #shorts #funny",
+        "normalized_key": "niyayatha ketta mudiya pudikiraanga sir comedy funny",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=gJdebDBA0xQ"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1560642,
+        "youtube_total_views": 1560642,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Kaathadi club"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#friendscomedy",
+          "#funny",
+          "#kaathadiclub",
+          "#schoolcomedy",
+          "#schoolrelatable",
+          "#shorts",
+          "#shortscomedy",
+          "#vadachennai"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-3b017db3",
+        "keyword": "No thanks bro 😭✌️#meme #memes #funny",
+        "normalized_key": "no thanks bro meme memes funny",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=NVuhF8kGjrM"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1368620,
+        "youtube_total_views": 1368620,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "The Meme Cat "
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#meme",
+          "#memes"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-0f1c490f",
+        "keyword": "Even Nokia Approved Coca-Cola 🗿",
+        "normalized_key": "even nokia approved coca cola",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=tdS3RRolFBQ"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1352120,
+        "youtube_total_views": 1352120,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "DoggyZ"
+        ],
+        "observed_hashtags": [
+          "#cocacola",
+          "#funny",
+          "#fyp",
+          "#meme",
+          "#memes",
+          "#nokia",
+          "#pepsi",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 0,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 39.6,
+          "meme_fit": 75,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-6e9b8d0b",
+        "keyword": "No hay salvación 💀 #humor #meme",
+        "normalized_key": "no hay salvaci n humor meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=jrg1dZcOknM"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1307916,
+        "youtube_total_views": 1307916,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Yodabeibi"
+        ],
+        "observed_hashtags": [
+          "#humor",
+          "#meme"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-ec43d2ef",
+        "keyword": "Worst Password Input Field Design 🤦‍♂️ #dialogue",
+        "normalized_key": "worst password input field design dialogue",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=-YlAkf_URbo"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1281497,
+        "youtube_total_views": 1281497,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Nibzos"
+        ],
+        "observed_hashtags": [
+          "#coding",
+          "#developer",
+          "#dialogue",
+          "#funny",
+          "#funnymemes",
+          "#fyp",
+          "#meme",
+          "#memes",
+          "#memesdaily",
+          "#programmer",
+          "#shorts",
+          "#viralshorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 0,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 39.6,
+          "meme_fit": 75,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-545eb85f",
+        "keyword": "राखी लेलव राखी 😂🤣 YemanRaja Comedy‼️#cg #comedy #funny #shorts #shortsfeed #explore",
+        "normalized_key": "yemanraja comedy cg comedy funny shortsfeed explore",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=3B-w6qEosEg"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1235967,
+        "youtube_total_views": 1235967,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Yeman Raja"
+        ],
+        "observed_hashtags": [
+          "#cg",
+          "#comedy",
+          "#explore",
+          "#funny",
+          "#shorts",
+          "#shortsfeed",
+          "#yemanraja",
+          "#yemanrajacomedy",
+          "#yemanrajavlog"
+        ],
+        "observed_tags": [
+          "Cg",
+          "Cg shorts yemanraja",
+          "Comedy",
+          "Funny",
+          "Funny comedy video yemanraja",
+          "Shorts",
+          "YemanRaja",
+          "YemanRaja cg comedy",
+          "YemanRaja comedy",
+          "YemanRaja shorts",
+          "Yemanraja",
+          "Yemanraja comedy video",
+          "Yemanraja funny comedy",
+          "Yemanraja video",
+          "Yemaraja ka video"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-8846ff4c",
+        "keyword": "This was NOT easy to do #relatablestories #comedy #funnymemes",
+        "normalized_key": "this was not easy to do relatablestories comedy funnymemes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=r-qQbjy4Kzo"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1143321,
+        "youtube_total_views": 1143321,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 2,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Tyler Vitelli"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#funny",
+          "#funnyimages",
+          "#funnymemes",
+          "#gamtmg",
+          "#memes",
+          "#relatable",
+          "#relatablestories",
+          "#shorts",
+          "#storytelling",
+          "#tylervitelli",
+          "#usa",
+          "#wgitachi"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 30,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 45.8,
+          "red_ocean": 50.1,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-c419ab6e",
+        "keyword": "Anjo saiu cedo 😇 #comedy #humormemes #memes #short #indonesia",
+        "normalized_key": "anjo saiu cedo comedy humormemes memes short indonesia",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=RJV3ysVZSPY"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1105645,
+        "youtube_total_views": 1105645,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 12,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Ocerteza"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#humormemes",
+          "#indonesia",
+          "#memes",
+          "#short"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-3682aeed",
+        "keyword": "I Tried A Bag of Air from 2018.. #relatablestories #comedy #funnymemes",
+        "normalized_key": "i tried a bag of air 2018 relatablestories comedy funnymemes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=thBbEHIR_4c"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1072807,
+        "youtube_total_views": 1072807,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 1,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Tyler Vitelli"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#funny",
+          "#funnyimages",
+          "#funnymemes",
+          "#gamtmg",
+          "#memes",
+          "#relatable",
+          "#relatablestories",
+          "#shorts",
+          "#storytelling",
+          "#tylervitelli",
+          "#usa",
+          "#wgitachi"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 15,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 40.5,
+          "red_ocean": 44.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-5edb73b9",
+        "keyword": "W Princess VS Gacha Princess 🗿👑     #chocopikauwu #gacha #trend #fyp #memes #gachaedit",
+        "normalized_key": "w princess vs gacha princess chocopikauwu gacha trend fyp memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=R_9InbRSuAw"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1063002,
+        "youtube_total_views": 1063002,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 12,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Choco pika ÙwÚ"
+        ],
+        "observed_hashtags": [
+          "#boxing",
+          "#chocopikauwu",
+          "#fyp",
+          "#gacha",
+          "#gachaclub",
+          "#gachaedit",
+          "#gachaedits",
+          "#gachalife",
+          "#gachamemes",
+          "#gachamemesedits",
+          "#gachastory",
+          "#gachatiktok",
+          "#gachatrend",
+          "#loveyourself",
+          "#meme",
+          "#memes",
+          "#pov",
+          "#shorts",
+          "#story",
+          "#trend",
+          "#trending",
+          "#trendingshorts",
+          "#trollface",
+          "#viral",
+          "#youtubeshorts"
+        ],
+        "observed_tags": [
+          "#boxing",
+          "#fyp",
+          "#gacha",
+          "#gachaclub",
+          "#gachaedit",
+          "#gachalife",
+          "#gachameme",
+          "#gachastory",
+          "#gachatiktok",
+          "#loveyourself",
+          "#meme",
+          "#memes",
+          "#pov",
+          "#shorts",
+          "#story",
+          "#trend",
+          "#trending",
+          "#trendingshorts",
+          "#trollface",
+          "#viral",
+          "#youtubeshorts"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-69b181bb",
+        "keyword": "Cute Diaper Scout Turbo sleep 😂😂 #tf2 #animation #memes",
+        "normalized_key": "cute diaper scout turbo sleep tf2 animation memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=48u2f3MtxIc"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 1048031,
+        "youtube_total_views": 1048031,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 12,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Azzam Alqafi Defairzan"
+        ],
+        "observed_hashtags": [
+          "#animation",
+          "#memes",
+          "#tf2"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 100,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-779e2f50",
+        "keyword": "#dialogue 🍾🙌🥫",
+        "normalized_key": "dialogue",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=GMEG3nPqdVU"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 988348,
+        "youtube_total_views": 988348,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Cob Show"
+        ],
+        "observed_hashtags": [
+          "#Apple",
+          "#Meme",
+          "#Nokia",
+          "#PhoneBattle",
+          "#Samsung",
+          "#Smartphone",
+          "#Tech",
+          "#dialogue",
+          "#funny",
+          "#meme",
+          "#shorts"
+        ],
+        "observed_tags": [
+          "Ash MeMeZ",
+          "Coca Cola",
+          "Coca Cola challenge",
+          "Coca Cola drink",
+          "Coca Cola fans",
+          "Coca Cola meme",
+          "Coca Cola vs Pepsi",
+          "Coca-Cola",
+          "Coke lovers",
+          "Coke meme",
+          "Coke vs Pepsi",
+          "Pepsi",
+          "Pepsi challenge",
+          "Pepsi drink",
+          "Pepsi fans",
+          "Pepsi lovers",
+          "Pepsi meme",
+          "Pepsi vs Coca Cola",
+          "Pepsi vs Coke",
+          "YouTube Shorts",
+          "beverage battle",
+          "cola battle",
+          "drink comparison",
+          "food meme",
+          "funny drink meme",
+          "funny shorts",
+          "shorts",
+          "soda battle",
+          "soda comparison",
+          "soft drink meme",
+          "soft drinks",
+          "viral meme",
+          "viral shorts"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 0,
+          "youtube": 98.8,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 39.2,
+          "meme_fit": 75,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-8efca98f",
+        "keyword": "Primer y último trabajo 💀 #humor #meme",
+        "normalized_key": "primer y ltimo trabajo humor meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=smpawFjQEw4"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 982630,
+        "youtube_total_views": 982630,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Yodabeibi"
+        ],
+        "observed_hashtags": [
+          "#humor",
+          "#meme"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 98.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 74.0,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-fb58b16d",
+        "keyword": "who is dumber ?😂 - Animal Hospital (Anomaly)  Roblox Funny Meme #roblox #funny",
+        "normalized_key": "is dumber animal hospital anomaly roblox funny meme roblox funny",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=cjYvvcJ68Ek"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 887602,
+        "youtube_total_views": 887602,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 25,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "BOOSBUG"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#roblox"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 88.8,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 70.7,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-27ea94f2",
+        "keyword": "Hahahaha  #haaland #mbappe #funny #memes",
+        "normalized_key": "hahahaha haaland mbappe funny memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=KXCaD7cJ3Os"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 836093,
+        "youtube_total_views": 836093,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Evan Anime Studio"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#haaland",
+          "#mbappe",
+          "#memes"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 83.6,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 68.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-97c7d041",
+        "keyword": "Nokia respeitou seu adversário 🗿🚬",
+        "normalized_key": "nokia respeitou seu advers rio",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=KujbTPLU_YA"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 692587,
+        "youtube_total_views": 692587,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Limão"
+        ],
+        "observed_hashtags": [
+          "#apple",
+          "#funny",
+          "#funnymemes",
+          "#meme",
+          "#memes",
+          "#nokia",
+          "#onepiece",
+          "#shorts"
+        ],
+        "observed_tags": [
+          "Limão",
+          "Limãosudo",
+          "One Piece a série",
+          "apple",
+          "aura",
+          "engraçado",
+          "funny",
+          "funny memes",
+          "fyp",
+          "humor",
+          "limao",
+          "limaosudo",
+          "limãosudo",
+          "meme",
+          "memes",
+          "mihawk",
+          "nokia",
+          "one piece",
+          "shorts",
+          "teste de queda",
+          "viral",
+          "zoro"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 0,
+          "youtube": 69.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 28.8,
+          "meme_fit": 75,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-5d8bad08",
+        "keyword": "lie industry and government ✌️ #memes #humor #funny #slideshow #shorts",
+        "normalized_key": "lie industry government memes humor funny slideshow",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=gCRxQ1PgDLQ"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 636156,
+        "youtube_total_views": 636156,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Caldruki"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#humor",
+          "#memes",
+          "#shorts",
+          "#slideshow"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 63.6,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 61.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-d47ff1bf",
+        "keyword": "Для тренеров скидка. Автор видео: @carrotandstickmaster Смешные комментарии.  #юмор #мемас #мемы",
+        "normalized_key": "carrotandstickmaster",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=D_hc1k3qXrY"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 597152,
+        "youtube_total_views": 597152,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "МЕМОриал"
+        ],
+        "observed_hashtags": [],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": false,
+        "scores": {
+          "demand": 0,
+          "youtube": 59.7,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 25.5,
+          "meme_fit": 0,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "block",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-11f18713",
+        "keyword": "Olha o que eu achei 😁 #slime #dosrosas #emillyvickof #humor #engraçado #memes #funny #toys",
+        "normalized_key": "olha o que eu achei slime dosrosas emillyvickof humor engra",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=e_uISGn9fF4"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 576658,
+        "youtube_total_views": 576658,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Jéssica Viana"
+        ],
+        "observed_hashtags": [
+          "#dosrosas",
+          "#emillyvickof",
+          "#engra",
+          "#funny",
+          "#humor",
+          "#memes",
+          "#slime",
+          "#toys"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 57.7,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 59.8,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-fff1a85f",
+        "keyword": "Legendary Meme #short #shorts #roblox #memes",
+        "normalized_key": "legendary meme short roblox memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=9bXaRwmN-L0"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 381415,
+        "youtube_total_views": 381415,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "BonkieDoge"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#fyp",
+          "#helldivers",
+          "#helldivers2",
+          "#meme",
+          "#memes",
+          "#roblox",
+          "#robloxanimation",
+          "#robloxmoonanimator",
+          "#robloxstudio",
+          "#shitpost",
+          "#short",
+          "#shorts"
+        ],
+        "observed_tags": [
+          "Moon animator",
+          "a dusty trip formula one",
+          "blox fruits",
+          "brookhaven 🏡rp",
+          "corinthians",
+          "doors",
+          "funny moments",
+          "meme",
+          "memes",
+          "new roblox anime games",
+          "pet simulator.exe",
+          "roblox",
+          "roblox animation",
+          "roblox brookhaven",
+          "roblox doors",
+          "roblox funny",
+          "roblox funny moments",
+          "roblox games",
+          "roblox horror story",
+          "roblox indonesia",
+          "roblox meme",
+          "roblox moon animator",
+          "roblox movie",
+          "roblox pet simulator",
+          "roblox pet simulator x",
+          "roblox shorts",
+          "roblox story",
+          "roblox studio",
+          "roblox vc",
+          "short",
+          "shorts",
+          "stickman"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 38.1,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 52.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-93fc9f08",
+        "keyword": "Argentina 🇦🇷 | Lionel Messi, Cristiano Ronaldo, FIFA World Cup Meme",
+        "normalized_key": "argentina lionel messi cristiano ronaldo fifa world cup meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=9HKqVUvaG58"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 329527,
+        "youtube_total_views": 329527,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "GelNox"
+        ],
+        "observed_hashtags": [
+          "#funnymemes",
+          "#gelnox",
+          "#meme",
+          "#memes"
+        ],
+        "observed_tags": [
+          "funny memes",
+          "gelnox",
+          "gelnox memes",
+          "meme",
+          "memes"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 33.0,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 51.1,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-054792f1",
+        "keyword": "Old trend but like it ❤️‍🔥👍 Aphmau  gacha meme ✨️ ##gacha #meme",
+        "normalized_key": "trend but it aphmau gacha meme gacha meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=SNN3IG5y7Co"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 328922,
+        "youtube_total_views": 328922,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Itz Maliha"
+        ],
+        "observed_hashtags": [
+          "#gacha",
+          "#meme"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 32.9,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 51.1,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-e80a066c",
+        "keyword": "Masti time 🤣 #rakhi #sibling #genz #viral #meme #short",
+        "normalized_key": "masti time rakhi sibling genz viral meme short",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=SnBfMibTsOE"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 278351,
+        "youtube_total_views": 278351,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Rakhi Edit.2.0"
+        ],
+        "observed_hashtags": [
+          "#genz",
+          "#meme",
+          "#rakhi",
+          "#short",
+          "#sibling",
+          "#viral"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 27.8,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 49.3,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-2f6bd1a4",
+        "keyword": "Best Ranking Sprite Challenge #funnyshorts #funny #memes #funnyvideo",
+        "normalized_key": "best ranking sprite challenge funnyshorts funny memes funnyvideo",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=cNfp5M4nDXA"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 273504,
+        "youtube_total_views": 273504,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Kimbely Esp"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#funnyshorts",
+          "#funnyvideo",
+          "#memes"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 27.4,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 49.2,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-6636749d",
+        "keyword": "Eggman? #fortnite #sonicthehedgehog #drrobotnik #eggman #clip #funny #memes #meme #wow #clipped",
+        "normalized_key": "eggman fortnite sonicthehedgehog drrobotnik eggman clip funny memes meme wow",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=lpxWwiF4wcc"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 270003,
+        "youtube_total_views": 270003,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "MarioMaster973"
+        ],
+        "observed_hashtags": [
+          "#clip",
+          "#clipped",
+          "#drrobotnik",
+          "#eggman",
+          "#fortnite",
+          "#funny",
+          "#meme",
+          "#memes",
+          "#sonicthehedgehog",
+          "#wow"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 27.0,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 49.1,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-af5703ae",
+        "keyword": "millennial simulator 2 #shorts #comedy #millennials #memes #gaming #funny",
+        "normalized_key": "millennial simulator 2 comedy millennials memes gaming funny",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=LCeK63FvARs"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 268809,
+        "youtube_total_views": 268809,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Xx_skull_mug_xX"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#funny",
+          "#gaming",
+          "#memes",
+          "#millennials",
+          "#shorts"
+        ],
+        "observed_tags": [
+          "3d cartoon",
+          "Cartoon",
+          "FPS",
+          "FPS games",
+          "SKMG",
+          "Skullmug simulator",
+          "Xx_skull_mug_xX",
+          "animate",
+          "animation",
+          "animations",
+          "animator",
+          "blender",
+          "blender 3d",
+          "cartoon",
+          "cartoonist",
+          "first person show",
+          "game",
+          "gamer",
+          "gamers",
+          "games",
+          "gaming",
+          "kyle gordon",
+          "millennial",
+          "millennials",
+          "simulator",
+          "simulator the first person show",
+          "skullmug",
+          "skullmug simulators",
+          "toons",
+          "we are young"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 26.9,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 49.0,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-1d24e97d",
+        "keyword": "TOM HOLLAND LAUGHING #meme#funny #laugh #viralvideo #fyp #memes#tomholland",
+        "normalized_key": "tom holland laughing meme funny laugh viralvideo fyp memes tomholland",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=XFUJz7QrEUI"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 267357,
+        "youtube_total_views": 267357,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Capture Cute Pets"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#fyp",
+          "#laugh",
+          "#meme",
+          "#memes",
+          "#tomholland",
+          "#viralvideo"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 26.7,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 49.0,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-a35f7666",
+        "keyword": "Talking Tom duckman dance 😂   Animal Hospital Anomaly Roblox Funny Meme #roblox #funny",
+        "normalized_key": "talking tom duckman dance animal hospital anomaly roblox funny meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=sIT1O25fEpE"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 243311,
+        "youtube_total_views": 243311,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 25,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "MRCAT"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#roblox"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 24.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 48.1,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-02bd957a",
+        "keyword": "FIX LOGO IQ #shorts #funny #memes",
+        "normalized_key": "fix logo iq funny memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=_Cp3KYResIg"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 236670,
+        "youtube_total_views": 236670,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Ridwan Tuwilll"
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#memes",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 23.7,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 47.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-105c3493",
+        "keyword": "meme random | #meme #fyp #funny #memes #lucu",
+        "normalized_key": "meme random meme fyp funny memes lucu",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=YtfYJL5ExCE"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 231428,
+        "youtube_total_views": 231428,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "tolmeme1 "
+        ],
+        "observed_hashtags": [
+          "#funny",
+          "#fyp",
+          "#lucu",
+          "#meme",
+          "#memes"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 23.1,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 47.7,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-9a4a3bf4",
+        "keyword": "Rumi and anomaly Part 2 😂 - Animal Hospital (Anomaly) Roblox Funny Meme #roblox #funny #memes",
+        "normalized_key": "rumi anomaly part 2 animal hospital anomaly roblox funny meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=eT3UeMrd_po"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 222743,
+        "youtube_total_views": 222743,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 26,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Prefix Toon Animations"
+        ],
+        "observed_hashtags": [
+          "#animation",
+          "#funny",
+          "#memes",
+          "#roblox"
+        ],
+        "observed_tags": [
+          "animation",
+          "funny",
+          "meme",
+          "short"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 22.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 47.4,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-83774942",
+        "keyword": "😹😹😹#funny #memehub #like #mems #comedy #funnymemes #jokes #subscribe #share #support",
+        "normalized_key": "funny memehub mems comedy funnymemes jokes subscribe share support",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=duZOEnJqC70",
+          "https://youtube.com/watch?v=b35RD3vOwaA"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 2,
+        "youtube_top_views": 100421,
+        "youtube_total_views": 177597,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "HINA PURE"
+        ],
+        "observed_hashtags": [
+          "#comedy",
+          "#funny",
+          "#funnymemes",
+          "#jokes",
+          "#like",
+          "#memehub",
+          "#mems",
+          "#share",
+          "#subscribe",
+          "#support"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 10.0,
+          "us_native": 70,
+          "demon_pressure": 31,
+          "saturation": 31.7,
+          "blue_ocean": 72.7,
+          "red_ocean": 44.7,
+          "meme_fit": 75,
+          "confidence": 89.0
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-353c1c5e",
+        "keyword": "pasti pilihan yang sulit #meme",
+        "normalized_key": "pasti pilihan yang sulit meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=pjD-U6avaOU"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 172153,
+        "youtube_total_views": 172153,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Meme absurd"
+        ],
+        "observed_hashtags": [
+          "#meme"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 17.2,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 45.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-b3b3f964",
+        "keyword": "Тгк: memeute #мемы #прикол #кружок #мем #приколы #юмор #смешно",
+        "normalized_key": "memeute",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=ierqtOde0uc"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 171573,
+        "youtube_total_views": 171573,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "УТЕЧКА МЕМОВ"
+        ],
+        "observed_hashtags": [],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": false,
+        "scores": {
+          "demand": 0,
+          "youtube": 17.2,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 10.6,
+          "meme_fit": 0,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "block",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-21caed0c",
+        "keyword": "Rey Chaala Papam Ra🤣🤣#comedyshorts #funnyshorts #telugucomedyvideos #funnymemes #telugumemes #memes",
+        "normalized_key": "rey chaala papam ra comedyshorts funnyshorts telugucomedyvideos funnymemes telugumemes memes",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=qxutQJcja_o"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 164442,
+        "youtube_total_views": 164442,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 13,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "mr meme pakodi"
+        ],
+        "observed_hashtags": [
+          "#comedyshorts",
+          "#funnymemes",
+          "#funnyshorts",
+          "#memes",
+          "#telugucomedyvideos",
+          "#telugumemes"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 16.4,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 45.4,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-0b13882f",
+        "keyword": "Thing Players Are Tank Royalty In Rivals #shorts #meme",
+        "normalized_key": "thing players are tank royalty rivals meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=cTPh9SRIpJ4"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 158801,
+        "youtube_total_views": 158801,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "ClassicMan D"
+        ],
+        "observed_hashtags": [
+          "#meme",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 15.9,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 45.2,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-5edaf8fc",
+        "keyword": "My Thoughts On Black Myth Zhong Kui Trailer #shorts #meme",
+        "normalized_key": "my thoughts on black myth zhong kui trailer meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=CaHZ1g7puhk"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 151717,
+        "youtube_total_views": 151717,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "ClassicMan D"
+        ],
+        "observed_hashtags": [
+          "#meme",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 15.2,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 44.9,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-55c17eeb",
+        "keyword": "Samsung Pulled The Uno Reverse 🍎😤",
+        "normalized_key": "samsung pulled uno reverse",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=N2ot7ifdqEc"
+        ],
+        "evidence_types": [
+          "youtube"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 149112,
+        "youtube_total_views": 149112,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 0,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Only Memes"
+        ],
+        "observed_hashtags": [
+          "#apple",
+          "#funny",
+          "#funnymemes",
+          "#humor",
+          "#meme",
+          "#samsung"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 0,
+          "youtube": 14.9,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 30.8,
+          "red_ocean": 9.8,
+          "meme_fit": 75,
+          "confidence": 72.5
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-d0eee789",
+        "keyword": "Funny Meme Challenge😃🤣 #shorts #jihancartoonnetwork #funny #challenge",
+        "normalized_key": "funny meme challenge jihancartoonnetwork funny challenge",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=y6DWtyaJiTo"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 142548,
+        "youtube_total_views": 142548,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 25,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Jihan Cartoon Network"
+        ],
+        "observed_hashtags": [
+          "#challenge",
+          "#funny",
+          "#jihancartoonnetwork",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 14.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 44.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-943604ae",
+        "keyword": "Why Are Wolverine Skins This Ugly #shorts #meme",
+        "normalized_key": "why are wolverine skins this ugly meme",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=R8q2uos7oFc"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 112656,
+        "youtube_total_views": 112656,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 14,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "ClassicMan D"
+        ],
+        "observed_hashtags": [
+          "#meme",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 11.3,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 43.5,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-d842384a",
+        "keyword": "Pepsi finally lost the fight 🌚🥂 #memes #edit #5sec #pepsi #cocacola #softdrink #funny #shortsfeed",
+        "normalized_key": "pepsi finally lost fight memes edit 5sec pepsi cocacola softdrink",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=TXekvAr-ivA"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 96645,
+        "youtube_total_views": 96645,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 15,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "Instant Memes"
+        ],
+        "observed_hashtags": [
+          "#5sec",
+          "#cocacola",
+          "#edit",
+          "#funny",
+          "#funnymemes",
+          "#meme",
+          "#memes",
+          "#pepsi",
+          "#shorts",
+          "#shortsfeed",
+          "#softdrink"
+        ],
+        "observed_tags": [
+          "Instant Memes"
+        ],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 9.7,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 43.0,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      },
+      {
+        "candidate_id": "CAND-322eb4df",
+        "keyword": "#funnymemes #bestmoments #memes #meme #follow #funny #funnyshorts #funnymoments #funnyvideo #shorts",
+        "normalized_key": "funnymemes bestmoments memes meme follow funny funnyshorts funnymoments funnyvideo",
+        "evidence_urls": [
+          "https://youtube.com/watch?v=QcTVZ5ZjVlU"
+        ],
+        "evidence_types": [
+          "youtube",
+          "suggest"
+        ],
+        "youtube_video_count": 1,
+        "youtube_top_views": 85619,
+        "youtube_total_views": 85619,
+        "reddit_post_count": 0,
+        "reddit_comments": 0,
+        "suggestion_count": 27,
+        "trend_count": 0,
+        "channel_count": 1,
+        "channel_names": [
+          "ghostertv18"
+        ],
+        "observed_hashtags": [
+          "#bestmoments",
+          "#follow",
+          "#funny",
+          "#funnymemes",
+          "#funnymoments",
+          "#funnyshorts",
+          "#funnyvideo",
+          "#meme",
+          "#memes",
+          "#shorts"
+        ],
+        "observed_tags": [],
+        "observed": true,
+        "meme_observed": true,
+        "scores": {
+          "demand": 100,
+          "youtube": 8.6,
+          "us_native": 70,
+          "demon_pressure": 23,
+          "saturation": 21.1,
+          "blue_ocean": 70.3,
+          "red_ocean": 42.6,
+          "meme_fit": 75,
+          "confidence": 80.8
+        },
+        "gates": {
+          "meme": "pass",
+          "youtube_evidence": "pass",
+          "market_relevance": "block",
+          "confidence": "pass"
+        },
+        "ocean": "desert",
+        "horizon": "3d",
+        "source_status": "observed_only",
+        "safety_gate": "pass",
+        "decision": "warsmith_review",
+        "status": "unique"
+      }
+    ]
+  },
+  "candidates": [],
+  "red_candidates": [],
+  "blue_candidates": [],
+  "availability": {
+    "requested": 30,
+    "observed_eligible": 0,
+    "rejected": 49,
+    "invented": 0,
+    "quota_filled": false
+  },
+  "signal_payload": {
+    "rss": {
+      "signal": "fraicheur_et_couverture",
+      "window_hours": 24,
+      "keywords": [
+        "#funny",
+        "#funny meme",
+        "#funnymemes",
+        "#funnymemes meme",
+        "#meme",
+        "#meme meme",
+        "#memes",
+        "#memes meme",
+        "#school",
+        "#school meme",
+        "#shorts",
+        "#shorts meme",
+        "#teacher",
+        "#teacher meme",
+        "#worldofwarships",
+        "#worldofwarships meme",
+        "#wowsmoments",
+        "#wowsmoments meme",
+        "@Zdak",
+        "Zdak meme"
+      ],
+      "fetched_articles": 21,
+      "fresh_articles": [],
+      "coverage": {},
+      "status": "ok",
+      "error": null
+    },
+    "trends": {
+      "signal": "tendance",
+      "global_trending_rss": {
+        "status": "ok",
+        "error": null,
+        "trending": [
+          {
+            "query": "broncos schedule",
+            "approx_traffic": 1000,
+            "approx_traffic_raw": "1000+"
+          },
+          {
+            "query": "united states secretary of the army",
+            "approx_traffic": 500,
+            "approx_traffic_raw": "500+"
+          },
+          {
+            "query": "brewers game today",
+            "approx_traffic": 200,
+            "approx_traffic_raw": "200+"
+          },
+          {
+            "query": "valkyries vs sky",
+            "approx_traffic": 200,
+            "approx_traffic_raw": "200+"
+          },
+          {
+            "query": "lynx vs mystics",
+            "approx_traffic": 200,
+            "approx_traffic_raw": "200+"
+          },
+          {
+            "query": "giants vs red sox",
+            "approx_traffic": 5000,
+            "approx_traffic_raw": "5000+"
+          },
+          {
+            "query": "rays vs orioles",
+            "approx_traffic": 5000,
+            "approx_traffic_raw": "5000+"
+          },
+          {
+            "query": "nationals vs marlins",
+            "approx_traffic": 2000,
+            "approx_traffic_raw": "2000+"
+          },
+          {
+            "query": "jets vs steelers",
+            "approx_traffic": 1000,
+            "approx_traffic_raw": "1000+"
+          },
+          {
+            "query": "sammy sosa",
+            "approx_traffic": 200,
+            "approx_traffic_raw": "200+"
+          }
+        ]
+      },
+      "keyword_curves": {
+        "status": "pytrends_absent",
+        "note": "pytrends non installé — ajouter à requirements_capteurs.txt",
+        "keywords": {
+          "#funny": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#funny meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#funnymemes": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#funnymemes meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#meme meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#memes": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#memes meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#school": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#school meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#shorts": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#shorts meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#teacher": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#teacher meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#worldofwarships": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#worldofwarships meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#wowsmoments": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "#wowsmoments meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "@Zdak": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          },
+          "Zdak meme": {
+            "is_trending": null,
+            "growth_multiplier": null,
+            "note": "pytrends absent"
+          }
+        }
+      }
+    },
+    "youtube": {
+      "signal": "vues_youtube",
+      "status": "ok",
+      "search": {
+        "status": "ok",
+        "error": null,
+        "query": "#funny | #funny meme | #funnymemes | #funnymemes meme | #meme | #meme meme | #memes | #memes meme | #school | #school meme | #shorts | #shorts meme",
+        "probes": [
+          "#funny",
+          "#funny meme",
+          "#funnymemes",
+          "#funnymemes meme",
+          "#meme",
+          "#meme meme",
+          "#memes",
+          "#memes meme",
+          "#school",
+          "#school meme",
+          "#shorts",
+          "#shorts meme"
+        ],
+        "videos": [
+          {
+            "video_id": "1GebsCjUlCc",
+            "url": "https://youtube.com/watch?v=1GebsCjUlCc",
+            "title": "BOOST MOON BALL 🧋🌕⚾ #shorts #youtubeshorts #cricket #unboxing #ball #funny",
+            "description": "VOTE FOR BIRD BALL 🐦🕊️⚾\n👇\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCLGHEUaREx_FtNrqfJ8gXIA/join\n\nSubscribe for more Unboxing Videos! \n\n#shorts #unboxing #youtubeshorts #unboxingvideo #amazon #amazonproducts #firstyoutubeincome #unboxingindia #amazonunboxing #gaming #unboxingshorts #cricket #cricketball #indiancricket #cricketbat #cricketlover #ball #collection",
+            "channel": "Box Of Vengeance",
+            "published_at": "2026-08-21T08:30:40Z",
+            "duration": "PT46S",
+            "tags": [
+              "shorts",
+              "youtube unboxing",
+              "techno gamerz shorts",
+              "sourav joshi vlogs",
+              "box of vengeance shorts",
+              "box of vengeance giveaway",
+              "ball collector",
+              "box of vengeance ball collection",
+              "ball collector new video",
+              "box of vengeance",
+              "ball collector new shorts",
+              "ball collector shorts",
+              "funny shorts",
+              "trending",
+              "ball",
+              "bol",
+              "flying ball",
+              "fukra insaan",
+              "gadgets",
+              "unique",
+              "viral",
+              "comedy video",
+              "funny video",
+              "moon ball",
+              "boost energy drink",
+              "free ball",
+              "bouncing ball",
+              "mujhe kaalu pasand",
+              "mujhe kalu pasand",
+              "ms dhoni"
+            ],
+            "hashtags": [
+              "#amazon",
+              "#amazonproducts",
+              "#amazonunboxing",
+              "#ball",
+              "#collection",
+              "#cricket",
+              "#cricketball",
+              "#cricketbat",
+              "#cricketlover",
+              "#firstyoutubeincome",
+              "#funny",
+              "#gaming",
+              "#indiancricket",
+              "#shorts",
+              "#unboxing",
+              "#unboxingindia",
+              "#unboxingshorts",
+              "#unboxingvideo",
+              "#youtubeshorts"
+            ],
+            "view_count": 5865215,
+            "like_count": 174596,
+            "comment_count": 502
+          },
+          {
+            "video_id": "bTmYnYRUGD0",
+            "url": "https://youtube.com/watch?v=bTmYnYRUGD0",
+            "title": "Wait for end 😁 #kisanbhai #comedy #friends #funny #harshpushptode #khetikisani #kisanbhai #kisani",
+            "description": "",
+            "channel": "Harsh Pushptode",
+            "published_at": "2026-08-21T13:28:45Z",
+            "duration": "PT2M24S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#friends",
+              "#funny",
+              "#harshpushptode",
+              "#khetikisani",
+              "#kisanbhai",
+              "#kisani"
+            ],
+            "view_count": 5083168,
+            "like_count": 0,
+            "comment_count": 237
+          },
+          {
+            "video_id": "2Q6U2JO_o1M",
+            "url": "https://youtube.com/watch?v=2Q6U2JO_o1M",
+            "title": "Big bro’s friends be like : 💀 #shorts #robloxanimation #roblox #fypp #memes",
+            "description": "#shorts #robloxanimation #roblox #fypp #memes",
+            "channel": "Clutchmaker",
+            "published_at": "2026-08-21T00:54:45Z",
+            "duration": "PT15S",
+            "tags": [],
+            "hashtags": [
+              "#fypp",
+              "#memes",
+              "#roblox",
+              "#robloxanimation",
+              "#shorts"
+            ],
+            "view_count": 2700397,
+            "like_count": 44767,
+            "comment_count": 176
+          },
+          {
+            "video_id": "dl7AO5MJFLY",
+            "url": "https://youtube.com/watch?v=dl7AO5MJFLY",
+            "title": "Chintu pahucha मेलापुर | #comedy #funny #memes #papa #chintu",
+            "description": "This video is made only for fun and entertainment purposes. The content in this video is purely for comedy.\n\nDisclaimer: This video is not intended to hurt anyone’s feelings, beliefs, or emotions. It is created only for entertainment.\nSome props/objects shown in this video are AI-generated and visually created using Artificial Intelligence. These elements are used only for creative and entertainment purposes.\n\nIf you enjoyed the video, please LIKE 👍, SHARE, and SUBSCRIBE to the channel.\n\nTurn on the notification bell 🔔 so you never miss a new video.\n\nThank you for your support!",
+            "channel": "Laughingggodha",
+            "published_at": "2026-08-21T14:45:33Z",
+            "duration": "PT38S",
+            "tags": [],
+            "hashtags": [
+              "#chintu",
+              "#comedy",
+              "#funny",
+              "#memes",
+              "#papa"
+            ],
+            "view_count": 2349382,
+            "like_count": 14044,
+            "comment_count": 5
+          },
+          {
+            "video_id": "zownOt5tYfg",
+            "url": "https://youtube.com/watch?v=zownOt5tYfg",
+            "title": "Arpit ka padai #comedy #funny #shortvideo",
+            "description": "",
+            "channel": "Angrej babu ",
+            "published_at": "2026-08-21T02:21:59Z",
+            "duration": "PT59S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#shortvideo"
+            ],
+            "view_count": 2209286,
+            "like_count": 21404,
+            "comment_count": 2
+          },
+          {
+            "video_id": "ABic5jCRIzs",
+            "url": "https://youtube.com/watch?v=ABic5jCRIzs",
+            "title": "bird talking with me 🤣 #funny #funnyvideo",
+            "description": "bird talking with me 🤣 #funny #funnyvideo \nBeyond health tracking, the VitalWear SmartBand integrates with your digital Life, offering seamless notifications, voice assistant support, and quick access to your schedule, reminders, and messages. It also includes a built-in mini projector that can display images or presentations on any flat surface, perfect for on-the-go professionals. Additionally, the SmartBand supports wireless charging and has a battery life of up to 10 days, making it a versIntroducing the \"VitalWear SmartBand,\" a next-generation wearable gadget that combines health monitoring, productivity tools, and entertainment features in a sleek, minimalist design. It features a flexible OLED display that wraps around the wrist, providing a comfortable fit and immersive visual experience. The SmartBand tracks vital signs Like heart rate, blood oxygen Levels, and body temperature in real-time, using advanced sensors and Al algorithms to provide personalized health insights and alerts. Beyond health tracking, the VitalWear SmartBand integrates with your digital Life, offering seamless notifications, voice assistant support, and quick access to your schedule, reminders, and messages. It also includes a built-in mini projector that can display images or presentations on any flat surface, perfect for on-the-go professionals. Additionally, the SmartBand supports wireless charging and has a battery life of up to 10 days, making it a versatile and essential gadget for mode, battery life of up to 10 days, making it a versatile and essential gadget for mode, atile and essential gadget for mode, #viral #viralvideo",
+            "channel": "RRR777",
+            "published_at": "2026-08-21T04:14:03Z",
+            "duration": "PT11S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#funnyvideo",
+              "#viral",
+              "#viralvideo"
+            ],
+            "view_count": 2075620,
+            "like_count": 8047,
+            "comment_count": 4
+          },
+          {
+            "video_id": "VZS88V8Ftk0",
+            "url": "https://youtube.com/watch?v=VZS88V8Ftk0",
+            "title": "The 1st one girl is Hits different🥵❌ #short #funny #dance #kpop #ateez #trio",
+            "description": "",
+            "channel": "Sha Trio",
+            "published_at": "2026-08-21T10:00:27Z",
+            "duration": "PT12S",
+            "tags": [],
+            "hashtags": [
+              "#ateez",
+              "#dance",
+              "#funny",
+              "#kpop",
+              "#short",
+              "#trio"
+            ],
+            "view_count": 2020829,
+            "like_count": 8557,
+            "comment_count": 7
+          },
+          {
+            "video_id": "gJdebDBA0xQ",
+            "url": "https://youtube.com/watch?v=gJdebDBA0xQ",
+            "title": "Niyayatha ketta mudiya pudikiraanga sir😖#comedy #shorts #funny",
+            "description": "#vadachennai #schoolcomedy #schoolrelatable #friendscomedy #kaathadiclub #shortscomedy",
+            "channel": "Kaathadi club",
+            "published_at": "2026-08-21T12:14:12Z",
+            "duration": "PT2M7S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#friendscomedy",
+              "#funny",
+              "#kaathadiclub",
+              "#schoolcomedy",
+              "#schoolrelatable",
+              "#shorts",
+              "#shortscomedy",
+              "#vadachennai"
+            ],
+            "view_count": 1560642,
+            "like_count": 153356,
+            "comment_count": 235
+          },
+          {
+            "video_id": "NVuhF8kGjrM",
+            "url": "https://youtube.com/watch?v=NVuhF8kGjrM",
+            "title": "No thanks bro 😭✌️#meme #memes #funny",
+            "description": "",
+            "channel": "The Meme Cat ",
+            "published_at": "2026-08-21T00:35:41Z",
+            "duration": "PT11S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#meme",
+              "#memes"
+            ],
+            "view_count": 1368620,
+            "like_count": 6662,
+            "comment_count": 79
+          },
+          {
+            "video_id": "tdS3RRolFBQ",
+            "url": "https://youtube.com/watch?v=tdS3RRolFBQ",
+            "title": "Even Nokia Approved Coca-Cola 🗿",
+            "description": "This video exhibits a humorous meme where Coca-Cola flexes stacking 1,240 bottles weighing 1,788 kg on a single can to roast Pepsi, prompting the legendary indestructible Nokia to officially invite them to the council x Chuck Liddell Duralast brakes commercial meme\n\n#cocacola #pepsi #nokia #funny #meme #memes #shorts #fyp",
+            "channel": "DoggyZ",
+            "published_at": "2026-08-21T17:15:17Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#cocacola",
+              "#funny",
+              "#fyp",
+              "#meme",
+              "#memes",
+              "#nokia",
+              "#pepsi",
+              "#shorts"
+            ],
+            "view_count": 1352120,
+            "like_count": 24308,
+            "comment_count": 93
+          },
+          {
+            "video_id": "jrg1dZcOknM",
+            "url": "https://youtube.com/watch?v=jrg1dZcOknM",
+            "title": "No hay salvación 💀 #humor #meme",
+            "description": "",
+            "channel": "Yodabeibi",
+            "published_at": "2026-08-21T02:45:27Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#humor",
+              "#meme"
+            ],
+            "view_count": 1307916,
+            "like_count": 23557,
+            "comment_count": 183
+          },
+          {
+            "video_id": "-YlAkf_URbo",
+            "url": "https://youtube.com/watch?v=-YlAkf_URbo",
+            "title": "Worst Password Input Field Design 🤦‍♂️ #dialogue",
+            "description": "For anyone confused: the login form is supposed to keep your credentials hidden, but the developer implemented live validation icons right under the box that show an icon for every single character typed, completely exposing which exact letters are right or wrong like a game of Wordle.\n\n#meme #memes #funny #funnymemes #memesdaily #shorts #viralshorts #fyp #programmer #developer # #coding",
+            "channel": "Nibzos",
+            "published_at": "2026-08-21T01:21:59Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#coding",
+              "#developer",
+              "#dialogue",
+              "#funny",
+              "#funnymemes",
+              "#fyp",
+              "#meme",
+              "#memes",
+              "#memesdaily",
+              "#programmer",
+              "#shorts",
+              "#viralshorts"
+            ],
+            "view_count": 1281497,
+            "like_count": 0,
+            "comment_count": 16
+          },
+          {
+            "video_id": "3B-w6qEosEg",
+            "url": "https://youtube.com/watch?v=3B-w6qEosEg",
+            "title": "राखी लेलव राखी 😂🤣 YemanRaja Comedy‼️#cg #comedy #funny #shorts #shortsfeed #explore",
+            "description": "@Yemanraja \n@Yemanrajavlog \n#yemanraja \n#yemanrajavlog \n#yemanrajacomedy \n\nराखी लेलव राखी 😂🤣 YemanRaja Comedy‼️#cg #comedy #funny #shorts #shortsfeed #explore",
+            "channel": "Yeman Raja",
+            "published_at": "2026-08-21T01:35:07Z",
+            "duration": "PT2M10S",
+            "tags": [
+              "Yemanraja",
+              "YemanRaja",
+              "Yemaraja ka video",
+              "YemanRaja cg comedy",
+              "YemanRaja comedy",
+              "YemanRaja shorts",
+              "Yemanraja video",
+              "Yemanraja funny comedy",
+              "Cg",
+              "Comedy",
+              "Funny",
+              "Shorts",
+              "Cg shorts yemanraja",
+              "Funny comedy video yemanraja",
+              "Yemanraja comedy video"
+            ],
+            "hashtags": [
+              "#cg",
+              "#comedy",
+              "#explore",
+              "#funny",
+              "#shorts",
+              "#shortsfeed",
+              "#yemanraja",
+              "#yemanrajacomedy",
+              "#yemanrajavlog"
+            ],
+            "view_count": 1235967,
+            "like_count": 27554,
+            "comment_count": 27
+          },
+          {
+            "video_id": "r-qQbjy4Kzo",
+            "url": "https://youtube.com/watch?v=r-qQbjy4Kzo",
+            "title": "This was NOT easy to do #relatablestories #comedy #funnymemes",
+            "description": "This is a funny meme mixed with storytelling style video about how i tried a pushup trick in the hilarious way possible. The ending is actually funny!\n\n#storytelling #funny #relatable #shorts #memes #gamtmg #wgitachi #funnyimages #tylervitelli #usa",
+            "channel": "Tyler Vitelli",
+            "published_at": "2026-08-21T11:54:33Z",
+            "duration": "PT25S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#funnyimages",
+              "#funnymemes",
+              "#gamtmg",
+              "#memes",
+              "#relatable",
+              "#relatablestories",
+              "#shorts",
+              "#storytelling",
+              "#tylervitelli",
+              "#usa",
+              "#wgitachi"
+            ],
+            "view_count": 1143321,
+            "like_count": 33826,
+            "comment_count": 209
+          },
+          {
+            "video_id": "RJV3ysVZSPY",
+            "url": "https://youtube.com/watch?v=RJV3ysVZSPY",
+            "title": "Anjo saiu cedo 😇 #comedy #humormemes #memes #short #indonesia",
+            "description": "",
+            "channel": "Ocerteza",
+            "published_at": "2026-08-21T05:30:25Z",
+            "duration": "PT14S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#humormemes",
+              "#indonesia",
+              "#memes",
+              "#short"
+            ],
+            "view_count": 1105645,
+            "like_count": 3946,
+            "comment_count": 0
+          },
+          {
+            "video_id": "thBbEHIR_4c",
+            "url": "https://youtube.com/watch?v=thBbEHIR_4c",
+            "title": "I Tried A Bag of Air from 2018.. #relatablestories #comedy #funnymemes",
+            "description": "This is a funny meme mixed with storytelling style video about how i tried a bag of air from 2018 and got to experience prime fortnite again in the hilarious way possible. The ending is actually funny!\n\n#storytelling #funny #relatable #shorts #memes #gamtmg #wgitachi #funnyimages #tylervitelli #usa",
+            "channel": "Tyler Vitelli",
+            "published_at": "2026-08-21T14:04:06Z",
+            "duration": "PT16S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#funnyimages",
+              "#funnymemes",
+              "#gamtmg",
+              "#memes",
+              "#relatable",
+              "#relatablestories",
+              "#shorts",
+              "#storytelling",
+              "#tylervitelli",
+              "#usa",
+              "#wgitachi"
+            ],
+            "view_count": 1072807,
+            "like_count": 32436,
+            "comment_count": 180
+          },
+          {
+            "video_id": "R_9InbRSuAw",
+            "url": "https://youtube.com/watch?v=R_9InbRSuAw",
+            "title": "W Princess VS Gacha Princess 🗿👑     #chocopikauwu #gacha #trend #fyp #memes #gachaedit",
+            "description": "Thanks for watching 💖\nInspired by @muslimgacha2023  🫶✨️\n\n\nFollow my Instagram account 👇\nhttps://www.instagram.com/choco_pika_0?igsh=MWV2cG93c3h2cTVzOA==\n\nFollow my Facebook page 👇\nhttps://www.facebook.com/share/1ANLHeb8Zq/\n\n\n\nTags : #gacha #gachaclub #gachalife #shorts #memes #trending #gachastory #pov #fyp #gachatiktok #viral #loveyourself #youtubeshorts #meme #story #trend  #trendingshorts #gachaedit #gachatrend #gachamemesedits #gachamemes ##gachaedits #boxing #trollface",
+            "channel": "Choco pika ÙwÚ",
+            "published_at": "2026-08-21T13:00:32Z",
+            "duration": "PT8S",
+            "tags": [
+              "#gacha",
+              "#gachaclub",
+              "#gachalife",
+              "#shorts",
+              "#memes",
+              "#trending",
+              "#gachastory",
+              "#pov",
+              "#fyp",
+              "#gachatiktok",
+              "#viral",
+              "#loveyourself",
+              "#youtubeshorts",
+              "#meme",
+              "#story",
+              "#trend",
+              "#trendingshorts",
+              "#gachaedit",
+              "#gachameme",
+              "#boxing",
+              "#trollface"
+            ],
+            "hashtags": [
+              "#boxing",
+              "#chocopikauwu",
+              "#fyp",
+              "#gacha",
+              "#gachaclub",
+              "#gachaedit",
+              "#gachaedits",
+              "#gachalife",
+              "#gachamemes",
+              "#gachamemesedits",
+              "#gachastory",
+              "#gachatiktok",
+              "#gachatrend",
+              "#loveyourself",
+              "#meme",
+              "#memes",
+              "#pov",
+              "#shorts",
+              "#story",
+              "#trend",
+              "#trending",
+              "#trendingshorts",
+              "#trollface",
+              "#viral",
+              "#youtubeshorts"
+            ],
+            "view_count": 1063002,
+            "like_count": 21396,
+            "comment_count": 33
+          },
+          {
+            "video_id": "48u2f3MtxIc",
+            "url": "https://youtube.com/watch?v=48u2f3MtxIc",
+            "title": "Cute Diaper Scout Turbo sleep 😂😂 #tf2 #animation #memes",
+            "description": "Cute Diaper Scout Turbo sleep 😂😂 #tf2 #animation #memes \n\n🎥 CREDITS: https://youtu.be/kYx-g6v18Uk?si=C9lvWY8YSAWVO701",
+            "channel": "Azzam Alqafi Defairzan",
+            "published_at": "2026-08-21T09:00:16Z",
+            "duration": "PT13S",
+            "tags": [],
+            "hashtags": [
+              "#animation",
+              "#memes",
+              "#tf2"
+            ],
+            "view_count": 1048031,
+            "like_count": 4441,
+            "comment_count": 0
+          },
+          {
+            "video_id": "GMEG3nPqdVU",
+            "url": "https://youtube.com/watch?v=GMEG3nPqdVU",
+            "title": "#dialogue 🍾🙌🥫",
+            "description": "This video is created purely for entertainment and comedy purposes. 😂📱 It is a fun meme and is not intended to insult, defame, accuse, or spread negativity about any company, brand, or product.\n\nPepsi, Coca Cola and other brands featured are used only as part of the joke and creative comparison. ❤️\n\nThe goal is simple: make people laugh, have fun, and enjoy the meme! 😄🔥\n\nIf you enjoyed it, LIKE 👍, COMMENT 💬, and SUBSCRIBE 🔔 for more tech memes and funny comparisons!\n\n#shorts #meme #funny #meme #Samsung #Apple #Nokia #Smartphone #Tech #PhoneBattle #Meme\n\nAsh MeMeZ",
+            "channel": "Cob Show",
+            "published_at": "2026-08-21T09:06:41Z",
+            "duration": "PT6S",
+            "tags": [
+              "Pepsi",
+              "Coca Cola",
+              "Coca-Cola",
+              "Pepsi vs Coca Cola",
+              "Coca Cola vs Pepsi",
+              "Pepsi vs Coke",
+              "Coke vs Pepsi",
+              "Pepsi meme",
+              "Coca Cola meme",
+              "Coke meme",
+              "soda battle",
+              "cola battle",
+              "soft drinks",
+              "soda comparison",
+              "Pepsi challenge",
+              "Coca Cola challenge",
+              "Pepsi lovers",
+              "Coke lovers",
+              "Pepsi fans",
+              "Coca Cola fans",
+              "Pepsi drink",
+              "Coca Cola drink",
+              "soft drink meme",
+              "beverage battle",
+              "drink comparison",
+              "funny drink meme",
+              "food meme",
+              "viral meme",
+              "funny shorts",
+              "YouTube Shorts",
+              "shorts",
+              "viral shorts",
+              "Ash MeMeZ"
+            ],
+            "hashtags": [
+              "#Apple",
+              "#Meme",
+              "#Nokia",
+              "#PhoneBattle",
+              "#Samsung",
+              "#Smartphone",
+              "#Tech",
+              "#dialogue",
+              "#funny",
+              "#meme",
+              "#shorts"
+            ],
+            "view_count": 988348,
+            "like_count": 5213,
+            "comment_count": 54
+          },
+          {
+            "video_id": "smpawFjQEw4",
+            "url": "https://youtube.com/watch?v=smpawFjQEw4",
+            "title": "Primer y último trabajo 💀 #humor #meme",
+            "description": "",
+            "channel": "Yodabeibi",
+            "published_at": "2026-08-21T02:11:46Z",
+            "duration": "PT14S",
+            "tags": [],
+            "hashtags": [
+              "#humor",
+              "#meme"
+            ],
+            "view_count": 982630,
+            "like_count": 27422,
+            "comment_count": 98
+          },
+          {
+            "video_id": "cjYvvcJ68Ek",
+            "url": "https://youtube.com/watch?v=cjYvvcJ68Ek",
+            "title": "who is dumber ?😂 - Animal Hospital (Anomaly)  Roblox Funny Meme #roblox #funny",
+            "description": "",
+            "channel": "BOOSBUG",
+            "published_at": "2026-08-21T13:27:13Z",
+            "duration": "PT8S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#roblox"
+            ],
+            "view_count": 887602,
+            "like_count": 4594,
+            "comment_count": 3
+          },
+          {
+            "video_id": "KXCaD7cJ3Os",
+            "url": "https://youtube.com/watch?v=KXCaD7cJ3Os",
+            "title": "Hahahaha  #haaland #mbappe #funny #memes",
+            "description": "",
+            "channel": "Evan Anime Studio",
+            "published_at": "2026-08-21T02:15:19Z",
+            "duration": "PT16S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#haaland",
+              "#mbappe",
+              "#memes"
+            ],
+            "view_count": 836093,
+            "like_count": 3895,
+            "comment_count": 3
+          },
+          {
+            "video_id": "KujbTPLU_YA",
+            "url": "https://youtube.com/watch?v=KujbTPLU_YA",
+            "title": "Nokia respeitou seu adversário 🗿🚬",
+            "description": "Post da Nokia parabenizando a Apple pelo desempenho no teste de queda com resposta da Apple dizendo que um dia vai superar a Nokia x One Piece: A série - Zoro vs. Mihawk\n\nSe inscreve, deixa o like e comenta🍋💛 Rumo aos 100k!\n\n#onepiece #nokia #apple #memes #meme #funnymemes #funny #shorts",
+            "channel": "Limão",
+            "published_at": "2026-08-21T15:00:35Z",
+            "duration": "PT6S",
+            "tags": [
+              "meme",
+              "memes",
+              "shorts",
+              "viral",
+              "humor",
+              "fyp",
+              "limao",
+              "limaosudo",
+              "Limão",
+              "funny",
+              "funny memes",
+              "Limãosudo",
+              "limãosudo",
+              "engraçado",
+              "one piece",
+              "One Piece a série",
+              "aura",
+              "mihawk",
+              "zoro",
+              "nokia",
+              "apple",
+              "teste de queda"
+            ],
+            "hashtags": [
+              "#apple",
+              "#funny",
+              "#funnymemes",
+              "#meme",
+              "#memes",
+              "#nokia",
+              "#onepiece",
+              "#shorts"
+            ],
+            "view_count": 692587,
+            "like_count": 14081,
+            "comment_count": 5
+          },
+          {
+            "video_id": "gCRxQ1PgDLQ",
+            "url": "https://youtube.com/watch?v=gCRxQ1PgDLQ",
+            "title": "lie industry and government ✌️ #memes #humor #funny #slideshow #shorts",
+            "description": "",
+            "channel": "Caldruki",
+            "published_at": "2026-08-21T00:47:12Z",
+            "duration": "PT1M6S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#humor",
+              "#memes",
+              "#shorts",
+              "#slideshow"
+            ],
+            "view_count": 636156,
+            "like_count": 51144,
+            "comment_count": 622
+          },
+          {
+            "video_id": "D_hc1k3qXrY",
+            "url": "https://youtube.com/watch?v=D_hc1k3qXrY",
+            "title": "Для тренеров скидка. Автор видео: @carrotandstickmaster Смешные комментарии.  #юмор #мемас #мемы",
+            "description": "Оригинал: https://www.instagram.com/reel/DaHelCSMGjj/?igsi=MW52d256eG1weWIwYw==",
+            "channel": "МЕМОриал",
+            "published_at": "2026-08-21T11:51:52Z",
+            "duration": "PT18S",
+            "tags": [],
+            "hashtags": [],
+            "view_count": 597152,
+            "like_count": 20749,
+            "comment_count": 112
+          },
+          {
+            "video_id": "e_uISGn9fF4",
+            "url": "https://youtube.com/watch?v=e_uISGn9fF4",
+            "title": "Olha o que eu achei 😁 #slime #dosrosas #emillyvickof #humor #engraçado #memes #funny #toys",
+            "description": "",
+            "channel": "Jéssica Viana",
+            "published_at": "2026-08-21T13:00:19Z",
+            "duration": "PT13S",
+            "tags": [],
+            "hashtags": [
+              "#dosrosas",
+              "#emillyvickof",
+              "#engra",
+              "#funny",
+              "#humor",
+              "#memes",
+              "#slime",
+              "#toys"
+            ],
+            "view_count": 576658,
+            "like_count": 3824,
+            "comment_count": 0
+          },
+          {
+            "video_id": "9bXaRwmN-L0",
+            "url": "https://youtube.com/watch?v=9bXaRwmN-L0",
+            "title": "Legendary Meme #short #shorts #roblox #memes",
+            "description": "#short #shorts #roblox #memes #helldivers #helldivers2 \n#robloxmoonanimator  #robloxstudio  #robloxanimation #memes #shitpost #roblox #short #funny #shorts #memes #fyp  #meme",
+            "channel": "BonkieDoge",
+            "published_at": "2026-08-21T12:06:42Z",
+            "duration": "PT21S",
+            "tags": [
+              "roblox",
+              "roblox studio",
+              "roblox animation",
+              "Moon animator",
+              "roblox meme",
+              "funny moments",
+              "roblox funny moments",
+              "shorts",
+              "short",
+              "roblox story",
+              "roblox funny",
+              "roblox games",
+              "roblox horror story",
+              "roblox moon animator",
+              "corinthians",
+              "memes",
+              "meme",
+              "doors",
+              "roblox indonesia",
+              "blox fruits",
+              "pet simulator.exe",
+              "roblox pet simulator x",
+              "roblox pet simulator",
+              "brookhaven 🏡rp",
+              "stickman",
+              "roblox doors",
+              "roblox shorts",
+              "roblox brookhaven",
+              "roblox movie",
+              "new roblox anime games",
+              "a dusty trip formula one",
+              "roblox vc"
+            ],
+            "hashtags": [
+              "#funny",
+              "#fyp",
+              "#helldivers",
+              "#helldivers2",
+              "#meme",
+              "#memes",
+              "#roblox",
+              "#robloxanimation",
+              "#robloxmoonanimator",
+              "#robloxstudio",
+              "#shitpost",
+              "#short",
+              "#shorts"
+            ],
+            "view_count": 381415,
+            "like_count": 19178,
+            "comment_count": 83
+          },
+          {
+            "video_id": "9HKqVUvaG58",
+            "url": "https://youtube.com/watch?v=9HKqVUvaG58",
+            "title": "Argentina 🇦🇷 | Lionel Messi, Cristiano Ronaldo, FIFA World Cup Meme",
+            "description": "Join GelNox Today https://www.youtube.com/gelnox/join \n\n\n\n#meme #memes #gelnox #funnymemes\n\n\n\n\n\n\n\n\n\n\n\nmeme\nmemes\nfunny memes\ngelnox\ngelnox memes\nArgentina 🇦🇷 | Lionel Messi, Cristiano Ronaldo, FIFA World Cup Meme",
+            "channel": "GelNox",
+            "published_at": "2026-08-21T03:46:52Z",
+            "duration": "PT10S",
+            "tags": [
+              "funny memes",
+              "gelnox",
+              "gelnox memes",
+              "meme",
+              "memes"
+            ],
+            "hashtags": [
+              "#funnymemes",
+              "#gelnox",
+              "#meme",
+              "#memes"
+            ],
+            "view_count": 329527,
+            "like_count": 11268,
+            "comment_count": 129
+          },
+          {
+            "video_id": "SNN3IG5y7Co",
+            "url": "https://youtube.com/watch?v=SNN3IG5y7Co",
+            "title": "Old trend but like it ❤️‍🔥👍 Aphmau  gacha meme ✨️ ##gacha #meme",
+            "description": "",
+            "channel": "Itz Maliha",
+            "published_at": "2026-08-21T11:59:00Z",
+            "duration": "PT35S",
+            "tags": [],
+            "hashtags": [
+              "#gacha",
+              "#meme"
+            ],
+            "view_count": 328922,
+            "like_count": 11388,
+            "comment_count": 21
+          },
+          {
+            "video_id": "SnBfMibTsOE",
+            "url": "https://youtube.com/watch?v=SnBfMibTsOE",
+            "title": "Masti time 🤣 #rakhi #sibling #genz #viral #meme #short",
+            "description": "",
+            "channel": "Rakhi Edit.2.0",
+            "published_at": "2026-08-21T04:44:39Z",
+            "duration": "PT16S",
+            "tags": [],
+            "hashtags": [
+              "#genz",
+              "#meme",
+              "#rakhi",
+              "#short",
+              "#sibling",
+              "#viral"
+            ],
+            "view_count": 278351,
+            "like_count": 7275,
+            "comment_count": 4
+          },
+          {
+            "video_id": "cNfp5M4nDXA",
+            "url": "https://youtube.com/watch?v=cNfp5M4nDXA",
+            "title": "Best Ranking Sprite Challenge #funnyshorts #funny #memes #funnyvideo",
+            "description": "",
+            "channel": "Kimbely Esp",
+            "published_at": "2026-08-21T00:54:56Z",
+            "duration": "PT36S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#funnyshorts",
+              "#funnyvideo",
+              "#memes"
+            ],
+            "view_count": 273504,
+            "like_count": 3505,
+            "comment_count": 1
+          },
+          {
+            "video_id": "lpxWwiF4wcc",
+            "url": "https://youtube.com/watch?v=lpxWwiF4wcc",
+            "title": "Eggman? #fortnite #sonicthehedgehog #drrobotnik #eggman #clip #funny #memes #meme #wow #clipped",
+            "description": "",
+            "channel": "MarioMaster973",
+            "published_at": "2026-08-21T01:44:32Z",
+            "duration": "PT13S",
+            "tags": [],
+            "hashtags": [
+              "#clip",
+              "#clipped",
+              "#drrobotnik",
+              "#eggman",
+              "#fortnite",
+              "#funny",
+              "#meme",
+              "#memes",
+              "#sonicthehedgehog",
+              "#wow"
+            ],
+            "view_count": 270003,
+            "like_count": 8880,
+            "comment_count": 10
+          },
+          {
+            "video_id": "LCeK63FvARs",
+            "url": "https://youtube.com/watch?v=LCeK63FvARs",
+            "title": "millennial simulator 2 #shorts #comedy #millennials #memes #gaming #funny",
+            "description": "https://www.patreon.com/cw/SKMG\n\nhttps://skullmugshop.net/",
+            "channel": "Xx_skull_mug_xX",
+            "published_at": "2026-08-21T15:30:34Z",
+            "duration": "PT27S",
+            "tags": [
+              "skullmug",
+              "Xx_skull_mug_xX",
+              "SKMG",
+              "Skullmug simulator",
+              "skullmug simulators",
+              "simulator",
+              "first person show",
+              "FPS",
+              "FPS games",
+              "gaming",
+              "gamer",
+              "gamers",
+              "games",
+              "game",
+              "Cartoon",
+              "toons",
+              "cartoon",
+              "cartoonist",
+              "animation",
+              "animations",
+              "animator",
+              "animate",
+              "blender",
+              "blender 3d",
+              "3d cartoon",
+              "simulator the first person show",
+              "millennial",
+              "millennials",
+              "we are young",
+              "kyle gordon"
+            ],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#gaming",
+              "#memes",
+              "#millennials",
+              "#shorts"
+            ],
+            "view_count": 268809,
+            "like_count": 30688,
+            "comment_count": 48
+          },
+          {
+            "video_id": "XFUJz7QrEUI",
+            "url": "https://youtube.com/watch?v=XFUJz7QrEUI",
+            "title": "TOM HOLLAND LAUGHING #meme#funny #laugh #viralvideo #fyp #memes#tomholland",
+            "description": "",
+            "channel": "Capture Cute Pets",
+            "published_at": "2026-08-21T05:00:19Z",
+            "duration": "PT42S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#fyp",
+              "#laugh",
+              "#meme",
+              "#memes",
+              "#tomholland",
+              "#viralvideo"
+            ],
+            "view_count": 267357,
+            "like_count": 3317,
+            "comment_count": 2
+          },
+          {
+            "video_id": "sIT1O25fEpE",
+            "url": "https://youtube.com/watch?v=sIT1O25fEpE",
+            "title": "Talking Tom duckman dance 😂   Animal Hospital Anomaly Roblox Funny Meme #roblox #funny",
+            "description": "",
+            "channel": "MRCAT",
+            "published_at": "2026-08-21T14:34:25Z",
+            "duration": "PT8S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#roblox"
+            ],
+            "view_count": 243311,
+            "like_count": 871,
+            "comment_count": 0
+          },
+          {
+            "video_id": "_Cp3KYResIg",
+            "url": "https://youtube.com/watch?v=_Cp3KYResIg",
+            "title": "FIX LOGO IQ #shorts #funny #memes",
+            "description": "",
+            "channel": "Ridwan Tuwilll",
+            "published_at": "2026-08-21T04:52:34Z",
+            "duration": "PT14S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#memes",
+              "#shorts"
+            ],
+            "view_count": 236670,
+            "like_count": 978,
+            "comment_count": 3
+          },
+          {
+            "video_id": "YtfYJL5ExCE",
+            "url": "https://youtube.com/watch?v=YtfYJL5ExCE",
+            "title": "meme random | #meme #fyp #funny #memes #lucu",
+            "description": "",
+            "channel": "tolmeme1 ",
+            "published_at": "2026-08-21T03:00:24Z",
+            "duration": "PT1M9S",
+            "tags": [],
+            "hashtags": [
+              "#funny",
+              "#fyp",
+              "#lucu",
+              "#meme",
+              "#memes"
+            ],
+            "view_count": 231428,
+            "like_count": 7337,
+            "comment_count": 45
+          },
+          {
+            "video_id": "eT3UeMrd_po",
+            "url": "https://youtube.com/watch?v=eT3UeMrd_po",
+            "title": "Rumi and anomaly Part 2 😂 - Animal Hospital (Anomaly) Roblox Funny Meme #roblox #funny #memes",
+            "description": "Rumi and anomaly Part 2 😂 - Animal Hospital (Anomaly) Roblox Funny Meme #roblox #funny #memes #animation \n@prefixtoonanimations",
+            "channel": "Prefix Toon Animations",
+            "published_at": "2026-08-21T01:35:04Z",
+            "duration": "PT9S",
+            "tags": [
+              "short",
+              "meme",
+              "animation",
+              "funny"
+            ],
+            "hashtags": [
+              "#animation",
+              "#funny",
+              "#memes",
+              "#roblox"
+            ],
+            "view_count": 222743,
+            "like_count": 597,
+            "comment_count": 0
+          },
+          {
+            "video_id": "pjD-U6avaOU",
+            "url": "https://youtube.com/watch?v=pjD-U6avaOU",
+            "title": "pasti pilihan yang sulit #meme",
+            "description": "",
+            "channel": "Meme absurd",
+            "published_at": "2026-08-21T04:00:38Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#meme"
+            ],
+            "view_count": 172153,
+            "like_count": 718,
+            "comment_count": 26
+          },
+          {
+            "video_id": "ierqtOde0uc",
+            "url": "https://youtube.com/watch?v=ierqtOde0uc",
+            "title": "Тгк: memeute #мемы #прикол #кружок #мем #приколы #юмор #смешно",
+            "description": "",
+            "channel": "УТЕЧКА МЕМОВ",
+            "published_at": "2026-08-21T15:30:11Z",
+            "duration": "PT7S",
+            "tags": [],
+            "hashtags": [],
+            "view_count": 171573,
+            "like_count": 1714,
+            "comment_count": 2
+          },
+          {
+            "video_id": "qxutQJcja_o",
+            "url": "https://youtube.com/watch?v=qxutQJcja_o",
+            "title": "Rey Chaala Papam Ra🤣🤣#comedyshorts #funnyshorts #telugucomedyvideos #funnymemes #telugumemes #memes",
+            "description": "Rey Chaala Papam Ra🤣🤣#comedyshorts #funnyshorts #telugucomedyvideos #funnymemes #telugumemes\n\nCopyright Disclaimer:\n\nThis video is made for entertainment and promotional purposes only. All rights belong to their respective owners.\n\nUnder Section 107 of the Copyright Act 1976, allowance is made for \"fair use\" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. No copyright infringement intended.\n\nIf you are the copyright owner and have any issue, please contact us for removal.\n👇🏻\ncomedy scenes telugu\ncomedy video\ncomedy shorts\ncomedy movies telugu\ncomedy scenes\ncomedy\ncomedy telugu \ncomedy movie\ncomedy comedy\ncomedy scenes in Movies \nfunny videos telugu\nfunny video\nmemes\nfunny\nfunny shorts in telugu\nfunny shorts\nfunny telugu\nfunny movie\nfunny comments\nfunny short video\nfunny memes\ntelugu comedy scenes\ntelugu comedy movies\ntelugu comedy shorts\ntelugu comedy\ntelugu comedy scenes latest\ntelugu comedy scenes sunil\ntelugu comedy videos\ntelugu comedy movies full length\ntelugu comedy movies full\ntelugu comedy movies scenes",
+            "channel": "mr meme pakodi",
+            "published_at": "2026-08-21T00:30:18Z",
+            "duration": "PT18S",
+            "tags": [],
+            "hashtags": [
+              "#comedyshorts",
+              "#funnymemes",
+              "#funnyshorts",
+              "#memes",
+              "#telugucomedyvideos",
+              "#telugumemes"
+            ],
+            "view_count": 164442,
+            "like_count": 1615,
+            "comment_count": 5
+          },
+          {
+            "video_id": "cTPh9SRIpJ4",
+            "url": "https://youtube.com/watch?v=cTPh9SRIpJ4",
+            "title": "Thing Players Are Tank Royalty In Rivals #shorts #meme",
+            "description": "",
+            "channel": "ClassicMan D",
+            "published_at": "2026-08-20T23:12:52Z",
+            "duration": "PT56S",
+            "tags": [],
+            "hashtags": [
+              "#meme",
+              "#shorts"
+            ],
+            "view_count": 158801,
+            "like_count": 21272,
+            "comment_count": 181
+          },
+          {
+            "video_id": "CaHZ1g7puhk",
+            "url": "https://youtube.com/watch?v=CaHZ1g7puhk",
+            "title": "My Thoughts On Black Myth Zhong Kui Trailer #shorts #meme",
+            "description": "",
+            "channel": "ClassicMan D",
+            "published_at": "2026-08-21T00:06:35Z",
+            "duration": "PT55S",
+            "tags": [],
+            "hashtags": [
+              "#meme",
+              "#shorts"
+            ],
+            "view_count": 151717,
+            "like_count": 20497,
+            "comment_count": 121
+          },
+          {
+            "video_id": "N2ot7ifdqEc",
+            "url": "https://youtube.com/watch?v=N2ot7ifdqEc",
+            "title": "Samsung Pulled The Uno Reverse 🍎😤",
+            "description": "This video jokes that Samsung’s logo is just the leftover bite from Apple’s logo, while Samsung flips the situation by saying that the first bite is the best part of an apple x Two guys laughing on a sofa (Dr. Reasons - The Clown) meme\n\n#apple #humor #samsung #meme #funnymemes #funny",
+            "channel": "Only Memes",
+            "published_at": "2026-08-21T16:30:25Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#apple",
+              "#funny",
+              "#funnymemes",
+              "#humor",
+              "#meme",
+              "#samsung"
+            ],
+            "view_count": 149112,
+            "like_count": 1379,
+            "comment_count": 3
+          },
+          {
+            "video_id": "y6DWtyaJiTo",
+            "url": "https://youtube.com/watch?v=y6DWtyaJiTo",
+            "title": "Funny Meme Challenge😃🤣 #shorts #jihancartoonnetwork #funny #challenge",
+            "description": "Funny Meme Challenge😃🤣 #shorts #jihancartoonnetwork #funny #challenge",
+            "channel": "Jihan Cartoon Network",
+            "published_at": "2026-08-21T07:28:31Z",
+            "duration": "PT58S",
+            "tags": [],
+            "hashtags": [
+              "#challenge",
+              "#funny",
+              "#jihancartoonnetwork",
+              "#shorts"
+            ],
+            "view_count": 142548,
+            "like_count": 1594,
+            "comment_count": 7
+          },
+          {
+            "video_id": "R8q2uos7oFc",
+            "url": "https://youtube.com/watch?v=R8q2uos7oFc",
+            "title": "Why Are Wolverine Skins This Ugly #shorts #meme",
+            "description": "",
+            "channel": "ClassicMan D",
+            "published_at": "2026-08-21T18:50:52Z",
+            "duration": "PT56S",
+            "tags": [],
+            "hashtags": [
+              "#meme",
+              "#shorts"
+            ],
+            "view_count": 112656,
+            "like_count": 18358,
+            "comment_count": 52
+          },
+          {
+            "video_id": "duZOEnJqC70",
+            "url": "https://youtube.com/watch?v=duZOEnJqC70",
+            "title": "😹😹😹#funny #memehub #like #mems #comedy #funnymemes #jokes #subscribe #share #support",
+            "description": "",
+            "channel": "HINA PURE",
+            "published_at": "2026-08-21T10:11:20Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#funnymemes",
+              "#jokes",
+              "#like",
+              "#memehub",
+              "#mems",
+              "#share",
+              "#subscribe",
+              "#support"
+            ],
+            "view_count": 100421,
+            "like_count": 1382,
+            "comment_count": 7
+          },
+          {
+            "video_id": "TXekvAr-ivA",
+            "url": "https://youtube.com/watch?v=TXekvAr-ivA",
+            "title": "Pepsi finally lost the fight 🌚🥂 #memes #edit #5sec #pepsi #cocacola #softdrink #funny #shortsfeed",
+            "description": "This video features a humorous Coca-Cola vs Pepsi meme where Coca-Cola shows off some unusual black Cokes, but Pepsi quickly realizes what’s about to happen x Mariah Carey singing “It’s Time” meme & Santa Claus dancing in a window\n\n#cocacola #pepsi #memes #meme #funny #funnymemes #shorts",
+            "channel": "Instant Memes",
+            "published_at": "2026-08-21T09:17:45Z",
+            "duration": "PT6S",
+            "tags": [
+              "Instant Memes"
+            ],
+            "hashtags": [
+              "#5sec",
+              "#cocacola",
+              "#edit",
+              "#funny",
+              "#funnymemes",
+              "#meme",
+              "#memes",
+              "#pepsi",
+              "#shorts",
+              "#shortsfeed",
+              "#softdrink"
+            ],
+            "view_count": 96645,
+            "like_count": 0,
+            "comment_count": 6
+          },
+          {
+            "video_id": "QcTVZ5ZjVlU",
+            "url": "https://youtube.com/watch?v=QcTVZ5ZjVlU",
+            "title": "#funnymemes #bestmoments #memes #meme #follow #funny #funnyshorts #funnymoments #funnyvideo #shorts",
+            "description": "",
+            "channel": "ghostertv18",
+            "published_at": "2026-08-21T10:30:06Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#bestmoments",
+              "#follow",
+              "#funny",
+              "#funnymemes",
+              "#funnymoments",
+              "#funnyshorts",
+              "#funnyvideo",
+              "#meme",
+              "#memes",
+              "#shorts"
+            ],
+            "view_count": 85619,
+            "like_count": 2079,
+            "comment_count": 1
+          },
+          {
+            "video_id": "b35RD3vOwaA",
+            "url": "https://youtube.com/watch?v=b35RD3vOwaA",
+            "title": "😹😹😹#funny #memehub #like #mems #comedy #funnymemes #jokes #subscribe #share #support",
+            "description": "",
+            "channel": "HINA PURE",
+            "published_at": "2026-08-21T02:30:11Z",
+            "duration": "PT6S",
+            "tags": [],
+            "hashtags": [
+              "#comedy",
+              "#funny",
+              "#funnymemes",
+              "#jokes",
+              "#like",
+              "#memehub",
+              "#mems",
+              "#share",
+              "#subscribe",
+              "#support"
+            ],
+            "view_count": 77176,
+            "like_count": 879,
+            "comment_count": 4
+          }
+        ]
+      },
+      "trending": {
+        "status": "ok",
+        "error": null,
+        "videos": [
+          {
+            "video_id": "ozsKU77OWpE",
+            "title": "Tom Cruise vs Evel Knievel. Epic Rap Battles Of History",
+            "channel": "ERB",
+            "published_at": "2026-08-21T17:00:16Z",
+            "view_count": 210074,
+            "like_count": 32746,
+            "comment_count": 648
+          },
+          {
+            "video_id": "TsFvYJ8fQh4",
+            "title": "Let’s Finally Talk About the Avengers Doomsday (Reported) Opening Scene",
+            "channel": "New Rockstars",
+            "published_at": "2026-08-20T23:20:05Z",
+            "view_count": 490824,
+            "like_count": 15288,
+            "comment_count": 333
+          },
+          {
+            "video_id": "aA4pyww2cyc",
+            "title": "NOT ENDING UNTIL WE BEAT EVERY GAME ft. Kai Cenat",
+            "channel": "IShowSpeed",
+            "published_at": "2026-08-21T07:00:05Z",
+            "view_count": 6801032,
+            "like_count": 120580,
+            "comment_count": 382
+          },
+          {
+            "video_id": "MT-4Bk1Lw8g",
+            "title": "ENHYPEN (엔하이픈) 'Bloody Paradise' Official MV",
+            "channel": "HYBE LABELS",
+            "published_at": "2026-08-21T14:58:07Z",
+            "view_count": 1875068,
+            "like_count": 342729,
+            "comment_count": 5462
+          },
+          {
+            "video_id": "SyeHKMfswHk",
+            "title": "Cyberpunk: Edgerunners 2 | Official Teaser #3 | Netflix",
+            "channel": "Netflix",
+            "published_at": "2026-08-20T23:15:00Z",
+            "view_count": 599408,
+            "like_count": 36841,
+            "comment_count": 535
+          },
+          {
+            "video_id": "RvZvq0qaZvQ",
+            "title": "#CODNext Showcase 2026 | Call of Duty: Modern Warfare 4",
+            "channel": "Call of Duty",
+            "published_at": "2026-08-21T18:11:52Z",
+            "view_count": 444039,
+            "like_count": 11175,
+            "comment_count": 74
+          },
+          {
+            "video_id": "S58gKtKfrKM",
+            "title": "Bien Pata - Cartel de Santa  | @elcarteldesantatv",
+            "channel": "elcarteldesantatv",
+            "published_at": "2026-08-21T06:15:06Z",
+            "view_count": 810868,
+            "like_count": 43273,
+            "comment_count": 2909
+          },
+          {
+            "video_id": "IBTK8PGe_Oo",
+            "title": "Cyberpunk: Edgerunners 2 | Premiere Date Teaser Trailer",
+            "channel": "Cyberpunk 2077",
+            "published_at": "2026-08-20T23:16:19Z",
+            "view_count": 436849,
+            "like_count": 48823,
+            "comment_count": 1010
+          }
+        ]
+      }
+    },
+    "suggestions": {
+      "signal": "demande",
+      "status": "ok",
+      "note": "suggestions Google ds=yt",
+      "keywords": [
+        {
+          "query": "#funny",
+          "suggestions": [
+            "#funnyanimals",
+            "#funnycat",
+            "#funnymemes",
+            "#funnyeffect",
+            "#funnygame",
+            "#funnyvideos",
+            "#funnysounds",
+            "#funnyreelsvideo",
+            "#funnykid",
+            "#funnyprank"
+          ],
+          "tension_hits": 0,
+          "total_hits": 10,
+          "demand_score": 100
+        },
+        {
+          "query": "#funny meme",
+          "suggestions": [
+            "#funny memes",
+            "funny meme sounds",
+            "funny memes videos",
+            "funny memes try not to laugh",
+            "funny memes shorts",
+            "funny memes clip",
+            "funny memes no copyright",
+            "funny meme songs",
+            "funny meme sound effects",
+            "funny memes download"
+          ],
+          "tension_hits": 0,
+          "total_hits": 10,
+          "demand_score": 100
+        },
+        {
+          "query": "#funnymemes",
+          "suggestions": [
+            "#funnymemesvideos",
+            "#funnymemes078",
+            "#funnymemes2025",
+            "#funnymemesounds",
+            "#funnymemesdaily",
+            "funny memes song",
+            "funny memes _143",
+            "@funnymemes2.0-x3s",
+            "funny memes video",
+            "@funnymemes-l7m"
+          ],
+          "tension_hits": 0,
+          "total_hits": 10,
+          "demand_score": 100
+        },
+        {
+          "query": "#funnymemes meme",
+          "suggestions": [
+            "funny memes memes"
+          ],
+          "tension_hits": 0,
+          "total_hits": 1,
+          "demand_score": 10
+        },
+        {
+          "query": "#meme",
+          "suggestions": [
+            "#memes",
+            "#memeedit",
+            "#meme #shorts",
+            "#memeshorts",
+            "#memereset",
+            "#memento",
+            "#memetemplate",
+            "#memeremix",
+            "#memeband",
+            "#memecoins"
+          ],
+          "tension_hits": 0,
+          "total_hits": 10,
+          "demand_score": 100
+        },
+        {
+          "query": "#meme meme",
+          "suggestions": [
+            "meme meme yadavulam song",
+            "meme meme song",
+            "meme meme clash royale",
+            "meme meme indian song",
+            "meme meme video",
+            "meme meme oooo",
+            "meme meme music",
+            "meme meme ohhhh",
+            "meme meme funk",
+            "meme meme meow meow"
+          ],
+          "tension_hits": 0,
+          "total_hits": 10,
+          "demand_score": 100
+        }
+      ]
+    },
+    "reddit": {
+      "signal": "reddit_viralite",
+      "status": "fetch_failed",
+      "error": "http_403",
+      "keywords": [
+        "#funny",
+        "#funny meme",
+        "#funnymemes",
+        "#funnymemes meme",
+        "#meme",
+        "#meme meme",
+        "#memes",
+        "#memes meme",
+        "#school",
+        "#school meme",
+        "#shorts",
+        "#shorts meme",
+        "#teacher",
+        "#teacher meme",
+        "#worldofwarships",
+        "#worldofwarships meme",
+        "#wowsmoments",
+        "#wowsmoments meme",
+        "@Zdak",
+        "Zdak meme"
+      ],
+      "posts": [],
+      "top_subreddits": [],
+      "demand_score": null
+    }
+  },
+  "validation": {
+    "state": "warsmith_review",
+    "premium_used": true,
+    "anti_invention": "pass",
+    "next_frigate_blocked": true
+  },
+  "question_plan": [
+    {
+      "question_id": "Q-001",
+      "objective": "market_vocabulary",
+      "question": "Quels termes et sous-thèmes sont réellement utilisés par ce marché ?",
+      "queries": [
+        "US residents age 25-45 interested in @Zdak"
+      ],
+      "sources_allowed": [
+        "youtube",
+        "suggest",
+        "trends"
+      ],
+      "priority": "high",
+      "expected_evidence": [
+        "title",
+        "url",
+        "date",
+        "views"
+      ],
+      "status": "proposed"
+    },
+    {
+      "question_id": "Q-002",
+      "objective": "youtube_proof",
+      "question": "Quels sous-thèmes possèdent une preuve récente sur la plateforme cible ?",
+      "queries": [
+        "US residents age 25-45 interested in @Zdak Shorts"
+      ],
+      "sources_allowed": [
+        "youtube"
+      ],
+      "priority": "high",
+      "expected_evidence": [
+        "title",
+        "url",
+        "published_at",
+        "view_count",
+        "channel"
+      ],
+      "status": "proposed"
+    },
+    {
+      "question_id": "Q-003",
+      "objective": "demon_map",
+      "question": "Quels créateurs, formats et hooks dominent déjà ce territoire ?",
+      "queries": [
+        "US residents age 25-45 interested in @Zdak creators",
+        "US residents age 25-45 interested in @Zdak Shorts"
+      ],
+      "sources_allowed": [
+        "youtube",
+        "reddit"
+      ],
+      "priority": "high",
+      "expected_evidence": [
+        "channel",
+        "title",
+        "url",
+        "view_count"
+      ],
+      "status": "proposed"
+    },
+    {
+      "question_id": "Q-004",
+      "objective": "blue_ocean",
+      "question": "Quels sous-territoires ont une demande observable mais une pression concurrentielle moindre ?",
+      "queries": [
+        "US residents age 25-45 interested in @Zdak niche",
+        "US residents age 25-45 interested in @Zdak theory"
+      ],
+      "sources_allowed": [
+        "youtube",
+        "reddit",
+        "trends",
+        "suggest"
+      ],
+      "priority": "medium",
+      "expected_evidence": [
+        "url",
+        "date",
+        "demand",
+        "competition"
+      ],
+      "status": "proposed"
+    },
+    {
+      "question_id": "Q-005",
+      "objective": "deduplication",
+      "question": "Quels candidats sont lexicalement, sémantiquement ou créativement redondants ?",
+      "queries": [
+        "US residents age 25-45 interested in @Zdak"
+      ],
+      "sources_allowed": [
+        "youtube",
+        "suggest",
+        "reddit"
+      ],
+      "priority": "medium",
+      "expected_evidence": [
+        "title",
+        "url",
+        "cluster"
+      ],
+      "status": "proposed"
+    }
+  ],
+  "prospection_session": {
+    "session_id": "PROSPECT-b8b6fab7a7",
+    "created_at": "2026-08-21T22:50:59Z",
+    "market_input": {
+      "market": "US residents age 25-45 interested in @Zdak",
+      "platform": "youtube_shorts",
+      "horizon": "3d"
+    },
+    "director": {
+      "role": "prospection_director",
+      "premium_requested": true,
+      "premium_status": "not_called",
+      "premium_call_status": "error",
+      "premium_error": "Extra data: line 15 column 4 (char 489)"
+    },
+    "turns": [
+      {
+        "turn": 1,
+        "questions": [
+          {
+            "question_id": "Q-001",
+            "objective": "market_vocabulary",
+            "question": "Quels termes et sous-thèmes sont réellement utilisés par ce marché ?",
+            "queries": [
+              "US residents age 25-45 interested in @Zdak"
+            ],
+            "sources_allowed": [
+              "youtube",
+              "suggest",
+              "trends"
+            ],
+            "priority": "high",
+            "expected_evidence": [
+              "title",
+              "url",
+              "date",
+              "views"
+            ],
+            "status": "proposed"
+          },
+          {
+            "question_id": "Q-002",
+            "objective": "youtube_proof",
+            "question": "Quels sous-thèmes possèdent une preuve récente sur la plateforme cible ?",
+            "queries": [
+              "US residents age 25-45 interested in @Zdak Shorts"
+            ],
+            "sources_allowed": [
+              "youtube"
+            ],
+            "priority": "high",
+            "expected_evidence": [
+              "title",
+              "url",
+              "published_at",
+              "view_count",
+              "channel"
+            ],
+            "status": "proposed"
+          },
+          {
+            "question_id": "Q-003",
+            "objective": "demon_map",
+            "question": "Quels créateurs, formats et hooks dominent déjà ce territoire ?",
+            "queries": [
+              "US residents age 25-45 interested in @Zdak creators",
+              "US residents age 25-45 interested in @Zdak Shorts"
+            ],
+            "sources_allowed": [
+              "youtube",
+              "reddit"
+            ],
+            "priority": "high",
+            "expected_evidence": [
+              "channel",
+              "title",
+              "url",
+              "view_count"
+            ],
+            "status": "proposed"
+          },
+          {
+            "question_id": "Q-004",
+            "objective": "blue_ocean",
+            "question": "Quels sous-territoires ont une demande observable mais une pression concurrentielle moindre ?",
+            "queries": [
+              "US residents age 25-45 interested in @Zdak niche",
+              "US residents age 25-45 interested in @Zdak theory"
+            ],
+            "sources_allowed": [
+              "youtube",
+              "reddit",
+              "trends",
+              "suggest"
+            ],
+            "priority": "medium",
+            "expected_evidence": [
+              "url",
+              "date",
+              "demand",
+              "competition"
+            ],
+            "status": "proposed"
+          },
+          {
+            "question_id": "Q-005",
+            "objective": "deduplication",
+            "question": "Quels candidats sont lexicalement, sémantiquement ou créativement redondants ?",
+            "queries": [
+              "US residents age 25-45 interested in @Zdak"
+            ],
+            "sources_allowed": [
+              "youtube",
+              "suggest",
+              "reddit"
+            ],
+            "priority": "medium",
+            "expected_evidence": [
+              "title",
+              "url",
+              "cluster"
+            ],
+            "status": "proposed"
+          }
+        ],
+        "responses": [],
+        "status": "proposed"
+      }
+    ],
+    "limits": {
+      "max_turns": 3,
+      "max_questions_per_turn": 10,
+      "max_queries_per_question": 6
+    },
+    "validation": {
+      "facts_vs_interpretation": "separated",
+      "invented": 0,
+      "state": "warsmith_review"
+    },
+    "discovery_link": "DISC-7ac203f126"
+  },
+  "packs": [],
+  "angle_allocation": {
+    "requested_total": 10,
+    "requested_blue": 6,
+    "requested_red": 4,
+    "available_blue_candidates": 0,
+    "available_red_candidates": 0,
+    "status": "insufficient_candidates",
+    "decision": "warsmith_review"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "caviar_input.v1",
+  "candidate": {
+    "run_id": "f00c_2026-09-13T073944.152576+0000",
+    "candidate_id": "voxc-3",
+    "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+    "start_sec_source": 1847.2,
+    "end_sec_source": 1898.4,
+    "duration_sec": 51.2,
+    "score": 100.0,
+    "style_hint": "reframing"
+  },
+  "segment_media": "chemin/vers/segment.mp4",
+  "segment_heatmap": [
+    { "start_sec": 0.0, "end_sec": 8.6, "attention_norm": 0.42 },
+    { "start_sec": 8.6, "end_sec": 17.1, "attention_norm": 0.97 },
+    { "start_sec": 17.1, "end_sec": 25.6, "attention_norm": 0.71 },
+    { "start_sec": 25.6, "end_sec": 30.0, "attention_norm": 0.33 }
+  ],
+  "constraints": {
+    "target_duration_sec": 30,
+    "style": "reframing",
+    "broll_index_version": "lacrimae_broll.v1"
+  }
+}

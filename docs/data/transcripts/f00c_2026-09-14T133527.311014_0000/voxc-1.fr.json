@@ -1,0 +1,98 @@
+{
+  "candidate_id": "voxc-1",
+  "run_id": "f00c_2026-09-14T133527.311014+0000",
+  "lang": "fr",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 0.0,
+    "end": 51.3
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 0.0,
+      "t_rel": 0.0,
+      "end_rel": 3.0,
+      "text": "Sais-tu ce que vaut ta fortune nette aujourd'hui ? >> Non. Aucune idée."
+    },
+    {
+      "t_abs": 3.0,
+      "t_rel": 3.0,
+      "end_rel": 8.0,
+      "text": ">> Si tu devais deviner, >> probablement genre 5 millions. >> Non."
+    },
+    {
+      "t_abs": 8.0,
+      "t_rel": 8.0,
+      "end_rel": 12.0,
+      "text": ">> 20 millions. Entre 5 et 20. Entre 5 et 20. >> Non, ça doit être plus que ça."
+    },
+    {
+      "t_abs": 12.0,
+      "t_rel": 12.0,
+      "end_rel": 16.0,
+      "text": ">> Je vais aller voir mes statistiques."
+    },
+    {
+      "t_abs": 16.0,
+      "t_rel": 16.0,
+      "end_rel": 19.0,
+      "text": ">> Attends, mec. Mon cœur commence à s'emballer un peu."
+    },
+    {
+      "t_abs": 19.0,
+      "t_rel": 19.0,
+      "end_rel": 20.0,
+      "text": ">> Sais-tu combien elle gagne par heure ?"
+    },
+    {
+      "t_abs": 20.0,
+      "t_rel": 20.0,
+      "end_rel": 24.0,
+      "text": ">> Oh, c'est un mois creux. En juillet, elle n'a fait « que » 3,4 millions."
+    },
+    {
+      "t_abs": 24.0,
+      "t_rel": 24.0,
+      "end_rel": 25.0,
+      "text": ">> Combien gagnais-tu ce tout premier mois ?"
+    },
+    {
+      "t_abs": 25.0,
+      "t_rel": 25.0,
+      "end_rel": 30.0,
+      "text": ">> Je crois que je faisais genre 100 000. Je pense que mon premier mois j'ai fait 100 000."
+    },
+    {
+      "t_abs": 30.0,
+      "t_rel": 30.0,
+      "end_rel": 32.0,
+      "text": ">> Qu'est-ce qui te passait par la tête ?"
+    },
+    {
+      "t_abs": 32.0,
+      "t_rel": 32.0,
+      "end_rel": 35.0,
+      "text": ">> Oh mon Dieu, je vais acheter je vais acheter le monde entier."
+    },
+    {
+      "t_abs": 35.0,
+      "t_rel": 35.0,
+      "end_rel": 38.0,
+      "text": ">> C'était fou, parce que je n'arrivais pas à croire qu'on puisse gagner autant."
+    },
+    {
+      "t_abs": 38.0,
+      "t_rel": 38.0,
+      "end_rel": 42.0,
+      "text": ">> Quelle est l'une des plus grosses idées reçues sur toi, celles où tu te dis « bon sang, c'est pas vrai » ?"
+    },
+    {
+      "t_abs": 42.0,
+      "t_rel": 42.0,
+      "end_rel": 51.3,
+      "text": ">> Je me fiche pas mal de ce qui se dit sur moi parce que j'ai la peau dure. Évidemment, les gens vont dire ce qu'ils veulent dire et croire ce qu'ils veulent croire parce qu'ils entendent certaines choses, mais ils ne savent pas ce qui se passe portes closes."
+    }
+  ]
+}

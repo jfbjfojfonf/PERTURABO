@@ -1,0 +1,80 @@
+{
+  "candidate_id": "voxc-5",
+  "run_id": "f00c_2026-09-13T073944.152576+0000",
+  "lang": "en",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 5489.115,
+    "end": 5540.415
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 5488.0,
+      "t_rel": 0.0,
+      "end_rel": 2.89,
+      "text": ">> It depends on the It depends on the size and the type of koi."
+    },
+    {
+      "t_abs": 5492.0,
+      "t_rel": 2.89,
+      "end_rel": 4.89,
+      "text": ">> Jake Paul, he bought koiish. >> He did."
+    },
+    {
+      "t_abs": 5494.0,
+      "t_rel": 4.89,
+      "end_rel": 6.89,
+      "text": ">> I saw that. Like a big gold one or something."
+    },
+    {
+      "t_abs": 5496.0,
+      "t_rel": 6.89,
+      "end_rel": 16.89,
+      "text": ">> Yeah. So, I've seen the fish that were there and I've seen them at like $50 to $100,000, but honestly, the ones that are like 5 to 10 look 90% the same thing."
+    },
+    {
+      "t_abs": 5506.0,
+      "t_rel": 16.89,
+      "end_rel": 20.89,
+      "text": ">> And it comes down to all It's like the scales and the marbling."
+    },
+    {
+      "t_abs": 5510.0,
+      "t_rel": 20.89,
+      "end_rel": 24.89,
+      "text": ">> It's crazy. Like, who has I don't know who has time to count the scales on a fish. It's just insane."
+    },
+    {
+      "t_abs": 5514.0,
+      "t_rel": 24.89,
+      "end_rel": 31.89,
+      "text": ">> And it's the lines. They want They want really distinct lines and colorations that don't bleed into one another cuz once they bleed into one another,"
+    },
+    {
+      "t_abs": 5521.0,
+      "t_rel": 31.89,
+      "end_rel": 40.89,
+      "text": ">> you've done your research on that. Oh, he loves fish. I sp I spent a whole day with the koi farmers in Japan and they taught me everything about koi."
+    },
+    {
+      "t_abs": 5530.0,
+      "t_rel": 40.89,
+      "end_rel": 45.89,
+      "text": ">> It's actually really sad. >> I'll tell I'll tell you. Go ahead. >> No, I got to say it."
+    },
+    {
+      "t_abs": 5535.0,
+      "t_rel": 45.89,
+      "end_rel": 48.39,
+      "text": ">> The amount of fish that they kill. >> Oh."
+    },
+    {
+      "t_abs": 5537.0,
+      "t_rel": 47.89,
+      "end_rel": 51.3,
+      "text": ">> To get because they only want the ones that have certain colorations"
+    }
+  ]
+}

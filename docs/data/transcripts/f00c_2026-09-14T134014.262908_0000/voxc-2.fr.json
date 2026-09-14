@@ -1,0 +1,68 @@
+{
+  "candidate_id": "voxc-2",
+  "run_id": "f00c_2026-09-14T134014.262908+0000",
+  "lang": "fr",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 153.9,
+    "end": 205.201
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 146.0,
+      "t_rel": 0.0,
+      "end_rel": 8.1,
+      "text": ">> Ils disent que je retouche les photos et tout, que je mens sur mes gains juste parce que… je sais pas. Pour paraître plus cool, j'imagine. Mais je n'ai aucune raison de mentir. Tout ce que je publie en ligne est intentionnel. Je ne mentirais à personne là-dessus."
+    },
+    {
+      "t_abs": 162.0,
+      "t_rel": 8.1,
+      "end_rel": 13.1,
+      "text": ">> Mais ça t'inquiète ? Montrer autant d'argent fait de toi une cible."
+    },
+    {
+      "t_abs": 167.0,
+      "t_rel": 13.1,
+      "end_rel": 21.1,
+      "text": ">> Pas vraiment. J'ai un très bon conseiller financier qui me garde sur les rails et la plupart de mon argent est en placements. Donc je ne suis pas trop inquiète."
+    },
+    {
+      "t_abs": 175.0,
+      "t_rel": 21.1,
+      "end_rel": 26.1,
+      "text": ">> Et l'affaire « amaranth », où quelqu'un a essayé de s'introduire chez toi pour voler tes cryptos ?"
+    },
+    {
+      "t_abs": 180.0,
+      "t_rel": 26.1,
+      "end_rel": 28.1,
+      "text": ">> Je ne suis pas dans les cryptos. Je ne suis pas dans les cryptos."
+    },
+    {
+      "t_abs": 182.0,
+      "t_rel": 28.1,
+      "end_rel": 33.1,
+      "text": ">> La rumeur dit que tu gagnes plus que LeBron James. Tu en penses quoi ?"
+    },
+    {
+      "t_abs": 187.0,
+      "t_rel": 33.1,
+      "end_rel": 50.1,
+      "text": ">> C'est honnêtement invraisemblable. Chaque jour j'attends de me réveiller de ce rêve parce que ça n'a pas l'air réel. Mais on fait des choses très différentes, évidemment. Je pense que c'est un super joueur de basket et qu'il mérite toute sa richesse, mais on est juste deux gros revenus. Je sais pas."
+    },
+    {
+      "t_abs": 204.0,
+      "t_rel": 50.1,
+      "end_rel": 51.1,
+      "text": ">> Donc ça fait de toi la créatrice numéro un de OF,"
+    },
+    {
+      "t_abs": 205.0,
+      "t_rel": 51.1,
+      "end_rel": 51.3,
+      "text": ">> je crois. Donc oui. Je veux dire, je ne sais pas vraiment puisque les autres ne publient pas leurs gains, mais le site indique que je suis dans les 0,1 %."
+    }
+  ]
+}

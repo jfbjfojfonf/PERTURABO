@@ -1,0 +1,27 @@
+# F00B_VOX — L'Oreille Absolue
+# Sous-frégate de F00_CAPTEURS
+#
+# L'ingest partielle des VODs Twitch repose sur yt-dlp + ffmpeg :
+#   yt-dlp --download-sections "*HH:MM:SS-HH:MM:SS" --force-keyframes-at-cuts ...
+# Stream copy : aucune recompression, qualité native garantie.
+#
+# Le script f00b_vox.py fonctionne avec la stdlib seule pour le scoring/gate/trail.
+# L'ingest (--execute) nécessite yt-dlp installé sur la machine.
+
+# === Ingest + Auto-detect (obligatoire) ===
+# yt-dlp>=2024.08.06
+# ffmpeg (systeme, pas un package pip)
+
+# === Transcription premium (auto_detect, optionnel si --no-transcribe) ===
+# Clé : CLIPPING_F00B_API_KEY ou AI_GATEWAY_API_KEY
+# Config : CONTRACTS/f00b_secrets.json
+# L'API OpenAI-compatible /audio/transcriptions est appelée via stdlib urllib.
+# Aucun package pip requis pour la transcription elle-même.
+
+# === Chat replay (auto_detect, optionnel) ===
+# Endpoint public v5 Twitch — aucune auth, aucune dépendance.
+
+# === Note doctrine ===
+# F00B est 100% stdlib pour l'exécution. Aucun pip install nécessaire
+# au-delà de yt-dlp + ffmpeg (système). La clé premium est lue depuis
+# les variables d'environnement, jamais depuis les fichiers.

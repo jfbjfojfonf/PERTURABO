@@ -1,0 +1,13 @@
+{
+  "note": "Pièges appris F00D — format court, un piège par entrée. Nourri après chaque run/gate.",
+  "lessons": [
+    {
+      "id": "L001",
+      "date": "2026-09-13",
+      "piege": "YouTube rate-limite les IPs de datacenters sur le téléchargement de sous-titres (HTTP 429)",
+      "lecon": "Toujours prévoir cache par vidéo + cooldown (~10 min) + retry asynchrone en tâche de fond ; ne jamais télécharger au clic opérateur (bloquant).",
+      "source": "war_room v3 — implémentation transcripts FR/EN, 429 rencontré en réel",
+      "application": "war_room/transcripts.py (cooldown .cooldown + préchauffage daemon)"
+    }
+  ]
+}

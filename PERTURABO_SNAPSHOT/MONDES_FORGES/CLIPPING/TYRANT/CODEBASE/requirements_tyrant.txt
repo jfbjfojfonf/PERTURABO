@@ -1,0 +1,9 @@
+# TYRANT (mode prospectif) — Dépendances figées
+# (CLIPPING forge — Monde Forge PERTURABO)
+
+# Utilisé par le Warsmith/l'IRON en Phase 2 pour la veille Démon :
+yt-dlp>=2024.1.0
+youtube-transcript-api>=0.6.2
+
+# Note : les libs/ du forge (outlier_scorer, emotion_classifier,
+# blue_ocean_mapper, demon_archivist) sont en stdlib pure.

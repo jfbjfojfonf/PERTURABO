@@ -1,0 +1,22 @@
+{
+  "source_post": {
+    "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/source_wayvee_phone_bounce.png",
+    "url": null,
+    "author": "Wayvee (@wayveeofficial)",
+    "observed_at": "2026-08-24",
+    "metrics": {
+      "replies": 186,
+      "reposts": 4200,
+      "likes": 26000,
+      "views": 193000
+    },
+    "credit_display": "Source: Wayvee (@wayveeofficial)"
+  },
+  "operator_bindings": {
+    "A01": {"clip_id": "M7", "meme_tag": "M7", "channel_id": "cocktail_meme"},
+    "A02": {"clip_id": "M7", "meme_tag": "M7", "channel_id": "cocktail_meme"},
+    "A03": {"clip_id": "M7", "meme_tag": "M7", "channel_id": "cocktail_meme"},
+    "A04": {"clip_id": "M7", "meme_tag": "M7", "channel_id": "cocktail_meme"},
+    "A05": {"clip_id": "M7", "meme_tag": "M7", "channel_id": "cocktail_meme"}
+  }
+}

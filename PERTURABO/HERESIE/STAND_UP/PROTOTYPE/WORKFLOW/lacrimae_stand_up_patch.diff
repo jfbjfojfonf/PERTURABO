@@ -1,0 +1,132 @@
+[33mcommit 3a7185090d986bb55f1424481d9c16ed45c5b845[m
+Author: kioka8877-ux <2.55700781e+08+kioka8877-ux@users.noreply.github.com>
+Date:   Sat Aug 22 19:49:45 2026 +0000
+
+    feat(standup): add transcript subject discovery mode
+
+[1mdiff --git a/.github/workflows/lacrimae_orchestrator.yml b/.github/workflows/lacrimae_orchestrator.yml[m
+[1mindex 2429a3b..0c7649b 100644[m
+[1m--- a/.github/workflows/lacrimae_orchestrator.yml[m
+[1m+++ b/.github/workflows/lacrimae_orchestrator.yml[m
+[36m@@ -3,8 +3,12 @@[m
+ # aux PORTES. Un run GHA = UNE FRÉGATE. Le Champion n'intervient qu'aux[m
+ # 4 portes : I Brief, II Cutlist, III Montage, IV Publication.[m
+ #[m
+[32m+[m[32m# Choix de production : production_mode=meme|logo. Si meme, meme_variant=pure|stand_up.[m
+[32m+[m[32m# En stand_up, F00 reçoit un transcript Champion et produit un rapport de sujets;[m
+[32m+[m[32m# aucune ingestion vidéo et aucun F01/F02/F04 ne sont déclenchés automatiquement.[m
+ # Frégates (input fregate) :[m
+ #   F00  INGEST      — brief + yt-dlp → video_source.mp4 (Porte I)[m
+[32m+[m[32m#   F00  STAND UP    — transcript Champion → 1-7 sujets (Porte I)[m
+ #   F01  SELECT      — libre : vision OpenRouter → cutlist · forge : BRIDGE[m
+ #                      auto-récupère le pack PERTURABO/EXPORT → cutlist (Porte II)[m
+ #   F02  FORMAT      — blur-pad/reframe/background → codex.json + clips (Porte III)[m
+[36m@@ -72,6 +76,20 @@[m [mon:[m
+         description: 'Mode pipeline (libre|forge)'[m
+         required: false[m
+         default: 'libre'[m
+[32m+[m[32m      production_mode:[m
+[32m+[m[32m        description: 'Mode de production (meme|logo)'[m
+[32m+[m[32m        required: false[m
+[32m+[m[32m        default: 'meme'[m
+[32m+[m[32m      meme_variant:[m
+[32m+[m[32m        description: 'Variante MEME (pure|stand_up)'[m
+[32m+[m[32m        required: false[m
+[32m+[m[32m        default: 'pure'[m
+[32m+[m[32m      transcript:[m
+[32m+[m[32m        description: 'Transcript Champion (STAND UP uniquement)'[m
+[32m+[m[32m        required: false[m
+[32m+[m[32m      subject_id:[m
+[32m+[m[32m        description: 'Sujet STAND UP sélectionné pour F01 (optionnel)'[m
+[32m+[m[32m        required: false[m
+ [m
+ permissions:[m
+   contents: write[m
+[36m@@ -105,8 +123,42 @@[m [mjobs:[m
+ [m
+       # ─────────────────────── F00 : BRIEF + INGEST ────────────────────────[m
+ [m
+[32m+[m[32m      # STAND UP est une voie F00 autonome : transcript Champion → rapport de[m
+[32m+[m[32m      # sujets. Elle ne tente jamais d’ingérer une vidéo et s’arrête à F00.[m
+[32m+[m[32m      - name: F00 STAND UP - Extraire les sujets (Porte I)[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && github.event.inputs.production_mode == 'meme' && github.event.inputs.meme_variant == 'stand_up'[m
+[32m+[m[32m        env:[m
+[32m+[m[32m          TRANSCRIPT: ${{ github.event.inputs.transcript }}[m
+[32m+[m[32m          TITLE: ${{ github.event.inputs.title }}[m
+[32m+[m[32m        run: |[m
+[32m+[m[32m          mkdir -p F00_STAND_UP/IN F00_STAND_UP/OUT TRACKING[m
+[32m+[m[32m          if [ -z "$TRANSCRIPT" ]; then[m
+[32m+[m[32m            echo "ERREUR: le transcript Champion est obligatoire en mode STAND UP."[m
+[32m+[m[32m            exit 1[m
+[32m+[m[32m          fi[m
+[32m+[m[32m          printf '%s\n' "$TRANSCRIPT" > F00_STAND_UP/IN/transcript.txt[m
+[32m+[m[32m          python3 tools/stand_up_f00.py \[m
+[32m+[m[32m            --transcript F00_STAND_UP/IN/transcript.txt \[m
+[32m+[m[32m            --output F00_STAND_UP/OUT/stand_up_f00_report.json \[m
+[32m+[m[32m            --summary F00_STAND_UP/OUT/stand_up_f00_report.md \[m
+[32m+[m[32m            --title "${TITLE:-New Stand Up Siege}"[m
+[32m+[m[32m          cp F00_STAND_UP/OUT/stand_up_f00_report.json TRACKING/STAND_UP_F00_REPORT.json[m
+[32m+[m[32m          cp F00_STAND_UP/OUT/stand_up_f00_report.md TRACKING/STAND_UP_F00_REPORT.md[m
+[32m+[m[32m          cat F00_STAND_UP/OUT/stand_up_f00_report.md[m
+[32m+[m
+[32m+[m[32m      - name: F00 STAND UP - Ledger et Porte I[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && github.event.inputs.production_mode == 'meme' && github.event.inputs.meme_variant == 'stand_up'[m
+[32m+[m[32m        run: |[m
+[32m+[m[32m          python3 _tools/update_ledger.py F00 || true[m
+[32m+[m[32m          git config user.name "lacrimae-orchestrator"[m
+[32m+[m[32m          git config user.email "orchestrator@lacrimae"[m
+[32m+[m[32m          git add F00_STAND_UP/OUT TRACKING/STAND_UP_F00_REPORT.* TRACKING/LACRIMAE_LEDGER.json[m
+[32m+[m[32m          git commit -m "ledger: F00 STAND UP — sujets transcript [skip ci]" || echo "No change"[m
+[32m+[m[32m          git push[m
+[32m+[m[32m          echo "PORTE I: rapport STAND UP produit. Prochaine décision: sélection Champion puis F01"[m
+[32m+[m
+       - name: F00 - Ecrire le brief (Porte I)[m
+[31m-        if: github.event.inputs.fregate == 'F00'[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up')[m
+         env:[m
+           URL: ${{ github.event.inputs.url }}[m
+           TITLE: ${{ github.event.inputs.title }}[m
+[36m@@ -138,7 +190,7 @@[m [mjobs:[m
+           cat TRACKING/LACRIMAE_BRIEF.json[m
+ [m
+       - name: F00 - Ingest[m
+[31m-        if: github.event.inputs.fregate == 'F00'[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up')[m
+         env:[m
+           URL: ${{ github.event.inputs.url }}[m
+           RELEASE_TAG: ${{ github.event.inputs.release_tag }}[m
+[36m@@ -166,7 +218,7 @@[m [mjobs:[m
+           fi[m
+ [m
+       - name: F00 - Gardien CUSTOS[m
+[31m-        if: github.event.inputs.fregate == 'F00'[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up')[m
+         run: python3 LAC_CUSTOS.py --frigate F00 --mode check-out --drive-base .[m
+ [m
+       # F00 - Upload vidéo : SEULEMENT si la vidéo est petite (< 400 Mo).[m
+[36m@@ -175,7 +227,7 @@[m [mjobs:[m
+       # GitHub (2 Go/asset, illimité, gratuit sur repo public) : les frégates[m
+       # F01/F02 la re-téléchargent depuis la Release, PAS depuis l'artifact.[m
+       - name: F00 - Check video size[m
+[31m-        if: github.event.inputs.fregate == 'F00'[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up')[m
+         id: vidsize[m
+         run: |[m
+           SIZE=$(stat -c%s F00_INGEST/OUT/video_source.mp4)[m
+[36m@@ -183,14 +235,14 @@[m [mjobs:[m
+           echo "  [→] Vidéo ingérée : $(( SIZE / 1000000 )) Mo"[m
+ [m
+       - name: F00 - Upload video (petit, < 400 Mo)[m
+[31m-        if: github.event.inputs.fregate == 'F00' && fromJson(steps.vidsize.outputs.size) < 400000000[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up') && fromJson(steps.vidsize.outputs.size) < 400000000[m
+         uses: actions/upload-artifact@v4[m
+         with:[m
+           name: lac-video[m
+           path: F00_INGEST/OUT/[m
+ [m
+       - name: F00 - Ledger + commit[m
+[31m-        if: github.event.inputs.fregate == 'F00'[m
+[32m+[m[32m        if: github.event.inputs.fregate == 'F00' && (github.event.inputs.production_mode != 'meme' || github.event.inputs.meme_variant != 'stand_up')[m
+         run: |[m
+           python3 _tools/update_ledger.py F00[m
+           git config user.name "lacrimae-orchestrator"[m

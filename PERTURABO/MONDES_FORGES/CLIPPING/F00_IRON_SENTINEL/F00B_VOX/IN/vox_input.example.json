@@ -1,0 +1,16 @@
+{
+  "vod_urls": [
+    {"url": "https://www.twitch.tv/videos/1234567890", "alias": "stream_main"}
+  ],
+  "segments": [
+    {"alias": "stream_main", "start": "02:14:20", "end": "02:15:00", "id": "seg_01"},
+    {"alias": "stream_main", "start": "03:45:10", "end": "03:46:30", "id": "seg_02"},
+    {"alias": "stream_main", "start": "05:12:00", "end": "05:13:40", "id": "seg_03"},
+    {"alias": "stream_main", "start": "06:30:15", "end": "06:31:00", "id": "seg_04"}
+  ],
+  "nb_clips_demandes": 4,
+  "budget_max_sec": 1200,
+  "plateforme": "tiktok",
+  "directive_ref": "ARCHIVUM/campaign/whop_directive.md",
+  "clip_ref_url": null
+}

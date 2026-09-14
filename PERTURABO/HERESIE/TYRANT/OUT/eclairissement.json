@@ -1,0 +1,33 @@
+{
+  "warsmith_brief": {
+    "video_url": "https://youtube.com/watch?v=R64QNFr2qN8",
+    "niche": "",
+    "intent": "Créer une chaîne — mode 2"
+  },
+  "territory_analysis": {
+    "taille": "Grande — format 'Every X Explained' universellement populaire",
+    "audience": "15-35 ans US, passionnés de science/catastrophes",
+    "monetization": "Très bon — AdSense élevé (RPM US), evergreen"
+  },
+  "demon_identification": {
+    "who": "BluntlyExplained (specimen) + The Escalist (démon direct météo)",
+    "advantage": "Format taxonomique exhaustif avec escalade",
+    "secret_weapon": "Le titre fait tout — pas de hook verbal nécessaire",
+    "vulnerability": "The Escalist couvre tornades/thunderstorms/tsunamis mais ZÉRO hurricanes"
+  },
+  "adjacent_territories": [
+    "Abysses / Océan profond",
+    "Extinctions / fins du monde",
+    "Météo extrême US",
+    "Puissance militaire US",
+    "Dangerous America"
+  ],
+  "automatability_score": 9,
+  "recommended_path": "ocean_bleu",
+  "hunt_brief": "Bender vers Hurricanes US. The Escalist a couvert les tornades mais pas les ouragans. Territoire vierge avec format identique. 60%+ audience US garanti via Gulf Coast + Atlantic.",
+  "capteur_signals": "[Aucun signal — première chasse]",
+  "tyrant_meta": {
+    "illuminated_at": "2026-07-10T00:07:00Z",
+    "model_used": "claude-sandbox"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "niche": "Micro-moments d'athlètes US élites — intimité famille, vulnérabilité, off-field",
+  "concept": "Compilation wholesome de moments privés/familiaux d'athlètes élites sourcés depuis les comptes Instagram/TikTok de leur entourage (femmes, parents, enfants) — jamais de broadcast officiel",
+  "chosen_name": "Golden Moment",
+  "chosen_handle": "@goldenmoment",
+  "description": "Golden Moment ✨\n\nThe side of your favorite athletes you never see on ESPN. Fathers, sons, husbands — unfiltered, unscripted, real. ❤️\n\n✅ Edited to bring you the warmth behind the greatness.\n✅ Edited on Adobe After Effects.\n\n📩 Contact me:\nFor copyright issues, credits, inquiries, or removal requests: goldenmoment.yt@gmail.com\n\nI ensure all my videos are transformative, featuring original commentary and creative edits that add significant value beyond the original sources.\n\nCopyright Disclaimer:\nUnder Section 107 of the Copyright Act 1976, allowance is made for \"fair use\" for purposes such as criticism, comment, news reporting and research. Fair use is permitted by copyright law that might otherwise be infringing.",
+  "tags": [
+    "family moments",
+    "elite athletes",
+    "NBA players",
+    "NFL stars",
+    "tennis champions",
+    "golf highlights",
+    "wholesome content",
+    "athlete lifestyle",
+    "family vlog",
+    "inspirational stories",
+    "US sports",
+    "behind the scenes athletes",
+    "family bonding",
+    "sports entertainment",
+    "feel good videos"
+  ],
+  "tone_of_voice": {
+    "register": "Chaleureux, émotionnel, accessible. Zéro jargon sportif — la chaîne parle à des femmes 18-45 qui aiment les athlètes en tant que personnes, pas en tant que joueurs.",
+    "rhythm": "Titres courts et percutants. Hook émotionnel en premier mot. Format: 'LeBron [verbe humain] [situation familiale]'.",
+    "signature_vocabulary": "Mots-clés: dad, son, wife, mom, family, real, unfiltered, behind the scenes, off court, home. Pas de stats, pas de scores, pas de game recap.",
+    "personality": "Le grand frère/la grande sœur qui te montre les moments que tu raterais si tu ne suivais que les highlights officiels.",
+    "never_does": [
+      "Jamais de footage broadcast officiel (NBA/NFL/ESPN/Amazon Prime)",
+      "Jamais de stats de match ou de résultats sportifs",
+      "Jamais de commentaire sur les performances sportives",
+      "Jamais de contact direct avec les créateurs originaux — sourcing passif uniquement"
+    ]
+  },
+  "visual_codes": {
+    "color_palette": "Noir profond + or (#FFD700) + blanc. Chaud, premium, émotionnel.",
+    "graphic_style": "Cinématique. Super-titres en gras centré sur fond semi-transparent. Transitions douces. Musique synchro émotionnelle (piano, strings).",
+    "thumbnail_template": "Capture du moment le plus fort du clip. Texte overlay en haut (blanc, gras) + texte en bas (or). Émoji cœur ou ❤️ si pertinent. Visages bien visibles, expression émotionnelle.",
+    "typography": "Sans-serif bold white pour le titre principal. Or pour le nom de l'athlète ou le mot-clé émotionnel."
+  },
+  "format_standard": {
+    "target_duration": "12-38 secondes (Shorts)",
+    "structure": "[Prénom athlète] [verbe action humaine] [contexte familial] — format narratif, pas descriptif",
+    "publish_frequency": "8-12 Shorts/semaine (idéal pour la phase de croissance)",
+    "sourcing_rule": "Uniquement comptes famille/perso — jamais broadcast officiel. Content ID inexistant sur ce type de footage."
+  },
+  "roster": {
+    "tier1": [
+      {
+        "athlete": "LeBron James",
+        "account_to_watch": "@savannahjames (femme)",
+        "platforms": ["Instagram", "TikTok"],
+        "hook": "LeBron + Bronny — premier père-fils NBA simultanés, story permanente 2025-2026"
+      },
+      {
+        "athlete": "Travis Kelce",
+        "account_to_watch": "@donna_kelce (mère)",
+        "platforms": ["Instagram", "TikTok"],
+        "hook": "Crossover Taylor Swift — 100M+ femmes non-sportives"
+      },
+      {
+        "athlete": "Stephen Curry",
+        "account_to_watch": "@ayeshacurry (femme)",
+        "platforms": ["TikTok", "Instagram"],
+        "hook": "Image familiale la plus propre du sport US"
+      }
+    ],
+    "tier2": [
+      {
+        "athlete": "Patrick Mahomes",
+        "account_to_watch": "@brittanylynne (femme très active)",
+        "platforms": ["TikTok", "Instagram"]
+      },
+      {
+        "athlete": "Simone Biles",
+        "account_to_watch": "@simonebiles (compte perso)",
+        "platforms": ["TikTok", "Instagram"]
+      },
+      {
+        "athlete": "Coco Gauff",
+        "account_to_watch": "Candi Gauff (mère coach)",
+        "platforms": ["Instagram", "TikTok"]
+      }
+    ],
+    "tier3": [
+      {
+        "athlete": "Lionel Messi",
+        "account_to_watch": "@antonelaroccuzzo (femme)",
+        "platforms": ["Instagram"],
+        "hook": "Inter Miami, 500M followers, marché latino US"
+      },
+      {
+        "athlete": "Tiger + Charlie Woods",
+        "account_to_watch": "@tigerwoods (Instagram Stories)",
+        "platforms": ["Instagram"],
+        "hook": "Père-fils golf — récurrent, très émotionnel"
+      }
+    ]
+  },
+  "top_20_angles": [
+    {"rank": 1, "hook": "Savannah James fait la loi — LeBron obéit", "score": 9.2, "source": "@savannahjames"},
+    {"rank": 2, "hook": "Compilation 'champion humilié par sa femme'", "score": 9.2, "source": "Tous comptes femme"},
+    {"rank": 3, "hook": "Simone Biles expose son anxiété off-podium", "score": 9.3, "source": "@simonebiles"},
+    {"rank": 4, "hook": "Travis Kelce appelle sa mère avant CHAQUE match", "score": 9.1, "source": "@donna_kelce"},
+    {"rank": 5, "hook": "Brittany Mahomes + Patrick — bloopers couple", "score": 9.1, "source": "@brittanylynne"},
+    {"rank": 6, "hook": "Donna Kelce troll Travis en live", "score": 9.0, "source": "@donna_kelce"},
+    {"rank": 7, "hook": "Charlie Woods dépasse Tiger — passing of the torch", "score": 9.0, "source": "@tigerwoods"},
+    {"rank": 8, "hook": "Messi ne comprend rien à la culture US", "score": 8.9, "source": "@antonelaroccuzzo"},
+    {"rank": 9, "hook": "Savannah + LeBron — morning routine chaos total", "score": 8.9, "source": "@savannahjames"},
+    {"rank": 10, "hook": "Simone Biles essaie gestes quotidiens — fail", "score": 8.8, "source": "@simonebiles"},
+    {"rank": 11, "hook": "Patrick Mahomes cuisine — catastrophe complète", "score": 8.8, "source": "@brittanylynne"},
+    {"rank": 12, "hook": "Ayesha corrige Stephen sur la cuisine", "score": 8.7, "source": "@ayeshacurry"},
+    {"rank": 13, "hook": "Charlie surpasse Tiger — moment intime", "score": 8.7, "source": "@tigerwoods"},
+    {"rank": 14, "hook": "LeBron rate devant Bronny — humanisation du GOAT", "score": 8.5, "source": "@savannahjames"},
+    {"rank": 15, "hook": "Coco Gauff — training vs shopping avec sa mère", "score": 8.5, "source": "Candi Gauff"},
+    {"rank": 16, "hook": "Stephen perd au jeu vidéo contre sa fille Riley", "score": 8.6, "source": "@ayeshacurry"},
+    {"rank": 17, "hook": "Ayesha + Stephen — date night en famille chaos", "score": 8.8, "source": "@ayeshacurry"},
+    {"rank": 18, "hook": "Antonela Roccuzzo 'mère solo' pendant entraînement Messi", "score": 8.4, "source": "@antonelaroccuzzo"},
+    {"rank": 19, "hook": "Brittany refuse câlin à Patrick avant match", "score": 8.3, "source": "@brittanylynne"},
+    {"rank": 20, "hook": "Coco trollée par sa mère pendant interview", "score": 8.2, "source": "Candi Gauff"}
+  ],
+  "copyright_strategy": {
+    "safe_sources": ["Comptes Instagram/TikTok personnels de l'entourage", "Stories non-broadcast", "Fan footage en espace public"],
+    "forbidden_sources": ["Broadcast NBA/NFL/ESPN/Amazon Prime", "Conférences de presse officielles", "Venues officielles matchs"],
+    "content_id_risk": "Quasi-nul sur footage personnel/famille — pas dans les bases Content ID des ligues",
+    "description_credit": "📌 Source: @compte — mentionne systématiquement pour décourager report manuel"
+  },
+  "demon_analysis": {
+    "name": "Wishness",
+    "handle": "@Wishness",
+    "specimen_dissected": "He's MAKING MEMORIES With His Son — 416K views / 8 jours",
+    "specimen_url": "https://www.youtube.com/shorts/K7XnPCGj2KM",
+    "flaw": "Chaîne généraliste wholesome — pas dédiée aux athlètes US élites. Pas de roster défini. Pas de sourcing famille systématique.",
+    "our_edge": "Niche verticalisée US athletes + sourcing comptes famille identifiés + audience féminine 18-45 ciblée"
+  },
+  "f06_meta": {
+    "forged_at": "2026-07-22T00:00:00Z",
+    "model_used": "claude-sonnet-4-6 (Oracle direct)",
+    "specimen_source": "He's MAKING MEMORIES With His Son — Wishness @Wishness",
+    "demon_analyzed": "Wishness + House of Highlights",
+    "rules_applied": [
+      "Règle 3: Niche Bending > Copie directe",
+      "Règle 5: Océan Bleu = seul chemin",
+      "Règle 8: Validation avant production",
+      "Règle COPYRIGHT: jamais de broadcast officiel"
+    ],
+    "siege_number": 2,
+    "previous_siege": "The Stormist (Hurricanes US)"
+  }
+}

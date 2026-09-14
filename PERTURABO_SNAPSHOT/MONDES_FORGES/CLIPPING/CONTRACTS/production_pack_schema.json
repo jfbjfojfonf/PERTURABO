@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "_comment": "Schema canonique du production_pack.json - contrat d'interface entre PERTURABO (forge CLIPPING) et OMNIS_WATCH (execution video). Toute modification de ce schema doit etre coordonnee des deux cotes.",
+  "title": "Production Pack Monde Forge CLIPPING",
+  "type": "object",
+  "required": ["identite", "cibles", "source", "angle", "cut_directives", "reference_style", "text_payload", "compliance", "metadata", "submission_checklist"],
+  "properties": {
+    "identite": {
+      "type": "object",
+      "required": ["campaign_id", "angle_id", "pack_index", "pack_total"],
+      "properties": {
+        "campaign_id": {"type": "string"},
+        "angle_id": {"type": "string"},
+        "pack_index": {"type": "integer", "minimum": 1},
+        "pack_total": {"type": "integer", "minimum": 1}
+      }
+    },
+    "cibles": {
+      "type": "object",
+      "required": ["target_platform", "target_market"],
+      "properties": {
+        "target_platform": {"type": "string", "enum": ["youtube", "tiktok", "instagram"]},
+        "target_market": {"type": "string"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "_comment": "Assets campaign uniquement - heresie sinon (regle C1 clipping_rules.md)",
+      "required": ["video_url", "suggested_segments", "source_permission"],
+      "properties": {
+        "video_url": {"type": "string", "format": "uri"},
+        "suggested_segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["start_sec", "end_sec", "rationale"],
+            "properties": {
+              "start_sec": {"type": "number"},
+              "end_sec": {"type": "number"},
+              "duration_sec": {"type": "number"},
+              "rationale": {"type": "string"},
+              "extracted_text_snippet": {"type": "string"}
+            }
+          }
+        },
+        "source_segment_sec": {
+          "type": "object",
+          "properties": {
+            "start_sec": {"type": "number"},
+            "end_sec": {"type": "number"}
+          }
+        },
+        "source_permission": {"type": "string", "const": "campaign_provided"}
+      }
+    },
+    "angle": {
+      "type": "object",
+      "required": ["angle_family", "emotion_mode", "engagement_type", "reframe_dim", "hook_style_fit", "loop_tech", "anti_cannibal_diff", "blue_ocean"],
+      "properties": {
+        "angle_family": {"type": "string", "enum": ["reframing", "emotion", "engagement", "structural"]},
+        "emotion_mode": {"type": "string"},
+        "engagement_type": {"type": "string", "enum": ["question", "confirmation", "assertion", "cliffhanger"]},
+        "reframe_dim": {"type": "string"},
+        "hook_style_fit": {"type": "array", "items": {"type": "string"}},
+        "loop_tech": {"type": "string"},
+        "anti_cannibal_diff": {
+          "type": "object",
+          "_comment": "Au moins 2 axes differenciants vs les autres angles du meme siege",
+          "properties": {
+            "differentiated_axes": {"type": "array", "items": {"type": "string"}, "minItems": 2}
+          }
+        },
+        "blue_ocean": {
+          "type": "object",
+          "properties": {
+            "is_blue_ocean": {"type": "boolean"},
+            "blue_ocean_depth": {"type": "integer", "minimum": 1, "maximum": 1, "_comment": "max 1 couche - regle Tyran"},
+            "territory": {"type": "string"},
+            "rationale": {"type": "string"}
+          }
+        }
+      }
+    },
+    "cut_directives": {
+      "type": "object",
+      "required": ["clip_max_duration", "clip_min_duration", "moments_to_chase", "moments_to_avoid", "forbidden"],
+      "properties": {
+        "clip_max_duration": {"type": "integer"},
+        "clip_min_duration": {"type": "integer"},
+        "moments_to_chase": {"type": "array", "items": {"type": "string"}, "_comment": "Directives pour D-F02 d'OMNIS_WATCH - pas de coupes precises"},
+        "moments_to_avoid": {"type": "array", "items": {"type": "string"}},
+        "forbidden": {"type": "array", "items": {"type": "string"}, "_comment": "Ex: ['silences > 3s', 'CTA abonne-toi', 'fadeouts']", "contains": {"const": "silences > 3s"}}
+      }
+    },
+    "reference_style": {
+      "type": "object",
+      "_comment": "ADN observe du clip de reference - matiere premiere brute. OMNIS_WATCH applique ses presets coloring en plus. PERTURABO ne decide jamais du style final.",
+      "required": ["pacing", "energy_level", "cut_density", "color_palette", "text_treatment"],
+      "properties": {
+        "pacing": {"type": "string"},
+        "energy_level": {"type": "string", "enum": ["calme", "modere", "intense", "frenetique"]},
+        "cut_density": {"type": "number", "_comment": "nb cuts/min observe"},
+        "color_palette": {"type": "array", "items": {"type": "string"}},
+        "text_treatment": {"type": "string", "_comment": "style de sous-titres observe"},
+        "note": {"type": "string", "const": "OMNIS_WATCH applique ses presets coloring en plus - PERTURABO transmet seulement l'ADN observe du clip de reference."}
+      }
+    },
+    "text_payload": {
+      "type": "object",
+      "required": ["titles", "paragraph", "caption", "hashtags", "on_screen_text", "cta_text"],
+      "properties": {
+        "titles": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "_comment": "3 titres calibres (ni 1 ni 5)",
+          "items": {
+            "type": "object",
+            "required": ["rank", "text", "platform_fit", "market_fit", "hook_type"],
+            "properties": {
+              "rank": {"type": "integer", "enum": [1, 2, 3]},
+              "text": {"type": "string"},
+              "platform_fit": {"type": "integer", "minimum": 0, "maximum": 10},
+              "market_fit": {"type": "integer", "minimum": 0, "maximum": 10},
+              "hook_type": {"type": "string"},
+              "rationale": {"type": "string"}
+            }
+          }
+        },
+        "paragraph": {
+          "type": "object",
+          "_comment": "Paragraphe reframing 2 lignes max - 3 niveaux de veto en cascade",
+          "required": ["text", "recommendation", "override_omniswatch", "final_operator"],
+          "properties": {
+            "text": {"type": "string"},
+            "recommendation": {"type": "string", "enum": ["use", "skip"], "_comment": "F04_COPYWRITER propose"},
+            "override_omniswatch": {"type": ["string", "null"], "enum": ["use", "skip", null], "_comment": "Oracle OMNIS_WATCH peut override"},
+            "final_operator": {"type": ["string", "null"], "enum": ["use", "skip", null], "_comment": "Warsmith a le dernier mot au moment de poster"}
+          }
+        },
+        "caption": {"type": "string"},
+        "hashtags": {"type": "array", "items": {"type": "string"}, "_comment": "3 strates : large + moyen + niche. Toujours inclure #ad"},
+        "on_screen_text": {"type": ["string", "null"], "_comment": "keyframe optionnelle - max 1 par clip"},
+        "cta_text": {"type": "string", "_comment": "Jamais 'abonne-toi'. Subtil : 'commente X', 'suis pour la suite'."}
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "required": ["disclosure", "submit_deadline_min", "source_permission"],
+      "properties": {
+        "disclosure": {"type": "string", "const": "#ad"},
+        "submit_deadline_min": {"type": "integer", "const": 60},
+        "source_permission": {"type": "string", "const": "campaign_provided"}
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title_pattern": {"type": "string"},
+        "description_skeleton": {"type": "string"}
+      }
+    },
+    "submission_checklist": {
+      "type": "object",
+      "_comment": "Active - pas passive. 7 items, status pending initial.",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "status"],
+            "properties": {
+              "id": {"type": "string"},
+              "label": {"type": "string"},
+              "deadline_min": {"type": "integer"},
+              "status": {"type": "string", "enum": ["pending", "done", "missed"]}
+            }
+          }
+        }
+      }
+    }
+  }
+}

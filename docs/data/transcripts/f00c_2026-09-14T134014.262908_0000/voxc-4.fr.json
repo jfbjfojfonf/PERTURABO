@@ -1,0 +1,20 @@
+{
+  "candidate_id": "voxc-4",
+  "run_id": "f00c_2026-09-14T134014.262908+0000",
+  "lang": "fr",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 3744.91,
+    "end": 3796.21
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 3691.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Entreprendre est l'une des choses les plus exaltantes, mais ça s'accompagne de tâches sans rapport qui volent du temps. En faisant grandir l'Iced Coffee Hour, on a passé des heures sur la facturation et les contrats — et non, ce n'est pas nos activités préférées. C'est pourquoi on est ravis de s'associer à Claude. Claude, c'est l'IA pour les esprits qui ne s'arrêtent pas à « bien ». C'est le collaborateur qui comprend tout ton flux de travail et réfléchit avec toi. Que tu débogues du code à minuit ou que tu prépares le prochain coup stratégique, Claude étend ta réflexion aux problèmes qui comptent. Sérieusement, Claude est bien plus qu'une IA : c'est un membre de l'équipe. Sans blague, on l'utilise pour générer chacune de nos factures. Avant, saisir tous les détails prenait un temps fou. Maintenant, je tape « go » et boum : un mois entier de factures généré automatiquement. Et ça ne s'arrête pas là : une fois la facture créée, Claude rédige le mail d'envoi. Jamais il n'a été aussi simple de gagner du temps sur ton business. Prêt pour plus grand ? Démarre avec Claude sur claude.ai/icedcoffee. C'est claude.ai/icedcoffee. Découvre Claude Pro, qui inclut tout ce dont on a parlé. Encore merci à Claude de sponsoriser ce podcast. Retour à l'épisode. Et, les gars, la saison NBA avance, les équipes se préparent pour les playoffs — ne ratez pas ça : on est ravis d'être sponsorisés par FanDuel et FanDuel Predicts. Vous pouvez prédire toute l'action des playoffs jusqu'à la finale avec FanDuel Predicts. Il suffit de t'inscrire pour ton bonus de 25 dollars. Des lancers francs manqués aux paniers au buzzer, chaque action est un retournement possible. Prédis l'écart, le total de points, les moments décisifs. Un panier peut tout changer. Du tip-off au buzzer final, tu peux prédire chaque instant. Inscris-toi pour ton bonus de 25 dollars sur FanDuel Predicts. Proposé par FanDuel Prediction Markets LLC, commissionnaire agréé, 18+. Bonus non retirable, expire 7 jours après réception. Les dérivés comportent un risque significatif et peuvent ne pas convenir à tous les investisseurs. Gérez votre activité avec nos outils de protection. Restrictions. Conditions sur fanduel.com/predict/bonus-offer-hyphen-terms."
+    }
+  ]
+}

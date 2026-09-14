@@ -1,0 +1,63 @@
+[
+  {
+    "scan_id": "F00-5581179c",
+    "scanned_at": "2026-08-14T07:52:21Z",
+    "subjects": [
+      {
+        "subject_en": "Russell Westbrook Retirement Tribute Backlash Explained",
+        "score_10": 9,
+        "score_mecanique": 76.0,
+        "freshness_hours": 2.0,
+        "top_video_views": 161044,
+        "demand_score": 100,
+        "trend_growth_7d": null,
+        "coverage_media_count": 2,
+        "source_diversity": 2
+      },
+      {
+        "subject_en": "LeBron James 76ers Relocation Hint Shocks NBA",
+        "score_10": 10,
+        "score_mecanique": 68.1,
+        "freshness_hours": 3.8,
+        "top_video_views": 722960,
+        "demand_score": 100,
+        "trend_growth_7d": null,
+        "coverage_media_count": 1,
+        "source_diversity": 1
+      },
+      {
+        "subject_en": "Clippers Sign Bradley Beal $13M Fans Outraged",
+        "score_10": 8,
+        "score_mecanique": 62.7,
+        "freshness_hours": 2.2,
+        "top_video_views": null,
+        "demand_score": 100,
+        "trend_growth_7d": null,
+        "coverage_media_count": 1,
+        "source_diversity": 1
+      },
+      {
+        "subject_en": "Are These 6 NBA Records Truly Unbreakable",
+        "score_10": 8,
+        "score_mecanique": 95.5,
+        "freshness_hours": 24.0,
+        "top_video_views": 396369,
+        "demand_score": 100,
+        "trend_growth_7d": null,
+        "coverage_media_count": 1,
+        "source_diversity": 1
+      },
+      {
+        "subject_en": "Fans Try To Flip Trampoline Dunk Gone Wrong",
+        "score_10": 9,
+        "score_mecanique": 98.4,
+        "freshness_hours": 24.0,
+        "top_video_views": 722960,
+        "demand_score": 100,
+        "trend_growth_7d": null,
+        "coverage_media_count": 1,
+        "source_diversity": 1
+      }
+    ]
+  }
+]

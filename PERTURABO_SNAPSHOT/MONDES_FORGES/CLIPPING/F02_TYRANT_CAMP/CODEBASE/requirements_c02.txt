@@ -1,0 +1,9 @@
+# F02_TYRANT_CAMP — Dépendances figées
+# (CLIPPING forge — Monde Forge PERTURABO)
+
+# Core du forge : aucune dépendance tierce pour le verdict
+# (lecture JSON/markdown natif). yt-dlp reste une dépendance douce
+# pour F01_SCOUT (enrichissement métadonnées) et TYRANT prospectif.
+
+# pip install -r requirements_c02.txt  (environnement Warsmith)
+# Note : rien à installer — le forge fonctionne avec la stdlib Python 3.10+

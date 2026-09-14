@@ -1,0 +1,44 @@
+{
+ "cuts": [
+  {
+   "angle_id": "A01",
+   "start_sec": 0,
+   "end_sec": 7,
+   "duration_sec": 7,
+   "cut_source": "operator",
+   "note": "7s — Warsmith"
+  },
+  {
+   "angle_id": "A02",
+   "start_sec": 7,
+   "end_sec": 14,
+   "duration_sec": 7,
+   "cut_source": "operator",
+   "note": "7s — Warsmith"
+  },
+  {
+   "angle_id": "A03",
+   "start_sec": 14,
+   "end_sec": 21,
+   "duration_sec": 7,
+   "cut_source": "operator",
+   "note": "7s — Warsmith"
+  },
+  {
+   "angle_id": "A04",
+   "start_sec": 21,
+   "end_sec": 28,
+   "duration_sec": 7,
+   "cut_source": "operator",
+   "note": "7s — Warsmith"
+  },
+  {
+   "angle_id": "A05",
+   "start_sec": 28,
+   "end_sec": 35,
+   "duration_sec": 7,
+   "cut_source": "operator",
+   "note": "7s — Warsmith"
+  }
+ ]
+}

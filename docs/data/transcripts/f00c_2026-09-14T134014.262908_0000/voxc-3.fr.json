@@ -1,0 +1,20 @@
+{
+  "candidate_id": "voxc-3",
+  "run_id": "f00c_2026-09-14T134014.262908+0000",
+  "lang": "fr",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 1846.805,
+    "end": 1898.105
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 1826.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Ça peut être ce que tu veux. Vraiment : ce n'est pas que du contenu adulte sur le site, il y a d'autres gens. Maintenant, la perte de cheveux n'est plus juste un effet gênant de l'âge : elle peut sérieusement affecter confiance et bonheur. Des tas de produits promettent de restaurer vos cheveux, peu y parviennent. Beaucoup d'hommes finissent par renoncer. Même sans renoncer, les voyages en Turquie vident le compte en banque et laissent vos cheveux pires qu'avant. Si vos cheveux s'affinent, si votre sommet commence à dégarnir ou que la ligne recule, vous n'avez pas à subir tout ça grâce à notre sponsor Hims. HIMS donne accès à des traitements approuvés par des médecins, avec des ingrédients efficaces comme le finastéride et le minoxidil. Ils peuvent stopper la chute et même faire repousser en 3 à 6 mois. Tout se fait 100 % en ligne : pas de salle d'attente, pas de pharmacie gênante, pas de vol à travers le monde. Des soins personnalisés selon votre rythme — face à un voyage de greffe, le choix est vite fait. Pour un accès en ligne simple et abordable aux soins capillaires, et plus encore, rendez-vous sur hims.com/istic. C'est hims.com/istic pour votre première consultation gratuite. Les produits concernés incluent des médicaments composés que la FDA n'approuve ni ne vérifie pour la sécurité, l'efficacité ou la qualité. Ordonnance requise. Consultez le site pour les détails, restrictions et informations de sécurité importantes. Les résultats individuels varient selon les études sur le minoxidil et le finastéride topiques et oraux."
+    }
+  ]
+}

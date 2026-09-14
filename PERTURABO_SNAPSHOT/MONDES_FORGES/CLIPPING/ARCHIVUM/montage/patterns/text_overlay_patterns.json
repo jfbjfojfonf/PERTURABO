@@ -1,0 +1,214 @@
+{
+  "version": "1.0.0",
+  "description": "Patterns de texte à l'écran pour les clips PUR — titres, countdown, captions, highlights",
+  "last_updated": "2026-09-03",
+
+  "text_elements": {
+
+    "main_title": {
+      "description": "Le titre principal du clip — présent dans tous les styles",
+      "font": {
+        "family": "Montserrat ExtraBold ou Bebas Neue",
+        "weight": "800-900",
+        "fallback": "Arial Black, Impact"
+      },
+      "colors": {
+        "primary": "#FFFFFF",
+        "accent": "#FFD700 (jaune) ou #00FF88 (vert) selon le thème",
+        "outline": "#000000 (3-4px)",
+        "shadow": "drop shadow 2px 2px 4px rgba(0,0,0,0.8)"
+      },
+      "by_style": {
+        "ranking": {
+          "max_words": 4,
+          "position": "top_15_percent",
+          "font_size": "72px",
+          "animation": "pop_in_fast (scale 0→110%→100% en 0.2s)",
+          "visible": "pendant toute la durée du clip"
+        },
+        "blur": {
+          "max_lines": 2,
+          "position": "centre_vertical (entre clip podcast et B-roll)",
+          "font_size": "64px",
+          "animation": "slide_up_fast (y+50px → y0 en 0.2s)",
+          "visible": "pendant toute la durée du clip",
+          "background": "fond sombre semi-transparent (rgba(0,0,0,0.6) padding 8px)"
+        },
+        "split_scene": {
+          "max_lines": 2,
+          "position": "centre_absolu (zone_center)",
+          "font_size": "64px",
+          "animation": "pop_in (scale 0→105%→100% en 0.15s)",
+          "visible": "pendant toute la durée du clip",
+          "role": "relie visuellement zone_top et zone_bottom"
+        },
+        "reframing": {
+          "max_lines": 2,
+          "position": "variable (selon layout)",
+          "font_size": "64px",
+          "animation": "fade_in (opacity 0→100% en 0.3s)",
+          "visible": "pendant toute la durée du clip"
+        }
+      }
+    },
+
+    "countdown_number": {
+      "description": "Le numéro du countdown (#5, #4...) — ranking uniquement",
+      "font": {
+        "family": "Bebas Neue ou Impact",
+        "weight": "900",
+        "style": "extra bold"
+      },
+      "font_size": "120-160px",
+      "position": "centre_haut (au-dessus du clip, sous le titre)",
+      "color": "#FFFFFF",
+      "outline": "#000000 (5px)",
+      "animation": {
+        "type": "scale_bounce",
+        "in": "scale 0% → 120% en 0.1s",
+        "bounce": "120% → 100% en 0.05s",
+        "total_duration": "0.15s"
+      },
+      "visible": "0.5-1s au début de chaque clip, puis disparaît",
+      "sfx_sync": "tick (50%) synchronisé avec l'apparition"
+    },
+
+    "clip_label": {
+      "description": "Label court sous le countdown (1 mot)",
+      "font_size": "48px",
+      "font_weight": "700 (bold)",
+      "position": "juste sous le countdown_number",
+      "color": "#FFFFFF",
+      "outline": "#000000 (3px)",
+      "animation": "fade_in_fast (0.2s, après le countdown)",
+      "rules": [
+        "1 mot pour la vidéo",
+        "2 mots max si article",
+        "Doit être immédiatement compréhensible",
+        "Pas de doublons dans un même ranking"
+      ]
+    },
+
+    "captions": {
+      "description": "Sous-titres dynamiques du speech — TOUS les styles",
+      "source": "TRANSCRIPT du speech (pas de texte écrit)",
+      "font": {
+        "family": "Montserrat Bold ou Poppins Bold",
+        "weight": "700",
+        "fallback": "Arial Bold"
+      },
+      "font_size": "42-48px",
+      "position": "centre_bas (zone_sûre, au-dessus des boutons plateforme)",
+      "max_words_per_group": "2-5 mots",
+      "colors": {
+        "default": "#FFFFFF",
+        "outline": "#000000 (3px) ou dark background box",
+        "highlight": "#FFD700 (jaune) pour les mots-clés",
+        "negative": "#FF4444 (rouge) pour les négations",
+        "number": "#00FF88 (vert) pour les chiffres"
+      },
+      "animation": {
+        "type": "word_highlight",
+        "effect": "chaque mot apparaît au moment où il est prononcé",
+        "style": "scale 100%→115%→100% quand le mot est active",
+        "duration_per_word": "0.15s"
+      },
+      "cutting_rules": [
+        "Couper aux respirations",
+        "Pas de phrases trop longues (> 8 mots = couper)",
+        "Mots-clés toujours dans un groupe séparé",
+        "Chiffres toujours dans leur propre groupe"
+      ],
+      "checklist": [
+        "Relu manuellement (pas auto sans vérif)",
+        "Mots-clés mis en évidence",
+        "Contraste suffisant sur tous les fonds",
+        "Placés dans la zone sûre"
+      ]
+    },
+
+    "keyword_highlight": {
+      "description": "Mise en évidence d'un mot-clé DANS les sous-titres",
+      "technique": "Le mot change de couleur ou de taille au moment où il est prononcé",
+      "colors": {
+        "chiffre": "#00FF88 (vert)",
+        "emotion_forte": "#FFD700 (jaune)",
+        "negation": "#FF4444 (rouge)",
+        "mot_central": "#FF6B00 (orange)",
+        "conclusion": "#FFFFFF (blanc brillant, taille x1.2)"
+      },
+      "animation": {
+        "type": "pop_highlight",
+        "in": "scale 100% → 120% + couleur changée en 0.1s",
+        "out": "scale 120% → 100% en 0.1s"
+      },
+      "rule": "Pas plus de 2 mots highlightés par phrase"
+    },
+
+    "big_number": {
+      "description": "Chiffre affiché en TRÈS GRAND — un écran = un chiffre",
+      "font_size": "150-200px",
+      "font_weight": "900",
+      "position": "centre_absolu",
+      "color": "#FFD700 (jaune) ou #00FF88 (vert)",
+      "outline": "#000000 (6px)",
+      "animation": {
+        "type": "count_up",
+        "effect": "Le chiffre monte de 0 à la valeur cible",
+        "duration": "0.5-1s",
+        "easing": "ease-out"
+      },
+      "visible": "2-3 secondes",
+      "contexte": "Sous le chiffre, texte explicatif en 48px blanc",
+      "rule": "Un seul chiffre par écran. Pas de chiffres concurrents."
+    },
+
+    "before_after_labels": {
+      "description": "Labels pour le split-screen avant/après",
+      "labels": {
+        "before": {
+          "text": "BEFORE / RAW / BRUT",
+          "position": "centre gauche",
+          "font_size": "56px bold",
+          "color": "#FF4444 (rouge)"
+        },
+        "after": {
+          "text": "AFTER / EDITED / MONTÉ",
+          "position": "centre droite",
+          "font_size": "56px bold",
+          "color": "#00FF88 (vert)"
+        }
+      },
+      "separation": "Ligne verticale blanche au centre",
+      "alignment": "Labels au même Y, textes synchronisés sur la même syllabe"
+    }
+  },
+
+  "safe_zones": {
+    "description": "Zones à éviter pour le texte selon la plateforme",
+    "youtube_shorts": {
+      "top": "10% (titre de la vidéo)",
+      "bottom": "15% (boutons like/comment/share)",
+      "right": "5% (bouton subscribe)",
+      "safe_area": "centre 70% de l'écran"
+    },
+    "tiktok": {
+      "top": "15% (nom utilisateur + description)",
+      "bottom": "25% (boutons + musique + description)",
+      "right": "10% (boutons d'action)",
+      "safe_area": "centre gauche 55% de l'écran"
+    },
+    "instagram_reels": {
+      "top": "10% (nom + follow)",
+      "bottom": "20% (boutons + description)",
+      "right": "8% (boutons d'action)",
+      "safe_area": "centre 65% de l'écran"
+    }
+  },
+
+  "source_transcripts": [
+    "guide_shorts_podcast_complet.md (Section 6 — sous-titres dynamiques, hiérarchie visuelle)",
+    "MLLV9xLqC7o (text overlay techniques DaVinci)",
+    "hooks_psychology.json (power words → keyword highlight)"
+  ]
+}

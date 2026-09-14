@@ -1,0 +1,58 @@
+name: PERTURABO — F02_TYRANT_CAMP Verdict (PUR)
+
+on:
+  workflow_dispatch:
+    inputs:
+      vod_url:
+        description: 'URL VOD déjà traitée par VOX'
+        required: true
+        default: 'https://www.twitch.tv/videos/2864600351'
+      platform:
+        description: 'Plateforme cible'
+        required: false
+        default: 'youtube_shorts'
+      market:
+        description: 'Marché cible'
+        required: false
+        default: 'us_young_english'
+
+jobs:
+  verdict:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Skip F01 — build source_specimen via adaptateur PUR
+        run: |
+          python MONDES_FORGES/CLIPPING/pur_adapter.py \
+            --candidats MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts/v2864600351_candidats.json \
+            --directive MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/clipify_aishahsofey_directive.md \
+            --vod "${{ inputs.vod_url }}" \
+            --out MONDES_FORGES/CLIPPING/F02_TYRANT_CAMP/IN/pur_source_specimen.json
+
+      - name: F02 verdict (auto, sans IRON)
+        run: |
+          python MONDES_FORGES/CLIPPING/F02_TYRANT_CAMP/CODEBASE/tyrant_camp.py --auto \
+            --specimen F02_TYRANT_CAMP/IN/pur_source_specimen.json \
+            --platform "${{ inputs.platform }}" --market "${{ inputs.market }}"
+
+      - name: F02 finalize (copie ARCHIVUM + check-in)
+        run: |
+          python MONDES_FORGES/CLIPPING/F02_TYRANT_CAMP/CODEBASE/tyrant_camp.py --finalize
+
+      - name: Commit verdict
+        run: |
+          git config user.name "OracleF02"
+          git config user.email "oracle@perturabo.iron"
+          git add MONDES_FORGES/CLIPPING/F02_TYRANT_CAMP/IN \
+                  MONDES_FORGES/CLIPPING/F02_TYRANT_CAMP/OUT \
+                  MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/verdict.json \
+                  MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/reference_skeleton.json
+          git commit -m "[F02] verdict PUR (skip F01)" || echo "nothing to commit"
+          git push origin HEAD:main

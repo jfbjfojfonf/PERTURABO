@@ -1,0 +1,35 @@
+{
+  "style_name": "blur",
+  "description": "Dupliquer + agrandir + blur + centrer la clip originale",
+  "broll_by_duration": {
+    "15sec": {"max_broll": 1},
+    "30sec": {"max_broll": 3},
+    "45sec": {"max_broll": 3},
+    "60sec": {"max_broll": 4}
+  },
+  "broll_strategy": {
+    "rule": "Scoring intelligent, B-roll optionnel car le blur est déjà un traitement fort",
+    "scoring_ref": "ARCHIVUM/montage/patterns/broll_integration.json",
+    "blur_specific": {
+      "note": "Le blur rend le clip très différent. B-roll en plus uniquement si clip long.",
+      "when_to_add": "Clip > 25s avec moments visuels à illustrer",
+      "avoid": "Ne pas surcharger - le blur suffit souvent"
+    }
+  },
+  "workflow": {
+    "step_1": {"name": "Dupliquer la clip (2 couches)"},
+    "step_2": {"name": "Couche fond: zoom 2.25x + blur 30px"},
+    "step_3": {"name": "Couche dessus: taille originale, centrée"},
+    "step_4": {"name": "Scorer moments B-roll si clip > 25s"},
+    "step_5": {"name": "Édition: captions, title, music"}
+  },
+  "anti_detection": {
+    "required": true,
+    "zoom": "breathing_zoom (105-110%)",
+    "mirror": "Optionnel - le blur suffit souvent",
+    "speed": "1.05x si clip lent",
+    "sfx": "1-2 max",
+    "crop": "Pas nécessaire"
+  },
+  "broll": {"required": false, "ref": "ARCHIVUM/montage/patterns/broll_integration.json"}
+}

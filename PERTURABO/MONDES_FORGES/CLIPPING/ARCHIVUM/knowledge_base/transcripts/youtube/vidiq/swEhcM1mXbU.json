@@ -1,0 +1,47 @@
+{
+  "video_id": "swEhcM1mXbU",
+  "title": "What YouTube Actually Does With Your Video",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 22270,
+  "outlier_score": 0.01,
+  "thumbnail": "https://i.ytimg.com/vi/swEhcM1mXbU/maxresdefault.jpg",
+  "upload_date": "20260708",
+  "duration": 10,
+  "transcript": {
+    "text": "Ah, perfect. Come on this time. >> [laughter] [snorts] >> Son of a",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "Ah,",
+        "duration": 5.4
+      },
+      {
+        "start": 1.44,
+        "text": "perfect. Come on this time.",
+        "duration": 3.96
+      },
+      {
+        "start": 6.55,
+        "text": ">> [laughter]",
+        "duration": 2.45
+      },
+      {
+        "start": 7.205,
+        "text": "[snorts]",
+        "duration": 4.515
+      },
+      {
+        "start": 9.0,
+        "text": ">> Son of a",
+        "duration": 2.72
+      }
+    ],
+    "status": "OK",
+    "segment_count": 5
+  },
+  "captured_at": "2026-07-09T21:45:00Z",
+  "captured_by": "CAPTEURS"
+}

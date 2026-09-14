@@ -1,0 +1,7 @@
+{
+  "_comment": "Copier ce fichier en warsmith_brief.json et remplir les champs. Laisser null pour mode 'enclenche' pur (TYRANT d\u00e9cide seul).",
+  "mode": "enclenche",
+  "categorie_hint": "linkedin-scraper",
+  "target_hint": null,
+  "notes": "Focus sur les APIs avec latence > 3000ms et pricing > 30$/mois"
+}

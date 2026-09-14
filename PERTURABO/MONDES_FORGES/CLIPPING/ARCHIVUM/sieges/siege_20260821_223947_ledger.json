@@ -1,0 +1,59 @@
+{
+  "siege_id": "siege_20260821_223947",
+  "campaign_id": null,
+  "campaign_status": "closed",
+  "current_porte": "init",
+  "fleet_status": "capteurs_done",
+  "mode": "logo",
+  "inputs_warsmith": {
+    "directive_path": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/directive.md",
+    "reference_clip_path": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/reference_clip.json",
+    "platform_target": "youtube",
+    "market_target": "US residents age 25-45 interested in @Zdak",
+    "n_angles": 10
+  },
+  "fregates_status": {
+    "f01_scout": "pending",
+    "f01_scout_output": null,
+    "f02_tyrant_camp": "pending",
+    "f02_tyrant_camp_output": null,
+    "anglesmith": "pending",
+    "anglesmith_output": null,
+    "f03_source_hunter": "pending",
+    "f03_source_hunter_output": null,
+    "f04_copywriter": "pending",
+    "f04_copywriter_output": null,
+    "f05_packager": "pending",
+    "f05_packager_output": null,
+    "f06_tracker": "pending",
+    "f06_tracker_output": null,
+    "tyrant": "pending",
+    "tyrant_output": null,
+    "capteurs": "done",
+    "capteurs_output": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/F00_CAPTEURS/OUT/meme_virality_new_york_bagel.md"
+  },
+  "portes_validated": [],
+  "gate_decisions": {},
+  "packs_expedies_count": 0,
+  "packs_posted_count": 0,
+  "packs_submitted_whop_count": 0,
+  "last_event": "campaign_closed",
+  "siege_started_at": "2026-08-21T22:39:47Z",
+  "siege_closed_at": "2026-08-22T08:53:55Z",
+  "log_event": [
+    {
+      "at": "2026-08-21T22:39:47Z",
+      "event": "siege_started",
+      "angle_id": null
+    },
+    {
+      "at": "2026-08-21T22:39:47Z",
+      "event": "siege_started",
+      "angle_id": null
+    }
+  ],
+  "iw_custos": {
+    "last_validation": "2026-08-22T08:53:55Z",
+    "errors": []
+  }
+}

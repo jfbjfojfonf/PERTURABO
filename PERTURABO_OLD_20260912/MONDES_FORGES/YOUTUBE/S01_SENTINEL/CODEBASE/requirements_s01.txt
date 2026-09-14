@@ -1,0 +1,4 @@
+# Dépendances S01_SENTINEL SHORT
+yt-dlp
+youtube-transcript-api
+requests

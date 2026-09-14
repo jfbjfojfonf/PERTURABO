@@ -1,0 +1,19 @@
+{
+  "mode": "logo",
+  "name": "Clipping Logo",
+  "description": "Clipping de logos et formats meme. PERTURABO produit le contenu éditorial ; LACRIMAE réalise le rendu final.",
+  "contracts_dir": "PROFILES/logo/CONTRACTS",
+  "rules": ["clipping_rules_logo.md", "casino_rules.md"],
+  "pack_schema": "production_pack_schema_logo.json",
+  "copywriting_doctrine": "copywriting_doctrine_logo.md",
+  "copywriter_systemprompt": "copywriter_systemprompt_logo.md",
+  "capteurs_sites_example": "clipping_sites_to_scrap_logo.example.json",
+  "pack_nature": "texte_plus_assets_meme",
+  "pack_shape": "logo_pack",
+  "clip_source_provided_by": "warsmith_or_lacrimae_release",
+  "logo_render_owner": "LACRIMAE",
+  "sub_modes": ["informatif", "humour", "meme", "meme_v2"],
+  "meme_guide": "GUIDE_UTILISATION/04_MODE_MEME.md",
+  "meme_montage_rule": "MEME V1 conserve la découverte par mot-clé. MEME V2 reçoit une source sociale manuelle : le texte copié reste interne, la capture PNG est transmise dans le pack final, LACRIMAE affiche la capture au-dessus du clip mème de sa release et produit la vidéo finale. F00 est en pause en V2.",
+  "notes": "Le tag du clip et la chaîne de destination sont fournis par l’Opérateur pour chaque angle ; F05 assemble et ne génère pas de vidéo."
+}

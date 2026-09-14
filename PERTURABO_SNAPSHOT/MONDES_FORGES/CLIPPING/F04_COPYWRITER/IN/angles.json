@@ -1,0 +1,147 @@
+{
+  "campaign_id": "marvel doomsday",
+  "n_angles": 8,
+  "anglesmith_status": "done",
+  "weighting_eligible": false,
+  "sub_mode": "meme",
+  "forge_mode": "premium",
+  "angles": [
+    {
+      "angle_id": "A01",
+      "emotion": "drole",
+      "emotion_mode": "drole",
+      "angle_family": "reframing",
+      "reframe_dim": "fait_vers_absurde",
+      "engagement_type": "question",
+      "meme_hook": "[Doom conquering the multiverse] at [epic villain arc]: -> [Doom conquering the multiverse] at [just trying to erase student loans bro]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A02",
+      "emotion": "drole",
+      "emotion_mode": "drole",
+      "angle_family": "parodie",
+      "reframe_dim": "villain_vers_antagoniste_banal",
+      "engagement_type": "quote",
+      "meme_hook": "[Avengers fighting Doom to save reality] at [heroic last stand]: -> [Avengers fighting Doom because he's about to delete Sallie Mae from existence]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A03",
+      "emotion": "trahison",
+      "emotion_mode": "trahison",
+      "angle_family": "ironie",
+      "reframe_dim": "menace_vers_revelation_cachee",
+      "engagement_type": "hot_take",
+      "meme_hook": "[Doom destroying universes to save his family] at [tragic backstory reveal]: -> [Doom destroying universes because tuition was 84K a year]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A04",
+      "emotion": "trahison",
+      "emotion_mode": "trahison",
+      "angle_family": "absurde",
+      "reframe_dim": "financement_vers_motivation_reelle",
+      "engagement_type": "conspiracy",
+      "meme_hook": "[Tony Stark funding Avengers with billions] at [billionaire hero sacrifice]: -> [Doom funding Avengers because his PhD cost more than Latveria's GDP]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A05",
+      "emotion": "joie",
+      "emotion_mode": "joie",
+      "angle_family": "jeu_de_mots",
+      "reframe_dim": "doomsday_vers_doomsday_de_la_dette",
+      "engagement_type": "reaction",
+      "meme_hook": "[Avengers Doomsday movie title] at [apocalyptic event]: -> [Avengers Doomsday = the day student debt gets Doomsday'd]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A06",
+      "emotion": "joie",
+      "emotion_mode": "joie",
+      "angle_family": "parodie",
+      "reframe_dim": "reaction_etudiants_vers_campagne_marketing",
+      "engagement_type": "tag",
+      "meme_hook": "[Taylor Swift as Doom's emotional reactor in the trailer] at [pop culture crossover chaos]: -> [Students reacting to Doom's plan like it's Eras Tour tickets dropping]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A07",
+      "emotion": "vertige",
+      "emotion_mode": "vertige",
+      "angle_family": "absurde",
+      "reframe_dim": "multivers_vers_simulation_administrative",
+      "engagement_type": "hot_take",
+      "meme_hook": "[Doom rewriting every timeline in the multiverse] at [god-level power move]: -> [Doom rewriting every timeline but the only one without student debt is Earth-742]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    },
+    {
+      "angle_id": "A08",
+      "emotion": "frustration",
+      "emotion_mode": "frustration",
+      "angle_family": "ironie",
+      "reframe_dim": "solution_simple_vers_complexite_villainesque",
+      "engagement_type": "question",
+      "meme_hook": "[Doom building a time machine to fix everything] at [genius-level engineering]: -> [Doom building a time machine when income-based repayment plans already existed]:",
+      "duration_sec_range": {
+        "min": 5,
+        "max": 7
+      },
+      "zone": "direct",
+      "keyword": "marvel doomsday",
+      "weight": 1.0,
+      "humour_spin": "Docteur Doom fait tout ce qu il fait parce qu il a perdu sa famille alors que la reponse etait juste depuis le debut : il essaie de creer un timeline ou la dette etudiante n existe pas. Taylor Swift en reacteur emotionnel, reaction des etudiants (heureux)."
+    }
+  ],
+  "check_in_iw_custos": "2026-08-18T14:27:17Z"
+}

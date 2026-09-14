@@ -1,0 +1,166 @@
+{
+  "niche": "Hurricanes US — Météo extrême américaine",
+  "concept": "Taxonomie exhaustive avec escalade — 'Every Type Of X Explained' appliqué aux ouragans et catastrophes météo",
+  "channel_names": [
+    {
+      "rank": 1,
+      "name": "The Stormist",
+      "rationale": "Miroir direct de 'The Escalist'. Même structure: article + nom évocateur. 'Storm' = ancrage météo US, '-ist' = expert/spécialiste. Court, prononçable, mémorisable. Parfait pour le niche bending.",
+      "memorability_score": 9,
+      "seo_score": 8,
+      "brand_score": 9
+    },
+    {
+      "rank": 2,
+      "name": "Storm Tiers",
+      "rationale": "Double sens: 'tiers' = niveaux/catégories (le concept de la chaîne) + 'tears' (les larmes des tempêtes). Ultra-descriptif du contenu: on classe les tempêtes par niveau.",
+      "memorability_score": 8,
+      "seo_score": 9,
+      "brand_score": 8
+    },
+    {
+      "rank": 3,
+      "name": "Level Storm",
+      "rationale": "Reprend le concept d'escalade par niveau. 'Level' = le cœur du format (level by level). Facile à décliner: 'Level Quake', 'Level Blaze' si expansion vers d'autres catastrophes.",
+      "memorability_score": 8,
+      "seo_score": 7,
+      "brand_score": 8
+    },
+    {
+      "rank": 4,
+      "name": "Surge Scale",
+      "rationale": "'Surge' = la montée des eaux (storm surge, le tueur #1 des ouragans). 'Scale' = l'échelle (Saffir-Simpson). Allitération en S. Technique mais évocateur.",
+      "memorability_score": 7,
+      "seo_score": 8,
+      "brand_score": 8
+    },
+    {
+      "rank": 5,
+      "name": "Eye Wall",
+      "rationale": "Terme météo réel (le mur de l'œil = la partie la plus destructrice d'un ouragan). Court, mystérieux, visuel. Risque: pas immédiatement compris hors niche.",
+      "memorability_score": 8,
+      "seo_score": 6,
+      "brand_score": 7
+    },
+    {
+      "rank": 6,
+      "name": "Bluntly Storms",
+      "rationale": "Niche bending littéral de 'BluntlyExplained' vers la météo. Direct, clair sur le tone of voice. Risque: trop proche du specimen, pas assez original.",
+      "memorability_score": 7,
+      "seo_score": 8,
+      "brand_score": 6
+    },
+    {
+      "rank": 7,
+      "name": "Cat Five",
+      "rationale": "Référence directe à la catégorie 5 (le climax ultime). Court, punch. Risque: limite le positionnement si expansion au-delà des hurricanes.",
+      "memorability_score": 8,
+      "seo_score": 5,
+      "brand_score": 7
+    },
+    {
+      "rank": 8,
+      "name": "Storm Atlas",
+      "rationale": "'Atlas' = cartographie exhaustive (le concept de la chaîne). Sonne éducatif et ambitieux. Risque: 'Atlas' est surutilisé dans le naming YouTube.",
+      "memorability_score": 7,
+      "seo_score": 7,
+      "brand_score": 6
+    },
+    {
+      "rank": 9,
+      "name": "Gale Force",
+      "rationale": "Terme météo (force du vent). Allitération. Risque: 'Gale' est moins connu du grand public US que 'storm' ou 'hurricane'.",
+      "memorability_score": 6,
+      "seo_score": 6,
+      "brand_score": 7
+    },
+    {
+      "rank": 10,
+      "name": "Weather Ranks",
+      "rationale": "Ultra-descriptif: on classe la météo par rang. SEO fort. Risque: générique, pas de personnalité, ressemble à un Wikipedia de la météo.",
+      "memorability_score": 5,
+      "seo_score": 9,
+      "brand_score": 4
+    }
+  ],
+  "description": "Every storm. Every category. Every level of destruction — explained.\n\nThis channel breaks down hurricanes, cyclones, and extreme weather events from the mildest disturbance to the most catastrophic superstorm. No fluff. No filler. Just facts, escalation, and the science behind nature's most powerful forces.\n\nNew videos every week.\n\nhurricane categories explained saffir simpson scale extreme weather tropical storms cyclones typhoons storm surge natural disasters weather science",
+  "tags": [
+    "hurricane",
+    "hurricane explained",
+    "category 5 hurricane",
+    "saffir simpson scale",
+    "extreme weather",
+    "tropical storm",
+    "cyclone",
+    "typhoon",
+    "storm surge",
+    "hurricane categories",
+    "natural disasters",
+    "weather explained",
+    "every type of hurricane",
+    "bomb cyclone",
+    "hypercane",
+    "hurricane history",
+    "worst hurricanes",
+    "weather science",
+    "storm explained",
+    "hurricane vs typhoon"
+  ],
+  "tone_of_voice": {
+    "register": "Dense, factuel, zéro blabla. Chaque mot porte de l'information. Pas de salutation, pas de remplissage, pas d'opinion.",
+    "rhythm": "Métronomique — ~35-40s par type/catégorie. Chaque section suit le même patron: Nom. Définition. Chiffres. Fait dingue. Suivant. Zéro transition entre les sections.",
+    "signature_vocabulary": "Phrases courtes et déclaratives. 'Category X hurricane.' 'Sustained winds of Y miles per hour.' 'This is equivalent to...' Comparaisons concrètes pour les faits dingues (NYC to Houston, 10 000 bombes nucléaires).",
+    "personality": "Encyclopédie vivante. Comme un professeur fasciné par son sujet qui compresse un semestre en 5 minutes. Pas d'humour, pas d'exclamation, pas d'émotion — les FAITS créent l'émotion.",
+    "never_does": [
+      "Jamais de 'Bonjour à tous' ou 'Hey guys'",
+      "Jamais de CTA 'abonne-toi' ou 'like'",
+      "Jamais de transition entre les types ('Maintenant passons à...')",
+      "Jamais d'opinion personnelle ('Je trouve que...')",
+      "Jamais de question rhétorique ('Vous saviez que... ?')",
+      "Jamais de teasing artificiel ('Restez jusqu'à la fin')"
+    ]
+  },
+  "visual_codes": {
+    "color_palette": "Fond blanc pur. Gradient vert→jaune→orange→rouge pour encoder l'escalade (vert=faible, rouge=destructeur). Silhouettes noires sur cercles colorés. Texte noir ou blanc selon le fond.",
+    "graphic_style": "Infographie flat 100%. Pictogrammes et icônes simples, pas de photo réaliste, pas de satellite, pas de cinématique. Chaque type = un cercle coloré avec une silhouette noire distincte.",
+    "thumbnail_template": "Grille de 7-8 cercles colorés disposés en rangées (4+3 ou 4+4). Chaque cercle contient un pictogramme noir. Labels en gras sous chaque cercle. Fond blanc. Le gradient de couleur encode l'escalade de gauche à droite, de haut en bas.",
+    "typography": "Sans-serif bold (Impact, Montserrat Black ou équivalent). Labels noirs sur fond blanc. Gros pour lisibilité mobile."
+  },
+  "format_standard": {
+    "target_duration": "5-6 minutes",
+    "types_per_video": "7-8 types par vidéo",
+    "structure": "Every [Type/Category/Level] Of [Subject] Explained in [Y] minutes",
+    "publish_frequency": "2 vidéos par semaine (idéal pour croissance rapide en niche vierge)"
+  },
+  "banner_prompt_text": "PROPOSITION BANNER (2560x1440) :\n\nConcept : Infographie flat avec gradient d'escalade appliqué aux ouragans.\n\nComposition :\n- Fond blanc/crème très clair\n- Au centre : 5 cercles disposés en arc, de petit (gauche) à grand (droite)\n- Chaque cercle contient une silhouette noire d'ouragan de plus en plus intense :\n  • Cercle 1 (vert) : petite spirale — tropical storm\n  • Cercle 2 (jaune-vert) : spirale moyenne — Cat 1\n  • Cercle 3 (jaune) : spirale plus grosse — Cat 3\n  • Cercle 4 (orange) : grosse spirale avec éclairs — Cat 5\n  • Cercle 5 (rouge) : spirale monstrueuse — Hypercane\n- En dessous des cercles : le nom de la chaîne en gras (Impact/Montserrat Black), noir\n- Sous le nom : tagline en plus petit \"Every storm. Every level. Explained.\"\n- Zone safe au centre (la partie visible sur tous les écrans)\n\nStyle : Flat, propre, professionnel. Même ADN que les thumbnails de The Escalist mais appliqué aux ouragans. Pas de photo, pas de 3D, pas de dégradé complexe.\n\nPalette : Blanc dominant, cercles en gradient vert→rouge, texte noir.",
+  "logo_prompt_text": "PROPOSITION LOGO (carré 1:1) :\n\nConcept : Pictogramme minimaliste d'un ouragan vu du dessus.\n\nComposition :\n- Fond blanc ou cercle coloré (orange ou rouge foncé)\n- Au centre : silhouette noire d'une spirale d'ouragan (vue satellite stylisée)\n- La spirale a un petit œil blanc au centre (le eye wall)\n- Style flat, pas de dégradé, pas de détails réalistes\n- Lisible à 32x32 pixels (donc très simple)\n\nAlternative : \n- Cercle rouge foncé avec une spirale blanche au centre\n- Rappelle un signal d'alerte météo\n- Le nom de la chaîne N'EST PAS dans le logo (il sera ajouté séparément)\n\nStyle : Même registre que le logo de The Escalist (simple, identifiable, marque forte) mais sans personnage cartoon — on reste dans le registre scientifique/infographique.",
+  "banner_prompt": "[ATTENTE VALIDATION — voir banner_prompt_text]",
+  "logo_prompt": "[ATTENTE VALIDATION — voir logo_prompt_text]",
+  "demon_analysis": {
+    "name": "The Escalist",
+    "identity_elements": {
+      "name_structure": "Article 'The' + portmanteau (Escalation + List)",
+      "description": "Explaining escalation, level by level.",
+      "tagline": "Disasters, dangers, and extremes, all broken down visually, from the calmest level to the most intense.",
+      "logo": "Cartoon man in orange jacket pointing, simple line art illustration, warm tones (beige/orange/cream)",
+      "banner": "Same illustrated character on cream/beige background, warm friendly tones",
+      "brand_colors": "Beige, cream, orange (branding) + blanc, vert→rouge (thumbnails)",
+      "personality": "Friendly but authoritative — le personnage cartoon humanise le contenu scientifique"
+    },
+    "what_we_copy": "Le format (escalade taxonomique), le style thumbnail (grille, gradient), le tone of voice (dense, factuel)",
+    "what_we_dont_copy": "Le personnage cartoon (on reste pure infographie), les couleurs chaudes du branding (on reste froid/scientifique), le nom (on crée notre propre identité)"
+  },
+  "f06_meta": {
+    "forged_at": "2026-07-10T18:46:58Z",
+    "model_used": "claude-sandbox",
+    "specimen_source": "Every Type Of Star Explained — BluntlyExplained",
+    "demon_analyzed": "The Escalist — screenshot de la page chaîne",
+    "rules_applied": [
+      "Règle 3: Niche Bending > Copie directe",
+      "Règle 5: Océan Bleu = seul chemin",
+      "Règle 8: Validation avant production"
+    ]
+  },
+  "chosen_name": "The Stormist",
+  "chosen_handle": "@thestormist"
+}

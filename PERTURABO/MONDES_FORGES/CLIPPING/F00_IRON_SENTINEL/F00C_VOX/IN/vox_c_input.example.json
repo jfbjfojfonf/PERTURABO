@@ -1,0 +1,12 @@
+{
+  "sources": ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"],
+  "heatmap_buckets": 120,
+  "download_budget_seconds": 0,
+  "_notes": {
+    "sources": "URL YouTube (watch, youtu.be, /live/, /shorts/), Twitch (videos/<id> ou /<channel>) ou chemin local. Live EN COURS et vidéo FINIE : même pipeline, même manifeste.",
+    "heatmap_buckets": "Nombre de buckets de la heatmap d'attention (défaut 120, min 10). La heatmap ne vit que sur un média local : pour une URL, poser download_budget_seconds > 0.",
+    "download_budget_seconds": "0 = metadata_only (aucun téléchargement). > 0 = yt-dlp télécharge la tranche *0-<budget> en stream copy pour analyser la heatmap localement (doctrine : jamais de VOD complète).",
+    "sortie": "OUT/live_analysis.json — schéma perturabo.voxc.v1 : metadata, attention_heatmap, viral_segments (pics espacés >= 5 s), raw_data pour l'Oracle.",
+    "oracle": "L'Oracle lit heatmap + segments + raw_data avant de valider un pack. Les segments viraux sont la matière première des angles (F04) et du montage (F06)."
+  }
+}

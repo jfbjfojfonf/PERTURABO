@@ -1,0 +1,42 @@
+{
+  "pattern_name": "blur_montage",
+  "description": "Blur effects and visual emphasis techniques for clips",
+  "source_transcripts": ["hhTjwKwq8xs", "EAtAWaUcI9g", "Z0sZKDJd9Vg", "LmXpbP7dD48"],
+  "techniques": {
+    "background_blur": {
+      "purpose": "Focus viewer attention on the subject when source is 16:9 and we crop to 9:16",
+      "how_to": "When cropping 16:9 to 9:16, the edges are blurred to fill the vertical frame",
+      "capcut_method": "Use 'Canvas' → 'Blur' or 'Style' → 'Blur background'",
+      "when_to_use": "Always when converting landscape footage to vertical format",
+      "intensity": "Moderate (not too strong, not too weak)"
+    },
+    "zoom_blur_transition": {
+      "purpose": "Dynamic transition between clips or moments",
+      "how_to": "Zoom in quickly with motion blur on the transition",
+      "when_to_use": "Between ranking segments, on punchlines, on reaction moments"
+    },
+    "depth_of_field_blur": {
+      "purpose": "Simulate professional camera depth of field",
+      "how_to": "Keep subject sharp, blur background/foreground",
+      "when_to_use": "On talking head segments, interviews, reactions"
+    },
+    "moment_emphasis_blur": {
+      "purpose": "Draw attention to a specific moment or reaction",
+      "how_to": "Slight vignette + blur edges, keep center sharp",
+      "when_to_use": "On key moments, punchlines, controversial statements"
+    },
+    "overlay_blur": {
+      "purpose": "Show B-roll or image overlay while keeping audio context",
+      "how_to": "Extract audio from original clip, add image/video overlay on top",
+      "capcut_method": "Extract audio → Add overlay → Position on timeline",
+      "when_to_use": "When illustrating a point, showing evidence, adding visual context",
+      "note_from_transcript": "BOAU (Behind And Overlay) = overlay technique. Show picture/video while voice continues."
+    }
+  },
+  "blur_presets": {
+    "subtle": {"blur_radius": "10-20px", "opacity": "30%"},
+    "medium": {"blur_radius": "20-40px", "opacity": "50%"},
+    "strong": {"blur_radius": "40-60px", "opacity": "70%"},
+    "vignette": {"blur_radius": "60px", "opacity": "80%", "center": "subject"}
+  }
+}

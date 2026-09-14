@@ -1,0 +1,52 @@
+{
+  "schema_version": "caviar_budget.v1",
+  "owner": "F00D_NARRATIVUM",
+  "consumer": "LACRIMAE (gates P-CAV)",
+  "clip_duration_reference_sec": 30,
+  "budget_total_units": 100,
+  "spend_ceiling_units": 55,
+  "breathing_floor_pct": 60,
+  "events": {
+    "broll_trio": {
+      "description": "B-roll + flash blanc d'entrée + SFX (trio inséparable)",
+      "cost_units": 12,
+      "max_per_clip": 3,
+      "max_duration_frames": 45,
+      "forbidden_during": "resolution",
+      "flash": { "duration_frames": [3, 5], "position": "entry_only" },
+      "sfx": { "required_with_flash": true, "same_frame": true, "volume_rule": "under_voice" }
+    },
+    "smash_audio": {
+      "description": "Ducking audio au climax",
+      "cost_units": 8,
+      "max_per_clip": 2,
+      "duck": { "db": -12, "duration_sec": [0.5, 1.0] }
+    },
+    "punch_in": {
+      "description": "Zoom 1.15-1.3x sur pic d'amplitude, courbe douce",
+      "cost_units": 6,
+      "max_per_clip": 4,
+      "min_gap_sec": 2.0,
+      "scale": [1.15, 1.3],
+      "duration_sec": [0.5, 0.8]
+    },
+    "jump_cut": {
+      "description": "Trim silence > 250 ms",
+      "cost_units": 1,
+      "max_per_clip": 8,
+      "silence_threshold_ms": 250
+    }
+  },
+  "saturation_policy": {
+    "on_budget_exceeded": "refuse_to_emit_with_diagnosis",
+    "on_too_many_silences": "refuse_and_flag_segment_poor",
+    "single_event_rule": "no_two_strong_visual_events_same_frame",
+    "resolution_zone": "no_events_after_resolution_at"
+  },
+  "style_adjustments": {
+    "split": "broll_on_game_half, punch_in_on_webcam_half",
+    "reframing": "overlay_from_frame0_until_climax, in_medias_res",
+    "ranking": "broll_trio_marks_item_entry, item1_extra_smash_allowed, silence_0.3-0.5s_before_rank1",
+    "blur": "broll_blur_panels: crop_zoom_1.3 + blur_18px derrière panneau texte vertical, trio blur+flash+SFX inséparable, climax_first, hook_type climax_first"
+  }
+}

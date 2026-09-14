@@ -1,0 +1,19 @@
+{
+  "channel": "The Stormist",
+  "channel_slug": "the_stormist",
+  "videos": [
+    {
+      "title": "Every Category Of Hurricane Explained in 5 minutes",
+      "video_number": 1,
+      "published": false,
+      "published_at": null,
+      "views": 0,
+      "ctr": null,
+      "retention": null,
+      "outlier_score": null
+    }
+  ],
+  "last_sweep": null,
+  "auto_tracking": false,
+  "created_at": "2026-07-10T19:00:13Z"
+}

@@ -1,0 +1,1532 @@
+{
+  "video_id": "h9dL6a8WDgU",
+  "title": "This New Claude AI Tool is Basically Cheating",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 57216,
+  "outlier_score": 0.02,
+  "thumbnail": "https://i.ytimg.com/vi/h9dL6a8WDgU/maxresdefault.jpg",
+  "upload_date": "20260506",
+  "duration": 629,
+  "transcript": {
+    "text": "This is Claude AI and we've just directly connected it to the YouTube algorithm and your channel. With vidIQ's new plugin, AI models like Claude can audit your channel, search YouTube, spot outliers, and reverse-engineer viral videos. That is the type of research that took hours, but now can be done by any creator of any skill level in a matter [music] of seconds. So, let's take a look at what this can do for you. I'm here with Eric, one of the vidIQ coaches. I think everybody's really keen to see how this works. There is there are like a just a tiny bit of setup here, is it that we have to get vidIQ and Claude to communicate with each other. So, how do we do that? >> All right, so in order to connect it, there's two ways you could do it. There is the link in the description or you can go to vidIQ.com/claude. That's going to bring you to this landing page here and then you're going to scroll down here and you're going to copy the server URL. So, once you do that, all you have to do is go over to your Claude and you will go to your settings and then go to connectors. And you're going to go to add custom connectors and then let's just type vidIQ and then you're going to paste. And then you're going to go to add. >> All right, Eric, let's try something that's probably very familiar to a lot of people when talking to AI and that is asking for a channel audit. But, what I'm interested in is how the Claude and vidIQ MCP bring something new and fresh to this type of conversation. >> All right, so first we're going to paste this prompt inside of ChatGPT. Now, ChatGPT is is is awesome, but it's not connected to our YouTube data. So, it gives us some good advice, but it's just general YouTube advice that would be good for any channel, maybe our size because it's only looking at our public-facing data. This is what happens when you connect Claude to vidIQ and you do you run that prompt for a channel audit. This is not just generic YouTube advice. This is detailed data based on what is actually happening in our channel and I actually think that it provided some great insight. When we go down, what what Claude begins to do is it lets us know where we're leaving views on the table. >> So, I guess in summary, it's observation of channel, uh a reason why this might be happening, and then actual actionable steps here over the next 30 days. >> Yeah, I First of all, shout out to you, the one of the uh the the shadow ban video seems to be doing quite well. Of course, the niche bend the video did well uh as well. As I was coaching vidIQ as a coach and I was using this with one of my creators. That kind of news reaction-based content is the type of content based on the data that is actually getting us into the browser feed. You know, our North Star is the fact that we we've we're always on top of the news and that isn't quite covered as as frequently as other channels. So, that's an interesting observation there from Claude. So, we already feel as if I'm having a deeper conversation with Claude about the vidIQ channel. I guess what I want to know now is stepping out of our channel bubble for a second, what's popping off in our niche and how does it relate back to our channel so that we can take advantage of it? >> All right, so this next prompt is we're going to ask it to find channels in our niche that are punching above their subscriber count. We're not looking for big ones, we're looking for the ones that are maybe for us would be 20K to 100K, but are pulling 300K uh views. This channel, Solo Retire Life, has 20,000 subscribers, but recently pulled a video with almost 300,000 views on a topic that we cover in in our niche. So, uh we want to know what are some of the things that they're doing well. I think the Solo Retire Life is actually going to be a great example because it's pulling actual data. It gives us some really good insight into what she's doing. So, Solo Retire Life in her visual format is also still in reach. Instead of just using static B-roll and talking head, her entire video is vlogging in public as she talks. She's pulling both the slow living vlog and YouTube earning videos, which are two algorithms and two doorways into the content space. And so, this actually mirrors something we talked about here on uh the channel as far as niche bend. To give you a like a brief breakdown of niche bending, it was the idea of taking formats that work uh for other niches and adapting them into your content. >> It's keeping that in mind and it's giving us this idea that actually one of the best pattern or one of the patterns that are breaking on YouTube that would that is actual story that we can do a video on is the most viral YouTube growth videos right now aren't being made by YouTube growth channels. It mentions that as a a suggestion of something that we could cover. >> So, what we seem to find there, Eric, are channels that are breaking out in our niche that give us more long-term evergreen potential when making content. What I'm interested in now is outliers that discover current and trending topics that we can jump on immediately. How would we go about searching for that? >> we're going to ask it to show us videos which are in vidIQ's niche. You can ask it to show you videos that are in your niche which are really uh from the last 90 days. These we're not looking for viral videos that they'll blow up and really don't have a pattern of repeatable success, but we want videos that really beat their channel's baseline average by at least three times. Here and one of the one of the patterns that it kind of breaks out coincidentally, you may be maybe not, that they all have to do with using Claude and how, you know, AI is a big topic and using Claude and with YouTube. When we talk about what this means for vidIQ's specifically, it it suggested the Claude code wave is one of the hottest things right now and because it's pulling from the data, it can let us know that if we're going to do something about this, this is something that we should probably do soon versus doing later. >> Yeah, and if you haven't already realized, this very video is us practicing what the Claude vidIQ MCP is preaching. I'm pretty much convinced, Eric, at this point that the Claude vidIQ MCP tool can have deep and meaningful intimate conversations with the creator about their channel when prompted. But, what I want to know is can we make this more seamless with scheduled tasks to help the creator on their YouTube journey? Exactly. For By the way, I love scheduled. That is I think that is the proper way to to say it. So, once you have the Claude desktop app, you're going to go to the co-work section and then you're going to go to scheduled and then you're going to go to new task. And so, for this task here, I would like a daily content radar. And so, using this MCP tool, we can have it automatically schedule [clears throat] to look at our last five published videos as as a task. Now, this may not come as a surprise, but I got ADHD. Squirrel! So, a big thing for me is the type of friction it takes for me to get into a task. Being able to already have this scheduled, so when I open it, I can just look at it and not have to go pulling from here and there, that is a huge help. All right, so we have run a prompt and this is what we got. Now, imagine opening up your Claude assistant desktop and getting this information. This is super helpful. This is our our last five videos showing us what we did well concerning the packaging, concerning the hooks. We're looking at the retention data here. I like an overflow of information that I could look at. If this feels overwhelming for any creator, they can always customize their prompt in a very, you know, simple way that fits what you need, the information that you want to see each morning. >> So, already, Eric, this tool is giving us a ton of help with pre- and post-production, whether it's finding outliers related to our niche or getting an audit of our channel. But, what about the content creation process itself? AI has really helped creators save a ton of time writing scripts, but this Claude vidIQ MCP integration takes things just a little bit further, doesn't it? >> One of the huge things that I love about Claude is projects. And projects allows your Claude to work in a kind of a silo of specific content. AI is a great co-worker, but it's not a great boss, right? So, you still need to do the work, you need you still need to be a student of YouTube in general so that you can kind of test and look at the information that you are getting from any AI. And so, when we're talking about script writing, one of the things that I like to do is whenever I read a book or watch a video, I would take notes and then I would copy those notes into my Claude project files so that when I'm writing a script, it's only using the context of those notes, which are proven frameworks and helpful information to write that script. so we we dropped this prompt in here and then these are some of the outlier videos that have performed well for us with for in in the last 90 days or so. And so, it's taking that information along with the frameworks that are in the Claude project file and it's giving us a structural DNA. It's breaking down exactly what these things done did well, what they all kind of share in common so that we could could think about this when we're going into our new content. Sometimes there's a temptation to use AI to just create, just like let AI just run wild. But, no, you want it to work within a structure. You want it to work in a framework in order to get the most out of it. And so, with this, we're we're able to set a specific framework based on what has traditionally working on our channel and that's what you're seeing here now. And then, you know, you a creator will still want to come in here and tweak it, but this is like saving you >> [laughter] >> like a a countless time versus if you had to do all of this from from scratch. >> And as you said, this is just a starting point of assigning projects to the vidIQ Claude MCP to really take things to the next level. Yeah, there is so much more that you could that you could do that and that you maybe we'll get into. >> [music] >> Just in summary, uh Eric, again, like why do people need to get on this now and start exploiting the benefits of this tool? >> Listen, I'm just a random man on the internet, but I'm telling you, get this, try it out, push it to its limits, learn everything you can, and determine in your mind that I am going to be an expert on this tool cuz I'm telling you, this is going to change how people create content. >> And as I a fellow random man on the internet who just happens to be wearing eccentric blue glasses, I highly recommend you watch this video next, which will go into greater detail on some of our Vidiq tools to help you grow even faster.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "This is Claude AI and we've just",
+        "duration": 4.32
+      },
+      {
+        "start": 2.68,
+        "text": "directly connected it to the YouTube",
+        "duration": 4.48
+      },
+      {
+        "start": 4.32,
+        "text": "algorithm and your channel. With vidIQ's",
+        "duration": 5.16
+      },
+      {
+        "start": 7.16,
+        "text": "new plugin, AI models like Claude can",
+        "duration": 4.72
+      },
+      {
+        "start": 9.48,
+        "text": "audit your channel, search YouTube, spot",
+        "duration": 4.64
+      },
+      {
+        "start": 11.88,
+        "text": "outliers, and reverse-engineer viral",
+        "duration": 4.04
+      },
+      {
+        "start": 14.12,
+        "text": "videos. That is the type of research",
+        "duration": 4.44
+      },
+      {
+        "start": 15.92,
+        "text": "that took hours, but now can be done by",
+        "duration": 4.96
+      },
+      {
+        "start": 18.56,
+        "text": "any creator of any skill level in a",
+        "duration": 3.52
+      },
+      {
+        "start": 20.88,
+        "text": "matter [music] of seconds. So, let's",
+        "duration": 3.76
+      },
+      {
+        "start": 22.08,
+        "text": "take a look at what this can do for you.",
+        "duration": 4.52
+      },
+      {
+        "start": 24.64,
+        "text": "I'm here with Eric, one of the vidIQ",
+        "duration": 3.56
+      },
+      {
+        "start": 26.6,
+        "text": "coaches. I think everybody's really keen",
+        "duration": 3.72
+      },
+      {
+        "start": 28.2,
+        "text": "to see how this works. There is there",
+        "duration": 3.52
+      },
+      {
+        "start": 30.32,
+        "text": "are like a just a tiny bit of setup",
+        "duration": 3.88
+      },
+      {
+        "start": 31.72,
+        "text": "here, is it that we have to get vidIQ",
+        "duration": 4.24
+      },
+      {
+        "start": 34.2,
+        "text": "and Claude to communicate with each",
+        "duration": 2.68
+      },
+      {
+        "start": 35.96,
+        "text": "other. So, how do we do that?",
+        "duration": 2.2
+      },
+      {
+        "start": 36.88,
+        "text": ">> All right, so in order to connect it,",
+        "duration": 2.56
+      },
+      {
+        "start": 38.16,
+        "text": "there's two ways you could do it. There",
+        "duration": 3.68
+      },
+      {
+        "start": 39.44,
+        "text": "is the link in the description or you",
+        "duration": 5.08
+      },
+      {
+        "start": 41.84,
+        "text": "can go to vidIQ.com/claude.",
+        "duration": 4.08
+      },
+      {
+        "start": 44.52,
+        "text": "That's going to bring you to this",
+        "duration": 2.8
+      },
+      {
+        "start": 45.92,
+        "text": "landing page here and then you're going",
+        "duration": 3.24
+      },
+      {
+        "start": 47.32,
+        "text": "to scroll down here and you're going to",
+        "duration": 4.32
+      },
+      {
+        "start": 49.16,
+        "text": "copy the server URL. So, once you do",
+        "duration": 4.52
+      },
+      {
+        "start": 51.64,
+        "text": "that, all you have to do is go over to",
+        "duration": 4.36
+      },
+      {
+        "start": 53.68,
+        "text": "your Claude and you will go to your",
+        "duration": 6.2
+      },
+      {
+        "start": 56.0,
+        "text": "settings and then go to connectors.",
+        "duration": 5.44
+      },
+      {
+        "start": 59.88,
+        "text": "And you're going to go to add custom",
+        "duration": 3.48
+      },
+      {
+        "start": 61.44,
+        "text": "connectors and then let's just type",
+        "duration": 4.12
+      },
+      {
+        "start": 63.36,
+        "text": "vidIQ",
+        "duration": 5.36
+      },
+      {
+        "start": 65.56,
+        "text": "and then you're going to paste.",
+        "duration": 5.44
+      },
+      {
+        "start": 68.72,
+        "text": "And then you're going to go to add.",
+        "duration": 3.4
+      },
+      {
+        "start": 71.0,
+        "text": ">> All right, Eric, let's try something",
+        "duration": 2.72
+      },
+      {
+        "start": 72.12,
+        "text": "that's probably very familiar to a lot",
+        "duration": 3.32
+      },
+      {
+        "start": 73.72,
+        "text": "of people when talking to AI and that is",
+        "duration": 3.56
+      },
+      {
+        "start": 75.44,
+        "text": "asking for a channel audit. But, what",
+        "duration": 4.56
+      },
+      {
+        "start": 77.28,
+        "text": "I'm interested in is how the Claude and",
+        "duration": 5.84
+      },
+      {
+        "start": 80.0,
+        "text": "vidIQ MCP bring something new and fresh",
+        "duration": 4.64
+      },
+      {
+        "start": 83.12,
+        "text": "to this type of conversation.",
+        "duration": 2.88
+      },
+      {
+        "start": 84.64,
+        "text": ">> All right, so first we're going to paste",
+        "duration": 3.6
+      },
+      {
+        "start": 86.0,
+        "text": "this prompt inside of ChatGPT. Now,",
+        "duration": 5.0
+      },
+      {
+        "start": 88.24,
+        "text": "ChatGPT is is is awesome, but it's not",
+        "duration": 4.48
+      },
+      {
+        "start": 91.0,
+        "text": "connected to our YouTube data. So, it",
+        "duration": 4.76
+      },
+      {
+        "start": 92.72,
+        "text": "gives us some good advice, but it's just",
+        "duration": 5.36
+      },
+      {
+        "start": 95.76,
+        "text": "general YouTube advice that would be",
+        "duration": 4.8
+      },
+      {
+        "start": 98.08,
+        "text": "good for any channel, maybe our size",
+        "duration": 4.04
+      },
+      {
+        "start": 100.56,
+        "text": "because it's only looking at our",
+        "duration": 4.0
+      },
+      {
+        "start": 102.12,
+        "text": "public-facing data. This is what happens",
+        "duration": 4.92
+      },
+      {
+        "start": 104.56,
+        "text": "when you connect Claude to vidIQ and you",
+        "duration": 4.16
+      },
+      {
+        "start": 107.04,
+        "text": "do you run that prompt for a channel",
+        "duration": 4.36
+      },
+      {
+        "start": 108.72,
+        "text": "audit. This is not just generic YouTube",
+        "duration": 5.56
+      },
+      {
+        "start": 111.4,
+        "text": "advice. This is detailed data based on",
+        "duration": 4.84
+      },
+      {
+        "start": 114.28,
+        "text": "what is actually happening in our",
+        "duration": 3.52
+      },
+      {
+        "start": 116.24,
+        "text": "channel and I actually think that it",
+        "duration": 3.6
+      },
+      {
+        "start": 117.8,
+        "text": "provided some great insight. When we go",
+        "duration": 3.32
+      },
+      {
+        "start": 119.84,
+        "text": "down,",
+        "duration": 2.4
+      },
+      {
+        "start": 121.12,
+        "text": "what",
+        "duration": 3.48
+      },
+      {
+        "start": 122.24,
+        "text": "what Claude begins to do is it lets us",
+        "duration": 4.6
+      },
+      {
+        "start": 124.6,
+        "text": "know where we're leaving views on the",
+        "duration": 2.84
+      },
+      {
+        "start": 126.84,
+        "text": "table.",
+        "duration": 2.199
+      },
+      {
+        "start": 127.44,
+        "text": ">> So, I guess in summary, it's observation",
+        "duration": 4.24
+      },
+      {
+        "start": 129.039,
+        "text": "of channel, uh a reason why this might",
+        "duration": 4.921
+      },
+      {
+        "start": 131.68,
+        "text": "be happening, and then actual actionable",
+        "duration": 3.84
+      },
+      {
+        "start": 133.96,
+        "text": "steps here over the next 30 days.",
+        "duration": 2.56
+      },
+      {
+        "start": 135.52,
+        "text": ">> Yeah, I",
+        "duration": 2.64
+      },
+      {
+        "start": 136.52,
+        "text": "First of all, shout out to you, the one",
+        "duration": 4.12
+      },
+      {
+        "start": 138.16,
+        "text": "of the uh the the shadow ban video seems",
+        "duration": 4.76
+      },
+      {
+        "start": 140.64,
+        "text": "to be doing quite well. Of course, the",
+        "duration": 4.96
+      },
+      {
+        "start": 142.92,
+        "text": "niche bend the video did well",
+        "duration": 5.2
+      },
+      {
+        "start": 145.6,
+        "text": "uh as well. As I was coaching vidIQ as a",
+        "duration": 3.48
+      },
+      {
+        "start": 148.12,
+        "text": "coach and I was using this with one of",
+        "duration": 2.92
+      },
+      {
+        "start": 149.08,
+        "text": "my creators. That kind of news",
+        "duration": 4.08
+      },
+      {
+        "start": 151.04,
+        "text": "reaction-based content is the type of",
+        "duration": 3.56
+      },
+      {
+        "start": 153.16,
+        "text": "content based on the data that is",
+        "duration": 3.92
+      },
+      {
+        "start": 154.6,
+        "text": "actually getting us into the browser",
+        "duration": 4.44
+      },
+      {
+        "start": 157.08,
+        "text": "feed. You know, our North Star is the",
+        "duration": 3.76
+      },
+      {
+        "start": 159.04,
+        "text": "fact that we we've we're always on top",
+        "duration": 3.24
+      },
+      {
+        "start": 160.84,
+        "text": "of the news and that isn't quite covered",
+        "duration": 3.4
+      },
+      {
+        "start": 162.28,
+        "text": "as as frequently as other channels. So,",
+        "duration": 3.36
+      },
+      {
+        "start": 164.24,
+        "text": "that's an interesting observation there",
+        "duration": 2.96
+      },
+      {
+        "start": 165.64,
+        "text": "from Claude. So, we already feel as if",
+        "duration": 3.36
+      },
+      {
+        "start": 167.2,
+        "text": "I'm having a deeper conversation with",
+        "duration": 4.28
+      },
+      {
+        "start": 169.0,
+        "text": "Claude about the vidIQ channel. I guess",
+        "duration": 5.16
+      },
+      {
+        "start": 171.48,
+        "text": "what I want to know now is stepping out",
+        "duration": 4.36
+      },
+      {
+        "start": 174.16,
+        "text": "of our channel bubble for a second,",
+        "duration": 4.04
+      },
+      {
+        "start": 175.84,
+        "text": "what's popping off in our niche and how",
+        "duration": 3.64
+      },
+      {
+        "start": 178.2,
+        "text": "does it relate back to our channel so",
+        "duration": 2.64
+      },
+      {
+        "start": 179.48,
+        "text": "that we can take advantage of it?",
+        "duration": 3.88
+      },
+      {
+        "start": 180.84,
+        "text": ">> All right, so this next prompt is we're",
+        "duration": 4.84
+      },
+      {
+        "start": 183.36,
+        "text": "going to ask it to find channels in our",
+        "duration": 4.28
+      },
+      {
+        "start": 185.68,
+        "text": "niche that are punching above their",
+        "duration": 3.92
+      },
+      {
+        "start": 187.64,
+        "text": "subscriber count. We're not looking for",
+        "duration": 4.0
+      },
+      {
+        "start": 189.6,
+        "text": "big ones, we're looking for the ones",
+        "duration": 4.92
+      },
+      {
+        "start": 191.64,
+        "text": "that are maybe for us would be 20K to",
+        "duration": 6.0
+      },
+      {
+        "start": 194.52,
+        "text": "100K, but are pulling 300K",
+        "duration": 5.24
+      },
+      {
+        "start": 197.64,
+        "text": "uh views. This channel, Solo Retire",
+        "duration": 4.88
+      },
+      {
+        "start": 199.76,
+        "text": "Life, has 20,000 subscribers, but",
+        "duration": 5.32
+      },
+      {
+        "start": 202.52,
+        "text": "recently pulled a video with almost",
+        "duration": 6.36
+      },
+      {
+        "start": 205.08,
+        "text": "300,000 views on a topic that we cover",
+        "duration": 6.2
+      },
+      {
+        "start": 208.88,
+        "text": "in in our niche. So, uh we want to know",
+        "duration": 3.36
+      },
+      {
+        "start": 211.28,
+        "text": "what are some of the things that they're",
+        "duration": 3.44
+      },
+      {
+        "start": 212.24,
+        "text": "doing well. I think the Solo Retire Life",
+        "duration": 4.6
+      },
+      {
+        "start": 214.72,
+        "text": "is actually going to be a great example",
+        "duration": 4.56
+      },
+      {
+        "start": 216.84,
+        "text": "because it's pulling actual data. It",
+        "duration": 4.16
+      },
+      {
+        "start": 219.28,
+        "text": "gives us some really good insight into",
+        "duration": 4.6
+      },
+      {
+        "start": 221.0,
+        "text": "what she's doing. So, Solo Retire Life",
+        "duration": 5.28
+      },
+      {
+        "start": 223.88,
+        "text": "in her visual format is also still in",
+        "duration": 4.04
+      },
+      {
+        "start": 226.28,
+        "text": "reach. Instead of just using static",
+        "duration": 3.68
+      },
+      {
+        "start": 227.92,
+        "text": "B-roll and talking head, her entire",
+        "duration": 4.32
+      },
+      {
+        "start": 229.96,
+        "text": "video is vlogging in public as she",
+        "duration": 4.44
+      },
+      {
+        "start": 232.24,
+        "text": "talks. She's pulling both the slow",
+        "duration": 5.32
+      },
+      {
+        "start": 234.4,
+        "text": "living vlog and YouTube earning videos,",
+        "duration": 5.08
+      },
+      {
+        "start": 237.56,
+        "text": "which are two algorithms and two",
+        "duration": 4.88
+      },
+      {
+        "start": 239.48,
+        "text": "doorways into the content space. And so,",
+        "duration": 4.88
+      },
+      {
+        "start": 242.44,
+        "text": "this actually mirrors something we",
+        "duration": 3.56
+      },
+      {
+        "start": 244.36,
+        "text": "talked about here on",
+        "duration": 3.64
+      },
+      {
+        "start": 246.0,
+        "text": "uh the channel as far as niche bend. To",
+        "duration": 3.68
+      },
+      {
+        "start": 248.0,
+        "text": "give you a like a brief breakdown of",
+        "duration": 4.56
+      },
+      {
+        "start": 249.68,
+        "text": "niche bending, it was the idea of taking",
+        "duration": 7.24
+      },
+      {
+        "start": 252.56,
+        "text": "formats that work uh for other niches",
+        "duration": 5.679
+      },
+      {
+        "start": 256.92,
+        "text": "and",
+        "duration": 2.84
+      },
+      {
+        "start": 258.239,
+        "text": "adapting them into your content.",
+        "duration": 2.72
+      },
+      {
+        "start": 259.76,
+        "text": ">> It's keeping that in mind and it's",
+        "duration": 4.24
+      },
+      {
+        "start": 260.959,
+        "text": "giving us this idea that actually one of",
+        "duration": 4.961
+      },
+      {
+        "start": 264.0,
+        "text": "the best pattern or one of the patterns",
+        "duration": 3.16
+      },
+      {
+        "start": 265.92,
+        "text": "that are breaking on YouTube that would",
+        "duration": 2.8
+      },
+      {
+        "start": 267.16,
+        "text": "that is actual story that we can do a",
+        "duration": 4.04
+      },
+      {
+        "start": 268.72,
+        "text": "video on is the most viral YouTube",
+        "duration": 4.28
+      },
+      {
+        "start": 271.2,
+        "text": "growth videos right now aren't being",
+        "duration": 3.56
+      },
+      {
+        "start": 273.0,
+        "text": "made by YouTube growth channels. It",
+        "duration": 3.92
+      },
+      {
+        "start": 274.76,
+        "text": "mentions that as a a suggestion of",
+        "duration": 3.0
+      },
+      {
+        "start": 276.92,
+        "text": "something that we could cover.",
+        "duration": 2.36
+      },
+      {
+        "start": 277.76,
+        "text": ">> So, what we seem to find there, Eric,",
+        "duration": 3.04
+      },
+      {
+        "start": 279.28,
+        "text": "are channels that are breaking out in",
+        "duration": 3.96
+      },
+      {
+        "start": 280.8,
+        "text": "our niche that give us more long-term",
+        "duration": 4.16
+      },
+      {
+        "start": 283.24,
+        "text": "evergreen potential when making content.",
+        "duration": 4.88
+      },
+      {
+        "start": 284.96,
+        "text": "What I'm interested in now is outliers",
+        "duration": 4.88
+      },
+      {
+        "start": 288.12,
+        "text": "that discover current and trending",
+        "duration": 3.52
+      },
+      {
+        "start": 289.84,
+        "text": "topics that we can jump on immediately.",
+        "duration": 3.48
+      },
+      {
+        "start": 291.64,
+        "text": "How would we go about searching for",
+        "duration": 2.08
+      },
+      {
+        "start": 293.32,
+        "text": "that?",
+        "duration": 2.56
+      },
+      {
+        "start": 293.72,
+        "text": ">> we're going to ask it to show us videos",
+        "duration": 3.88
+      },
+      {
+        "start": 295.88,
+        "text": "which are in vidIQ's niche. You can ask",
+        "duration": 2.76
+      },
+      {
+        "start": 297.6,
+        "text": "it to show you videos that are in your",
+        "duration": 3.84
+      },
+      {
+        "start": 298.64,
+        "text": "niche which are really uh from the last",
+        "duration": 4.6
+      },
+      {
+        "start": 301.44,
+        "text": "90 days. These we're not looking for",
+        "duration": 3.56
+      },
+      {
+        "start": 303.24,
+        "text": "viral videos that they'll blow up and",
+        "duration": 3.32
+      },
+      {
+        "start": 305.0,
+        "text": "really don't have a pattern of",
+        "duration": 3.72
+      },
+      {
+        "start": 306.56,
+        "text": "repeatable success, but we want videos",
+        "duration": 3.8
+      },
+      {
+        "start": 308.72,
+        "text": "that really beat their channel's",
+        "duration": 3.76
+      },
+      {
+        "start": 310.36,
+        "text": "baseline average by at least three",
+        "duration": 3.44
+      },
+      {
+        "start": 312.48,
+        "text": "times. Here and one of the one of the",
+        "duration": 3.4
+      },
+      {
+        "start": 313.8,
+        "text": "patterns that it kind of breaks out",
+        "duration": 4.04
+      },
+      {
+        "start": 315.88,
+        "text": "coincidentally, you may be maybe not,",
+        "duration": 4.12
+      },
+      {
+        "start": 317.84,
+        "text": "that they all have to do with using",
+        "duration": 4.64
+      },
+      {
+        "start": 320.0,
+        "text": "Claude and how, you know, AI is a big",
+        "duration": 4.72
+      },
+      {
+        "start": 322.48,
+        "text": "topic and using Claude and with YouTube.",
+        "duration": 3.4
+      },
+      {
+        "start": 324.72,
+        "text": "When we talk about what this means for",
+        "duration": 3.76
+      },
+      {
+        "start": 325.88,
+        "text": "vidIQ's specifically, it it suggested",
+        "duration": 4.52
+      },
+      {
+        "start": 328.48,
+        "text": "the Claude code wave is one of the",
+        "duration": 4.2
+      },
+      {
+        "start": 330.4,
+        "text": "hottest things right now and because",
+        "duration": 3.72
+      },
+      {
+        "start": 332.68,
+        "text": "it's pulling from the data, it can let",
+        "duration": 2.8
+      },
+      {
+        "start": 334.12,
+        "text": "us know that if we're going to do",
+        "duration": 2.44
+      },
+      {
+        "start": 335.48,
+        "text": "something about this, this is something",
+        "duration": 3.32
+      },
+      {
+        "start": 336.56,
+        "text": "that we should probably do soon versus",
+        "duration": 2.88
+      },
+      {
+        "start": 338.8,
+        "text": "doing later.",
+        "duration": 1.56
+      },
+      {
+        "start": 339.44,
+        "text": ">> Yeah, and if you haven't already",
+        "duration": 3.68
+      },
+      {
+        "start": 340.36,
+        "text": "realized, this very video is us",
+        "duration": 5.4
+      },
+      {
+        "start": 343.12,
+        "text": "practicing what the Claude vidIQ MCP is",
+        "duration": 3.72
+      },
+      {
+        "start": 345.76,
+        "text": "preaching. I'm pretty much convinced,",
+        "duration": 2.64
+      },
+      {
+        "start": 346.84,
+        "text": "Eric, at this point that the Claude",
+        "duration": 4.12
+      },
+      {
+        "start": 348.4,
+        "text": "vidIQ MCP tool can have deep and",
+        "duration": 5.04
+      },
+      {
+        "start": 350.96,
+        "text": "meaningful intimate conversations with",
+        "duration": 4.44
+      },
+      {
+        "start": 353.44,
+        "text": "the creator about their channel when",
+        "duration": 3.64
+      },
+      {
+        "start": 355.4,
+        "text": "prompted. But, what I want to know is",
+        "duration": 4.2
+      },
+      {
+        "start": 357.08,
+        "text": "can we make this more seamless with",
+        "duration": 5.6
+      },
+      {
+        "start": 359.6,
+        "text": "scheduled tasks to help the creator on",
+        "duration": 5.28
+      },
+      {
+        "start": 362.68,
+        "text": "their YouTube journey? Exactly. For By",
+        "duration": 3.36
+      },
+      {
+        "start": 364.88,
+        "text": "the way,",
+        "duration": 4.36
+      },
+      {
+        "start": 366.04,
+        "text": "I love scheduled. That is I think that",
+        "duration": 5.56
+      },
+      {
+        "start": 369.24,
+        "text": "is the proper way to to say it. So, once",
+        "duration": 3.84
+      },
+      {
+        "start": 371.6,
+        "text": "you have the Claude desktop app, you're",
+        "duration": 3.48
+      },
+      {
+        "start": 373.08,
+        "text": "going to go to the co-work section and",
+        "duration": 4.72
+      },
+      {
+        "start": 375.08,
+        "text": "then you're going to go to scheduled and",
+        "duration": 5.28
+      },
+      {
+        "start": 377.8,
+        "text": "then you're going to go to new task. And",
+        "duration": 5.88
+      },
+      {
+        "start": 380.36,
+        "text": "so, for this task here, I would like a",
+        "duration": 6.68
+      },
+      {
+        "start": 383.68,
+        "text": "daily content radar. And so, using this",
+        "duration": 6.0
+      },
+      {
+        "start": 387.04,
+        "text": "MCP tool, we can have it automatically",
+        "duration": 3.4
+      },
+      {
+        "start": 389.68,
+        "text": "schedule [clears throat]",
+        "duration": 2.56
+      },
+      {
+        "start": 390.44,
+        "text": "to look at our last five published",
+        "duration": 5.16
+      },
+      {
+        "start": 392.24,
+        "text": "videos as as a task. Now, this may not",
+        "duration": 5.72
+      },
+      {
+        "start": 395.6,
+        "text": "come as a surprise, but I got ADHD.",
+        "duration": 5.6
+      },
+      {
+        "start": 397.96,
+        "text": "Squirrel! So, a big thing for me is the",
+        "duration": 5.52
+      },
+      {
+        "start": 401.2,
+        "text": "type of friction it takes for me to get",
+        "duration": 4.84
+      },
+      {
+        "start": 403.48,
+        "text": "into a task. Being able to already have",
+        "duration": 4.52
+      },
+      {
+        "start": 406.04,
+        "text": "this scheduled, so when I open it, I can",
+        "duration": 3.68
+      },
+      {
+        "start": 408.0,
+        "text": "just look at it and not have to go",
+        "duration": 3.04
+      },
+      {
+        "start": 409.72,
+        "text": "pulling from here and there, that is a",
+        "duration": 2.92
+      },
+      {
+        "start": 411.04,
+        "text": "huge help. All right, so we have run a",
+        "duration": 4.12
+      },
+      {
+        "start": 412.64,
+        "text": "prompt and this is what we got. Now,",
+        "duration": 5.2
+      },
+      {
+        "start": 415.16,
+        "text": "imagine opening up your Claude assistant",
+        "duration": 4.6
+      },
+      {
+        "start": 417.84,
+        "text": "desktop and getting this information.",
+        "duration": 4.36
+      },
+      {
+        "start": 419.76,
+        "text": "This is super helpful. This is",
+        "duration": 5.28
+      },
+      {
+        "start": 422.2,
+        "text": "our our last five videos showing us what",
+        "duration": 5.64
+      },
+      {
+        "start": 425.04,
+        "text": "we did well concerning the packaging,",
+        "duration": 4.64
+      },
+      {
+        "start": 427.84,
+        "text": "concerning the hooks. We're looking at",
+        "duration": 4.28
+      },
+      {
+        "start": 429.68,
+        "text": "the retention data here. I like an",
+        "duration": 5.16
+      },
+      {
+        "start": 432.12,
+        "text": "overflow of information that I could",
+        "duration": 4.76
+      },
+      {
+        "start": 434.84,
+        "text": "look at. If this feels overwhelming for",
+        "duration": 4.16
+      },
+      {
+        "start": 436.88,
+        "text": "any creator, they can always customize",
+        "duration": 3.84
+      },
+      {
+        "start": 439.0,
+        "text": "their prompt in a very, you know, simple",
+        "duration": 3.4
+      },
+      {
+        "start": 440.72,
+        "text": "way that fits what you need, the",
+        "duration": 3.2
+      },
+      {
+        "start": 442.4,
+        "text": "information that you want to see each",
+        "duration": 1.88
+      },
+      {
+        "start": 443.92,
+        "text": "morning.",
+        "duration": 2.12
+      },
+      {
+        "start": 444.28,
+        "text": ">> So, already, Eric, this tool is giving",
+        "duration": 3.32
+      },
+      {
+        "start": 446.04,
+        "text": "us a ton of help with pre- and",
+        "duration": 3.28
+      },
+      {
+        "start": 447.6,
+        "text": "post-production, whether it's finding",
+        "duration": 3.52
+      },
+      {
+        "start": 449.32,
+        "text": "outliers related to our niche or getting",
+        "duration": 3.76
+      },
+      {
+        "start": 451.12,
+        "text": "an audit of our channel. But, what about",
+        "duration": 4.16
+      },
+      {
+        "start": 453.08,
+        "text": "the content creation process itself? AI",
+        "duration": 4.52
+      },
+      {
+        "start": 455.28,
+        "text": "has really helped creators save a ton of",
+        "duration": 5.0
+      },
+      {
+        "start": 457.6,
+        "text": "time writing scripts, but this Claude",
+        "duration": 5.48
+      },
+      {
+        "start": 460.28,
+        "text": "vidIQ MCP integration takes things just",
+        "duration": 3.84
+      },
+      {
+        "start": 463.08,
+        "text": "a little bit further, doesn't it?",
+        "duration": 3.12
+      },
+      {
+        "start": 464.12,
+        "text": ">> One of the huge things that I love about",
+        "duration": 5.96
+      },
+      {
+        "start": 466.2,
+        "text": "Claude is projects. And projects allows",
+        "duration": 7.48
+      },
+      {
+        "start": 470.08,
+        "text": "your Claude to work in a kind of a silo",
+        "duration": 6.84
+      },
+      {
+        "start": 473.68,
+        "text": "of specific content. AI is a great",
+        "duration": 5.28
+      },
+      {
+        "start": 476.92,
+        "text": "co-worker, but it's not a great boss,",
+        "duration": 4.08
+      },
+      {
+        "start": 478.96,
+        "text": "right? So, you still need to do the",
+        "duration": 3.72
+      },
+      {
+        "start": 481.0,
+        "text": "work, you need you still need to be a",
+        "duration": 3.88
+      },
+      {
+        "start": 482.68,
+        "text": "student of YouTube in general so that",
+        "duration": 3.64
+      },
+      {
+        "start": 484.88,
+        "text": "you can kind of test and look at the",
+        "duration": 4.6
+      },
+      {
+        "start": 486.32,
+        "text": "information that you are getting",
+        "duration": 5.0
+      },
+      {
+        "start": 489.48,
+        "text": "from any AI. And so, when we're talking",
+        "duration": 3.32
+      },
+      {
+        "start": 491.32,
+        "text": "about script writing, one of the things",
+        "duration": 3.68
+      },
+      {
+        "start": 492.8,
+        "text": "that I like to do is whenever I read a",
+        "duration": 4.6
+      },
+      {
+        "start": 495.0,
+        "text": "book or watch a video, I would take",
+        "duration": 4.56
+      },
+      {
+        "start": 497.4,
+        "text": "notes and then I would copy those notes",
+        "duration": 5.28
+      },
+      {
+        "start": 499.56,
+        "text": "into my Claude project files so that",
+        "duration": 5.36
+      },
+      {
+        "start": 502.68,
+        "text": "when I'm writing a script, it's only",
+        "duration": 4.96
+      },
+      {
+        "start": 504.92,
+        "text": "using the context of those notes, which",
+        "duration": 4.52
+      },
+      {
+        "start": 507.64,
+        "text": "are proven frameworks and helpful",
+        "duration": 4.44
+      },
+      {
+        "start": 509.44,
+        "text": "information to write that script. so we",
+        "duration": 4.479
+      },
+      {
+        "start": 512.08,
+        "text": "we dropped this prompt in here and then",
+        "duration": 4.12
+      },
+      {
+        "start": 513.919,
+        "text": "these are some of the outlier videos",
+        "duration": 3.841
+      },
+      {
+        "start": 516.2,
+        "text": "that have performed well for us with for",
+        "duration": 3.839
+      },
+      {
+        "start": 517.76,
+        "text": "in in the last 90 days or so. And so,",
+        "duration": 3.6
+      },
+      {
+        "start": 520.039,
+        "text": "it's taking",
+        "duration": 2.68
+      },
+      {
+        "start": 521.36,
+        "text": "that information along with the",
+        "duration": 3.08
+      },
+      {
+        "start": 522.719,
+        "text": "frameworks that are in the Claude",
+        "duration": 3.881
+      },
+      {
+        "start": 524.44,
+        "text": "project file and it's giving us a",
+        "duration": 4.08
+      },
+      {
+        "start": 526.6,
+        "text": "structural DNA. It's breaking down",
+        "duration": 4.48
+      },
+      {
+        "start": 528.52,
+        "text": "exactly what these things done did well,",
+        "duration": 4.36
+      },
+      {
+        "start": 531.08,
+        "text": "what they all kind of share in common so",
+        "duration": 3.68
+      },
+      {
+        "start": 532.88,
+        "text": "that we could could think about this",
+        "duration": 4.08
+      },
+      {
+        "start": 534.76,
+        "text": "when we're going into our new content.",
+        "duration": 4.84
+      },
+      {
+        "start": 536.96,
+        "text": "Sometimes there's a temptation to use AI",
+        "duration": 5.96
+      },
+      {
+        "start": 539.6,
+        "text": "to just create, just like let AI just",
+        "duration": 5.96
+      },
+      {
+        "start": 542.92,
+        "text": "run wild. But, no, you want it to work",
+        "duration": 4.36
+      },
+      {
+        "start": 545.56,
+        "text": "within a structure. You want it to work",
+        "duration": 3.36
+      },
+      {
+        "start": 547.28,
+        "text": "in a framework in order to get the most",
+        "duration": 3.32
+      },
+      {
+        "start": 548.92,
+        "text": "out of it. And so, with this, we're",
+        "duration": 4.68
+      },
+      {
+        "start": 550.6,
+        "text": "we're able to set a specific framework",
+        "duration": 5.72
+      },
+      {
+        "start": 553.6,
+        "text": "based on what has traditionally working",
+        "duration": 4.0
+      },
+      {
+        "start": 556.32,
+        "text": "on our channel and that's what you're",
+        "duration": 3.6
+      },
+      {
+        "start": 557.6,
+        "text": "seeing here now. And then, you know, you",
+        "duration": 3.4
+      },
+      {
+        "start": 559.92,
+        "text": "a creator will still want to come in",
+        "duration": 3.52
+      },
+      {
+        "start": 561.0,
+        "text": "here and tweak it, but this is like",
+        "duration": 3.616
+      },
+      {
+        "start": 563.44,
+        "text": "saving you",
+        "duration": 1.6
+      },
+      {
+        "start": 564.616,
+        "text": ">> [laughter]",
+        "duration": 2.984
+      },
+      {
+        "start": 565.04,
+        "text": ">> like a a countless time versus if you",
+        "duration": 5.12
+      },
+      {
+        "start": 567.6,
+        "text": "had to do all of this from from scratch.",
+        "duration": 4.76
+      },
+      {
+        "start": 570.16,
+        "text": ">> And as you said, this is just a starting",
+        "duration": 4.56
+      },
+      {
+        "start": 572.36,
+        "text": "point of",
+        "duration": 5.8
+      },
+      {
+        "start": 574.72,
+        "text": "assigning projects to the vidIQ Claude",
+        "duration": 5.36
+      },
+      {
+        "start": 578.16,
+        "text": "MCP to really take things to the next",
+        "duration": 5.32
+      },
+      {
+        "start": 580.08,
+        "text": "level. Yeah, there is so much more that",
+        "duration": 5.12
+      },
+      {
+        "start": 583.48,
+        "text": "you could that you could do that and",
+        "duration": 4.061
+      },
+      {
+        "start": 585.2,
+        "text": "that you maybe we'll get into.",
+        "duration": 4.361
+      },
+      {
+        "start": 587.541,
+        "text": ">> [music]",
+        "duration": 2.02
+      },
+      {
+        "start": 592.88,
+        "text": ">> Just in summary,",
+        "duration": 3.32
+      },
+      {
+        "start": 594.44,
+        "text": "uh Eric, again, like why do people need",
+        "duration": 5.08
+      },
+      {
+        "start": 596.2,
+        "text": "to get on this now and start exploiting",
+        "duration": 4.44
+      },
+      {
+        "start": 599.52,
+        "text": "the benefits of this tool?",
+        "duration": 2.64
+      },
+      {
+        "start": 600.64,
+        "text": ">> Listen, I'm just a random man on the",
+        "duration": 3.8
+      },
+      {
+        "start": 602.16,
+        "text": "internet, but I'm telling you, get this,",
+        "duration": 5.56
+      },
+      {
+        "start": 604.44,
+        "text": "try it out, push it to its limits, learn",
+        "duration": 5.44
+      },
+      {
+        "start": 607.72,
+        "text": "everything you can, and determine in",
+        "duration": 3.64
+      },
+      {
+        "start": 609.88,
+        "text": "your mind that I am going to be an",
+        "duration": 3.6
+      },
+      {
+        "start": 611.36,
+        "text": "expert on this tool cuz I'm telling you,",
+        "duration": 3.76
+      },
+      {
+        "start": 613.48,
+        "text": "this is going to change how people",
+        "duration": 2.52
+      },
+      {
+        "start": 615.12,
+        "text": "create content.",
+        "duration": 2.6
+      },
+      {
+        "start": 616.0,
+        "text": ">> And as I a fellow random man on the",
+        "duration": 2.96
+      },
+      {
+        "start": 617.72,
+        "text": "internet who just happens to be wearing",
+        "duration": 2.8
+      },
+      {
+        "start": 618.96,
+        "text": "eccentric blue glasses, I highly",
+        "duration": 3.24
+      },
+      {
+        "start": 620.52,
+        "text": "recommend you watch this video next,",
+        "duration": 3.64
+      },
+      {
+        "start": 622.2,
+        "text": "which will go into greater detail on",
+        "duration": 3.84
+      },
+      {
+        "start": 624.16,
+        "text": "some of our Vidiq tools to help you grow",
+        "duration": 4.84
+      },
+      {
+        "start": 626.04,
+        "text": "even faster.",
+        "duration": 2.96
+      }
+    ],
+    "status": "OK",
+    "segment_count": 302
+  },
+  "captured_at": "2026-07-09T21:40:00Z",
+  "captured_by": "CAPTEURS"
+}

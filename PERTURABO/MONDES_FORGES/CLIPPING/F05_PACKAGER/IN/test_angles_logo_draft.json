@@ -1,0 +1,48 @@
+{
+  "_description": "DRAFT angles pour le test du pack LOGO v2 (sous-mode informatif). A remplacer par la sortie reelle d'ANGLESMITH (Porte 2). Champs supplementaires tolérés: le packager les sanitise.",
+  "campaign_id": "TS01_SANDOVAL",
+  "angles": [
+    {
+      "angle_id": "angle_001",
+      "genre": "dramatique",
+      "title": "Il accuse son ex de l'avoir frappé pour ça",
+      "body": "Tom Sandoval dépose une nouvelle déclaration : son ex Victoria l'aurait frappé au bas-ventre et insulté devant son équipe, après une soirée où la sécurité a dû la ramener au bus. Il dit avoir vécu l'humiliation en silence par peur de représailles.",
+      "on_screen_text": "Il a attendu 8 mois pour le dire",
+      "seo_tags": ["Tom Sandoval", "Victoria Lee Robinson", "Vanderpump Rules", "drama", "TMZ", "restraining order"],
+      "reframe_type": "outrage-reframe",
+      "zone": "direct",
+      "angle_family": "emotion",
+      "emotion_mode": "outrage",
+      "engagement_type": "assertion",
+      "reframe_dim": "l'accusé devient l'accusateur"
+    },
+    {
+      "angle_id": "angle_002",
+      "genre": "informatif",
+      "title": "L'affaire Sandoval en 30 secondes",
+      "body": "Restraining order, tournée, AGT : tout ce qu'il faut savoir sur l'affaire entre Tom Sandoval et Victoria Lee Robinson. Lui accuse, elle dément — le dossier complet expliqué simplement.",
+      "on_screen_text": "Le dossier expliqué",
+      "seo_tags": ["Tom Sandoval", "explication", "affaire", "justice", "célébrité", "résumé"],
+      "reframe_type": "factual-explainer",
+      "zone": "direct",
+      "angle_family": "structural",
+      "emotion_mode": "curiosite",
+      "engagement_type": "question",
+      "reframe_dim": "le drama devient un dossier à comprendre"
+    },
+    {
+      "angle_id": "angle_003",
+      "genre": "dramatique",
+      "title": "Elle lui aurait dit cette phrase humiliante",
+      "body": "Selon la déclaration de Tom Sandoval, Victoria l'aurait insulté sur sa virilité devant son groupe et son équipe. Une phrase que personne n'oublie — et qu'il raconte aujourd'hui devant un juge.",
+      "on_screen_text": "La phrase qu'il n'oubliera pas",
+      "seo_tags": ["Tom Sandoval", "insulte", "humiliation", "déclaration", "célébrité", "viral"],
+      "reframe_type": "context-shift",
+      "zone": "direct",
+      "angle_family": "engagement",
+      "emotion_mode": "tension",
+      "engagement_type": "cliffhanger",
+      "reframe_dim": "le privé devient public"
+    }
+  ]
+}

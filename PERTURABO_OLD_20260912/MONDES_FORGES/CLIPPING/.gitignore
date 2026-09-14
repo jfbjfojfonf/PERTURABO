@@ -1,0 +1,27 @@
+# .gitignore du Monde Forge CLIPPING
+# (à merger avec .gitignore racine de PERTURABO)
+
+# Secrets — JAMAIS commités
+CONTRACTS/copywriter_secrets.json
+CONTRACTS/copywriter_secrets.local.json
+
+# Ledgers locaux (si on veut ignorer les états de siège locaux)
+# liber_clipping.json.local
+
+# Sorties de frégates (générées en runtime — pas à committer)
+**/OUT/*.json
+**/OUT/*.md
+!**/OUT/.gitkeep
+!**/OUT/README.md
+
+# Dependencies / caches Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/

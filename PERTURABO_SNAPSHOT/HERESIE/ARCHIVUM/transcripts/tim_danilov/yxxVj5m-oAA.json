@@ -1,0 +1,3887 @@
+{
+  "video_id": "yxxVj5m-oAA",
+  "title": "How I Write Faceless YouTube Scripts That Get 100s Of Millions Of Views",
+  "channel": "Tim Danilov",
+  "channel_id": "UCgBFjxP5qd5L06N0WyMdTPg",
+  "channel_url": "https://www.youtube.com/channel/UCgBFjxP5qd5L06N0WyMdTPg",
+  "subscriber_count": 21300,
+  "view_count": 17833,
+  "outlier_score": 0.84,
+  "thumbnail": "https://i.ytimg.com/vi/yxxVj5m-oAA/maxresdefault.jpg",
+  "upload_date": "20260320",
+  "duration": 1911,
+  "transcript": {
+    "text": "In October 2025, my flagship YouTube channel made me $56,000 from 689 million views. Around the same time, another channel from my portfolio got 761 million views and made us $70,000. And recently, I repeated this process again, scaling this channel from zero to 1 billion views and $88,000 in revenue. And all of this was possible because we never script our videos. Instead, we use what I call the script bending. But while previously we managed a team of three scriptwriters that was costing us about three to $4,000 a month, we recently let them go and replaced them with AI. So, the systems that we used became even more accessible, and in today's video I'm going to give you the exact same system, and I'm going to show you how we script our videos that, as you can see, get billions of views. But while other similar videos just like this one about my faceless YouTube scripts uh give you surface-level scripting techniques like, \"Hey ChatGPT, uh can you please write me a script about X, Y, and Z?\" Or uh they give you a stealing method when you basically copy someone else's work and you expect it to go viral. Spoiler, it never actually works like this. Or they just give you generic basic-level artist-level uh prompts for Claude or uh even GPT. Spoiler, GPT is terrible. You should never cancel your GPT subscription because you should never use that. Uh in this video, the script bending video, I'm going to give you the unique script bending method. I'm also going to show you the database of 50 plus uh scripting templates we created for our workshop, and I'm going to show you a team of AI agents that find ideas, write scripts, and do the manual job on autopilot. So, instead of giving you a fish, very often uh root and one, uh I will give you the fishing rod so that you can catch the fish whenever you want and find those ideas and script those videos as many times as you want for as many faceless channels as you want. And this is exactly what I call the script bending. Now, let me explain you the method because most people honestly get that wrong. They think they should write their scripts, but in fact, you should actually never do that. Uh others make another mistake thinking that uh you should steal someone else's ideas, but it never works out. So, both of those methods don't work. Forget about them. Instead, what you should be doing is, remember this formula. Viral YouTube script is always a unique idea and a proven storytelling framework. A combination of those two deliver the best results. So, you should always find unique ideas that no one has ever covered in your direct competition. Uh and you should use proven storytelling frameworks that worked for competitors. So, frameworks are proven, ideas are unique, and the combination of both give you unique videos that are almost guaranteed to work. So, this is the only combination that guarantees the success of your video. Almost guarantees. There's never uh a 100% guarantee, but this one is as close as it gets to the guarantee. So, to give you an idea, here's exactly how it works. Uh these are two videos. One is from Agent Floppy, and the other one is from Looney Throne. And the initial video that blew up 9 months ago to 6.1 million views is every US president death explained in 21 minutes. This video was also script bended from uh I think Paint Explainer was the first to do every someone's death, but uh Agent Floppy uh innovated on the style. They uh did a way better thumbnail, uh and that's why their video exploded 6.9 uh 6.1 million views. But then, Looney Throne actually bent this video and created every British monarch death explained in 21 minute. And for most of you, the picture is already clear what is script bending, but uh I will still explain how the framework works because we're now looking at the title and thumbnail, but there are so many different script bends you can do. You can bend the title, and you can bend the thumbnail, you can bend the script, the hook. Basically, any part of the YouTube video you can bend, turning it into your unique piece. So, let me explain you how it works. The original video blew up, and it was about presidents. And the storytelling framework was like this. From like this is the exact script from the video. So, I went ahead, I transcribed both of those videos, and these are the frameworks and how they worked every single time because once they copied the video, they got 300,000 views on it in 4 months. So, the framework was from eating raw cherries to contaminated water at the White House to getting assassinated in broad daylight. This is how every US president died and their final words. So, this was the initial hook that made the video explode. And as you can see, the structure here is very simple. From X to Y to Z. Uh this is how something, right? And these guys, they simply bent it to British monarchs. So, they changed presidents to British monarchs, and the framework was exactly the same. So, the hook was structured the exact same way. From this to that to then this, and then this is how every English and British monarch died over the last thousand years. As you can see, they actually used a shorter version of it, and that's probably one of the reasons why I feel like their hook is way worse than the original one. Agent Floppy did a way better job at hooks, but still they made the video explode. So, they script bent the format, so the title and thumbnail, and they also script bent the hook and the rest of the script. So, in this example, I'm only giving you the hook because it's a very clear example, but actually the rest of the script is pretty much like that. Whenever Agent Floppy breaks into um like goes into storytelling on using lists or using cold actions, the these guys are doing the exact same thing. And the reason why they do it is because it's very simple to copy the structure with AI, which I'm going to show you at the uh like in this video. Now, you can continue bending it to multiple examples. So, you can create a video every celebrity death explained. You can like this one, by the way, uh also uses what I call the hype injection. You can talk about celebrities that are popular right now, and by doing that, you can actually get uh to a broader audience. You can increase your TAM, total addressable market, by using that. Uh I'll probably create another video on hype injection and how it works. Uh then you can do every dictator's death explained, pretty similar topic to the to this one. Every controversial influencer death explained, also kind of a hype injection in a way. Every star in a universe uh death explained, this one is bent to uh like space and uh like physics and stuff like this. Uh so, you can be creative with those bends, right? Uh and when I personally saw this bend because I was uh one of the first to s- to see this video blow up. I I I saw it at like 200k views. So, um when I saw it blow up, I immediately did the same thing for uh with one of the Art of YouTube clients. So, we bent the video. Um I'm not going to tell you the topic of that uh obviously to protect my client's channel, but uh we bent the video to something very creative, very new, something no one has done uh like before. And uh we posted the video. It was the second ever upload on the channel, and for the first 16 days, it was uh basically sitting at 200 views, which is like almost always when you start a new YouTube channel right now, branded one uh with long form, it will almost always get stuck at zero to 200 views for the first 2 weeks. But then, as you can see, 20 days later, it started uh blowing up out of nowhere, and uh like I'll zoom zoom that in for you. Uh Kirill basically sent it in the community as a win because, as you can see the graph, the video absolutely exploded after the 20th day. So, uh 50k views in uh in a day back then, and by now the video sits at uh a solid 263,000 views. And that was the second ever upload posted bended from one of those videos. So, this is how the script bending work. This is how like the type of results you can expect from doing that. So, this way, you create unique valuable piece of content while sticking to the framework that worked for someone else. That's the key here. You have the framework, you know that it works, you know that the audience wants this format, but you give them a new fresh angle that no one has ever done. And that's how you get very strong uh faceless videos. Now, another example, uh this format, I'm sure you know this format. It's been blowing up like crazy recently, Your Life as Every Rank of Something. In this case, it was mafia. Uh people started doing uh like soldiers. People started doing uh history like so like soldiers during World War II or Vietnam War or like again they were like I'll show you a bunch of other bands in in a bit. But this guy actually did something very very smart. You remember I told you about hype injection. So he did exactly that because this guy is currently blowing up everywhere and Epstein Island is on trend. It's like on hype. This guy decided like what if I take the format and I bend it to something that is currently hyping like crazy. So he did that and as you can see the video from like 11 days old video got half a million views which is again crazy result for a channel and a quick story like you can check the channel. It was not successful at all. So this was one of the first videos that blew up for them. They first went viral with a similar video and there was a complete copy. I'm not recommending you to steal content. Sometimes it works but it's kind of hit or miss. But this time went absolutely crazy because they did something new something that no one has ever done before. And the good thing is you can do it with the eye and for that I recommend you use Claude AI. Claude is probably the best script writing AI right now and you just tell it like look you're an expert you need to analyze this video and you need to prepare a script writing SOP breaking down exactly what they use for their hooks like how they structure the videos their storytelling patterns their viral triggers and Claude will give you an extensive document that will look something like this. So this is the document that we created like the it's a bit up because I turned PDF into like a docs file but basically you can see how big those SOPs are and this was basically a single prompt with a bunch of videos from Zach King Films and that's the kind of SOP you need to create for every single channel of yours. Now the way you use this SOPs is A you're going to learn a lot about the storytelling patterns and scripting frameworks in your niche but B you will now turn this SOP into something that you use to educate your Claude AI agent that will then create scripts for you. So this is something that we did. Now if you do it with a single video because with this prompt you need to attach the video transcript of one of your competitors. If you do it with a single video it's going to be good enough but what I did is I actually put 500 video transcripts for like of Zach King Films to create legendary version of the same SOP. It turned out so good it's like 15 page book. It's almost a book that goes over exactly how Zach King Films structures his videos. So this version turned out to be legendary and this is because I gave Claude enough data on how those videos are structured. So the more transcripts you can get the better and a good thing is we actually did it for you. So again stick with me till the end I'll tell you how you can get all of the SOPs for the most popular formats and trends of faceless YouTube automation. Now how do you actually create those niche bands those script bands? Excuse me because niche bands is the first piece that you need and script band is the second piece that you need. So in order to fully understand script bands you actually need niche bands. So go watch this video right after you finish this one you will have a full picture of exactly how this thing works but figure out the niche then figure out the scripts and then I'm planning to continue this series helping you to figure out the production and YouTube algorithm as well. Now let me explain you what that means. So there are those channels right and the Odd Dude Explained is the channel about mafia and gangs and as you can see all of his videos are very well structured like the structure is easy to see and easy to copy. POV you're the cartel deadliest hitman POV you're this POV you're that and this is all about mafia gangs and this kind of stuff so the bad guys. Now Professor POV actually bend this niche towards good guys. So he changed bad guys to good good guys and he now creates videos your life as every CIA black ops rank and rank of this rank of that. Basically same videos slightly different thumbnail but the structure of their scripts is exactly the same. I know because we analyzed that and we came to the conclusion that the scripts are almost identical meaning either it's the same dude or they're stealing scripts from each other changing a few words here and there. So it's very hard to see from the first look at those channels but when you do a deep research which we've done then you can see it very clearly. So these videos are pretty much the same again one is slightly bigger and slightly longer it performed better as well but again the structure of the script which we care the most about in this video at least is exactly the same. And those videos are also the same they changed the cartel deadliest hitman to the FBI informant and created the same exact video following the structure that worked. Again this video is about follow the structure that works and come up with an original idea that no one has done before. So the script bending in simple words is basically taking a proven format from a different niche and rewriting the script following the exact same structure for new original ideas. Now I'm going to give you the examples from the database that we created with 50 plus proven script formats. Number one is the Professor POV storytelling style. This channel again it's absolutely everywhere now it's blowing up and their videos are getting crazy amounts of views especially this one and the format obviously people are trying to steal it as much as possible because it works. What's the scripting format of this channel? First of all they always use you version of the script. So you drop in they place the viewer directly into a specific role error or situation and it sounds like you apply online like everyone else there is a form on the CIA website then you like this happened to you this happens to you and they develop a story from there. They yeah as I said they develop the story in a chronological sense they walk through the full arc each stage darker more complex higher stakes if you get caught they say will deny your existence etc. And they also give it a very strong ending so they end the video very strong as well. So this is the storytelling framework. Now how do people actually bend it? Well there is a video about dinosaurs and this channel was actually way way way older than the POV Explainer POV Professor. So POV Professor was not the original one but that's the most common right now but there is a video about dinosaurs with the same exact structure there is a video about lost and like sexual history that is structured the exact same way. There is a video about mafia structured the same way. So it doesn't really matter what topic your channel covers you can always apply the structure that worked for someone else. And this is what I want you to understand and learn about this script bending concept. Doesn't matter what blows up you need to be plugged in into the basically like the YouTube feed YouTube algorithm you need to understand what works currently for other channels and you need to bend it to your niche. So today we're not talking about your niche we're not talking about like you like you create a video about mafia or create a video about that. Whatever channel you run you can bend this format towards your audience. You can make this format work for your channel and this is exactly what I want you to do. So take this script formula apply it to one of the ideas that already worked on your channel and you're going to get a viral video that will blow up to hundreds of thousands of views almost guaranteed if you have a channel that works if you have a niche that is proven if you have niche bending figured out already. Now the other example would be the Paint Explainer style probably the oldest of them all the most let's say used one but still there is multiple channels that are doing it. So first of all there is no intro in that style they jump straight into the number one and they go over like what like basically either psychology tricks or life hacks or different dictators they go one by one explaining each one of them. So your script bending formula is actually very simple. Find a storytelling formats three to five you need multiple of those that work for indirect competitors adapt them for fresh ideas fresh ideas that you generate in your chosen niche. Create unique content with almost guaranteed results. So this is the formula. You find something that works for indirect competitors. You're trying to bring new formats to your own niche and you adapt it for two ideas that no one has ever done before. This is how you get unique content on YouTube that has all the proof it needs for the algorithm to blow your videos up. This is the formula. Now, how do you do it in practice? And we got you covered as usual because we created that entire database for you. And if you visited our niche bending workshop, we you know how much I love those idea databases because we have the exact same database for 500 plus faceless YouTube channels. So, what we did, we actually analyzed all of the videos, all of the most popular videos from those channels. We put together a list of 5,000 different videos and their scripts and we figured out that all of them followed very clear frameworks and we found 50 plus frameworks that we put in this database that are helping those channels blow up. So, the way I now use this database in practice is whenever I want to create a video for a channel, I would search for a proven framework for the script in this database. So, for example, because we talked about Paint Explainer, like there's Paint Explainer style of video. Or let's say I want to see how Simple Paint creates his videos. So, first thing that we see is the script formula. So, here's how the they structure their scripts. And you don't need to understand it yourself. You like you don't even need to read it because this is just a part of the prompt that you will give give to Claude AI so that it writes the script for you, completely for you. Now, there's a TXT file with all of the scripts from Simple Paint already. We just put them in the doc because we know that you need them. Now, there will be another file. We're now in the process of finishing this database. Obviously, we're preparing for the script bending workshop that is coming April 8th and there will be an MD file with the complete Claude AI prompt that you will upload in one click and your Claude will learn the skill of writing scripts similar to Simple Paint. And Simple Paint is quite unique, but if I show you the Paint Explainer, you will also see a bunch of other channels that are doing the exact same style and you will see whether or not your channel is there, maybe. Or you will see who else tried to copy the exact same format and how they bent it because every single one of them is different because some of them are bending towards MMA, some of them are bending towards Professor. It's actually quite a funny one. Paint Explainer, Fictionery, Nexus Files. Some of those aren't actually not very clear bands. So, instead of copying titles and thumbnails, they copied the script structure, but their thumbnails are completely different. So, you would have never told like guessed that these are the exact same videos, but they are the same. And we know that because we analyzed every single one of them. And for each channel we analyzed, we give you the TXT files with all of their scripts so you can upload them to Claude and you can ask your own questions. You can see whether or not they're actually, you know, as interesting as you think they are, right? So, you don't need to watch any of the videos from your competitors. And I'm going to give you the exact same prompts as well, the MD prompts, so you can use that as a learning material to teach your Claude to write scripts for those channels. So, super excited for that. The niche bending workshop is coming April 8th. Right now, below this video, you can find a waitlist. Or if you're watching this video late, then you will see the exact link to get your tickets. Do that now because I'm expecting more than 300 people to join us live this time and this time I'm actually preparing something legendary for all of you. So, you know how much I love to over-deliver. This time we're delivering an extreme amount of value for just a fraction of the cost that this thing should cost. Now, what from that process should you actually automate? Because I've built some incredible automations that I think you should build, too. Now, I have the AI agent to find ideas for me. So, the way it works is there is a database of videos. Every single day it scrapes the videos from all of my competitors. It puts them in a spreadsheet and it analyzes whether or not those videos could be bent to my niche, to the Art of War channel. And if you can see true, then this video will be scripted. If you can see false, then this video is not usable for us. So, for example, it then creates this list where it collects all of the ideas that we can bend to our niche, to our channel because I taught it exactly how to script bend videos, right? So, it finds the original transcript script of the video, so it transcribes the video for me. It finds the viral trigger, why the video works, and it also gives me five ideas for each one of those videos. And what I do on a daily basis, I open the spreadsheet, I check the ideas, and I think, okay, cool. Do I like those ideas or not? And if I do, then I just check box the the ones that I like, those ones. And the next morning, Claude will see that I like those ideas and it will start writing those scripts for me. So, this is the level of of automation that I want in my business. I want everything to be as streamlined as possible. AI agent searching for ideas, sends them to me for approval, then another one writes those scripts. So, every single day at 9:00 a.m., it will open my like spreadsheet, it will check for approved ideas, and it will write the scripts for me. And to show you how it works, let me actually run it right now and we'll see what is capable of. So, we'll run the scripts. You can see I'm clicking run now and Claude will start working on that for me. And what it's going to do, it's going to look at all of the ideas that I approved from here. It's going to change their status to scripted and it's going to add them all to my Asana. So, I'll open the Asana right now. I'll show you the dashboard. These are all of the scripts that we have for approval right now. As you can see, the last one is 10:58 and Claude is now working on basically searching for ideas that it liked and adding them here. So, it will create a Google folder for me. It will create a Google document. It will put the script that it wrote in that document and it will create an Asana card in my dashboard. It will basically make the entire process work seamlessly without me doing anything. So, right now we're just waiting for it. As you can see, it works. Okay, cool. As you can see, the first video was just delivered and it took probably 2 minutes. Let's actually click around and let's see what it did. So, first of all, we have the Google folder. As you can see, 10:59 and it just wrote the the script. So, it took this idea. It used our script writing SOPs and it prepared a fresh script and it actually looks pretty solid from the first look. It used the you see that I always use in my scripts and also added a punch at the end and it used wood intentionally that I always use in my Art of War scripts. So, it followed the SOP to the T and it created a very good script. So, this is the level of automation that we now use. This is what replaced my 4K a month script writing team. And I'll probably create another video on that automation because it's too crazy to fit it in the script bending video, but what I wanted to show you is that almost everything that I showed you today can be automated. And as long as you can collect a bunch of data from your competitors, as long as you can put it into the right prompts, you can actually make Claude run your faceless YouTube channel for you. This is pretty much how I run my Art of War channel right now, the channel that did 4 billion views, the channel that generated 300 plus thousand dollars in revenue is now run by my AI agents. And all I do is approve ideas once a day and then just approve those scripts once I like them. And while I was speaking, basically Claude delivered another idea for me. And it even writes a personalized compliment for my animators just to keep them a little bit more happy, you know? So, if you want to take the next step, what I want to do is invite you to the script bending workshop. At the bottom of my heart, I believe that that's going to be the biggest event in faceless industry, the one that will change the way people create their YouTube channels, people run their YouTube channels. So, on April 8th, I'm hosting the script bending workshop. This is where I'm not just going to tell you how to script bend. Instead, I'm going to give you the plug-and-play AI agents that will do it for you. So, you come to the event, you set them up, you set those agents up once, and they work for you 24/7 365 for 20 bucks a month Claude subscription. Cancel your GPT, start using Claude. Instead of 3.6K a month that was previously the cost of my script writing team. And every single day they will deliver 20, 30, actually there's no limit, but 20, 30 ideas is already pretty good. 5 to 15 new scripts based on your channel analytics and SOPs. It will work like this. You will put a link of your channel in the chat. It will analyze everything and it will create SOPs for you and then it will automatically build all of the other agents so that you can click one button every morning. You don't even need to click it but like you will click once and every single morning it will run automatically collecting all of the ideas, writing all of the scripts and all you need to do is to approve the best ones. Last time we did the workshop we had over 200 people who showed up live and dozens of them then messaged me afterwards with words of appreciation for how much we actually over-delivered. You know how much I love over-delivering and giving even more than I promised. This time we're going to deliver even more and instead of focusing on the theory, I'm just going to give you the exact ready-made templates, prompts, AI agents and protocols that currently run my 700k per year YouTube portfolio. So this is how Sap scaled to 20k months in just 90 days. Ron got his silver button. Congrats, Ron. Ollie created a video, recreated the video that got 1.3 million views overnight and Kirill got 50k views long form. Now we know that the video sits at around 270k. This is the video that got him monetized. Second ever upload and he used the script bend. Now because I don't want you to miss on that opportunity, if you sign up for it now, you will receive a huge bonus from me. A two-week script bending bootcamp where every single day I'm going to be in the same private Telegram group with you where I'm going to break down successful YouTube scripts and show you exactly how you can use them in your niche. We're going to do a lot of niche breakdowns and script breakdowns as well. You will be able to ask me questions in the chat and if you want to learn how I script my videos that get hundreds of millions of views and how you can use AI to automate 90% of that process, click the first link that you can see in the description. The website will tell you exactly how to sign up to the script bending workshop and join it before we increase the price. Do that right now and I'll see you live on the biggest event in faceless YouTube community.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "In October 2025, my flagship YouTube",
+        "duration": 4.72
+      },
+      {
+        "start": 2.48,
+        "text": "channel made me $56,000",
+        "duration": 5.28
+      },
+      {
+        "start": 4.72,
+        "text": "from 689 million views. Around the same",
+        "duration": 5.0
+      },
+      {
+        "start": 7.76,
+        "text": "time, another channel from my portfolio",
+        "duration": 4.8
+      },
+      {
+        "start": 9.72,
+        "text": "got 761 million views and made us",
+        "duration": 4.64
+      },
+      {
+        "start": 12.56,
+        "text": "$70,000.",
+        "duration": 4.64
+      },
+      {
+        "start": 14.36,
+        "text": "And recently, I repeated this process",
+        "duration": 5.8
+      },
+      {
+        "start": 17.2,
+        "text": "again, scaling this channel from zero to",
+        "duration": 6.44
+      },
+      {
+        "start": 20.16,
+        "text": "1 billion views and $88,000",
+        "duration": 6.08
+      },
+      {
+        "start": 23.64,
+        "text": "in revenue. And all of this was possible",
+        "duration": 5.36
+      },
+      {
+        "start": 26.24,
+        "text": "because we never script our videos.",
+        "duration": 5.72
+      },
+      {
+        "start": 29.0,
+        "text": "Instead, we use what I call the script",
+        "duration": 5.2
+      },
+      {
+        "start": 31.96,
+        "text": "bending. But while previously we managed",
+        "duration": 4.36
+      },
+      {
+        "start": 34.2,
+        "text": "a team of three scriptwriters that was",
+        "duration": 4.6
+      },
+      {
+        "start": 36.32,
+        "text": "costing us about three to $4,000 a",
+        "duration": 5.16
+      },
+      {
+        "start": 38.8,
+        "text": "month, we recently let them go and",
+        "duration": 5.6
+      },
+      {
+        "start": 41.48,
+        "text": "replaced them with AI. So, the systems",
+        "duration": 4.56
+      },
+      {
+        "start": 44.4,
+        "text": "that we used became even more",
+        "duration": 3.52
+      },
+      {
+        "start": 46.04,
+        "text": "accessible, and in today's video I'm",
+        "duration": 4.12
+      },
+      {
+        "start": 47.92,
+        "text": "going to give you the exact same system,",
+        "duration": 4.68
+      },
+      {
+        "start": 50.16,
+        "text": "and I'm going to show you how we script",
+        "duration": 4.6
+      },
+      {
+        "start": 52.6,
+        "text": "our videos that, as you can see, get",
+        "duration": 5.08
+      },
+      {
+        "start": 54.76,
+        "text": "billions of views. But while other",
+        "duration": 5.6
+      },
+      {
+        "start": 57.68,
+        "text": "similar videos just like this one about",
+        "duration": 5.04
+      },
+      {
+        "start": 60.36,
+        "text": "my faceless YouTube scripts uh give you",
+        "duration": 4.839
+      },
+      {
+        "start": 62.72,
+        "text": "surface-level scripting techniques like,",
+        "duration": 5.0
+      },
+      {
+        "start": 65.199,
+        "text": "\"Hey ChatGPT, uh can you please write me",
+        "duration": 5.761
+      },
+      {
+        "start": 67.72,
+        "text": "a script about X, Y, and Z?\" Or uh they",
+        "duration": 6.04
+      },
+      {
+        "start": 70.96,
+        "text": "give you a stealing method when you",
+        "duration": 6.12
+      },
+      {
+        "start": 73.76,
+        "text": "basically copy someone else's work and",
+        "duration": 6.16
+      },
+      {
+        "start": 77.08,
+        "text": "you expect it to go viral. Spoiler, it",
+        "duration": 4.88
+      },
+      {
+        "start": 79.92,
+        "text": "never actually works like this. Or they",
+        "duration": 4.48
+      },
+      {
+        "start": 81.96,
+        "text": "just give you generic basic-level",
+        "duration": 6.56
+      },
+      {
+        "start": 84.4,
+        "text": "artist-level uh prompts for Claude or uh",
+        "duration": 7.12
+      },
+      {
+        "start": 88.52,
+        "text": "even GPT. Spoiler, GPT is terrible. You",
+        "duration": 5.08
+      },
+      {
+        "start": 91.52,
+        "text": "should never cancel your GPT",
+        "duration": 3.4
+      },
+      {
+        "start": 93.6,
+        "text": "subscription because you should never",
+        "duration": 4.04
+      },
+      {
+        "start": 94.92,
+        "text": "use that. Uh in this video, the script",
+        "duration": 4.56
+      },
+      {
+        "start": 97.64,
+        "text": "bending video, I'm going to give you the",
+        "duration": 4.52
+      },
+      {
+        "start": 99.48,
+        "text": "unique script bending method. I'm also",
+        "duration": 5.04
+      },
+      {
+        "start": 102.16,
+        "text": "going to show you the database of 50",
+        "duration": 4.92
+      },
+      {
+        "start": 104.52,
+        "text": "plus uh scripting templates we created",
+        "duration": 4.8
+      },
+      {
+        "start": 107.08,
+        "text": "for our workshop, and I'm going to show",
+        "duration": 5.64
+      },
+      {
+        "start": 109.32,
+        "text": "you a team of AI agents that find ideas,",
+        "duration": 6.24
+      },
+      {
+        "start": 112.72,
+        "text": "write scripts, and do the manual job on",
+        "duration": 5.28
+      },
+      {
+        "start": 115.56,
+        "text": "autopilot. So, instead of giving you a",
+        "duration": 3.72
+      },
+      {
+        "start": 118.0,
+        "text": "fish,",
+        "duration": 4.04
+      },
+      {
+        "start": 119.28,
+        "text": "very often uh root and one, uh I will",
+        "duration": 4.88
+      },
+      {
+        "start": 122.04,
+        "text": "give you the fishing rod so that you can",
+        "duration": 4.64
+      },
+      {
+        "start": 124.16,
+        "text": "catch the fish whenever you want and",
+        "duration": 5.04
+      },
+      {
+        "start": 126.68,
+        "text": "find those ideas and script those videos",
+        "duration": 4.48
+      },
+      {
+        "start": 129.2,
+        "text": "as many times as you want for as many",
+        "duration": 4.0
+      },
+      {
+        "start": 131.16,
+        "text": "faceless channels as you want. And this",
+        "duration": 4.12
+      },
+      {
+        "start": 133.2,
+        "text": "is exactly what I call the script",
+        "duration": 4.2
+      },
+      {
+        "start": 135.28,
+        "text": "bending. Now, let me explain you the",
+        "duration": 5.12
+      },
+      {
+        "start": 137.4,
+        "text": "method because most people honestly get",
+        "duration": 5.84
+      },
+      {
+        "start": 140.4,
+        "text": "that wrong. They think they should write",
+        "duration": 5.36
+      },
+      {
+        "start": 143.24,
+        "text": "their scripts, but in fact, you should",
+        "duration": 5.68
+      },
+      {
+        "start": 145.76,
+        "text": "actually never do that. Uh others make",
+        "duration": 5.12
+      },
+      {
+        "start": 148.92,
+        "text": "another mistake thinking that uh you",
+        "duration": 5.56
+      },
+      {
+        "start": 150.88,
+        "text": "should steal someone else's ideas, but",
+        "duration": 5.52
+      },
+      {
+        "start": 154.48,
+        "text": "it never works out. So, both of those",
+        "duration": 4.52
+      },
+      {
+        "start": 156.4,
+        "text": "methods don't work. Forget about them.",
+        "duration": 4.6
+      },
+      {
+        "start": 159.0,
+        "text": "Instead, what you should be doing is,",
+        "duration": 4.28
+      },
+      {
+        "start": 161.0,
+        "text": "remember this formula. Viral YouTube",
+        "duration": 6.0
+      },
+      {
+        "start": 163.28,
+        "text": "script is always a unique idea and a",
+        "duration": 6.32
+      },
+      {
+        "start": 167.0,
+        "text": "proven storytelling framework. A",
+        "duration": 5.36
+      },
+      {
+        "start": 169.6,
+        "text": "combination of those two deliver the",
+        "duration": 5.48
+      },
+      {
+        "start": 172.36,
+        "text": "best results. So, you should always find",
+        "duration": 5.04
+      },
+      {
+        "start": 175.08,
+        "text": "unique ideas that no one has ever",
+        "duration": 4.16
+      },
+      {
+        "start": 177.4,
+        "text": "covered in your",
+        "duration": 3.56
+      },
+      {
+        "start": 179.24,
+        "text": "direct competition.",
+        "duration": 3.56
+      },
+      {
+        "start": 180.96,
+        "text": "Uh and you should use proven",
+        "duration": 4.64
+      },
+      {
+        "start": 182.8,
+        "text": "storytelling frameworks that worked for",
+        "duration": 6.0
+      },
+      {
+        "start": 185.6,
+        "text": "competitors. So, frameworks are proven,",
+        "duration": 5.8
+      },
+      {
+        "start": 188.8,
+        "text": "ideas are unique, and the combination of",
+        "duration": 4.56
+      },
+      {
+        "start": 191.4,
+        "text": "both give you",
+        "duration": 4.72
+      },
+      {
+        "start": 193.36,
+        "text": "unique videos that are almost guaranteed",
+        "duration": 4.72
+      },
+      {
+        "start": 196.12,
+        "text": "to work. So, this is the only",
+        "duration": 4.24
+      },
+      {
+        "start": 198.08,
+        "text": "combination that guarantees the success",
+        "duration": 4.28
+      },
+      {
+        "start": 200.36,
+        "text": "of your video. Almost guarantees.",
+        "duration": 4.96
+      },
+      {
+        "start": 202.36,
+        "text": "There's never uh a 100% guarantee, but",
+        "duration": 5.84
+      },
+      {
+        "start": 205.32,
+        "text": "this one is as close as it gets to the",
+        "duration": 5.2
+      },
+      {
+        "start": 208.2,
+        "text": "guarantee. So, to give you an idea,",
+        "duration": 4.4
+      },
+      {
+        "start": 210.52,
+        "text": "here's exactly how it works. Uh these",
+        "duration": 3.92
+      },
+      {
+        "start": 212.6,
+        "text": "are two videos. One is from Agent",
+        "duration": 4.72
+      },
+      {
+        "start": 214.44,
+        "text": "Floppy, and the other one is from Looney",
+        "duration": 5.96
+      },
+      {
+        "start": 217.32,
+        "text": "Throne. And the initial video that blew",
+        "duration": 6.4
+      },
+      {
+        "start": 220.4,
+        "text": "up 9 months ago to 6.1 million views is",
+        "duration": 6.56
+      },
+      {
+        "start": 223.72,
+        "text": "every US president death explained in 21",
+        "duration": 5.8
+      },
+      {
+        "start": 226.96,
+        "text": "minutes. This video was also script",
+        "duration": 5.0
+      },
+      {
+        "start": 229.52,
+        "text": "bended from uh I think Paint Explainer",
+        "duration": 4.92
+      },
+      {
+        "start": 231.96,
+        "text": "was the first to do every someone's",
+        "duration": 5.72
+      },
+      {
+        "start": 234.44,
+        "text": "death, but uh Agent Floppy uh innovated",
+        "duration": 5.28
+      },
+      {
+        "start": 237.68,
+        "text": "on the style. They uh did a way better",
+        "duration": 4.92
+      },
+      {
+        "start": 239.72,
+        "text": "thumbnail, uh and that's why their video",
+        "duration": 6.2
+      },
+      {
+        "start": 242.6,
+        "text": "exploded 6.9 uh 6.1 million views. But",
+        "duration": 5.72
+      },
+      {
+        "start": 245.92,
+        "text": "then, Looney Throne actually bent this",
+        "duration": 5.16
+      },
+      {
+        "start": 248.32,
+        "text": "video and created every British monarch",
+        "duration": 5.16
+      },
+      {
+        "start": 251.08,
+        "text": "death explained in 21 minute. And for",
+        "duration": 4.08
+      },
+      {
+        "start": 253.48,
+        "text": "most of you, the picture is already",
+        "duration": 4.24
+      },
+      {
+        "start": 255.16,
+        "text": "clear what is script bending, but uh I",
+        "duration": 4.799
+      },
+      {
+        "start": 257.72,
+        "text": "will still explain how the framework",
+        "duration": 4.44
+      },
+      {
+        "start": 259.959,
+        "text": "works because we're now looking at the",
+        "duration": 4.761
+      },
+      {
+        "start": 262.16,
+        "text": "title and thumbnail, but there are so",
+        "duration": 5.04
+      },
+      {
+        "start": 264.72,
+        "text": "many different script bends you can do.",
+        "duration": 4.24
+      },
+      {
+        "start": 267.2,
+        "text": "You can bend the title, and you can bend",
+        "duration": 3.32
+      },
+      {
+        "start": 268.96,
+        "text": "the thumbnail, you can bend the script,",
+        "duration": 3.96
+      },
+      {
+        "start": 270.52,
+        "text": "the hook. Basically, any part of the",
+        "duration": 4.76
+      },
+      {
+        "start": 272.92,
+        "text": "YouTube video you can bend, turning it",
+        "duration": 4.92
+      },
+      {
+        "start": 275.28,
+        "text": "into your unique piece. So, let me",
+        "duration": 4.48
+      },
+      {
+        "start": 277.84,
+        "text": "explain you how it works. The original",
+        "duration": 4.4
+      },
+      {
+        "start": 279.76,
+        "text": "video blew up, and it was about",
+        "duration": 5.44
+      },
+      {
+        "start": 282.24,
+        "text": "presidents. And the storytelling",
+        "duration": 5.76
+      },
+      {
+        "start": 285.2,
+        "text": "framework was like this. From like this",
+        "duration": 4.72
+      },
+      {
+        "start": 288.0,
+        "text": "is the exact script from the video. So,",
+        "duration": 3.96
+      },
+      {
+        "start": 289.92,
+        "text": "I went ahead, I transcribed both of",
+        "duration": 3.44
+      },
+      {
+        "start": 291.96,
+        "text": "those videos, and these are the",
+        "duration": 4.08
+      },
+      {
+        "start": 293.36,
+        "text": "frameworks and how they worked every",
+        "duration": 4.72
+      },
+      {
+        "start": 296.04,
+        "text": "single time because once they copied the",
+        "duration": 5.64
+      },
+      {
+        "start": 298.08,
+        "text": "video, they got 300,000 views on it in 4",
+        "duration": 6.24
+      },
+      {
+        "start": 301.68,
+        "text": "months. So, the framework was from",
+        "duration": 4.84
+      },
+      {
+        "start": 304.32,
+        "text": "eating raw cherries to contaminated",
+        "duration": 4.24
+      },
+      {
+        "start": 306.52,
+        "text": "water at the White House to getting",
+        "duration": 4.76
+      },
+      {
+        "start": 308.56,
+        "text": "assassinated in broad daylight. This is",
+        "duration": 5.36
+      },
+      {
+        "start": 311.28,
+        "text": "how every US president died and their",
+        "duration": 5.48
+      },
+      {
+        "start": 313.92,
+        "text": "final words. So, this was the initial",
+        "duration": 5.24
+      },
+      {
+        "start": 316.76,
+        "text": "hook that made the video explode. And as",
+        "duration": 5.2
+      },
+      {
+        "start": 319.16,
+        "text": "you can see, the structure here is very",
+        "duration": 9.48
+      },
+      {
+        "start": 321.96,
+        "text": "simple. From X to Y to Z. Uh this is how",
+        "duration": 9.76
+      },
+      {
+        "start": 328.64,
+        "text": "something, right? And these guys, they",
+        "duration": 5.92
+      },
+      {
+        "start": 331.72,
+        "text": "simply bent it to British monarchs. So,",
+        "duration": 5.32
+      },
+      {
+        "start": 334.56,
+        "text": "they changed presidents to British",
+        "duration": 5.96
+      },
+      {
+        "start": 337.04,
+        "text": "monarchs, and the framework was exactly",
+        "duration": 5.52
+      },
+      {
+        "start": 340.52,
+        "text": "the same. So, the hook was structured",
+        "duration": 5.84
+      },
+      {
+        "start": 342.56,
+        "text": "the exact same way. From this to that to",
+        "duration": 6.2
+      },
+      {
+        "start": 346.36,
+        "text": "then this, and then this is how every",
+        "duration": 4.76
+      },
+      {
+        "start": 348.76,
+        "text": "English and British monarch died over",
+        "duration": 4.8
+      },
+      {
+        "start": 351.12,
+        "text": "the last thousand years. As you can see,",
+        "duration": 5.28
+      },
+      {
+        "start": 353.56,
+        "text": "they actually used a shorter version of",
+        "duration": 5.0
+      },
+      {
+        "start": 356.4,
+        "text": "it, and that's probably one of the",
+        "duration": 4.84
+      },
+      {
+        "start": 358.56,
+        "text": "reasons why I feel like their hook is",
+        "duration": 5.88
+      },
+      {
+        "start": 361.24,
+        "text": "way worse than the original one. Agent",
+        "duration": 5.24
+      },
+      {
+        "start": 364.44,
+        "text": "Floppy did a way better job at hooks,",
+        "duration": 4.36
+      },
+      {
+        "start": 366.48,
+        "text": "but still they made the video explode.",
+        "duration": 6.0
+      },
+      {
+        "start": 368.8,
+        "text": "So, they script bent the format, so the",
+        "duration": 5.4
+      },
+      {
+        "start": 372.48,
+        "text": "title and thumbnail, and they also",
+        "duration": 5.04
+      },
+      {
+        "start": 374.2,
+        "text": "script bent the hook and the rest of the",
+        "duration": 5.48
+      },
+      {
+        "start": 377.52,
+        "text": "script. So, in this example, I'm only",
+        "duration": 3.64
+      },
+      {
+        "start": 379.68,
+        "text": "giving you the hook because it's a very",
+        "duration": 3.76
+      },
+      {
+        "start": 381.16,
+        "text": "clear example, but actually the rest of",
+        "duration": 4.24
+      },
+      {
+        "start": 383.44,
+        "text": "the script is pretty much like that.",
+        "duration": 5.12
+      },
+      {
+        "start": 385.4,
+        "text": "Whenever Agent Floppy breaks into",
+        "duration": 6.04
+      },
+      {
+        "start": 388.56,
+        "text": "um like goes into storytelling on using",
+        "duration": 5.96
+      },
+      {
+        "start": 391.44,
+        "text": "lists or using cold actions, the these",
+        "duration": 5.48
+      },
+      {
+        "start": 394.52,
+        "text": "guys are doing the exact same thing. And",
+        "duration": 3.96
+      },
+      {
+        "start": 396.92,
+        "text": "the reason why they do it is because",
+        "duration": 4.48
+      },
+      {
+        "start": 398.48,
+        "text": "it's very simple to copy the structure",
+        "duration": 4.6
+      },
+      {
+        "start": 401.4,
+        "text": "with AI, which I'm going to show you at",
+        "duration": 3.6
+      },
+      {
+        "start": 403.08,
+        "text": "the uh like",
+        "duration": 4.48
+      },
+      {
+        "start": 405.0,
+        "text": "in this video. Now,",
+        "duration": 6.24
+      },
+      {
+        "start": 407.56,
+        "text": "you can continue bending it to multiple",
+        "duration": 6.08
+      },
+      {
+        "start": 411.24,
+        "text": "examples. So, you can create a video",
+        "duration": 5.12
+      },
+      {
+        "start": 413.64,
+        "text": "every celebrity death explained. You can",
+        "duration": 5.48
+      },
+      {
+        "start": 416.36,
+        "text": "like this one, by the way, uh also uses",
+        "duration": 5.24
+      },
+      {
+        "start": 419.12,
+        "text": "what I call the hype injection. You can",
+        "duration": 4.56
+      },
+      {
+        "start": 421.6,
+        "text": "talk about celebrities that are popular",
+        "duration": 5.04
+      },
+      {
+        "start": 423.68,
+        "text": "right now, and by doing that, you can",
+        "duration": 6.92
+      },
+      {
+        "start": 426.64,
+        "text": "actually get uh to a broader audience.",
+        "duration": 6.04
+      },
+      {
+        "start": 430.6,
+        "text": "You can increase your TAM, total",
+        "duration": 4.68
+      },
+      {
+        "start": 432.68,
+        "text": "addressable market, by using that. Uh",
+        "duration": 4.24
+      },
+      {
+        "start": 435.28,
+        "text": "I'll probably create another video on",
+        "duration": 4.12
+      },
+      {
+        "start": 436.92,
+        "text": "hype injection and how it works. Uh then",
+        "duration": 4.48
+      },
+      {
+        "start": 439.4,
+        "text": "you can do every dictator's death",
+        "duration": 4.44
+      },
+      {
+        "start": 441.4,
+        "text": "explained, pretty similar topic to the",
+        "duration": 4.56
+      },
+      {
+        "start": 443.84,
+        "text": "to this one. Every controversial",
+        "duration": 5.12
+      },
+      {
+        "start": 445.96,
+        "text": "influencer death explained, also kind of",
+        "duration": 6.32
+      },
+      {
+        "start": 448.96,
+        "text": "a hype injection in a way. Every star in",
+        "duration": 6.44
+      },
+      {
+        "start": 452.28,
+        "text": "a universe uh death explained, this one",
+        "duration": 7.16
+      },
+      {
+        "start": 455.4,
+        "text": "is bent to uh like space and uh",
+        "duration": 6.48
+      },
+      {
+        "start": 459.44,
+        "text": "like physics and stuff like this. Uh so,",
+        "duration": 4.0
+      },
+      {
+        "start": 461.88,
+        "text": "you can be creative with those bends,",
+        "duration": 4.16
+      },
+      {
+        "start": 463.44,
+        "text": "right? Uh and when I personally saw this",
+        "duration": 4.76
+      },
+      {
+        "start": 466.04,
+        "text": "bend because I was uh one of the first",
+        "duration": 4.8
+      },
+      {
+        "start": 468.2,
+        "text": "to s- to see this video blow up. I I I",
+        "duration": 5.96
+      },
+      {
+        "start": 470.84,
+        "text": "saw it at like 200k views. So, um when I",
+        "duration": 5.16
+      },
+      {
+        "start": 474.16,
+        "text": "saw it blow up, I immediately did the",
+        "duration": 4.6
+      },
+      {
+        "start": 476.0,
+        "text": "same thing for uh with one of the Art of",
+        "duration": 5.6
+      },
+      {
+        "start": 478.76,
+        "text": "YouTube clients. So, we bent the video.",
+        "duration": 4.56
+      },
+      {
+        "start": 481.6,
+        "text": "Um I'm not going to tell you the topic",
+        "duration": 3.96
+      },
+      {
+        "start": 483.32,
+        "text": "of that uh obviously to protect my",
+        "duration": 4.52
+      },
+      {
+        "start": 485.56,
+        "text": "client's channel, but uh we bent the",
+        "duration": 4.24
+      },
+      {
+        "start": 487.84,
+        "text": "video to something very creative, very",
+        "duration": 4.88
+      },
+      {
+        "start": 489.8,
+        "text": "new, something no one has done uh like",
+        "duration": 5.64
+      },
+      {
+        "start": 492.72,
+        "text": "before. And uh we posted the video. It",
+        "duration": 4.72
+      },
+      {
+        "start": 495.44,
+        "text": "was the second ever upload on the",
+        "duration": 4.76
+      },
+      {
+        "start": 497.44,
+        "text": "channel, and for the first 16 days, it",
+        "duration": 5.28
+      },
+      {
+        "start": 500.2,
+        "text": "was uh basically sitting at 200 views,",
+        "duration": 3.96
+      },
+      {
+        "start": 502.72,
+        "text": "which is",
+        "duration": 3.84
+      },
+      {
+        "start": 504.16,
+        "text": "like almost always when you start a new",
+        "duration": 5.08
+      },
+      {
+        "start": 506.56,
+        "text": "YouTube channel right now, branded one",
+        "duration": 5.04
+      },
+      {
+        "start": 509.24,
+        "text": "uh with long form, it will almost always",
+        "duration": 5.76
+      },
+      {
+        "start": 511.6,
+        "text": "get stuck at zero to 200 views for the",
+        "duration": 5.879
+      },
+      {
+        "start": 515.0,
+        "text": "first 2 weeks. But then, as you can see,",
+        "duration": 5.12
+      },
+      {
+        "start": 517.479,
+        "text": "20 days later, it started uh blowing up",
+        "duration": 5.521
+      },
+      {
+        "start": 520.12,
+        "text": "out of nowhere, and uh like I'll zoom",
+        "duration": 4.92
+      },
+      {
+        "start": 523.0,
+        "text": "zoom that in for you. Uh Kirill",
+        "duration": 4.56
+      },
+      {
+        "start": 525.04,
+        "text": "basically sent it in the community as a",
+        "duration": 4.76
+      },
+      {
+        "start": 527.56,
+        "text": "win because, as you can see the graph,",
+        "duration": 4.68
+      },
+      {
+        "start": 529.8,
+        "text": "the video absolutely exploded after the",
+        "duration": 6.28
+      },
+      {
+        "start": 532.24,
+        "text": "20th day. So, uh 50k views in uh in a",
+        "duration": 7.16
+      },
+      {
+        "start": 536.08,
+        "text": "day back then, and by now the video sits",
+        "duration": 7.08
+      },
+      {
+        "start": 539.4,
+        "text": "at uh a solid 263,000",
+        "duration": 6.32
+      },
+      {
+        "start": 543.16,
+        "text": "views. And that was the second ever",
+        "duration": 5.24
+      },
+      {
+        "start": 545.72,
+        "text": "upload posted bended from one of those",
+        "duration": 4.56
+      },
+      {
+        "start": 548.4,
+        "text": "videos. So,",
+        "duration": 3.72
+      },
+      {
+        "start": 550.28,
+        "text": "this is how the script bending work.",
+        "duration": 3.96
+      },
+      {
+        "start": 552.12,
+        "text": "This is how like the type of results you",
+        "duration": 4.64
+      },
+      {
+        "start": 554.24,
+        "text": "can expect from doing that. So, this",
+        "duration": 5.44
+      },
+      {
+        "start": 556.76,
+        "text": "way, you create unique valuable piece of",
+        "duration": 5.28
+      },
+      {
+        "start": 559.68,
+        "text": "content while sticking to the framework",
+        "duration": 5.08
+      },
+      {
+        "start": 562.04,
+        "text": "that worked for someone else. That's the",
+        "duration": 4.88
+      },
+      {
+        "start": 564.76,
+        "text": "key here. You have the framework, you",
+        "duration": 3.84
+      },
+      {
+        "start": 566.92,
+        "text": "know that it works, you know that the",
+        "duration": 4.2
+      },
+      {
+        "start": 568.6,
+        "text": "audience wants this format, but you give",
+        "duration": 5.36
+      },
+      {
+        "start": 571.12,
+        "text": "them a new fresh angle that no one has",
+        "duration": 5.6
+      },
+      {
+        "start": 573.96,
+        "text": "ever done. And that's how you get very",
+        "duration": 6.88
+      },
+      {
+        "start": 576.72,
+        "text": "strong uh faceless videos. Now, another",
+        "duration": 6.6
+      },
+      {
+        "start": 580.84,
+        "text": "example, uh this format, I'm sure you",
+        "duration": 4.32
+      },
+      {
+        "start": 583.32,
+        "text": "know this format. It's been blowing up",
+        "duration": 4.28
+      },
+      {
+        "start": 585.16,
+        "text": "like crazy recently, Your Life as Every",
+        "duration": 4.88
+      },
+      {
+        "start": 587.6,
+        "text": "Rank of Something. In this case, it was",
+        "duration": 5.8
+      },
+      {
+        "start": 590.04,
+        "text": "mafia. Uh people started doing uh like",
+        "duration": 5.64
+      },
+      {
+        "start": 593.4,
+        "text": "soldiers. People started doing uh",
+        "duration": 4.28
+      },
+      {
+        "start": 595.68,
+        "text": "history like so",
+        "duration": 4.08
+      },
+      {
+        "start": 597.68,
+        "text": "like soldiers during World War II or",
+        "duration": 5.56
+      },
+      {
+        "start": 599.76,
+        "text": "Vietnam War or like again they were like",
+        "duration": 6.64
+      },
+      {
+        "start": 603.24,
+        "text": "I'll show you a bunch of other bands in",
+        "duration": 5.92
+      },
+      {
+        "start": 606.4,
+        "text": "in a bit. But this guy actually did",
+        "duration": 4.48
+      },
+      {
+        "start": 609.16,
+        "text": "something very very smart. You remember",
+        "duration": 3.64
+      },
+      {
+        "start": 610.88,
+        "text": "I told you about hype injection. So he",
+        "duration": 4.04
+      },
+      {
+        "start": 612.8,
+        "text": "did exactly that because",
+        "duration": 4.36
+      },
+      {
+        "start": 614.92,
+        "text": "this guy is currently blowing up",
+        "duration": 5.16
+      },
+      {
+        "start": 617.16,
+        "text": "everywhere and Epstein Island is on",
+        "duration": 5.52
+      },
+      {
+        "start": 620.08,
+        "text": "trend. It's like on hype.",
+        "duration": 4.68
+      },
+      {
+        "start": 622.68,
+        "text": "This guy decided like what if I take the",
+        "duration": 4.48
+      },
+      {
+        "start": 624.76,
+        "text": "format and I bend it to something that",
+        "duration": 5.32
+      },
+      {
+        "start": 627.16,
+        "text": "is currently hyping like crazy. So he",
+        "duration": 6.08
+      },
+      {
+        "start": 630.08,
+        "text": "did that and as you can see the video",
+        "duration": 6.24
+      },
+      {
+        "start": 633.24,
+        "text": "from like 11 days old video got half a",
+        "duration": 6.4
+      },
+      {
+        "start": 636.32,
+        "text": "million views which is again crazy",
+        "duration": 6.64
+      },
+      {
+        "start": 639.64,
+        "text": "result for a channel and a quick story",
+        "duration": 5.12
+      },
+      {
+        "start": 642.96,
+        "text": "like you can check the channel. It was",
+        "duration": 4.76
+      },
+      {
+        "start": 644.76,
+        "text": "not successful at all. So this was one",
+        "duration": 5.28
+      },
+      {
+        "start": 647.72,
+        "text": "of the first videos that blew up for",
+        "duration": 4.52
+      },
+      {
+        "start": 650.04,
+        "text": "them. They first went viral with a",
+        "duration": 4.96
+      },
+      {
+        "start": 652.24,
+        "text": "similar video and there was a complete",
+        "duration": 4.56
+      },
+      {
+        "start": 655.0,
+        "text": "copy. I'm not recommending you to steal",
+        "duration": 4.36
+      },
+      {
+        "start": 656.8,
+        "text": "content. Sometimes it works but it's",
+        "duration": 5.76
+      },
+      {
+        "start": 659.36,
+        "text": "kind of hit or miss. But this time went",
+        "duration": 5.44
+      },
+      {
+        "start": 662.56,
+        "text": "absolutely crazy because they did",
+        "duration": 4.68
+      },
+      {
+        "start": 664.8,
+        "text": "something new something that no one has",
+        "duration": 4.52
+      },
+      {
+        "start": 667.24,
+        "text": "ever done before. And the good thing is",
+        "duration": 4.12
+      },
+      {
+        "start": 669.32,
+        "text": "you can do it with the eye and for that",
+        "duration": 4.24
+      },
+      {
+        "start": 671.36,
+        "text": "I recommend you use Claude AI. Claude is",
+        "duration": 4.6
+      },
+      {
+        "start": 673.56,
+        "text": "probably the best script writing AI",
+        "duration": 5.16
+      },
+      {
+        "start": 675.96,
+        "text": "right now and you just tell it like look",
+        "duration": 5.08
+      },
+      {
+        "start": 678.72,
+        "text": "you're an expert you need to analyze",
+        "duration": 4.76
+      },
+      {
+        "start": 681.04,
+        "text": "this video and you need to prepare a",
+        "duration": 6.0
+      },
+      {
+        "start": 683.48,
+        "text": "script writing SOP breaking down exactly",
+        "duration": 6.08
+      },
+      {
+        "start": 687.04,
+        "text": "what they use for their hooks",
+        "duration": 4.16
+      },
+      {
+        "start": 689.56,
+        "text": "like how they structure the videos their",
+        "duration": 3.76
+      },
+      {
+        "start": 691.2,
+        "text": "storytelling patterns their viral",
+        "duration": 4.4
+      },
+      {
+        "start": 693.32,
+        "text": "triggers and Claude will give you an",
+        "duration": 3.96
+      },
+      {
+        "start": 695.6,
+        "text": "extensive document that will look",
+        "duration": 3.36
+      },
+      {
+        "start": 697.28,
+        "text": "something like this.",
+        "duration": 3.96
+      },
+      {
+        "start": 698.96,
+        "text": "So this is the document that we created",
+        "duration": 3.76
+      },
+      {
+        "start": 701.24,
+        "text": "like the",
+        "duration": 3.56
+      },
+      {
+        "start": 702.72,
+        "text": "it's a bit up because I turned",
+        "duration": 4.0
+      },
+      {
+        "start": 704.8,
+        "text": "PDF into like a",
+        "duration": 4.84
+      },
+      {
+        "start": 706.72,
+        "text": "docs file but basically you can see how",
+        "duration": 6.119
+      },
+      {
+        "start": 709.64,
+        "text": "big those SOPs are and this was",
+        "duration": 5.84
+      },
+      {
+        "start": 712.839,
+        "text": "basically a single prompt with a bunch",
+        "duration": 4.361
+      },
+      {
+        "start": 715.48,
+        "text": "of videos from Zach King Films and",
+        "duration": 3.68
+      },
+      {
+        "start": 717.2,
+        "text": "that's the kind of SOP you need to",
+        "duration": 3.48
+      },
+      {
+        "start": 719.16,
+        "text": "create for every single channel of",
+        "duration": 4.92
+      },
+      {
+        "start": 720.68,
+        "text": "yours. Now the way you use this SOPs is",
+        "duration": 5.72
+      },
+      {
+        "start": 724.08,
+        "text": "A you're going to learn a lot about the",
+        "duration": 4.72
+      },
+      {
+        "start": 726.4,
+        "text": "storytelling patterns and",
+        "duration": 5.36
+      },
+      {
+        "start": 728.8,
+        "text": "scripting frameworks in your niche but B",
+        "duration": 5.48
+      },
+      {
+        "start": 731.76,
+        "text": "you will now turn this SOP into",
+        "duration": 5.56
+      },
+      {
+        "start": 734.28,
+        "text": "something that you use to educate your",
+        "duration": 5.48
+      },
+      {
+        "start": 737.32,
+        "text": "Claude AI agent that will then create",
+        "duration": 4.28
+      },
+      {
+        "start": 739.76,
+        "text": "scripts for you. So this is something",
+        "duration": 4.28
+      },
+      {
+        "start": 741.6,
+        "text": "that we did. Now if you do it with a",
+        "duration": 4.84
+      },
+      {
+        "start": 744.04,
+        "text": "single video because with this prompt",
+        "duration": 4.88
+      },
+      {
+        "start": 746.44,
+        "text": "you need to attach the video transcript",
+        "duration": 4.8
+      },
+      {
+        "start": 748.92,
+        "text": "of one of your competitors. If you do it",
+        "duration": 3.88
+      },
+      {
+        "start": 751.24,
+        "text": "with a single video it's going to be",
+        "duration": 4.56
+      },
+      {
+        "start": 752.8,
+        "text": "good enough but what I did is I actually",
+        "duration": 6.96
+      },
+      {
+        "start": 755.8,
+        "text": "put 500 video transcripts for like of",
+        "duration": 6.12
+      },
+      {
+        "start": 759.76,
+        "text": "Zach King Films to create",
+        "duration": 5.24
+      },
+      {
+        "start": 761.92,
+        "text": "legendary version of the same SOP. It",
+        "duration": 6.28
+      },
+      {
+        "start": 765.0,
+        "text": "turned out so good it's like 15 page",
+        "duration": 6.64
+      },
+      {
+        "start": 768.2,
+        "text": "book. It's almost a book that goes over",
+        "duration": 6.2
+      },
+      {
+        "start": 771.64,
+        "text": "exactly how Zach King Films structures",
+        "duration": 5.68
+      },
+      {
+        "start": 774.4,
+        "text": "his videos. So this version turned out",
+        "duration": 5.08
+      },
+      {
+        "start": 777.32,
+        "text": "to be legendary and this is because I",
+        "duration": 5.24
+      },
+      {
+        "start": 779.48,
+        "text": "gave Claude enough data on how those",
+        "duration": 4.88
+      },
+      {
+        "start": 782.56,
+        "text": "videos are structured. So the more",
+        "duration": 4.6
+      },
+      {
+        "start": 784.36,
+        "text": "transcripts you can get the better and a",
+        "duration": 4.8
+      },
+      {
+        "start": 787.16,
+        "text": "good thing is we actually did it for",
+        "duration": 4.2
+      },
+      {
+        "start": 789.16,
+        "text": "you. So again stick with me till the end",
+        "duration": 4.44
+      },
+      {
+        "start": 791.36,
+        "text": "I'll tell you how you can get all of the",
+        "duration": 5.08
+      },
+      {
+        "start": 793.6,
+        "text": "SOPs for the most popular",
+        "duration": 5.76
+      },
+      {
+        "start": 796.44,
+        "text": "formats and trends of faceless YouTube",
+        "duration": 4.399
+      },
+      {
+        "start": 799.36,
+        "text": "automation.",
+        "duration": 3.64
+      },
+      {
+        "start": 800.839,
+        "text": "Now how do you actually create those",
+        "duration": 4.681
+      },
+      {
+        "start": 803.0,
+        "text": "niche bands those script bands? Excuse",
+        "duration": 4.76
+      },
+      {
+        "start": 805.52,
+        "text": "me because niche bands",
+        "duration": 4.28
+      },
+      {
+        "start": 807.76,
+        "text": "is the first piece that you need and",
+        "duration": 4.2
+      },
+      {
+        "start": 809.8,
+        "text": "script band is the second piece that you",
+        "duration": 4.72
+      },
+      {
+        "start": 811.96,
+        "text": "need. So in order to fully understand",
+        "duration": 4.96
+      },
+      {
+        "start": 814.52,
+        "text": "script bands you actually need niche",
+        "duration": 4.2
+      },
+      {
+        "start": 816.92,
+        "text": "bands. So",
+        "duration": 3.56
+      },
+      {
+        "start": 818.72,
+        "text": "go watch this video right after you",
+        "duration": 3.64
+      },
+      {
+        "start": 820.48,
+        "text": "finish this one you will have a full",
+        "duration": 4.48
+      },
+      {
+        "start": 822.36,
+        "text": "picture of exactly how this thing works",
+        "duration": 4.4
+      },
+      {
+        "start": 824.96,
+        "text": "but",
+        "duration": 3.8
+      },
+      {
+        "start": 826.76,
+        "text": "figure out the niche then figure out the",
+        "duration": 3.88
+      },
+      {
+        "start": 828.76,
+        "text": "scripts and then I'm planning to",
+        "duration": 4.04
+      },
+      {
+        "start": 830.64,
+        "text": "continue this series helping you to",
+        "duration": 4.08
+      },
+      {
+        "start": 832.8,
+        "text": "figure out the production and YouTube",
+        "duration": 4.36
+      },
+      {
+        "start": 834.72,
+        "text": "algorithm as well. Now",
+        "duration": 5.16
+      },
+      {
+        "start": 837.16,
+        "text": "let me explain you what that means. So",
+        "duration": 5.52
+      },
+      {
+        "start": 839.88,
+        "text": "there are those channels right and",
+        "duration": 5.88
+      },
+      {
+        "start": 842.68,
+        "text": "the Odd Dude Explained is the channel",
+        "duration": 5.8
+      },
+      {
+        "start": 845.76,
+        "text": "about mafia and gangs and as you can see",
+        "duration": 4.64
+      },
+      {
+        "start": 848.48,
+        "text": "all of his videos are very well",
+        "duration": 4.0
+      },
+      {
+        "start": 850.4,
+        "text": "structured like the structure is easy to",
+        "duration": 5.28
+      },
+      {
+        "start": 852.48,
+        "text": "see and easy to copy. POV you're the",
+        "duration": 6.16
+      },
+      {
+        "start": 855.68,
+        "text": "cartel deadliest hitman POV you're this",
+        "duration": 5.56
+      },
+      {
+        "start": 858.64,
+        "text": "POV you're that and this is all about",
+        "duration": 4.64
+      },
+      {
+        "start": 861.24,
+        "text": "mafia gangs and",
+        "duration": 5.719
+      },
+      {
+        "start": 863.28,
+        "text": "this kind of stuff so the bad guys. Now",
+        "duration": 6.0
+      },
+      {
+        "start": 866.959,
+        "text": "Professor POV actually bend this niche",
+        "duration": 5.201
+      },
+      {
+        "start": 869.28,
+        "text": "towards good guys. So he changed bad",
+        "duration": 5.76
+      },
+      {
+        "start": 872.16,
+        "text": "guys to good good guys and he now",
+        "duration": 5.679
+      },
+      {
+        "start": 875.04,
+        "text": "creates videos your life as every CIA",
+        "duration": 6.0
+      },
+      {
+        "start": 877.839,
+        "text": "black ops rank and rank of this rank of",
+        "duration": 6.041
+      },
+      {
+        "start": 881.04,
+        "text": "that. Basically same videos slightly",
+        "duration": 5.4
+      },
+      {
+        "start": 883.88,
+        "text": "different thumbnail but the structure of",
+        "duration": 5.04
+      },
+      {
+        "start": 886.44,
+        "text": "their scripts is exactly the same. I",
+        "duration": 5.6
+      },
+      {
+        "start": 888.92,
+        "text": "know because we analyzed that and we",
+        "duration": 4.68
+      },
+      {
+        "start": 892.04,
+        "text": "came to the conclusion that the scripts",
+        "duration": 4.56
+      },
+      {
+        "start": 893.6,
+        "text": "are almost identical meaning either it's",
+        "duration": 5.04
+      },
+      {
+        "start": 896.6,
+        "text": "the same dude or they're stealing",
+        "duration": 4.12
+      },
+      {
+        "start": 898.64,
+        "text": "scripts from each other changing a few",
+        "duration": 4.92
+      },
+      {
+        "start": 900.72,
+        "text": "words here and there. So it's very hard",
+        "duration": 4.56
+      },
+      {
+        "start": 903.56,
+        "text": "to see from the first look at those",
+        "duration": 4.04
+      },
+      {
+        "start": 905.28,
+        "text": "channels but when you do a deep research",
+        "duration": 4.4
+      },
+      {
+        "start": 907.6,
+        "text": "which we've done then you can see it",
+        "duration": 4.4
+      },
+      {
+        "start": 909.68,
+        "text": "very clearly. So these videos are pretty",
+        "duration": 6.159
+      },
+      {
+        "start": 912.0,
+        "text": "much the same again one is slightly",
+        "duration": 5.16
+      },
+      {
+        "start": 915.839,
+        "text": "bigger and",
+        "duration": 3.441
+      },
+      {
+        "start": 917.16,
+        "text": "slightly longer it performed better as",
+        "duration": 4.679
+      },
+      {
+        "start": 919.28,
+        "text": "well but again the structure of the",
+        "duration": 5.0
+      },
+      {
+        "start": 921.839,
+        "text": "script which we care the most about in",
+        "duration": 5.281
+      },
+      {
+        "start": 924.28,
+        "text": "this video at least is exactly the same.",
+        "duration": 4.72
+      },
+      {
+        "start": 927.12,
+        "text": "And those videos are also the same they",
+        "duration": 3.48
+      },
+      {
+        "start": 929.0,
+        "text": "changed the",
+        "duration": 4.36
+      },
+      {
+        "start": 930.6,
+        "text": "cartel deadliest hitman to the FBI",
+        "duration": 5.52
+      },
+      {
+        "start": 933.36,
+        "text": "informant and created the same exact",
+        "duration": 5.36
+      },
+      {
+        "start": 936.12,
+        "text": "video following the structure that",
+        "duration": 6.12
+      },
+      {
+        "start": 938.72,
+        "text": "worked. Again this video is about follow",
+        "duration": 5.52
+      },
+      {
+        "start": 942.24,
+        "text": "the structure that works and come up",
+        "duration": 3.76
+      },
+      {
+        "start": 944.24,
+        "text": "with an original idea that no one has",
+        "duration": 4.2
+      },
+      {
+        "start": 946.0,
+        "text": "done before. So the script bending in",
+        "duration": 4.16
+      },
+      {
+        "start": 948.44,
+        "text": "simple words is basically taking a",
+        "duration": 3.76
+      },
+      {
+        "start": 950.16,
+        "text": "proven format from a different niche and",
+        "duration": 3.799
+      },
+      {
+        "start": 952.2,
+        "text": "rewriting the script following the exact",
+        "duration": 6.0
+      },
+      {
+        "start": 953.959,
+        "text": "same structure for new original ideas.",
+        "duration": 6.081
+      },
+      {
+        "start": 958.2,
+        "text": "Now I'm going to give you the examples",
+        "duration": 4.2
+      },
+      {
+        "start": 960.04,
+        "text": "from the database that we created with",
+        "duration": 5.4
+      },
+      {
+        "start": 962.4,
+        "text": "50 plus proven script formats. Number",
+        "duration": 5.52
+      },
+      {
+        "start": 965.44,
+        "text": "one is the Professor POV storytelling",
+        "duration": 5.48
+      },
+      {
+        "start": 967.92,
+        "text": "style. This channel again",
+        "duration": 5.84
+      },
+      {
+        "start": 970.92,
+        "text": "it's absolutely everywhere now it's",
+        "duration": 4.84
+      },
+      {
+        "start": 973.76,
+        "text": "blowing up and",
+        "duration": 4.6
+      },
+      {
+        "start": 975.76,
+        "text": "their videos are getting crazy amounts",
+        "duration": 4.88
+      },
+      {
+        "start": 978.36,
+        "text": "of views especially this one and the",
+        "duration": 5.24
+      },
+      {
+        "start": 980.64,
+        "text": "format obviously people are trying to",
+        "duration": 5.16
+      },
+      {
+        "start": 983.6,
+        "text": "steal it as much as possible because it",
+        "duration": 4.28
+      },
+      {
+        "start": 985.8,
+        "text": "works. What's the scripting format of",
+        "duration": 5.0
+      },
+      {
+        "start": 987.88,
+        "text": "this channel? First of all they always",
+        "duration": 3.92
+      },
+      {
+        "start": 990.8,
+        "text": "use",
+        "duration": 3.96
+      },
+      {
+        "start": 991.8,
+        "text": "you version of the script. So you drop",
+        "duration": 5.6
+      },
+      {
+        "start": 994.76,
+        "text": "in they place the viewer directly into a",
+        "duration": 5.199
+      },
+      {
+        "start": 997.4,
+        "text": "specific role error or situation and it",
+        "duration": 5.64
+      },
+      {
+        "start": 999.959,
+        "text": "sounds like you apply online like",
+        "duration": 5.641
+      },
+      {
+        "start": 1003.04,
+        "text": "everyone else there is a form on the CIA",
+        "duration": 5.76
+      },
+      {
+        "start": 1005.6,
+        "text": "website then you like this happened to",
+        "duration": 5.64
+      },
+      {
+        "start": 1008.8,
+        "text": "you this happens to you and they develop",
+        "duration": 4.76
+      },
+      {
+        "start": 1011.24,
+        "text": "a story from there.",
+        "duration": 4.44
+      },
+      {
+        "start": 1013.56,
+        "text": "They yeah as I said they develop the",
+        "duration": 4.519
+      },
+      {
+        "start": 1015.68,
+        "text": "story in a chronological sense they walk",
+        "duration": 6.0
+      },
+      {
+        "start": 1018.079,
+        "text": "through the full arc each stage darker",
+        "duration": 6.281
+      },
+      {
+        "start": 1021.68,
+        "text": "more complex higher stakes if you get",
+        "duration": 5.48
+      },
+      {
+        "start": 1024.36,
+        "text": "caught they say will deny your existence",
+        "duration": 6.36
+      },
+      {
+        "start": 1027.16,
+        "text": "etc. And they also",
+        "duration": 6.48
+      },
+      {
+        "start": 1030.72,
+        "text": "give it a very strong ending so they end",
+        "duration": 4.88
+      },
+      {
+        "start": 1033.64,
+        "text": "the video very strong as well. So this",
+        "duration": 4.4
+      },
+      {
+        "start": 1035.6,
+        "text": "is the storytelling framework. Now how",
+        "duration": 4.599
+      },
+      {
+        "start": 1038.04,
+        "text": "do people actually bend it? Well there",
+        "duration": 4.76
+      },
+      {
+        "start": 1040.199,
+        "text": "is a video about dinosaurs and this",
+        "duration": 6.48
+      },
+      {
+        "start": 1042.8,
+        "text": "channel was actually way way way",
+        "duration": 7.32
+      },
+      {
+        "start": 1046.679,
+        "text": "older than the POV Explainer POV",
+        "duration": 6.081
+      },
+      {
+        "start": 1050.12,
+        "text": "Professor. So POV Professor was not the",
+        "duration": 5.0
+      },
+      {
+        "start": 1052.76,
+        "text": "original one but that's the most common",
+        "duration": 5.12
+      },
+      {
+        "start": 1055.12,
+        "text": "right now but there is a video about",
+        "duration": 5.48
+      },
+      {
+        "start": 1057.88,
+        "text": "dinosaurs with the same exact structure",
+        "duration": 5.6
+      },
+      {
+        "start": 1060.6,
+        "text": "there is a video about lost and",
+        "duration": 5.04
+      },
+      {
+        "start": 1063.48,
+        "text": "like sexual history",
+        "duration": 4.24
+      },
+      {
+        "start": 1065.64,
+        "text": "that is structured the exact same way.",
+        "duration": 3.76
+      },
+      {
+        "start": 1067.72,
+        "text": "There is a video about mafia structured",
+        "duration": 3.64
+      },
+      {
+        "start": 1069.4,
+        "text": "the same way. So it doesn't really",
+        "duration": 4.56
+      },
+      {
+        "start": 1071.36,
+        "text": "matter what topic your channel covers",
+        "duration": 5.36
+      },
+      {
+        "start": 1073.96,
+        "text": "you can always apply the structure that",
+        "duration": 4.64
+      },
+      {
+        "start": 1076.72,
+        "text": "worked for someone else. And this is",
+        "duration": 4.2
+      },
+      {
+        "start": 1078.6,
+        "text": "what I want you to understand and learn",
+        "duration": 4.56
+      },
+      {
+        "start": 1080.92,
+        "text": "about this script bending concept.",
+        "duration": 4.16
+      },
+      {
+        "start": 1083.16,
+        "text": "Doesn't matter what blows up you need to",
+        "duration": 6.24
+      },
+      {
+        "start": 1085.08,
+        "text": "be plugged in into the basically like",
+        "duration": 6.68
+      },
+      {
+        "start": 1089.4,
+        "text": "the YouTube feed YouTube algorithm you",
+        "duration": 4.2
+      },
+      {
+        "start": 1091.76,
+        "text": "need to understand what works currently",
+        "duration": 4.08
+      },
+      {
+        "start": 1093.6,
+        "text": "for other channels and you need to bend",
+        "duration": 4.84
+      },
+      {
+        "start": 1095.84,
+        "text": "it to your niche. So today we're not",
+        "duration": 3.92
+      },
+      {
+        "start": 1098.44,
+        "text": "talking about your niche we're not",
+        "duration": 3.0
+      },
+      {
+        "start": 1099.76,
+        "text": "talking about like you",
+        "duration": 4.36
+      },
+      {
+        "start": 1101.44,
+        "text": "like you create a video about mafia or",
+        "duration": 4.84
+      },
+      {
+        "start": 1104.12,
+        "text": "create a video about that. Whatever",
+        "duration": 5.28
+      },
+      {
+        "start": 1106.28,
+        "text": "channel you run you can bend this format",
+        "duration": 5.399
+      },
+      {
+        "start": 1109.4,
+        "text": "towards your audience. You can make this",
+        "duration": 4.4
+      },
+      {
+        "start": 1111.679,
+        "text": "format work for your channel and this is",
+        "duration": 4.561
+      },
+      {
+        "start": 1113.8,
+        "text": "exactly what I want you to do. So take",
+        "duration": 5.24
+      },
+      {
+        "start": 1116.24,
+        "text": "this script formula apply it to one of",
+        "duration": 4.76
+      },
+      {
+        "start": 1119.04,
+        "text": "the ideas that already worked on your",
+        "duration": 4.04
+      },
+      {
+        "start": 1121.0,
+        "text": "channel and you're going to get a viral",
+        "duration": 4.4
+      },
+      {
+        "start": 1123.08,
+        "text": "video that will blow up to hundreds of",
+        "duration": 4.12
+      },
+      {
+        "start": 1125.4,
+        "text": "thousands of views almost guaranteed if",
+        "duration": 3.24
+      },
+      {
+        "start": 1127.2,
+        "text": "you have a channel that works if you",
+        "duration": 4.719
+      },
+      {
+        "start": 1128.64,
+        "text": "have a niche that is proven if you have",
+        "duration": 6.84
+      },
+      {
+        "start": 1131.919,
+        "text": "niche bending figured out already. Now",
+        "duration": 5.76
+      },
+      {
+        "start": 1135.48,
+        "text": "the other example would be the Paint",
+        "duration": 4.48
+      },
+      {
+        "start": 1137.679,
+        "text": "Explainer style probably the oldest of",
+        "duration": 5.881
+      },
+      {
+        "start": 1139.96,
+        "text": "them all the most let's say used one but",
+        "duration": 5.6
+      },
+      {
+        "start": 1143.56,
+        "text": "still there is multiple channels that",
+        "duration": 4.76
+      },
+      {
+        "start": 1145.56,
+        "text": "are doing it. So first of all",
+        "duration": 5.16
+      },
+      {
+        "start": 1148.32,
+        "text": "there is no intro in that style they",
+        "duration": 6.2
+      },
+      {
+        "start": 1150.72,
+        "text": "jump straight into the number one and",
+        "duration": 7.04
+      },
+      {
+        "start": 1154.52,
+        "text": "they go over like what like",
+        "duration": 5.44
+      },
+      {
+        "start": 1157.76,
+        "text": "basically either psychology tricks or",
+        "duration": 4.0
+      },
+      {
+        "start": 1159.96,
+        "text": "life hacks or",
+        "duration": 4.6
+      },
+      {
+        "start": 1161.76,
+        "text": "different dictators they go one by one",
+        "duration": 5.399
+      },
+      {
+        "start": 1164.56,
+        "text": "explaining each one of them. So your",
+        "duration": 4.599
+      },
+      {
+        "start": 1167.159,
+        "text": "script bending formula is actually very",
+        "duration": 5.081
+      },
+      {
+        "start": 1169.159,
+        "text": "simple. Find a storytelling formats",
+        "duration": 5.721
+      },
+      {
+        "start": 1172.24,
+        "text": "three to five you need multiple of those",
+        "duration": 5.88
+      },
+      {
+        "start": 1174.88,
+        "text": "that work for indirect competitors adapt",
+        "duration": 6.92
+      },
+      {
+        "start": 1178.12,
+        "text": "them for fresh ideas fresh ideas",
+        "duration": 7.2
+      },
+      {
+        "start": 1181.8,
+        "text": "that you generate in your chosen niche.",
+        "duration": 5.68
+      },
+      {
+        "start": 1185.32,
+        "text": "Create unique content with almost",
+        "duration": 4.2
+      },
+      {
+        "start": 1187.48,
+        "text": "guaranteed results. So this is the",
+        "duration": 4.08
+      },
+      {
+        "start": 1189.52,
+        "text": "formula. You find something that works",
+        "duration": 4.2
+      },
+      {
+        "start": 1191.56,
+        "text": "for indirect competitors. You're trying",
+        "duration": 4.24
+      },
+      {
+        "start": 1193.72,
+        "text": "to bring new formats to your own niche",
+        "duration": 5.16
+      },
+      {
+        "start": 1195.8,
+        "text": "and you adapt it for two ideas that no",
+        "duration": 5.24
+      },
+      {
+        "start": 1198.88,
+        "text": "one has ever done before. This is how",
+        "duration": 4.32
+      },
+      {
+        "start": 1201.04,
+        "text": "you get unique content on YouTube that",
+        "duration": 4.32
+      },
+      {
+        "start": 1203.2,
+        "text": "has all the proof it needs for the",
+        "duration": 5.24
+      },
+      {
+        "start": 1205.36,
+        "text": "algorithm to blow your videos up. This",
+        "duration": 5.44
+      },
+      {
+        "start": 1208.44,
+        "text": "is the formula. Now, how do you do it in",
+        "duration": 4.92
+      },
+      {
+        "start": 1210.8,
+        "text": "practice? And we got you covered as",
+        "duration": 4.88
+      },
+      {
+        "start": 1213.36,
+        "text": "usual because we created that entire",
+        "duration": 4.8
+      },
+      {
+        "start": 1215.68,
+        "text": "database for you. And",
+        "duration": 4.92
+      },
+      {
+        "start": 1218.16,
+        "text": "if you visited our niche bending",
+        "duration": 4.44
+      },
+      {
+        "start": 1220.6,
+        "text": "workshop, we you know how much I love",
+        "duration": 4.68
+      },
+      {
+        "start": 1222.6,
+        "text": "those idea databases because we have the",
+        "duration": 5.4
+      },
+      {
+        "start": 1225.28,
+        "text": "exact same database for 500 plus",
+        "duration": 4.64
+      },
+      {
+        "start": 1228.0,
+        "text": "faceless YouTube channels. So, what we",
+        "duration": 4.12
+      },
+      {
+        "start": 1229.92,
+        "text": "did, we actually analyzed all of the",
+        "duration": 4.2
+      },
+      {
+        "start": 1232.12,
+        "text": "videos, all of the most popular videos",
+        "duration": 4.24
+      },
+      {
+        "start": 1234.12,
+        "text": "from those channels. We put together a",
+        "duration": 5.44
+      },
+      {
+        "start": 1236.36,
+        "text": "list of 5,000 different videos and their",
+        "duration": 5.88
+      },
+      {
+        "start": 1239.56,
+        "text": "scripts and we figured out that all of",
+        "duration": 5.88
+      },
+      {
+        "start": 1242.24,
+        "text": "them followed very clear frameworks and",
+        "duration": 5.88
+      },
+      {
+        "start": 1245.44,
+        "text": "we found 50 plus frameworks that we put",
+        "duration": 4.28
+      },
+      {
+        "start": 1248.12,
+        "text": "in this database",
+        "duration": 4.24
+      },
+      {
+        "start": 1249.72,
+        "text": "that are helping those channels blow up.",
+        "duration": 5.2
+      },
+      {
+        "start": 1252.36,
+        "text": "So, the way I now use this database in",
+        "duration": 5.12
+      },
+      {
+        "start": 1254.92,
+        "text": "practice is whenever I want to create a",
+        "duration": 4.76
+      },
+      {
+        "start": 1257.48,
+        "text": "video for a channel, I would search for",
+        "duration": 4.8
+      },
+      {
+        "start": 1259.68,
+        "text": "a proven framework for the script in",
+        "duration": 4.48
+      },
+      {
+        "start": 1262.28,
+        "text": "this database. So, for example, because",
+        "duration": 4.8
+      },
+      {
+        "start": 1264.16,
+        "text": "we talked about Paint Explainer,",
+        "duration": 5.04
+      },
+      {
+        "start": 1267.08,
+        "text": "like there's Paint Explainer style of",
+        "duration": 4.76
+      },
+      {
+        "start": 1269.2,
+        "text": "video. Or let's say I want to see how",
+        "duration": 4.8
+      },
+      {
+        "start": 1271.84,
+        "text": "Simple Paint creates his videos. So,",
+        "duration": 4.0
+      },
+      {
+        "start": 1274.0,
+        "text": "first thing that we see is the script",
+        "duration": 4.28
+      },
+      {
+        "start": 1275.84,
+        "text": "formula. So, here's how the they",
+        "duration": 4.48
+      },
+      {
+        "start": 1278.28,
+        "text": "structure their scripts. And you don't",
+        "duration": 3.88
+      },
+      {
+        "start": 1280.32,
+        "text": "need to understand it yourself. You like",
+        "duration": 3.72
+      },
+      {
+        "start": 1282.16,
+        "text": "you don't even need to read it because",
+        "duration": 4.12
+      },
+      {
+        "start": 1284.04,
+        "text": "this is just a part of the prompt that",
+        "duration": 4.48
+      },
+      {
+        "start": 1286.28,
+        "text": "you will give give to Claude AI so that",
+        "duration": 4.72
+      },
+      {
+        "start": 1288.52,
+        "text": "it writes the script for you, completely",
+        "duration": 5.56
+      },
+      {
+        "start": 1291.0,
+        "text": "for you. Now, there's a TXT file with",
+        "duration": 5.16
+      },
+      {
+        "start": 1294.08,
+        "text": "all of the scripts from Simple Paint",
+        "duration": 3.6
+      },
+      {
+        "start": 1296.16,
+        "text": "already. We just put them in the doc",
+        "duration": 4.4
+      },
+      {
+        "start": 1297.68,
+        "text": "because we know that you need them. Now,",
+        "duration": 5.32
+      },
+      {
+        "start": 1300.56,
+        "text": "there will be another file. We're now in",
+        "duration": 4.2
+      },
+      {
+        "start": 1303.0,
+        "text": "the process of finishing this database.",
+        "duration": 3.84
+      },
+      {
+        "start": 1304.76,
+        "text": "Obviously, we're preparing for the",
+        "duration": 5.16
+      },
+      {
+        "start": 1306.84,
+        "text": "script bending workshop that is coming",
+        "duration": 7.12
+      },
+      {
+        "start": 1309.92,
+        "text": "April 8th and there will be an MD file",
+        "duration": 7.52
+      },
+      {
+        "start": 1313.96,
+        "text": "with the complete Claude AI prompt that",
+        "duration": 6.719
+      },
+      {
+        "start": 1317.44,
+        "text": "you will upload in one click and your",
+        "duration": 5.4
+      },
+      {
+        "start": 1320.679,
+        "text": "Claude will learn the skill of writing",
+        "duration": 5.201
+      },
+      {
+        "start": 1322.84,
+        "text": "scripts similar to Simple Paint. And",
+        "duration": 4.72
+      },
+      {
+        "start": 1325.88,
+        "text": "Simple Paint is quite unique, but if I",
+        "duration": 3.52
+      },
+      {
+        "start": 1327.56,
+        "text": "show you the Paint Explainer, you will",
+        "duration": 3.88
+      },
+      {
+        "start": 1329.4,
+        "text": "also see a bunch of other channels that",
+        "duration": 3.92
+      },
+      {
+        "start": 1331.44,
+        "text": "are doing the exact same style and you",
+        "duration": 5.08
+      },
+      {
+        "start": 1333.32,
+        "text": "will see whether or not your channel is",
+        "duration": 6.4
+      },
+      {
+        "start": 1336.52,
+        "text": "there, maybe. Or you will see who else",
+        "duration": 5.52
+      },
+      {
+        "start": 1339.72,
+        "text": "tried to copy the exact same format and",
+        "duration": 4.56
+      },
+      {
+        "start": 1342.04,
+        "text": "how they bent it because every single",
+        "duration": 4.04
+      },
+      {
+        "start": 1344.28,
+        "text": "one of them is different because some of",
+        "duration": 4.399
+      },
+      {
+        "start": 1346.08,
+        "text": "them are bending towards MMA, some of",
+        "duration": 5.08
+      },
+      {
+        "start": 1348.679,
+        "text": "them are bending towards Professor. It's",
+        "duration": 4.801
+      },
+      {
+        "start": 1351.16,
+        "text": "actually quite a funny one. Paint",
+        "duration": 5.64
+      },
+      {
+        "start": 1353.48,
+        "text": "Explainer, Fictionery, Nexus Files. Some",
+        "duration": 6.199
+      },
+      {
+        "start": 1356.8,
+        "text": "of those aren't actually not very clear",
+        "duration": 5.48
+      },
+      {
+        "start": 1359.679,
+        "text": "bands. So, instead of copying titles and",
+        "duration": 4.041
+      },
+      {
+        "start": 1362.28,
+        "text": "thumbnails, they copied the script",
+        "duration": 3.2
+      },
+      {
+        "start": 1363.72,
+        "text": "structure, but their thumbnails are",
+        "duration": 4.04
+      },
+      {
+        "start": 1365.48,
+        "text": "completely different. So, you would have",
+        "duration": 5.4
+      },
+      {
+        "start": 1367.76,
+        "text": "never told like guessed that these are",
+        "duration": 5.08
+      },
+      {
+        "start": 1370.88,
+        "text": "the exact same videos, but they are the",
+        "duration": 3.72
+      },
+      {
+        "start": 1372.84,
+        "text": "same. And we know that because we",
+        "duration": 3.68
+      },
+      {
+        "start": 1374.6,
+        "text": "analyzed every single one of them. And",
+        "duration": 3.8
+      },
+      {
+        "start": 1376.52,
+        "text": "for each channel we analyzed, we give",
+        "duration": 4.24
+      },
+      {
+        "start": 1378.4,
+        "text": "you the TXT files with all of their",
+        "duration": 4.6
+      },
+      {
+        "start": 1380.76,
+        "text": "scripts so you can upload them to Claude",
+        "duration": 4.04
+      },
+      {
+        "start": 1383.0,
+        "text": "and you can ask your own questions. You",
+        "duration": 5.16
+      },
+      {
+        "start": 1384.8,
+        "text": "can see whether or not they're actually,",
+        "duration": 5.68
+      },
+      {
+        "start": 1388.16,
+        "text": "you know, as interesting as you think",
+        "duration": 4.08
+      },
+      {
+        "start": 1390.48,
+        "text": "they are, right? So, you don't need to",
+        "duration": 3.56
+      },
+      {
+        "start": 1392.24,
+        "text": "watch any of the videos from your",
+        "duration": 3.36
+      },
+      {
+        "start": 1394.04,
+        "text": "competitors. And I'm going to give you",
+        "duration": 3.6
+      },
+      {
+        "start": 1395.6,
+        "text": "the exact same prompts as well, the MD",
+        "duration": 3.8
+      },
+      {
+        "start": 1397.64,
+        "text": "prompts, so you can use that as a",
+        "duration": 4.12
+      },
+      {
+        "start": 1399.4,
+        "text": "learning material to teach your Claude",
+        "duration": 4.84
+      },
+      {
+        "start": 1401.76,
+        "text": "to write scripts for those channels. So,",
+        "duration": 4.52
+      },
+      {
+        "start": 1404.24,
+        "text": "super excited for that. The niche",
+        "duration": 5.08
+      },
+      {
+        "start": 1406.28,
+        "text": "bending workshop is coming April 8th.",
+        "duration": 4.92
+      },
+      {
+        "start": 1409.32,
+        "text": "Right now, below this video, you can",
+        "duration": 4.08
+      },
+      {
+        "start": 1411.2,
+        "text": "find a waitlist. Or if you're watching",
+        "duration": 4.24
+      },
+      {
+        "start": 1413.4,
+        "text": "this video late, then you will see the",
+        "duration": 4.68
+      },
+      {
+        "start": 1415.44,
+        "text": "exact link to get your tickets.",
+        "duration": 4.88
+      },
+      {
+        "start": 1418.08,
+        "text": "Do that now because I'm expecting more",
+        "duration": 5.2
+      },
+      {
+        "start": 1420.32,
+        "text": "than 300 people to join us live this",
+        "duration": 5.04
+      },
+      {
+        "start": 1423.28,
+        "text": "time and this time I'm actually",
+        "duration": 4.56
+      },
+      {
+        "start": 1425.36,
+        "text": "preparing something legendary for all of",
+        "duration": 4.08
+      },
+      {
+        "start": 1427.84,
+        "text": "you. So, you know how much I love to",
+        "duration": 3.72
+      },
+      {
+        "start": 1429.44,
+        "text": "over-deliver. This time we're delivering",
+        "duration": 5.56
+      },
+      {
+        "start": 1431.56,
+        "text": "an extreme amount of value for just a",
+        "duration": 5.72
+      },
+      {
+        "start": 1435.0,
+        "text": "fraction of the cost that this thing",
+        "duration": 5.8
+      },
+      {
+        "start": 1437.28,
+        "text": "should cost. Now, what from that process",
+        "duration": 5.6
+      },
+      {
+        "start": 1440.8,
+        "text": "should you actually automate? Because",
+        "duration": 4.44
+      },
+      {
+        "start": 1442.88,
+        "text": "I've built some incredible automations",
+        "duration": 4.84
+      },
+      {
+        "start": 1445.24,
+        "text": "that I think you should build, too. Now,",
+        "duration": 5.36
+      },
+      {
+        "start": 1447.72,
+        "text": "I have the AI agent to find ideas for",
+        "duration": 5.64
+      },
+      {
+        "start": 1450.6,
+        "text": "me. So, the way it works is there is a",
+        "duration": 5.2
+      },
+      {
+        "start": 1453.36,
+        "text": "database of videos. Every single day it",
+        "duration": 4.04
+      },
+      {
+        "start": 1455.8,
+        "text": "scrapes the videos from all of my",
+        "duration": 3.16
+      },
+      {
+        "start": 1457.4,
+        "text": "competitors. It puts them in a",
+        "duration": 4.08
+      },
+      {
+        "start": 1458.96,
+        "text": "spreadsheet and it analyzes whether or",
+        "duration": 6.4
+      },
+      {
+        "start": 1461.48,
+        "text": "not those videos could be bent to my",
+        "duration": 6.44
+      },
+      {
+        "start": 1465.36,
+        "text": "niche, to the Art of War channel. And if",
+        "duration": 4.84
+      },
+      {
+        "start": 1467.92,
+        "text": "you can see true, then this video will",
+        "duration": 5.16
+      },
+      {
+        "start": 1470.2,
+        "text": "be scripted. If you can see false, then",
+        "duration": 5.44
+      },
+      {
+        "start": 1473.08,
+        "text": "this video is not usable for us. So, for",
+        "duration": 6.16
+      },
+      {
+        "start": 1475.64,
+        "text": "example, it then creates this list where",
+        "duration": 5.6
+      },
+      {
+        "start": 1479.24,
+        "text": "it collects all of the ideas that we can",
+        "duration": 4.4
+      },
+      {
+        "start": 1481.24,
+        "text": "bend to our niche, to our channel",
+        "duration": 4.52
+      },
+      {
+        "start": 1483.64,
+        "text": "because I taught it exactly how to",
+        "duration": 5.039
+      },
+      {
+        "start": 1485.76,
+        "text": "script bend videos, right? So, it finds",
+        "duration": 4.76
+      },
+      {
+        "start": 1488.679,
+        "text": "the original transcript script of the",
+        "duration": 3.641
+      },
+      {
+        "start": 1490.52,
+        "text": "video, so it transcribes the video for",
+        "duration": 4.0
+      },
+      {
+        "start": 1492.32,
+        "text": "me. It finds the viral trigger, why the",
+        "duration": 5.32
+      },
+      {
+        "start": 1494.52,
+        "text": "video works, and it also gives me five",
+        "duration": 5.48
+      },
+      {
+        "start": 1497.64,
+        "text": "ideas for each one of those videos. And",
+        "duration": 4.56
+      },
+      {
+        "start": 1500.0,
+        "text": "what I do on a daily basis, I open the",
+        "duration": 4.44
+      },
+      {
+        "start": 1502.2,
+        "text": "spreadsheet, I check the ideas, and I",
+        "duration": 4.76
+      },
+      {
+        "start": 1504.44,
+        "text": "think, okay, cool. Do I like those ideas",
+        "duration": 5.12
+      },
+      {
+        "start": 1506.96,
+        "text": "or not? And if I do, then I just check",
+        "duration": 5.16
+      },
+      {
+        "start": 1509.56,
+        "text": "box the the ones that I like,",
+        "duration": 5.08
+      },
+      {
+        "start": 1512.12,
+        "text": "those ones. And the next morning, Claude",
+        "duration": 5.6
+      },
+      {
+        "start": 1514.64,
+        "text": "will see that I like those ideas and it",
+        "duration": 5.8
+      },
+      {
+        "start": 1517.72,
+        "text": "will start writing those scripts for me.",
+        "duration": 5.28
+      },
+      {
+        "start": 1520.44,
+        "text": "So, this is the level of of automation",
+        "duration": 4.4
+      },
+      {
+        "start": 1523.0,
+        "text": "that I want in my business. I want",
+        "duration": 3.48
+      },
+      {
+        "start": 1524.84,
+        "text": "everything to be as streamlined as",
+        "duration": 4.56
+      },
+      {
+        "start": 1526.48,
+        "text": "possible. AI agent searching for ideas,",
+        "duration": 4.84
+      },
+      {
+        "start": 1529.4,
+        "text": "sends them to me for approval, then",
+        "duration": 4.16
+      },
+      {
+        "start": 1531.32,
+        "text": "another one writes those scripts. So,",
+        "duration": 4.84
+      },
+      {
+        "start": 1533.56,
+        "text": "every single day at 9:00 a.m., it will",
+        "duration": 5.4
+      },
+      {
+        "start": 1536.16,
+        "text": "open my like spreadsheet, it will check",
+        "duration": 4.6
+      },
+      {
+        "start": 1538.96,
+        "text": "for approved ideas, and it will write",
+        "duration": 3.96
+      },
+      {
+        "start": 1540.76,
+        "text": "the scripts for me. And to show you how",
+        "duration": 4.16
+      },
+      {
+        "start": 1542.92,
+        "text": "it works, let me actually run it right",
+        "duration": 5.12
+      },
+      {
+        "start": 1544.92,
+        "text": "now and we'll see what is capable of.",
+        "duration": 5.64
+      },
+      {
+        "start": 1548.04,
+        "text": "So, we'll run the scripts. You can see",
+        "duration": 5.4
+      },
+      {
+        "start": 1550.56,
+        "text": "I'm clicking run now and Claude will",
+        "duration": 6.24
+      },
+      {
+        "start": 1553.44,
+        "text": "start working on that for me. And what",
+        "duration": 5.8
+      },
+      {
+        "start": 1556.8,
+        "text": "it's going to do, it's going to look at",
+        "duration": 4.76
+      },
+      {
+        "start": 1559.24,
+        "text": "all of the ideas that I approved from",
+        "duration": 4.76
+      },
+      {
+        "start": 1561.56,
+        "text": "here. It's going to change their status",
+        "duration": 5.36
+      },
+      {
+        "start": 1564.0,
+        "text": "to scripted and it's going to add them",
+        "duration": 5.84
+      },
+      {
+        "start": 1566.92,
+        "text": "all to my Asana. So, I'll open the Asana",
+        "duration": 4.68
+      },
+      {
+        "start": 1569.84,
+        "text": "right now. I'll show you the dashboard.",
+        "duration": 3.88
+      },
+      {
+        "start": 1571.6,
+        "text": "These are all of the scripts that we",
+        "duration": 3.96
+      },
+      {
+        "start": 1573.72,
+        "text": "have for approval right now. As you can",
+        "duration": 5.68
+      },
+      {
+        "start": 1575.56,
+        "text": "see, the last one is 10:58 and Claude is",
+        "duration": 8.119
+      },
+      {
+        "start": 1579.4,
+        "text": "now working on basically searching for",
+        "duration": 7.08
+      },
+      {
+        "start": 1583.679,
+        "text": "ideas that it liked and adding them",
+        "duration": 5.121
+      },
+      {
+        "start": 1586.48,
+        "text": "here. So, it will create a Google folder",
+        "duration": 4.88
+      },
+      {
+        "start": 1588.8,
+        "text": "for me. It will create a Google",
+        "duration": 5.52
+      },
+      {
+        "start": 1591.36,
+        "text": "document. It will put the script that it",
+        "duration": 5.08
+      },
+      {
+        "start": 1594.32,
+        "text": "wrote in that document and it will",
+        "duration": 5.28
+      },
+      {
+        "start": 1596.44,
+        "text": "create an Asana card in my dashboard. It",
+        "duration": 5.68
+      },
+      {
+        "start": 1599.6,
+        "text": "will basically make the entire process",
+        "duration": 4.76
+      },
+      {
+        "start": 1602.12,
+        "text": "work seamlessly without me doing",
+        "duration": 4.0
+      },
+      {
+        "start": 1604.36,
+        "text": "anything. So, right now we're just",
+        "duration": 3.08
+      },
+      {
+        "start": 1606.12,
+        "text": "waiting for it.",
+        "duration": 4.76
+      },
+      {
+        "start": 1607.44,
+        "text": "As you can see, it works. Okay, cool. As",
+        "duration": 5.72
+      },
+      {
+        "start": 1610.88,
+        "text": "you can see, the first video was just",
+        "duration": 5.28
+      },
+      {
+        "start": 1613.16,
+        "text": "delivered and it took probably 2",
+        "duration": 4.0
+      },
+      {
+        "start": 1616.16,
+        "text": "minutes.",
+        "duration": 3.04
+      },
+      {
+        "start": 1617.16,
+        "text": "Let's actually click around and let's",
+        "duration": 4.56
+      },
+      {
+        "start": 1619.2,
+        "text": "see what it did. So, first of all, we",
+        "duration": 5.16
+      },
+      {
+        "start": 1621.72,
+        "text": "have the Google folder. As you can see,",
+        "duration": 6.88
+      },
+      {
+        "start": 1624.36,
+        "text": "10:59 and it just wrote the the script.",
+        "duration": 6.6
+      },
+      {
+        "start": 1628.6,
+        "text": "So, it took this idea. It used our",
+        "duration": 5.48
+      },
+      {
+        "start": 1630.96,
+        "text": "script writing SOPs and it prepared a",
+        "duration": 6.16
+      },
+      {
+        "start": 1634.08,
+        "text": "fresh script and it actually looks",
+        "duration": 4.72
+      },
+      {
+        "start": 1637.12,
+        "text": "pretty solid from the first look. It",
+        "duration": 4.559
+      },
+      {
+        "start": 1638.8,
+        "text": "used the you see that I always use in my",
+        "duration": 5.52
+      },
+      {
+        "start": 1641.679,
+        "text": "scripts and also added",
+        "duration": 5.561
+      },
+      {
+        "start": 1644.32,
+        "text": "a punch at the end and",
+        "duration": 5.12
+      },
+      {
+        "start": 1647.24,
+        "text": "it used wood intentionally that I always",
+        "duration": 4.12
+      },
+      {
+        "start": 1649.44,
+        "text": "use in my Art of War scripts. So, it",
+        "duration": 5.12
+      },
+      {
+        "start": 1651.36,
+        "text": "followed the SOP to the T and it created",
+        "duration": 6.24
+      },
+      {
+        "start": 1654.56,
+        "text": "a very good script. So, this is the",
+        "duration": 5.28
+      },
+      {
+        "start": 1657.6,
+        "text": "level of automation that we now use.",
+        "duration": 5.56
+      },
+      {
+        "start": 1659.84,
+        "text": "This is what replaced my 4K a month",
+        "duration": 6.08
+      },
+      {
+        "start": 1663.16,
+        "text": "script writing team. And I'll probably",
+        "duration": 4.519
+      },
+      {
+        "start": 1665.92,
+        "text": "create another video on that automation",
+        "duration": 4.68
+      },
+      {
+        "start": 1667.679,
+        "text": "because it's too crazy to fit it in the",
+        "duration": 5.881
+      },
+      {
+        "start": 1670.6,
+        "text": "script bending video, but what I wanted",
+        "duration": 5.24
+      },
+      {
+        "start": 1673.56,
+        "text": "to show you is that almost everything",
+        "duration": 4.24
+      },
+      {
+        "start": 1675.84,
+        "text": "that I showed you today can be",
+        "duration": 4.72
+      },
+      {
+        "start": 1677.8,
+        "text": "automated. And as long as you can",
+        "duration": 5.4
+      },
+      {
+        "start": 1680.56,
+        "text": "collect a bunch of data from your",
+        "duration": 5.04
+      },
+      {
+        "start": 1683.2,
+        "text": "competitors, as long as you can put it",
+        "duration": 4.56
+      },
+      {
+        "start": 1685.6,
+        "text": "into the right prompts, you can actually",
+        "duration": 4.92
+      },
+      {
+        "start": 1687.76,
+        "text": "make Claude run your faceless YouTube",
+        "duration": 4.88
+      },
+      {
+        "start": 1690.52,
+        "text": "channel for you. This is pretty much how",
+        "duration": 3.92
+      },
+      {
+        "start": 1692.64,
+        "text": "I run my Art of War channel right now,",
+        "duration": 4.48
+      },
+      {
+        "start": 1694.44,
+        "text": "the channel that did 4 billion views,",
+        "duration": 4.88
+      },
+      {
+        "start": 1697.12,
+        "text": "the channel that generated 300 plus",
+        "duration": 4.44
+      },
+      {
+        "start": 1699.32,
+        "text": "thousand dollars in revenue is now run",
+        "duration": 5.32
+      },
+      {
+        "start": 1701.56,
+        "text": "by my AI agents. And all I do is approve",
+        "duration": 5.359
+      },
+      {
+        "start": 1704.64,
+        "text": "ideas once a day and then just approve",
+        "duration": 4.8
+      },
+      {
+        "start": 1706.919,
+        "text": "those scripts once I like them. And",
+        "duration": 4.601
+      },
+      {
+        "start": 1709.44,
+        "text": "while I was speaking, basically Claude",
+        "duration": 4.28
+      },
+      {
+        "start": 1711.52,
+        "text": "delivered another idea for me. And it",
+        "duration": 5.2
+      },
+      {
+        "start": 1713.72,
+        "text": "even writes a personalized compliment",
+        "duration": 5.76
+      },
+      {
+        "start": 1716.72,
+        "text": "for my animators just to keep them a",
+        "duration": 5.28
+      },
+      {
+        "start": 1719.48,
+        "text": "little bit more happy, you know? So, if",
+        "duration": 5.0
+      },
+      {
+        "start": 1722.0,
+        "text": "you want to take the next step, what I",
+        "duration": 5.2
+      },
+      {
+        "start": 1724.48,
+        "text": "want to do is invite you to the script",
+        "duration": 4.48
+      },
+      {
+        "start": 1727.2,
+        "text": "bending workshop. At the bottom of my",
+        "duration": 3.64
+      },
+      {
+        "start": 1728.96,
+        "text": "heart, I believe that that's going to be",
+        "duration": 4.8
+      },
+      {
+        "start": 1730.84,
+        "text": "the biggest event in faceless industry,",
+        "duration": 5.12
+      },
+      {
+        "start": 1733.76,
+        "text": "the one that will change the way",
+        "duration": 4.12
+      },
+      {
+        "start": 1735.96,
+        "text": "people create their YouTube channels,",
+        "duration": 4.4
+      },
+      {
+        "start": 1737.88,
+        "text": "people run their YouTube channels. So,",
+        "duration": 4.799
+      },
+      {
+        "start": 1740.36,
+        "text": "on April 8th, I'm hosting the script",
+        "duration": 4.4
+      },
+      {
+        "start": 1742.679,
+        "text": "bending workshop. This is where I'm not",
+        "duration": 3.321
+      },
+      {
+        "start": 1744.76,
+        "text": "just going to",
+        "duration": 4.36
+      },
+      {
+        "start": 1746.0,
+        "text": "tell you how to script bend. Instead,",
+        "duration": 5.12
+      },
+      {
+        "start": 1749.12,
+        "text": "I'm going to give you the plug-and-play",
+        "duration": 5.28
+      },
+      {
+        "start": 1751.12,
+        "text": "AI agents that will do it for you. So,",
+        "duration": 6.039
+      },
+      {
+        "start": 1754.4,
+        "text": "you come to the event, you set them up,",
+        "duration": 5.6
+      },
+      {
+        "start": 1757.159,
+        "text": "you set those agents up once, and they",
+        "duration": 6.641
+      },
+      {
+        "start": 1760.0,
+        "text": "work for you 24/7 365 for 20 bucks a",
+        "duration": 5.88
+      },
+      {
+        "start": 1763.8,
+        "text": "month Claude subscription. Cancel your",
+        "duration": 5.879
+      },
+      {
+        "start": 1765.88,
+        "text": "GPT, start using Claude. Instead of 3.6K",
+        "duration": 6.2
+      },
+      {
+        "start": 1769.679,
+        "text": "a month that was previously the cost of",
+        "duration": 4.721
+      },
+      {
+        "start": 1772.08,
+        "text": "my script writing team. And every single",
+        "duration": 4.76
+      },
+      {
+        "start": 1774.4,
+        "text": "day they will deliver 20, 30, actually",
+        "duration": 4.88
+      },
+      {
+        "start": 1776.84,
+        "text": "there's no limit, but 20, 30 ideas is",
+        "duration": 5.72
+      },
+      {
+        "start": 1779.28,
+        "text": "already pretty good. 5 to 15 new scripts",
+        "duration": 5.56
+      },
+      {
+        "start": 1782.56,
+        "text": "based on your channel analytics and",
+        "duration": 4.28
+      },
+      {
+        "start": 1784.84,
+        "text": "SOPs. It will work like this. You will",
+        "duration": 4.08
+      },
+      {
+        "start": 1786.84,
+        "text": "put a link of your channel in the chat.",
+        "duration": 3.56
+      },
+      {
+        "start": 1788.92,
+        "text": "It will analyze everything and it will",
+        "duration": 3.84
+      },
+      {
+        "start": 1790.4,
+        "text": "create SOPs for you and then it will",
+        "duration": 4.96
+      },
+      {
+        "start": 1792.76,
+        "text": "automatically build all of the other",
+        "duration": 5.28
+      },
+      {
+        "start": 1795.36,
+        "text": "agents so that you can click one button",
+        "duration": 4.36
+      },
+      {
+        "start": 1798.04,
+        "text": "every morning. You don't even need to",
+        "duration": 3.44
+      },
+      {
+        "start": 1799.72,
+        "text": "click it but like you will click once",
+        "duration": 3.4
+      },
+      {
+        "start": 1801.48,
+        "text": "and every single morning it will run",
+        "duration": 3.36
+      },
+      {
+        "start": 1803.12,
+        "text": "automatically collecting all of the",
+        "duration": 3.52
+      },
+      {
+        "start": 1804.84,
+        "text": "ideas, writing all of the scripts and",
+        "duration": 3.32
+      },
+      {
+        "start": 1806.64,
+        "text": "all you need to do is to approve the",
+        "duration": 3.52
+      },
+      {
+        "start": 1808.16,
+        "text": "best ones. Last time we did the workshop",
+        "duration": 4.12
+      },
+      {
+        "start": 1810.16,
+        "text": "we had over 200 people who showed up",
+        "duration": 4.2
+      },
+      {
+        "start": 1812.28,
+        "text": "live and dozens of them then messaged me",
+        "duration": 4.76
+      },
+      {
+        "start": 1814.36,
+        "text": "afterwards with words of appreciation",
+        "duration": 5.52
+      },
+      {
+        "start": 1817.04,
+        "text": "for how much we actually over-delivered.",
+        "duration": 5.32
+      },
+      {
+        "start": 1819.88,
+        "text": "You know how much I love over-delivering",
+        "duration": 4.52
+      },
+      {
+        "start": 1822.36,
+        "text": "and giving even more than I promised.",
+        "duration": 4.84
+      },
+      {
+        "start": 1824.4,
+        "text": "This time we're going to deliver even",
+        "duration": 4.76
+      },
+      {
+        "start": 1827.2,
+        "text": "more and instead of focusing on the",
+        "duration": 3.48
+      },
+      {
+        "start": 1829.16,
+        "text": "theory, I'm just going to give you the",
+        "duration": 3.92
+      },
+      {
+        "start": 1830.68,
+        "text": "exact ready-made templates, prompts, AI",
+        "duration": 4.76
+      },
+      {
+        "start": 1833.08,
+        "text": "agents and protocols that currently run",
+        "duration": 5.28
+      },
+      {
+        "start": 1835.44,
+        "text": "my 700k per year YouTube portfolio. So",
+        "duration": 5.32
+      },
+      {
+        "start": 1838.36,
+        "text": "this is how Sap scaled to 20k months in",
+        "duration": 5.52
+      },
+      {
+        "start": 1840.76,
+        "text": "just 90 days. Ron got his silver button.",
+        "duration": 5.44
+      },
+      {
+        "start": 1843.88,
+        "text": "Congrats, Ron. Ollie created a video,",
+        "duration": 5.16
+      },
+      {
+        "start": 1846.2,
+        "text": "recreated the video that got 1.3 million",
+        "duration": 5.64
+      },
+      {
+        "start": 1849.04,
+        "text": "views overnight and Kirill got 50k views",
+        "duration": 4.32
+      },
+      {
+        "start": 1851.84,
+        "text": "long form. Now we know that the video",
+        "duration": 4.36
+      },
+      {
+        "start": 1853.36,
+        "text": "sits at around 270k. This is the video",
+        "duration": 4.76
+      },
+      {
+        "start": 1856.2,
+        "text": "that got him monetized. Second ever",
+        "duration": 4.64
+      },
+      {
+        "start": 1858.12,
+        "text": "upload and he used the script bend. Now",
+        "duration": 4.52
+      },
+      {
+        "start": 1860.84,
+        "text": "because I don't want you to miss on that",
+        "duration": 4.0
+      },
+      {
+        "start": 1862.64,
+        "text": "opportunity, if you sign up for it now,",
+        "duration": 4.48
+      },
+      {
+        "start": 1864.84,
+        "text": "you will receive a huge bonus from me. A",
+        "duration": 4.48
+      },
+      {
+        "start": 1867.12,
+        "text": "two-week script bending bootcamp where",
+        "duration": 4.48
+      },
+      {
+        "start": 1869.32,
+        "text": "every single day I'm going to be in the",
+        "duration": 5.12
+      },
+      {
+        "start": 1871.6,
+        "text": "same private Telegram group with you",
+        "duration": 5.32
+      },
+      {
+        "start": 1874.44,
+        "text": "where I'm going to break down successful",
+        "duration": 5.16
+      },
+      {
+        "start": 1876.92,
+        "text": "YouTube scripts and show you exactly how",
+        "duration": 4.36
+      },
+      {
+        "start": 1879.6,
+        "text": "you can use them in your niche. We're",
+        "duration": 3.44
+      },
+      {
+        "start": 1881.28,
+        "text": "going to do a lot of niche breakdowns",
+        "duration": 3.76
+      },
+      {
+        "start": 1883.04,
+        "text": "and script breakdowns as well. You will",
+        "duration": 4.12
+      },
+      {
+        "start": 1885.04,
+        "text": "be able to ask me questions in the chat",
+        "duration": 4.16
+      },
+      {
+        "start": 1887.16,
+        "text": "and if you want to learn how I script my",
+        "duration": 4.44
+      },
+      {
+        "start": 1889.2,
+        "text": "videos that get hundreds of millions of",
+        "duration": 5.16
+      },
+      {
+        "start": 1891.6,
+        "text": "views and how you can use AI to automate",
+        "duration": 5.2
+      },
+      {
+        "start": 1894.36,
+        "text": "90% of that process, click the first",
+        "duration": 3.32
+      },
+      {
+        "start": 1896.8,
+        "text": "link that you can see in the",
+        "duration": 2.32
+      },
+      {
+        "start": 1897.68,
+        "text": "description. The website will tell you",
+        "duration": 3.36
+      },
+      {
+        "start": 1899.12,
+        "text": "exactly how to sign up to the script",
+        "duration": 4.96
+      },
+      {
+        "start": 1901.04,
+        "text": "bending workshop and join it before we",
+        "duration": 5.08
+      },
+      {
+        "start": 1904.08,
+        "text": "increase the price. Do that right now",
+        "duration": 4.12
+      },
+      {
+        "start": 1906.12,
+        "text": "and I'll see you live on the biggest",
+        "duration": 6.28
+      },
+      {
+        "start": 1908.2,
+        "text": "event in faceless YouTube community.",
+        "duration": 4.2
+      }
+    ],
+    "status": "OK",
+    "segment_count": 773
+  },
+  "captured_at": "2026-07-09T21:10:00Z",
+  "captured_by": "CAPTEURS"
+}

@@ -1,0 +1,35 @@
+name: Iron Sentinel — Capteurs PERTURABO
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # Tous les jours à 2h du matin
+  workflow_dispatch:       # Pour lancer à la main
+
+jobs:
+  sweep-and-capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install yt-dlp youtube-transcript-api requests
+
+      - name: Run Iron Sentinel Sweep
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python CAPTEURS/CODEBASE/iron_sentinel.py --channels CAPTEURS/IN/monitored_channels.json
+
+      - name: Commit and Push captured signals
+        run: |
+          git config --global user.name "IronSentinel"
+          git config --global user.email "sentinel@perturabo.iron"
+          git add CAPTEURS/OUT/ ARCHIVUM/transcripts/
+          git commit -m "[CAPTEURS] Auto-sweep: signaux capturés et transcripts ajoutés à l'ARCHIVUM" || echo "Nothing to commit"
+          git push

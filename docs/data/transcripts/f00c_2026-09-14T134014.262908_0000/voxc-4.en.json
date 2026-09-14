@@ -1,0 +1,32 @@
+{
+  "candidate_id": "voxc-4",
+  "run_id": "f00c_2026-09-14T134014.262908+0000",
+  "lang": "en",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 3744.91,
+    "end": 3796.21
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 3691.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Running a business is genuinely one of the most exciting things in life, but it can come with a bunch of unrelated tasks that take time and effort away from your business. As we've grown the Iced Coffee Hour, we have poured hours into things like billing and writing contracts. And uh yeah, you guessed it, those are not our favorite things to do. That's why we are so excited to partner with Claude. Claude is the AI for minds that don't stop at just good enough. It's the collaborator that actually understands your entire workflow and thinks with you. Whether you're debugging code at midnight or strategizing the next business move, Claude extends your thinking to tackle the problems that matter. Seriously, guys, Claude is so much more than just an AI. It's like having another member of your team. I kid you not, we personally use Claude to generate every single one of our invoices. This used to take a bunch of time inputting all the little details. But now with Claude, all I have to do is type go and boom, an entire month's worth of invoices are automatically generated. And it doesn't stop there. Once Claude creates an invoice, it automatically drafts an email to send out. And it seriously has never been easier to save time on your business. Ready to tackle bigger problems? Get started with Claude today at claude.ai/icedcoffee. That's claude.ai/iccop. and check out Claude Pro, which includes access to all the features mentioned in today's episode. Again, that is claude.ai/icedcoffee. Thanks again to Claude for sponsoring this podcast. And now, let's get back to the episode. So, guys, as the NBA season goes on, teams are gearing up for the playoffs, and you do not want to be missing out, which is why we are so excited to be sponsored by FanDuel and FanDuel Predicts. You can predict the playoff action all the way to the finals with FanDuel Predicts. All you have to do is sign up to get your $25 bonus. From missed free throws to fourth quarter buzzer beaters, every play is a potential plot twist. Predict the spread, total points, and even game-winning moments that make the playoffs. One run, rebound, or shot could change absolutely everything. From opening tip off to final buzzer, you could predict each and every moment. So, sign up now for your $25 bonus on FanDuel predicts. Offered by FanDuel Prediction Markets LLC, a registered futures commission merchant 18 plus. Bonus is non-withdrawable and expires 7 days after receipt. Trading derivatives involve significant risk and may not be suitable for all investors. Manage your activity with our consumer protection tools. Restrictions apply. See terms at fanduel.com/predict/bonus-offer-hyphen-terms"
+    },
+    {
+      "t_abs": 422.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> I think some of the appeal is that uh you're single."
+    },
+    {
+      "t_abs": 1589.0,
+      "t_rel": 0.0,
+      "end_rel": 51.3,
+      "text": ">> Then I'm adding in the fact that you've been investing the money an extra 15% over the last 2 years,"
+    }
+  ]
+}

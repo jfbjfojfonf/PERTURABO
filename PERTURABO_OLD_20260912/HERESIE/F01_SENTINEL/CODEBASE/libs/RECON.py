@@ -1,0 +1,126 @@
+"""
+F01_RECON — Frégate de reconnaissance
+Liste les vidéos d'une chaîne YouTube ou d'une vidéo unique via yt-dlp.
+Copié de youtube-transcriber (kioka8877-ux/youtube-transcriber).
+"""
+
+import subprocess
+import re
+
+def is_channel_url(url: str) -> bool:
+    """Détecte si l'URL est une chaîne ou une playlist."""
+    patterns = [
+        r"youtube\.com/@[\w-]+",
+        r"youtube\.com/channel/[\w-]+",
+        r"youtube\.com/c/[\w-]+",
+        r"youtube\.com/user/[\w-]+",
+        r"youtube\.com/playlist\?list=",
+    ]
+    return any(re.search(p, url) for p in patterns)
+
+def is_video_url(url: str) -> bool:
+    """Détecte si l'URL est une vidéo YouTube unique."""
+    return bool(re.search(r"(youtube\.com/watch\?v=|youtu\.be/)", url))
+
+def list_channel_videos(channel_url: str) -> list[dict]:
+    """
+    Liste toutes les vidéos d'une chaîne via yt-dlp --flat-playlist.
+    Retourne une liste de dicts: {video_id, title, url, duration}.
+    """
+    cmd = [
+        "yt-dlp",
+        "--flat-playlist",
+        "--print", "%(id)s\t%(title)s\t%(url)s\t%(duration)s",
+        "--no-warnings",
+        channel_url,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+
+    if result.returncode != 0 or not result.stdout.strip():
+        print(f" ⚠️ yt-dlp stderr: {result.stderr[:200] if result.stderr else 'vide'}")
+
+    videos = []
+    for line in result.stdout.strip().split("\n"):
+        if not line:
+            continue
+        parts = line.split("\t")
+        if len(parts) >= 3:
+            videos.append({
+                "video_id": parts[0],
+                "title": parts[1],
+                "url": parts[2],
+                "duration": float(parts[3]) if len(parts) > 3 and parts[3] != "NA" else None,
+            })
+
+    return videos
+
+def get_single_video(video_url: str) -> dict:
+    """
+    Récupère les métadonnées d'une vidéo unique via yt-dlp.
+    Fallback: extrait le video_id de l'URL si yt-dlp échoue.
+    """
+    cmd = [
+        "yt-dlp",
+        "--print", "%(id)s\t%(title)s\t%(url)s\t%(duration)s",
+        "--no-warnings",
+        "--no-playlist",
+        video_url,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+
+    parts = result.stdout.strip().split("\t")
+    if len(parts) >= 3:
+        return {
+            "video_id": parts[0],
+            "title": parts[1],
+            "url": parts[2],
+            "duration": float(parts[3]) if len(parts) > 3 and parts[3] != "NA" else None,
+        }
+
+    # Fallback: extraire le video_id de l'URL directement
+    vid_id = _extract_video_id(video_url)
+    if vid_id:
+        return {
+            "video_id": vid_id,
+            "title": f"Video {vid_id}",
+            "url": f"https://www.youtube.com/watch?v={vid_id}",
+            "duration": None,
+        }
+    return {}
+
+def _extract_video_id(url: str) -> str | None:
+    """Extrait le video_id d'une URL YouTube."""
+    import re
+    # youtube.com/watch?v=ID
+    m = re.search(r"[?&]v=([\w-]{11})", url)
+    if m:
+        return m.group(1)
+    # youtu.be/ID
+    m = re.search(r"youtu\.be/([\w-]{11})", url)
+    if m:
+        return m.group(1)
+    return None
+
+def run(url: str) -> dict:
+    """
+    Point d'entrée de la frégate RECON.
+    Retourne {videos: [...], meta: {...}}.
+    """
+    if is_video_url(url):
+        video = get_single_video(url)
+        videos = [video] if video else []
+    elif is_channel_url(url):
+        videos = list_channel_videos(url)
+    else:
+        raise ValueError(f"URL non reconnue: {url}")
+
+    total_duration = sum(v["duration"] or 0 for v in videos)
+
+    return {
+        "videos": videos,
+        "meta": {
+            "source_url": url,
+            "video_count": len(videos),
+            "duree_totale_sec": total_duration,
+        }
+    }

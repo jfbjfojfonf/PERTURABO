@@ -1,0 +1,101 @@
+{
+  "pattern_name": "hooks_pur",
+  "description": "Hook psychology SPECIFIQUE au mode PUR — le titre n'est pas descriptif, il TRANSFORME le sens du contenu",
+  "extends": "hooks_psychology.json",
+  "core_concept": "Narrative Reframing — le titre prend un contenu neutre (sérieux, drôle, triste) et le transforme en une histoire captivante",
+  "reframing_rules": {
+    "principle": "Sans titre = speaker qui parle. Avec titre = une histoire que le viewer DOIT voir jusqu'au bout",
+    "transformation_types": {
+      "serious_to_funny": "Contenu sérieux → titre qui le rend absurde ou drôle",
+      "funny_to_epic": "Contenu drôle → titre qui lui donne une dimension épique",
+      "neutral_to_dramatic": "Contenu neutre → titre qui crée du drame ou de la tension",
+      "neutral_to_inspirational": "Contenu neutre → titre qui inspire ou motive",
+      "personal_to_universal": "Expérience personnelle → titre qui touche tout le monde"
+    },
+    "max_words_ranking": 4,
+    "max_lines_other": 2,
+    "language": "Chosen by operator (FR or EN)"
+  },
+  "hook_types_pur": {
+    "narrative_reframing": {
+      "pattern": "Transform the meaning of the clip with a narrative frame",
+      "example_ranking": "Kai's worst beach moments",
+      "example_blur": "The silence after the storm",
+      "when_to_use": "ALL modes — this is the DEFAULT hook type for PUR"
+    },
+    "countdown_arc": {
+      "pattern": "Create tension across the countdown — #1 most captivating, last = best moment",
+      "example": "Most embarrassing fails... #1 hooks, last surprises",
+      "when_to_use": "Ranking mode only",
+      "rules": [
+        "#1 = most captivating (hooks viewer immediately)",
+        "Middle clips = build tension",
+        "Last clip = best moment (crescendo payoff)"
+      ]
+    },
+    "proof_reveal": {
+      "pattern": "Title promises proof or evidence that the clip delivers",
+      "example_split": "When the stats speak for themselves",
+      "when_to_use": "Split Scene mode, especially with proof sub-layout"
+    },
+    "transformation_tease": {
+      "pattern": "Title teases a transformation that happened during the clip",
+      "example_reframing": "The moment everything changed for her",
+      "when_to_use": "Reframing mode"
+    }
+  },
+  "clip_labels": {
+    "description": "Label court (1 mot) qui identifie chaque clip dans un ranking countdown",
+    "max_words_video": 1,
+    "max_words_article": 2,
+    "rules": [
+      "Toujours 1 mot pour le format vidéo",
+      "2 mots max si c'est pour un article",
+      "Le label EST le reframing titre du clip",
+      "Doit être immédiatement compréhensible"
+    ],
+    "examples": [
+      {"label": "salto", "context": "Un salto raté"},
+      {"label": "drag", "context": "Tentative de drague"},
+      {"label": "date", "context": "Un faux date"},
+      {"label": "swim", "context": "Tentative de nage"},
+      {"label": "fight", "context": "Confrontation"}
+    ]
+  },
+  "countdown_order": {
+    "description": "L'ordre du countdown est conçu pour maximiser la rétention",
+    "rule": "#1 = plus captivant (accroche), dernier = meilleur moment (crescendo)",
+    "structure": {
+      "position_1": "Plus captivant — accroche le viewer immédiatement",
+      "middle_positions": "Montée en puissance — maintient l'intérêt",
+      "last_position": "Meilleur moment — payoff émotionnel maximum"
+    },
+    "note": "Le countdown va du PLUS ACCROCHANT au MEILLEUR. C'est un arc narratif."
+  },
+  "title_placement_by_style": {
+    "ranking": {
+      "position": "Visible pendant le countdown, au-dessus ou en dessous du clip",
+      "duration": "Visible pendant toute la durée du clip"
+    },
+    "blur": {
+      "position": "En haut de l'écran",
+      "duration": "Visible pendant toute la durée du clip"
+    },
+    "split_scene": {
+      "position": "Au centre, entre le haut (podcast) et le bas (contenu variable)",
+      "duration": "Visible pendant toute la durée du clip"
+    },
+    "reframing": {
+      "position": "Selon le layout choisi",
+      "duration": "Visible pendant toute la durée du clip"
+    }
+  },
+  "critical_rules_pur": {
+    "no_cta": "Pas de 'abonne-toi', 'like', 'partage' — c'est du contenu organique",
+    "no_spoiler": "Le titre ne doit PAS révéler ce qui va se passer — il doit créer la curiosité",
+    "narrative_not_descriptive": "Le titre RACONTE une histoire, il ne DÉCRIT pas le contenu",
+    "consistent_style": "Le style visuel du titre doit être IDENTIQUE pour tous les clips d'un même ranking",
+    "transcript_based_captions": "Les captions sont le TRANSCRIPT du speech, pas du texte écrit",
+    "caption_cutting": "Couper les captions aux bons moments — pas de phrases trop longues"
+  }
+}

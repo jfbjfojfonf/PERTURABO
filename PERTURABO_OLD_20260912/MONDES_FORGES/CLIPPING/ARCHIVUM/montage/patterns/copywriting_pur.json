@@ -1,0 +1,132 @@
+{
+  "pattern_name": "copywriting_pur",
+  "description": "Règles de copywriting SPECIFIQUES au mode PUR —Oracle génère, Warsmith valide",
+  "extends": "hooks_pur.json",
+  "process": {
+    "description": "Le titre est généré par l'Oracle (clé premium) dans la frégate copywriting, puis validé par le Warsmith",
+    "oracle_role": "L'Oracle analyse le transcript + ARCHIVUM (hooks, psychologie, patterns) + transformations voulues",
+    "warsmith_role": "Le Warsmith valide ou modifie le titre et les labels",
+    "inputs": [
+      "transcript.json (podcast source)",
+      "ARCHIVUM/hooks_pur.json (règles de reframing)",
+      "ARCHIVUM/hooks_psychology.json (psychologie générale)",
+      "ARCHIVUM/copywriting/* (bibliothèque complète)",
+      "directive du Warsmith (transformations voulues, langue, style)"
+    ]
+  },
+  "title_generation": {
+    "ranking": {
+      "max_words": 4,
+      "format": "Narratif, court, percutant — doit créer un arc narratif",
+      "examples": [
+        "Kai's worst beach fails",
+        "Streamers who embarrassed themselves",
+        "Most cringe dating moments",
+        "Top fails that broke the internet"
+      ],
+      "rules": [
+        "Maximum 4 mots",
+        "Doit être un reframing narratif (pas une description)",
+        "Doit créer la curiosité sans spoiler",
+        "Langue choisie par le Warsmith (FR ou EN)"
+      ]
+    },
+    "blur": {
+      "max_lines": 2,
+      "format": "Plus développé, émotionnel, poétique",
+      "examples": [
+        "The silence after the storm when everything changed",
+        "When she realized she couldn't go back"
+      ],
+      "rules": [
+        "Environ 2 lignes, pas de limite stricte de mots",
+        "Doit évoquer une émotion ou une transformation",
+        "Positionné en haut de l'écran"
+      ]
+    },
+    "split_scene": {
+      "max_lines": 2,
+      "format": "Court et percutant — occupe de l'espace visuel au centre",
+      "examples": [
+        "When the stats speak for themselves",
+        "Proof she's the best streamer in the world"
+      ],
+      "rules": [
+        "Environ 2 lignes, mais doit rester lisible au centre du split",
+        "Positionné entre le haut (podcast) et le bas (contenu variable)",
+        "Le titre relie le contenu du haut et du bas"
+      ]
+    },
+    "reframing": {
+      "max_lines": 2,
+      "format": "Transformation narrative du moment",
+      "examples": [
+        "The moment everything changed for her",
+        "When a streamer's dream became reality"
+      ],
+      "rules": [
+        "Environ 2 lignes",
+        "Doit transformer le sens du clip",
+        "Peut être positionné selon le layout"
+      ]
+    }
+  },
+  "clip_labels": {
+    "description": "Label de chaque clip dans un ranking (1 mot, 2 si article)",
+    "ranking_only": true,
+    "max_words_video": 1,
+    "max_words_article": 2,
+    "rules": [
+      "1 mot pour le format vidéo",
+      "2 mots max si format article",
+      "Le label EST le reframing titre du clip individuel",
+      "Doit être immédiatement compréhensible",
+      "Unicité : pas de doublons dans un même ranking"
+    ],
+    "examples": [
+      {"label": "salto", "context": "Un salto raté"},
+      {"label": "drag", "context": "Tentative de drague"},
+      {"label": "date", "context": "Un faux date"},
+      {"label": "swim", "context": "Tentative de nage"},
+      {"label": "fight", "context": "Confrontation"}
+    ]
+  },
+  "countdown_order": {
+    "rule": "#1 = plus captivant, dernier = meilleur moment (crescendo)",
+    "structure": {
+      "position_1": "Plus captivant — accroche immédiate",
+      "middle": "Montée en puissance",
+      "last": "Meilleur moment — payoff émotionnel"
+    },
+    "note": "L'arc narratif: accrocher → maintenir → crescendo → meilleur à la fin"
+  },
+  "captions": {
+    "source": "TRANSCRIPT du speech (pas de texte écrit)",
+    "format": "Dynamic word-by-word, suit le rythme du speaker",
+    "cutting": "Couper aux bons moments — pas de phrases trop longues",
+    "style_consistency": "Identique d'un clip à l'autre dans un même ranking",
+    "visual_rules": {
+      "font": "Bold, readable (Montserrat, Bebas Neue)",
+      "position": "Center of frame",
+      "colors": "White text with dark outline ou background"
+    }
+  },
+  "metadata": {
+    "title_posting": "Le titre principal sert aussi de titre de publication (YouTube/TikTok)",
+    "description": "Basé sur le transcript + le reframing du titre",
+    "tags": "Générés par l'Oracle selon le contenu et le marché"
+  },
+  "language": {
+    "rule": "Le Warsmith choisit la langue du mode PUR",
+    "options": ["français", "anglais"],
+    "applies_to": ["titre principal", "labels clips", "metadata"],
+    "note": "Les captions sont toujours dans la langue du podcast source (transcript)"
+  },
+  "no_cta": true,
+  "anti_bullshit": [
+    "Pas de clickbait sans payoff",
+    "Pas de 'abonne-toi' / 'like' / 'partage'",
+    "Pas de transformation mensongère du contenu source",
+    "Le titre doit être honoré par le contenu du clip"
+  ]
+}

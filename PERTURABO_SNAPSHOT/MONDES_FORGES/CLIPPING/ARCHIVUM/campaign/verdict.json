@@ -1,0 +1,34 @@
+{
+  "campaign_id": "2026-07-24_AISHAH_SOFEY_MULTI",
+  "verdict": "GO",
+  "verdict_justification": "GO — assets fournis par la campagne présents, verdict provisoire (IRON sandbox requis pour validation finale)",
+  "reference_skeleton": {
+    "hook_type": null,
+    "emotion_dominante": null,
+    "structure_narrative": null,
+    "loop_technique": null,
+    "engagement_type": null,
+    "endroits_preuve": [],
+    "iron_status": "pending"
+  },
+  "demon_analysis": {
+    "demon_id": null,
+    "dominant_emotion": null,
+    "exploited_territories": [],
+    "blue_ocean_unlocked": []
+  },
+  "direct_analysis": {
+    "campaign_fit_platform": 5,
+    "campaign_fit_market": 5,
+    "campaign_budget_remaining": null,
+    "cpm_expected": null,
+    "saturation_level": "unknown",
+    "evidence": {
+      "platform_profile_present": false,
+      "market_profile_present": false,
+      "cartographie_present": false
+    }
+  },
+  "check_in_iw_custos": "2026-09-07T01:19:54Z",
+  "iron_status": "auto"
+}

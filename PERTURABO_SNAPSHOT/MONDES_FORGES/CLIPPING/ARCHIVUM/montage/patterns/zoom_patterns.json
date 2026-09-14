@@ -1,0 +1,127 @@
+{
+  "version": "1.0.0",
+  "description": "Patterns de zoom BRUTAUX et INSTANTANÉS. Pas de zoom lent. Chaque zoom = un impact visuel.",
+  "last_updated": "2026-09-03",
+
+  "zoom_philosophy": "Le zoom est un OUTIL DE CHOC. Il doit surprendre. Pas de gradualité, pas de ease-in. On zoom, on impact, on revient à la normale.",
+
+  "zoom_types": {
+    "brutal_impact": {
+      "description": "Le zoom principal du mode PUR. Instantané, brutal, surprenant.",
+      "intensity": "108-115%",
+      "duration_in": "0.1s (2-3 frames à 30fps)",
+      "duration_out": "0.1s (retour immédiat au clip suivant ou après 0.5-1s)",
+      "easing": "NONE — pas de ease-in-out, frame brutal",
+      "target": "centre du visage du speaker",
+      "combinaison_sfx": "impact (50-60%) synchronisé avec le zoom",
+      "quand_utiliser": "Moment fort : chiffre, punchline, révélation, émotion pic"
+    },
+    "snap_zoom": {
+      "description": "Zoom encore plus brutal — en 1 frame. Utilisé pour les moments de SHOCK.",
+      "intensity": "115-130%",
+      "duration_in": "1 frame (instantané)",
+      "duration_out": "retour au clip suivant ou fade en 0.3s",
+      "easing": "NONE",
+      "target": "élément choisi (visage, objet, texte)",
+      "combinaison_sfx": "boom (60%) + flash blanc subtil (1-2 frames)",
+      "quand_utiliser": "Chiffre choquant, twist, moment viral"
+    },
+    "countdown_zoom": {
+      "description": "Zoom sur le numéro du countdown. Brutal mais bref.",
+      "intensity": "110-120%",
+      "duration_in": "0.1s",
+      "duration_out": "0.15s (retour légèrement plus lent)",
+      "easing": "NONE",
+      "target": "le numéro (#5, #4, etc.)",
+      "combinaison_sfx": "tick (50%) synchronisé",
+      "quand_utiliser": "Chaque changement de numéro dans un ranking"
+    },
+    "retraction": {
+      "description": "Retour brutal au 100% après un zoom. L'anti-zoom.",
+      "intensity": "100% (retour à la normale)",
+      "duration": "0.1s",
+      "easing": "NONE",
+      "purpose": "Réinitialiser l'attention avant le prochain zoom",
+      "quand_utiliser": "Après chaque zoom brutal, avant le prochain"
+    }
+  },
+
+  "zoom_rules": {
+    "pas_de_zoom_lent": {
+      "interdit": [
+        "slow push sur 2-5 secondes",
+        "breathing zoom (105% sur 3s)",
+        "ease-in-out smooth",
+        " Ken Burns effect",
+        "zoom progressif sur le speaker"
+      ],
+      "raison": "Le zoom lent noie l'impact. Le spectateur ne le remarque même pas."
+    },
+    "un_zoom_par_moment": {
+      "regle": "UN seul zoom brutal par moment fort. Pas de double zoom sur la même phrase.",
+      "exception": "Un zoom sur le chiffre + un retraction = 2 keyframes, pas 2 zooms"
+    },
+    "retour_obligatoire": {
+      "regle": "Après chaque zoom, retour à 100% AVANT le prochain moment fort",
+      "duree_minimale_entre_zooms": "2 secondes"
+    },
+    "cible_du_zoom": {
+      "priorite_1": "Visage du speaker ( yeux/ bouche)",
+      "priorite_2": "Chiffre ou texte à l'écran",
+      "priorite_3": "Objet ou élément visuel clé",
+      "jamais": "Zoom sur le fond vide ou un B-roll sans visage"
+    }
+  },
+
+  "zoom_by_style": {
+    "ranking": {
+      "zoom_per_clip": "1 zoom brutal par clip",
+      "intensity": "108-115%",
+      "target": "speaker au moment du chiffre/punchline du clip",
+      "timing": "Au milieu du clip (pas au début, pas à la fin)"
+    },
+    "blur": {
+      "zoom_per_clip": "1-2 zooms brutaux par clip long",
+      "intensity": "108-112%",
+      "target": "speaker dans zone_top",
+      "timing": "Au moment émotionnel clé du speech"
+    },
+    "split_scene": {
+      "zoom_per_clip": "1 zoom brutal par clip",
+      "intensity": "110-120%",
+      "target": "speaker dans zone_top",
+      "timing": "Synchronisé avec le changement de zone_bas"
+    },
+    "reframing": {
+      "zoom_per_clip": "1-2 zooms maximum (laisser respirer)",
+      "intensity": "105-112%",
+      "target": "speaker au moment émotionnel",
+      "timing": "Avant la révélation, pas pendant"
+    }
+  },
+
+  "keyframe_recipe": {
+    "description": "Recette exacte pour le zoom brutal dans CapCut / DaVinci",
+    "capcut": {
+      "etape_1": "Placer le playhead au moment exact du zoom",
+      "etape_2": "Ajouter un keyframe à 100% (taille normale)",
+      "etape_3": "Avancer de 1-2 frames (0.03-0.07s)",
+      "etape_4": "Changer la taille à 110% (ou l'intensité voulue)",
+      "etape_5": "Pas de easing — keyframe linéaire",
+      "etape_6": "Ajouter le SFX 'impact' sur la même frame"
+    },
+    "davinci": {
+      "etape_1": "Ouvrir l'onglet Fusion ou les keyframes",
+      "etape_2": "Keyframe 1: Zoom 100% à T0",
+      "etape_3": "Keyframe 2: Zoom 110% à T+1 frame",
+      "etape_4": "Interpolation: LINEAIRE (pas de spline)",
+      "etape_5": "Keyframe 3 (optionnel): Zoom 100% à T+15 frames"
+    }
+  },
+
+  "source_transcripts": [
+    "MLLV9xLqC7o (DaVinci Resolve — zoom techniques)",
+    "RXQOmQGJK34 (Repurpose podcast — cut patterns)",
+    "guide_shorts_podcast_complet.md (Pattern 8 — pattern interrupt = zoom)"
+  ]
+}

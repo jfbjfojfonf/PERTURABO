@@ -1,0 +1,354 @@
+{
+  "pack_id": "LOGO-SIEGE-siege_20260824_093035_wayvee_meme_v2",
+  "siege_id": "siege_20260824_093035_wayvee_meme_v2",
+  "mode": "logo",
+  "sub_mode": "meme_v2",
+  "clip_source_ref": {
+    "source_type": "meme_v2_social",
+    "reference": "manual_social_source",
+    "celebrity_or_subject": "@Zdak",
+    "niche": "meme",
+    "duration_sec": null,
+    "timecodes": null
+  },
+  "article_source": null,
+  "joke_source": null,
+  "reference_clip_style": null,
+  "angles": [
+    {
+      "angle_id": "A01",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "poignant",
+      "engagement_type": "question",
+      "reframe_dim": "ordinaire_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A02",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "drole",
+      "engagement_type": "assertion",
+      "reframe_dim": "ordinaire_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A03",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "choc",
+      "engagement_type": "cliffhanger",
+      "reframe_dim": "ordinaire_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A04",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "tendu",
+      "engagement_type": "question",
+      "reframe_dim": "echec_vers_lecon"
+    },
+    {
+      "angle_id": "A05",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "emerveille",
+      "engagement_type": "assertion",
+      "reframe_dim": "echec_vers_lecon"
+    }
+  ],
+  "videos": [
+    {
+      "video_index": 1,
+      "angle_id": "A01",
+      "title": "Current Students",
+      "meme": "M7",
+      "tweet": {
+        "text": "To all current college students, I wish you exactly what happened to this X user.",
+        "keywords_style": {
+          "green": [],
+          "red": []
+        }
+      },
+      "reaction_tweet": "To all current college students, I wish you exactly what happened to this X user.",
+      "text_emotion": "Current students right now:",
+      "clip_id": "M7",
+      "meme_tag": "M7",
+      "channel_id": "cocktail_meme",
+      "source_post": {
+        "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+        "url": null,
+        "author": "Wayvee (@wayveeofficial)",
+        "observed_at": "2026-08-24",
+        "credit_display": "Source: Wayvee (@wayveeofficial)"
+      },
+      "emotion": "drole",
+      "duration_sec": 5,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Current Students",
+        "description": "A reaction for current college students using the real Wayvee phone-bounce post as the visual source.\n\nDaily Shake is NOT monetized by the platform. We keep serving fresh daily memes through select product placements and brand partnerships shown in some videos.\n\nThis video contains a brand placement shown for awareness and illustrative purposes. All footage and images are used as illustration only under Section 107 of the U.S. Copyright Act (fair use), and every story comes from publicly reported news and trends. No politics, no misleading claims, ever.\n\n#current college students, #phone fail, #relatable meme, #us meme, #meme news, #daily meme, #pop culture memes, #sports memes, #tech memes, #entertainment memes, #trending memes, #us pop culture, #meme shorts, #funny shorts, #viral memes",
+        "tags": [
+          "#current college students",
+          "#phone fail",
+          "#relatable meme",
+          "#us meme",
+          "#meme news",
+          "#daily meme",
+          "#pop culture memes",
+          "#sports memes",
+          "#tech memes",
+          "#entertainment memes",
+          "#trending memes",
+          "#us pop culture",
+          "#meme shorts",
+          "#funny shorts",
+          "#viral memes"
+        ]
+      }
+    },
+    {
+      "video_index": 2,
+      "angle_id": "A02",
+      "title": "Young Professionals",
+      "meme": "M7",
+      "tweet": {
+        "text": "To all young professionals with student debt, I wish you exactly what happened to this X user.",
+        "keywords_style": {
+          "green": [],
+          "red": []
+        }
+      },
+      "reaction_tweet": "To all young professionals with student debt, I wish you exactly what happened to this X user.",
+      "text_emotion": "Young workers right now:",
+      "clip_id": "M7",
+      "meme_tag": "M7",
+      "channel_id": "cocktail_meme",
+      "source_post": {
+        "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+        "url": null,
+        "author": "Wayvee (@wayveeofficial)",
+        "observed_at": "2026-08-24",
+        "credit_display": "Source: Wayvee (@wayveeofficial)"
+      },
+      "emotion": "drole",
+      "duration_sec": 5,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Young Professionals",
+        "description": "A reaction for young professionals with student debt using the real Wayvee phone-bounce post as the visual source.\n\nDaily Shake is NOT monetized by the platform. We keep serving fresh daily memes through select product placements and brand partnerships shown in some videos.\n\nThis video contains a brand placement shown for awareness and illustrative purposes. All footage and images are used as illustration only under Section 107 of the U.S. Copyright Act (fair use), and every story comes from publicly reported news and trends. No politics, no misleading claims, ever.\n\n#young professionals with student debt, #phone fail, #relatable meme, #us meme, #meme news, #daily meme, #pop culture memes, #sports memes, #tech memes, #entertainment memes, #trending memes, #us pop culture, #meme shorts, #funny shorts, #viral memes",
+        "tags": [
+          "#young professionals with student debt",
+          "#phone fail",
+          "#relatable meme",
+          "#us meme",
+          "#meme news",
+          "#daily meme",
+          "#pop culture memes",
+          "#sports memes",
+          "#tech memes",
+          "#entertainment memes",
+          "#trending memes",
+          "#us pop culture",
+          "#meme shorts",
+          "#funny shorts",
+          "#viral memes"
+        ]
+      }
+    },
+    {
+      "video_index": 3,
+      "angle_id": "A03",
+      "title": "Expensive Phone Owners",
+      "meme": "M7",
+      "tweet": {
+        "text": "To all people carrying an expensive phone, I wish you exactly what happened to this X user.",
+        "keywords_style": {
+          "green": [],
+          "red": []
+        }
+      },
+      "reaction_tweet": "To all people carrying an expensive phone, I wish you exactly what happened to this X user.",
+      "text_emotion": "Phone owners right now:",
+      "clip_id": "M7",
+      "meme_tag": "M7",
+      "channel_id": "cocktail_meme",
+      "source_post": {
+        "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+        "url": null,
+        "author": "Wayvee (@wayveeofficial)",
+        "observed_at": "2026-08-24",
+        "credit_display": "Source: Wayvee (@wayveeofficial)"
+      },
+      "emotion": "drole",
+      "duration_sec": 5,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Expensive Phone Owners",
+        "description": "A reaction for people carrying an expensive phone using the real Wayvee phone-bounce post as the visual source.\n\nDaily Shake is NOT monetized by the platform. We keep serving fresh daily memes through select product placements and brand partnerships shown in some videos.\n\nThis video contains a brand placement shown for awareness and illustrative purposes. All footage and images are used as illustration only under Section 107 of the U.S. Copyright Act (fair use), and every story comes from publicly reported news and trends. No politics, no misleading claims, ever.\n\n#people carrying an expensive phone, #phone fail, #relatable meme, #us meme, #meme news, #daily meme, #pop culture memes, #sports memes, #tech memes, #entertainment memes, #trending memes, #us pop culture, #meme shorts, #funny shorts, #viral memes",
+        "tags": [
+          "#people carrying an expensive phone",
+          "#phone fail",
+          "#relatable meme",
+          "#us meme",
+          "#meme news",
+          "#daily meme",
+          "#pop culture memes",
+          "#sports memes",
+          "#tech memes",
+          "#entertainment memes",
+          "#trending memes",
+          "#us pop culture",
+          "#meme shorts",
+          "#funny shorts",
+          "#viral memes"
+        ]
+      }
+    },
+    {
+      "video_index": 4,
+      "angle_id": "A04",
+      "title": "Apartment Roommates",
+      "meme": "M7",
+      "tweet": {
+        "text": "To all US apartment roommates, I wish you exactly what happened to this X user.",
+        "keywords_style": {
+          "green": [],
+          "red": []
+        }
+      },
+      "reaction_tweet": "To all US apartment roommates, I wish you exactly what happened to this X user.",
+      "text_emotion": "US roommates right now:",
+      "clip_id": "M7",
+      "meme_tag": "M7",
+      "channel_id": "cocktail_meme",
+      "source_post": {
+        "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+        "url": null,
+        "author": "Wayvee (@wayveeofficial)",
+        "observed_at": "2026-08-24",
+        "credit_display": "Source: Wayvee (@wayveeofficial)"
+      },
+      "emotion": "drole",
+      "duration_sec": 5,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Apartment Roommates",
+        "description": "A reaction for US apartment roommates using the real Wayvee phone-bounce post as the visual source.\n\nDaily Shake is NOT monetized by the platform. We keep serving fresh daily memes through select product placements and brand partnerships shown in some videos.\n\nThis video contains a brand placement shown for awareness and illustrative purposes. All footage and images are used as illustration only under Section 107 of the U.S. Copyright Act (fair use), and every story comes from publicly reported news and trends. No politics, no misleading claims, ever.\n\n#US apartment roommates, #phone fail, #relatable meme, #us meme, #meme news, #daily meme, #pop culture memes, #sports memes, #tech memes, #entertainment memes, #trending memes, #us pop culture, #meme shorts, #funny shorts, #viral memes",
+        "tags": [
+          "#US apartment roommates",
+          "#phone fail",
+          "#relatable meme",
+          "#us meme",
+          "#meme news",
+          "#daily meme",
+          "#pop culture memes",
+          "#sports memes",
+          "#tech memes",
+          "#entertainment memes",
+          "#trending memes",
+          "#us pop culture",
+          "#meme shorts",
+          "#funny shorts",
+          "#viral memes"
+        ]
+      }
+    },
+    {
+      "video_index": 5,
+      "angle_id": "A05",
+      "title": "Almost-30 Adults",
+      "meme": "M7",
+      "tweet": {
+        "text": "To all adults turning 30, I wish you exactly what happened to this X user.",
+        "keywords_style": {
+          "green": [],
+          "red": []
+        }
+      },
+      "reaction_tweet": "To all adults turning 30, I wish you exactly what happened to this X user.",
+      "text_emotion": "Almost-30 adults right now:",
+      "clip_id": "M7",
+      "meme_tag": "M7",
+      "channel_id": "cocktail_meme",
+      "source_post": {
+        "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+        "url": null,
+        "author": "Wayvee (@wayveeofficial)",
+        "observed_at": "2026-08-24",
+        "credit_display": "Source: Wayvee (@wayveeofficial)"
+      },
+      "emotion": "drole",
+      "duration_sec": 5,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Almost-30 Adults",
+        "description": "A reaction for adults turning 30 using the real Wayvee phone-bounce post as the visual source.\n\nDaily Shake is NOT monetized by the platform. We keep serving fresh daily memes through select product placements and brand partnerships shown in some videos.\n\nThis video contains a brand placement shown for awareness and illustrative purposes. All footage and images are used as illustration only under Section 107 of the U.S. Copyright Act (fair use), and every story comes from publicly reported news and trends. No politics, no misleading claims, ever.\n\n#adults turning 30, #phone fail, #relatable meme, #us meme, #meme news, #daily meme, #pop culture memes, #sports memes, #tech memes, #entertainment memes, #trending memes, #us pop culture, #meme shorts, #funny shorts, #viral memes",
+        "tags": [
+          "#adults turning 30",
+          "#phone fail",
+          "#relatable meme",
+          "#us meme",
+          "#meme news",
+          "#daily meme",
+          "#pop culture memes",
+          "#sports memes",
+          "#tech memes",
+          "#entertainment memes",
+          "#trending memes",
+          "#us pop culture",
+          "#meme shorts",
+          "#funny shorts",
+          "#viral memes"
+        ]
+      }
+    }
+  ],
+  "checklist": {
+    "factual_verified": false,
+    "no_defamation": false,
+    "no_fabricated_breaking": false,
+    "seo_optimized": true
+  },
+  "meme_v2": {
+    "source_post": {
+      "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/EXPORT/source_wayvee_phone_bounce.png",
+      "url": null,
+      "author": "Wayvee (@wayveeofficial)",
+      "observed_at": "2026-08-24",
+      "metrics": {
+        "replies": 186,
+        "reposts": 4200,
+        "likes": 26000,
+        "views": 193000
+      },
+      "credit_display": "Source: Wayvee (@wayveeofficial)"
+    },
+    "operator_bindings": {
+      "A01": {
+        "clip_id": "M7",
+        "meme_tag": "M7",
+        "channel_id": "cocktail_meme"
+      },
+      "A02": {
+        "clip_id": "M7",
+        "meme_tag": "M7",
+        "channel_id": "cocktail_meme"
+      },
+      "A03": {
+        "clip_id": "M7",
+        "meme_tag": "M7",
+        "channel_id": "cocktail_meme"
+      },
+      "A04": {
+        "clip_id": "M7",
+        "meme_tag": "M7",
+        "channel_id": "cocktail_meme"
+      },
+      "A05": {
+        "clip_id": "M7",
+        "meme_tag": "M7",
+        "channel_id": "cocktail_meme"
+      }
+    }
+  }
+}

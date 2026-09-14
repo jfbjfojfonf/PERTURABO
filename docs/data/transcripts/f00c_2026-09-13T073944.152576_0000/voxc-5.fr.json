@@ -1,0 +1,74 @@
+{
+  "candidate_id": "voxc-5",
+  "run_id": "f00c_2026-09-13T073944.152576+0000",
+  "lang": "fr",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 5489.115,
+    "end": 5540.415
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 5488.0,
+      "t_rel": 0.0,
+      "end_rel": 3.39,
+      "text": ">> Ça dépend de la taille et du type de koi. >> Jake Paul, il a acheté des koi."
+    },
+    {
+      "t_abs": 5492.0,
+      "t_rel": 2.89,
+      "end_rel": 6.89,
+      "text": ">> C'est vrai. >> J'ai vu ça — un gros doré ou quelque chose."
+    },
+    {
+      "t_abs": 5496.0,
+      "t_rel": 6.89,
+      "end_rel": 16.89,
+      "text": ">> Ouais. J'ai vu des poissons là-bas entre 50 000 et 100 000, mais honnêtement, ceux de 5 à 10 se ressemblent à 90 %."
+    },
+    {
+      "t_abs": 5506.0,
+      "t_rel": 16.89,
+      "end_rel": 20.89,
+      "text": ">> Tout est dans les écailles et le marbrage."
+    },
+    {
+      "t_abs": 5510.0,
+      "t_rel": 20.89,
+      "end_rel": 24.89,
+      "text": ">> C'est fou — qui a le temps de compter les écailles d'un poisson ? C'est dingue."
+    },
+    {
+      "t_abs": 5514.0,
+      "t_rel": 24.89,
+      "end_rel": 31.89,
+      "text": ">> Et les lignes : ils veulent des lignes et des colorations nettes qui ne se fondent pas les unes dans les autres, parce que dès qu'elles se mélangent…"
+    },
+    {
+      "t_abs": 5521.0,
+      "t_rel": 31.89,
+      "end_rel": 40.89,
+      "text": ">> tu as fait tes recherches là-dessus. Il adore les poissons. J'ai passé une journée entière avec les éleveurs de koi au Japon, ils m'ont tout appris."
+    },
+    {
+      "t_abs": 5530.0,
+      "t_rel": 40.89,
+      "end_rel": 45.89,
+      "text": ">> C'est en fait assez triste. >> Je vais te raconter. Vas-y. >> Non, je dois le dire."
+    },
+    {
+      "t_abs": 5535.0,
+      "t_rel": 45.89,
+      "end_rel": 48.39,
+      "text": ">> Le nombre de poissons qu'ils tuent… >> Oh."
+    },
+    {
+      "t_abs": 5537.0,
+      "t_rel": 47.89,
+      "end_rel": 51.3,
+      "text": ">> parce qu'ils ne gardent que ceux avec certaines colorations,"
+    }
+  ]
+}

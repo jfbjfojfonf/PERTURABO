@@ -1,0 +1,5 @@
+# F06_DIRECTOR — Le Directeur de Montage
+# Requirements
+
+# Standard library only for now (no external dependencies)
+# Future: openai for AI-powered montage generation

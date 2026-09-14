@@ -1,0 +1,7 @@
+{
+  "decisions": [
+    {"candidate_id": "abc1234567", "status": "approved"},
+    {"candidate_id": "def4567890", "status": "approved", "adjusted_start": 12.5, "adjusted_end": 42.0},
+    {"candidate_id": "ghi7890123", "status": "rejected", "motif": "pas assez percutant"}
+  ]
+}

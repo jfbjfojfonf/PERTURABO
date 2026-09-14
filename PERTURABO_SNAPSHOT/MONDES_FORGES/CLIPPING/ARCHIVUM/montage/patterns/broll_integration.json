@@ -1,0 +1,74 @@
+{
+  "pattern_name": "broll_integration",
+  "description": "Système de B-roll avec scoring intelligent basé sur ARCHIVUM",
+  "duration_rules": {
+    "15sec": {"max_broll": 1},
+    "30sec": {"max_broll": 3},
+    "45sec": {"max_broll": 3},
+    "60sec": {"max_broll": 4},
+    "90sec": {"max_broll": 5},
+    "120sec": {"max_broll": 6}
+  },
+  "hook_rule": {
+    "description": "Le hook (0-3s) est JAMAIS un B-roll. Le 4e seconde n'est PAS automatiquement un B-roll.",
+    "correct_approach": "Hook → scoring du transcript → placement intelligent"
+  },
+  "scoring_system": {
+    "description": "Scorer chaque segment de 2-3s pour trouver les MEILLEURS moments de B-roll",
+    "method": "Analyser le texte et les patterns ARCHIVUM",
+    "factors": {
+      "visual_trigger": {"score": 3, "examples": ["she was flirting", "pregnant by a man", "look at this"]},
+      "context_gap": {"score": 3, "examples": ["look at what happened", "the result was", "when that happened"]},
+      "enumeration": {"score": 2, "examples": ["first, second, third", "number one, number two"]},
+      "description_word": {"score": 2, "words": ["imagine", "picture this", "you see", "this guy", "she said"]},
+      "dead_air": {"score": 2, "description": "Silence ou hésitation"},
+      "emotion_peak": {"score": 1, "note": "PAS de B-roll → garder le visage"}
+    },
+    "algorithm": [
+      "1. Découper le clip en segments de 2-3 secondes",
+      "2. Scorer chaque segment",
+      "3. Trier par score décroissant",
+      "4. Sélectionner N meilleurs moments (selon duration_rules)",
+      "5. Vérifier écart minimum 5 secondes entre B-roll",
+      "6. Placer aux meilleurs moments"
+    ],
+    "example_30sec": {
+      "scored": [
+        {"seg": "3-5s", "text": "she was flirting", "score": 5, "broll": true},
+        {"seg": "8-10s", "text": "first he did this", "score": 4, "broll": false, "skip": "trop proche"},
+        {"seg": "12-14s", "text": "I can't do this", "score": 1, "broll": false, "skip": "emotion_peak"},
+        {"seg": "18-20s", "text": "look at what happened", "score": 5, "broll": true},
+        {"seg": "22-24s", "text": "result was insane", "score": 4, "broll": false, "skip": "trop proche"},
+        {"seg": "26-28s", "text": "that's how it ended", "score": 2, "broll": true}
+      ]
+    }
+  },
+  "minimum_gap_between_broll": "5 secondes",
+  "never_place_broll_on": ["hook (0-3s)", "emotion_peak", "punchline principal", "silence intentionnel"],
+  "always_place_broll_on": ["énumération", "description visuelle", "context_gap", "dead_air"],
+  "sources": {
+    "campaign_provided": {"priority": 1, "action": "Utiliser les B-roll fournis, cut aux bons timestamps"},
+    "ai_generated": {"priority": 2, "action": "Générer 1-2 si pas assez de sources", "max_per_clip": 2},
+    "archivum_stock": {"priority": 3, "action": "Chercher dans ARCHIVUM/broll/"}
+  },
+  "operator_workflow": [
+    "1. F06 génère le broll_schedule avec scoring",
+    "2. Opérateur valide les cuts IN/OUT",
+    "3. Opérateur peut déplacer un B-roll si scoring mauvais",
+    "4. Instructions finales dans production_pack",
+    "5. OMNIS_WATCH exécute"
+  ],
+  "production_pack_format": {
+    "broll_schedule": [
+      {
+        "id": "broll_1",
+        "source": "campaign_drive/clip.mp4",
+        "cut": {"in": "0:02", "out": "0:05"},
+        "insert_at_sec": 3.0,
+        "duration_sec": 2,
+        "score": 5,
+        "reason": "visual_trigger: 'she was flirting'"
+      }
+    ]
+  }
+}

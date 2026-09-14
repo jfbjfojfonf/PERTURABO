@@ -1,0 +1,16 @@
+{
+  "account_slug": "cocktail_meme",
+  "channel_name": "Daily Shake",
+  "handle": "@memecocktail",
+  "platform": "youtube",
+  "market": "us_young_english",
+  "niche": "Meme sur l'actu US non-politique — pop-culture, sport, tech, entertainment",
+  "profile_mode": "meme",
+  "sub_mode": "meme",
+  "account_age_days": null,
+  "warmup_status": "incomplete",
+  "warmup_started_at": null,
+  "warmup_completed_at": null,
+  "channel_url": null,
+  "notes": "Chaîne meme sur l'actu US : un meme par fait d'actu frais (pop-culture, sport, tech, entertainment), zéro politique. Pipeline CLIPPING mode meme (keyword d'actu -> F00 scan -> pack -> meme_001/meme_002). Warmup à compléter selon CONTRACTS/clipping_rules.md C5."
+}

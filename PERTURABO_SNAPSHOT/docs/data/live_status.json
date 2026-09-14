@@ -1,0 +1,811 @@
+{
+  "generated_at": "2026-09-11T00:15:54.987139",
+  "mode": "v2-live",
+  "session_final": true,
+  "seconds_remaining": 0,
+  "campaign": {
+    "session_mode": "technical_test",
+    "channels": {
+      "joe_bartolozzi": {
+        "campaign_id": null,
+        "eligible": false,
+        "reason": "hors campagne — session technique, non soumissible"
+      }
+    }
+  },
+  "channels": [
+    {
+      "channel": "joe_bartolozzi",
+      "connected": true,
+      "msgs_total": 29521,
+      "rate_10s": 0,
+      "baseline": 0.03,
+      "clip_pressure": 0,
+      "hot_words": [],
+      "moments": 17,
+      "last_moment_at": 1789084764.5384197,
+      "cooldown_until": 1789084884.5384197
+    }
+  ],
+  "counters": {
+    "moments": 17,
+    "helix_clips": 17,
+    "approved": 0,
+    "pending_warsmith": 17,
+    "rejected": 0
+  },
+  "gate_queue": [
+    {
+      "candidate_id": "377d89c5d7",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 8096.0,
+      "end_sec": 8140.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076073.69,
+      "helix_clip_id": "AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "03f8968cdd",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 8465.0,
+      "end_sec": 8509.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076442.17,
+      "helix_clip_id": "CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "e0842c7b58",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 9818.0,
+      "end_sec": 9862.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789077795.98,
+      "helix_clip_id": "FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "99f9b64752",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 10708.0,
+      "end_sec": 10752.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789078685.24,
+      "helix_clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "82c47b2850",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 11822.0,
+      "end_sec": 11866.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079799.86,
+      "helix_clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "4d09bbdb79",
+      "status": "pending_warsmith",
+      "score": 6.88,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 11951.0,
+      "end_sec": 11995.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079928.61,
+      "helix_clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "69be71c159",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 14027.0,
+      "end_sec": 14071.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082004.99,
+      "helix_clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "e6baa95f48",
+      "status": "pending_warsmith",
+      "score": 7.38,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 14584.0,
+      "end_sec": 14628.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082561.07,
+      "helix_clip_id": "SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "64ec69dfa8",
+      "status": "pending_warsmith",
+      "score": 6.85,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 15337.0,
+      "end_sec": 15381.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789083314.0,
+      "helix_clip_id": "PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "b6e19ff5d2",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 16026.0,
+      "end_sec": 16070.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084003.84,
+      "helix_clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "20d6e7c40f",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 16194.0,
+      "end_sec": 16238.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084171.08,
+      "helix_clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    },
+    {
+      "candidate_id": "91ca6d040e",
+      "status": "pending_warsmith",
+      "score": 6.35,
+      "motif": "file d'attente Warsmith",
+      "start_sec": 16787.0,
+      "end_sec": 16831.0,
+      "duration_sec": 44.0,
+      "signal_type": "chat_spike",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084764.54,
+      "helix_clip_id": "ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p",
+      "campaign_eligible": false,
+      "campaign_id": null,
+      "campaign_state": "technical_test"
+    }
+  ],
+  "recent_moments": [
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789079799.86,
+      "start_epoch": 1789079789.86,
+      "end_epoch": 1789079829.86,
+      "rate": 25,
+      "baseline": 8.33,
+      "intensity": 1.0,
+      "hot_words": [
+        "want",
+        "been",
+        "stream",
+        "that",
+        "beat"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+        "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789079928.61,
+      "start_epoch": 1789079918.61,
+      "end_epoch": 1789079958.61,
+      "rate": 39,
+      "baseline": 12.71,
+      "intensity": 1.0,
+      "hot_words": [
+        "arrest",
+        "save",
+        "game",
+        "libbyllol",
+        "them"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+        "url": "https://clips.twitch.tv/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789082004.99,
+      "start_epoch": 1789081994.99,
+      "end_epoch": 1789082034.99,
+      "rate": 30,
+      "baseline": 9.89,
+      "intensity": 1.0,
+      "hot_words": [
+        "afsp",
+        "chat",
+        "https",
+        "your",
+        "ball"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+        "url": "https://clips.twitch.tv/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789082561.07,
+      "start_epoch": 1789082551.07,
+      "end_epoch": 1789082591.07,
+      "rate": 35,
+      "baseline": 11.5,
+      "intensity": 1.0,
+      "hot_words": [
+        "this",
+        "game",
+        "them",
+        "lmao",
+        "just"
+      ],
+      "clip_pressure": 1,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz",
+        "url": "https://clips.twitch.tv/SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789083314.0,
+      "start_epoch": 1789083304.0,
+      "end_epoch": 1789083344.0,
+      "rate": 39,
+      "baseline": 12.82,
+      "intensity": 1.0,
+      "hot_words": [
+        "this",
+        "wwww",
+        "wwwww",
+        "with",
+        "your"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
+        "url": "https://clips.twitch.tv/PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789084003.84,
+      "start_epoch": 1789083993.84,
+      "end_epoch": 1789084033.84,
+      "rate": 22,
+      "baseline": 7.15,
+      "intensity": 1.0,
+      "hot_words": [
+        "points",
+        "killing",
+        "special",
+        "targets",
+        "good"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+        "url": "https://clips.twitch.tv/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789084171.08,
+      "start_epoch": 1789084161.08,
+      "end_epoch": 1789084201.08,
+      "rate": 25,
+      "baseline": 8.3,
+      "intensity": 1.0,
+      "hot_words": [
+        "game",
+        "better",
+        "this",
+        "watchtime",
+        "what"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+        "url": "https://clips.twitch.tv/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM"
+      }
+    },
+    {
+      "channel": "joe_bartolozzi",
+      "platform": "twitch",
+      "detected_at": 1789084764.54,
+      "start_epoch": 1789084754.54,
+      "end_epoch": 1789084794.54,
+      "rate": 29,
+      "baseline": 9.41,
+      "intensity": 1.0,
+      "hot_words": [
+        "stream",
+        "game",
+        "more",
+        "targets",
+        "this"
+      ],
+      "clip_pressure": 0,
+      "trigger": "chat_spike",
+      "helix_clip": {
+        "clip_id": "ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p",
+        "edit_url": "https://www.twitch.tv/joe_bartolozzi/clip/ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p",
+        "url": "https://clips.twitch.tv/ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p"
+      }
+    }
+  ],
+  "recent_scored": [
+    {
+      "candidate_id": "e0842c7b58",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.01,
+      "clip_pressure": 1,
+      "hot_words": [
+        "this",
+        "china",
+        "elon",
+        "brain",
+        "chinese"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789077795.98
+    },
+    {
+      "candidate_id": "99f9b64752",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.03,
+      "clip_pressure": 0,
+      "hot_words": [
+        "kirkmas",
+        "kirkaversary",
+        "kirk",
+        "merry",
+        "kirkiversary"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789078685.24
+    },
+    {
+      "candidate_id": "82c47b2850",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.0,
+      "clip_pressure": 1,
+      "hot_words": [
+        "want",
+        "been",
+        "stream",
+        "that",
+        "beat"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789079799.86
+    },
+    {
+      "candidate_id": "4d09bbdb79",
+      "final_score": 6.88,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.07,
+      "clip_pressure": 1,
+      "hot_words": [
+        "arrest",
+        "save",
+        "game",
+        "libbyllol",
+        "them"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789079928.61
+    },
+    {
+      "candidate_id": "69be71c159",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.03,
+      "clip_pressure": 0,
+      "hot_words": [
+        "afsp",
+        "chat",
+        "https",
+        "your",
+        "ball"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789082004.99
+    },
+    {
+      "candidate_id": "e6baa95f48",
+      "final_score": 7.38,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 8.0,
+        "clarity": 6.5,
+        "quotability": 7.5,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.04,
+      "clip_pressure": 1,
+      "hot_words": [
+        "this",
+        "game",
+        "them",
+        "lmao",
+        "just"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789082561.07
+    },
+    {
+      "candidate_id": "64ec69dfa8",
+      "final_score": 6.85,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 8.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.04,
+      "clip_pressure": 0,
+      "hot_words": [
+        "this",
+        "wwww",
+        "wwwww",
+        "with",
+        "your"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789083314.0
+    },
+    {
+      "candidate_id": "b6e19ff5d2",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.08,
+      "clip_pressure": 0,
+      "hot_words": [
+        "points",
+        "killing",
+        "special",
+        "targets",
+        "good"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789084003.84
+    },
+    {
+      "candidate_id": "20d6e7c40f",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.5,
+      "spike_ratio": 3.01,
+      "clip_pressure": 0,
+      "hot_words": [
+        "game",
+        "better",
+        "this",
+        "watchtime",
+        "what"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789084171.08
+    },
+    {
+      "candidate_id": "91ca6d040e",
+      "final_score": 6.35,
+      "raw_scores": {
+        "hook_force": 7.5,
+        "emotion": 6.0,
+        "clarity": 6.5,
+        "quotability": 4.0,
+        "timing": 7.0,
+        "format_fit": 6.5
+      },
+      "signal_intensity": 0.51,
+      "spike_ratio": 3.08,
+      "clip_pressure": 0,
+      "hot_words": [
+        "stream",
+        "game",
+        "more",
+        "targets",
+        "this"
+      ],
+      "channel": "joe_bartolozzi",
+      "status": "pending_warsmith",
+      "campaign_eligible": false,
+      "detected_at": 1789084764.54
+    }
+  ],
+  "clips": [
+    {
+      "clip_id": "AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
+      "url": "https://clips.twitch.tv/AntediluvianCuriousOstrichNerfBlueBlaster-_xcS8ZyYfljw_EJ5",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789071704.29,
+      "score": 7.22
+    },
+    {
+      "clip_id": "BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
+      "url": "https://clips.twitch.tv/BoxyHungryBatteryChefFrank-bIqNsoKI5u70AR9k",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789072611.96,
+      "score": 6.35
+    },
+    {
+      "clip_id": "EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "url": "https://clips.twitch.tv/EnticingOddShrewDansGame-TS_PQOYDw-ocov1C",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073139.31,
+      "score": 6.35
+    },
+    {
+      "clip_id": "StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "url": "https://clips.twitch.tv/StrongCreativeFinchCoolStoryBro-mOGCdsRm9UGAxBWX",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789073896.05,
+      "score": 6.35
+    },
+    {
+      "clip_id": "DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+      "url": "https://clips.twitch.tv/DiligentHandsomeDuckNomNom-rp0r7u2GqF_Nw2Yc",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789074817.87,
+      "score": 6.85
+    },
+    {
+      "clip_id": "AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+      "url": "https://clips.twitch.tv/AgitatedGlutenFreeCheddarSaltBae-sTTdWIX1WePOzFrY",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076073.69,
+      "score": 6.88
+    },
+    {
+      "clip_id": "CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ",
+      "url": "https://clips.twitch.tv/CleverSavoryHippoKappaRoss-t8xLCf05rZhHDuUQ",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789076442.17,
+      "score": 6.35
+    },
+    {
+      "clip_id": "FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
+      "url": "https://clips.twitch.tv/FineImportantCurlewRiPepperonis-WJ_5TQL3cHvTCX17",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789077795.98,
+      "score": 6.88
+    },
+    {
+      "clip_id": "SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "url": "https://clips.twitch.tv/SparklingAbrasiveLapwingGivePLZ-K4v0s96lKt6AhuW-",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789078685.24,
+      "score": 6.35
+    },
+    {
+      "clip_id": "VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "url": "https://clips.twitch.tv/VibrantCaringWalletDancingBanana-hv1MrNFZ-fRkD9gV",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079799.86,
+      "score": 6.88
+    },
+    {
+      "clip_id": "SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "url": "https://clips.twitch.tv/SassyMistyFlamingoNerfBlueBlaster-kogF3BrC6gchtsTI",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789079928.61,
+      "score": 6.88
+    },
+    {
+      "clip_id": "PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "url": "https://clips.twitch.tv/PrettyLazyConsoleANELE-LuMJyfBZaDi-x6mX",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082004.99,
+      "score": 6.35
+    },
+    {
+      "clip_id": "SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz",
+      "url": "https://clips.twitch.tv/SparklyHilariousOpossumBigBrother-YeIf_gAZITWtQJPz",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789082561.07,
+      "score": 7.38
+    },
+    {
+      "clip_id": "PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
+      "url": "https://clips.twitch.tv/PoisedDeafDumplingsSMOrc-kqOW7kBKpeGiaT_Z",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789083314.0,
+      "score": 6.85
+    },
+    {
+      "clip_id": "SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "url": "https://clips.twitch.tv/SmokyDeadCheetahCoolStoryBob-g3MbY24XkX_ymYnD",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084003.84,
+      "score": 6.35
+    },
+    {
+      "clip_id": "HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "url": "https://clips.twitch.tv/HeartlessOriginalKoupreyTTours-bMaEMmfwPUKO7yWM",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084171.08,
+      "score": 6.35
+    },
+    {
+      "clip_id": "ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p",
+      "url": "https://clips.twitch.tv/ObliqueProductiveDelicataFrankerZ-PxQrWeWQlPz7NW4p",
+      "channel": "joe_bartolozzi",
+      "detected_at": 1789084764.54,
+      "score": 6.35
+    }
+  ],
+  "stream_started": {
+    "joe_bartolozzi": 1789067965.0
+  }
+}

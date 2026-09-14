@@ -1,0 +1,68 @@
+{
+  "candidate_id": "voxc-2",
+  "run_id": "f00c_2026-09-14T133527.311014+0000",
+  "lang": "en",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 153.9,
+    "end": 205.201
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 146.0,
+      "t_rel": 0.0,
+      "end_rel": 8.1,
+      "text": ">> They say that I'm photoshopping it and everything and that I'm lying about how much I make just cuz I don't know. I want to seem cooler, I guess. But I have no reason to lie. Everything I put out online is intentional. Like I don't I wouldn't, you know, lie to anyone about that."
+    },
+    {
+      "t_abs": 162.0,
+      "t_rel": 8.1,
+      "end_rel": 13.1,
+      "text": ">> Does that worry you, though? But showing that much money and then now you become a target to people."
+    },
+    {
+      "t_abs": 167.0,
+      "t_rel": 13.1,
+      "end_rel": 21.1,
+      "text": ">> I mean, not really. I have a really good financial adviser that like keeps me in lock and most of my money is in investments. So like I'm not really too worried about"
+    },
+    {
+      "t_abs": 175.0,
+      "t_rel": 21.1,
+      "end_rel": 26.1,
+      "text": ">> What about the amaranth situation where someone tried to like break in and like steal your crypto"
+    },
+    {
+      "t_abs": 180.0,
+      "t_rel": 26.1,
+      "end_rel": 28.1,
+      "text": ">> and I'm not into crypto? I'm not in crypto."
+    },
+    {
+      "t_abs": 182.0,
+      "t_rel": 28.1,
+      "end_rel": 33.1,
+      "text": ">> The idea out there is that you make more than LeBron James. What do you think about that?"
+    },
+    {
+      "t_abs": 187.0,
+      "t_rel": 33.1,
+      "end_rel": 50.1,
+      "text": ">> Um it's honestly unbelievable. Um I'm waiting every single day to like wake up from this dream because it just doesn't seem real. But, you know, we're on very opp we do very different things obviously. And I think that he's a great basketball player and he deserves as much wealth as he gets, but you know, we're just two top earners. I don't know."
+    },
+    {
+      "t_abs": 204.0,
+      "t_rel": 50.1,
+      "end_rel": 51.1,
+      "text": ">> So, this makes you the top earner of OF,"
+    },
+    {
+      "t_abs": 205.0,
+      "t_rel": 51.1,
+      "end_rel": 51.3,
+      "text": ">> I believe. So, yes. I mean, obviously, I don't know just because other people don't put out how much they make, but it says like on OF that I'm in the 0.1%."
+    }
+  ]
+}

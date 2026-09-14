@@ -1,0 +1,43 @@
+{
+  "video_id": "specimen_bluntlyexplained_star",
+  "video_url": "https://youtube.com/watch?v=R64QNFr2qN8",
+  "title": "Every Type Of Star Explained in 10 minutes",
+  "description": "Every type of star explained in detail in 10 minutes",
+  "upload_date": "2025",
+  "duration": 647,
+  "view_count": 708325,
+  "thumbnail": "https://i.ytimg.com/vi/R64QNFr2qN8/maxresdefault.jpg",
+  "tags": [
+    "space",
+    "stars",
+    "astronomy",
+    "explained"
+  ],
+  "channel": {
+    "name": "BluntlyExplained",
+    "id": "UC_bluntlyexplained",
+    "url": "https://youtube.com/@BluntlyExplained",
+    "subscriber_count": 15200
+  },
+  "outlier_score": 46.62,
+  "transcript": {
+    "text": "[Transcript complet — 295 segments — capturé via youtube-transcript-api]",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "Red dwarf..."
+      }
+    ],
+    "language": "en",
+    "status": "OK",
+    "segment_count": 295
+  },
+  "f01_meta": {
+    "captured_at": "2026-07-09T22:41:00Z",
+    "tools_used": [
+      "RECON",
+      "SCRIBE",
+      "enrich"
+    ]
+  }
+}

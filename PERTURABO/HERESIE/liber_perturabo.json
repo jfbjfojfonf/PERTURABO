@@ -1,0 +1,75 @@
+{
+  "fleet_status": "pending_reconnaissance",
+  "siege_id": null,
+  "mode": null,
+  "warsmith_brief": {
+    "video_url": null,
+    "niche": null,
+    "intent": null
+  },
+  "tyrant_report": {
+    "status": "pending",
+    "territory_analysis": null,
+    "demon_identification": null,
+    "adjacent_territories": null,
+    "automatability_score": null,
+    "recommended_path": null,
+    "hunt_brief": null,
+    "capteur_signals": null
+  },
+  "f01_sentinel": {
+    "status": "pending",
+    "output_path": null,
+    "transcript_hash": null,
+    "metadata_hash": null,
+    "outlier_score": null
+  },
+  "f02_breacher": {
+    "status": "pending",
+    "output_path": null,
+    "skeleton_hash": null
+  },
+  "f03_forgeward": {
+    "status": "pending",
+    "output_path": null,
+    "script_hash": null
+  },
+  "f04_herald": {
+    "status": "pending",
+    "output_path": null,
+    "thumbnail_concept_hash": null
+  },
+  "f05_grand_compass": {
+    "status": "pending",
+    "output_path": null,
+    "niche_report_hash": null
+  },
+  "f06_identity_forge": {
+    "status": "pending",
+    "output_path": null,
+    "channel_identity_hash": null,
+    "channel_registered": false,
+    "channel_slug": null
+  },
+  "capteurs": {
+    "status": "idle",
+    "last_sweep": null,
+    "signals_count": 0,
+    "monitored_channels": []
+  },
+  "iw_custos": {
+    "last_validation": null,
+    "errors": []
+  },
+  "gate_decisions": {
+    "gate_1": {"validated": false, "timestamp": null, "notes": null},
+    "gate_2": {"validated": false, "timestamp": null, "notes": null},
+    "gate_3": {"validated": false, "timestamp": null, "notes": null},
+    "gate_4": {"validated": false, "timestamp": null, "notes": null}
+  },
+  "final_output": {
+    "status": "pending",
+    "artefact_path": null,
+    "artefact_hash": null
+  }
+}

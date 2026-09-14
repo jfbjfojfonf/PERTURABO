@@ -1,0 +1,81 @@
+{
+  "source_video_id": "specimen_bluntlyexplained_star",
+  "source_title": "Every Type Of Star Explained in 10 minutes",
+  "concept_identified": "Taxonomie exhaustive avec escalade — 'Every Type Of X Explained in Y minutes'",
+  "format_identified": "Vidéo explicative faceless, 5-10 min, liste exhaustive, narration dense factuelle, zéro blabla",
+  "niche_bending_proposals": [
+    {
+      "niche": "Abysses / Océan profond",
+      "audience_potential": "haute",
+      "monetization_potential": "haute",
+      "production_difficulty": "facile"
+    },
+    {
+      "niche": "Extinctions / fins du monde",
+      "audience_potential": "haute",
+      "monetization_potential": "moyenne",
+      "production_difficulty": "facile"
+    },
+    {
+      "niche": "Météo extrême US",
+      "audience_potential": "haute",
+      "monetization_potential": "haute",
+      "production_difficulty": "facile"
+    },
+    {
+      "niche": "Puissance militaire US",
+      "audience_potential": "haute",
+      "monetization_potential": "moyenne",
+      "production_difficulty": "moyenne"
+    },
+    {
+      "niche": "Dangerous America",
+      "audience_potential": "moyenne",
+      "monetization_potential": "haute",
+      "production_difficulty": "facile"
+    }
+  ],
+  "blue_ocean_validations": [
+    {
+      "niche": "Hurricanes US",
+      "verdict": "OCÉAN BLEU",
+      "confidence_score": 9,
+      "reasoning": "The Escalist couvre les tornades (7 vidéos, 4.8M vues) mais ZÉRO hurricanes. Territoire vierge avec format identique.",
+      "competition_analysis": "0 chaînes avec ce format exact sur les hurricanes",
+      "monetization_outlook": "Très bon — 60%+ audience US, RPM élevé, saison ouragans Juin→Novembre",
+      "first_5_video_ideas": [
+        {
+          "title": "Every Category Of Hurricane Explained in 5 minutes",
+          "concept": "Escalade Cat 1→Cat 5→Hypercane"
+        },
+        {
+          "title": "The Most Destructive Hurricanes In US History",
+          "concept": "Escalade par dégâts $"
+        },
+        {
+          "title": "Every Way A Hurricane Can Kill You",
+          "concept": "Escalade par mode de mort"
+        },
+        {
+          "title": "Hurricane vs Typhoon vs Cyclone — Every Difference Explained",
+          "concept": "Comparaison taxonomique"
+        },
+        {
+          "title": "What Would A Category 6 Hurricane Look Like?",
+          "concept": "Hypothétique extrême"
+        }
+      ]
+    }
+  ],
+  "recommended_niche": "Hurricanes US",
+  "demon": {
+    "name": "The Escalist",
+    "subscribers": 30000,
+    "weakness": "ZÉRO hurricanes dans son catalogue"
+  },
+  "f05_meta": {
+    "analyzed_at": "2026-07-10T00:30:00Z",
+    "model_used": "claude-sandbox",
+    "web_searches_performed": 3
+  }
+}

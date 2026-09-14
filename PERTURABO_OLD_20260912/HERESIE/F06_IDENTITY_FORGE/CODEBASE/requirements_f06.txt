@@ -1,0 +1,4 @@
+# Dépendances F06_IDENTITY_FORGE
+# Zéro dépendance IA — l'IRON (Claude sandbox) fait le travail cognitif
+# image_generator est utilisé par l'IRON directement (pas via ce code)
+# stdlib uniquement (json, os, pathlib, argparse)

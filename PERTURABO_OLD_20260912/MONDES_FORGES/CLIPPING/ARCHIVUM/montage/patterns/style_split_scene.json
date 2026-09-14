@@ -1,0 +1,108 @@
+{
+  "mode": "split_scene",
+  "description": "Mode visuel composable: clip podcast en haut, titre hook au centre, contenu variable en bas. Peut intervenir comme mode autonome OU compose dans le ranking.",
+  "layout": {
+    "top": {
+      "content": "TOUJOURS le clip podcast / speaker source",
+      "fixed": true
+    },
+    "center": {
+      "content": "Titre hook visuel (transforme le sens du clip)",
+      "rules": "Suit hooks_psychology.json - meme format, meme psychologie"
+    },
+    "bottom": {
+      "content": "CONTENU VARIABLE - 4 sous-layouts possibles",
+      "fixed": false
+    }
+  },
+  "sub_layouts": {
+    "A_image_ia": {
+      "name": "Image IA",
+      "description": "Image generee par IA pour amplifier l'histoire / attirer l'attention",
+      "bottom": "image_ai_generated",
+      "trigger": "Quand l'histoire a besoin d'un visuel fort qui illustre le propos",
+      "exemples": [
+        "fille devenue meilleure streamer -> image arena gaming",
+        "couple en conflit -> scene dramatique",
+        "success story -> image de victoire"
+      ]
+    },
+    "B_video_broll": {
+      "name": "Video / B-roll",
+      "description": "Clip video de la source, de la campagne, ou autre partie du meme podcast",
+      "bottom": "video_clip",
+      "trigger": "Quand il y a une preuve visuelle, un moment de la conversation, ou un B-roll de campagne",
+      "exemples": [
+        "autre partie de la conversation (meme podcast)",
+        "B-roll fourni par la campagne",
+        "screenshot d'un post viral"
+      ]
+    },
+    "C_2_speakers": {
+      "name": "2 Speakers",
+      "description": "Conversation: Speaker A en haut, reponse/reaction de Speaker B en bas",
+      "bottom": "second_speaker_clip",
+      "trigger": "Conversations, debats, interviews - quand il y a 2 personnes qui parlent",
+      "exemples": [
+        "Speaker A dit quelque chose, Speaker B reagit",
+        "Clip d'une interview: question en haut, reponse en bas",
+        "Debat: opinion 1 en haut, opinion 2 en bas"
+      ]
+    },
+    "D_preuve": {
+      "name": "Preuve / Evidence",
+      "description": "Tweet, screenshot, stats, social proof - ce que le speaker montre ou decrit",
+      "bottom": "proof_evidence",
+      "trigger": "Quand il y a une evidence a montrer: tweet, classement, statistique, screenshot",
+      "exemples": [
+        "tweet viral dont le speaker parle",
+        "classement / stats que le speaker mentionne",
+        "screenshot d'un DM, d'un article, d'un post"
+      ]
+    }
+  },
+  "title_rules": {
+    "source": "hooks_psychology.json",
+    "purpose": "Transformer le sens du clip - sans titre = speaker qui parle, avec titre = histoire",
+    "format": "Narratif, court, hook fort - meme psychologie que les autres modes",
+    "position": "Centre du split, entre haut et bas"
+  },
+  "broll_in_split_scene": {
+    "rule": "Quand un B-roll intervient en Split Scene, il couvre TOUT l'ecran (haut + bas)",
+    "description": "C'est comme un clap qui couvre le split temporairement, puis on revient au split",
+    "format": "split -> broll_fullscreen -> split",
+    "timing": "Meme systeme de scoring que broll_integration.json"
+  },
+  "anti_detection": {
+    "source": "anti_detection.json",
+    "rules": "Memes regles que les autres modes - mirror, zoom invisible, speed, SFX, crop"
+  },
+  "gif_behavior": {
+    "single_gif": "Boucle continue pendant la duree du segment",
+    "ranking_with_gif": "Un GIF par numero dans le countdown",
+    "format": "GIF en bas du split, meme layout que les autres sub-layouts"
+  },
+  "composability": {
+    "autonomous_mode": "Peut etre utilise seul (clip avec split layout)",
+    "ranking_composition": "Peut intervenir DANS le ranking - tous les segments utilisent le split layout",
+    "note": "Le split scene est un mode visuel qui se superpose aux autres modes"
+  },
+  "scoring": {
+    "source": "broll_integration.json",
+    "application": "Meme systeme de scoring pour determiner le contenu du bas",
+    "duree": {
+      "15s": "1 element en bas",
+      "30s": "2-3 elements en bas",
+      "45s": "3 elements en bas",
+      "60s": "4 elements en bas"
+    }
+  },
+  "workflow_omnis_watch": {
+    "step_1": "Lire le split_scene type dans le production_pack",
+    "step_2": "Identifier le sub-layout (A, B, C, ou D)",
+    "step_3": "Récupérer le contenu pour le bas (image, video, 2e speaker, preuve)",
+    "step_4": "Appliquer le titre au centre (format hooks_psychology.json)",
+    "step_5": "Si B-roll: gerer le full-screen overlay",
+    "step_6": "Appliquer anti-detection au clip final"
+  }
+}

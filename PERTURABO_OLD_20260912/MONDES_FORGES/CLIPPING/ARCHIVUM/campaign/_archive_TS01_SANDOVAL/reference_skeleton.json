@@ -1,0 +1,20 @@
+{
+  "hook_type": "scandal_debrief",
+  "emotion_dominante": "outrage_curiosite",
+  "structure_narrative": "chronologique_escalade",
+  "loop_technique": "tease_consequence",
+  "engagement_type": "debate_bait_commentaire",
+  "endroits_preuve": [
+    "F01_SCOUT/OUT/source_specimen.json (métriques réelles yt-dlp)",
+    "ARCHIVUM/campaign/transcripts/transcript_xpG5sIW1jpA.json",
+    "Article TMZ 2026-08-04 (context_article dans reference_clip.json)"
+  ],
+  "iron_status": "done",
+  "source_meta": {
+    "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+    "title": "How Tom SANDOVAL SCANDAL All Went Down | E! News",
+    "view_count": 105231,
+    "duration_sec": 310,
+    "platform": "youtube"
+  }
+}

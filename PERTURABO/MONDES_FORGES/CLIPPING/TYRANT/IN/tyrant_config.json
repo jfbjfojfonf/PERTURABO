@@ -1,0 +1,10 @@
+{
+  "outlier_threshold_x": 3,
+  "niche_bending": true,
+  "max_blue_ocean_depth": 1,
+  "platforms": [
+    "youtube",
+    "tiktok",
+    "instagram"
+  ]
+}

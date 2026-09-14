@@ -1,0 +1,22 @@
+{
+  "_description": "DRAFT angles humour pour le test du pack LOGO v2. A remplacer par la sortie reelle d'ANGLESMITH.",
+  "campaign_id": "JOKE_FOOT_001",
+  "angles": [
+    {
+      "angle_id": "angle_001",
+      "genre": "humoristique",
+      "title": "Pourquoi ils courent tous après le ballon ?",
+      "body": "La réponse est plus drôle que la question.",
+      "on_screen_text": "Le match serait fini",
+      "seo_tags": ["foot", "blague", "humour", "football", "meme"]
+    },
+    {
+      "angle_id": "angle_002",
+      "genre": "humoristique",
+      "title": "La blague du foot qui marche à tous les coups",
+      "body": "Une variante du même gag, remixée pour un public TikTok.",
+      "on_screen_text": "POV : tu comprends enfin le foot",
+      "seo_tags": ["blague", "foot", "tiktok", "viral", "humour"]
+    }
+  ]
+}

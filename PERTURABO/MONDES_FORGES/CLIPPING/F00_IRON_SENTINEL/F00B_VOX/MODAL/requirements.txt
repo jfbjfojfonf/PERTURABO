@@ -1,0 +1,8 @@
+# MODAL/requirements.txt — dependances du service de transcription GPU.
+# NOTE : Modal les installe via Image.pip_install() dans transcribe.py.
+# Ce fichier sert de reference/documentation pour un nouvel operateur.
+faster-whisper==1.1.1
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.20
+requests==2.32.3

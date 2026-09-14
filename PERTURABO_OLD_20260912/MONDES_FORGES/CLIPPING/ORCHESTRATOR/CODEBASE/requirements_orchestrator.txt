@@ -1,0 +1,3 @@
+# requirements_orchestrator.txt — ORCHESTRATOR (forge CLIPPING)
+# Standard lib uniquement en v1 (json, datetime, argparse, subprocess, shutil).
+# Aucune dépendance externe requise pour le nerf central.

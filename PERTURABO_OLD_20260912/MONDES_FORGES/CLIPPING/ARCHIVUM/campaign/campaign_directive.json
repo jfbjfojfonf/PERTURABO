@@ -1,0 +1,98 @@
+{
+  "campaign_id": " 2026-07-24_AISHAH_SOFEY_MULTI",
+  "creator_name": "Aishah Sofey",
+  "parsed_at": "2026-09-05T10:05:08.105072",
+  "source_file": "ARCHIVUM/campaign/clipify_aishahsofey_directive.md",
+  "platforms": [
+    "TikTok",
+    "X (Twitter)",
+    "IG Reels",
+    "YouTube Shorts"
+  ],
+  "language": "English",
+  "audience_tier": "Tier 1 (US, UK, AUS, CAN) — at least 40%",
+  "payout": {
+    "per_platform": {
+      "tiktok": {
+        "payout_usd": 15,
+        "views_per_unit": 50000
+      },
+      "twitter_x": {
+        "payout_usd": 15,
+        "views_per_unit": 50000
+      },
+      "instagram_reels": {
+        "payout_usd": 15,
+        "views_per_unit": 50000
+      },
+      "youtube_shorts": {
+        "payout_usd": 15,
+        "views_per_unit": 50000
+      }
+    },
+    "minimum": "50K views total (cumulatively across all posts combined)",
+    "maximum": "$900",
+    "budget": "$5,000",
+    "methods": "USDC, PayPal"
+  },
+  "caption_rules": {
+    "tiktok": {
+      "platform": "tiktok",
+      "handle": "@aishah",
+      "hashtags": [
+        "#aishahsofey"
+      ],
+      "caption_format": "Tag @aishah in caption, use hashtag"
+    },
+    "twitter_x": {
+      "platform": "twitter_x",
+      "handle": "@aishahsofey",
+      "hashtags": [
+        "#aishahsofey"
+      ],
+      "caption_format": "Include name in caption, tag in comments immediately",
+      "caption_keyword": "Aishah Sofey"
+    },
+    "instagram_reels": {
+      "platform": "instagram_reels",
+      "handle": "@aishahsofey",
+      "hashtags": [
+        "#aishahsofey"
+      ],
+      "caption_format": "Tag in video overlay + caption"
+    },
+    "youtube_shorts": {
+      "platform": "youtube_shorts",
+      "handle": "@hiaishahsofey",
+      "hashtags": [
+        "#aishahsofey"
+      ],
+      "caption_format": "Tag + hashtag in description"
+    }
+  },
+  "watermark": {
+    "opacity_min": 0.75,
+    "position": "centered"
+  },
+  "anti_spam": [
+    "Do not spam large numbers of low-view posts (e.g., posts with only a few hundred views each) in an attempt to farm minimum payouts",
+    "Do not post the same clip on the same account during the same cycle",
+    "Posts must show normal, organic engagement (abnormally low engagement videos may be removed and not paid for)",
+    "Spammy or mass low-performance posts will not count toward payout",
+    "Repeated violations may result in disqualification from the campaign"
+  ],
+  "content_source": {
+    "approved_period": "Anything from her streams from 7/20 forward, can be on other streams as long she's the main focus of the clip. No reaction clips.",
+    "restrictions": [
+      "**Payment Setup:** You must set your payment method before the campaign cycle ends using `/setpayment`. If your payment method is not set by the deadline, you risk missing your payout.",
+      "The amount shown in your dashboard is not always your final payout.",
+      "Approved content for July 24 cycle: Anything from her streams from 7/20 forward, can be on other streams as long she's the main focus of the clip. No reaction clips.",
+      "**Opacity:** No less than 75%",
+      "**Size:** Not too small — must be easily readable"
+    ]
+  },
+  "cycle": {
+    "start": "2026-07-20",
+    "end": "2026-07-31"
+  }
+}

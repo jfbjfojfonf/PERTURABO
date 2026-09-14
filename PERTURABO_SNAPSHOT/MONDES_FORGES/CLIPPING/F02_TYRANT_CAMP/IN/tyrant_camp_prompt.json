@@ -1,0 +1,100 @@
+{
+  "mission": "F02_TYRANT_CAMP — Verdict de campagne (IRON sandbox). Analyse le specimen, le squelette du clip de référence, les Démons, les océans bleus, le fit plateforme/marché, la saturation. Rends le verdict GO/NO-GO avec preuve (chaque assertion tracée). Écris OUT/campaign_verdict.json.",
+  "campaign_id": "TS01_SANDOVAL",
+  "platform_target": "youtube",
+  "market_target": "us_young_english",
+  "specimen": {
+    "campaign_id": "TS01_SANDOVAL",
+    "scanned_at": "2026-08-04T17:44:11Z",
+    "reference_clip": {
+      "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+      "video_id": "xpG5sIW1jpA",
+      "title": "Tom Sandoval on Ex-GF Victoria — Tiny Penis Allegation (TMZ)",
+      "duration_sec": null,
+      "view_count": null,
+      "thumbnail": null,
+      "platform": "youtube",
+      "metrics_extracted": {}
+    },
+    "assets": [
+      {
+        "asset_id": "asset_001",
+        "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+        "type": "video_long",
+        "duration_sec": 310,
+        "title": "How Tom SANDOVAL SCANDAL All Went Down | E! News",
+        "channel": "E! News",
+        "transcript_available": true,
+        "transcript_path": "/home/daytona/codebase/MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/transcripts/transcript_xpG5sIW1jpA.json",
+        "thumbnail": "https://i.ytimg.com/vi/xpG5sIW1jpA/maxresdefault.jpg",
+        "metrics_extracted": {
+          "view_count": 105231,
+          "like_count": 865,
+          "comment_count": 169,
+          "upload_date": "20230407",
+          "channel_follower_count": 2610000,
+          "channel_id": "UCjDsbbzHgTrGc4Ff26TJtsA"
+        },
+        "enriched_at": "2026-08-04T17:44:09Z"
+      }
+    ],
+    "check_in_iw_custos": "2026-08-04T17:44:11Z",
+    "iron_status": "auto",
+    "auto_notes": {
+      "yt_dlp_used": true,
+      "transcripts_attempted": true
+    }
+  },
+  "reference_clip": {
+    "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+    "video_id": "xpG5sIW1jpA",
+    "title": "Tom Sandoval on Ex-GF Victoria — Tiny Penis Allegation (TMZ)",
+    "duration_sec": null,
+    "view_count": null,
+    "thumbnail": null,
+    "platform": "youtube",
+    "metrics_extracted": {}
+  },
+  "preskeleton": {
+    "hook_type": null,
+    "emotion_dominante": null,
+    "structure_narrative": null,
+    "loop_technique": null,
+    "engagement_type": null,
+    "endroits_preuve": [],
+    "iron_status": "pending",
+    "source_meta": {
+      "url": "https://www.youtube.com/watch?v=xpG5sIW1jpA",
+      "title": "Tom Sandoval on Ex-GF Victoria — Tiny Penis Allegation (TMZ)",
+      "view_count": null,
+      "duration_sec": null,
+      "platform": "youtube"
+    }
+  },
+  "blue_ocean_candidates": [],
+  "fit_indicatif": {
+    "campaign_fit_platform": 5,
+    "campaign_fit_market": 5,
+    "campaign_budget_remaining": null,
+    "cpm_expected": null,
+    "saturation_level": "unknown",
+    "evidence": {
+      "platform_profile_present": false,
+      "market_profile_present": false,
+      "cartographie_present": false
+    }
+  },
+  "cartographie": null,
+  "regles_ocean_bleu": [
+    "Profondeur océan bleu : 1 couche maximum (hérésie au-delà)",
+    "Re-ciblage uniquement sur la même source que la campagne",
+    "Saturation low/medium éligible, high rejeté"
+  ],
+  "output_attendu": "OUT/campaign_verdict.json (structure dans F02_TYRANT_CAMP/CODEBASE/TRACKING.md)",
+  "heresies_interdites": [
+    "Re-ciblage au-delà de 1 couche",
+    "Suggérer des sources alternatives (assets = forteresse fermée)",
+    "Verdict sans preuve",
+    "Ignorer le fit plateforme/marché"
+  ]
+}

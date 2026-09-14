@@ -1,0 +1,47 @@
+{
+  "_mode": "logo",
+  "_sub_mode": "informatif",
+  "_description": "Mode informatif : cuts PROPOSES par PERTURABO puis VALIDES par le Warsmith (Gate 4, 2026-08-04) -> cut_source 'perturabo_validated'.",
+  "cuts": [
+    {
+      "angle_id": "A01",
+      "start_sec": 12,
+      "end_sec": 47,
+      "duration_sec": 35,
+      "cut_source": "perturabo_validated",
+      "note": "Ouverture du scandale : visage + reaction la plus dense en emotion. VALIDE par le Warsmith (Gate 4)."
+    },
+    {
+      "angle_id": "A02",
+      "start_sec": 60,
+      "end_sec": 95,
+      "duration_sec": 35,
+      "cut_source": "perturabo_validated",
+      "note": "Moment de bascule du recit (accusation/insultes). VALIDE par le Warsmith (Gate 4)."
+    },
+    {
+      "angle_id": "A03",
+      "start_sec": 130,
+      "end_sec": 165,
+      "duration_sec": 35,
+      "cut_source": "perturabo_validated",
+      "note": "Menace / escalade (leverage sur Tom). VALIDE par le Warsmith (Gate 4)."
+    },
+    {
+      "angle_id": "A04",
+      "start_sec": 200,
+      "end_sec": 235,
+      "duration_sec": 35,
+      "cut_source": "perturabo_validated",
+      "note": "Consequences legales (ordonnance, tribunal). VALIDE par le Warsmith (Gate 4)."
+    },
+    {
+      "angle_id": "A05",
+      "start_sec": 260,
+      "end_sec": 295,
+      "duration_sec": 35,
+      "cut_source": "perturabo_validated",
+      "note": "Chute / retournement (deni de l'autre partie). VALIDE par le Warsmith (Gate 4)."
+    }
+  ]
+}

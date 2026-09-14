@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PERTURABO Prospecting Session",
+  "type": "object",
+  "required": ["session_id", "market_input", "director", "turns", "limits", "validation"],
+  "properties": {
+    "session_id": {"type": "string"},
+    "created_at": {"type": "string"},
+    "market_input": {"type": "object", "required": ["market", "platform", "horizon"]},
+    "director": {
+      "type": "object",
+      "required": ["role", "premium_requested", "premium_status"],
+      "properties": {
+        "role": {"const": "prospection_director"},
+        "premium_requested": {"type": "boolean"},
+        "premium_status": {"enum": ["not_called", "planned", "unavailable", "error"]}
+      }
+    },
+    "turns": {"type": "array", "maxItems": 3, "items": {"type": "object", "required": ["turn", "questions", "responses"]}},
+    "limits": {"type": "object"},
+    "validation": {
+      "type": "object",
+      "required": ["facts_vs_interpretation", "invented", "state"],
+      "properties": {
+        "facts_vs_interpretation": {"const": "separated"},
+        "invented": {"const": 0},
+        "state": {"const": "warsmith_review"}
+      }
+    }
+  }
+}

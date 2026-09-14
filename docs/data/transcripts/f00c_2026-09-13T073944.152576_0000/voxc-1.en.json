@@ -1,0 +1,92 @@
+{
+  "candidate_id": "voxc-1",
+  "run_id": "f00c_2026-09-13T073944.152576+0000",
+  "lang": "en",
+  "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "window": {
+    "start": 0.0,
+    "end": 51.3
+  },
+  "provider": "operator",
+  "available": true,
+  "lines": [
+    {
+      "t_abs": 0.0,
+      "t_rel": 0.0,
+      "end_rel": 5.0,
+      "text": "Do you know what your net worth is today? >> No. No idea. >> If you had to guess,"
+    },
+    {
+      "t_abs": 5.0,
+      "t_rel": 5.0,
+      "end_rel": 10.0,
+      "text": ">> probably like 5 million. >> No. >> 20 million. 5 to 20. 5 to 20."
+    },
+    {
+      "t_abs": 10.0,
+      "t_rel": 10.0,
+      "end_rel": 16.0,
+      "text": ">> No, it has to be more than that. >> I will go to my statistics."
+    },
+    {
+      "t_abs": 16.0,
+      "t_rel": 16.0,
+      "end_rel": 19.0,
+      "text": ">> Hold on, dude. My heart's like speeding up a little bit."
+    },
+    {
+      "t_abs": 19.0,
+      "t_rel": 19.0,
+      "end_rel": 20.0,
+      "text": ">> Do you know how much money she makes an hour?"
+    },
+    {
+      "t_abs": 20.0,
+      "t_rel": 20.0,
+      "end_rel": 24.0,
+      "text": ">> Oh, this is a slow month. In July, she only made 3.4 million."
+    },
+    {
+      "t_abs": 24.0,
+      "t_rel": 24.0,
+      "end_rel": 25.0,
+      "text": ">> How much were you making that very first month?"
+    },
+    {
+      "t_abs": 25.0,
+      "t_rel": 25.0,
+      "end_rel": 30.0,
+      "text": ">> I think I was making like a hundred 100,000. I think my first month I made 100,000."
+    },
+    {
+      "t_abs": 30.0,
+      "t_rel": 30.0,
+      "end_rel": 32.0,
+      "text": ">> What was going through your mind?"
+    },
+    {
+      "t_abs": 32.0,
+      "t_rel": 32.0,
+      "end_rel": 35.0,
+      "text": ">> Oh my god, I'm gonna buy I'm gonna buy the entire world."
+    },
+    {
+      "t_abs": 35.0,
+      "t_rel": 35.0,
+      "end_rel": 38.0,
+      "text": ">> It was just crazy because I couldn't believe that you could even make this much."
+    },
+    {
+      "t_abs": 38.0,
+      "t_rel": 38.0,
+      "end_rel": 42.0,
+      "text": ">> What's one of the biggest misconceptions out there that people say that you're like, \"Oh my gosh, this is not true.\""
+    },
+    {
+      "t_abs": 42.0,
+      "t_rel": 42.0,
+      "end_rel": 51.3,
+      "text": ">> I don't really care like what gets put out there about me because I have thick skin. Obviously, people are going to say what they want to say and they're going to believe what they want to believe because they hear certain things, but they don't know what happens behind closed doors."
+    }
+  ]
+}

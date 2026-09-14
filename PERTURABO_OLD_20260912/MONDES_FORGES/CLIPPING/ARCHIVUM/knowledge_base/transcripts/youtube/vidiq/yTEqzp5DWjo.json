@@ -1,0 +1,582 @@
+{
+  "video_id": "yTEqzp5DWjo",
+  "title": "How to TURN OFF YouTube Shorts... FOREVER!",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 64911,
+  "outlier_score": 0.03,
+  "thumbnail": "https://i.ytimg.com/vi/yTEqzp5DWjo/maxresdefault.jpg",
+  "upload_date": "20260424",
+  "duration": 222,
+  "transcript": {
+    "text": "If you're one of those people who cannot stand shorts infecting your YouTube recommendations feed, even though you never watch them, I have some truly excellent news. I don't know why, but this always happens to me now. Shorts at the very top of my YouTube feed. It vexes me, especially when this show fewer shorts option only works for about 17 seconds. Thankfully, we now have a more permanent solution. Go to your profile image and then settings in the top right-hand corner and then select time management. Now, if you scroll to the bottom of this screen, you'll see something called daily limit. Tap on this and you'll see a shorts feed limit. This tool has been around for quite a while now, but what they've done is add a new limit of zero minutes. So, if you tap that and then return to your home feed and then refresh it, voilà, that top batch of shorts has gone and so has every other short on your recommendation feed. Now, to preempt some of the comments I'm going to see on this video, as of time of recording, I know not everybody can see this feature yet. Don't worry, it's slowly rolling out to everyone. Be patient. Now, the shorts player button is still there at the bottom of the app, but if you tap it, you'll be warned that you've instantly reached your shorts feed limit for the day. Although, you can still bypass it with this ignore option at the bottom of the screen. And just to show you what happens if you completely turn off the daily limit feature and then return to the home page and refresh it, the shorts recommendations immediately return below one long-form video. Gee, thanks, YouTube. So, now you know this exists, I want to ask you a question and I'm going to do it with another brand new YouTube feature that I want to test out. So, hopefully now in this top corner, there should be a quiz that's going to ask you whether or not you're going to use this feature, yes or no. Now, I know really this should be a voting poll, but YouTube killed those voting poll cards about half a decade ago at this point. But, I want to test this feature to see what sort of engagement I get. But, obviously, if you want to give a more considered answer, then the comments below are open and welcome. And since we're on the topic of new features, I just wanted to give a quick shout out to our thumbnail generation tool that's gone through another round of updates. Simply upload your video to YouTube, click this generate button, and VidIQ will scan the visuals and the context of the video to generate a thumbnail. You can start using it now with our browser extension linked in the description. It's really good. Now, I will agree this time management way of turning off YouTube shorts is, shall we say, clunky. But, at least we've got something now, right? But, what about the desktop YouTube experience? For about a year now, the desktop home page has seen a short shelf dominating half the screen real estate, giving long-form videos maybe just three or four thumbnails. So, you would think that by going to the settings and then playback and performance, you might find a similar time management option. But, nah, I just made this setting up. Now, from a creator's point of view, does this mean that because your shorts aren't getting recommended as much, you're not going to get as many views? Well, I guess it's possible, but I don't think that many shorts views come directly from recommendations. They come from the shorts player itself. And let's be honest, from a YouTube user perspective, this is a long overdue feature that is finally here. But, here's something that might annoy you. Even with this time management setting turned on, if you search for something on YouTube, shorts do still appear in the results. It's covering up the entire screen. So, I think we can all agree that this is a giant leap forward in the right direction from YouTube for users who just cannot stand shorts, at least for mobile users, anyway. But, as always seems to be the case, it's not the perfect and simple, elegant solution that everybody was looking for. And don't get me started on playables. Why?",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "If you're one of those people who cannot",
+        "duration": 3.72
+      },
+      {
+        "start": 1.6,
+        "text": "stand shorts infecting your YouTube",
+        "duration": 3.8
+      },
+      {
+        "start": 3.72,
+        "text": "recommendations feed, even though you",
+        "duration": 3.2
+      },
+      {
+        "start": 5.4,
+        "text": "never watch them,",
+        "duration": 2.96
+      },
+      {
+        "start": 6.92,
+        "text": "I have",
+        "duration": 4.12
+      },
+      {
+        "start": 8.36,
+        "text": "some truly excellent news. I don't know",
+        "duration": 4.4
+      },
+      {
+        "start": 11.04,
+        "text": "why, but this always happens to me now.",
+        "duration": 3.64
+      },
+      {
+        "start": 12.76,
+        "text": "Shorts at the very top of my YouTube",
+        "duration": 4.68
+      },
+      {
+        "start": 14.68,
+        "text": "feed. It vexes me, especially when this",
+        "duration": 5.32
+      },
+      {
+        "start": 17.44,
+        "text": "show fewer shorts option only works for",
+        "duration": 4.76
+      },
+      {
+        "start": 20.0,
+        "text": "about 17 seconds. Thankfully, we now",
+        "duration": 4.08
+      },
+      {
+        "start": 22.2,
+        "text": "have a more permanent solution. Go to",
+        "duration": 3.88
+      },
+      {
+        "start": 24.08,
+        "text": "your profile image and then settings in",
+        "duration": 3.64
+      },
+      {
+        "start": 26.08,
+        "text": "the top right-hand corner and then",
+        "duration": 3.12
+      },
+      {
+        "start": 27.72,
+        "text": "select time management. Now, if you",
+        "duration": 2.72
+      },
+      {
+        "start": 29.2,
+        "text": "scroll to the bottom of this screen,",
+        "duration": 3.48
+      },
+      {
+        "start": 30.44,
+        "text": "you'll see something called daily limit.",
+        "duration": 5.28
+      },
+      {
+        "start": 32.68,
+        "text": "Tap on this and you'll see a shorts feed",
+        "duration": 4.72
+      },
+      {
+        "start": 35.72,
+        "text": "limit. This tool has been around for",
+        "duration": 3.28
+      },
+      {
+        "start": 37.4,
+        "text": "quite a while now, but what they've done",
+        "duration": 4.48
+      },
+      {
+        "start": 39.0,
+        "text": "is add a new limit of zero minutes. So,",
+        "duration": 4.56
+      },
+      {
+        "start": 41.88,
+        "text": "if you tap that and then return to your",
+        "duration": 4.96
+      },
+      {
+        "start": 43.56,
+        "text": "home feed and then refresh it, voilà,",
+        "duration": 5.88
+      },
+      {
+        "start": 46.84,
+        "text": "that top batch of shorts has gone and so",
+        "duration": 4.48
+      },
+      {
+        "start": 49.44,
+        "text": "has every other short on your",
+        "duration": 3.68
+      },
+      {
+        "start": 51.32,
+        "text": "recommendation feed. Now, to preempt",
+        "duration": 3.16
+      },
+      {
+        "start": 53.12,
+        "text": "some of the comments I'm going to see on",
+        "duration": 3.48
+      },
+      {
+        "start": 54.48,
+        "text": "this video, as of time of recording, I",
+        "duration": 4.04
+      },
+      {
+        "start": 56.6,
+        "text": "know not everybody can see this feature",
+        "duration": 4.4
+      },
+      {
+        "start": 58.52,
+        "text": "yet. Don't worry, it's slowly rolling",
+        "duration": 4.16
+      },
+      {
+        "start": 61.0,
+        "text": "out to everyone. Be patient. Now, the",
+        "duration": 3.68
+      },
+      {
+        "start": 62.68,
+        "text": "shorts player button is still there at",
+        "duration": 3.6
+      },
+      {
+        "start": 64.68,
+        "text": "the bottom of the app, but if you tap",
+        "duration": 2.8
+      },
+      {
+        "start": 66.28,
+        "text": "it, you'll be warned that you've",
+        "duration": 3.24
+      },
+      {
+        "start": 67.48,
+        "text": "instantly reached your shorts feed limit",
+        "duration": 3.64
+      },
+      {
+        "start": 69.52,
+        "text": "for the day. Although, you can still",
+        "duration": 3.68
+      },
+      {
+        "start": 71.12,
+        "text": "bypass it with this ignore option at the",
+        "duration": 3.4
+      },
+      {
+        "start": 73.2,
+        "text": "bottom of the screen. And just to show",
+        "duration": 3.16
+      },
+      {
+        "start": 74.52,
+        "text": "you what happens if you completely turn",
+        "duration": 3.92
+      },
+      {
+        "start": 76.36,
+        "text": "off the daily limit feature and then",
+        "duration": 4.08
+      },
+      {
+        "start": 78.44,
+        "text": "return to the home page and refresh it,",
+        "duration": 3.84
+      },
+      {
+        "start": 80.44,
+        "text": "the shorts recommendations immediately",
+        "duration": 5.68
+      },
+      {
+        "start": 82.28,
+        "text": "return below one long-form video. Gee,",
+        "duration": 5.64
+      },
+      {
+        "start": 86.12,
+        "text": "thanks, YouTube. So, now you know this",
+        "duration": 4.36
+      },
+      {
+        "start": 87.92,
+        "text": "exists, I want to ask you a question and",
+        "duration": 4.4
+      },
+      {
+        "start": 90.48,
+        "text": "I'm going to do it with another brand",
+        "duration": 3.48
+      },
+      {
+        "start": 92.32,
+        "text": "new YouTube feature that I want to test",
+        "duration": 3.4
+      },
+      {
+        "start": 93.96,
+        "text": "out. So, hopefully now in this top",
+        "duration": 4.28
+      },
+      {
+        "start": 95.72,
+        "text": "corner, there should be a quiz that's",
+        "duration": 4.28
+      },
+      {
+        "start": 98.24,
+        "text": "going to ask you whether or not you're",
+        "duration": 4.0
+      },
+      {
+        "start": 100.0,
+        "text": "going to use this feature, yes or no.",
+        "duration": 4.2
+      },
+      {
+        "start": 102.24,
+        "text": "Now, I know really this should be a",
+        "duration": 4.28
+      },
+      {
+        "start": 104.2,
+        "text": "voting poll, but YouTube killed those",
+        "duration": 4.64
+      },
+      {
+        "start": 106.52,
+        "text": "voting poll cards about half a decade",
+        "duration": 4.0
+      },
+      {
+        "start": 108.84,
+        "text": "ago at this point. But, I want to test",
+        "duration": 2.96
+      },
+      {
+        "start": 110.52,
+        "text": "this feature to see what sort of",
+        "duration": 2.76
+      },
+      {
+        "start": 111.8,
+        "text": "engagement I get. But, obviously, if you",
+        "duration": 2.76
+      },
+      {
+        "start": 113.28,
+        "text": "want to give a more considered answer,",
+        "duration": 3.28
+      },
+      {
+        "start": 114.56,
+        "text": "then the comments below are open and",
+        "duration": 3.48
+      },
+      {
+        "start": 116.56,
+        "text": "welcome. And since we're on the topic of",
+        "duration": 2.88
+      },
+      {
+        "start": 118.04,
+        "text": "new features, I just wanted to give a",
+        "duration": 2.68
+      },
+      {
+        "start": 119.44,
+        "text": "quick shout out to our thumbnail",
+        "duration": 2.48
+      },
+      {
+        "start": 120.72,
+        "text": "generation tool that's gone through",
+        "duration": 3.56
+      },
+      {
+        "start": 121.92,
+        "text": "another round of updates. Simply upload",
+        "duration": 3.96
+      },
+      {
+        "start": 124.28,
+        "text": "your video to YouTube, click this",
+        "duration": 3.88
+      },
+      {
+        "start": 125.88,
+        "text": "generate button, and VidIQ will scan the",
+        "duration": 4.36
+      },
+      {
+        "start": 128.16,
+        "text": "visuals and the context of the video to",
+        "duration": 3.52
+      },
+      {
+        "start": 130.24,
+        "text": "generate a thumbnail. You can start",
+        "duration": 3.32
+      },
+      {
+        "start": 131.68,
+        "text": "using it now with our browser extension",
+        "duration": 3.36
+      },
+      {
+        "start": 133.56,
+        "text": "linked in the description. It's really",
+        "duration": 3.08
+      },
+      {
+        "start": 135.04,
+        "text": "good. Now, I will agree this time",
+        "duration": 3.2
+      },
+      {
+        "start": 136.64,
+        "text": "management way of turning off YouTube",
+        "duration": 4.56
+      },
+      {
+        "start": 138.24,
+        "text": "shorts is, shall we say, clunky. But, at",
+        "duration": 4.44
+      },
+      {
+        "start": 141.2,
+        "text": "least we've got something now, right?",
+        "duration": 3.36
+      },
+      {
+        "start": 142.68,
+        "text": "But, what about the",
+        "duration": 4.44
+      },
+      {
+        "start": 144.56,
+        "text": "desktop YouTube experience? For about a",
+        "duration": 4.48
+      },
+      {
+        "start": 147.12,
+        "text": "year now, the desktop home page has seen",
+        "duration": 4.28
+      },
+      {
+        "start": 149.04,
+        "text": "a short shelf dominating half the screen",
+        "duration": 4.24
+      },
+      {
+        "start": 151.4,
+        "text": "real estate, giving long-form videos",
+        "duration": 4.04
+      },
+      {
+        "start": 153.28,
+        "text": "maybe just three or four thumbnails. So,",
+        "duration": 3.72
+      },
+      {
+        "start": 155.44,
+        "text": "you would think that by going to the",
+        "duration": 3.0
+      },
+      {
+        "start": 157.0,
+        "text": "settings and then playback and",
+        "duration": 3.36
+      },
+      {
+        "start": 158.44,
+        "text": "performance, you might find a similar",
+        "duration": 3.8
+      },
+      {
+        "start": 160.36,
+        "text": "time management option.",
+        "duration": 4.04
+      },
+      {
+        "start": 162.24,
+        "text": "But, nah, I just made this setting up.",
+        "duration": 3.8
+      },
+      {
+        "start": 164.4,
+        "text": "Now, from a creator's point of view,",
+        "duration": 3.28
+      },
+      {
+        "start": 166.04,
+        "text": "does this mean that because your shorts",
+        "duration": 3.12
+      },
+      {
+        "start": 167.68,
+        "text": "aren't getting recommended as much,",
+        "duration": 2.96
+      },
+      {
+        "start": 169.16,
+        "text": "you're not going to get as many views?",
+        "duration": 3.04
+      },
+      {
+        "start": 170.64,
+        "text": "Well, I guess it's possible, but I don't",
+        "duration": 2.92
+      },
+      {
+        "start": 172.2,
+        "text": "think that many shorts views come",
+        "duration": 3.28
+      },
+      {
+        "start": 173.56,
+        "text": "directly from recommendations. They come",
+        "duration": 3.8
+      },
+      {
+        "start": 175.48,
+        "text": "from the shorts player itself. And let's",
+        "duration": 3.6
+      },
+      {
+        "start": 177.36,
+        "text": "be honest, from a YouTube user",
+        "duration": 4.24
+      },
+      {
+        "start": 179.08,
+        "text": "perspective, this is a long overdue",
+        "duration": 4.56
+      },
+      {
+        "start": 181.6,
+        "text": "feature that is finally here. But,",
+        "duration": 4.0
+      },
+      {
+        "start": 183.64,
+        "text": "here's something that might annoy you.",
+        "duration": 3.84
+      },
+      {
+        "start": 185.6,
+        "text": "Even with this time management setting",
+        "duration": 4.32
+      },
+      {
+        "start": 187.48,
+        "text": "turned on, if you search for something",
+        "duration": 5.36
+      },
+      {
+        "start": 189.92,
+        "text": "on YouTube, shorts do still appear in",
+        "duration": 5.72
+      },
+      {
+        "start": 192.84,
+        "text": "the results.",
+        "duration": 2.8
+      },
+      {
+        "start": 196.48,
+        "text": "It's covering up the entire screen. So,",
+        "duration": 3.04
+      },
+      {
+        "start": 197.8,
+        "text": "I think we can all agree that this is a",
+        "duration": 3.56
+      },
+      {
+        "start": 199.52,
+        "text": "giant leap forward in the right",
+        "duration": 4.64
+      },
+      {
+        "start": 201.36,
+        "text": "direction from YouTube for users who",
+        "duration": 5.0
+      },
+      {
+        "start": 204.16,
+        "text": "just cannot stand shorts,",
+        "duration": 3.84
+      },
+      {
+        "start": 206.36,
+        "text": "at least for mobile users, anyway. But,",
+        "duration": 4.32
+      },
+      {
+        "start": 208.0,
+        "text": "as always seems to be the case, it's not",
+        "duration": 6.52
+      },
+      {
+        "start": 210.68,
+        "text": "the perfect and simple, elegant solution",
+        "duration": 6.56
+      },
+      {
+        "start": 214.52,
+        "text": "that everybody was looking for.",
+        "duration": 6.6
+      },
+      {
+        "start": 217.24,
+        "text": "And don't get me started on playables.",
+        "duration": 3.88
+      },
+      {
+        "start": 221.68,
+        "text": "Why?",
+        "duration": 2.76
+      }
+    ],
+    "status": "OK",
+    "segment_count": 112
+  },
+  "captured_at": "2026-07-09T21:40:00Z",
+  "captured_by": "CAPTEURS"
+}

@@ -1,0 +1,8 @@
+# F05_PACKAGER — requirements
+# ===========================
+# Assemblage 100% déterministe — stdlib uniquement (json + re).
+# Validateur de schéma maison fidèle au contrat production_pack_schema.json
+# (JSON Schema draft-07, sous-ensemble utilisé par le schéma canonique).
+#
+# Optionnel (pas requis — le validateur maison suffit) :
+#   jsonschema>=4.21.0   # validation draft-07 complète si le Warsmith la préfère

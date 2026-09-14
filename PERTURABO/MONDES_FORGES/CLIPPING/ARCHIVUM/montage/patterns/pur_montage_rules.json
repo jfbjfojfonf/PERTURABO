@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "description": "Règles de montage VISUEL pour chaque style PUR. Le F06 Directeur lit CE fichier pour générer montage_instructions.json.",
+  "last_updated": "2026-09-03",
+
+  "global_rules": {
+    "format": "9:16 (1080x1920)",
+    "fps": "identique à la source (30 ou 60)",
+    "anti_detection": "OBLIGATOIRE sur tous les clips (mirror + speed + crop + sfx)",
+    "hook_zone": "0-3 secondes — visage speaker, pas de B-roll, voix claire",
+    "captions": "Transcript du speech, word-by-word, white+dark-outline",
+    "safe_zone": "Éviter bas 15% et droite 10% (boutons plateforme)",
+    "max_clip_duration": "60 secondes",
+    "min_clip_duration": "15 secondes",
+    "b_roll_rule": "1 B-roll par idée, remplacer quand l'idée change"
+  },
+
+  "styles": {
+
+    "ranking": {
+      "description": "Countdown de clips (1 à 6). Chaque clip = un moment. Arc narratif du #1 au dernier.",
+      "clip_duration": { "min": 2, "max": 8, "optimal": [3, 5] },
+      "max_clips": 6,
+      "title": {
+        "max_words": 4,
+        "position": "top_15_percent",
+        "font_size": "72px bold",
+        "color": "accent (jaune/vert selon thème)",
+        "animation": "pop_in_fast (0.2s)",
+        "visible": "pendant toute la durée du clip"
+      },
+      "countdown_overlay": {
+        "position": "centre_haut (au-dessus du clip)",
+        "font_size": "120px+ extra_bold",
+        "color": "white avec ombre portée",
+        "animation": "scale_bounce (0.15s)",
+        "format": "#5, #4, #3, #2, #1",
+        "visible": "0.5s au début de chaque clip"
+      },
+      "clip_label": {
+        "max_words": 1,
+        "position": "sous le countdown_number",
+        "font_size": "48px bold",
+        "color": "white",
+        "animation": "fade_in_fast (0.2s)"
+      },
+      "cuts": "smash_cut ou impact_cut entre chaque clip",
+      "transitions": "whoosh_sfx entre les clips (pas de dissolve)",
+      "zoom": {
+        "type": "brutal_instant",
+        "intensity": "108-115%",
+        "duration": "0.1-0.2s",
+        "target": "visage speaker au moment du chiffre/punchline",
+        "reset": "retour 100% au clip suivant",
+        "rule": "Un zoom brutal par clip, au moment fort. Pas de zoom lent."
+      },
+      "b_roll": {
+        "placement": "ENTRE les clips (pas pendant le clip principal)",
+        "usage": "Transition visuelle entre #5 et #4, etc.",
+        "type": "stock footage pertinent au thème"
+      },
+      "energy_curve": "crescendo — #5 normal → montée → dernier = pic max",
+      "sound_design": {
+        "between_clips": "whoosh (40%)",
+        "countdown_tick": "tick (50%) sur chaque numéro",
+        "final_reveal": "impact_boom (60%)"
+      }
+    },
+
+    "blur": {
+      "description": "Clip podcast en haut, titre au centre, fond flou, B-roll variable en bas.",
+      "clip_duration": { "min": 15, "max": 60, "optimal": [25, 45] },
+      "max_clips": 10,
+      "layout": {
+        "zone_top": "clip podcast (60% de l'écran)",
+        "zone_center": "titre principal (20%)",
+        "zone_bottom": "B-roll variable ou zone vide (20%)"
+      },
+      "title": {
+        "max_lines": 2,
+        "position": "centre (entre clip et B-roll)",
+        "font_size": "64px bold",
+        "color": "white avec fond sombre semi-transparent",
+        "animation": "slide_up_fast (0.2s)",
+        "visible": "pendant toute la durée du clip"
+      },
+      "podcast_clip": {
+        "position": "top_60_percent",
+        "crop": "centre sur le speaker",
+        "zoom_source": "2-3x pour remplir le haut en 9:16"
+      },
+      "blur_background": {
+        "enabled": true,
+        "intensity": "40-60px",
+        "purpose": "remplir l'espace derrière le clip sharp"
+      },
+      "cuts": "breath_cut ou idea_cut (couper sur les respirations/idées)",
+      "transitions": "cut simple (pas de transition entre segments)",
+      "zoom": {
+        "type": "brutal_instant",
+        "intensity": "108-112%",
+        "duration": "0.1s",
+        "target": "visage speaker au moment fort",
+        "reset": "retour 100% immédiat après l'impact",
+        "rule": "Zoom brutal au moment émotionnel clé. Ensuite retour normal. Pas de breathing zoom."
+      },
+      "b_roll": {
+        "placement": "zone_bas (20% inférieur)",
+        "type": "variation par clip — image/vidéo liée au contenu",
+        "switch": "changer à chaque nouvelle idée"
+      },
+      "energy_curve": "constant — tension dans le speech, pas de pics visuels",
+      "sound_design": {
+        "key_moment": "pop (45%) au moment du zoom",
+        "emotion": "riser léger (20%) avant révélation"
+      }
+    },
+
+    "split_scene": {
+      "description": "3 zones composable. Haut=podcast, Centre=titre, Bas=variable (B-roll, image IA, stats, réaction).",
+      "clip_duration": { "min": 15, "max": 60, "optimal": [20, 40] },
+      "max_clips": 10,
+      "layout": {
+        "zone_top": "clip podcast (35-40% hauteur)",
+        "zone_center": "titre principal (20-25%)",
+        "zone_bottom": "contenu variable (35-40%)"
+      },
+      "zone_bottom_options": [
+        "B-roll illustration",
+        "Image générée par IA",
+        "Statistiques / graphiques",
+        "Réaction d'une 2e personne (split reaction)",
+        "Tweet / capture d'écran",
+        "Meme / emoji animé"
+      ],
+      "title": {
+        "max_lines": 2,
+        "position": "centre_absolu",
+        "font_size": "64px bold",
+        "color": "white avec accent color sur mots-clés",
+        "animation": "pop_in (0.15s)",
+        "visible": "pendant toute la durée du clip",
+        "role": "le titre RELIE le contenu du haut et du bas"
+      },
+      "composability": {
+        "note": "Le split_scene PEUT intervenir DANS un ranking countdown — le bas devient le B-roll du clip suivant",
+        "ranking_integration": "zone_top = clip ranking, zone_bottom = B-roll countdown"
+      },
+      "cuts": "idea_cut ou impact_cut",
+      "transitions": "cut simple ou whoosh léger",
+      "zoom": {
+        "type": "brutal_instant",
+        "intensity": "110-120%",
+        "duration": "0.1-0.15s",
+        "target": "visage speaker dans zone_top",
+        "reset": "retour 100% immédiat",
+        "rule": "Zoom brutal au moment fort du speech. La zone_bas change pendant ce zoom."
+      },
+      "b_roll": {
+        "placement": "zone_bas UNIQUEMENT",
+        "type": "variable selon le contenu — illustrer ce qui est dit en haut",
+        "switch": "changer à chaque nouvelle idée"
+      },
+      "energy_curve": "zigzag — Monte avec zone_bas change, descend pendant podcast stable",
+      "sound_design": {
+        "zone_switch": "whoosh léger (30%) quand zone_bas change",
+        "key_moment": "impact (50%) au zoom"
+      }
+    },
+
+    "reframing": {
+      "description": "Un seul clip avec reframing narratif. Le titre transforme le sens du contenu. Pacing contrôlé.",
+      "clip_duration": { "min": 15, "max": 60, "optimal": [25, 45] },
+      "max_clips": 10,
+      "title": {
+        "max_lines": 2,
+        "position": "variable (selon layout choisi)",
+        "font_size": "64px bold",
+        "color": "white avec ombre",
+        "animation": "fade_in (0.3s)",
+        "visible": "pendant toute la durée du clip",
+        "role": "TRANSFORME le sens — pas une description, un reframing"
+      },
+      "reframing_types": {
+        "emotional": "Transformer un moment neutre en moment émotionnel",
+        "humor": "Transformer un moment sérieux en moment drôle",
+        "dramatic": "Amplifier la dramaticité d'un moment",
+        "mysterious": "Créer du mystère autour d'un moment banal",
+        "proof": "Transformer un moment en preuve/évidence"
+      },
+      "cuts": "idea_cut (couper au changement d'idée, plus lent)",
+      "cut_density": "moins de cuts que les autres styles — laisser la parole respirer",
+      "transitions": "cut simple",
+      "zoom": {
+        "type": "brutal_instant",
+        "intensity": "105-112%",
+        "duration": "0.1s",
+        "target": "visage speaker au moment émotionnel",
+        "reset": "retour 100% immédiat",
+        "rule": "1-2 zooms brutaux maximum par clip. Laisser respirer entre les deux."
+      },
+      "b_roll": {
+        "placement": "optionnel, en overlay léger",
+        "usage": "amplifier l'émotion, pas remplir l'écran",
+        "intensity": "subtil — 30% opacity si overlay"
+      },
+      "energy_curve": "lente montée — sobre au début, révélation à la fin",
+      "sound_design": {
+        "emotion_build": "riser léger (20%) avant la révélation",
+        "key_moment": "impact doux (40%) au moment du zoom",
+        "conclusion": "pas de boom — laisser la parole finir"
+      }
+    }
+  },
+
+  "universal_ingredients": {
+    "description": "Ces éléments sont PRÉSENTS dans TOUS les clips, quel que soit le style",
+    "hook_0_3s": {
+      "visage_speaker": true,
+      "b_roll": false,
+      "voix_claire": true,
+      "text_overlay": "titre principal ou hook textuel"
+    },
+    "captions": {
+      "source": "transcript du speech",
+      "format": "word-by-word ou 2-5 mots par groupe",
+      "font": "bold sans-serif (Montserrat, Bebas Neue)",
+      "color": "white avec dark outline",
+      "highlight": "mots-clés en accent color (jaune/vert)"
+    },
+    "anti_detection": {
+      "mirror": true,
+      "speed": "1.02x-1.08x",
+      "crop": "2-3% sur les bords",
+      "sfx_layer": "bruit de fond léger permanent",
+      "color_shift": "légère variation de teinte"
+    },
+    "disclosure": {
+      "sponsored": "#ad visible en bas à droite",
+      "condition": "uniquement si le contenu est sponsorisé"
+    }
+  }
+}

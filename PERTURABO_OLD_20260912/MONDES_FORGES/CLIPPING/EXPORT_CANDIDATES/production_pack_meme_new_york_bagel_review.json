@@ -1,0 +1,1241 @@
+{
+  "pack_id": "LOGO-SIEGE-siege_20260821_223947",
+  "siege_id": "siege_20260821_223947",
+  "mode": "logo",
+  "sub_mode": "meme",
+  "clip_source_ref": {
+    "source_type": "market_discovery",
+    "reference": "",
+    "celebrity_or_subject": "@Zdak",
+    "niche": "meme",
+    "duration_sec": null,
+    "timecodes": null
+  },
+  "article_source": null,
+  "joke_source": null,
+  "reference_clip_style": null,
+  "angles": [
+    {
+      "angle_id": "A01",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "drole",
+      "engagement_type": "question",
+      "reframe_dim": "fait_vers_absurde"
+    },
+    {
+      "angle_id": "A02",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "absurde",
+      "engagement_type": "statement",
+      "reframe_dim": "normal_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A03",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "ironique",
+      "engagement_type": "observation",
+      "reframe_dim": "fait_vers_absurde"
+    },
+    {
+      "angle_id": "A04",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "parodie",
+      "engagement_type": "question",
+      "reframe_dim": "banal_vers_epique"
+    },
+    {
+      "angle_id": "A05",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "sarcastique",
+      "engagement_type": "statement",
+      "reframe_dim": "fait_vers_absurde"
+    },
+    {
+      "angle_id": "A06",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "nostalgique",
+      "engagement_type": "observation",
+      "reframe_dim": "normal_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A07",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "exagéré",
+      "engagement_type": "challenge",
+      "reframe_dim": "banal_vers_epique"
+    },
+    {
+      "angle_id": "A08",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "inattendu",
+      "engagement_type": "question",
+      "reframe_dim": "fait_vers_absurde"
+    },
+    {
+      "angle_id": "A09",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "ridicule",
+      "engagement_type": "statement",
+      "reframe_dim": "normal_vers_extraordinaire"
+    },
+    {
+      "angle_id": "A10",
+      "zone": "direct",
+      "angle_family": "reframing",
+      "emotion_mode": "charmant",
+      "engagement_type": "observation",
+      "reframe_dim": "fait_vers_absurde"
+    }
+  ],
+  "videos": [
+    {
+      "video_index": 1,
+      "angle_id": "A01",
+      "title": "Bagel Cult Theory",
+      "meme": "M1",
+      "tweet": {
+        "text": "My professor just spent 20 minutes explaining why New York bagels are superior because of the water.\nI'm from Florida.\nI think he's in a cult.",
+        "keywords_style": {
+          "green": [
+            "superior",
+            "bagels"
+          ],
+          "red": [
+            "cult"
+          ]
+        }
+      },
+      "text_emotion": "Students reading this:",
+      "emotion": "funny",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Professor's Bagel Cult Theory",
+        "description": "A student shares a hilarious classroom moment where their professor passionately argues that New York bagels are superior due to the water, leaving the student convinced they've joined a bagel cult. The absurdity of the situation sparks laughter and cultural debate.\n\n#new york bagel, #bagel debate, #funny, #meme, #culture clash, #student life",
+        "tags": [
+          "#new york bagel",
+          "#bagel debate",
+          "#funny",
+          "#meme",
+          "#culture clash",
+          "#student life"
+        ]
+      }
+    },
+    {
+      "video_index": 2,
+      "angle_id": "A02",
+      "title": "NYC Bagel Water Theory",
+      "meme": "M1",
+      "tweet": {
+        "text": "My New York roommate threw out a bagel I brought home because 'it wasn't boiled in NYC tap water.' I'm starting to think the secret ingredient is just superiority complex.",
+        "keywords_style": {
+          "green": [
+            "bagel",
+            "water",
+            "secret",
+            "ingredient"
+          ],
+          "red": [
+            "threw",
+            "superiority",
+            "complex"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "absurde",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "NYC Bagel Water Theory",
+        "description": "A funny tweet about a New Yorker's strict bagel rules goes viral. Is the secret ingredient just superiority complex? Watch the reaction.\n\nThis content is for entertainment and commentary. All media used is transformative and falls under fair use guidelines.\n\n#New York Bagel, #Bagel Theory, #NYC, #Meme, #Funny Tweet, #Superiority Complex",
+        "tags": [
+          "#New York Bagel",
+          "#Bagel Theory",
+          "#NYC",
+          "#Meme",
+          "#Funny Tweet",
+          "#Superiority Complex"
+        ]
+      }
+    },
+    {
+      "video_index": 3,
+      "angle_id": "A03",
+      "title": "NYC Bagel Water Secret",
+      "meme": "M1",
+      "tweet": {
+        "text": "My roommate went to NYC and asked a bagel shop owner why they're so good. He said 'we boil them in the same water we use to wash the rats off the subway.' I'm moving.",
+        "keywords_style": {
+          "green": [
+            "good",
+            "bagel"
+          ],
+          "red": [
+            "boil",
+            "wash",
+            "rats",
+            "subway"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "ironique",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "NYC Bagel Secret Exposed",
+        "description": "A roommate's trip to NYC reveals the shocking truth behind the city's famous bagels. The secret ingredient? Subway rat water. The internet reacts with horror.\n\n#nyc, #bagels, #meme, #funny, #newyork, #foodsecrets",
+        "tags": [
+          "#nyc",
+          "#bagels",
+          "#meme",
+          "#funny",
+          "#newyork",
+          "#foodsecrets"
+        ]
+      }
+    },
+    {
+      "video_index": 4,
+      "angle_id": "A04",
+      "title": "The Bagel Handshake Theory",
+      "meme": "M1",
+      "tweet": {
+        "text": "I have a theory: the New York bagel is a secret handshake. If you don't know how to order one, you're not really from here. My roommate just asked for a toasted bagel with butter. I'm calling the landlord.",
+        "keywords_style": {
+          "green": [
+            "theory",
+            "handshake",
+            "order",
+            "here"
+          ],
+          "red": [
+            "toasted",
+            "butter",
+            "landlord"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "parodie",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "The Bagel Handshake Theory",
+        "description": "A viral tweet claims the New York bagel is a secret handshake for real New Yorkers. The poster's roommate failed the test by ordering a toasted bagel with butter, leading to an eviction threat.\n\nThis content is a transformative parody created for commentary and humor. All trademarks and references are used under fair use for purposes of satire and social commentary. No endorsement is implied.\n\n#newyorkbagel, #bagel, #meme, #funny, #theory, #parody, #nyc",
+        "tags": [
+          "#newyorkbagel",
+          "#bagel",
+          "#meme",
+          "#funny",
+          "#theory",
+          "#parody",
+          "#nyc"
+        ]
+      }
+    },
+    {
+      "video_index": 5,
+      "angle_id": "A05",
+      "title": "Bagel Blasphemy In The Family",
+      "meme": "M1",
+      "tweet": {
+        "text": "My sister came back from New York and said 'the bagels are just bread with a hole'. I haven't spoken to her in 3 days. She's dead to me.",
+        "keywords_style": {
+          "green": [
+            "New",
+            "York",
+            "bagels"
+          ],
+          "red": [
+            "bread",
+            "hole",
+            "dead"
+          ]
+        }
+      },
+      "text_emotion": "Me reading this:",
+      "emotion": "sarcastic",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "Bagel Blasphemy In The Family",
+        "description": "A sister returns from New York and dismisses the iconic bagels as 'just bread with a hole', sparking a hilarious family feud.\n\n#new york bagel, #bagel, #funny, #family, #sarcasm",
+        "tags": [
+          "#new york bagel",
+          "#bagel",
+          "#funny",
+          "#family",
+          "#sarcasm"
+        ]
+      }
+    },
+    {
+      "video_index": 6,
+      "angle_id": "A06",
+      "title": "The East River Bagel Secret",
+      "meme": "M1",
+      "tweet": {
+        "text": "My uncle from Queens swears the only real bagel is one that's been boiled in water from the East River. I asked him if he's ever seen the East River. He said 'exactly.'",
+        "keywords_style": {
+          "green": [
+            "real",
+            "bagel",
+            "water"
+          ],
+          "red": [
+            "East",
+            "River",
+            "exactly"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "nostalgique",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "The East River Bagel Secret",
+        "description": "A New Yorker's uncle claims the only authentic bagel is boiled in East River water, sparking a hilarious debate about authenticity and nostalgia.\n\n#new york bagel, #bagel theory, #funny tweet, #nostalgia, #east river, #nyc food, #meme",
+        "tags": [
+          "#new york bagel",
+          "#bagel theory",
+          "#funny tweet",
+          "#nostalgia",
+          "#east river",
+          "#nyc food",
+          "#meme"
+        ]
+      }
+    },
+    {
+      "video_index": 7,
+      "angle_id": "A07",
+      "title": "Bagel Order Becomes Epic Battle",
+      "meme": "M1",
+      "tweet": {
+        "text": "My friend from Ohio just tried to order a bagel in NYC and the guy behind the counter asked him 'toasted or not' and he froze like it was a life or death decision. I've never seen someone sweat over bread before.",
+        "keywords_style": {
+          "green": [
+            "friend",
+            "bagel",
+            "NYC"
+          ],
+          "red": [
+            "froze",
+            "sweat",
+            "death"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "exagéré",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "New York Bagel Order Becomes Epic Battle",
+        "description": "A friend from Ohio freezes when asked 'toasted or not' at a NYC bagel shop, turning a simple order into a life-or-death decision. The cultural clash of the New York bagel experience is hilariously exaggerated.\n\nThis video is a transformative commentary on the viral New York bagel meme, using a fictional tweet for comedic effect. All content is created under fair use for entertainment purposes.\n\n#New York bagel, #bagel meme, #NYC culture, #funny tweet, #Doom reaction",
+        "tags": [
+          "#New York bagel",
+          "#bagel meme",
+          "#NYC culture",
+          "#funny tweet",
+          "#Doom reaction"
+        ]
+      }
+    },
+    {
+      "video_index": 8,
+      "angle_id": "A08",
+      "title": "The Bagel Water Theory",
+      "meme": "M1",
+      "tweet": {
+        "text": "My roommate just told me New York bagels are only good because the water has 'attitude.' I think he's been drinking the tap water.",
+        "keywords_style": {
+          "green": [
+            "good"
+          ],
+          "red": [
+            "attitude"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "inattendu",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "The Bagel Water Theory",
+        "description": "A roommate drops a wild theory: New York bagels are only good because the water has 'attitude.' The absurd logic leaves everyone questioning what's really in that tap water.\n\nThis video is a transformative meme commentary created for entertainment and educational purposes under fair use. No copyright infringement intended.\n\n#new york bagel, #bagel theory, #funny meme, #roommate humor, #absurd theory, #meme, #viral tweet",
+        "tags": [
+          "#new york bagel",
+          "#bagel theory",
+          "#funny meme",
+          "#roommate humor",
+          "#absurd theory",
+          "#meme",
+          "#viral tweet"
+        ]
+      }
+    },
+    {
+      "video_index": 9,
+      "angle_id": "A09",
+      "title": "New York Bagels Are Rage Sponges",
+      "meme": "M1",
+      "tweet": {
+        "text": "I have a theory that New York bagels are actually dense because they absorb all the city's rage. Every bite is a compressed argument. That's why they're so chewy.",
+        "keywords_style": {
+          "green": [
+            "chewy"
+          ],
+          "red": [
+            "dense",
+            "rage",
+            "argument"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "ridicule",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "New York Bagels Are Rage Sponges",
+        "description": "A viral theory suggests New York bagels are dense because they absorb the city's rage, turning every bite into a compressed argument. The chewy texture is just stored fury.\n\nThis content is a transformative meme for commentary and humor. All clips used under fair use for educational and entertainment purposes.\n\n#newyorkbagel, #bageltheory, #meme, #funny, #nyc, #foodtheory, #rage, #chewy",
+        "tags": [
+          "#newyorkbagel",
+          "#bageltheory",
+          "#meme",
+          "#funny",
+          "#nyc",
+          "#foodtheory",
+          "#rage",
+          "#chewy"
+        ]
+      }
+    },
+    {
+      "video_index": 10,
+      "angle_id": "A10",
+      "title": "The Bagel Water Myth",
+      "meme": "M1",
+      "tweet": {
+        "text": "my roommate came back from New York raving about the bagels. I asked what made them so good. he said 'the water.' so I boiled a bagel in Dasani and now he won't talk to me.",
+        "keywords_style": {
+          "green": [
+            "bagels",
+            "good",
+            "water"
+          ],
+          "red": [
+            "Dasani",
+            "boiled"
+          ]
+        }
+      },
+      "text_emotion": "Doom right now:",
+      "emotion": "charmant",
+      "duration_sec": 8,
+      "watermark": "@memecocktail",
+      "metadata": {
+        "title": "New York Bagel Water Theory Meme",
+        "description": "This meme humorously explores the myth that New York bagels are special because of the water. A roommate tries to replicate the magic with bottled water, leading to a hilarious fallout. The absurdity of the experiment highlights the cultural obsession with NYC bagels.\n\nThis content is a transformative commentary on the viral New York bagel trend, created for entertainment and educational purposes under fair use. No copyright infringement intended.\n\n#new york bagel, #bagel water, #meme, #funny, #roommate, #dasani, #nyc food, #bagel myth",
+        "tags": [
+          "#new york bagel",
+          "#bagel water",
+          "#meme",
+          "#funny",
+          "#roommate",
+          "#dasani",
+          "#nyc food",
+          "#bagel myth"
+        ]
+      }
+    }
+  ],
+  "checklist": {
+    "factual_verified": false,
+    "no_defamation": false,
+    "no_fabricated_breaking": false,
+    "seo_optimized": true
+  },
+  "meme_source": {
+    "keyword": "New York Bagel",
+    "virality_scan": {
+      "sources_scanned": [
+        "youtube",
+        "trends",
+        "suggest"
+      ],
+      "signals": {
+        "signal_vues_youtube": {
+          "signal": "vues_youtube",
+          "status": "ok",
+          "search": {
+            "status": "ok",
+            "error": null,
+            "query": "New York Bagel | New | York",
+            "probes": [
+              "New York Bagel",
+              "New",
+              "York"
+            ],
+            "videos": [
+              {
+                "video_id": "qMNlOWU2SyU",
+                "url": "https://youtube.com/watch?v=qMNlOWU2SyU",
+                "title": "Cool gadgets!😍Smart Appliances,New Gadgets, Kitchen Gadgets, Home Gadgets,Inventions🙏P-1026",
+                "description": "Hi Everyone \nThis channel is all about Gadget and which makes your life much smarter creative.\n🙏 𝐓𝐡𝐚𝐧𝐤 𝐘𝐨𝐮 𝐅𝐨𝐫 𝐖𝐚𝐭𝐜𝐡𝐢𝐧𝐠!\nIf You Enjoyed This Videos Please Give It A 👍 Thumbs Up! and if you have any quires so please use the comment box.\n----- \n#short #shortsfeed #shortsviral #youtubeshorts #shortvideo #viral #ytshorts #smarthome #tools #items #homeappliances #gadgets #householditems #smartgadget #newgadgets #newinventions #new #trend #trending #trendingshorts #tiktok #coolgadgets #versatileutensils #tiktokchin in  #douyin #kawaii #tiktokjapan #creativegadgets #appliances #inventions #bestgadgets #smarthouse #smartgadgets #homeutilities #satisfying #smarthomegadgets #gadgetsshorts #smartitems #homecleaning #amazongadgets #Amazon #amazonfinds #utilitiesforeveryhome #smartgadgetsanditemsforeveryhome #appliancesforeveryhome #technology",
+                "channel": "Mr shahbaz update ",
+                "published_at": "2026-08-21T02:45:08Z",
+                "duration": "PT29S",
+                "tags": [],
+                "hashtags": [
+                  "#Amazon",
+                  "#amazonfinds",
+                  "#amazongadgets",
+                  "#appliances",
+                  "#appliancesforeveryhome",
+                  "#bestgadgets",
+                  "#coolgadgets",
+                  "#creativegadgets",
+                  "#douyin",
+                  "#gadgets",
+                  "#gadgetsshorts",
+                  "#homeappliances",
+                  "#homecleaning",
+                  "#homeutilities",
+                  "#householditems",
+                  "#inventions",
+                  "#items",
+                  "#kawaii",
+                  "#new",
+                  "#newgadgets",
+                  "#newinventions",
+                  "#satisfying",
+                  "#short",
+                  "#shortsfeed",
+                  "#shortsviral",
+                  "#shortvideo",
+                  "#smartgadget",
+                  "#smartgadgets",
+                  "#smartgadgetsanditemsforeveryhome",
+                  "#smarthome",
+                  "#smarthomegadgets",
+                  "#smarthouse",
+                  "#smartitems",
+                  "#technology",
+                  "#tiktok",
+                  "#tiktokchin",
+                  "#tiktokjapan",
+                  "#tools",
+                  "#trend",
+                  "#trending",
+                  "#trendingshorts",
+                  "#utilitiesforeveryhome",
+                  "#versatileutensils",
+                  "#viral",
+                  "#youtubeshorts",
+                  "#ytshorts"
+                ],
+                "view_count": 896124,
+                "like_count": 5910,
+                "comment_count": 0
+              },
+              {
+                "video_id": "tke4quZ1T24",
+                "url": "https://youtube.com/watch?v=tke4quZ1T24",
+                "title": "Pinkiprajapati new shorts #pinkiprajapati",
+                "description": "",
+                "channel": "Pinki Prajapati",
+                "published_at": "2026-08-21T06:30:08Z",
+                "duration": "PT38S",
+                "tags": [],
+                "hashtags": [
+                  "#pinkiprajapati"
+                ],
+                "view_count": 856112,
+                "like_count": 6987,
+                "comment_count": 1
+              },
+              {
+                "video_id": "ny0ewzX1A3c",
+                "url": "https://youtube.com/watch?v=ny0ewzX1A3c",
+                "title": "BTS VIDEO 😂😂 #reelsvi̇deo #ytshorts #trending #new #shorts #sadsong",
+                "description": "BTS VIDEO 😂😂 #reelsvi̇deo #ytshorts #trending #new #shorts #sadsong",
+                "channel": "Lucky Samar",
+                "published_at": "2026-08-21T04:30:32Z",
+                "duration": "PT14S",
+                "tags": [
+                  "reelsvideo",
+                  "ytshorts",
+                  "trending",
+                  "new",
+                  "shorts",
+                  "sadsong"
+                ],
+                "hashtags": [
+                  "#new",
+                  "#reelsvi",
+                  "#sadsong",
+                  "#shorts",
+                  "#trending",
+                  "#ytshorts"
+                ],
+                "view_count": 536252,
+                "like_count": 3149,
+                "comment_count": 7
+              },
+              {
+                "video_id": "FffhEoUxgxM",
+                "url": "https://youtube.com/watch?v=FffhEoUxgxM",
+                "title": "Mahadev & Sons NEW PROMO 22nd August 2026  Rajji and Narmada hugged each other",
+                "description": "Please Subscribe to \" TellyBoosters\" Kyun Ki Serial Ke Sabhi Latest Updates Aapko Sirf Yahi Milenge Faster ! 🚀🚀\n\n𝐒𝐮𝐛𝐬𝐜𝐫𝐢𝐛𝐞 ▶ 𝐓𝐞𝐥𝐥𝐲𝐛𝐨𝐨𝐬𝐭𝐞𝐫𝐬  https://www.youtube.com/@Tellyboosters\nSocial Media Links ↴\n➦  https://www.instagram.com/tellyboosters\n➦  https://www.facebook.com/TellyBoosters\n➦  https://x.com/tellyboosters\n➦  https://tellyboosters.com/\n➦ Follow Tellyboosters With #tellyboosters #TellyboostersExclusive",
+                "channel": "Tellyboosters",
+                "published_at": "2026-08-21T01:13:09Z",
+                "duration": "PT2M17S",
+                "tags": [
+                  "#tellyboosters",
+                  "hindi tv serial updates"
+                ],
+                "hashtags": [
+                  "#TellyboostersExclusive",
+                  "#tellyboosters"
+                ],
+                "view_count": 498286,
+                "like_count": 7960,
+                "comment_count": 21
+              },
+              {
+                "video_id": "SlE_WOm5qIM",
+                "url": "https://youtube.com/watch?v=SlE_WOm5qIM",
+                "title": "Yeh Rishta Kya Kehlata Hai Today Episode NEW PROMO | Samridhi Shukla |RohitPurohit| 21st August 2026",
+                "description": "Yeh Rishta Kya Kehlata Hai Today Episode NEW PROMO | Samridhi Shukla |RohitPurohit| 21st August 2026\n\nSUBSCRIBE NOW:- https://www.youtube.com/@TVPromosIndia\n\n⦿ SOCIAL MEDIA ⦿\n➤ https://www.facebook.com/TvPromosIndia\n➤ https://www.instagram.com/tvpromosindia\n➤ https://twitter.com/TvPromosIndia\n➤ https://www.linkedin.com/in/tvpromosindia\n\n⦿ WEBSITE ⦿\n➤ https://www.TvPromosIndia.com\n\n➤ Subscribe Us To Never Miss a Video: https://www.youtube.com/channel/UCfPHIZpLxI2x1RbsjUvDxcA?sub_confirmation=1\n\n⦿ HASHTAG ⦿\n➤ #TVPromosIndia #YehRishtaKyaKehlataHai #SamridhiiShukla #RohitPurohit #Armaan #Ruhi #Abhira #ShivangiJoshi #MohsinKhan #Tvshow #hindishow #hindiserial #BTS #BehindTheScemes #starplus \n\nThanks For Watching",
+                "channel": "TV Promos India",
+                "published_at": "2026-08-21T01:12:06Z",
+                "duration": "PT1M59S",
+                "tags": [
+                  "TV Promos India",
+                  "Yeh Rishta Kya Kehlata Hai",
+                  "Yeh Rishta Kya Kehlata Hai Promo",
+                  "Yeh Rishta kya kehlata hai on location",
+                  "Ruhi",
+                  "Abhira",
+                  "Armaan",
+                  "yeh rishta kya kehlata hai",
+                  "yeh rishta kya kehlata hai today episode",
+                  "yeh rishta kya kehlata hai new promo",
+                  "yeh rishta kya kehlata hai full episode today",
+                  "ye rishta kya kehlata hai today promo",
+                  "yeh rishta kya kehlata hai serial",
+                  "yeh rishta kya kehlata hai cast",
+                  "cast of yeh rishta kya kehlata hai"
+                ],
+                "hashtags": [
+                  "#Abhira",
+                  "#Armaan",
+                  "#BTS",
+                  "#BehindTheScemes",
+                  "#MohsinKhan",
+                  "#RohitPurohit",
+                  "#Ruhi",
+                  "#SamridhiiShukla",
+                  "#ShivangiJoshi",
+                  "#TVPromosIndia",
+                  "#Tvshow",
+                  "#YehRishtaKyaKehlataHai",
+                  "#hindiserial",
+                  "#hindishow",
+                  "#starplus"
+                ],
+                "view_count": 424333,
+                "like_count": 4091,
+                "comment_count": 10
+              },
+              {
+                "video_id": "f14WZ9E4t7Q",
+                "url": "https://youtube.com/watch?v=f14WZ9E4t7Q",
+                "title": "Dr. Aarambhi NEW PROMO | 22nd August | Dimple Ko Avantika Ke Khilaf Bhadkayegi Nandita",
+                "description": "Dr. Aarambhi NEW PROMO | 22nd August | Dimple Ko Avantika Ke Khilaf Bhadkayegi Nandita",
+                "channel": "Bollywood pe Charcha",
+                "published_at": "2026-08-21T04:36:39Z",
+                "duration": "PT1M53S",
+                "tags": [
+                  "bollywood news",
+                  "bollywood news in hindi",
+                  "hindi bollywood news",
+                  "bollywood pe charcha",
+                  "bollywood latest news",
+                  "bollywood videos",
+                  "bollywood news video",
+                  "bollywood pe charcha latest video"
+                ],
+                "hashtags": [],
+                "view_count": 422702,
+                "like_count": 5512,
+                "comment_count": 3
+              },
+              {
+                "video_id": "t0WRdZFFHTU",
+                "url": "https://youtube.com/watch?v=t0WRdZFFHTU",
+                "title": "Mahadev And Sons Today Episode NEW PROMO 21st August 2026 I Mahadev And Sons NEW Episode Promo",
+                "description": "Watch The Video To Know More.\n\nVideo Credit  - Colors & JioHotstar\nTo Watch More Videos SUBSCRIBE Telly Chaat Here \n►https://www.youtube.com/c/TellyChaat",
+                "channel": "Telly Chaat",
+                "published_at": "2026-08-21T00:55:21Z",
+                "duration": "PT2M56S",
+                "tags": [],
+                "hashtags": [],
+                "view_count": 367413,
+                "like_count": 5489,
+                "comment_count": 2
+              },
+              {
+                "video_id": "5pUOz3UkZ4k",
+                "url": "https://youtube.com/watch?v=5pUOz3UkZ4k",
+                "title": "Dr. Aarambhi Today Episode NEW PROMO | 22nd Aug 2026 | Episode Update",
+                "description": "Dr. Aarambhi Today Episode NEW PROMO | 22nd Aug 2026 | Episode Update\n\n📢 𝗙𝗢𝗥 𝗕𝗨𝗦𝗜𝗡𝗘𝗦𝗦 𝗘𝗡𝗤𝗨𝗜𝗥𝗜𝗘𝗦 & 𝗦𝗣𝗢𝗡𝗦𝗢𝗥𝗦𝗛𝗜𝗣\n✉️ Email: sponsorship@sanskrati.in\n\n📞 Contact / WhatsApp: 8679144418\n\n🎙️ 🔥 𝗝𝗢𝗜𝗡 𝗧𝗛𝗘 𝗧𝗘𝗟𝗟𝗬 𝗧𝗔𝗦𝗛𝗔𝗡 𝗙𝗔𝗠𝗜𝗟𝗬 🔥\n\nAre you passionate about TV Shows & Entertainment?\nWe are growing fast and looking for creative & talented people to join our team!\n\n✨ 𝗪𝗘'𝗥𝗘 𝗛𝗜𝗥𝗜𝗡𝗚:\n👤 Anchors\n✍️ Content Creators\n🎬 Video Editors\n\n💬 Send your intro / portfolio / demo reel on WhatsApp: 8679144418\n👉 Let’s create something amazing together 🚀\n\n📺 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗧𝗘𝗟𝗟𝗬 𝗧𝗔𝗦𝗛𝗔𝗡\n\nYour #1 destination for:\n🔥 TV Show Updates\n📺 Serial News & Gossip\n🎥 Episode Reviews\n🌟 TV Celebrities Updates\n📈 Trending TV Stories\n\nWe bring you fast, real & engaging updates from the world of television!\n\n🔔 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗡𝗢𝗪 & press the bell icon to stay updated!\n\n\nTV Serial News, Hindi TV Shows, Celebrity Gossip, TV Updates, Episode Review, Telly Tashan\n\n#TellyTashan #TVSerial #HindiTV #TVUpdates #CelebrityGossip #Trending",
+                "channel": "Telly Tashan",
+                "published_at": "2026-08-21T01:06:59Z",
+                "duration": "PT1M",
+                "tags": [
+                  "telly tashan",
+                  "telly updates",
+                  "telly gossips",
+                  "telly news in hindi",
+                  "telly tashan news"
+                ],
+                "hashtags": [
+                  "#1",
+                  "#CelebrityGossip",
+                  "#HindiTV",
+                  "#TVSerial",
+                  "#TVUpdates",
+                  "#TellyTashan",
+                  "#Trending"
+                ],
+                "view_count": 335781,
+                "like_count": 4001,
+                "comment_count": 2
+              },
+              {
+                "video_id": "1Qt_JWhRn4c",
+                "url": "https://youtube.com/watch?v=1Qt_JWhRn4c",
+                "title": "Missing New York Grandmother Alisa Goods Found Dead Near Las Vegas Airport",
+                "description": "The search for missing New York grandmother Alisa Goods ended with her body found near Harry Reid International Airport in Las Vegas.",
+                "channel": "KTNV Channel 13 Las Vegas",
+                "published_at": "2026-08-21T16:10:08Z",
+                "duration": "PT2M14S",
+                "tags": [
+                  "channel 13 news",
+                  "las vegas",
+                  "las vegas headlines",
+                  "las vegas news",
+                  "las vegas top stories",
+                  "news",
+                  "news in las vegas",
+                  "what's happening las vegas"
+                ],
+                "hashtags": [],
+                "view_count": 61249,
+                "like_count": 1763,
+                "comment_count": 110
+              },
+              {
+                "video_id": "xXjrj0ZRup4",
+                "url": "https://youtube.com/watch?v=xXjrj0ZRup4",
+                "title": "Watch: Rare Tornado Touches Down On New York's Long Island",
+                "description": "🌪️LONG ISLAND TWISTER: Watch this rare tornado touch down on Atlantic Beach, New York, on Long Island Thursday evening. Only 41 tornadoes have hit Long Island since 1950.  Watch FOX Weather for LIVE severe weather coverage:\n#tornado  #longisland  #newyorkcity  #rockawaybeach  #thunderstorm  #longbeach  #atlanticbeach  \n\nWatch more FOX Weather videos: https://www.foxweather.com/video\nWe’ve got you covered! Whether you’re planning your morning commute or keeping a close eye on a severe storm, no one keeps you prepared like FOX Weather - the perfect resource to keep you safe and secure from whatever Mother Nature throws your way. FOX Weather, Weathering It Together!\nHere's how you can stay safe with the FOX Weather app:\n· Get alerts for dangerous weather in your area\n· Stream our 24/7 live coverage with our hurricane experts\n· Track storms in your area with the 3D mobile radar\nDownload for free on iOS and Android devices!",
+                "channel": "FOX Weather",
+                "published_at": "2026-08-21T13:03:10Z",
+                "duration": "PT1M27S",
+                "tags": [
+                  "fox weather",
+                  "weather",
+                  "fox weather app",
+                  "weather app",
+                  "weather news"
+                ],
+                "hashtags": [
+                  "#atlanticbeach",
+                  "#longbeach",
+                  "#longisland",
+                  "#newyorkcity",
+                  "#rockawaybeach",
+                  "#thunderstorm",
+                  "#tornado"
+                ],
+                "view_count": 16760,
+                "like_count": 323,
+                "comment_count": 6
+              },
+              {
+                "video_id": "lUy70L39PK4",
+                "url": "https://youtube.com/watch?v=lUy70L39PK4",
+                "title": "Tormenta causa inundaciones en varios vecindarios de Nueva York",
+                "description": "Los aguaceros también les complicaron la movilidad a conductores que se desplazaban por calles y autopistas de la ciudad. Yilber Vega con lo último.",
+                "channel": "Telemundo 47",
+                "published_at": "2026-08-21T03:24:41Z",
+                "duration": "PT2M33S",
+                "tags": [],
+                "hashtags": [],
+                "view_count": 4552,
+                "like_count": 46,
+                "comment_count": 0
+              },
+              {
+                "video_id": "2l3x6XUxacE",
+                "url": "https://youtube.com/watch?v=2l3x6XUxacE",
+                "title": "Tornado atinge Nova York e tempestade causa grandes alagamentos",
+                "description": "🌪️🌧️ Tornado e chuva extrema provocam caos na região de Nova York\n\nUma tempestade severa atingiu Nova York e Long Island, provocando inundações, interrupções no metrô, centenas de cancelamentos de voos e um tornado confirmado em Atlantic Beach, no condado de Nassau.\n\nSegundo o National Weather Service (NWS), o fenômeno começou como uma tromba-d’água sobre o oceano e avançou para terra na noite de quinta-feira (20), transformando-se em tornado ao atingir Atlantic Beach.\n\n🌪️ O impacto foi especialmente forte no Sun and Surf Beach Club. Cerca de 50 cabanas foram danificadas ou destruídas, com móveis e destroços espalhados pela área. Mais de 100 pessoas estavam no clube, mas apenas uma pessoa sofreu ferimentos leves.\n\n🌊 A mesma tempestade provocou alagamentos severos em Nova York, com água invadindo estações e interrompendo temporariamente as linhas A, C, E e F do metrô. Trechos da Long Island Expressway também precisaram ser fechados.\n\n✈️ Os aeroportos LaGuardia, JFK e Newark registraram grandes atrasos e centenas de cancelamentos. Dados do FlightAware apontam 219 voos cancelados em LaGuardia durante o dia da tempestade.\n\nDiante dos danos e das enchentes, o condado de Nassau declarou estado de emergência, enquanto equipes realizaram resgates de pessoas presas em veículos pelas águas.\n\nO NWS continua analisando a trajetória e a intensidade do tornado. Foi o primeiro tornado confirmado no condado de Nassau desde 2021.\n\nCuradoria Xplora: informações verificadas com NWS, Associated Press (AP), CBS New York, FlightAware e UOL Notícias.\n\n#NovaYork #Tornado #Tempestade #Inundação #EstadosUnidos",
+                "channel": "Xplora Reserva",
+                "published_at": "2026-08-21T19:18:04Z",
+                "duration": "PT17S",
+                "tags": [],
+                "hashtags": [
+                  "#EstadosUnidos",
+                  "#Inunda",
+                  "#NovaYork",
+                  "#Tempestade",
+                  "#Tornado"
+                ],
+                "view_count": 2328,
+                "like_count": 60,
+                "comment_count": 0
+              },
+              {
+                "video_id": "1OwrVrR12kQ",
+                "url": "https://youtube.com/watch?v=1OwrVrR12kQ",
+                "title": "Severe weather | Storm rolls through York County neighborhood and wreaks havoc",
+                "description": "A severe storm caused significant damage in parts of York County, ripping the roof and siding from a townhome and overturning a work trailer in Lower Windsor Township. #YorkCounty #SevereWeather #StormDamage #LowerWindsorTownship",
+                "channel": "wgaltv",
+                "published_at": "2026-08-21T02:45:35Z",
+                "duration": "PT37S",
+                "tags": [],
+                "hashtags": [
+                  "#LowerWindsorTownship",
+                  "#SevereWeather",
+                  "#StormDamage",
+                  "#YorkCounty"
+                ],
+                "view_count": 1691,
+                "like_count": 31,
+                "comment_count": 3
+              },
+              {
+                "video_id": "7dHQdcOhINM",
+                "url": "https://youtube.com/watch?v=7dHQdcOhINM",
+                "title": "🔥Best Bets for the York Ebor Festival Day 4 | Paul Kealy and Tom Segal",
+                "description": "The team give their best bets for the 4th day of the York Ebor Festival! \n\n#YorkEbor #York #horseracing #horseracingfestival #bestbets #Festival  \n\n-------\n\nWatch the full show here: https://youtube.com/live/nSmqOBSNwuE?feature=share\n\n—---------------\n\n🐎 For all the latest tips for the York Ebor Festival head here: https://www.racingpost.com/horse-racing-tips/\n\n🐴 National Racehorse week begins on Saturday 22nd of August, for more details click the link: https://nationalracehorseweek.uk/events/?only_show_events_with_availability=true&free_entry=false&search_distance=\n\n⭕ Our blog is LIVE, for today’s blog click here: https://shorturl.at/aUnpB\n\nGAMBLE RESPONSIBLY",
+                "channel": "Racing Post",
+                "published_at": "2026-08-21T19:00:38Z",
+                "duration": "PT44S",
+                "tags": [
+                  "Racing Post",
+                  "racingpost",
+                  "racing",
+                  "sport",
+                  "horse racing",
+                  "horse racing videos",
+                  "horse racing tips",
+                  "horse racing betting",
+                  "horse racing (sport)"
+                ],
+                "hashtags": [
+                  "#Festival",
+                  "#York",
+                  "#YorkEbor",
+                  "#bestbets",
+                  "#horseracing",
+                  "#horseracingfestival"
+                ],
+                "view_count": 1618,
+                "like_count": 27,
+                "comment_count": 1
+              },
+              {
+                "video_id": "fPCHZKLwsJk",
+                "url": "https://youtube.com/watch?v=fPCHZKLwsJk",
+                "title": "should i eat it",
+                "description": "Thank you SO MUCH for watching and being a part of this community. My name is Madi and my channel Madi Goes is a storytelling channel built on two philosophies: Get Out. Go Within. AND Trade Certaintly for Curiosity. \n\nPillar 1 — Transformation Through Challenge (personal stories) | \"Get Out to Go Within.\" Internal transformation through endurance & discomfort. Escape Comfort Zone → Self-Growth.\n\nPillar 2 — Discovery Through Curiosity (stories around the world) | \"Trade Certainly for Curiosity\". External discovery through exploration & curiosity. Curiosity + Wonder → Interesting Story.\n\nThe Core Niche for Madi Goes Is: Transformational / Challenge / Self-Discovery (adventure + challenge + outside comfort zone + emotional growth + self-reflection). \n\nIf you love to watch Yes Theory and Kara & Nate’s travel challenge journeys, and enjoy meaningful discomfort stories — people pushing limits to grow, then you'll love Madi Goes!\n\nJoin as a MEMBER to get access to special perks:\nhttps://www.youtube.com/channel/UCEpr8uwfCEg0VggICknMBZQ/join\n\nHead to my Website: https://madigoes.com/\nSubscribe to my SATURDAY'S STORY Email Newsletter at: https://madigoes.com/\nFollow me on Insta: @madi.goes\nFollow me on TikTok: @madi..goes\nFollow our music on Insa: @smithsters.co\n\nGet Out. Go Within.",
+                "channel": "Madi Goes",
+                "published_at": "2026-08-21T14:00:19Z",
+                "duration": "PT10S",
+                "tags": [
+                  "Bagel",
+                  "Bagels",
+                  "NYC",
+                  "New York City"
+                ],
+                "hashtags": [],
+                "view_count": 1398,
+                "like_count": 15,
+                "comment_count": 0
+              },
+              {
+                "video_id": "Pp_mFNtwi_U",
+                "url": "https://youtube.com/watch?v=Pp_mFNtwi_U",
+                "title": "Storm damage | Eastern York High School suffers roof and HVAC damage",
+                "description": "A storm caused extensive damage to Eastern York High School. Emergency crews said they expected to remain at the school for several hours to assess the damage. The district’s superintendent was at the scene receiving updates. #YorkCountyNews #SevereWeather #EasternYorkHighSchool #StormDamage",
+                "channel": "wgaltv",
+                "published_at": "2026-08-21T01:10:29Z",
+                "duration": "PT57S",
+                "tags": [],
+                "hashtags": [
+                  "#EasternYorkHighSchool",
+                  "#SevereWeather",
+                  "#StormDamage",
+                  "#YorkCountyNews"
+                ],
+                "view_count": 1390,
+                "like_count": 46,
+                "comment_count": 4
+              },
+              {
+                "video_id": "9YJWTNxTH-M",
+                "url": "https://youtube.com/watch?v=9YJWTNxTH-M",
+                "title": "Storm damages Eastern York High School roof and nearby property",
+                "description": "A storm caused extensive damage to Eastern York High School, tearing sections of the roof from classrooms and damaging HVAC equipment, according to emergency responders. #SevereWeather #StormDamage #YorkCounty #EasternYorkHighSchool",
+                "channel": "wgaltv",
+                "published_at": "2026-08-20T23:55:16Z",
+                "duration": "PT40S",
+                "tags": [],
+                "hashtags": [
+                  "#EasternYorkHighSchool",
+                  "#SevereWeather",
+                  "#StormDamage",
+                  "#YorkCounty"
+                ],
+                "view_count": 1291,
+                "like_count": 36,
+                "comment_count": 0
+              },
+              {
+                "video_id": "KZiyxLFIx8U",
+                "url": "https://youtube.com/watch?v=KZiyxLFIx8U",
+                "title": "NEW YORK BAGEL🥯 #shorts #viral #food",
+                "description": "A New York–style bagel is a dense, chewy bread roll that is first boiled in malted water and then baked on burlap-covered wooden boards.\n\nKey Characteristics\nThe Process: Authentic New York bagels are always boiled in water mixed with barley malt before baking, which creates their distinct shiny, leathery crust and soft interior.\nThe Bake: They are traditionally baked on wet cedar or pine boards covered in burlap (often dusted with cornmeal) and flipped halfway through cooking.\nThe Size: Traditional New York bagels are smaller (around 3 to 4 ounces) rather than the oversized, puffy \"rolls with holes\" found in many modern commercial bakeries.\n\nPopular Flavors & Toppings\nseed, onion, garlic, pumpernickel, and cinnamon-raisin.\n\nClassic Toppings & Spreads: \nEaten plain, with butter, or smeared with cream cheese. A classic traditional deli style adds Nova lox (smoked salmon), sliced tomato, raw red onion, capers, and fresh dill.\n\n#foodie #newyork  #viral #ai #bagelsandwich #viralvideo",
+                "channel": "Foods etc at iba pa",
+                "published_at": "2026-08-21T03:33:15Z",
+                "duration": "PT11S",
+                "tags": [
+                  "food",
+                  "ai"
+                ],
+                "hashtags": [
+                  "#ai",
+                  "#bagelsandwich",
+                  "#food",
+                  "#foodie",
+                  "#newyork",
+                  "#shorts",
+                  "#viral",
+                  "#viralvideo"
+                ],
+                "view_count": 948,
+                "like_count": 9,
+                "comment_count": 0
+              },
+              {
+                "video_id": "7BNh30vR6wU",
+                "url": "https://youtube.com/watch?v=7BNh30vR6wU",
+                "title": "Rainbow Bagels!",
+                "description": "The rainbow starts at 3 a.m.! 🌈🥯 Our bakers make every colorful batch of Rainbow Bagels from scratch before they’re kettle-boiled and hearth-baked for that perfect New York bagel texture—chewy on the outside, soft on the inside. Now that’s how you brighten up breakfast! Delivery available - link in bio!\n\n#StewLeonards #RainbowBagels #NewYorkBagels #FreshBaked #BehindTheScenes",
+                "channel": "Stew Leonard's ",
+                "published_at": "2026-08-21T12:23:40Z",
+                "duration": "PT11S",
+                "tags": [],
+                "hashtags": [
+                  "#BehindTheScenes",
+                  "#FreshBaked",
+                  "#NewYorkBagels",
+                  "#RainbowBagels",
+                  "#StewLeonards"
+                ],
+                "view_count": 935,
+                "like_count": 5,
+                "comment_count": 0
+              },
+              {
+                "video_id": "JnQ-PH-X5T0",
+                "url": "https://youtube.com/watch?v=JnQ-PH-X5T0",
+                "title": "The Jonas Brothers just served me their cream cheese collab with Pop Up Bagels! I ❤️ NYC 🥯🔥 #shorts",
+                "description": "I love NYC because the Jonas Brothers just served me their Burning Up cream cheese collab with Pop Up Bagels 🥯🔥\n\n#nyc #jonasbrothers #burninup #popupbagels #creamcheese",
+                "channel": "New York Post Lifestyle",
+                "published_at": "2026-08-21T22:45:24Z",
+                "duration": "PT23S",
+                "tags": [
+                  "jonas brothers",
+                  "jonas brothers collab",
+                  "jonas brothers nyc",
+                  "jonas brothers bagels",
+                  "bagels",
+                  "nyc bagels",
+                  "jonas brothers cream cheese",
+                  "cream cheese",
+                  "bagels cream cheese",
+                  "pop up bagels",
+                  "pop up bagels jonas brothers collab"
+                ],
+                "hashtags": [
+                  "#burninup",
+                  "#creamcheese",
+                  "#jonasbrothers",
+                  "#nyc",
+                  "#popupbagels",
+                  "#shorts"
+                ],
+                "view_count": 569,
+                "like_count": 17,
+                "comment_count": 0
+              },
+              {
+                "video_id": "ZPzNEIExcWM",
+                "url": "https://youtube.com/watch?v=ZPzNEIExcWM",
+                "title": "Indian startup Bagel Brigade selected for NY BagelFest / India Abroad®",
+                "description": "Hyderabad-founded quick-service restaurant startup Bagel Brigade has been selected to compete at the 2026 BagelFest in New York, putting the Indian brand on an international stage alongside established bagel makers from the U.S. and abroad. The company, which has expanded to the U.S. with a store in Texas, was among fewer than 9 percent of applicants chosen for this year's competition.\n#hyderabad #startup #texas #indianbrands #internationalstage \n\n_________________________________________________________\nIndia Abroad®  - For Indians Abroad \n\n📌 All footage is used under Fair Use for commentary and educational purposes.  \n📌 This video is NOT sponsored and is created for informative purposes.\n_________________________________________________________\n\nCatch all the latest news videos here on \"India Abroad® \". India Abroad®  News strives to connect with the viewers and subscribers by bringing India Abroad's comprehensive news coverage in English and many other languages. India Abroad’ coverage is governed by its charter of FREE, FAIR & UNBIASED news reportage. \n\nIndia Abroad®  and New India Abroad®  are part of Indian Star LLC, based in Maryland, USA. We’re not linked to the former India Abroad newspaper (1972–2021).\n\nWe share stories and voices from the Indian diaspora—NRIs, expats, desis, and global Indians. All views in our content are personal opinions; Indian Star LLC isn’t liable for any claims made in videos, podcasts, or ads.\n\nFrom culture and tradition to real-life experiences, we cover what matters to Indians living abroad.\n_________________________________________________________\nOur Social Accounts:\nFollow us on Twitter ► https://x.com/IndiaAbroad_\nFollow us on Instagram ► https://www.instagram.com/indiaabroad_/\nFollow us on Facebook ► https://www.facebook.com/Theindiaabroad/\nFollow us on Whatsapp ►  https://whatsapp.com/channel/0029VaLhY8uAjPXQGDRrdQ45\nHindi YT Channel: https://www.youtube.com/@indiaabroadhindi\nGujarati YT Channel: www.youtube.com/@IndiaAbroadGujarati\nPunjabi YT Channel : https://www.youtube.com/@IndiaAbroadPunjabi\n \nOfficial website ► https://www.newindiaabroad.com/\n_________________________________________________________\nIndia Abroad®  and New India Abroad®  are publications of Indian Star LLC, registered in Maryland, USA. \nIndian Star LLC and its publications assumes no liability for claims / assumptions made in the podcasts and videos or advertorials. Views expressed by the writers and speakers are their own.\n_________________________________________________________\nKeywords\n\nIndian diaspora, Indian expatriates, NRI (Non-Resident Indian), Desi community, Indian culture abroad, Indian traditions overseas, Indian immigrants, Global Indians, Indian heritage worldwide, Diaspora experiences, Cultural exchange, Indian lifestyle abroad, Overseas Indians, Indian expat stories, Community connections, Indian identity, Diversity in diaspora, Diaspora celebrations, Indian festivals abroad, Diaspora perspectives, India Abroad, New India Abroad",
+                "channel": "India Abroad®",
+                "published_at": "2026-08-21T04:13:42Z",
+                "duration": "PT36S",
+                "tags": [
+                  "new india abroad",
+                  "new india",
+                  "indian diaspora news",
+                  "nri news",
+                  "indian community news",
+                  "new india new",
+                  "trending news today",
+                  "todays news bulletin",
+                  "todays news",
+                  "war news"
+                ],
+                "hashtags": [
+                  "#hyderabad",
+                  "#indianbrands",
+                  "#internationalstage",
+                  "#startup",
+                  "#texas"
+                ],
+                "view_count": 142,
+                "like_count": 0,
+                "comment_count": 0
+              },
+              {
+                "video_id": "KbFjrUX4U88",
+                "url": "https://youtube.com/watch?v=KbFjrUX4U88",
+                "title": "034 • Homemade New York Style Bagels",
+                "description": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fadam.gallipeau%2Fposts%2Fpfbid0C6k51yRRRFqsK5Ui2A1vFsG5You6Jq4DNdFRdmtXXe3jbUubB8seGbEDyDHKzc7Zl&show_text=true&width=500\n\n\n\n034 • Homemade New York-Style Bagels\n\n\"Some of the best things we can place in someone's hands are simple things made with care.\"\n\nThis isn't bread with a hole — firm dough, bread flour, strong gluten, shape, slow 8-24 hr cold ferment for flavor, boil 45-60 sec per side in water + barley malt syrup/honey, then bake 425°F 20-25 min till deep golden.\n\n\"Share with the Lord's people who are in need. Practice hospitality.\" Romans 12:13\n\nPractice hospitality: 8 bagels, keep 4, give 4 in paper bag — \"Made this morning. Thought of you.\" Pair with 027 Homemade Peanut Butter.\n\nFloat test: if bagel floats in 10 sec, ready to boil. Poke & stretch hole 1.5-2\" — it shrinks.\n\nServe it with joy, share it with love.\n\n#CreatedToServe #HomemadeBagels #NYStyleBagels #Romans1213 #BoilThenBake #EverythingBagel #BreadFlour #FromScratch #PracticeHospitality #MakeOneGiveOne",
+                "channel": "Adam Gallipeau",
+                "published_at": "2026-08-21T12:28:38Z",
+                "duration": "PT2M26S",
+                "tags": [],
+                "hashtags": [
+                  "#BoilThenBake",
+                  "#BreadFlour",
+                  "#CreatedToServe",
+                  "#EverythingBagel",
+                  "#FromScratch",
+                  "#HomemadeBagels",
+                  "#MakeOneGiveOne",
+                  "#NYStyleBagels",
+                  "#PracticeHospitality",
+                  "#Romans1213"
+                ],
+                "view_count": 10,
+                "like_count": 0,
+                "comment_count": 0
+              }
+            ]
+          },
+          "trending": {
+            "status": "ok",
+            "error": null,
+            "videos": [
+              {
+                "video_id": "ozsKU77OWpE",
+                "title": "Tom Cruise vs Evel Knievel. Epic Rap Battles Of History",
+                "channel": "ERB",
+                "published_at": "2026-08-21T17:00:16Z",
+                "view_count": 239581,
+                "like_count": 35093,
+                "comment_count": 718
+              },
+              {
+                "video_id": "TsFvYJ8fQh4",
+                "title": "Let’s Finally Talk About the Avengers Doomsday (Reported) Opening Scene",
+                "channel": "New Rockstars",
+                "published_at": "2026-08-20T23:20:05Z",
+                "view_count": 499992,
+                "like_count": 15470,
+                "comment_count": 363
+              },
+              {
+                "video_id": "aA4pyww2cyc",
+                "title": "NOT ENDING UNTIL WE BEAT EVERY GAME ft. Kai Cenat",
+                "channel": "IShowSpeed",
+                "published_at": "2026-08-21T07:00:05Z",
+                "view_count": 6817615,
+                "like_count": 120741,
+                "comment_count": 413
+              },
+              {
+                "video_id": "MT-4Bk1Lw8g",
+                "title": "ENHYPEN (엔하이픈) 'Bloody Paradise' Official MV",
+                "channel": "HYBE LABELS",
+                "published_at": "2026-08-21T14:58:07Z",
+                "view_count": 2022834,
+                "like_count": 356896,
+                "comment_count": 5782
+              },
+              {
+                "video_id": "SyeHKMfswHk",
+                "title": "Cyberpunk: Edgerunners 2 | Official Teaser #3 | Netflix",
+                "channel": "Netflix",
+                "published_at": "2026-08-20T23:15:00Z",
+                "view_count": 616386,
+                "like_count": 37662,
+                "comment_count": 565
+              },
+              {
+                "video_id": "G_SCHL5QGi4",
+                "title": "That Ain't Me M'Lord",
+                "channel": "SMii7Y",
+                "published_at": "2026-08-21T19:13:26Z",
+                "view_count": 368419,
+                "like_count": 32644,
+                "comment_count": 158
+              },
+              {
+                "video_id": "S58gKtKfrKM",
+                "title": "Bien Pata - Cartel de Santa  | @elcarteldesantatv",
+                "channel": "elcarteldesantatv",
+                "published_at": "2026-08-21T06:15:06Z",
+                "view_count": 850555,
+                "like_count": 44187,
+                "comment_count": 3165
+              },
+              {
+                "video_id": "IBTK8PGe_Oo",
+                "title": "Cyberpunk: Edgerunners 2 | Premiere Date Teaser Trailer",
+                "channel": "Cyberpunk 2077",
+                "published_at": "2026-08-20T23:16:19Z",
+                "view_count": 443871,
+                "like_count": 49283,
+                "comment_count": 1095
+              }
+            ]
+          }
+        },
+        "signal_tendance": {
+          "signal": "tendance",
+          "global_trending_rss": {
+            "status": "fetch_failed",
+            "error": "network__ssl.c:983: The handshake operation timed out",
+            "trending": []
+          },
+          "keyword_curves": {
+            "status": "pytrends_absent",
+            "note": "pytrends non installé — ajouter à requirements_capteurs.txt",
+            "keywords": {
+              "New York Bagel": {
+                "is_trending": null,
+                "growth_multiplier": null,
+                "note": "pytrends absent"
+              },
+              "New": {
+                "is_trending": null,
+                "growth_multiplier": null,
+                "note": "pytrends absent"
+              },
+              "York": {
+                "is_trending": null,
+                "growth_multiplier": null,
+                "note": "pytrends absent"
+              }
+            }
+          }
+        },
+        "signal_demande": {
+          "signal": "demande",
+          "status": "ok",
+          "note": "suggestions Google ds=yt",
+          "keywords": [
+            {
+              "query": "New York Bagel",
+              "suggestions": [
+                "new york bagels",
+                "new york bagel recipe",
+                "new york bagel shop",
+                "new york bagel cream cheese",
+                "new york bagel advert",
+                "new york bagel guy",
+                "new york bagel sandwich",
+                "new york bagels at home",
+                "new york bagel review",
+                "new york bagel company"
+              ],
+              "tension_hits": 0,
+              "total_hits": 10,
+              "demand_score": 100
+            },
+            {
+              "query": "New",
+              "suggestions": [],
+              "tension_hits": 0,
+              "total_hits": 0,
+              "demand_score": 0
+            },
+            {
+              "query": "York",
+              "suggestions": [
+                "yorkie",
+                "yorktown",
+                "yorkshire pudding",
+                "yorktown hamilton",
+                "york pa",
+                "yorkie puppies",
+                "yorkshire accent",
+                "yorkie barking",
+                "yorkshire terrier",
+                "yorkshire pudding recipe"
+              ],
+              "tension_hits": 0,
+              "total_hits": 10,
+              "demand_score": 100
+            }
+          ]
+        }
+      },
+      "evidence_urls": [
+        "https://youtube.com/watch?v=qMNlOWU2SyU",
+        "https://youtube.com/watch?v=tke4quZ1T24",
+        "https://youtube.com/watch?v=ny0ewzX1A3c",
+        "https://youtube.com/watch?v=FffhEoUxgxM",
+        "https://youtube.com/watch?v=SlE_WOm5qIM",
+        "https://youtube.com/watch?v=f14WZ9E4t7Q",
+        "https://youtube.com/watch?v=t0WRdZFFHTU",
+        "https://youtube.com/watch?v=5pUOz3UkZ4k",
+        "https://youtube.com/watch?v=1Qt_JWhRn4c",
+        "https://youtube.com/watch?v=xXjrj0ZRup4",
+        "https://youtube.com/watch?v=lUy70L39PK4",
+        "https://youtube.com/watch?v=2l3x6XUxacE",
+        "https://youtube.com/watch?v=1OwrVrR12kQ",
+        "https://youtube.com/watch?v=7dHQdcOhINM",
+        "https://youtube.com/watch?v=fPCHZKLwsJk"
+      ],
+      "scanned_at": "2026-08-21T23:46:30Z"
+    },
+    "montage_guide_ref": "GUIDE_UTILISATION/04_MODE_MEME.md"
+  }
+}

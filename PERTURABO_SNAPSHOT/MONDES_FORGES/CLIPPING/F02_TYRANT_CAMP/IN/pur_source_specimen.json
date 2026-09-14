@@ -1,0 +1,118 @@
+{
+  "campaign_id": "2026-07-24_AISHAH_SOFEY_MULTI",
+  "scanned_at": "2026-09-07T01:19:54Z",
+  "mode": "pur",
+  "reference_clip": null,
+  "assets": [
+    {
+      "asset_id": "9a50028540",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 737.48,
+      "end_sec": 767.48,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "5739554e54",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 819.23,
+      "end_sec": 849.23,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "f6adeaa996",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 330.67,
+      "end_sec": 360.67,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "713ac052ab",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 711.69,
+      "end_sec": 741.69,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "217891d7cd",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 642.14,
+      "end_sec": 672.14,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "29ce4425d0",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 687.45,
+      "end_sec": 717.45,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "10c4ec8f7f",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 665.42,
+      "end_sec": 695.42,
+      "duration_sec": 30.0,
+      "signal_type": "trigger_word",
+      "signal_intensity": 0.85,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "713dc95e2b",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 879.15,
+      "end_sec": 909.15,
+      "duration_sec": 30.0,
+      "signal_type": "punchline",
+      "signal_intensity": 0.9,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    },
+    {
+      "asset_id": "08c55e11c6",
+      "type": "stream_segment",
+      "url": "https://www.twitch.tv/videos/2864600351",
+      "start_sec": 1140.8,
+      "end_sec": 1170.8,
+      "duration_sec": 30.0,
+      "signal_type": "trigger_word",
+      "signal_intensity": 0.85,
+      "transcript_available": true,
+      "vox_source": "F00B_VOX"
+    }
+  ],
+  "vox_notes": "Mode PUR : F01_SCOUT skip (redondant avec F00B_VOX). Assets = candidats VOX.",
+  "check_in_iw_custos": null
+}

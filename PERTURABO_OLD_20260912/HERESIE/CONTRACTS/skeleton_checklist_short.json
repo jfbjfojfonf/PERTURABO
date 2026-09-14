@@ -1,0 +1,170 @@
+{
+  "format": "SHORT",
+  "description": "Checklist d'extraction du squelette viral d'un YouTube Short — basée sur l'ARCHIVUM (MoneyBoyMaxx, Tim Danilov, vidIQ) + recherche web",
+  "max_duration": 60,
+  "ideal_duration": "15-30s (MoneyBoyMaxx)",
+  "sources": ["MoneyBoyMaxx — Beginners Guide 10h+", "MoneyBoyMaxx — $41K Strategy", "Tim Danilov — Niche Bending", "Tim Danilov — Rom Case Study", "Tim Danilov — 3 Channels to 1M", "vidIQ — $250K Shorts Strategy", "Recherche web 2025-2026"],
+
+  "skeleton_formula": {
+    "source": "MoneyBoyMaxx",
+    "formula": "Hook → Explain Payoff → Foreshadow Payoff → Reveal Payoff",
+    "quote": "A video needs two fundamentals: a payoff and a hook. Hooks are for the swipe rate and payoffs are for retention.",
+    "critical_rule": "Structure your entire script around the payoff. The payoff is the anchor, not the hook."
+  },
+
+  "skeleton_elements": [
+    {
+      "element": "Visual_Hook_Frame",
+      "timeframe": "0-0.5s",
+      "description": "La première frame qui stoppe le scroll. Doit être visible SANS SON.",
+      "archivum_quote": "Someone should see your video even if they can't hear anything. The hook can refer to visually the hook.",
+      "extract": ["type_visuel", "contraste", "mouvement", "emotion_cible", "lisibilite_mobile"],
+      "validation": "Si on coupe le son, est-ce que ça stoppe quand même le scroll ?"
+    },
+    {
+      "element": "Verbal_Text_Hook",
+      "timeframe": "0-3s",
+      "description": "Une phrase qui crée un vide cognitif ET set up le payoff. Pas juste viral — doit préparer le payoff.",
+      "archivum_quote": "A mid hook that perfectly sets your viewer up for the payoff is better than a great hook that doesn't lay out what the payoff is.",
+      "archivum_quote_2": "You can have the most banger video with the craziest payoff, but if the hook isn't there, nobody will watch it to the end.",
+      "extract": ["type_hook", "phrase_exacte", "vide_cognitif", "valeur_perçue", "setup_du_payoff"],
+      "validation": "Le hook set-up-t-il le payoff ? Un hook viral sans payoff = inutile."
+    },
+    {
+      "element": "Context_Rapide",
+      "timeframe": "3-10s",
+      "description": "Fournir le contexte rapidement après le hook pour intriguer le viewer.",
+      "archivum_quote": "Provide context quickly after so the viewer is intrigued.",
+      "extract": ["contexte_fourni", "rapidité", "intrigue_créée"],
+      "validation": "Pas de temps mort entre hook et contexte."
+    },
+    {
+      "element": "Foreshadow_Payoff",
+      "timeframe": "intégré au hook ou juste après",
+      "description": "Le payoff doit être foreshadowé dès le début — soit dans le hook, soit très rapidement après.",
+      "archivum_quote": "The payoff should be foreshadowed in the beginning either in the hook or very quickly after the video started.",
+      "extract": ["foreshadow_présent", "position", "force_du_foreshadow"],
+      "validation": "Le viewer sait-il dès le début ce qu'il va gagner à regarder jusqu'au bout ?"
+    },
+    {
+      "element": "Content_Format",
+      "timeframe": "global",
+      "description": "Type de format de contenu.",
+      "formats": ["visual_only", "text_on_screen", "voiceover", "green_screen", "duet_reply", "image_carousel"],
+      "archivum_note": "Commentary = format le plus accessible pour débutants (MBM). Ranking = deuxième meilleur. AI voiceovers autorisés (11 Labs).",
+      "extract": ["format_type", "reproductible_en_série", "transformative"]
+    },
+    {
+      "element": "Escalade_Rythme",
+      "timeframe": "10-50s",
+      "description": "Chaque seconde = info nouvelle. Pas de sag (baisse de tension). Le script entier est structuré autour du payoff.",
+      "archivum_quote": "If the retention sucks, the script or storytelling is bad and it needs to be fixed.",
+      "archivum_quote_2": "The whole middle of the script kills retention (exemple d'un mauvais Short).",
+      "extract": ["rythme", "info_par_seconde", "moments_sag", "pattern_escalade", "tension_maintenue"],
+      "validation": "Si la rétention baisse = le script/storytelling est mauvais. Corriger le milieu."
+    },
+    {
+      "element": "Payoff",
+      "timeframe": "3-5s avant la fin",
+      "description": "Le fait dingue final. Le point d'ancrage du script. Tout est construit autour de ça.",
+      "archivum_quote": "Structure your entire script around the payoff. The payoff is everything for retention.",
+      "archivum_quote_2": "You need to have a good payoff. The only way to even define a good hook is by how well it sets up the payoff.",
+      "extract": ["phrase_exacte", "satisfaction_cible", "reponse_au_hook", "force_du_payoff"],
+      "validation": "Le payoff répond-il au hook ? Est-il satisfaisant ? Si non, tout le Short échoue."
+    },
+    {
+      "element": "Loop_Hook",
+      "timeframe": "dernière seconde",
+      "description": "La fin reconnecte au début pour forcer le re-regard. Les replays comptent comme des views depuis mars 2025.",
+      "archivum_quote": "Make your videos replayable or even loopable. Even a small percent of rewatchers boosts retention significantly.",
+      "archivum_quote_2": "Your brain wants to close that gap, close that loop. The only way to stop that is to keep watching.",
+      "archivum_quote_3": "By the end, make sure you answer the question that leads back to the beginning.",
+      "archivum_quote_4": "Ties nicely into a loop so people don't even realize they're re-watching the video.",
+      "techniques": ["callback_hook", "visual_match_cut", "audio_continuity", "cliffhanger_reversal", "open_question_close"],
+      "best_practice": "Combiner 2+ techniques (ex: verbal callback + visual match cut)",
+      "extract": ["type_loop", "technique_utilisée", "force_re_regard", "combinaison_techniques"],
+      "validation": "Le loop est-il naturel ou forcé ? Le viewer réalise-t-il qu'il re-regarde ?"
+    }
+  ],
+
+  "what_does_not_exist_in_shorts": {
+    "elements": ["Promise_séparée", "Rehooks_60s", "CTA_abonne-toi", "Transitions_verbales"],
+    "reason": "Trop court. Le hook + foreshadow = la promesse. Pas de temps pour rehooks. Le CTA casse le rythme."
+  },
+
+  "metrics_extractible": {
+    "via_yt_dlp": ["view_count", "like_count", "duration", "upload_date", "title", "channel", "subscriber_count"],
+    "note": "yt-dlp view_count pour Shorts = ~50% du chiffre affiché sur la page (engaged views vs reely views)"
+  },
+
+  "metrics_inferrable_par_gemini": {
+    "signals": ["swipe_away_estimation", "completion_estimation", "loop_potentiel"],
+    "echelle": ["faible", "moyen", "élevé"],
+    "method": "Gemini regarde la vidéo entière — voit la first frame, entend l'audio, lit le texte overlay, perçoit le pacing"
+  },
+
+  "metrics_studio_only": {
+    "signals": ["viewed_vs_swiped", "average_view_duration", "completion_rate", "loops", "engaged_views", "subscriber_conversion"],
+    "access": "YouTube Studio uniquement — PAS via yt-dlp ni YouTube Data API v3",
+    "solution": "Phase 1: Warsmith remplit performance.json manuellement. Phase 2: CAPTEURS si possible."
+  },
+
+  "outlier_score": {
+    "formula": "video_views / channel_shorts_baseline",
+    "thresholds": {"notable": "2x", "strong": "3-5x", "breakout": "10x+"},
+    "critical_rule": "NE JAMAIS mixer baseline Long et Shorts",
+    "archivum_quote": "Start experimenting after you have three videos that crossed your channel's median by 3x (Tim Danilov)"
+  },
+
+  "swipe_rate_benchmarks": {
+    "source": "MoneyBoyMaxx",
+    "golden_target": ">80-81%",
+    "scale": {"exceptional": ">85%", "healthy": "75-85%", "hook_problem": "65-75%", "failure": "<65%"},
+    "critical_rule": "As the video is getting pushed, swipe rate must be INCREASING or STABLE. If it drops = audience reject.",
+    "archivum_quote": "If the video is losing swipe rate as it's getting pushed, this shows YouTube that a larger audience does not want to see this."
+  },
+
+  "retention_benchmarks": {
+    "source": "MoneyBoyMaxx + recherche web",
+    "target": ">100% (possible avec loops)",
+    "by_duration": {"under_30s": ">55% AVD", "30-60s": "~45% AVD"},
+    "scale": {"solid": "50-64%", "strong": "65-79%", "exceptional": "80%+"}
+  },
+
+  "monetization": {
+    "source": "MoneyBoyMaxx",
+    "split": "45% creator / 55% YouTube",
+    "key_metric": "Engaged views (pas juste views) — ce qui compte pour le paiement",
+    "rpm_boost": "Higher English audience = higher RPM",
+    "requirements": "Content must meet advertiser guidelines. Must be transformative.",
+    "ai_voiceovers": "Autorisés (11 Labs) — pas de démonétisation",
+    "reused_content_threat": "Doit ajouter narrative, commentary, editing. Pas juste copier-coller."
+  },
+
+  "zero_view_jail": {
+    "source": "MoneyBoyMaxx",
+    "description": "YouTube ne push pas le contenu dans le shorts feed. Les views restent à zéro.",
+    "solution": "Compte neuf ou incognito pour tester le feed. Aged Gmails parfois mieux.",
+    "archivum_quote": "Algorithm is the audience, audience is the algorithm. If the audience likes your video, the algorithm likes your video."
+  },
+
+  "ai_slop_threat": {
+    "source": "vidIQ",
+    "description": "33% du feed Shorts est maintenant de l'AI slop. L'algorithme filtre de plus en plus l'AI low quality.",
+    "archivum_quote": "33% of the feed is now AI slop. Those 3D videos got messed up with the AI slop filter.",
+    "solution": "Qualité > quantité. Éviter l'AI low quality. Être transformative."
+  },
+
+  "experimentation_rule": {
+    "source": "Tim Danilov",
+    "rule": "Change ONE variable at a time. If it's a new hook or a new character or a new setup — change one thing so you can quickly kill the bad ideas.",
+    "trigger": "Start experimenting after 3 videos that crossed your channel's median by 3x."
+  },
+
+  "team_structure": {
+    "source": "Tim Danilov — Rom Case Study",
+    "roles": ["idea_person", "script_person", "animator/editor"],
+    "frequency": "7 vidéos/semaine (Rom case study)",
+    "archivum_quote": "Idea guy finds ideas, script guy writes, animator edits. Founder approves final script and maintains quality."
+  }
+}

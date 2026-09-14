@@ -1,0 +1,22 @@
+# PERTURABO — Requirements CORE
+# Partagés entre tous les Mondes-Forges
+# Chaque frégate peut avoir son propre requirements_fXX.txt pour des dépendances spécifiques
+
+# === AI Gateway (ai_gateway.py) ===
+openai>=1.0.0          # Client compatible OpenRouter / AI Gateway
+httpx>=0.25.0          # HTTP async (utilisé par openai SDK + frégates)
+python-dotenv>=1.0.0   # Chargement .env
+
+# === Scraping (F01 SENTINEL API) ===
+requests>=2.31.0       # HTTP sync pour scrapers simples
+
+# === Utils ===
+pydantic>=2.0.0        # Validation des schemas JSON (frégates)
+
+# === YOUTUBE Monde-Forge (legacy — requis si YOUTUBE actif) ===
+# yt-dlp>=2024.1.0
+# youtube-transcript-api>=0.6.2
+
+# === Dev server (F03 Iron Warriors) ===
+fastapi>=0.110.0
+uvicorn>=0.27.0

@@ -1,0 +1,1 @@
+{"cumulative_packs_executed":0,"eligible_for_weighting":false,"angle_performance":[],"campaign_history":[],"_comment":"Squelette initial. Nourri par F06_TRACKER a chaque fermeture de campaigne. eligible_for_weighting passe a true quand cumulative_packs_executed >= 50."}

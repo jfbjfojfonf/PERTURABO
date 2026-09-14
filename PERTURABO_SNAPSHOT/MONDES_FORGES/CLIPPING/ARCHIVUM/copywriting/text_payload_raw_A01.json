@@ -1,0 +1,48 @@
+{
+  "titles": [
+    {
+      "rank": 1,
+      "text": "She Maxed the Volume and Still Couldn't Hear a Thing",
+      "platform_fit": 9,
+      "market_fit": 9,
+      "hook_type": "contradiction",
+      "rationale": "Contradiction directe livrée par la source ('It's turned all the way up' / 'Make it a little louder' / 'How so?'). Crée un vide cognitif sans mentir : le clip montre exactement cette impasse. Curiosité forte, agression modérée adaptée au feed Shorts."
+    },
+    {
+      "rank": 2,
+      "text": "The Most Awkward 30 Seconds on Twitch Right Now",
+      "platform_fit": 8,
+      "market_fit": 9,
+      "hook_type": "declaration",
+      "rationale": "Hot take d'autorité qui reframe le neutre en dramatique sans inventer de beef. 'Right now' ancre l'urgence pour us_young_english. Le payoff (volume bloqué + changement de sujet brutal vers le tatouage Berserk) est bien dans la vidéo."
+    },
+    {
+      "rank": 3,
+      "text": "Why Did He Randomly Ask About a Berserk Tattoo?",
+      "platform_fit": 8,
+      "market_fit": 8,
+      "hook_type": "mystery",
+      "rationale": "Mystery hook sur la rupture de conversation réelle du clip ('You're gonna get a Berserk tat? Okay, anyways'). Différenciant sur l'axe curiosité vs les deux autres titres, et cible la sous-culture anime/gaming du marché."
+    }
+  ],
+  "paragraph": {
+    "text": "Volume maxed, still silence — and instead of fixing it, the conversation jumps off a cliff. Wait for the Berserk question.",
+    "recommendation": "use",
+    "override_omniswatch": null,
+    "final_operator": null
+  },
+  "caption": "Turned all the way up and still nothing 💀\nThen he just... changed the subject entirely.",
+  "hashtags": [
+    "#twitchclips",
+    "#streamerfails",
+    "#berserktattoo"
+  ],
+  "on_screen_text": "VOLUME: MAX. AUDIO: GONE.",
+  "cta_text": "Wait for the subject change.",
+  "compliance": {
+    "disclosure": "#ad",
+    "ftc_required": true
+  },
+  "campaign_id": "2026-07-24_AISHAH_SOFEY_MULTI",
+  "angle_id": "A01"
+}

@@ -1,0 +1,167 @@
+{
+  "version": "1.0.0",
+  "description": "Courbes d'énergie visuelle par style — comment l'intensité visuelle évolue dans le clip",
+  "last_updated": "2026-09-03",
+
+  "energy_principle": "L'énergie visuelle = somme de tous les éléments actifs à un instant T (zoom, B-roll, text, SFX, cut). Chaque style a sa propre courbe.",
+
+  "energy_curves": {
+
+    "ranking": {
+      "description": "Crescendo — on commence modéré, on termine au maximum",
+      "shape": "📈 crescendo",
+      "arc": {
+        "debut_0_20pct": {
+          "niveau": "4/10",
+          "éléments_actifs": ["countdown_number", "clip_label", "cut"],
+          "zoom": "NON",
+          "b_roll": "NON",
+          "note": "Setup calme — on présente le #5"
+        },
+        "milieu_20_60pct": {
+          "niveau": "6/10",
+          "éléments_actifs": ["countdown_number", "captions", "cut", "zoom_brutal"],
+          "zoom": "1 zoom brutal par clip",
+          "b_roll": "transition entre clips",
+          "note": "Montée — on accélère"
+        },
+        "climax_60_90pct": {
+          "niveau": "8/10",
+          "éléments_actifs": ["countdown_number", "captions", "zoom_brutal", "impact_sfx", "big_number"],
+          "zoom": "zooms plus fréquents (1 tous les 2 clips)",
+          "b_roll": "plus présent",
+          "note": "On approche du #1"
+        },
+        "fin_90_100pct": {
+          "niveau": "10/10",
+          "éléments_actifs": ["TOUT — zoom, sfx, big_number, répétition, montée en intensité"],
+          "zoom": "snap_zoom sur le dernier",
+          "b_roll": "full",
+          "note": "Dernier clip = moment le plus impactant"
+        }
+      }
+    },
+
+    "blur": {
+      "description": "Constante avec des pics d'émotion — l'énergie vient du speech, pas du montage",
+      "shape": "📊 constant + pics",
+      "arc": {
+        "debut_0_20pct": {
+          "niveau": "5/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions"],
+          "zoom": "NON",
+          "b_roll": "NON",
+          "note": "Setup — on présente le sujet"
+        },
+        "milieu_20_80pct": {
+          "niveau": "5-7/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions", "b_roll"],
+          "zoom": "1-2 zooms brutaux aux moments forts",
+          "b_roll": "zone_bas change avec les idées",
+          "note": "L'émotion vient du speaker — le montage amplifie"
+        },
+        "climax_80_95pct": {
+          "niveau": "8/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions", "zoom_brutal", "impact_sfx"],
+          "zoom": "zoom brutal sur la conclusion",
+          "b_roll": "dernier b-roll",
+          "note": "Moment émotionnel clé"
+        },
+        "fin_95_100pct": {
+          "niveau": "5/10",
+          "éléments_actifs": ["podcast_clip", "captions"],
+          "zoom": "NON",
+          "note": "Retour au calme — la parole finit"
+        }
+      }
+    },
+
+    "split_scene": {
+      "description": "Zigzag — l'énergie monte quand zone_bas change, descend quand c'est stable",
+      "shape": "📈📉 zigzag",
+      "arc": {
+        "debut_0_15pct": {
+          "niveau": "4/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions"],
+          "zone_bas": "vide ou premier élément",
+          "zoom": "NON",
+          "note": "Setup des 3 zones"
+        },
+        "changement_zone_1": {
+          "niveau": "7/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions", "zone_bas_active", "whoosh"],
+          "zoom": "zoom brutal au changement",
+          "zone_bas": "B-roll / image IA / stats",
+          "note": "Pic d'énergie — nouveau contenu en bas"
+        },
+        "stabilisation_1": {
+          "niveau": "5/10",
+          "éléments_actifs": ["podcast_clip", "captions", "zone_bas_stable"],
+          "zoom": "NON",
+          "note": "On laisse le contenu reposer"
+        },
+        "changement_zone_2": {
+          "niveau": "7/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions", "nouveau_zone_bas", "whoosh"],
+          "zoom": "zoom brutal au changement",
+          "zone_bas": "nouveau contenu",
+          "note": "Nouveau pic"
+        },
+        "conclusion": {
+          "niveau": "8/10",
+          "éléments_actifs": ["TOUT"],
+          "zoom": "snap_zoom sur la conclusion",
+          "note": "Dernier changement de zone_bas = le plus impactant"
+        }
+      }
+    },
+
+    "reframing": {
+      "description": "Lente montée — sobre au début, révélation à la fin",
+      "shape": "📈 lente montée",
+      "arc": {
+        "debut_0_30pct": {
+          "niveau": "3/10",
+          "éléments_actifs": ["podcast_clip", "title", "captions"],
+          "zoom": "NON",
+          "b_roll": "NON",
+          "note": "Très sobre — on laisse la parole parler"
+        },
+        "milieu_30_70pct": {
+          "niveau": "5/10",
+          "éléments_actifs": ["podcast_clip", "captions", "b_roll_subtil"],
+          "zoom": "1 zoom brutal au moment clé",
+          "b_roll": "léger overlay si besoin",
+          "note": "Montée progressive"
+        },
+        "revelation_70_90pct": {
+          "niveau": "8/10",
+          "éléments_actifs": ["podcast_clip", "captions", "zoom_brutal", "impact_sfx"],
+          "zoom": "snap_zoom sur la révélation",
+          "b_roll": "optionnel",
+          "note": "Moment émotionnel — on amplifie"
+        },
+        "fin_90_100pct": {
+          "niveau": "6/10",
+          "éléments_actifs": ["podcast_clip", "captions"],
+          "zoom": "NON",
+          "note": "Retour au calme — la parole finit naturellement"
+        }
+      }
+    }
+  },
+
+  "energy_rules": {
+    "never_start_at_10": "Ne jamais commencer avec tous les éléments actifs — laisser de la marge pour monter",
+    "never_end_at_10_sauf_ranking": "Le ranking est le seul style qui termine au maximum. Les autres redescendent.",
+    "one_big_moment": "Chaque clip a UN seul moment d'énergie maximale. Pas de deux pics égaux.",
+    "silence_is_energy": "Un moment sans aucun élément visuel = reset d'énergie = contraste pour le prochain pic",
+    "sync_audio_visual": "Le pic visuel DOIT être synchronisé avec le pic audio (chiffre, punchline, émotion)"
+  },
+
+  "source_transcripts": [
+    "guide_shorts_podcast_complet.md (Section 2, Pattern 10 — montée en intensité)",
+    "hooks_psychology.json (interrupt theory, orienting response)",
+    "MLLV9xLqC7o (energy management in podcast clips)"
+  ]
+}

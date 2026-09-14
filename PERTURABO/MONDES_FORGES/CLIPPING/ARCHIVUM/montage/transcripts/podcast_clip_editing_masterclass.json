@@ -1,0 +1,75 @@
+{
+  "title": "Podcast Clip Editing Masterclass - Extract Viral Moments",
+  "source": "YouTube Tutorial",
+  "duration_sec": 900,
+  "transcript": [
+    {
+      "timestamp": "0:00",
+      "text": "Today I'm going to show you exactly how to take a three hour podcast and extract the most viral clip possible. This is the skill that makes editors six figures."
+    },
+    {
+      "timestamp": "0:20",
+      "text": "Step one is listening to the entire podcast. Not skimming, listening. You're looking for moments that make you feel something. Shock, laughter, inspiration, outrage."
+    },
+    {
+      "timestamp": "0:45",
+      "text": "The perfect clip has three elements: a strong hook in the first two seconds, a build that keeps attention, and a payoff that makes people share."
+    },
+    {
+      "timestamp": "1:10",
+      "text": "When you find the moment, mark the timestamp. Then go back ten seconds before it and five seconds after. That's your raw clip."
+    },
+    {
+      "timestamp": "1:30",
+      "text": "The editing technique I use is called the Sandwich Method. Start with the most shocking part, then context, then the full moment with emotional build."
+    },
+    {
+      "timestamp": "2:00",
+      "text": "For the hook, you can either start with the punchline cold, or use a text overlay that teases what's coming. Both work, but cold punchlines convert better."
+    },
+    {
+      "timestamp": "2:30",
+      "text": "Zoom technique for podcast clips: slow zoom during the setup, then a quick zoom on the key moment. The contrast between slow and fast creates drama."
+    },
+    {
+      "timestamp": "3:00",
+      "text": "Cut out every pause longer than half a second. Every um, every stumble. Podcast audio is slow by nature, your job is to make it fast."
+    },
+    {
+      "timestamp": "3:30",
+      "text": "Text on screen should highlight the key phrase. Not everything they say, just the one line that matters. Make it big, centered, impossible to miss."
+    },
+    {
+      "timestamp": "4:00",
+      "text": "Background music should be subtle. A low tension bed during the build, then drop it out for the punchline. Silence after a big moment is powerful."
+    },
+    {
+      "timestamp": "4:30",
+      "text": "The ideal podcast clip is thirty to sixty seconds. Long enough to tell the story, short enough to maintain retention throughout."
+    },
+    {
+      "timestamp": "5:00",
+      "text": "End with a cliffhanger or a loop. Never end with a conclusion. Leave them wanting more so they watch again or check out the full episode."
+    },
+    {
+      "timestamp": "5:30",
+      "text": "Color correction for podcasts: match the lighting of the original, boost contrast slightly, warm up skin tones. Make the speaker look their best."
+    },
+    {
+      "timestamp": "6:00",
+      "text": "Aspect ratio is always nine sixteen for short form. Crop to focus on the speaker's face. If there are two people, alternate between them."
+    }
+  ],
+  "key_techniques": [
+    "Listen to entire podcast for emotional moments",
+    "Sandwich Method: punchline → context → full moment",
+    "Start clip 10 seconds before the moment",
+    "Slow zoom during setup, quick zoom on key moment",
+    "Cut pauses longer than 0.5 seconds",
+    "Text overlay on key phrase only",
+    "Subtle background music, drop for punchline",
+    "Duration: 30-60 seconds",
+    "End with cliffhanger or loop",
+    "Nine sixteen aspect ratio"
+  ]
+}

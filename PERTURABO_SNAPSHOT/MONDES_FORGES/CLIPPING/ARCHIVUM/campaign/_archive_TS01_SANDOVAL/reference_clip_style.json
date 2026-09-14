@@ -1,0 +1,20 @@
+{
+  "_mode": "logo",
+  "_description": "Analyse du top clip viral fourni par le Warsmith (source). PERTURABO apprend les assets et sort N videos. Champs pre-remplis depuis les regles campagne Clipster (directive).",
+  "source": "à fournir par le Warsmith (top clip viral de référence)",
+  "ratio": "9:16",
+  "blur": false,
+  "editing_style": "Auto-snap logo sur template LOGO_PRE_PLACED 1080x1920, cuts rapides, sous-titres on-screen, aucun fond de logo à retirer (GIF transparent).",
+  "rules": [
+    "Ratio projet obligatoire 9:16 (1080x1920) — auto-placement logo garanti",
+    "Logo GIF transparent fourni par la campagne — ne pas déplacer, redimensionner ni recolorer",
+    "Logo visible en permanence, non couvert à plus de 50% (UI plateforme, graphiques, objets)",
+    "Safezone : >25% d'overlap avec la zone rouge = rejet probable",
+    "Durée minimale 7s — engagement minimal 0.8%",
+    "Blur background interdit (image source conservée en 9:16)"
+  ],
+  "ref": [
+    "Campagne RuneScape (4 logos + logo pré-placé)",
+    "Campagne CS / rain (logo GIF auto-snap)"
+  ]
+}

@@ -1,0 +1,1537 @@
+{
+  "video_id": "NLytV4xhAXI",
+  "title": "This YouTube Update Changes the Search Algorithm",
+  "channel": "vidIQ",
+  "channel_id": "UCZLFu8bHbwtnIgWLg5UtINw",
+  "channel_url": "https://www.youtube.com/channel/UCZLFu8bHbwtnIgWLg5UtINw",
+  "subscriber_count": 2390000,
+  "view_count": 12220,
+  "outlier_score": 0.01,
+  "thumbnail": "https://i.ytimg.com/vi/NLytV4xhAXI/maxresdefault.jpg",
+  "upload_date": "20260521",
+  "duration": 699,
+  "transcript": {
+    "text": "So this could be the future of YouTube search. Yeah, it looks pretty different, pretty conversational. It's called Ask YouTube and it's an AI chatbot designed for you to ask YouTube questions directly to give you the best video results. We've got access to it, so here is a complete overview. First of all, let me show you how to get access to this tool if you want to try it out yourself. Go to youtube.com/new and if you have YouTube Premium, you should have the option here to discover a new way to search on YouTube. Just click try it now. That should turn on the feature. And you'll know if this is worked if you go back to the homepage and see this new Ask YouTube button in your search bar. And this is persistent wherever you go on YouTube. So if you share the channel page, that button is always going to be there for you to click. Now regardless of whether or not you want to use this new feature, YouTube is going to try and encourage you to give it a try because whenever you click in the search bar, it's going to suggest these questions you might want to ask YouTube below. If I type in, let's say how to get more views, I have two buttons to click on here, whether it's Ask YouTube or just a simple search. Now, one more interesting thing I want to point out here is that the suggestions, which are the concept of opportunity cost, unique ideas for a home coffee bar, replace windshield wipers, these have no relation to my viewer preferences, my watch history. Conceptually, at the moment, Ask YouTube is not tied into what I do as a YouTube user. I think it needs to be asked a question first. All right, the next thing I want to do is the exact query using both classic YouTube search and Ask YouTube. Now typically, I wouldn't search for YouTube in this way, but I feel as if now I'm asking a question or writing a prompt and that is going to be, I am new to YouTube and I want to start a gaming channel, but I don't have a camera. What should I do? Something a little more specific than just how to start a gaming channel. Oh, and funnily enough, this is where the marketing doesn't match the reality because when Google demoed this at their conference, this is how fast it was. Yeah, not in real-world situations. Okay, so I'm pleased to see that a vidIQ video has come at the top of the results here, and it's maintained the thumbnail, which is interesting. Again, when Google demoed this at their conference, it looked as if it wasn't displaying any thumbnails, just freeze-frames from the video themselves. It does include all of this text. You don't need a camera to build a successful gaming channel. Many top creators focus entirely on high-quality gameplay and engaging commentary. Now, I'm curious to know where they got that information from. So, what I'm going to do is click on the video itself and use one of our handy free vidIQ tools here that you can get from vidIQ.com/start. I click on the IQ button and then go to transcript. Takes me immediately to the transcript area of the video. I'm just going to search for that exact phrase, you don't need a camera, and it doesn't come up anywhere in the transcript. So, I'm just curious to know where it's got that information from specifically for this video. Now, I'm coming to you 12 hours later because I had to break off recording. I put in the exact same search query. And interestingly, the result is slightly different, at least from the text perspective. Now, it's added these bullet points below what was previously there as I'm comparing the two search queries. The video is still there, but it still doesn't have a specific timestamp. So, what I'm starting to think now is that this is a kind of combination of Gemini giving us answers it might do from that chatbot and then combined with some YouTube videos inserted into the answers. And when it doesn't have a definitive answer in a video for a specific moment. It just plays the beginning video from the beginning and it shows a thumbnail there. If I scroll down a little further, we have some more detailed results going into recording and editing. I don't think they're necessarily to do with gaming per se, but again we're seeing the thumbnails here, I believe. And below that, we have step-by-step guides on your first faceless video. But these videos aren't necessarily to do with faceless gaming because this one here I know is a video from myself where we collabed with Decoding YT and it doesn't really have anything to do with gaming, but it does talk about the subject of faceless YouTube videos and channels. And on this occasion, it doesn't have the thumbnail, but it does have a specific moment in that video where we talk about being a faceless channel. Now, in doing this query through ask YouTube, I have discovered that right at the top here, we have an all button which is essentially taking us back to classic YouTube search. And if I do that now, it is going to show us some more standardized general how to start a gaming channel videos. We can see a bit of a difference here switching between the two types of searches. If you do a search just with YouTube's regular, it will try and find the the broadest, I guess, most relevant keyword. Whereas if you ask YouTube, yes, it may give you an outline and maybe one of those videos, but then it's going to try and dig into the details looking at specific skills you may want to have for starting a gaming channel including answering that question about not having a camera and recording gameplay footage and how you might tackle this as a faceless channel. So, I can see the use here of giving more nuanced answers and context to what you might be searching for, but you have to ask that question to facilitate that answer. For this next query, I wanted to take myself out of my comfort zone a little bit and search for something I had no idea or experience about at all. So, I typed in I want to learn how to do underwater basket weaving. And the first result here is quite remarkable in that it is a DIY underwater basket weaving video that has just 300 views and it's from 7 years ago. Now, if I go to the classic YouTube search, we have more of a social proof method of suggesting what the viewer might want to watch, which is can we do a DIY projects underwater and that is underwater basket weaving. But, again if we go back to ask YouTube, here is where I think again this has a bit of an advantage in determining the context, the mood, the voice tone and style of the video. Cuz we scroll down here and it focuses on a humorous look at the fails and triumphs of trying to weave a basket at the bottom of a pool. So, what you might say from that evidence is that classic YouTube search is more brute force. We'll find some of the most popular videos and see if they work. Whereas with Ask YouTube, it's really going into the detail of your specific need and finding the videos that have the most relevant information to serve up to you. Which is what I would be telling you with confidence had I not done this exact search moments later and got different results. As a reminder, the first time I searched for I want to learn how to do underwater basket weaving, we got this page. But, when I did the same search 5 minutes later, it decided to put that really popular videos at the top, which wasn't necessarily about a tutorial, it was more fun storytelling about this unusual crafting hobby. One of the other things Google touted about this Ask YouTube feature is that it's not a one-and-done query. It's the start of a conversation. So, using this page now as my search, I want to learn how to do underwater basket weaving. We have all of this information about the craft, and then some suggestions such as do I want to learn how to scuba dive, maybe to do this or how to make a specific type of basket. You can follow up with your own question. So, I think what I'll ask here is And what we'll probably find here is that again it takes 10 to 15 seconds to give us a result, which is starting to feel like a bit of friction. Not too long to do that, maybe 10 seconds. And now it is giving me some essential supplies for submerged crafting. That's a curious way to describe it, but here are the videos, and we do have uh one video here, which I think is the original one, if you remember. Yes, this is the one that has 3/4 of a million views. It's essentially this one, but now we have a specific question being asked here. It's found a moment in that video to play to us, which might be more relevant. Now that we've done a couple of queries with the Ask YouTube feature, what I'm interested to know next is if I go back to the homepage and clear out the search here, is it going to give me any personalized Ask YouTube queries because I've been looking at gaming content and underwater basket weaving, and no, it's talking about acoustic pianos and the best martial art movies. As it stands, Ask YouTube has no personalization whatsoever depending on your watch history or your search queries. So then, Ask YouTube. It's trying to tackle search on the platform in a fresh way which hasn't really changed in 20 years at this point. It's trying to give you more diversity and nuance with its results, which might mean that for the viewer, they have a better chance of finding exactly the video they were looking for. And with all of this text and different headings and sub questions that it's trying to answer, it feels more akin to Google AI summaries, and I think that's up to you whether that is a good thing or a bad thing. And from a design and usability perspective, this is classic YouTube. This just works. I instantly know how to use it. There is no learning curve. Having said all that, what I have found in my testing so far is that the search results with these same queries lack a little bit of consistency. And there is also that friction point of just how long it takes to give me the results. When you search for something on YouTube right now, you get something in a second or less. But with Ask YouTube, you're waiting around 10 to 15 seconds. I'm not sure if users are going to tolerate that. And of course, from our perspective, the creator, with less videos on screen to choose from, and specific moments that take the viewer to exactly what they need to see, does that mean a potential reduction in traffic search views and average view duration from those videos? It would appear to be yes. However, with this feature still months away from its full rollout, I'm kind of speculating at this point, and it's probably not worth doing. What I can say is that over the next year, a percentage of people who do use search right now are going to migrate over to trying out this Ask YouTube feature. And I think that's just something we all need to be aware of. So yeah, let me know what you think of this feature in the comments below and whether or not you'd like me to do more of these in-depth overviews of YouTube tools and features.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "So this could be the future of YouTube",
+        "duration": 4.8
+      },
+      {
+        "start": 2.64,
+        "text": "search. Yeah, it looks pretty different,",
+        "duration": 5.12
+      },
+      {
+        "start": 4.8,
+        "text": "pretty conversational. It's called Ask",
+        "duration": 5.88
+      },
+      {
+        "start": 7.76,
+        "text": "YouTube and it's an AI chatbot designed",
+        "duration": 4.88
+      },
+      {
+        "start": 10.68,
+        "text": "for you to ask YouTube questions",
+        "duration": 4.2
+      },
+      {
+        "start": 12.64,
+        "text": "directly to give you the best video",
+        "duration": 3.72
+      },
+      {
+        "start": 14.88,
+        "text": "results.",
+        "duration": 3.72
+      },
+      {
+        "start": 16.36,
+        "text": "We've got access to it, so here is a",
+        "duration": 4.08
+      },
+      {
+        "start": 18.6,
+        "text": "complete overview. First of all, let me",
+        "duration": 3.36
+      },
+      {
+        "start": 20.44,
+        "text": "show you how to get access to this tool",
+        "duration": 3.0
+      },
+      {
+        "start": 21.96,
+        "text": "if you want to try it out yourself. Go",
+        "duration": 3.76
+      },
+      {
+        "start": 23.44,
+        "text": "to youtube.com/new",
+        "duration": 4.88
+      },
+      {
+        "start": 25.72,
+        "text": "and if you have YouTube Premium, you",
+        "duration": 4.68
+      },
+      {
+        "start": 28.32,
+        "text": "should have the option here to discover",
+        "duration": 3.84
+      },
+      {
+        "start": 30.4,
+        "text": "a new way to search on YouTube. Just",
+        "duration": 3.72
+      },
+      {
+        "start": 32.16,
+        "text": "click try it now. That should turn on",
+        "duration": 3.28
+      },
+      {
+        "start": 34.12,
+        "text": "the feature. And you'll know if this is",
+        "duration": 2.88
+      },
+      {
+        "start": 35.44,
+        "text": "worked if you go back to the homepage",
+        "duration": 4.24
+      },
+      {
+        "start": 37.0,
+        "text": "and see this new Ask YouTube button in",
+        "duration": 4.72
+      },
+      {
+        "start": 39.68,
+        "text": "your search bar. And this is persistent",
+        "duration": 3.92
+      },
+      {
+        "start": 41.72,
+        "text": "wherever you go on YouTube. So if you",
+        "duration": 3.64
+      },
+      {
+        "start": 43.6,
+        "text": "share the channel page, that button is",
+        "duration": 2.8
+      },
+      {
+        "start": 45.36,
+        "text": "always going to be there for you to",
+        "duration": 2.92
+      },
+      {
+        "start": 46.4,
+        "text": "click. Now regardless of whether or not",
+        "duration": 3.72
+      },
+      {
+        "start": 48.28,
+        "text": "you want to use this new feature,",
+        "duration": 3.48
+      },
+      {
+        "start": 50.12,
+        "text": "YouTube is going to try and encourage",
+        "duration": 3.4
+      },
+      {
+        "start": 51.76,
+        "text": "you to give it a try because whenever",
+        "duration": 4.16
+      },
+      {
+        "start": 53.52,
+        "text": "you click in the search bar, it's going",
+        "duration": 5.64
+      },
+      {
+        "start": 55.92,
+        "text": "to suggest these questions you might",
+        "duration": 6.84
+      },
+      {
+        "start": 59.16,
+        "text": "want to ask YouTube below. If I type in,",
+        "duration": 7.16
+      },
+      {
+        "start": 62.76,
+        "text": "let's say how to get more views, I have",
+        "duration": 5.56
+      },
+      {
+        "start": 66.32,
+        "text": "two buttons to click on here, whether",
+        "duration": 4.72
+      },
+      {
+        "start": 68.32,
+        "text": "it's Ask YouTube or just a simple",
+        "duration": 3.76
+      },
+      {
+        "start": 71.04,
+        "text": "search.",
+        "duration": 2.52
+      },
+      {
+        "start": 72.08,
+        "text": "Now, one more interesting thing I want",
+        "duration": 3.16
+      },
+      {
+        "start": 73.56,
+        "text": "to point out here is that the",
+        "duration": 3.28
+      },
+      {
+        "start": 75.24,
+        "text": "suggestions,",
+        "duration": 3.28
+      },
+      {
+        "start": 76.84,
+        "text": "which are the concept of opportunity",
+        "duration": 2.96
+      },
+      {
+        "start": 78.52,
+        "text": "cost,",
+        "duration": 3.44
+      },
+      {
+        "start": 79.8,
+        "text": "unique ideas for a home coffee bar,",
+        "duration": 5.12
+      },
+      {
+        "start": 81.96,
+        "text": "replace windshield wipers, these have no",
+        "duration": 6.64
+      },
+      {
+        "start": 84.92,
+        "text": "relation to my viewer preferences, my",
+        "duration": 5.56
+      },
+      {
+        "start": 88.6,
+        "text": "watch history. Conceptually, at the",
+        "duration": 5.48
+      },
+      {
+        "start": 90.48,
+        "text": "moment, Ask YouTube is not tied into",
+        "duration": 5.92
+      },
+      {
+        "start": 94.08,
+        "text": "what I do as a YouTube user. I think it",
+        "duration": 4.04
+      },
+      {
+        "start": 96.4,
+        "text": "needs to be asked a question first. All",
+        "duration": 3.04
+      },
+      {
+        "start": 98.12,
+        "text": "right, the next thing I want to do is",
+        "duration": 4.84
+      },
+      {
+        "start": 99.44,
+        "text": "the exact query using both classic",
+        "duration": 6.0
+      },
+      {
+        "start": 102.96,
+        "text": "YouTube search and Ask YouTube. Now",
+        "duration": 4.44
+      },
+      {
+        "start": 105.44,
+        "text": "typically, I wouldn't search for YouTube",
+        "duration": 4.44
+      },
+      {
+        "start": 107.4,
+        "text": "in this way, but I feel as if now I'm",
+        "duration": 4.4
+      },
+      {
+        "start": 109.88,
+        "text": "asking a question or writing a prompt",
+        "duration": 3.48
+      },
+      {
+        "start": 111.8,
+        "text": "and that is going to be, I am new to",
+        "duration": 3.32
+      },
+      {
+        "start": 113.36,
+        "text": "YouTube and I want to start a gaming",
+        "duration": 4.12
+      },
+      {
+        "start": 115.12,
+        "text": "channel, but I don't have a camera. What",
+        "duration": 3.68
+      },
+      {
+        "start": 117.48,
+        "text": "should I do? Something a little more",
+        "duration": 3.56
+      },
+      {
+        "start": 118.8,
+        "text": "specific than just how to start a gaming",
+        "duration": 3.72
+      },
+      {
+        "start": 121.04,
+        "text": "channel. Oh, and funnily enough, this is",
+        "duration": 3.16
+      },
+      {
+        "start": 122.52,
+        "text": "where the marketing doesn't match the",
+        "duration": 4.56
+      },
+      {
+        "start": 124.2,
+        "text": "reality because when Google demoed this",
+        "duration": 4.64
+      },
+      {
+        "start": 127.08,
+        "text": "at their conference, this is how fast it",
+        "duration": 3.52
+      },
+      {
+        "start": 128.84,
+        "text": "was.",
+        "duration": 4.68
+      },
+      {
+        "start": 130.6,
+        "text": "Yeah, not in real-world situations.",
+        "duration": 5.24
+      },
+      {
+        "start": 133.52,
+        "text": "Okay, so I'm pleased to see that a vidIQ",
+        "duration": 4.76
+      },
+      {
+        "start": 135.84,
+        "text": "video has come at the top of the results",
+        "duration": 5.2
+      },
+      {
+        "start": 138.28,
+        "text": "here, and it's maintained the thumbnail,",
+        "duration": 5.4
+      },
+      {
+        "start": 141.04,
+        "text": "which is interesting. Again, when Google",
+        "duration": 4.12
+      },
+      {
+        "start": 143.68,
+        "text": "demoed this at their conference, it",
+        "duration": 3.72
+      },
+      {
+        "start": 145.16,
+        "text": "looked as if it wasn't displaying any",
+        "duration": 5.04
+      },
+      {
+        "start": 147.4,
+        "text": "thumbnails, just freeze-frames from the",
+        "duration": 5.72
+      },
+      {
+        "start": 150.2,
+        "text": "video themselves. It does include all of",
+        "duration": 4.44
+      },
+      {
+        "start": 153.12,
+        "text": "this text. You don't need a camera to",
+        "duration": 3.24
+      },
+      {
+        "start": 154.64,
+        "text": "build a successful gaming channel. Many",
+        "duration": 3.24
+      },
+      {
+        "start": 156.36,
+        "text": "top creators focus entirely on",
+        "duration": 3.28
+      },
+      {
+        "start": 157.88,
+        "text": "high-quality gameplay and engaging",
+        "duration": 3.88
+      },
+      {
+        "start": 159.64,
+        "text": "commentary. Now, I'm curious to know",
+        "duration": 4.12
+      },
+      {
+        "start": 161.76,
+        "text": "where they got that information from.",
+        "duration": 3.8
+      },
+      {
+        "start": 163.76,
+        "text": "So, what I'm going to do is click on the",
+        "duration": 4.56
+      },
+      {
+        "start": 165.56,
+        "text": "video itself and use one of our handy",
+        "duration": 4.48
+      },
+      {
+        "start": 168.32,
+        "text": "free vidIQ tools here that you can get",
+        "duration": 4.32
+      },
+      {
+        "start": 170.04,
+        "text": "from vidIQ.com/start.",
+        "duration": 4.36
+      },
+      {
+        "start": 172.64,
+        "text": "I click on the IQ button and then go to",
+        "duration": 3.68
+      },
+      {
+        "start": 174.4,
+        "text": "transcript. Takes me immediately to the",
+        "duration": 4.28
+      },
+      {
+        "start": 176.32,
+        "text": "transcript area of the video. I'm just",
+        "duration": 4.56
+      },
+      {
+        "start": 178.68,
+        "text": "going to search for that exact phrase,",
+        "duration": 4.48
+      },
+      {
+        "start": 180.88,
+        "text": "you don't need a camera, and it doesn't",
+        "duration": 4.96
+      },
+      {
+        "start": 183.16,
+        "text": "come up anywhere in the transcript. So,",
+        "duration": 5.2
+      },
+      {
+        "start": 185.84,
+        "text": "I'm just curious to know where it's got",
+        "duration": 4.64
+      },
+      {
+        "start": 188.36,
+        "text": "that information from specifically for",
+        "duration": 4.08
+      },
+      {
+        "start": 190.48,
+        "text": "this video. Now, I'm coming to you 12",
+        "duration": 3.56
+      },
+      {
+        "start": 192.44,
+        "text": "hours later because I had to break off",
+        "duration": 3.76
+      },
+      {
+        "start": 194.04,
+        "text": "recording. I put in the exact same",
+        "duration": 3.72
+      },
+      {
+        "start": 196.2,
+        "text": "search query.",
+        "duration": 3.24
+      },
+      {
+        "start": 197.76,
+        "text": "And interestingly, the result is",
+        "duration": 4.04
+      },
+      {
+        "start": 199.44,
+        "text": "slightly different, at least from the",
+        "duration": 4.079
+      },
+      {
+        "start": 201.8,
+        "text": "text perspective. Now, it's added these",
+        "duration": 4.56
+      },
+      {
+        "start": 203.519,
+        "text": "bullet points below what was previously",
+        "duration": 5.521
+      },
+      {
+        "start": 206.36,
+        "text": "there as I'm comparing the two search",
+        "duration": 4.0
+      },
+      {
+        "start": 209.04,
+        "text": "queries.",
+        "duration": 3.24
+      },
+      {
+        "start": 210.36,
+        "text": "The video is still there, but it still",
+        "duration": 3.68
+      },
+      {
+        "start": 212.28,
+        "text": "doesn't have a specific timestamp. So,",
+        "duration": 3.6
+      },
+      {
+        "start": 214.04,
+        "text": "what I'm starting to think now is that",
+        "duration": 6.08
+      },
+      {
+        "start": 215.88,
+        "text": "this is a kind of combination of Gemini",
+        "duration": 7.48
+      },
+      {
+        "start": 220.12,
+        "text": "giving us answers it might do from that",
+        "duration": 5.92
+      },
+      {
+        "start": 223.36,
+        "text": "chatbot and then combined with some",
+        "duration": 5.28
+      },
+      {
+        "start": 226.04,
+        "text": "YouTube videos inserted into the",
+        "duration": 4.28
+      },
+      {
+        "start": 228.64,
+        "text": "answers. And when it doesn't have a",
+        "duration": 4.36
+      },
+      {
+        "start": 230.32,
+        "text": "definitive answer in a video for a",
+        "duration": 5.88
+      },
+      {
+        "start": 233.0,
+        "text": "specific moment. It just plays the",
+        "duration": 5.64
+      },
+      {
+        "start": 236.2,
+        "text": "beginning video from the beginning and",
+        "duration": 4.52
+      },
+      {
+        "start": 238.64,
+        "text": "it shows a thumbnail there. If I scroll",
+        "duration": 5.0
+      },
+      {
+        "start": 240.72,
+        "text": "down a little further, we have some more",
+        "duration": 5.76
+      },
+      {
+        "start": 243.64,
+        "text": "detailed results going into recording",
+        "duration": 4.28
+      },
+      {
+        "start": 246.48,
+        "text": "and editing. I don't think they're",
+        "duration": 3.96
+      },
+      {
+        "start": 247.92,
+        "text": "necessarily to do with gaming per se,",
+        "duration": 4.08
+      },
+      {
+        "start": 250.44,
+        "text": "but again we're seeing the thumbnails",
+        "duration": 3.6
+      },
+      {
+        "start": 252.0,
+        "text": "here, I believe.",
+        "duration": 4.44
+      },
+      {
+        "start": 254.04,
+        "text": "And below that, we have step-by-step",
+        "duration": 5.12
+      },
+      {
+        "start": 256.44,
+        "text": "guides on your first faceless video. But",
+        "duration": 4.68
+      },
+      {
+        "start": 259.16,
+        "text": "these videos aren't necessarily to do",
+        "duration": 4.36
+      },
+      {
+        "start": 261.12,
+        "text": "with faceless gaming because this one",
+        "duration": 5.32
+      },
+      {
+        "start": 263.52,
+        "text": "here I know is a video from myself where",
+        "duration": 5.92
+      },
+      {
+        "start": 266.44,
+        "text": "we collabed with Decoding YT and it",
+        "duration": 4.2
+      },
+      {
+        "start": 269.44,
+        "text": "doesn't really have anything to do with",
+        "duration": 3.6
+      },
+      {
+        "start": 270.64,
+        "text": "gaming, but it does talk about the",
+        "duration": 7.0
+      },
+      {
+        "start": 273.04,
+        "text": "subject of faceless YouTube videos and",
+        "duration": 6.76
+      },
+      {
+        "start": 277.64,
+        "text": "channels. And on this occasion, it",
+        "duration": 4.52
+      },
+      {
+        "start": 279.8,
+        "text": "doesn't have the thumbnail, but it does",
+        "duration": 6.08
+      },
+      {
+        "start": 282.16,
+        "text": "have a specific moment in that video",
+        "duration": 6.16
+      },
+      {
+        "start": 285.88,
+        "text": "where we talk about being a faceless",
+        "duration": 4.36
+      },
+      {
+        "start": 288.32,
+        "text": "channel. Now, in doing this query",
+        "duration": 4.0
+      },
+      {
+        "start": 290.24,
+        "text": "through ask YouTube, I have discovered",
+        "duration": 4.16
+      },
+      {
+        "start": 292.32,
+        "text": "that right at the top here, we have an",
+        "duration": 4.32
+      },
+      {
+        "start": 294.4,
+        "text": "all button which is essentially taking",
+        "duration": 4.12
+      },
+      {
+        "start": 296.64,
+        "text": "us back to classic YouTube search. And",
+        "duration": 5.4
+      },
+      {
+        "start": 298.52,
+        "text": "if I do that now, it is going to show us",
+        "duration": 6.399
+      },
+      {
+        "start": 302.04,
+        "text": "some more standardized general how to",
+        "duration": 5.6
+      },
+      {
+        "start": 304.919,
+        "text": "start a gaming channel videos. We can",
+        "duration": 4.521
+      },
+      {
+        "start": 307.64,
+        "text": "see a bit of a difference here switching",
+        "duration": 4.4
+      },
+      {
+        "start": 309.44,
+        "text": "between the two types of searches. If",
+        "duration": 5.0
+      },
+      {
+        "start": 312.04,
+        "text": "you do a search just with YouTube's",
+        "duration": 4.879
+      },
+      {
+        "start": 314.44,
+        "text": "regular, it will try and find the the",
+        "duration": 5.76
+      },
+      {
+        "start": 316.919,
+        "text": "broadest, I guess, most relevant",
+        "duration": 6.401
+      },
+      {
+        "start": 320.2,
+        "text": "keyword. Whereas if you ask YouTube,",
+        "duration": 5.719
+      },
+      {
+        "start": 323.32,
+        "text": "yes, it may give you an outline and",
+        "duration": 4.64
+      },
+      {
+        "start": 325.919,
+        "text": "maybe one of those videos, but then it's",
+        "duration": 3.721
+      },
+      {
+        "start": 327.96,
+        "text": "going to try and dig into the details",
+        "duration": 4.36
+      },
+      {
+        "start": 329.64,
+        "text": "looking at specific skills you may want",
+        "duration": 5.0
+      },
+      {
+        "start": 332.32,
+        "text": "to have for starting a gaming channel",
+        "duration": 5.4
+      },
+      {
+        "start": 334.64,
+        "text": "including answering that question about",
+        "duration": 4.92
+      },
+      {
+        "start": 337.72,
+        "text": "not having a camera and recording",
+        "duration": 4.08
+      },
+      {
+        "start": 339.56,
+        "text": "gameplay footage and how you might",
+        "duration": 4.44
+      },
+      {
+        "start": 341.8,
+        "text": "tackle this as a faceless channel. So, I",
+        "duration": 5.4
+      },
+      {
+        "start": 344.0,
+        "text": "can see the use here of giving more",
+        "duration": 6.0
+      },
+      {
+        "start": 347.2,
+        "text": "nuanced answers and context to what you",
+        "duration": 5.68
+      },
+      {
+        "start": 350.0,
+        "text": "might be searching for, but you have to",
+        "duration": 5.88
+      },
+      {
+        "start": 352.88,
+        "text": "ask that question to facilitate that",
+        "duration": 4.76
+      },
+      {
+        "start": 355.88,
+        "text": "answer. For this next query, I wanted to",
+        "duration": 3.72
+      },
+      {
+        "start": 357.64,
+        "text": "take myself out of my comfort zone a",
+        "duration": 4.16
+      },
+      {
+        "start": 359.6,
+        "text": "little bit and search for something I",
+        "duration": 5.48
+      },
+      {
+        "start": 361.8,
+        "text": "had no idea or experience about at all.",
+        "duration": 5.8
+      },
+      {
+        "start": 365.08,
+        "text": "So, I typed in I want to learn how to do",
+        "duration": 5.56
+      },
+      {
+        "start": 367.6,
+        "text": "underwater basket weaving. And the first",
+        "duration": 5.44
+      },
+      {
+        "start": 370.64,
+        "text": "result here is quite remarkable in that",
+        "duration": 6.0
+      },
+      {
+        "start": 373.04,
+        "text": "it is a DIY underwater basket weaving",
+        "duration": 7.0
+      },
+      {
+        "start": 376.64,
+        "text": "video that has just 300 views and it's",
+        "duration": 6.56
+      },
+      {
+        "start": 380.04,
+        "text": "from 7 years ago. Now, if I go to the",
+        "duration": 6.36
+      },
+      {
+        "start": 383.2,
+        "text": "classic YouTube search, we have more of",
+        "duration": 6.0
+      },
+      {
+        "start": 386.4,
+        "text": "a social proof",
+        "duration": 5.76
+      },
+      {
+        "start": 389.2,
+        "text": "method of suggesting what the viewer",
+        "duration": 4.88
+      },
+      {
+        "start": 392.16,
+        "text": "might want to watch, which is can we do",
+        "duration": 4.52
+      },
+      {
+        "start": 394.08,
+        "text": "a DIY projects underwater and that is",
+        "duration": 4.8
+      },
+      {
+        "start": 396.68,
+        "text": "underwater basket weaving. But, again if",
+        "duration": 4.72
+      },
+      {
+        "start": 398.88,
+        "text": "we go back to ask YouTube, here is where",
+        "duration": 4.84
+      },
+      {
+        "start": 401.4,
+        "text": "I think again this has a bit of an",
+        "duration": 3.96
+      },
+      {
+        "start": 403.72,
+        "text": "advantage in",
+        "duration": 3.199
+      },
+      {
+        "start": 405.36,
+        "text": "determining",
+        "duration": 3.28
+      },
+      {
+        "start": 406.919,
+        "text": "the context,",
+        "duration": 5.321
+      },
+      {
+        "start": 408.64,
+        "text": "the mood, the voice tone and style of",
+        "duration": 6.44
+      },
+      {
+        "start": 412.24,
+        "text": "the video. Cuz we scroll down here and",
+        "duration": 5.76
+      },
+      {
+        "start": 415.08,
+        "text": "it focuses on a humorous look at the",
+        "duration": 4.88
+      },
+      {
+        "start": 418.0,
+        "text": "fails and triumphs of trying to weave a",
+        "duration": 4.32
+      },
+      {
+        "start": 419.96,
+        "text": "basket at the bottom of a pool. So, what",
+        "duration": 4.12
+      },
+      {
+        "start": 422.32,
+        "text": "you might say from that evidence is that",
+        "duration": 3.92
+      },
+      {
+        "start": 424.08,
+        "text": "classic YouTube search is more brute",
+        "duration": 3.96
+      },
+      {
+        "start": 426.24,
+        "text": "force. We'll find some of the most",
+        "duration": 3.92
+      },
+      {
+        "start": 428.04,
+        "text": "popular videos and see if they work.",
+        "duration": 3.879
+      },
+      {
+        "start": 430.16,
+        "text": "Whereas with Ask YouTube, it's really",
+        "duration": 4.44
+      },
+      {
+        "start": 431.919,
+        "text": "going into the detail of your specific",
+        "duration": 5.041
+      },
+      {
+        "start": 434.6,
+        "text": "need and finding the videos that have",
+        "duration": 4.56
+      },
+      {
+        "start": 436.96,
+        "text": "the most relevant information to serve",
+        "duration": 3.48
+      },
+      {
+        "start": 439.16,
+        "text": "up to you. Which is what I would be",
+        "duration": 3.36
+      },
+      {
+        "start": 440.44,
+        "text": "telling you with confidence had I not",
+        "duration": 4.08
+      },
+      {
+        "start": 442.52,
+        "text": "done this exact search moments later and",
+        "duration": 3.92
+      },
+      {
+        "start": 444.52,
+        "text": "got different results. As a reminder,",
+        "duration": 4.2
+      },
+      {
+        "start": 446.44,
+        "text": "the first time I searched for I want to",
+        "duration": 3.72
+      },
+      {
+        "start": 448.72,
+        "text": "learn how to do underwater basket",
+        "duration": 4.84
+      },
+      {
+        "start": 450.16,
+        "text": "weaving, we got this page.",
+        "duration": 5.92
+      },
+      {
+        "start": 453.56,
+        "text": "But, when I did the same search 5",
+        "duration": 5.48
+      },
+      {
+        "start": 456.08,
+        "text": "minutes later, it decided to put that",
+        "duration": 5.72
+      },
+      {
+        "start": 459.04,
+        "text": "really popular videos at the top, which",
+        "duration": 5.68
+      },
+      {
+        "start": 461.8,
+        "text": "wasn't necessarily about a tutorial, it",
+        "duration": 5.64
+      },
+      {
+        "start": 464.72,
+        "text": "was more fun storytelling about this",
+        "duration": 5.68
+      },
+      {
+        "start": 467.44,
+        "text": "unusual crafting hobby. One of the other",
+        "duration": 5.48
+      },
+      {
+        "start": 470.4,
+        "text": "things Google touted about this Ask",
+        "duration": 4.76
+      },
+      {
+        "start": 472.92,
+        "text": "YouTube feature is that it's not a",
+        "duration": 4.88
+      },
+      {
+        "start": 475.16,
+        "text": "one-and-done query. It's the start of a",
+        "duration": 6.64
+      },
+      {
+        "start": 477.8,
+        "text": "conversation. So, using this page now as",
+        "duration": 5.6
+      },
+      {
+        "start": 481.8,
+        "text": "my search, I want to learn how to do",
+        "duration": 3.56
+      },
+      {
+        "start": 483.4,
+        "text": "underwater basket weaving. We have all",
+        "duration": 5.28
+      },
+      {
+        "start": 485.36,
+        "text": "of this information about the craft, and",
+        "duration": 5.68
+      },
+      {
+        "start": 488.68,
+        "text": "then some suggestions such as do I want",
+        "duration": 4.239
+      },
+      {
+        "start": 491.04,
+        "text": "to learn how to scuba dive, maybe to do",
+        "duration": 3.92
+      },
+      {
+        "start": 492.919,
+        "text": "this or how to make a specific type of",
+        "duration": 3.361
+      },
+      {
+        "start": 494.96,
+        "text": "basket.",
+        "duration": 3.24
+      },
+      {
+        "start": 496.28,
+        "text": "You can follow up with your own",
+        "duration": 3.84
+      },
+      {
+        "start": 498.2,
+        "text": "question. So, I think what I'll ask here",
+        "duration": 4.44
+      },
+      {
+        "start": 500.12,
+        "text": "is",
+        "duration": 2.52
+      },
+      {
+        "start": 502.88,
+        "text": "And what we'll probably find here is",
+        "duration": 3.76
+      },
+      {
+        "start": 504.36,
+        "text": "that again it takes",
+        "duration": 6.2
+      },
+      {
+        "start": 506.64,
+        "text": "10 to 15 seconds to give us a result,",
+        "duration": 6.079
+      },
+      {
+        "start": 510.56,
+        "text": "which is starting to feel like a bit of",
+        "duration": 4.0
+      },
+      {
+        "start": 512.719,
+        "text": "friction.",
+        "duration": 3.561
+      },
+      {
+        "start": 514.56,
+        "text": "Not too long to do that, maybe 10",
+        "duration": 4.68
+      },
+      {
+        "start": 516.28,
+        "text": "seconds. And now it is giving me some",
+        "duration": 5.24
+      },
+      {
+        "start": 519.24,
+        "text": "essential supplies for submerged",
+        "duration": 3.52
+      },
+      {
+        "start": 521.52,
+        "text": "crafting.",
+        "duration": 2.32
+      },
+      {
+        "start": 522.76,
+        "text": "That's a",
+        "duration": 3.2
+      },
+      {
+        "start": 523.84,
+        "text": "curious way to describe it, but here are",
+        "duration": 4.48
+      },
+      {
+        "start": 525.96,
+        "text": "the videos, and we do have",
+        "duration": 4.48
+      },
+      {
+        "start": 528.32,
+        "text": "uh one video here, which I think is the",
+        "duration": 4.6
+      },
+      {
+        "start": 530.44,
+        "text": "original one, if you remember. Yes, this",
+        "duration": 4.72
+      },
+      {
+        "start": 532.92,
+        "text": "is the one that has 3/4 of a million",
+        "duration": 4.28
+      },
+      {
+        "start": 535.16,
+        "text": "views. It's essentially this one,",
+        "duration": 4.04
+      },
+      {
+        "start": 537.2,
+        "text": "but now we have a specific question",
+        "duration": 4.6
+      },
+      {
+        "start": 539.2,
+        "text": "being asked here. It's found a moment in",
+        "duration": 5.4
+      },
+      {
+        "start": 541.8,
+        "text": "that video to play to us, which might be",
+        "duration": 4.44
+      },
+      {
+        "start": 544.6,
+        "text": "more relevant. Now that we've done a",
+        "duration": 3.56
+      },
+      {
+        "start": 546.24,
+        "text": "couple of queries with the Ask YouTube",
+        "duration": 3.52
+      },
+      {
+        "start": 548.16,
+        "text": "feature, what I'm interested to know",
+        "duration": 5.56
+      },
+      {
+        "start": 549.76,
+        "text": "next is if I go back to the homepage and",
+        "duration": 6.48
+      },
+      {
+        "start": 553.72,
+        "text": "clear out the search here, is it going",
+        "duration": 5.64
+      },
+      {
+        "start": 556.24,
+        "text": "to give me any personalized",
+        "duration": 5.08
+      },
+      {
+        "start": 559.36,
+        "text": "Ask YouTube queries because I've been",
+        "duration": 3.88
+      },
+      {
+        "start": 561.32,
+        "text": "looking at gaming content and underwater",
+        "duration": 3.8
+      },
+      {
+        "start": 563.24,
+        "text": "basket weaving, and",
+        "duration": 4.2
+      },
+      {
+        "start": 565.12,
+        "text": "no, it's talking about acoustic pianos",
+        "duration": 4.6
+      },
+      {
+        "start": 567.44,
+        "text": "and the best martial art movies. As it",
+        "duration": 4.64
+      },
+      {
+        "start": 569.72,
+        "text": "stands, Ask YouTube has no",
+        "duration": 5.8
+      },
+      {
+        "start": 572.08,
+        "text": "personalization whatsoever depending on",
+        "duration": 5.88
+      },
+      {
+        "start": 575.52,
+        "text": "your watch history or your search",
+        "duration": 5.16
+      },
+      {
+        "start": 577.96,
+        "text": "queries. So then, Ask YouTube. It's",
+        "duration": 5.2
+      },
+      {
+        "start": 580.68,
+        "text": "trying to tackle search on the platform",
+        "duration": 4.4
+      },
+      {
+        "start": 583.16,
+        "text": "in a fresh way which hasn't really",
+        "duration": 3.88
+      },
+      {
+        "start": 585.08,
+        "text": "changed in 20 years at this point. It's",
+        "duration": 4.8
+      },
+      {
+        "start": 587.04,
+        "text": "trying to give you more diversity and",
+        "duration": 5.32
+      },
+      {
+        "start": 589.88,
+        "text": "nuance with its results, which might",
+        "duration": 4.8
+      },
+      {
+        "start": 592.36,
+        "text": "mean that for the viewer, they have a",
+        "duration": 4.76
+      },
+      {
+        "start": 594.68,
+        "text": "better chance of finding exactly the",
+        "duration": 4.04
+      },
+      {
+        "start": 597.12,
+        "text": "video they were looking for. And with",
+        "duration": 4.04
+      },
+      {
+        "start": 598.72,
+        "text": "all of this text and different headings",
+        "duration": 5.24
+      },
+      {
+        "start": 601.16,
+        "text": "and sub questions that it's trying to",
+        "duration": 6.96
+      },
+      {
+        "start": 603.96,
+        "text": "answer, it feels more akin to Google AI",
+        "duration": 6.36
+      },
+      {
+        "start": 608.12,
+        "text": "summaries, and I think that's up to you",
+        "duration": 4.16
+      },
+      {
+        "start": 610.32,
+        "text": "whether that is a good thing or a bad",
+        "duration": 3.96
+      },
+      {
+        "start": 612.28,
+        "text": "thing. And from a design and usability",
+        "duration": 4.52
+      },
+      {
+        "start": 614.28,
+        "text": "perspective, this is classic YouTube.",
+        "duration": 5.16
+      },
+      {
+        "start": 616.8,
+        "text": "This just works. I instantly know how to",
+        "duration": 4.16
+      },
+      {
+        "start": 619.44,
+        "text": "use it. There is no learning curve.",
+        "duration": 3.08
+      },
+      {
+        "start": 620.96,
+        "text": "Having said all that, what I have found",
+        "duration": 4.28
+      },
+      {
+        "start": 622.52,
+        "text": "in my testing so far is that the search",
+        "duration": 5.92
+      },
+      {
+        "start": 625.24,
+        "text": "results with these same queries lack a",
+        "duration": 4.96
+      },
+      {
+        "start": 628.44,
+        "text": "little bit of consistency. And there is",
+        "duration": 5.12
+      },
+      {
+        "start": 630.2,
+        "text": "also that friction point of just how",
+        "duration": 5.36
+      },
+      {
+        "start": 633.56,
+        "text": "long it takes to give me the results.",
+        "duration": 3.36
+      },
+      {
+        "start": 635.56,
+        "text": "When you search for something on YouTube",
+        "duration": 4.0
+      },
+      {
+        "start": 636.92,
+        "text": "right now, you get something in a second",
+        "duration": 5.64
+      },
+      {
+        "start": 639.56,
+        "text": "or less. But with Ask YouTube, you're",
+        "duration": 5.72
+      },
+      {
+        "start": 642.56,
+        "text": "waiting around 10 to 15 seconds. I'm not",
+        "duration": 5.2
+      },
+      {
+        "start": 645.28,
+        "text": "sure if users are going to tolerate",
+        "duration": 3.76
+      },
+      {
+        "start": 647.76,
+        "text": "that. And of course, from our",
+        "duration": 4.64
+      },
+      {
+        "start": 649.04,
+        "text": "perspective, the creator, with less",
+        "duration": 6.52
+      },
+      {
+        "start": 652.4,
+        "text": "videos on screen to choose from, and",
+        "duration": 5.12
+      },
+      {
+        "start": 655.56,
+        "text": "specific moments that take the viewer to",
+        "duration": 5.16
+      },
+      {
+        "start": 657.52,
+        "text": "exactly what they need to see, does that",
+        "duration": 6.08
+      },
+      {
+        "start": 660.72,
+        "text": "mean a potential reduction in traffic",
+        "duration": 5.8
+      },
+      {
+        "start": 663.6,
+        "text": "search views and average view duration",
+        "duration": 5.6
+      },
+      {
+        "start": 666.52,
+        "text": "from those videos?",
+        "duration": 5.04
+      },
+      {
+        "start": 669.2,
+        "text": "It would appear to be yes. However, with",
+        "duration": 4.48
+      },
+      {
+        "start": 671.56,
+        "text": "this feature still months away from its",
+        "duration": 4.36
+      },
+      {
+        "start": 673.68,
+        "text": "full rollout, I'm kind of speculating at",
+        "duration": 3.64
+      },
+      {
+        "start": 675.92,
+        "text": "this point, and it's probably not worth",
+        "duration": 2.96
+      },
+      {
+        "start": 677.32,
+        "text": "doing. What I can say is that over the",
+        "duration": 5.04
+      },
+      {
+        "start": 678.88,
+        "text": "next year, a percentage of people who do",
+        "duration": 5.56
+      },
+      {
+        "start": 682.36,
+        "text": "use search right now are going to",
+        "duration": 5.0
+      },
+      {
+        "start": 684.44,
+        "text": "migrate over to trying out this Ask",
+        "duration": 5.0
+      },
+      {
+        "start": 687.36,
+        "text": "YouTube feature. And I think that's just",
+        "duration": 4.0
+      },
+      {
+        "start": 689.44,
+        "text": "something we all need to be aware of. So",
+        "duration": 3.4
+      },
+      {
+        "start": 691.36,
+        "text": "yeah, let me know what you think of this",
+        "duration": 3.4
+      },
+      {
+        "start": 692.84,
+        "text": "feature in the comments below and",
+        "duration": 3.0
+      },
+      {
+        "start": 694.76,
+        "text": "whether or not you'd like me to do more",
+        "duration": 3.72
+      },
+      {
+        "start": 695.84,
+        "text": "of these in-depth overviews of YouTube",
+        "duration": 5.36
+      },
+      {
+        "start": 698.48,
+        "text": "tools and features.",
+        "duration": 2.72
+      }
+    ],
+    "status": "OK",
+    "segment_count": 303
+  },
+  "captured_at": "2026-07-09T21:40:00Z",
+  "captured_by": "CAPTEURS"
+}

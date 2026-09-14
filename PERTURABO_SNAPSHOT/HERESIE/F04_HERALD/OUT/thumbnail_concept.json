@@ -1,0 +1,76 @@
+{
+  "source_thumbnail": "https://i.ytimg.com/vi/HQ_WRDrKWX4/maxresdefault.jpg",
+  "new_title": "Every Category Of Hurricane Explained in 5 minutes",
+  "new_niche": "Hurricanes US",
+  "demon": "The Escalist — Every BRUTAL Tornado Type Explained",
+  "visual_skeleton": {
+    "style": "Infographie flat — PAS une photo, PAS du cinématique. Pictogrammes et icônes simples.",
+    "composition": "Grille de 7 cercles colorés disposés en rangées (4 en haut, 3 en bas). Chaque cercle contient 1 silhouette noire d'un type d'ouragan. Label en dessous de chaque cercle.",
+    "escalation_encoded_by_color": "Gradient vert→jaune→orange→rouge (feu de circulation). Vert=faible, rouge=destructeur. Le spectateur comprend l'escalade sans lire un mot.",
+    "silhouettes": "Pictogrammes noirs purs sur fond coloré. Chaque type a une forme clairement différente (petite spirale, moyenne, grosse, monstrueuse).",
+    "background": "Blanc pur (#FFFFFF). Maximum de contraste pour lisibilité mobile.",
+    "text": "Labels noirs en gras sous chaque cercle. Pas de titre sur l'image. Police: Impact Bold ou Montserrat Black.",
+    "curiosity_gap": "La variété elle-même. Le cerveau voit 7 formes différentes et veut les connaître toutes."
+  },
+  "visual_metrics": {
+    "brightness": 174,
+    "bright_pct": 52.8,
+    "dark_pct": 14.6,
+    "saturation": 78,
+    "vibrant_pct": 31.9,
+    "dominant_colors": {
+      "blanc": 52.6,
+      "noir": 12.6,
+      "rouge_orange": 13.2
+    }
+  },
+  "thumbnail_adaptation": {
+    "row_1_top": [
+      "🟢 Tropical Storm",
+      "🟢 Cat 1",
+      "🟡 Cat 3",
+      "🟠 Cat 5"
+    ],
+    "row_2_bottom": [
+      "🟠 Super Typhoon",
+      "🔴 Bomb Cyclone",
+      "🔴 Hypercane"
+    ],
+    "description": "7 cercles (comme le Démon). Chaque cercle = silhouette noire d'ouragan de plus en plus intense. Gradient vert→rouge. Labels noirs. Fond blanc. Style flat/infographique."
+  },
+  "thumbnail_generation": {
+    "image_generator_prompt": "YouTube thumbnail, horizontal 16:9. Flat infographic style on pure white background. A grid of 7 colored circles arranged in 2 rows (4 top, 3 bottom). Each circle contains a simple black silhouette of a hurricane/spiral shape of increasing size and intensity. Top row left to right: green circle with small spiral, green circle with slightly bigger spiral, yellow circle with medium spiral, orange circle with large spiral. Bottom row: orange circle with very large spiral, red circle with massive spiral with lightning, red circle with monstrous hypercane spiral. Black text labels below each circle in bold sans-serif font: 'Tropical Storm', 'Cat 1', 'Cat 3', 'Cat 5', 'Super Typhoon', 'Bomb Cyclone', 'Hypercane'. No photos, no 3D, no gradients within circles. Clean flat vector style. High contrast for mobile readability.",
+    "thumbnail_text": "EVERY HURRICANE",
+    "canva_instructions": "Police: Impact Bold, Taille: 120pt, Couleur: Blanc #FFFFFF, Position: centre-bas, Ombre: noire portée 2px"
+  },
+  "validation_result": {
+    "version": "V3",
+    "metrics": {
+      "brightness": 182,
+      "dark_pct": 11,
+      "bright_pct": 57,
+      "saturation": 57,
+      "vibrant_pct": 32
+    },
+    "match_score": "5/5 PASS",
+    "demon_comparison": {
+      "brightness_diff": 8,
+      "dark_diff": 4,
+      "bright_diff": 4,
+      "saturation_diff": 21,
+      "vibrant_diff": 0
+    }
+  },
+  "f04_meta": {
+    "analyzed_at": "2026-07-10T08:23:00Z",
+    "model_used": "claude-sandbox-vision",
+    "demon_analyzed": "The Escalist",
+    "rules_applied": [
+      "contraste mobile",
+      "curiosity gap",
+      "3 mots max",
+      "gradient vert→rouge",
+      "infographie flat"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "source_post": {
+    "source_id": "wayvee_phone_bounce_20260819",
+    "platform": "x",
+    "text": "When you throw your phone on the bed but it bounces and lands on the floor",
+    "screenshot_png": "/home/ubuntu/perturabo_work/MONDES_FORGES/CLIPPING/ARCHIVUM/campaign/source_wayvee_phone_bounce.png",
+    "url": null,
+    "author": "Wayvee (@wayveeofficial)",
+    "observed_at": "2026-08-24",
+    "published_at": "2026-08-19",
+    "metrics": {
+      "replies": 186,
+      "reposts": 4200,
+      "likes": 26000,
+      "views": 193000
+    },
+    "target": {
+      "market": "US",
+      "age_range": "29-30",
+      "platform": "youtube_shorts",
+      "language": "en-US"
+    }
+  }
+}

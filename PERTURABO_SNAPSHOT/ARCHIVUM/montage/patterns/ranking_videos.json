@@ -1,0 +1,65 @@
+{
+  "pattern_name": "ranking_videos",
+  "description": "Patterns for creating viral ranking videos (top 5, top 10, etc.)",
+  "source_transcripts": ["hhTjwKwq8xs", "EAtAWaUcI9g"],
+  "extracted_from": [
+    "Ryven - Advanced ranking video tutorial",
+    "Ryven - High quality ranking videos for millions of views"
+  ],
+  "rules": {
+    "topic_selection": {
+      "rule": "Research topics with current interest/trends",
+      "examples": ["funny fishing moments", "road rage moments", "slap moments", "brain rot content"],
+      "note": "Brain rot content currently goes viral. The 'dumber' the topic, the more viral potential."
+    },
+    "clip_sourcing": {
+      "platforms": ["TikTok", "YouTube", "Instagram", "Reddit"],
+      "clip_requirements": [
+        "Raw/original clips preferred",
+        "NO text overlays (or remove later)",
+        "NO background music (or remove)",
+        "NO commentary",
+        "Clean, organic footage",
+        "No watermarks if possible"
+      ],
+      "clip_count": "4-5 clips per ranking video",
+      "search_strategy": "Train the algorithm by interacting with niche content first, then the feed will surface relevant clips"
+    },
+    "editing_rules": {
+      "format": "9:16 vertical",
+      "clip_duration_per_segment": "2-5 seconds max",
+      "pacing": "Tight, no boring moments",
+      "cut_frequency": "Change shots every 2-3 seconds",
+      "aspect_ratio_change": "Always convert to 9:16",
+      "title_overlay": {
+        "required": true,
+        "purpose": "Gives context + acts as hook",
+        "style": "Bold, engaging, controversial",
+        "examples": ["TOP 5 ROAD RAGE MOMENTS", "TOP 5 SLAP MOMENTS"],
+        "font": "Bold, high contrast (white on dark or dark on light)",
+        "position": "Top of frame",
+        "duration": "Full clip duration"
+      },
+      "effects": {
+        "zoom": "Zoom on speaker/reaction",
+        "blur": "Background blur to focus on subject",
+        "broll": "AI B-roll or stock footage for visual variety"
+      },
+      "audio": {
+        "voiceover": "AI voiceover (TTS) for narration",
+        "background_music": "Subtle, matching mood",
+        "sound_effects": "Whoosh, boom, suspense sounds at key moments"
+      },
+      "export": {
+        "resolution": "1080p",
+        "fps": "30fps"
+      }
+    },
+    "ranking_structure": {
+      "format": "Top N countdown",
+      "order": "Save best for last (N → 1)",
+      "transition_between_clips": "Quick cut or zoom transition",
+      "number_overlay": "Show rank number (#5, #4, etc.)"
+    }
+  }
+}

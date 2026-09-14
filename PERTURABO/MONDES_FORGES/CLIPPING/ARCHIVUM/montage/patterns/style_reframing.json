@@ -1,0 +1,35 @@
+{
+  "style_name": "reframing",
+  "description": "Agrandir une vidéo pour remplir le cadre 9:16 sans blur",
+  "broll_by_duration": {
+    "15sec": {"max_broll": 1},
+    "30sec": {"max_broll": 3},
+    "45sec": {"max_broll": 3},
+    "60sec": {"max_broll": 4}
+  },
+  "broll_strategy": {
+    "rule": "Scoring intelligent, B-roll optionnel mais utile si clip > 20s",
+    "scoring_ref": "ARCHIVUM/montage/patterns/broll_integration.json",
+    "reframing_specific": {
+      "note": "Le reframing est déjà un traitement. B-roll en plus uniquement si nécessaire.",
+      "when_to_add": "Clip > 20s avec moments visuels à illustrer",
+      "avoid": "Ne pas surcharger"
+    }
+  },
+  "workflow": {
+    "step_1": {"name": "Détecter ratio source"},
+    "step_2": {"name": "Zoom pour remplir 9:16"},
+    "step_3": {"name": "Scorer moments B-roll si clip > 20s"},
+    "step_4": {"name": "Positionner subject au centre"},
+    "step_5": {"name": "Édition: captions, title, music"}
+  },
+  "anti_detection": {
+    "required": true,
+    "zoom": "slow_push_in (102-108%)",
+    "mirror": "Optionnel si pas de texte inversé",
+    "speed": "1.05x",
+    "sfx": "1-2 max",
+    "crop": "2-3%"
+  },
+  "broll": {"required": false, "ref": "ARCHIVUM/montage/patterns/broll_integration.json"}
+}

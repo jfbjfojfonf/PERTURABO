@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "description": "Patterns de cuts extraits des transcripts montage (DaVinci Resolve, CapCut, podcast clips)",
+  "last_updated": "2026-09-03",
+
+  "cut_types": {
+    "smash_cut": {
+      "description": "Cut brutal, aucune transition, d'un plan à un autre",
+      "technique": "Pas de transition, pas de fondu — frame suivant = plan suivant",
+      "timing": "Utiliser au moment fort : punchline, chiffre, révélation",
+      "dans_capcut": "Supprimer l'espace entre les deux clips, pas de transition ajoutée",
+      "dans_davinci": "Blade tool (B) → supprimer → pas de cross dissolve",
+      "usage": ["ranking", "split_scene"],
+      "exemple": "Speaker dit '450,000 dollars' → smash cut → B-roll billets"
+    },
+    "breath_cut": {
+      "description": "Couper exactement sur la respiration du speaker",
+      "technique": "Écouter le audio, couper entre deux phrases naturellement",
+      "timing": "Après une phrase complète, avant la suivante — PAS au milieu",
+      "dans_capcut": "Écouter audio → couper au silence entre les phrases",
+      "dans_davinci": "Écouter waveform → couper au creux entre les pics",
+      "usage": ["blur", "reframing"],
+      "exemple": "Speaker finit une phrase → breath cut → nouvelle phrase"
+    },
+    "idea_cut": {
+      "description": "Couper quand le speaker change d'idée ou de sujet",
+      "technique": "Identifier les marqueurs de transition : 'mais', 'en fait', 'donc', 'alors', 'the thing is'",
+      "timing": "Juste après le marqueur de transition ou avant le nouveau sujet",
+      "dans_capcut": "Repérer les marqueurs de langage → couper",
+      "usage": ["blur", "reframing"],
+      "exemple": "'...and that's why it matters. [IDEA CUT] But here's the thing...'"
+    },
+    "impact_cut": {
+      "description": "Cut combiné avec un zoom brutal ET un SFX",
+      "technique": "Couper + zoom 108-115% en 0.1s + impact_sfx au même moment",
+      "timing": "AU moment exact du chiffre, de la punchline ou de la révélation",
+      "dans_capcut": "Couper → keyframe zoom → ajouter SFX 'impact' sur la même frame",
+      "dans_davinci": "Blade → Fusion keyframe zoom → Sound library impact",
+      "usage": ["ranking", "blur", "split_scene", "reframing"],
+      "exemple": "'...TOP 1%' → IMPACT CUT → zoom brutal + boom SFX"
+    },
+    "jump_cut": {
+      "description": "Saut dans le même cadrage pour éliminer les silences ou hésitations",
+      "technique": "Couper les 'euh', 'umm', silences > 0.5s, répétitions",
+      "timing": "Partout où il y a un temps mort dans le speech",
+      "dans_capcut": "Sous-titres auto → repérer les silences → supprimer",
+      "usage": ["tous les styles"],
+      "exemple": "'I think... [JUMP CUT] ...the best way is to...'"
+    },
+    "j_cut": {
+      "description": "L'audio du plan suivant commence AVANT l'image du plan suivant",
+      "technique": "Décaler l'audio du clip B de 0.3-0.5s vers la gauche",
+      "timing": "Transition fluide entre deux clips — crée de la anticipation",
+      "dans_capcut": "Décaler la piste audio du clip suivant vers la gauche",
+      "usage": ["blur", "reframing"],
+      "exemple": "On entend la voix du speaker suivant 0.3s avant de le voir"
+    }
+  },
+
+  "cut_density_by_style": {
+    "ranking": {
+      "cuts_per_clip": "1-3 cuts par clip (clips de 2-8s)",
+      "cuts_per_second": "0.5-1 cut/seconde",
+      "note": "Clips courts = moins de cuts nécessaires, le cut EST la transition"
+    },
+    "blur": {
+      "cuts_per_clip": "3-8 cuts par clip (clips de 15-45s)",
+      "cuts_per_second": "1 cut toutes les 2-3 secondes",
+      "note": "Couper sur les respirations et changements d'idée"
+    },
+    "split_scene": {
+      "cuts_per_clip": "3-8 cuts par clip",
+      "cuts_per_second": "1 cut toutes les 2-3 secondes",
+      "note": "Les cuts sont synchronisés avec les changements de zone_bas"
+    },
+    "reframing": {
+      "cuts_per_clip": "2-5 cuts par clip (plus lent)",
+      "cuts_per_second": "1 cut toutes les 3-4 secondes",
+      "note": "Laisser respirer — le reframing a besoin de temps"
+    }
+  },
+
+  "cut_rules": {
+    "never_cut": [
+      "Au milieu d'un mot",
+      "Pendant une émotion forte (laisser la réaction)",
+      "Au milieu d'un chiffre (laisser le nombre complet)",
+      "Pendant le hook (0-3 secondes) sauf si le hook est trop long"
+    ],
+    "always_cut": [
+      "Avant les silences > 1 seconde",
+      "Avant les 'euh' / 'umm' / hésitations visibles",
+      "Avant les répétitions inutiles",
+      "Avant les intro / 'bonjour' / salutations"
+    ],
+    "timing_precision": "Les cuts doivent tomber sur les frames exactes — pas de décalage audio"
+  },
+
+  "source_transcripts": [
+    "MLLV9xLqC7o (DaVinci Resolve podcast clips)",
+    "RXQOmQGJK34 (Repurpose podcast into shorts)",
+    "oPBsuT-SNuo (CapCut Twitch → Shorts)",
+    "w2Vmzei6w8M (Mobile clipping)",
+    "guide_shorts_podcast_complet.md (méthodologie complète)"
+  ]
+}

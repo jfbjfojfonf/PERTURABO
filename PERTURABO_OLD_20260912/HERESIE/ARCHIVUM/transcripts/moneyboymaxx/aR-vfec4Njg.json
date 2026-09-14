@@ -1,0 +1,1882 @@
+{
+  "video_id": "aR-vfec4Njg",
+  "title": "how i use claude code to make $10k+ a month with youtube shorts",
+  "channel": "moneyboymax",
+  "channel_id": "UCShwWZwAZY8KyuSD_QKN32w",
+  "channel_url": "https://www.youtube.com/channel/UCShwWZwAZY8KyuSD_QKN32w",
+  "subscriber_count": 25400,
+  "view_count": 8779,
+  "outlier_score": 0.35,
+  "thumbnail": "https://i.ytimg.com/vi/aR-vfec4Njg/maxresdefault.jpg",
+  "upload_date": "20260524",
+  "duration": 593,
+  "transcript": {
+    "text": "All right, so if you've been posting YouTube shorts every single day trying to grind through 30k view jail, this video is for you. I would be willing to bet that most of you guys are using AI. Most of you guys are using AI tools at the bare minimum, right? Whether it's as common as ChatGPT or whether it's just 11 labs or using AI tools in CapCut or something, but almost everyone is using AI in the exact same way, so it doesn't give you an advantage. If I was just doing that, I wouldn't be able to make my whole entire system work. But the reason that I can run over six monetized faceless YouTube shorts channels and why I'm planning to start up more soon, it's not because of luck or some editing skills. It's because I use AI. I use Claude to build my own specific tool that literally nobody except for me has access to. I don't write code or anything. AI does it all for me. But I am going to show you guys exactly how you can do this for yourself completely for free. This is some crazy insane sauce that most people just aren't capitalizing on right now. So make sure you stay until the end so you know fully how to do this. All right, listen, so most people think that just because it says Claude code, it means that you have to know how to code or anything like that, but it's just using Claude to make code for yourself, which means that you don't need to know how to code at all. All you need to do is ask it to do things for you. Explain yourself in English and it will pop out code for you. Admittedly, sometimes it's a little bit harder to understand this skill, but with a little bit of practice, you should get it under your belt pretty quickly. Remember, you're not learning how to code, you're just learning how to describe and how to prompt an AI to do exactly what you want it to do. So have some clarity when you're talking to it, which is why you can see right here, I can just say, \"Hey, hey, how can I help you?\" And this is where I can actually start building something. Before I get into this, I want to set realistic expectations for you guys. Building a tool, especially if it's an extensive tool, will take you a lot of time. Especially with Claude, you're going to keep running into usage limits. So depending on the tool that you're trying to build, it can take a couple days just to kind of debug it and make sure everything's working how you want it to work. And for more advanced tools, it can take longer. But the good news for you is that I'm dropping my own software later this month. It's going to have everything you need to go viral start to finish to make sure that you're making some banger videos. My full-time income is YouTube shorts, so I know what I'm talking about. I designed this specifically thinking about you guys. So listen, if you're interested in getting early access, there's going to be a link in the description. Just click that, enter your email, and I'll email you when we launch. We're aiming for late May and early June. And the best part about this is that you can just give me feedback once we launch, and we will add whatever good ideas you have to the software to make it the best YouTube Shorts tool, period. So, back to Cloud Code. All we're going to do is tell it exactly what type of app or tool we want to build. So, I'll show you guys exactly how this works. I'm not going to make the whole entire product cuz obviously I don't have hours, but I'll show you guys the general process of how this works. So, all I said literally was \"I want to build a nice local app with a sleek front end user interface that lets me download up to 10 TikTok videos at once in the highest quality possible.\" Keep in mind, you're going to personalize this for whatever your workflow is. And I'll show you guys some of my tools that I've already built with this. Obviously, these tools are going to be hyper specific to your use case, which is the best part about them because it can make your workflow 10 times faster. So, for the sake of this video, I just want to build a simple app. So, I'm just saying like a mass TikTok video downloader, right? You can literally do anything. Anything that your mind thinks of that could help potentially help you with your process. So, as long as you can think about it, you can make it. So, it immediately got back to me and says, \"Nice project. Here's my recommended approach.\" And it gives you all this technical information. Then it says, \"We need to install Python on your computer, but it's a very simple setup.\" And then it asks you some qualifying questions like, \"Should the downloads be saved to a fixed folder? Do you want the videos with or without the TikTok watermark?\" So, I just simply said, \"Let me pick per session on the folders the folders that it's going to download to.\" And let me get the videos without the TikTok watermark always. So, as long as you can write a clear sentence about what you're trying to build, you can make a tool that will solve this for you. Now, depending on what you ask for, it's going to take a few minutes. So, as you can see, it's using some tokens using my own tokens for this, bro. So, like and subscribe for this, man. But, I'll be back once it actually generates the first version. And I'm not going to go through and fully debug it, but you'll get a very good idea of how this works and why this can be so valuable. Okay, so it took a couple minutes and it did everything. So, it'll give you all the instructions you need. Again, if you don't know how to do anything, you just literally ask it. I'm not going to fully launch the app right now because there's a few requirements that I would need to download on this computer. But, you could see this is pretty much what the app would look like. And of course, this is a preview, but you can see we have the TikTok URLs up at the top, and then you can click to save and select any folder that you want to save them to. So, you can do 10 TikTok links at once. If you want to change that, you can just do 50 TikTok links at once, right? So, depending on your use case, this can vary a lot. If you want to make the download all button golden or yellow or something, you can tell that to Claude, and it'll literally in like 2 seconds it can spit this out for you, right? So, these are very simple changes, and you can customize this to be anything you want. So, now you should kind of understand why this is so OP. If there's any bugs in the first version that it makes, then you just go through and say, \"Um you know, I'm getting an error message here. The videos aren't downloading. The It's not going to the correct folder, etc.\" And you just test it like you would any other tool, and you tell that to Claude, and eventually it'll fix it all. And by the way, real quick, just making a tool isn't going to give you like 50 million views overnight. Obviously, most of the issues that you guys have is that you don't know how to build a system. So, if you've been applying every single thing from my YouTube channel, or you still can't monetize or scale your channel like Ken who got monetized within a week, or Morris who went from not even being monetized to being on track to make $2,000 in his first month of monetization, then you can apply to work with me one-on-one. Now, let's talk about how most people are missing this. So, most people don't even realize the huge opportunity that they have in front of them. I know you guys know this guy, Deeg Shorts, obviously makes some of the most viral IShowSpeed edits in the game. But, most people are doing everything from completely scratch. They don't realize that they can completely build an advantage for themselves. So, you can compete against people like this who have larger teams because you have more efficiency. You have a better workflow cuz you don't have enough willpower to outcompete a channel like this. This guy has editors who can do it for him. So, for example, right? You can even take something as simple as these captions, right? These captions you have to make manually cuz they're different, and this can take a people a lot of time. I mean, I work with somebody right now who does IShowSpeed edits, and what we figured out is that we can use Claude to help make a script for these captions. It'll save him hours and hours of time. This is how you actually get leverage because people don't have these tools. You will be able to script and make custom tools for for to where you don't have to do this manually. You got to work smarter, not harder. Some of these IShowSpeed editors, they will literally spend hours or let's just say like, I don't know, two or three hours just doing the captions. Bro, if you can even bring that down to 30 minutes, which is a extreme overstatement. If you can bring that down to 10 minutes, you are saving dozens of hours in a week. That alone might allow you to upload two times a day. Same thing for this guy, like Bolt Motivation, his captions or even finding the clips online. You can build tools for all of this stuff. So, now I'm going to show you guys some of the tools that I've personally been working on. I'm not going to show you exactly what they are because these are just custom tools for me. They're designed around my workflow for some of the channels that I run. So, to be honest, it wouldn't even really help most of you guys out. But, this is part of the reason why I have an advantage in some of the niches that I go into. And so, I don't really want to leak these even though you can just build them yourself with a few days of hard work. So, the first one I have here is basically a more advanced version of the tool that I almost made on camera for you guys. It's just my own personal bulk video downloader. This one's not a big deal, but it's just for my specific workflow. So, I take my entire script which has words as well as clips from multiple different sources. Talking about YouTube shorts, TikTok, Instagram, literally anything. I paste it all in here. It disregards all of the words. I select what folder I want it to go to and I just press download and then it downloads it all super cleanly into one folder. It takes me about 30 seconds to download like 15 videos. It's very efficient. Saves me and my editors a lot of time in case we're dealing with a lot of clips. It just literally helps to speed up the workflow instead of downloading each video manually. Seems small, but minutes add up. I want everything to be as efficient as possible in my system. This is another one that I built. This is to attack long-form. Although, I kind of put this one on a hold because it was so big of a task. This would take me weeks and weeks and weeks to actually iron this all out. And also, I haven't even started my long-form journey yet. So, it's not worth my time or energy right now. However, the tool goes as follows. You simply upload your voiceover for like, you know, it's a long-form video, so it'll be like 10 minutes long. You choose the folder and you generate the video and then you get stock footage, captions, some motion design, graphics, etc. So, literally just it makes long-form videos for you. And I have one on my laptop, so I don't have access to it right now. But, basically what it does is it can pull captions off the screen of YouTube shorts. So, I'm not talking about videos that have like transcripts or videos where there's audible commentary. I'm talking about videos that have literally captions on the screen. You can paste a video URL, it'll literally extract all the captions and feed it to me in like a document or text form. So, hopefully you should be having some ideas of like how you could potentially use this in your own workflow. All right, now let's talk about the honest time investment. A small useful tool will probably take you a few hours just to debug it fully, have it looking good, have it functioning good, have it be perfect with no issues and fully get 100% of the testing done that you need to. A fully polished one or a really advanced one is going to take you weeks of debugging. That's I'm not going to lie to you. But, you also just need it to be functional. It doesn't matter about really how it looks. The UI doesn't even really matter. It just matters that it actually works for whatever you're trying to get it to do. If you can do that, that's a win. And what you guys really need to think about is what are you spending a little bit of extra time doing? Are you spending 10 minutes downloading videos because you're dealing with 15 to 30 videos per short? If that's the case, we can completely cut that down to like 30 seconds. Over a week, that will save you over an hour of time. So, you need to identify what are the bottlenecks in your specific workflow and then figure out ways to develop systems to where you can reduce extraneous time that you're spending making videos every day. Doesn't have to be pretty, it just has to remove one step from your day. So, the bottom line on Claude Code is that it's not just for developers, okay? Each and every one of you guys could use this to your advantage if you have the energy and you want to do so. Otherwise, you can just let me know what you want in my software and I'll add that for you guys. It's not a big deal. But, obviously, if you want those specific, those hyper specific things, those tools that will only make sense for your workflow, then you make it yourself. And look, I'm not somebody who got monetized in like 2020 and then now I'm selling you a course. I run over six monetized channels right now. I'm about to scale to more. I go viral every single week. In fact, most of the days I go viral every single day and I'm in this every single day grinding out just like you guys every single day. So, if you've been doing the work and you still can't break through to see consistent five to 10,000 dollar months, you can apply to see if you qualify to work with me one-on-one. You'll get direct 24/7 access to me and a clear plan going forward because all of this doesn't need to be guesswork. Also, join my Discord, subscribe to my super secret second channel. Holy, that was a lot of S's. And join the waitlist for my software. You are not going to want to miss out. This is going to change the game. I hope this video helps some of you guys out and peace out.",
+    "segments": [
+      {
+        "start": 0.0,
+        "text": "All right, so if you've been posting",
+        "duration": 2.92
+      },
+      {
+        "start": 1.44,
+        "text": "YouTube shorts every single day trying",
+        "duration": 3.32
+      },
+      {
+        "start": 2.92,
+        "text": "to grind through 30k view jail, this",
+        "duration": 3.6
+      },
+      {
+        "start": 4.76,
+        "text": "video is for you. I would be willing to",
+        "duration": 3.44
+      },
+      {
+        "start": 6.52,
+        "text": "bet that most of you guys are using AI.",
+        "duration": 3.24
+      },
+      {
+        "start": 8.2,
+        "text": "Most of you guys are using AI tools at",
+        "duration": 3.08
+      },
+      {
+        "start": 9.76,
+        "text": "the bare minimum, right? Whether it's as",
+        "duration": 3.44
+      },
+      {
+        "start": 11.28,
+        "text": "common as ChatGPT or whether it's just",
+        "duration": 4.28
+      },
+      {
+        "start": 13.2,
+        "text": "11 labs or using AI tools in CapCut or",
+        "duration": 4.48
+      },
+      {
+        "start": 15.56,
+        "text": "something, but almost everyone is using",
+        "duration": 3.68
+      },
+      {
+        "start": 17.68,
+        "text": "AI in the exact same way, so it doesn't",
+        "duration": 3.08
+      },
+      {
+        "start": 19.24,
+        "text": "give you an advantage. If I was just",
+        "duration": 2.72
+      },
+      {
+        "start": 20.76,
+        "text": "doing that, I wouldn't be able to make",
+        "duration": 2.64
+      },
+      {
+        "start": 21.96,
+        "text": "my whole entire system work. But the",
+        "duration": 3.24
+      },
+      {
+        "start": 23.4,
+        "text": "reason that I can run over six monetized",
+        "duration": 3.28
+      },
+      {
+        "start": 25.2,
+        "text": "faceless YouTube shorts channels and why",
+        "duration": 2.92
+      },
+      {
+        "start": 26.68,
+        "text": "I'm planning to start up more soon, it's",
+        "duration": 2.8
+      },
+      {
+        "start": 28.12,
+        "text": "not because of luck or some editing",
+        "duration": 3.32
+      },
+      {
+        "start": 29.48,
+        "text": "skills. It's because I use AI. I use",
+        "duration": 4.24
+      },
+      {
+        "start": 31.44,
+        "text": "Claude to build my own specific tool",
+        "duration": 3.88
+      },
+      {
+        "start": 33.72,
+        "text": "that literally nobody except for me has",
+        "duration": 3.08
+      },
+      {
+        "start": 35.32,
+        "text": "access to. I don't write code or",
+        "duration": 3.12
+      },
+      {
+        "start": 36.8,
+        "text": "anything. AI does it all for me. But I",
+        "duration": 3.36
+      },
+      {
+        "start": 38.44,
+        "text": "am going to show you guys exactly how",
+        "duration": 3.72
+      },
+      {
+        "start": 40.16,
+        "text": "you can do this for yourself completely",
+        "duration": 3.92
+      },
+      {
+        "start": 42.16,
+        "text": "for free. This is some crazy insane",
+        "duration": 3.08
+      },
+      {
+        "start": 44.08,
+        "text": "sauce that most people just aren't",
+        "duration": 2.88
+      },
+      {
+        "start": 45.24,
+        "text": "capitalizing on right now. So make sure",
+        "duration": 3.04
+      },
+      {
+        "start": 46.96,
+        "text": "you stay until the end so you know fully",
+        "duration": 2.68
+      },
+      {
+        "start": 48.28,
+        "text": "how to do this. All right, listen, so",
+        "duration": 2.96
+      },
+      {
+        "start": 49.64,
+        "text": "most people think that just because it",
+        "duration": 3.32
+      },
+      {
+        "start": 51.24,
+        "text": "says Claude code, it means that you have",
+        "duration": 2.96
+      },
+      {
+        "start": 52.96,
+        "text": "to know how to code or anything like",
+        "duration": 3.48
+      },
+      {
+        "start": 54.2,
+        "text": "that, but it's just using Claude to make",
+        "duration": 3.88
+      },
+      {
+        "start": 56.44,
+        "text": "code for yourself, which means that you",
+        "duration": 3.24
+      },
+      {
+        "start": 58.08,
+        "text": "don't need to know how to code at all.",
+        "duration": 3.2
+      },
+      {
+        "start": 59.68,
+        "text": "All you need to do is ask it to do",
+        "duration": 3.52
+      },
+      {
+        "start": 61.28,
+        "text": "things for you. Explain yourself in",
+        "duration": 3.72
+      },
+      {
+        "start": 63.2,
+        "text": "English and it will pop out code for",
+        "duration": 3.44
+      },
+      {
+        "start": 65.0,
+        "text": "you. Admittedly, sometimes it's a little",
+        "duration": 3.44
+      },
+      {
+        "start": 66.64,
+        "text": "bit harder to understand this skill, but",
+        "duration": 2.88
+      },
+      {
+        "start": 68.44,
+        "text": "with a little bit of practice, you",
+        "duration": 2.2
+      },
+      {
+        "start": 69.52,
+        "text": "should get it under your belt pretty",
+        "duration": 2.56
+      },
+      {
+        "start": 70.64,
+        "text": "quickly. Remember, you're not learning",
+        "duration": 2.72
+      },
+      {
+        "start": 72.08,
+        "text": "how to code, you're just learning how to",
+        "duration": 3.0
+      },
+      {
+        "start": 73.36,
+        "text": "describe and how to prompt an AI to do",
+        "duration": 3.56
+      },
+      {
+        "start": 75.08,
+        "text": "exactly what you want it to do. So have",
+        "duration": 3.28
+      },
+      {
+        "start": 76.92,
+        "text": "some clarity when you're talking to it,",
+        "duration": 2.56
+      },
+      {
+        "start": 78.36,
+        "text": "which is why you can see right here, I",
+        "duration": 2.68
+      },
+      {
+        "start": 79.48,
+        "text": "can just say, \"Hey, hey, how can I help",
+        "duration": 2.64
+      },
+      {
+        "start": 81.04,
+        "text": "you?\" And this is where I can actually",
+        "duration": 2.72
+      },
+      {
+        "start": 82.12,
+        "text": "start building something. Before I get",
+        "duration": 3.2
+      },
+      {
+        "start": 83.76,
+        "text": "into this, I want to set realistic",
+        "duration": 3.24
+      },
+      {
+        "start": 85.32,
+        "text": "expectations for you guys. Building a",
+        "duration": 3.32
+      },
+      {
+        "start": 87.0,
+        "text": "tool, especially if it's an extensive",
+        "duration": 3.44
+      },
+      {
+        "start": 88.64,
+        "text": "tool, will take you a lot of time.",
+        "duration": 2.88
+      },
+      {
+        "start": 90.44,
+        "text": "Especially with Claude, you're going to",
+        "duration": 2.68
+      },
+      {
+        "start": 91.52,
+        "text": "keep running into usage limits. So",
+        "duration": 3.08
+      },
+      {
+        "start": 93.12,
+        "text": "depending on the tool that you're trying",
+        "duration": 3.36
+      },
+      {
+        "start": 94.6,
+        "text": "to build, it can take a couple days just",
+        "duration": 3.28
+      },
+      {
+        "start": 96.48,
+        "text": "to kind of debug it and make sure",
+        "duration": 2.8
+      },
+      {
+        "start": 97.88,
+        "text": "everything's working how you want it to",
+        "duration": 2.88
+      },
+      {
+        "start": 99.28,
+        "text": "work. And for more advanced tools, it",
+        "duration": 3.24
+      },
+      {
+        "start": 100.76,
+        "text": "can take longer. But the good news for",
+        "duration": 3.36
+      },
+      {
+        "start": 102.52,
+        "text": "you is that I'm dropping my own software",
+        "duration": 2.8
+      },
+      {
+        "start": 104.12,
+        "text": "later this month. It's going to have",
+        "duration": 2.92
+      },
+      {
+        "start": 105.32,
+        "text": "everything you need to go viral start to",
+        "duration": 2.88
+      },
+      {
+        "start": 107.04,
+        "text": "finish to make sure that you're making",
+        "duration": 2.84
+      },
+      {
+        "start": 108.2,
+        "text": "some banger videos. My full-time income",
+        "duration": 2.72
+      },
+      {
+        "start": 109.88,
+        "text": "is YouTube shorts, so I know what I'm",
+        "duration": 2.2
+      },
+      {
+        "start": 110.92,
+        "text": "talking about. I designed this",
+        "duration": 2.92
+      },
+      {
+        "start": 112.08,
+        "text": "specifically thinking about you guys. So",
+        "duration": 2.92
+      },
+      {
+        "start": 113.84,
+        "text": "listen, if you're interested in getting",
+        "duration": 2.76
+      },
+      {
+        "start": 115.0,
+        "text": "early access, there's going to be a link",
+        "duration": 2.96
+      },
+      {
+        "start": 116.6,
+        "text": "in the description. Just click that,",
+        "duration": 2.76
+      },
+      {
+        "start": 117.96,
+        "text": "enter your email, and I'll email you",
+        "duration": 3.0
+      },
+      {
+        "start": 119.36,
+        "text": "when we launch. We're aiming for late",
+        "duration": 3.04
+      },
+      {
+        "start": 120.96,
+        "text": "May and early June. And the best part",
+        "duration": 2.92
+      },
+      {
+        "start": 122.4,
+        "text": "about this is that you can just give me",
+        "duration": 3.64
+      },
+      {
+        "start": 123.88,
+        "text": "feedback once we launch, and we will add",
+        "duration": 4.159
+      },
+      {
+        "start": 126.04,
+        "text": "whatever good ideas you have to the",
+        "duration": 3.84
+      },
+      {
+        "start": 128.039,
+        "text": "software to make it the best YouTube",
+        "duration": 3.841
+      },
+      {
+        "start": 129.88,
+        "text": "Shorts tool, period. So, back to Cloud",
+        "duration": 3.72
+      },
+      {
+        "start": 131.88,
+        "text": "Code. All we're going to do is tell it",
+        "duration": 3.84
+      },
+      {
+        "start": 133.6,
+        "text": "exactly what type of app or tool we want",
+        "duration": 3.88
+      },
+      {
+        "start": 135.72,
+        "text": "to build. So, I'll show you guys exactly",
+        "duration": 3.0
+      },
+      {
+        "start": 137.48,
+        "text": "how this works. I'm not going to make",
+        "duration": 3.04
+      },
+      {
+        "start": 138.72,
+        "text": "the whole entire product cuz obviously I",
+        "duration": 3.239
+      },
+      {
+        "start": 140.52,
+        "text": "don't have hours, but I'll show you guys",
+        "duration": 3.32
+      },
+      {
+        "start": 141.959,
+        "text": "the general process of how this works.",
+        "duration": 3.481
+      },
+      {
+        "start": 143.84,
+        "text": "So, all I said literally was \"I want to",
+        "duration": 3.04
+      },
+      {
+        "start": 145.44,
+        "text": "build a nice local app with a sleek",
+        "duration": 3.08
+      },
+      {
+        "start": 146.88,
+        "text": "front end user interface that lets me",
+        "duration": 3.52
+      },
+      {
+        "start": 148.52,
+        "text": "download up to 10 TikTok videos at once",
+        "duration": 3.32
+      },
+      {
+        "start": 150.4,
+        "text": "in the highest quality possible.\" Keep",
+        "duration": 3.16
+      },
+      {
+        "start": 151.84,
+        "text": "in mind, you're going to personalize",
+        "duration": 3.64
+      },
+      {
+        "start": 153.56,
+        "text": "this for whatever your workflow is. And",
+        "duration": 3.48
+      },
+      {
+        "start": 155.48,
+        "text": "I'll show you guys some of my tools that",
+        "duration": 3.0
+      },
+      {
+        "start": 157.04,
+        "text": "I've already built with this. Obviously,",
+        "duration": 2.56
+      },
+      {
+        "start": 158.48,
+        "text": "these tools are going to be hyper",
+        "duration": 2.84
+      },
+      {
+        "start": 159.6,
+        "text": "specific to your use case, which is the",
+        "duration": 3.12
+      },
+      {
+        "start": 161.32,
+        "text": "best part about them because it can make",
+        "duration": 3.48
+      },
+      {
+        "start": 162.72,
+        "text": "your workflow 10 times faster. So, for",
+        "duration": 3.0
+      },
+      {
+        "start": 164.8,
+        "text": "the sake of this video, I just want to",
+        "duration": 2.28
+      },
+      {
+        "start": 165.72,
+        "text": "build a simple app. So, I'm just saying",
+        "duration": 3.08
+      },
+      {
+        "start": 167.08,
+        "text": "like a mass TikTok video downloader,",
+        "duration": 3.4
+      },
+      {
+        "start": 168.8,
+        "text": "right? You can literally do anything.",
+        "duration": 3.52
+      },
+      {
+        "start": 170.48,
+        "text": "Anything that your mind thinks of that",
+        "duration": 3.68
+      },
+      {
+        "start": 172.32,
+        "text": "could help potentially help you with",
+        "duration": 3.4
+      },
+      {
+        "start": 174.16,
+        "text": "your process. So, as long as you can",
+        "duration": 2.96
+      },
+      {
+        "start": 175.72,
+        "text": "think about it, you can make it. So, it",
+        "duration": 2.72
+      },
+      {
+        "start": 177.12,
+        "text": "immediately got back to me and says,",
+        "duration": 2.92
+      },
+      {
+        "start": 178.44,
+        "text": "\"Nice project. Here's my recommended",
+        "duration": 3.12
+      },
+      {
+        "start": 180.04,
+        "text": "approach.\" And it gives you all this",
+        "duration": 3.08
+      },
+      {
+        "start": 181.56,
+        "text": "technical information. Then it says, \"We",
+        "duration": 2.959
+      },
+      {
+        "start": 183.12,
+        "text": "need to install Python on your computer,",
+        "duration": 2.76
+      },
+      {
+        "start": 184.519,
+        "text": "but it's a very simple setup.\" And then",
+        "duration": 2.881
+      },
+      {
+        "start": 185.88,
+        "text": "it asks you some qualifying questions",
+        "duration": 2.639
+      },
+      {
+        "start": 187.4,
+        "text": "like, \"Should the downloads be saved to",
+        "duration": 2.64
+      },
+      {
+        "start": 188.519,
+        "text": "a fixed folder? Do you want the videos",
+        "duration": 2.961
+      },
+      {
+        "start": 190.04,
+        "text": "with or without the TikTok watermark?\"",
+        "duration": 2.72
+      },
+      {
+        "start": 191.48,
+        "text": "So, I just simply said, \"Let me pick per",
+        "duration": 3.44
+      },
+      {
+        "start": 192.76,
+        "text": "session on the folders the folders that",
+        "duration": 3.24
+      },
+      {
+        "start": 194.92,
+        "text": "it's going to download to.\" And let me",
+        "duration": 2.28
+      },
+      {
+        "start": 196.0,
+        "text": "get the videos without the TikTok",
+        "duration": 2.88
+      },
+      {
+        "start": 197.2,
+        "text": "watermark always. So, as long as you can",
+        "duration": 3.36
+      },
+      {
+        "start": 198.88,
+        "text": "write a clear sentence about what you're",
+        "duration": 3.4
+      },
+      {
+        "start": 200.56,
+        "text": "trying to build, you can make a tool",
+        "duration": 2.959
+      },
+      {
+        "start": 202.28,
+        "text": "that will solve this for you. Now,",
+        "duration": 2.56
+      },
+      {
+        "start": 203.519,
+        "text": "depending on what you ask for, it's",
+        "duration": 2.761
+      },
+      {
+        "start": 204.84,
+        "text": "going to take a few minutes. So, as you",
+        "duration": 3.119
+      },
+      {
+        "start": 206.28,
+        "text": "can see, it's using some tokens using my",
+        "duration": 3.36
+      },
+      {
+        "start": 207.959,
+        "text": "own tokens for this, bro. So, like and",
+        "duration": 3.161
+      },
+      {
+        "start": 209.64,
+        "text": "subscribe for this, man. But, I'll be",
+        "duration": 2.84
+      },
+      {
+        "start": 211.12,
+        "text": "back once it actually generates the",
+        "duration": 3.04
+      },
+      {
+        "start": 212.48,
+        "text": "first version. And I'm not going to go",
+        "duration": 3.08
+      },
+      {
+        "start": 214.16,
+        "text": "through and fully debug it, but you'll",
+        "duration": 2.96
+      },
+      {
+        "start": 215.56,
+        "text": "get a very good idea of how this works",
+        "duration": 3.0
+      },
+      {
+        "start": 217.12,
+        "text": "and why this can be so valuable. Okay,",
+        "duration": 2.68
+      },
+      {
+        "start": 218.56,
+        "text": "so it took a couple minutes and it did",
+        "duration": 2.88
+      },
+      {
+        "start": 219.8,
+        "text": "everything. So, it'll give you all the",
+        "duration": 2.8
+      },
+      {
+        "start": 221.44,
+        "text": "instructions you need. Again, if you",
+        "duration": 2.36
+      },
+      {
+        "start": 222.6,
+        "text": "don't know how to do anything, you just",
+        "duration": 2.639
+      },
+      {
+        "start": 223.8,
+        "text": "literally ask it. I'm not going to fully",
+        "duration": 2.719
+      },
+      {
+        "start": 225.239,
+        "text": "launch the app right now because there's",
+        "duration": 2.521
+      },
+      {
+        "start": 226.519,
+        "text": "a few requirements that I would need to",
+        "duration": 2.481
+      },
+      {
+        "start": 227.76,
+        "text": "download on this computer. But, you",
+        "duration": 2.64
+      },
+      {
+        "start": 229.0,
+        "text": "could see this is pretty much what the",
+        "duration": 2.72
+      },
+      {
+        "start": 230.4,
+        "text": "app would look like. And of course, this",
+        "duration": 3.0
+      },
+      {
+        "start": 231.72,
+        "text": "is a preview, but you can see we have",
+        "duration": 3.4
+      },
+      {
+        "start": 233.4,
+        "text": "the TikTok URLs up at the top, and then",
+        "duration": 3.4
+      },
+      {
+        "start": 235.12,
+        "text": "you can click to save and select any",
+        "duration": 2.88
+      },
+      {
+        "start": 236.8,
+        "text": "folder that you want to save them to.",
+        "duration": 2.84
+      },
+      {
+        "start": 238.0,
+        "text": "So, you can do 10 TikTok links at once.",
+        "duration": 2.8
+      },
+      {
+        "start": 239.64,
+        "text": "If you want to change that, you can just",
+        "duration": 3.0
+      },
+      {
+        "start": 240.8,
+        "text": "do 50 TikTok links at once, right? So,",
+        "duration": 3.52
+      },
+      {
+        "start": 242.64,
+        "text": "depending on your use case, this can",
+        "duration": 3.16
+      },
+      {
+        "start": 244.32,
+        "text": "vary a lot. If you want to make the",
+        "duration": 3.6
+      },
+      {
+        "start": 245.8,
+        "text": "download all button golden or yellow or",
+        "duration": 3.84
+      },
+      {
+        "start": 247.92,
+        "text": "something, you can tell that to Claude,",
+        "duration": 3.44
+      },
+      {
+        "start": 249.64,
+        "text": "and it'll literally in like 2 seconds it",
+        "duration": 3.04
+      },
+      {
+        "start": 251.36,
+        "text": "can spit this out for you, right? So,",
+        "duration": 3.04
+      },
+      {
+        "start": 252.68,
+        "text": "these are very simple changes, and you",
+        "duration": 3.279
+      },
+      {
+        "start": 254.4,
+        "text": "can customize this to be anything you",
+        "duration": 2.88
+      },
+      {
+        "start": 255.959,
+        "text": "want. So, now you should kind of",
+        "duration": 3.201
+      },
+      {
+        "start": 257.28,
+        "text": "understand why this is so OP. If there's",
+        "duration": 3.48
+      },
+      {
+        "start": 259.16,
+        "text": "any bugs in the first version that it",
+        "duration": 3.32
+      },
+      {
+        "start": 260.76,
+        "text": "makes, then you just go through and say,",
+        "duration": 3.0
+      },
+      {
+        "start": 262.48,
+        "text": "\"Um you know, I'm getting an error",
+        "duration": 2.64
+      },
+      {
+        "start": 263.76,
+        "text": "message here. The videos aren't",
+        "duration": 2.76
+      },
+      {
+        "start": 265.12,
+        "text": "downloading. The It's not going to the",
+        "duration": 3.24
+      },
+      {
+        "start": 266.52,
+        "text": "correct folder, etc.\" And you just test",
+        "duration": 3.04
+      },
+      {
+        "start": 268.36,
+        "text": "it like you would any other tool, and",
+        "duration": 2.4
+      },
+      {
+        "start": 269.56,
+        "text": "you tell that to Claude, and eventually",
+        "duration": 2.6
+      },
+      {
+        "start": 270.76,
+        "text": "it'll fix it all. And by the way, real",
+        "duration": 3.04
+      },
+      {
+        "start": 272.16,
+        "text": "quick, just making a tool isn't going to",
+        "duration": 2.96
+      },
+      {
+        "start": 273.8,
+        "text": "give you like 50 million views",
+        "duration": 3.16
+      },
+      {
+        "start": 275.12,
+        "text": "overnight. Obviously, most of the issues",
+        "duration": 3.08
+      },
+      {
+        "start": 276.96,
+        "text": "that you guys have is that you don't",
+        "duration": 2.56
+      },
+      {
+        "start": 278.2,
+        "text": "know how to build a system. So, if",
+        "duration": 2.68
+      },
+      {
+        "start": 279.52,
+        "text": "you've been applying every single thing",
+        "duration": 2.92
+      },
+      {
+        "start": 280.88,
+        "text": "from my YouTube channel, or you still",
+        "duration": 3.36
+      },
+      {
+        "start": 282.44,
+        "text": "can't monetize or scale your channel",
+        "duration": 3.4
+      },
+      {
+        "start": 284.24,
+        "text": "like Ken who got monetized within a",
+        "duration": 3.36
+      },
+      {
+        "start": 285.84,
+        "text": "week, or Morris who went from not even",
+        "duration": 3.76
+      },
+      {
+        "start": 287.6,
+        "text": "being monetized to being on track to",
+        "duration": 3.08
+      },
+      {
+        "start": 289.6,
+        "text": "make $2,000",
+        "duration": 2.76
+      },
+      {
+        "start": 290.68,
+        "text": "in his first month of monetization, then",
+        "duration": 2.72
+      },
+      {
+        "start": 292.36,
+        "text": "you can apply to work with me",
+        "duration": 2.4
+      },
+      {
+        "start": 293.4,
+        "text": "one-on-one. Now, let's talk about how",
+        "duration": 2.8
+      },
+      {
+        "start": 294.76,
+        "text": "most people are missing this. So, most",
+        "duration": 2.84
+      },
+      {
+        "start": 296.2,
+        "text": "people don't even realize the huge",
+        "duration": 2.88
+      },
+      {
+        "start": 297.6,
+        "text": "opportunity that they have in front of",
+        "duration": 2.72
+      },
+      {
+        "start": 299.08,
+        "text": "them. I know you guys know this guy,",
+        "duration": 3.08
+      },
+      {
+        "start": 300.32,
+        "text": "Deeg Shorts, obviously makes some of the",
+        "duration": 3.68
+      },
+      {
+        "start": 302.16,
+        "text": "most viral IShowSpeed edits in the game.",
+        "duration": 3.2
+      },
+      {
+        "start": 304.0,
+        "text": "But, most people are doing everything",
+        "duration": 2.72
+      },
+      {
+        "start": 305.36,
+        "text": "from completely scratch. They don't",
+        "duration": 3.04
+      },
+      {
+        "start": 306.72,
+        "text": "realize that they can completely build",
+        "duration": 3.48
+      },
+      {
+        "start": 308.4,
+        "text": "an advantage for themselves. So, you can",
+        "duration": 3.32
+      },
+      {
+        "start": 310.2,
+        "text": "compete against people like this who",
+        "duration": 3.52
+      },
+      {
+        "start": 311.72,
+        "text": "have larger teams because you have more",
+        "duration": 3.84
+      },
+      {
+        "start": 313.72,
+        "text": "efficiency. You have a better workflow",
+        "duration": 3.12
+      },
+      {
+        "start": 315.56,
+        "text": "cuz you don't have enough willpower to",
+        "duration": 3.04
+      },
+      {
+        "start": 316.84,
+        "text": "outcompete a channel like this. This guy",
+        "duration": 3.72
+      },
+      {
+        "start": 318.6,
+        "text": "has editors who can do it for him. So,",
+        "duration": 3.48
+      },
+      {
+        "start": 320.56,
+        "text": "for example, right? You can even take",
+        "duration": 3.04
+      },
+      {
+        "start": 322.08,
+        "text": "something as simple as these captions,",
+        "duration": 3.12
+      },
+      {
+        "start": 323.6,
+        "text": "right? These captions you have to make",
+        "duration": 3.28
+      },
+      {
+        "start": 325.2,
+        "text": "manually cuz they're different, and this",
+        "duration": 3.2
+      },
+      {
+        "start": 326.88,
+        "text": "can take a people a lot of time. I mean,",
+        "duration": 3.32
+      },
+      {
+        "start": 328.4,
+        "text": "I work with somebody right now who does",
+        "duration": 3.6
+      },
+      {
+        "start": 330.2,
+        "text": "IShowSpeed edits, and what we figured",
+        "duration": 3.92
+      },
+      {
+        "start": 332.0,
+        "text": "out is that we can use Claude to help",
+        "duration": 4.64
+      },
+      {
+        "start": 334.12,
+        "text": "make a script for these captions. It'll",
+        "duration": 4.76
+      },
+      {
+        "start": 336.64,
+        "text": "save him hours and hours of time. This",
+        "duration": 4.16
+      },
+      {
+        "start": 338.88,
+        "text": "is how you actually get leverage because",
+        "duration": 3.88
+      },
+      {
+        "start": 340.8,
+        "text": "people don't have these tools. You will",
+        "duration": 3.96
+      },
+      {
+        "start": 342.76,
+        "text": "be able to script and make custom tools",
+        "duration": 3.72
+      },
+      {
+        "start": 344.76,
+        "text": "for for to where you don't have to do",
+        "duration": 3.76
+      },
+      {
+        "start": 346.48,
+        "text": "this manually. You got to work smarter,",
+        "duration": 3.8
+      },
+      {
+        "start": 348.52,
+        "text": "not harder. Some of these IShowSpeed",
+        "duration": 3.56
+      },
+      {
+        "start": 350.28,
+        "text": "editors, they will literally spend hours",
+        "duration": 3.16
+      },
+      {
+        "start": 352.08,
+        "text": "or let's just say like, I don't know,",
+        "duration": 3.12
+      },
+      {
+        "start": 353.44,
+        "text": "two or three hours just doing the",
+        "duration": 3.36
+      },
+      {
+        "start": 355.2,
+        "text": "captions. Bro, if you can even bring",
+        "duration": 3.44
+      },
+      {
+        "start": 356.8,
+        "text": "that down to 30 minutes, which is a",
+        "duration": 3.4
+      },
+      {
+        "start": 358.64,
+        "text": "extreme overstatement. If you can bring",
+        "duration": 3.32
+      },
+      {
+        "start": 360.2,
+        "text": "that down to 10 minutes, you are saving",
+        "duration": 3.96
+      },
+      {
+        "start": 361.96,
+        "text": "dozens of hours in a week. That alone",
+        "duration": 3.72
+      },
+      {
+        "start": 364.16,
+        "text": "might allow you to upload two times a",
+        "duration": 3.08
+      },
+      {
+        "start": 365.68,
+        "text": "day. Same thing for this guy, like Bolt",
+        "duration": 4.28
+      },
+      {
+        "start": 367.24,
+        "text": "Motivation, his captions or even finding",
+        "duration": 4.96
+      },
+      {
+        "start": 369.96,
+        "text": "the clips online. You can build tools",
+        "duration": 3.72
+      },
+      {
+        "start": 372.2,
+        "text": "for all of this stuff. So, now I'm going",
+        "duration": 2.84
+      },
+      {
+        "start": 373.68,
+        "text": "to show you guys some of the tools that",
+        "duration": 2.64
+      },
+      {
+        "start": 375.04,
+        "text": "I've personally been working on. I'm not",
+        "duration": 2.68
+      },
+      {
+        "start": 376.32,
+        "text": "going to show you exactly what they are",
+        "duration": 2.8
+      },
+      {
+        "start": 377.72,
+        "text": "because these are just custom tools for",
+        "duration": 3.16
+      },
+      {
+        "start": 379.12,
+        "text": "me. They're designed around my workflow",
+        "duration": 3.4
+      },
+      {
+        "start": 380.88,
+        "text": "for some of the channels that I run. So,",
+        "duration": 2.8
+      },
+      {
+        "start": 382.52,
+        "text": "to be honest, it wouldn't even really",
+        "duration": 2.56
+      },
+      {
+        "start": 383.68,
+        "text": "help most of you guys out. But, this is",
+        "duration": 2.28
+      },
+      {
+        "start": 385.08,
+        "text": "part of the reason why I have an",
+        "duration": 2.16
+      },
+      {
+        "start": 385.96,
+        "text": "advantage in some of the niches that I",
+        "duration": 2.56
+      },
+      {
+        "start": 387.24,
+        "text": "go into. And so, I don't really want to",
+        "duration": 2.48
+      },
+      {
+        "start": 388.52,
+        "text": "leak these even though you can just",
+        "duration": 2.36
+      },
+      {
+        "start": 389.72,
+        "text": "build them yourself with a few days of",
+        "duration": 2.52
+      },
+      {
+        "start": 390.88,
+        "text": "hard work. So, the first one I have here",
+        "duration": 3.36
+      },
+      {
+        "start": 392.24,
+        "text": "is basically a more advanced version of",
+        "duration": 3.36
+      },
+      {
+        "start": 394.24,
+        "text": "the tool that I almost made on camera",
+        "duration": 2.92
+      },
+      {
+        "start": 395.6,
+        "text": "for you guys. It's just my own personal",
+        "duration": 3.24
+      },
+      {
+        "start": 397.16,
+        "text": "bulk video downloader. This one's not a",
+        "duration": 3.2
+      },
+      {
+        "start": 398.84,
+        "text": "big deal, but it's just for my specific",
+        "duration": 3.24
+      },
+      {
+        "start": 400.36,
+        "text": "workflow. So, I take my entire script",
+        "duration": 3.48
+      },
+      {
+        "start": 402.08,
+        "text": "which has words as well as clips from",
+        "duration": 3.04
+      },
+      {
+        "start": 403.84,
+        "text": "multiple different sources. Talking",
+        "duration": 3.36
+      },
+      {
+        "start": 405.12,
+        "text": "about YouTube shorts, TikTok, Instagram,",
+        "duration": 3.76
+      },
+      {
+        "start": 407.2,
+        "text": "literally anything. I paste it all in",
+        "duration": 3.64
+      },
+      {
+        "start": 408.88,
+        "text": "here. It disregards all of the words. I",
+        "duration": 3.68
+      },
+      {
+        "start": 410.84,
+        "text": "select what folder I want it to go to",
+        "duration": 3.36
+      },
+      {
+        "start": 412.56,
+        "text": "and I just press download and then it",
+        "duration": 3.28
+      },
+      {
+        "start": 414.2,
+        "text": "downloads it all super cleanly into one",
+        "duration": 3.56
+      },
+      {
+        "start": 415.84,
+        "text": "folder. It takes me about 30 seconds to",
+        "duration": 4.0
+      },
+      {
+        "start": 417.76,
+        "text": "download like 15 videos. It's very",
+        "duration": 3.68
+      },
+      {
+        "start": 419.84,
+        "text": "efficient. Saves me and my editors a lot",
+        "duration": 2.96
+      },
+      {
+        "start": 421.44,
+        "text": "of time in case we're dealing with a lot",
+        "duration": 2.8
+      },
+      {
+        "start": 422.8,
+        "text": "of clips. It just literally helps to",
+        "duration": 2.52
+      },
+      {
+        "start": 424.24,
+        "text": "speed up the workflow instead of",
+        "duration": 2.84
+      },
+      {
+        "start": 425.32,
+        "text": "downloading each video manually. Seems",
+        "duration": 3.28
+      },
+      {
+        "start": 427.08,
+        "text": "small, but minutes add up. I want",
+        "duration": 2.72
+      },
+      {
+        "start": 428.6,
+        "text": "everything to be as efficient as",
+        "duration": 2.96
+      },
+      {
+        "start": 429.8,
+        "text": "possible in my system. This is another",
+        "duration": 3.2
+      },
+      {
+        "start": 431.56,
+        "text": "one that I built. This is to attack",
+        "duration": 2.8
+      },
+      {
+        "start": 433.0,
+        "text": "long-form. Although, I kind of put this",
+        "duration": 3.16
+      },
+      {
+        "start": 434.36,
+        "text": "one on a hold because it was so big of a",
+        "duration": 3.36
+      },
+      {
+        "start": 436.16,
+        "text": "task. This would take me weeks and weeks",
+        "duration": 3.0
+      },
+      {
+        "start": 437.72,
+        "text": "and weeks to actually iron this all out.",
+        "duration": 2.48
+      },
+      {
+        "start": 439.16,
+        "text": "And also, I haven't even started my",
+        "duration": 2.56
+      },
+      {
+        "start": 440.2,
+        "text": "long-form journey yet. So, it's not",
+        "duration": 2.84
+      },
+      {
+        "start": 441.72,
+        "text": "worth my time or energy right now.",
+        "duration": 3.08
+      },
+      {
+        "start": 443.04,
+        "text": "However, the tool goes as follows. You",
+        "duration": 3.6
+      },
+      {
+        "start": 444.8,
+        "text": "simply upload your voiceover for like,",
+        "duration": 2.88
+      },
+      {
+        "start": 446.64,
+        "text": "you know, it's a long-form video, so",
+        "duration": 2.32
+      },
+      {
+        "start": 447.68,
+        "text": "it'll be like 10 minutes long. You",
+        "duration": 2.56
+      },
+      {
+        "start": 448.96,
+        "text": "choose the folder and you generate the",
+        "duration": 3.12
+      },
+      {
+        "start": 450.24,
+        "text": "video and then you get stock footage,",
+        "duration": 4.04
+      },
+      {
+        "start": 452.08,
+        "text": "captions, some motion design, graphics,",
+        "duration": 3.88
+      },
+      {
+        "start": 454.28,
+        "text": "etc. So, literally just it makes",
+        "duration": 3.2
+      },
+      {
+        "start": 455.96,
+        "text": "long-form videos for you. And I have one",
+        "duration": 3.12
+      },
+      {
+        "start": 457.48,
+        "text": "on my laptop, so I don't have access to",
+        "duration": 2.92
+      },
+      {
+        "start": 459.08,
+        "text": "it right now. But, basically what it",
+        "duration": 3.52
+      },
+      {
+        "start": 460.4,
+        "text": "does is it can pull captions off the",
+        "duration": 3.92
+      },
+      {
+        "start": 462.6,
+        "text": "screen of YouTube shorts. So, I'm not",
+        "duration": 2.96
+      },
+      {
+        "start": 464.32,
+        "text": "talking about videos that have like",
+        "duration": 2.72
+      },
+      {
+        "start": 465.56,
+        "text": "transcripts or videos where there's",
+        "duration": 2.96
+      },
+      {
+        "start": 467.04,
+        "text": "audible commentary. I'm talking about",
+        "duration": 3.16
+      },
+      {
+        "start": 468.52,
+        "text": "videos that have literally captions on",
+        "duration": 3.56
+      },
+      {
+        "start": 470.2,
+        "text": "the screen. You can paste a video URL,",
+        "duration": 3.6
+      },
+      {
+        "start": 472.08,
+        "text": "it'll literally extract all the captions",
+        "duration": 3.24
+      },
+      {
+        "start": 473.8,
+        "text": "and feed it to me in like a document or",
+        "duration": 3.16
+      },
+      {
+        "start": 475.32,
+        "text": "text form. So, hopefully you should be",
+        "duration": 3.36
+      },
+      {
+        "start": 476.96,
+        "text": "having some ideas of like how you could",
+        "duration": 2.96
+      },
+      {
+        "start": 478.68,
+        "text": "potentially use this in your own",
+        "duration": 2.44
+      },
+      {
+        "start": 479.92,
+        "text": "workflow. All right, now let's talk",
+        "duration": 2.68
+      },
+      {
+        "start": 481.12,
+        "text": "about the honest time investment. A",
+        "duration": 3.72
+      },
+      {
+        "start": 482.6,
+        "text": "small useful tool will probably take you",
+        "duration": 4.2
+      },
+      {
+        "start": 484.84,
+        "text": "a few hours just to debug it fully, have",
+        "duration": 3.44
+      },
+      {
+        "start": 486.8,
+        "text": "it looking good, have it functioning",
+        "duration": 3.6
+      },
+      {
+        "start": 488.28,
+        "text": "good, have it be perfect with no issues",
+        "duration": 3.96
+      },
+      {
+        "start": 490.4,
+        "text": "and fully get 100% of the testing done",
+        "duration": 3.8
+      },
+      {
+        "start": 492.24,
+        "text": "that you need to. A fully polished one",
+        "duration": 3.2
+      },
+      {
+        "start": 494.2,
+        "text": "or a really advanced one is going to",
+        "duration": 2.6
+      },
+      {
+        "start": 495.44,
+        "text": "take you weeks of debugging. That's I'm",
+        "duration": 2.64
+      },
+      {
+        "start": 496.8,
+        "text": "not going to lie to you. But, you also",
+        "duration": 2.32
+      },
+      {
+        "start": 498.08,
+        "text": "just need it to be functional. It",
+        "duration": 2.32
+      },
+      {
+        "start": 499.12,
+        "text": "doesn't matter about really how it",
+        "duration": 2.56
+      },
+      {
+        "start": 500.4,
+        "text": "looks. The UI doesn't even really",
+        "duration": 2.72
+      },
+      {
+        "start": 501.68,
+        "text": "matter. It just matters that it actually",
+        "duration": 2.68
+      },
+      {
+        "start": 503.12,
+        "text": "works for whatever you're trying to get",
+        "duration": 2.68
+      },
+      {
+        "start": 504.36,
+        "text": "it to do. If you can do that, that's a",
+        "duration": 2.72
+      },
+      {
+        "start": 505.8,
+        "text": "win. And what you guys really need to",
+        "duration": 2.84
+      },
+      {
+        "start": 507.08,
+        "text": "think about is what are you spending a",
+        "duration": 3.16
+      },
+      {
+        "start": 508.64,
+        "text": "little bit of extra time doing? Are you",
+        "duration": 3.64
+      },
+      {
+        "start": 510.24,
+        "text": "spending 10 minutes downloading videos",
+        "duration": 3.84
+      },
+      {
+        "start": 512.28,
+        "text": "because you're dealing with 15 to 30",
+        "duration": 3.6
+      },
+      {
+        "start": 514.08,
+        "text": "videos per short? If that's the case, we",
+        "duration": 3.56
+      },
+      {
+        "start": 515.88,
+        "text": "can completely cut that down to like 30",
+        "duration": 3.52
+      },
+      {
+        "start": 517.64,
+        "text": "seconds. Over a week, that will save you",
+        "duration": 3.72
+      },
+      {
+        "start": 519.4,
+        "text": "over an hour of time. So, you need to",
+        "duration": 3.84
+      },
+      {
+        "start": 521.36,
+        "text": "identify what are the bottlenecks in",
+        "duration": 4.0
+      },
+      {
+        "start": 523.24,
+        "text": "your specific workflow and then figure",
+        "duration": 4.2
+      },
+      {
+        "start": 525.36,
+        "text": "out ways to develop systems to where you",
+        "duration": 4.04
+      },
+      {
+        "start": 527.44,
+        "text": "can reduce extraneous time that you're",
+        "duration": 3.8
+      },
+      {
+        "start": 529.4,
+        "text": "spending making videos every day.",
+        "duration": 3.04
+      },
+      {
+        "start": 531.24,
+        "text": "Doesn't have to be pretty, it just has",
+        "duration": 2.68
+      },
+      {
+        "start": 532.44,
+        "text": "to remove one step from your day. So,",
+        "duration": 3.08
+      },
+      {
+        "start": 533.92,
+        "text": "the bottom line on Claude Code is that",
+        "duration": 3.28
+      },
+      {
+        "start": 535.52,
+        "text": "it's not just for developers, okay? Each",
+        "duration": 3.12
+      },
+      {
+        "start": 537.2,
+        "text": "and every one of you guys could use this",
+        "duration": 3.36
+      },
+      {
+        "start": 538.64,
+        "text": "to your advantage if you have the energy",
+        "duration": 3.52
+      },
+      {
+        "start": 540.56,
+        "text": "and you want to do so. Otherwise, you",
+        "duration": 3.12
+      },
+      {
+        "start": 542.16,
+        "text": "can just let me know what you want in my",
+        "duration": 2.96
+      },
+      {
+        "start": 543.68,
+        "text": "software and I'll add that for you guys.",
+        "duration": 2.96
+      },
+      {
+        "start": 545.12,
+        "text": "It's not a big deal. But, obviously, if",
+        "duration": 3.04
+      },
+      {
+        "start": 546.64,
+        "text": "you want those specific, those hyper",
+        "duration": 3.52
+      },
+      {
+        "start": 548.16,
+        "text": "specific things, those tools that will",
+        "duration": 3.84
+      },
+      {
+        "start": 550.16,
+        "text": "only make sense for your workflow, then",
+        "duration": 3.52
+      },
+      {
+        "start": 552.0,
+        "text": "you make it yourself. And look, I'm not",
+        "duration": 3.6
+      },
+      {
+        "start": 553.68,
+        "text": "somebody who got monetized in like 2020",
+        "duration": 3.24
+      },
+      {
+        "start": 555.6,
+        "text": "and then now I'm selling you a course. I",
+        "duration": 3.04
+      },
+      {
+        "start": 556.92,
+        "text": "run over six monetized channels right",
+        "duration": 3.32
+      },
+      {
+        "start": 558.64,
+        "text": "now. I'm about to scale to more. I go",
+        "duration": 3.32
+      },
+      {
+        "start": 560.24,
+        "text": "viral every single week. In fact, most",
+        "duration": 3.32
+      },
+      {
+        "start": 561.96,
+        "text": "of the days I go viral every single day",
+        "duration": 2.84
+      },
+      {
+        "start": 563.56,
+        "text": "and I'm in this every single day",
+        "duration": 3.16
+      },
+      {
+        "start": 564.8,
+        "text": "grinding out just like you guys every",
+        "duration": 3.28
+      },
+      {
+        "start": 566.72,
+        "text": "single day. So, if you've been doing the",
+        "duration": 2.8
+      },
+      {
+        "start": 568.08,
+        "text": "work and you still can't break through",
+        "duration": 3.4
+      },
+      {
+        "start": 569.52,
+        "text": "to see consistent five to 10,000 dollar",
+        "duration": 3.4
+      },
+      {
+        "start": 571.48,
+        "text": "months, you can apply to see if you",
+        "duration": 3.48
+      },
+      {
+        "start": 572.92,
+        "text": "qualify to work with me one-on-one.",
+        "duration": 4.48
+      },
+      {
+        "start": 574.96,
+        "text": "You'll get direct 24/7 access to me and",
+        "duration": 4.44
+      },
+      {
+        "start": 577.4,
+        "text": "a clear plan going forward because all",
+        "duration": 3.48
+      },
+      {
+        "start": 579.4,
+        "text": "of this doesn't need to be guesswork.",
+        "duration": 3.64
+      },
+      {
+        "start": 580.88,
+        "text": "Also, join my Discord, subscribe to my",
+        "duration": 4.16
+      },
+      {
+        "start": 583.04,
+        "text": "super secret second channel. Holy, that",
+        "duration": 3.56
+      },
+      {
+        "start": 585.04,
+        "text": "was a lot of S's. And join the waitlist",
+        "duration": 3.28
+      },
+      {
+        "start": 586.6,
+        "text": "for my software. You are not going to",
+        "duration": 3.04
+      },
+      {
+        "start": 588.32,
+        "text": "want to miss out. This is going to",
+        "duration": 2.96
+      },
+      {
+        "start": 589.64,
+        "text": "change the game. I hope this video helps",
+        "duration": 5.44
+      },
+      {
+        "start": 591.28,
+        "text": "some of you guys out and peace out.",
+        "duration": 3.8
+      }
+    ],
+    "status": "OK",
+    "segment_count": 372
+  },
+  "captured_at": "2026-07-09T22:00:00Z",
+  "captured_by": "CAPTEURS"
+}

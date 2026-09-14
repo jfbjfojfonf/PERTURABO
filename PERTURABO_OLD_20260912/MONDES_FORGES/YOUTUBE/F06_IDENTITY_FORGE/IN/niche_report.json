@@ -1,0 +1,36 @@
+{
+  "concept_identified": "Taxonomie exhaustive avec escalade — 'Every Type Of X Explained in Y minutes'",
+  "format_identified": "Vidéo explicative faceless, 5-10 min, liste exhaustive, narration dense factuelle, zéro blabla",
+  "recommended_niche": "Hurricanes US — Météo extrême américaine",
+  "blue_ocean_validations": [
+    {
+      "niche": "Hurricanes US",
+      "verdict": "OCÉAN BLEU",
+      "confidence_score": 9,
+      "reasoning": "The Escalist couvre les tornades mais ZÉRO hurricanes. Territoire vierge avec format identique.",
+      "first_5_video_ideas": [
+        {
+          "title": "Every Category Of Hurricane Explained in 5 minutes"
+        },
+        {
+          "title": "The Most Destructive Hurricanes In US History"
+        },
+        {
+          "title": "Every Way A Hurricane Can Kill You"
+        },
+        {
+          "title": "Hurricane vs Typhoon vs Cyclone — Every Difference Explained"
+        },
+        {
+          "title": "What Would A Category 6 Hurricane Look Like?"
+        }
+      ]
+    }
+  ],
+  "demon": {
+    "name": "The Escalist",
+    "subscribers": 30000,
+    "format": "Every Type Of X Explained — escalation taxonomique, infographie flat, fond blanc, gradient vert→rouge",
+    "weakness": "Couvre tornades, thunderstorms, tsunamis mais ZÉRO hurricanes"
+  }
+}

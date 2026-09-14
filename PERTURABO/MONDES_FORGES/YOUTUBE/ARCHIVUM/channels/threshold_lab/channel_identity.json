@@ -1,0 +1,108 @@
+{
+  "niche": "Curation de clips extrêmes Douyin/TikTok — phénomènes physiques, matériaux extrêmes, expériences visuelles WOW — voix off US anglophone",
+  "concept": "Sourcer des clips Douyin/TikTok d'ingénieurs et labos chinois testant des matériaux extrêmes (aimants militaires, alliages inconnus, peintures ultra-noires, températures extrêmes) et les curater en Shorts YouTube US avec voix off. Différenciateur vs Action Lab Shorts : curation Douyin (700M users) au lieu de production solo = 4-5 clips/jour vs 1-2, accès à des matériaux inexistants en Occident.",
+  "channel_names": [
+    {
+      "rank": 1,
+      "name": "Threshold Lab",
+      "rationale": "Threshold = limite/seuil, Lab = laboratoire. Évoque le moment où la matière atteint son point de rupture. Slick, engineering, mémorable, SEO fort.",
+      "memorability_score": 8,
+      "seo_score": 8,
+      "brand_score": 9
+    }
+  ],
+  "chosen_name": "Threshold Lab",
+  "chosen_handle": "@thresholdlab",
+  "description": "THRESHOLD LAB\n\nWhere science hits its limits.\n\nExtreme materials. Extreme forces. We push physics to the edge.\n\n✅ Strongest magnets, blackest blacks, hottest flames, heaviest metals\n✅ Raw footage. Real science. No fluff.\n\n📧 Contact: thresholdlab.yt@gmail.com\n\nI ensure all my videos are transformative, featuring original commentary and creative edits that add significant value beyond the original sources.\n\nCopyright Disclaimer:\nUnder Section 107 of the Copyright Act 1976, allowance is made for fair use for purposes such as criticism, comment, news reporting, teaching, scholarship, and research.",
+  "tags": [
+    "extreme science",
+    "vantablack",
+    "strongest magnet",
+    "heaviest metal",
+    "extreme materials",
+    "physics experiments",
+    "science shorts",
+    "mind blowing science",
+    "extreme temperature",
+    "material science",
+    "hydraulic press",
+    "liquid nitrogen",
+    "extreme objects",
+    "science facts",
+    "wow science"
+  ],
+  "tone_of_voice": {
+    "register": "Direct, punchy, WOW-driven — chaque phrase est un hook",
+    "rhythm": "Rapide, 1 fait extrême par 3-5 secondes",
+    "signature_vocabulary": "extreme, strongest, blackest, heaviest, hottest, limit, threshold, defy, impossible",
+    "personality": "Faceless narrator fasciné par les extrêmes physiques — ton confiant, émerveillé mais pas enfantin",
+    "never_does": [
+      "Explications longues — on montre, on n'enseigne pas",
+      "Clickbait mensonger — le WOW doit être réel",
+      "Contenu non-transformé — toujours voix off + montage original"
+    ]
+  },
+  "visual_codes": {
+    "color_palette": "Blanc pur #FFFFFF, Bleu électrique #0A84FF, Gris métallique #8A8A8E, Noir profond #0D0D0D",
+    "graphic_style": "Engineering minimaliste — hexagones, lignes de seuil, textures métal brossé",
+    "thumbnail_template": "Objet extrême en gros plan + super-titre blanc bold + accent bleu électrique",
+    "typography": "Condensed bold sans-serif, uppercase, blanc sur fond sombre"
+  },
+  "format_standard": {
+    "target_duration": "15-45s",
+    "clips_per_video": 1,
+    "structure": "Hook visuel 0-3s → WOW moment → super-titre contextuel → payoff",
+    "publish_frequency": "5-7 Shorts/semaine"
+  },
+  "demon": {
+    "primary_demon": "Action Lab Shorts (4.41M subs) — 100% Shorts, US, même format (voix off + WOW science). Production solo 3-5 jours/clip, jamais de clips Douyin, format répétitif depuis 500+ clips.",
+    "vulnerabilities": [
+      "Production solo = bottleneck (3-5 jours/clip vs curation 6-8h = 4-5 clips/jour)",
+      "Aveugle sur Douyin — 700M users, ingénieurs chinois avec matériaux inaccessibles en Occident",
+      "Format répétitif — même ton, même style depuis 500+ clips, fatigue audience"
+    ],
+    "exploitation_strategy": "Curation Douyin = volume 10x supérieur, matériaux inédits en Occident (aimants militaires chinois, alliages nouveaux), lag Douyin→YouTube = 2-4 semaines de fenêtre par trend"
+  },
+  "breacher_angles": [
+    {"rank": 1, "hook": "What happens when magnets meet molten metal?", "category": "Magnétisme", "super_titre": "LIQUID METAL DEFIES GRAVITY", "score": 9.8, "douyin_hashtags": ["#磁铁熔融金属", "#磁流体"]},
+    {"rank": 2, "hook": "This metal just absorbed ALL the heat instantly", "category": "Matériaux", "super_titre": "HEAT VANISHES INSTANTLY", "score": 9.6, "douyin_hashtags": ["#超导热金属", "#材料科学"]},
+    {"rank": 3, "hook": "Can liquid nitrogen really freeze THIS fast?", "category": "Chimie", "super_titre": "FROZEN IN 0.5 SECONDS", "score": 9.5, "douyin_hashtags": ["#液氮冷冻", "#极端温度"]},
+    {"rank": 4, "hook": "This material just bent BACKWARD on itself", "category": "Matériaux", "super_titre": "BENDS WRONG WAY", "score": 9.4, "douyin_hashtags": ["#超材料", "#反向弯曲"]},
+    {"rank": 5, "hook": "Watch this magnet LEVITATE indefinitely", "category": "Magnétisme", "super_titre": "INFINITE LEVITATION TRICK", "score": 9.3, "douyin_hashtags": ["#超导悬浮", "#磁悬浮"]},
+    {"rank": 6, "hook": "The blackest paint absorbs 99.9% of light", "category": "Optique", "super_titre": "LIGHT CANNOT ESCAPE", "score": 9.2, "douyin_hashtags": ["#超黑涂层", "#光吸收"]},
+    {"rank": 7, "hook": "This alloy is lighter than air but stronger than steel", "category": "Matériaux", "super_titre": "STRONGER THAN STEEL, LIGHTER THAN AIR", "score": 9.1, "douyin_hashtags": ["#超轻合金", "#气凝胶"]},
+    {"rank": 8, "hook": "World's strongest magnet crushes everything", "category": "Magnétisme", "super_titre": "NOTHING SURVIVES THIS", "score": 9.0, "douyin_hashtags": ["#超强磁铁", "#磁力测试"]},
+    {"rank": 9, "hook": "Metal that HEALS itself when cracked", "category": "Matériaux", "super_titre": "IT HEALS ITSELF", "score": 8.9, "douyin_hashtags": ["#自修复金属", "#智能材料"]},
+    {"rank": 10, "hook": "Hottest flame on Earth melts through everything", "category": "Physique", "super_titre": "3000°C INSTANT MELT", "score": 8.8, "douyin_hashtags": ["#等离子切割", "#极端高温"]},
+    {"rank": 11, "hook": "This liquid metal behaves like a living creature", "category": "Chimie", "super_titre": "ALIVE??", "score": 8.7, "douyin_hashtags": ["#液态金属", "#镓"]},
+    {"rank": 12, "hook": "Strongest hydraulic press vs unbreakable material", "category": "Mécanique", "super_titre": "PRESS VS INDESTRUCTIBLE", "score": 8.7, "douyin_hashtags": ["#液压机", "#抗压测试"]},
+    {"rank": 13, "hook": "Metal that changes color with temperature", "category": "Matériaux", "super_titre": "THERMOCHROMIC METAL", "score": 8.6, "douyin_hashtags": ["#热致变色", "#温敏材料"]},
+    {"rank": 14, "hook": "This sponge absorbs 100x its weight in seconds", "category": "Matériaux", "super_titre": "100X ABSORPTION", "score": 8.5, "douyin_hashtags": ["#超吸水", "#高分子材料"]},
+    {"rank": 15, "hook": "World's most reflective surface blinds you", "category": "Optique", "super_titre": "99.99% REFLECTION", "score": 8.5, "douyin_hashtags": ["#超反射", "#镜面材料"]},
+    {"rank": 16, "hook": "Metal so dense it sinks through mercury", "category": "Physique", "super_titre": "DENSER THAN MERCURY", "score": 8.4, "douyin_hashtags": ["#高密度金属", "#钨"]},
+    {"rank": 17, "hook": "This material is completely unbreakable", "category": "Matériaux", "super_titre": "TRULY INDESTRUCTIBLE", "score": 8.4, "douyin_hashtags": ["#防弹材料", "#凯夫拉"]},
+    {"rank": 18, "hook": "Electric current visible flowing through metal", "category": "Physique", "super_titre": "YOU CAN SEE ELECTRICITY", "score": 8.3, "douyin_hashtags": ["#电流可视化", "#电磁场"]},
+    {"rank": 19, "hook": "Coldest substance on Earth freezes air solid", "category": "Chimie", "super_titre": "AIR TURNS SOLID", "score": 8.2, "douyin_hashtags": ["#液氦", "#绝对零度"]},
+    {"rank": 20, "hook": "Magnetic putty swallows magnet whole", "category": "Magnétisme", "super_titre": "IT EATS MAGNETS", "score": 8.2, "douyin_hashtags": ["#磁性橡皮泥", "#磁铁吞噬"]}
+  ],
+  "sourcing_strategy": {
+    "platforms": ["Douyin (primary)", "TikTok (secondary)", "Bilibili (backup)"],
+    "hashtags": ["#磁铁", "#超材料", "#液氮", "#极端温度", "#材料科学", "#液压机", "#超导", "#气凝胶", "#自修复", "#热致变色"],
+    "method": "Chercher sur Douyin avec hashtags chinois → downloader via SnapSave/SSSTik → ajouter voix off US + super-titres + montage → uploader sur YouTube Shorts",
+    "copyright_safety": "95% des créateurs Douyin ne sont pas sur YouTube — Content ID ne reconnaît pas leur empreinte. Transformation obligatoire (voix off + montage + super-titres)."
+  },
+  "f06_meta": {
+    "forged_at": "2026-07-23T03:00:00Z",
+    "model_used": "oracle-mode + openrouter",
+    "specimen_source": "https://www.youtube.com/shorts/aJaWbFLKXNU — Peinture la plus noire VS lampe la plus brillante",
+    "demon_analyzed": "Action Lab Shorts (4.41M subs, 100% Shorts, US, production solo)",
+    "rules_applied": [
+      "Règle 5: Blue Ocean = Douyin curation inexploitée sur YouTube US",
+      "Règle 8: Validation avant production",
+      "Règle doctrine: aucune frégate sautée, aucune Gate omise",
+      "Règle copyright: transformation obligatoire (voix off + montage original)"
+    ],
+    "tyrant_score": 7.75,
+    "breacher_score": 8.6
+  }
+}

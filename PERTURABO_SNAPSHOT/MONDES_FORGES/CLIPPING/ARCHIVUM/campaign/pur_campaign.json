@@ -1,0 +1,59 @@
+{
+  "mode": "pur",
+  "campaign_id": "PUR_SIEGE_DEFAULT",
+  "status": "idle",
+  "style": null,
+  "siege_id": null,
+  "source": {
+    "transcript": null,
+    "video_url": null,
+    "duration_sec": null,
+    "title": null
+  },
+  "constraints": {
+    "platforms": [
+      "youtube_shorts",
+      "tiktok",
+      "instagram_reels"
+    ],
+    "clip_duration": {
+      "min": 15,
+      "max": 60,
+      "optimal": [
+        30,
+        45
+      ]
+    },
+    "hook_duration_max": 3,
+    "anti_detection": {
+      "mirror": true,
+      "speed": 1.05,
+      "crop_percent": 2.5,
+      "mandatory": true
+    },
+    "max_clips": {
+      "ranking": 6,
+      "blur": 10,
+      "split_scene": 10,
+      "reframing": 10
+    },
+    "title_max_words": {
+      "ranking": 4,
+      "blur": 2,
+      "split_scene": 2,
+      "reframing": 2
+    },
+    "label_max_words": {
+      "ranking": 1,
+      "blur": 0,
+      "split_scene": 0,
+      "reframing": 0
+    },
+    "no_cta": true,
+    "transcript_captions": true,
+    "language": null
+  },
+  "oracle_role": "Génère les titres/hooks via clé premium + ARCHIVUM (hooks_pur.json, copywriting_pur.json, hooks_psychology.json)",
+  "warsmith_role": "Valide les titres et labels, choisit la langue, le style, les exclusions",
+  "archive": []
+}
