@@ -178,3 +178,22 @@
 - **Workflow** : input `to_candidats` (défaut true) + artefact `voxc-candidats-*`.
 - **Tests** : `test_candidates_bridge.py` (3 formes + vide = erreur, pas de silence).
 - **Docs** : guides 11/13/14/19/20, README_V2, CONTINUATION_F00, `_PIEGES_APPRIS_PUR.md`.
+
+### 2026-09-14 — PACK FINAL voxc-2 BLUR + AUDIT ÉDITORIAL (ad-reads refusés)
+
+- **GO ×3 style blur actés au cockpit** (voxc-2/3/4, 18:16-18:18) → 3 manifestes
+  blur émis par F00D (2 panneaux, 32u/55u, caps respectés), Archivum versionné
+  (docs/data/caviar/*_blur.json).
+- **Audit éditorial du transcript opérateur** : voxc-3 (30:47) = lecture de pub
+  **Hims** ; voxc-4 (1:02:25) = pubs **Claude + FanDuel**. La directive campagne
+  interdit la promotion d'autres marques dans le clip → voxc-3/4 NON packables
+  (manifestes conservés marqués RÉSERVÉ, aucun pack émis).
+- **voxc-2 (2:34→3:25) = contenu réel** (LeBron, cible, placements) →
+  **production_pack_pur_voxc2_blur.json** émis : overlay 2 lignes (« SHE
+  OUT-EARNS LEBRON JAMES. » / citation dream), émotions qualifiées
+  (incredulity, dreamlike), anti-détection, compliance #ad + watermark 75%.
+- **Recommandation** : GO voxc-1 (net worth) / voxc-5 (koi) + run ciblé sur le
+  pic humain 1:36:27 (photos lycée) pour compléter les 3 clips de la campagne.
+- **Correctif infra** : le serveur tournait encore avec le receiver pré-commit
+  (restart antérieur aux edits) — les GO avaient acté le style sans émission.
+  Restart effectué, émissions rejouées, index réaligné, artefact de test purgé.

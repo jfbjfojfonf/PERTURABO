@@ -1,0 +1,165 @@
+{
+  "pack_id": "pur-voxc2-blur",
+  "generated_at": "2026-09-14T18:33:25.649185+00:00",
+  "mode": "pur",
+  "asset_mode": "blur_panels",
+  "identite": {
+    "campaign_id": "SOPHIE_RAIN_CLIPIFY_US_2026",
+    "angle_id": "voxc-2",
+    "pack_index": 1,
+    "pack_total": 1
+  },
+  "cibles": {
+    "target_platform": "youtube_shorts",
+    "target_market": "us_young_english"
+  },
+  "source": {
+    "vod_url": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+    "start_sec": 154.2,
+    "end_sec": 205.5,
+    "duration_sec": 51.3,
+    "signal_type": "platform_heat",
+    "signal_intensity": 0.97,
+    "run_id": "f00c_2026-09-14T134014.262908+0000",
+    "candidate_id": "voxc-2",
+    "source_permission": "campaign_provided"
+  },
+  "gate": {
+    "verdict": "approved",
+    "style": "blur",
+    "decided_by": "warsmith (cockpit War Room)",
+    "decided_at": "2026-09-14T18:16:36.738663+00:00"
+  },
+  "copywriting": {
+    "overlay_title": "SHE OUT-EARNS LEBRON JAMES.\n\"I keep waiting to wake up from this dream\"",
+    "overlay_lines": 2,
+    "rationale": "Reframe fidèle à la source : la comparaison LeBron est DITE mot pour mot dans le clip (3:02), la réaction 'wake up from this dream' aussi (3:07). Ligne 1 = choc chiffré posé frame 0 (le style blur libère l'écran pour ce panneau). Ligne 2 = citation humaine qui humanise et fait la rétention jusqu'au climax. Chaque ligne < 60 chars, lisible en overlay 9:16. Zéro clickbait non livré : les deux beats sont dans la vidéo."
+  },
+  "montage_instructions": {
+    "metadata": {
+      "generated_at": "2026-09-14T18:33:25.649185+00:00",
+      "generator": "F05_PACKAGER (war_room blur loop)",
+      "version": "1.0.0-blur",
+      "campaign_id": "SOPHIE_RAIN_CLIPIFY_US_2026",
+      "segment_id": "voxc-2"
+    },
+    "segment": {
+      "source_url": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+      "start_sec": 154.2,
+      "end_sec": 205.5,
+      "duration_sec": 51.3,
+      "signal_type": "platform_heat",
+      "signal_intensity": 0.97,
+      "emotion": "incredulity"
+    },
+    "style_ref": "caviar.v1",
+    "caviar_manifest": "docs/data/caviar/caviar_manifest_voxc2_blur.json",
+    "narrative": {
+      "hook_type": "climax_first",
+      "is_climax_sec": [
+        181.95
+      ],
+      "resolution_at_sec": 186.75,
+      "energy_curve": [
+        "rise",
+        "peak",
+        "fall"
+      ],
+      "pacing_note": "Le panneau blur RACCOURCIT le pacing local ; l'audio du streamer est MAINTENU sous les effets"
+    },
+    "blur_panels": [
+      {
+        "broll_id": "BLUR-01",
+        "kind": "broll_blur",
+        "crop_zoom": 1.3,
+        "blur_radius_px": 18,
+        "panel": "vertical_text_overlay",
+        "emotion_requested": "incredulity (le fou rire incrédule face à un chiffre absurde)",
+        "start_sec_rel": 12.825,
+        "duration_frames": 36,
+        "entry_flash": true,
+        "sfx": "impact",
+        "overlay_text": "SHE OUT-EARNS LEBRON JAMES."
+      },
+      {
+        "broll_id": "BLUR-02",
+        "kind": "broll_blur",
+        "crop_zoom": 1.3,
+        "blur_radius_px": 18,
+        "panel": "vertical_text_overlay",
+        "emotion_requested": "dreamlike (le vertige 'est-ce que c'est réel ?')",
+        "start_sec_rel": 25.65,
+        "duration_frames": 36,
+        "entry_flash": true,
+        "sfx": "impact",
+        "overlay_text": "\"I KEEP WAITING TO WAKE UP FROM THIS DREAM\""
+      }
+    ],
+    "smash_audio": [
+      {
+        "at_sec_rel": 27.75,
+        "duck_db": -12,
+        "duration_sec": 0.8,
+        "cause": "climax 'more than LeBron James'"
+      }
+    ],
+    "hook": {
+      "duration_sec": 3,
+      "philosophy": "0-3s : visage speaker, PAS de panneau blur, voix claire — le blur n'entre qu'au beat 12.8s",
+      "overlay_behavior": "overlay panneau 0→climax (reframing in medias res)"
+    },
+    "anti_detection": {
+      "obligatoire": true,
+      "principe": "Empreinte digitale unique par clip.",
+      "techniques": [
+        {
+          "name": "mirror",
+          "action": "Flip horizontal sur CHAQUE clip"
+        },
+        {
+          "name": "speed",
+          "action": "vitesse 1.02x-1.08x",
+          "optimal": "1.05x"
+        },
+        {
+          "name": "crop",
+          "action": "crop 2-3%",
+          "optimal": "2.5%"
+        },
+        {
+          "name": "sfx_bridge",
+          "action": "SFX uniquement à l'entrée des panneaux blur (doctrine)"
+        }
+      ]
+    },
+    "style": {
+      "pacing": "fast",
+      "energy_level": "intense",
+      "color_palette": "contraste fort — blanc/accent jaune, panneau blur sombre",
+      "text_treatment": "bold uppercase"
+    }
+  },
+  "budget_state": {
+    "spent_units": 32,
+    "ceiling_units": 55,
+    "breathing_units": 68,
+    "counts": {
+      "broll": 2,
+      "smash_audio": 1,
+      "punch_ins": 0,
+      "jump_cuts": 0
+    },
+    "caps_respected": true
+  },
+  "compliance": {
+    "disclosure": "#ad",
+    "submit_deadline_min": 60,
+    "anti_detection_applied": true,
+    "directive_check": {
+      "sophie_prominent": true,
+      "no_other_brand_promoted": true,
+      "watermark_required": "centré, opacité >= 75% (sauf X)"
+    }
+  },
+  "note_rejet_voxc3_voxc4": "voxc-3 (30:47) = lecture de pub Hims, voxc-4 (1:02:25) = pub Claude+FanDuel : la directive campagne interdit la promotion d'autres marques dans le clip → NON packables. Recommandation : GO sur voxc-1 (net worth 0:00) et/ou voxc-5 (koi 1:31:29) + nouveau run ciblé sur le pic humain 1:36:27 (photos lycée/perte de poids) pour compléter les 3 clips exigés par la campagne."
+}
