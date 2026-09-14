@@ -149,6 +149,16 @@
   .verdict-tag { font-size: 11px; letter-spacing: 1px; padding: 4px 10px; border-radius: 3px; }
   .verdict-tag.approved { background: rgba(46,160,67,.15); color: var(--green); }
   .verdict-tag.rejected { background: rgba(248,81,73,.15); color: var(--red); }
+  /* ── Sélecteur de style (le Prince choisit AVANT le GO) ── */
+  .style-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; grid-column: 1 / -1; }
+  .style-row .style-lbl { color: var(--text-dim); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; }
+  .style-pick { display: flex; gap: 5px; }
+  button.style-btn { padding: 4px 10px; border-radius: 3px; border: 1px solid var(--boltgun);
+                     background: transparent; color: var(--text-dim); cursor: pointer;
+                     font-size: 11px; letter-spacing: .5px; transition: .15s; }
+  button.style-btn:hover { color: var(--gold-bright); border-color: var(--gold-dim); }
+  button.style-btn.active { background: var(--gold); border-color: var(--gold); color: var(--black-plate); font-weight: 700; }
+  .style-desc { color: var(--leadbelcher); font-size: 10.5px; font-style: italic; }
   /* ── RESET global + révocation de verdict ── */
   button.reset-btn { padding: 8px 18px; border-radius: 4px; border: 1px solid var(--red); color: var(--red);
                      background: transparent; font-weight: 800; letter-spacing: 2px; cursor: pointer;
@@ -531,7 +541,7 @@ function renderCandidates(run, gates) {
     if (g) {
       const tag = document.createElement('span');
       tag.className = 'verdict-tag ' + g.verdict;
-      tag.textContent = g.verdict === 'approved' ? '✔ GO' : '✘ NO-GO';
+      tag.textContent = (g.verdict === 'approved' ? '✔ GO' : '✘ NO-GO') + (g.style ? ' · ' + g.style.toUpperCase() : '');
       tag.title = 'Cliquer pour retirer le verdict (redevient en attente)';
       tag.onclick = (ev) => { ev.stopPropagation(); clearVerdict(c.id, tag); };
       const clearBtn = document.createElement('button');
@@ -541,13 +551,14 @@ function renderCandidates(run, gates) {
     } else {
       const ok = document.createElement('button');
       ok.className = 'gate-btn approve'; ok.textContent = 'GO';
-      ok.onclick = (ev) => { ev.stopPropagation(); decide(c.id, 'approved', ok, no); };
+      ok.onclick = (ev) => { ev.stopPropagation(); decide(c.id, 'approved', ok, no, chosenStyles[c.id] || 'reframing'); };
       const no = document.createElement('button');
       no.className = 'gate-btn reject'; no.textContent = 'NO-GO';
       no.onclick = (ev) => { ev.stopPropagation(); decide(c.id, 'rejected', ok, no); };
       gate.append(ok, no);
     }
     div.appendChild(gate);
+    div.appendChild(buildStyleRow(c, g));
     list.appendChild(div);
     if (run.mode === 'live') seenCands.add(c.id);
   });
@@ -557,6 +568,48 @@ function pctOf(c, run) {
   const dur = run.duration_total_sec;
   if (!dur || c.start_sec == null) return '? %';
   return Math.round(c.start_sec / dur * 100) + ' %';
+}
+
+/* ══════════ STYLE : le Prince choisit la recette AVANT le GO ══════════ */
+const STYLES = [
+  { id: 'split',     desc: 'webcam + jeu — trio sur la moitié jeu, punch-in sur réaction' },
+  { id: 'reframing', desc: '9:16 — enjeu posé frame 0, overlay jusqu\'au climax (in medias res)' },
+  { id: 'ranking',   desc: 'top 5/10 — trio à l\'entrée de chaque item, smash majoré au #1' },
+  { id: 'blur',      desc: 'panneau flouté — flux crop×1.3 + blur derrière le texte, l\'écran se libère' },
+];
+const chosenStyles = {};  // candidate_id → style sélectionné sur la carte
+
+function styleDesc(id) { return (STYLES.find(s => s.id === id) || {}).desc || ''; }
+
+function buildStyleRow(cand, gateEntry) {
+  const row = document.createElement('div');
+  row.className = 'style-row';
+  const lbl = document.createElement('span');
+  lbl.className = 'style-lbl';
+  lbl.textContent = 'STYLE —';
+  const pick = document.createElement('div');
+  pick.className = 'style-pick';
+  const current = gateEntry?.style || chosenStyles[cand.id] || 'reframing';
+  const desc = document.createElement('span');
+  desc.className = 'style-desc';
+  STYLES.forEach(s => {
+    const b = document.createElement('button');
+    b.className = 'style-btn' + (s.id === current ? ' active' : '');
+    b.textContent = s.id.toUpperCase();
+    b.title = s.desc;
+    b.onclick = (ev) => {
+      ev.stopPropagation();
+      if (gateEntry) return;  // verdict déjà posé : retirer d'abord le verdict
+      chosenStyles[cand.id] = s.id;
+      pick.querySelectorAll('.style-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      desc.textContent = s.desc;
+    };
+    pick.appendChild(b);
+  });
+  desc.textContent = styleDesc(current);
+  row.append(lbl, pick, desc);
+  return row;
 }
 
 /* ══════════ RESET GLOBAL ══════════ */
@@ -599,16 +652,20 @@ async function clearVerdict(candidateId, btn) {
   }
 }
 
-async function decide(candidateId, verdict, okBtn, noBtn) {
+async function decide(candidateId, verdict, okBtn, noBtn, style) {
   okBtn.disabled = noBtn.disabled = true;
   try {
     const res = await fetch('/api/gate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ run_id: currentRunId, candidate_id: candidateId, verdict })
+      body: JSON.stringify({ run_id: currentRunId, candidate_id: candidateId, verdict, style })
     });
     if (!res.ok) {
       const body = await res.json().catch(() => ({}));
       throw new Error(body.error || ('HTTP ' + res.status));
+    }
+    const body = await res.json().catch(() => ({}));
+    if (verdict === 'approved' && body.caviar && body.caviar.status === 'refused') {
+      showError('F00D a REFUSÉ d\'émettre (segment saturé ?) — verdict GO conservé. Détail : ' + (body.caviar.reason || '?'));
     }
     await refresh();
   } catch (err) {

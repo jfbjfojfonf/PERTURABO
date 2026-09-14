@@ -146,3 +146,52 @@ def test_reset_full_purges_runs(tmp_path, monkeypatch):
     module.store_payload(_sample())
     doc = module.reset_all(full=True)
     assert doc.get("last_run") is None and doc.get("runs") is None
+
+
+def test_store_gate_rejects_unknown_style(tmp_path, monkeypatch):
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    _, reason = module.store_gate("f00c_test_1", "clip_01", "approved", "hollywood")
+    assert reason.startswith("style inconnu")
+
+
+def test_store_gate_keeps_style_and_rerouting(tmp_path, monkeypatch):
+    """GO avec style → style acté ; changer le style re-acte (idempotence par couple)."""
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    module.store_payload(_sample())
+    doc, reason = module.store_gate("f00c_test_1", "clip_01", "approved", "blur")
+    assert reason == "ok"
+    entry = doc["gates"]["f00c_test_1"]["clip_01"]
+    assert entry["verdict"] == "approved" and entry["style"] == "blur"
+    # re-vote identique (même verdict, même style) : pas de double comptage
+    doc, _ = module.store_gate("f00c_test_1", "clip_01", "approved", "blur")
+    assert doc["gate_counts"]["approved"] == 1
+    # GO sans style → style conservé (pas de perte au cockpit)
+    doc, _ = module.store_gate("f00c_test_1", "clip_01", "approved")
+    assert doc["gates"]["f00c_test_1"]["clip_01"]["style"] == "blur"
+
+
+def test_emit_caviar_for_gate_emits_with_chosen_style(tmp_path, monkeypatch):
+    """Boucle complète cockpit → F00D : GO + style blur → manifeste style blur."""
+    monkeypatch.setattr(module, "DATA_PATH", tmp_path / "war_room.json")
+    sample = _sample()
+    sample["run_id"] = "f00c_emit_test"
+    sample["candidates"] = [{"id": "voxc-9", "rank": 1, "score": 88.0,
+                              "start_sec": 0.0, "end_sec": 45.0,
+                              "duration_sec": 45.0, "signal_intensity": 0.9}]
+    sample["fused_heatmap"] = [{"bucket": 0, "start_sec": 0.0, "end_sec": 22.5,
+                                 "attention_norm": 0.9, "fused_norm": 0.8},
+                                {"bucket": 1, "start_sec": 22.5, "end_sec": 45.0,
+                                 "attention_norm": 0.5, "fused_norm": 0.4}]
+    module.store_payload(sample)
+    out_dir = tmp_path / "caviar_out"
+    monkeypatch.setattr(module, "CAVIAR_DIR", out_dir)
+    note = module.emit_caviar_for_gate("f00c_emit_test", "voxc-9", "blur")
+    assert note["status"] == "emitted", note
+    man = json.loads((out_dir / "caviar_manifest_voxc-9.json").read_text(encoding="utf-8"))
+    assert man["style"] == "blur"
+    assert man["source"]["gate"] == "approved"
+    assert man["budget_state"]["caps_respected"] is True
+    # l'index cockpit pointe vers le manifeste émis
+    idx = json.loads(module.CAVIAR_INDEX.read_text(encoding="utf-8"))
+    assert idx["manifests"]["voxc-9"].endswith("caviar_manifest_voxc-9.json")

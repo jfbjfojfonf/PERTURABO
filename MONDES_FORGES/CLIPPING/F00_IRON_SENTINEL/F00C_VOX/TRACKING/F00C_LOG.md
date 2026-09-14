@@ -8,6 +8,30 @@
 
 ## Entrées de mise en service
 
+### 2026-09-14 — STYLE CHOISI AU COCKPIT + 4e STYLE « BLUR » (F00D)
+
+- **Manque acté par le Warsmith** : le style (split/reframing/ranking) était
+  pré-rempli « reframing » dans les fichiers d'entrée F00D sans choix
+  opérateur — aucun sélecteur dans la War Room.
+- **F00D — nouveau style `blur`** (4e recette) : le flux est crop-zoomé ×1.3
+  puis flouté (~18 px) derrière un panneau vertical de texte — l'écran se
+  libère pour le message, aucun asset requis. Trio **blur+flash+SFX**
+  inséparable (budget broll_trio), hook `climax_first` comme reframing,
+  rien après la résolution, voix MAINTENUE. Clip < 15 s → pas de panneau
+  (repli gracieux). Tests 10/10 verts.
+- **War Room — sélecteur de style par carte** : 4 boutons SPLIT/REFRAMING/
+  RANKING/BLUR + description au survol, choix AVANT le GO ; le GO envoie
+  verdict+style ensemble ; le badge de verdict affiche le style acté.
+- **Récepteur — émission pilotée par le gate** : `POST /api/gate` accepte
+  `style` (validation split|reframing|ranking|blur) ; un GO déclenche F00D
+  (caviar_director.py) qui compose le manifeste avec le style du cockpit et
+  met à jour `caviar_index.json` — le style n'est plus un pré-remplissage.
+  Idempotence par couple (verdict, style) ; style conservé si GO sans style.
+  Échec F00D = diagnostic au cockpit, verdict inchangé (jamais de faux vert).
+- **Tests** : 33/33 verts récepteur (3 nouveaux : style inconnu refusé,
+  couple verdict+style idempotent, boucle cockpit→F00D style blur émis)
+  + self-test round-trip OK (état réel restauré).
+
 ### 2026-09-13 — AUDIT WARSMITH + CONTRAT V2 (le dashboard ne devine plus)
 
 - **Audit du Warsmith sur la preview** : file des candidats vide, pas d'axes,

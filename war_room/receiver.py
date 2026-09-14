@@ -20,11 +20,13 @@ Test sans serveur :
 from __future__ import annotations
 
 import argparse
+import subprocess
 import threading
 import traceback
 import json
 import os
 import sys
+import tempfile
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -45,6 +47,12 @@ CAVIAR_INDEX = REPO_ROOT / "docs" / "data" / "caviar_index.json"
 REQUIRED_KEYS = ("run_id", "siege_id", "mode", "status", "source",
                  "heatmap", "replayed_curve", "fused_heatmap", "candidates", "pushed_at")
 GATE_VERDICTS = ("approved", "rejected")
+GATE_STYLES = ("split", "reframing", "ranking", "blur")
+DEFAULT_STYLE = "reframing"
+# Directeur Caviar (F00D) — import tolérant : la Salle de Guerre doit rester
+# debout même si la frégate n'est pas déployée dans le workspace.
+CAVIAR_DIRECTOR_PATH = REPO_ROOT / "PERTURABO" / "MONDES_FORGES" / "CLIPPING" \
+    / "F00_IRON_SENTINEL" / "F00D_NARRATIVUM" / "CODEBASE" / "caviar_director.py"
 
 
 def _now_iso() -> str:
@@ -158,9 +166,12 @@ def _warm_transcripts_async(payload: dict) -> None:
     threading.Thread(target=_warm, daemon=True, name="warm-transcripts").start()
 
 
-def store_gate(run_id: str, candidate_id: str, verdict: str) -> tuple[dict, str]:
-    """Enregistre un verdict Warsmith (gate GO/NO-GO) — le cockpit commande.
+def store_gate(run_id: str, candidate_id: str, verdict: str,
+               style: str | None = None) -> tuple[dict, str]:
+    """Enregistre un verdict Warsmith (gate GO/NO-GO + style) — le cockpit commande.
 
+    Le style (split|reframing|ranking|blur) est choisi sur la carte AVANT le
+    GO : il part avec le verdict et pilote la composition F00D du manifeste.
     Le pipeline (PERTURABO) lit GET /api/war-room pour récupérer les verdicts :
     c'est la boucle de retour Livraison D.
     """
@@ -170,22 +181,138 @@ def store_gate(run_id: str, candidate_id: str, verdict: str) -> tuple[dict, str]
         return doc, f"run_id inconnu : {run_id!r}"
     if verdict not in GATE_VERDICTS:
         return doc, f"verdict inconnu : {verdict!r} (attendu approved|rejected)"
+    if style is not None and style not in GATE_STYLES:
+        return doc, f"style inconnu : {style!r} (attendu split|reframing|ranking|blur)"
     last_run = doc.get("last_run") or {}
     known = {c.get("id") for c in last_run.get("candidates") or []}
     if last_run.get("run_id") == run_id and candidate_id not in known:
         return doc, f"candidate_id inconnu dans {run_id}: {candidate_id!r}"
     gates = doc.setdefault("gates", {}).setdefault(run_id, {})
-    if gates.get(candidate_id, {}).get("verdict") == verdict:
+    previous_entry = gates.get(candidate_id) or {}
+    if previous_entry.get("verdict") == verdict \
+            and (style is None or previous_entry.get("style") == style):
         return doc, "ok"  # re-vote identique : idempotent, pas de double comptage
-    gates[candidate_id] = {"verdict": verdict, "decided_at": _now_iso()}
-    counts = doc.setdefault("gate_counts", {"approved": 0, "rejected": 0, "pending": 0})
     previous = doc.get("last_verdicts", {}).get(f"{run_id}/{candidate_id}")
     if previous in GATE_VERDICTS and previous != verdict:
+        counts = doc.setdefault("gate_counts", {"approved": 0, "rejected": 0, "pending": 0})
         counts[previous] = max(0, counts.get(previous, 0) - 1)
+    counts = doc.setdefault("gate_counts", {"approved": 0, "rejected": 0, "pending": 0})
+    entry = {"verdict": verdict, "decided_at": _now_iso()}
+    if style is not None:
+        entry["style"] = style
+    elif previous_entry.get("style"):
+        entry["style"] = previous_entry["style"]  # GO sans style → style conservé
+    gates[candidate_id] = entry
     doc.setdefault("last_verdicts", {})[f"{run_id}/{candidate_id}"] = verdict
     counts[verdict] = counts.get(verdict, 0) + 1
     DATA_PATH.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
     return doc, "ok"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# F00D — émission caviar pilotée par le gate (style choisi au cockpit)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _load_director():
+    """Charge caviar_director.py (F00D) — None si absent (dégradation propre)."""
+    if not CAVIAR_DIRECTOR_PATH.exists():
+        return None
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("caviar_director", CAVIAR_DIRECTOR_PATH)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def emit_caviar_for_gate(run_id: str, candidate_id: str, style: str) -> dict:
+    """GO enregistré → F00D compose le manifeste avec le style du cockpit.
+
+    Retourne {"status": "emitted"|"refused"|"unavailable"|"error", ...}.
+    L'échec d'émission ne remet JAMAIS en cause le verdict (déjà acté) : le
+    diagnostic est journalisé dans le doc et visible via caviar_index.
+    """
+    doc = _load_doc()
+    last = doc.get("last_run") or {}
+    cand = next((c for c in last.get("candidates") or [] if c.get("id") == candidate_id), None)
+    if cand is None or last.get("run_id") != run_id:
+        return {"status": "error", "reason": f"candidat {candidate_id!r} hors run courant"}
+    director = _load_director()
+    if director is None:
+        return {"status": "unavailable", "reason": "caviar_director.py introuvable (F00D absent)"}
+
+    budget = director.load_budget()
+    duration = float(cand.get("duration_sec") or (cand.get("end_sec", 0) - cand.get("start_sec", 0)) or 30.0)
+    fused = last.get("fused_heatmap") or []
+    in_seg = [b for b in fused
+              if b.get("start_sec") is not None
+              and b.get("start_sec") >= (cand.get("start_sec") or 0)
+              and b.get("end_sec") is not None
+              and b.get("end_sec") <= (cand.get("end_sec") or 1e18)]
+    segment_heatmap = [{
+        "start_sec": round(b["start_sec"] - (cand.get("start_sec") or 0), 3),
+        "end_sec": round(b["end_sec"] - (cand.get("start_sec") or 0), 3),
+        "attention_norm": b.get("attention_norm", b.get("fused_norm", 0.5)),
+    } for b in in_seg] or [{"start_sec": 0.0, "end_sec": duration,
+                            "attention_norm": min(cand.get("signal_intensity") or 0.6, 1.0)}]
+
+    input_doc = {
+        "schema_version": "caviar_input.v1",
+        "candidate": {
+            "run_id": run_id,
+            "candidate_id": candidate_id,
+            "source": (last.get("source") or {}).get("reference") or "",
+            "title": last.get("title") or "",
+            "start_sec_source": cand.get("start_sec"),
+            "end_sec_source": cand.get("end_sec"),
+            "duration_sec": round(duration, 3),
+            "score": cand.get("score"),
+            "gate": "approved",
+            "gate_decided_by": "warsmith (cockpit War Room)",
+            "style_hint": style,
+        },
+        "segment_heatmap": segment_heatmap,
+        "constraints": {"style": style},
+    }
+
+    out_dir = CAVIAR_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"caviar_manifest_{candidate_id}.json"
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            in_path = Path(td) / "caviar_input.json"
+            in_path.write_text(json.dumps(input_doc, ensure_ascii=False, indent=2), encoding="utf-8")
+            proc = subprocess.run(
+                [sys.executable, str(CAVIAR_DIRECTOR_PATH),
+                 "--input", str(in_path), "--out", str(out_path)],
+                capture_output=True, text=True, timeout=120, check=False)
+    except (subprocess.SubprocessError, OSError) as exc:
+        return {"status": "error", "reason": f"F00D injoignable : {exc}"}
+
+    emitted = out_path.exists()
+    try:
+        out_rel = str(out_path.relative_to(REPO_ROOT))
+    except ValueError:  # out_path hors du repo (tests, sandbox) : chemin absolu
+        out_rel = str(out_path)
+    note = {"status": "emitted" if (emitted and proc.returncode == 0) else "refused",
+            "style": style, "out": out_rel if emitted else None,
+            "reason": (proc.stderr or proc.stdout or "").strip()[-400:] or None}
+    idx = {}
+    if CAVIAR_INDEX.exists():
+        try:
+            idx = json.loads(CAVIAR_INDEX.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            idx = {}
+    manifests = idx.setdefault("manifests", {})
+    if note["status"] == "emitted":
+        manifests[candidate_id] = out_rel
+        idx["note"] = ("Mapping candidate_id → chemin du caviar_manifest.json émis par F00D "
+                       "(style choisi au cockpit). Chemins relatifs à la racine du repo connecté.")
+        try:
+            CAVIAR_INDEX.parent.mkdir(parents=True, exist_ok=True)
+            CAVIAR_INDEX.write_text(json.dumps(idx, ensure_ascii=False, indent=2), encoding="utf-8")
+        except OSError:
+            pass
+    return note
 
 
 def clear_gate(run_id: str, candidate_id: str) -> tuple[dict, str]:
@@ -268,12 +395,21 @@ def make_handler(token: str):
                                       "candidate_id": candidate_id, "verdict": "clear",
                                       "gate_counts": doc.get("gate_counts")})
                     return
-                doc, reason = store_gate(run_id, candidate_id, verdict)
+                style = payload.get("style") or None
+                doc, reason = store_gate(run_id, candidate_id, verdict, style)
                 if reason != "ok":
                     self._reply(422, {"error": reason})
                     return
+                caviar = None
+                if verdict == "approved":
+                    chosen = style \
+                        or ((doc.get("gates") or {}).get(run_id, {}).get(candidate_id, {}) or {}).get("style") \
+                        or DEFAULT_STYLE
+                    caviar = emit_caviar_for_gate(run_id, candidate_id, chosen)
                 self._reply(200, {"accepted": True, "run_id": run_id,
                                   "candidate_id": candidate_id, "verdict": verdict,
+                                  "style": style,
+                                  "caviar": caviar,
                                   "gate_counts": doc.get("gate_counts")})
                 return
             ok, reason = validate_payload(payload)

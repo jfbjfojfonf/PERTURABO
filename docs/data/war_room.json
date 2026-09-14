@@ -1,9 +1,9 @@
 {
-  "last_pushed_at": "2026-09-13T08:52:56.676551+00:00",
+  "last_pushed_at": "2026-09-14T13:42:38.291092+00:00",
   "last_run": {
-    "run_id": "f00c_2026-09-13T073944.152576+0000",
+    "run_id": "f00c_2026-09-14T134014.262908+0000",
     "siege_id": "https://www.youtube.com/watch?v=cP8vli4kfhs",
-    "title": "How Sophie Rain Makes (And Spends) $100,000,000 Per Year",
+    "title": "",
     "channel": null,
     "mode": "vod",
     "status": "full",
@@ -2574,7 +2574,7 @@
         "duration_sec": 51.3,
         "signal_type": "platform_heat",
         "signal_intensity": 0.702803,
-        "signal_start": "2026-09-13T07:39:44.152576+00:00",
+        "signal_start": "2026-09-14T13:40:14.262908+00:00",
         "top_words": "",
         "id": "voxc-1",
         "rank": 1,
@@ -2596,7 +2596,7 @@
         "duration_sec": 51.301,
         "signal_type": "platform_heat",
         "signal_intensity": 0.730986,
-        "signal_start": "2026-09-13T07:39:44.152576+00:00",
+        "signal_start": "2026-09-14T13:40:14.262908+00:00",
         "top_words": "",
         "id": "voxc-2",
         "rank": 2,
@@ -2618,7 +2618,7 @@
         "duration_sec": 51.3,
         "signal_type": "platform_heat",
         "signal_intensity": 1.0,
-        "signal_start": "2026-09-13T07:39:44.152576+00:00",
+        "signal_start": "2026-09-14T13:40:14.262908+00:00",
         "top_words": "",
         "id": "voxc-3",
         "rank": 3,
@@ -2640,7 +2640,7 @@
         "duration_sec": 51.3,
         "signal_type": "platform_heat",
         "signal_intensity": 0.734377,
-        "signal_start": "2026-09-13T07:39:44.152576+00:00",
+        "signal_start": "2026-09-14T13:40:14.262908+00:00",
         "top_words": "",
         "id": "voxc-4",
         "rank": 4,
@@ -2662,7 +2662,7 @@
         "duration_sec": 51.3,
         "signal_type": "platform_heat",
         "signal_intensity": 0.720034,
-        "signal_start": "2026-09-13T07:39:44.152576+00:00",
+        "signal_start": "2026-09-14T13:40:14.262908+00:00",
         "top_words": "",
         "id": "voxc-5",
         "rank": 5,
@@ -2678,7 +2678,7 @@
         ]
       }
     ],
-    "pushed_at": "2026-09-13T08:52:15.251374+00:00"
+    "pushed_at": "2026-09-14T13:42:38.286743+00:00"
   },
   "runs": {
     "f00c_2026-09-13T073944.152576+0000": {
@@ -2687,16 +2687,48 @@
       "status": "full",
       "n_candidates": 5,
       "received_at": "2026-09-13T08:52:56.676551+00:00"
+    },
+    "f00c_2026-09-14T133527.311014+0000": {
+      "siege_id": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+      "mode": "vod",
+      "status": "full",
+      "n_candidates": 5,
+      "received_at": "2026-09-14T13:37:47.082103+00:00"
+    },
+    "f00c_2026-09-14T134014.262908+0000": {
+      "siege_id": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+      "mode": "vod",
+      "status": "full",
+      "n_candidates": 5,
+      "received_at": "2026-09-14T13:42:38.291092+00:00"
     }
   },
-  "total_runs": 1,
+  "total_runs": 3,
   "gates": {
-    "f00c_2026-09-13T073944.152576+0000": {}
+    "f00c_2026-09-13T073944.152576+0000": {},
+    "f00c_2026-09-14T134014.262908+0000": {
+      "voxc-3": {
+        "verdict": "approved",
+        "decided_at": "2026-09-14T13:54:19.406151+00:00"
+      },
+      "voxc-2": {
+        "verdict": "approved",
+        "decided_at": "2026-09-14T13:54:23.961996+00:00"
+      },
+      "voxc-4": {
+        "verdict": "approved",
+        "decided_at": "2026-09-14T13:54:25.231748+00:00"
+      }
+    }
   },
   "gate_counts": {
-    "approved": 0,
+    "approved": 3,
     "rejected": 0,
     "pending": 0
   },
-  "last_verdicts": {}
+  "last_verdicts": {
+    "f00c_2026-09-14T134014.262908+0000/voxc-3": "approved",
+    "f00c_2026-09-14T134014.262908+0000/voxc-2": "approved",
+    "f00c_2026-09-14T134014.262908+0000/voxc-4": "approved"
+  }
 }

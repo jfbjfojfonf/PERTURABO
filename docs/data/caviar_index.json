@@ -1,8 +1,9 @@
 {
-  "note": "Mapping candidate_id → chemin du caviar_manifest.json émis par F00D. Chemins relatifs à la racine du repo connecté.",
+  "note": "Mapping candidate_id → chemin du caviar_manifest.json émis par F00D (style choisi au cockpit). Chemins relatifs à la racine du repo connecté.",
   "manifests": {
-    "voxc-2": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc2.json",
-    "voxc-3": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc3.json",
-    "voxc-4": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc4.json"
+    "voxc-2": "docs/data/caviar/caviar_manifest_voxc2_full_power.json",
+    "voxc-3": "docs/data/caviar/caviar_manifest_voxc3_full_power.json",
+    "voxc-4": "docs/data/caviar/caviar_manifest_voxc4_full_power.json",
+    "voxc-9": "/tmp/pytest-of-root/pytest-41/test_emit_caviar_for_gate_emit0/caviar_out/caviar_manifest_voxc-9.json"
   }
 }
