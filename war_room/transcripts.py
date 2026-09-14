@@ -36,6 +36,10 @@ VENDOR_DIR = Path(__file__).resolve().parent / "_vendor"  # wheel yt-dlp vendue 
 # dépose ici un transcript complet de la vidéo (SRT/VTT/TXT, FR et/ou EN),
 # prioritaire sur tout téléchargement. Autonomie garantie face au rate-limit.
 OPERATOR_DIR = REPO_ROOT / "war_room" / "transcripts_in"
+# Cookies (Netscape format) — jamais versionnés : l'opérateur dépose ici le
+# cookies.txt exporté depuis un navigateur connecté (compte dédié de service).
+# Sert uniquement à fiabiliser yt-dlp (rate-limit) — jamais requis pour tourner.
+COOKIES_FILE = REPO_ROOT / "war_room" / "cookies.txt"
 YT_DLP = "yt-dlp"
 DOWNLOAD_TIMEOUT = 180  # secondes — sous-titres seulement, jamais la vidéo
 COOLDOWN_SEC = 600      # après un rate-limit YouTube, on laisse souffler 10 min
@@ -256,6 +260,15 @@ def _resolve_yt_dlp() -> tuple[list[str], dict]:
     return [sys.executable, "-m", "yt_dlp"], env  # dernier recours (module pip)
 
 
+def _with_cookies(cmd: list[str]) -> list[str]:
+    """Ajoute --cookies au fichier déposé par l'opérateur, s'il existe."""
+    env_path = os.environ.get("YT_DLP_COOKIES_FILE")
+    cookie_path = Path(env_path) if env_path else COOKIES_FILE
+    if cookie_path.is_file():
+        return cmd + ["--cookies", str(cookie_path)]
+    return cmd
+
+
 def _download_subs(source_url: str) -> Path:
     """Télécharge (une fois) les sous-titres FR/EN de la source. → dossier VTT."""
     key = hashlib.sha1(source_url.encode()).hexdigest()[:12]
@@ -280,10 +293,10 @@ def _download_subs(source_url: str) -> Path:
         if attempt:
             time.sleep(20 * attempt)
         cmd, cmd_env = _resolve_yt_dlp()
-        cmd = cmd + [
+        cmd = _with_cookies(cmd + [
             "--skip-download", "--write-subs", "--write-auto-subs",
             "--sub-langs", LANG_GLOB, "--sub-format", "vtt/srt/best",
-            "-o", str(out_dir / "src"), source_url]
+            "-o", str(out_dir / "src"), source_url])
         try:
             proc = subprocess.run(cmd, capture_output=True, text=True,
                                   timeout=DOWNLOAD_TIMEOUT, env=cmd_env)
@@ -355,7 +368,7 @@ def _download_audio_short(source_url: str, timeout: int = 90) -> Path:
         except ValueError:
             cooldown.unlink(missing_ok=True)
     cmd, cmd_env = _resolve_yt_dlp()
-    cmd = cmd + ["-f", "bestaudio", "-o", str(out_dir / "audio.%(ext)s"), source_url]
+    cmd = _with_cookies(cmd + ["-f", "bestaudio", "-o", str(out_dir / "audio.%(ext)s"), source_url])
     try:
         subprocess.run(cmd, capture_output=True, text=True,
                        timeout=timeout, env=cmd_env)
