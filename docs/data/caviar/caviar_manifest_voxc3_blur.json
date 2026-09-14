@@ -1,0 +1,87 @@
+{
+  "schema_version": "caviar.v1",
+  "generated_at": "2026-09-14T18:18:17.352404+00:00",
+  "time_reference": "segment_relative_seconds",
+  "source": {
+    "run_id": "f00c_2026-09-14T134014.262908+0000",
+    "candidate_id": "voxc-3",
+    "source": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+    "title": "",
+    "start_sec_source": 1846.805,
+    "end_sec_source": 1898.105,
+    "duration_sec": 51.3,
+    "score": 100.0,
+    "gate": "approved",
+    "gate_decided_by": "warsmith (cockpit War Room)",
+    "style_hint": "blur"
+  },
+  "style": "blur",
+  "narrative": {
+    "hook_type": "climax_first",
+    "is_climax": [
+      28.215
+    ],
+    "resolution_at": 41.04,
+    "energy_curve": [
+      "rise",
+      "peak",
+      "fall"
+    ],
+    "pacing_note": "trio broll+flash raccourcit le pacing local ; l'audio du streamer est MAINTENU sous les effets"
+  },
+  "silence_trims": [],
+  "events": {
+    "broll": [
+      {
+        "broll_id": "BLUR-01",
+        "kind": "broll_blur",
+        "crop_zoom": 1.3,
+        "blur_radius_px": 18,
+        "panel": "vertical_text_overlay",
+        "emotion_requested": "à qualifier (opérateur)",
+        "start_sec": 12.825,
+        "duration_frames": 36,
+        "entry_flash": true,
+        "sfx": "impact"
+      },
+      {
+        "broll_id": "BLUR-02",
+        "kind": "broll_blur",
+        "crop_zoom": 1.3,
+        "blur_radius_px": 18,
+        "panel": "vertical_text_overlay",
+        "emotion_requested": "à qualifier (opérateur)",
+        "start_sec": 25.65,
+        "duration_frames": 36,
+        "entry_flash": true,
+        "sfx": "impact"
+      }
+    ],
+    "smash_audio": [
+      {
+        "at_sec": 28.215,
+        "duck_db": -12,
+        "duration_sec": 0.8
+      }
+    ],
+    "punch_ins": []
+  },
+  "budget_state": {
+    "spent_units": 32,
+    "ceiling_units": 55,
+    "breathing_units": 68,
+    "counts": {
+      "broll": 2,
+      "smash_audio": 1,
+      "punch_ins": 0,
+      "jump_cuts": 0
+    },
+    "caps_respected": true
+  },
+  "overlay": {
+    "text": "(accroche écrite/validée par l'opérateur — placeholder)",
+    "visible_from_sec": 0.0,
+    "visible_until_sec": 28.215
+  },
+  "notes": "Trio B-roll+flash+SFX inséparable. SFX uniquement à l'entrée B-roll. Flash entrée uniquement (jamais sortie — Flow Cut à la place)."
+}
