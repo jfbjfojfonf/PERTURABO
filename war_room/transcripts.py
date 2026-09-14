@@ -318,7 +318,12 @@ def _download_subs(source_url: str) -> Path:
             time.sleep(20 * attempt)
         cmd, cmd_env = _resolve_yt_dlp()
         cmd = _with_cookies(cmd + [
-            "--skip-download", "--write-subs", "--write-auto-subs",
+            # ignore-no-formats : depuis fin 2025 YouTube exige un PO token
+            # (runtime JS) pour lister les formats vidéo ; sans lui la liste
+            # est vide et yt-dlp avorte AVANT de télécharger les sous-titres.
+            # Ce flag lui fait poursuivre sa mission : les pistes FR/EN.
+            "--skip-download", "--ignore-no-formats-error",
+            "--write-subs", "--write-auto-subs",
             "--sub-langs", LANG_GLOB, "--sub-format", "vtt/srt/best",
             "-o", str(out_dir / "src"), source_url])
         try:
@@ -343,7 +348,9 @@ def _download_subs(source_url: str) -> Path:
 def _load_lang_cues(subs_dir: Path, lang_prefix: str) -> list[dict] | None:
     """Charge la meilleure piste d'une langue (manuel prioritaire sur auto)."""
     candidates = sorted(
-        subs_dir.glob(f"src.{lang_prefix}*.vtt"),
+        {p for pat in (f"src.{lang_prefix}*.vtt",   # ancien schéma interne
+                       f"*.{lang_prefix}*.vtt")     # schéma yt-dlp : {video_id}.{lang}.vtt
+         for p in subs_dir.glob(pat)},
         key=lambda p: (".auto." in p.name, len(p.name)),  # manuel d'abord
     )
     for path in candidates:

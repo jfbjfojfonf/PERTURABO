@@ -40,6 +40,15 @@ Un payload invalide est rejeté en 422 — jamais de silence.
 Chaque langue affichée porte son `provider` (opérateur / youtube / whisper).
 Un échec YouTube n'absorbe jamais les autres sources (absorbé par langue).
 
+### Cookie YouTube (anti rate-limit)
+
+`war_room/cookies.txt` (format Netscape, **gitignored**, jamais commité) est
+injecté automatiquement à chaque appel yt-dlp s'il existe. Validé le 2026-09-14 :
+le cookie supprime le 429 de l'IP datacenter. Depuis fin 2025 YouTube exige un
+PO token (runtime JS) pour lister les formats vidéo — sans lui la liste est
+vide — donc l'appel passe `--ignore-no-formats-error` : la mission (les pistes
+FR/EN) est menée à bien malgré l'absence de formats.
+
 ## Usage
 
 ```bash
