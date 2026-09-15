@@ -1,0 +1,31 @@
+{
+  "campaign_id": "SOPHIE_RAIN_CLIPIFY_US_2026",
+  "mode": "pur",
+  "angle_id": "A01",
+  "source_type": "vox_candidate",
+  "vod_url": "https://www.youtube.com/watch?v=cP8vli4kfhs",
+  "start_sec": 153.9,
+  "end_sec": 205.201,
+  "duration_sec": 51.30099999999999,
+  "signal_type": "platform_heat",
+  "signal_intensity": 0.730986,
+  "top_words": "",
+  "reference_clip_required": false,
+  "transcript_available": true,
+  "scanned_at": "2026-09-15T11:08:29Z",
+  "transcript_excerpt_en": [
+    "[00:02:42] >> Does that worry you, though? But showing that much money and then now you become a target to people.",
+    "[00:02:47] >> I mean, not really. I have a really good financial adviser that like keeps me in lock and most of my money is in investments. So like I'm not really too worried about",
+    "[00:02:55] >> What about the amaranth situation where someone tried to like break in and like steal your crypto",
+    "[00:03:00] >> and I'm not into crypto? I'm not in crypto.",
+    "[00:03:02] >> The idea out there is that you make more than LeBron James. What do you think about that?",
+    "[00:03:07] >> Um it's honestly unbelievable. Um I'm waiting every single day to like wake up from this dream because it just doesn't seem real. But, you know, we're on very opp we do very different things obviously. And I think that he's a great basketball player and he deserves as much wealth as he gets, but you know, we're just two top earners. I don't know.",
+    "[00:03:24] >> So, this makes you the top earner of OF,",
+    "[00:03:25] >> I believe. So, yes. I mean, obviously, I don't know just because other people don't put out how much they make, but it says like on OF that I'm in the 0.1%."
+  ],
+  "transcript_source": "operator_provided_bilingual_transcript",
+  "transcript_window": {
+    "start_sec": 153.9,
+    "end_sec": 205.2
+  }
+}

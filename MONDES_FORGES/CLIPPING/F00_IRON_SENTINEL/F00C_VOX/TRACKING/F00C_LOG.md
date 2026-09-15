@@ -226,3 +226,15 @@
   anti-détection complémentaire seulement, bloc caviar_binding.
 - **Statut** : code + docs commités. Prochain gate : output F06 réel voxc-2,
   puis F05 → gate → EXPORT.
+
+### 2026-09-15 (suite) — GATE F06 : GO opérateur → pack final F05 assemblé
+
+- **GATE F06 : GO** (opérateur). Le `montage_instructions.json` caviar_bound
+  voxc-2 est validé : zéro cut/zoom/SFX F06, 2 panneaux blur partition
+  (12.825 s / 25.651 s, flash+SFX), duck climax 28.216 s, overlay F04 GO,
+  anti-détection complémentaire, compliance #ad.
+- **Pack final assemblé** (sortie F05-like, hors EXPORT) :
+  `F06_DIRECTOR/OUT/production_pack_pur_voxc2_blur_v2.json` — embarque
+  montage_instructions GO + partition caviar (source de vérité) +
+  `chain_of_custody` des 4 gates (F00C/F00D/F04/F06 GO, F05 PENDING).
+  Statut : **DRAFT — F05_PENDING_warsmith_gate**. EXPORT interdit avant gate.
