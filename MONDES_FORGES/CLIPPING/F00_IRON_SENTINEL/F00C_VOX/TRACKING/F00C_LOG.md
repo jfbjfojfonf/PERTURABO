@@ -197,3 +197,19 @@
 - **Correctif infra** : le serveur tournait encore avec le receiver pré-commit
   (restart antérieur aux edits) — les GO avaient acté le style sans émission.
   Restart effectué, émissions rejouées, index réaligné, artefact de test purgé.
+
+### 2026-09-15 — AUDIT DOCTRINE DES GATES + RÉTRO-TAG DRAFT
+
+- **Violation constatée** : la doctrine des gates veut un verrou après CHAQUE
+  exécution de frégate (l'opérateur valide l'output AVANT de déclencher la
+  suivante). Or la session a enchaîné F00D → F04 (sauté) → F05 → EXPORT sans
+  gates intermédiaires ; les accroches ont été rédigées hors F04.
+- **Chaîne corrigée (validée Warsmith)** : F00C → gate → F00D → gate → F04 →
+  gate → **F06 (instructions de montage, 4 gates internes)** → gate → F05
+  (assemble le pack FINAL embarquant montage_instructions) → gate → EXPORT.
+- **Rétro-tag DRAFT appliqué** (bloc `review` ajouté, rien supprimé) :
+  `docs/data/caviar/caviar_manifest_*.json` (6) et
+  `EXPORT/production_pack_pur_voxc2_blur.json` — statut DRAFT, gate_state
+  `F00D_output_PENDING_warsmith_gate`.
+- **Prochaine étape** : F04 PUR sur voxc-2 (clé API premium à fournir par
+  l'opérateur) puis reprise gate par gate.

@@ -56,5 +56,11 @@
     "visible_from_sec": 0.0,
     "visible_until_sec": 28.215
   },
-  "notes": "Trio B-roll+flash+SFX inséparable. SFX uniquement à l'entrée B-roll. Flash entrée uniquement (jamais sortie — Flow Cut à la place)."
+  "notes": "Trio B-roll+flash+SFX inséparable. SFX uniquement à l'entrée B-roll. Flash entrée uniquement (jamais sortie — Flow Cut à la place).",
+  "review": {
+    "status": "DRAFT",
+    "gate_state": "F00D_output_PENDING_warsmith_gate",
+    "reason": "Gate doctrine: every frigate output must be validated by the operator BEFORE the next frigate. F04/F06/F05 chain not run yet. Export copy was premature.",
+    "tagged_at": "2026-09-15T10:43:07Z"
+  }
 }
