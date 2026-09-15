@@ -238,3 +238,13 @@
   montage_instructions GO + partition caviar (source de vérité) +
   `chain_of_custody` des 4 gates (F00C/F00D/F04/F06 GO, F05 PENDING).
   Statut : **DRAFT — F05_PENDING_warsmith_gate**. EXPORT interdit avant gate.
+
+### 2026-09-15 (final) — GATE F05 : GO opérateur → EXPORT
+
+- **GATE F05 : GO** (opérateur). Pack passé en VALIDATED (ALL_GATES_GO) et
+  copié dans **EXPORT/production_pack_pur_voxc2_blur_v2.json**.
+- **Chaîne complète exécutée gate-par-gate pour la première fois** :
+  F00C GO blur → F00D partition → F04 GO (kimi-k3, transcript réel) →
+  F06 GO (caviar_bound v3, soumis à la partition) → F05 GO → EXPORT.
+- **Prochaine étape hors pipeline** : exécution du pack par le bras armé
+  (LACRIMAE) → rendu MP4 9:16 → contrôle qualité → soumission campagne.
