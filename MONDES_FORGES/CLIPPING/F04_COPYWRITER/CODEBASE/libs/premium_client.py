@@ -54,13 +54,15 @@ class PremiumClient:
         self.config = self._load_config()
 
     def _load_env_local(self):
-        """Charge un .env.local (repo ou forge) si présent — stdlib, aucune
-        dépendance. Les variables déjà présentes dans os.environ priment.
-        (Freebuff injecte les clés API Keys via .env.local / env du workspace.)"""
+        """Charge un .env.local OU .env (repo ou forge) si présent — stdlib,
+        aucune dépendance. Les variables déjà présentes dans os.environ priment
+        (ordre : .env.local d'abord, .env ensuite, jamais l'inverse).
+        (Freebuff injecte les clés API Keys via .env/.env.local / env du workspace.)"""
         candidates = []
         base = self._forge_root
         for _ in range(4):  # forge_root, MONDES_FORGES, repo root, +1
             candidates.append(os.path.join(base, ".env.local"))
+            candidates.append(os.path.join(base, ".env"))
             base = os.path.dirname(base)
         seen = set()
         for path in candidates:
@@ -98,7 +100,13 @@ class PremiumClient:
         return self.config.get("env_var_name") or DEFAULT_ENV_VAR
 
     def _api_key(self) -> str:
-        return os.environ.get(self._env_var_name(), "").strip()
+        # 1) env (recommandé). 2) fallback local : champ "api_key" de la config
+        #    gitignored (CONTRACTS/copywriter_secrets.json) — le sandbox peut
+        #    bloquer la lecture des fichiers .env*, la config reste lisible.
+        env_val = os.environ.get(self._env_var_name(), "").strip()
+        if env_val:
+            return env_val
+        return str(self.config.get("api_key", "")).strip()
 
     def _base_url(self) -> str:
         provider = self.config.get("provider", "other")
