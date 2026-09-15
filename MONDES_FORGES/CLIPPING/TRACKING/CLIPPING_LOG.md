@@ -788,3 +788,17 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 - `f00b_vox_live.py` : session live -> clip Helix immediat -> scoring VOX inchange -> gate hybride -> `trail.json` meme schema VOD.
 - Workflows radar (dispatch, 6h max, statut board /3 min) + Oracle (cron 5 min, issues Oracle).
 - `BOARD_LIVE/index.html` + docs (`README_V2.md`, guide 18, CONTINUATION, logs).
+
+## [2026-09-15] Doctrine gates - mise en DRAFT de la session Sophie Rain
+
+- Rappel doctrine (Warsmith) : **gate apres CHAQUE fregate** - l'operateur valide l'output avant de declencher la suivante. Chaine corrigee : F00C -> gate -> F00D -> gate -> F04 -> gate -> F06 (instructions montage + ses 4 gates internes) -> gate -> F05 (pack final embarquant montage_instructions + etats de gates) -> gate -> EXPORT.
+- Constat : la session voxc-2/3/4 (blur) a saute les gates post-F00D, post-F04 (non executee), post-F06 (non execute) et le gate pre-EXPORT.
+- Action corrective : les 3 manifestes caviar blur (docs/data/caviar/ voxc2/3/4) et le pack EXPORT/production_pack_pur_voxc2_blur.json sont marques `status: DRAFT` (champ + note). Aucun produit de cette session ne sort d'EXPORT sans la chaine complete.
+- voxc-3/voxc-4 restent RESERVES (ad-reads Hims / Claude / FanDuel - interdits campagne).
+- Prochaine etape validee par l'operateur : F04 sur voxc-2 (cle premium fournie), puis chaine gate par gate jusqu'a EXPORT.
+
+## [2026-09-15] Session Sophie Rain voxc-2 : chaine COMPLETE gate-par-gate → EXPORT
+
+- Première exécution conforme de la chaîne complète : F00C GO blur (opérateur) → F00D partition caviar → F04 GO overlay (kimi-k3/NVIDIA, transcript réel voxc-2, purges contamination ARCHIVUM) → F06 GO (v3.0.0-caviar_bound, soumis à F00D : 0 cut/zoom/SFX F06, 2 panneaux blur, duck climax 28.216 s, hook hérité, caviar_binding sha256) → F05 GO (pack final embarquant montage_instructions + chain_of_custody) → **EXPORT/production_pack_pur_voxc2_blur_v2.json (VALIDATED, ALL_GATES_GO)**.
+- Correctif infra : artefacts pytest purgés du ledger narrativum + caviar_index (voxc-9 /tmp).
+- Prochain chantier (hors pipeline) : exécution du pack par le bras armé LACRIMAE → MP4 9:16 → QA → soumission.

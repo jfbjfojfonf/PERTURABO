@@ -58,27 +58,6 @@
       "emitted_at": "2026-09-14T13:50:04.654286+00:00"
     },
     {
-      "manifest_path": "/tmp/pytest-of-root/pytest-38/test_emit_caviar_for_gate_emit0/caviar_out/caviar_manifest_voxc-9.json",
-      "run_id": "f00c_emit_test",
-      "style": "blur",
-      "spent_units": 32,
-      "emitted_at": "2026-09-14T18:11:21.249345+00:00"
-    },
-    {
-      "manifest_path": "/tmp/pytest-of-root/pytest-40/test_emit_caviar_for_gate_emit0/caviar_out/caviar_manifest_voxc-9.json",
-      "run_id": "f00c_emit_test",
-      "style": "blur",
-      "spent_units": 32,
-      "emitted_at": "2026-09-14T18:12:26.624119+00:00"
-    },
-    {
-      "manifest_path": "/tmp/pytest-of-root/pytest-41/test_emit_caviar_for_gate_emit0/caviar_out/caviar_manifest_voxc-9.json",
-      "run_id": "f00c_emit_test",
-      "style": "blur",
-      "spent_units": 32,
-      "emitted_at": "2026-09-14T18:12:45.127828+00:00"
-    },
-    {
       "manifest_path": "/home/daytona/codebase/PERTURABO/MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/OUT/caviar_manifest_voxc-3.json",
       "run_id": "f00c_2026-09-14T134014.262908+0000",
       "style": "blur",
