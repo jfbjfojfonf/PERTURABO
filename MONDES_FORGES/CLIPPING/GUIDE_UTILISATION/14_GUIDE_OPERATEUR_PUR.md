@@ -165,6 +165,36 @@ Le JSON produit contient :
 
 ---
 
+## Hiérarchie de montage : F00D commande, F06 exécute le reste
+
+Depuis le verrou doctrinal 2026-09-15 (décision opérateur), quand une partition
+caviar existe (styles blur/split issus de F00D), **F06 devient consommateur soumis** :
+
+| Possédé par F00D (partition) | Conservé par F06 (soumis) |
+|---|---|
+| cuts, zooms, punch-ins | text_overlays (overlay F04 validé + captions mot-à-mot) |
+| SFX — UNIQUEMENT aux entrées de panneaux (trio broll+flash+SFX) | courbe d'énergie recalée sur le climax caviar |
+| miroir, vitesse 1.05×, crop 2.5 % (anti-détection de base) | hiérarchie audio (voix prioritaire) SANS événement SFX |
+| rendu des panneaux (crop-zoom, flou, panneau vertical) | anti-détection complémentaire (couche sonore, teinte, trim) |
+| duck audio au climax | outro fade/pas de CTA, compliance #ad, règles plateforme |
+
+- Le hook suit **la partition** : panneau posé à ~0 s ⇒ il apparaît à 0 s.
+- Chaque output F06 embarque un bloc `caviar_binding` (run_id, checksum) —
+  traçabilité de qui a commandé quoi.
+- **Style blur sans manifeste caviar ⇒ erreur** (jamais de fallback silencieux).
+- Modes sans partition (ranking, overlay_only) : comportement legacy inchangé.
+
+Chaîne complète avec gates (chaque output validé par l'opérateur avant la
+frégate suivante) :
+
+```
+F00C → 🚧 gate → F00D → 🚧 gate → F04 → 🚧 gate
+     → F06 (soumis) → 🚧 gate → F05 (pack final embarquant
+     montage_instructions) → 🚧 gate → EXPORT → bras armé
+```
+
+---
+
 ## Règles d'or
 
 | Règle | Pourquoi |

@@ -150,3 +150,21 @@ Minimum 5 secondes entre chaque B-roll.
 - Chaque événement reçoit un `word_anchor` exact.
 - Doublon `copywriting` retiré du bloc montage_instructions.
 - 3 packs PUR calibrés validés + copiés dans EXPORT/.
+
+## v3.0.0-caviar-bound — F06 soumis à F00D (2026-09-15, décision opérateur)
+
+Quand un manifeste caviar est fourni (styles blur/split), F06 devient **consommateur soumis** :
+
+- **Retiré du mode soumis** : plan de cuts, plan de zooms (brutal_impact/snap_zoom),
+  les 4 SFX (whoosh/impact/pop/boom), anti-détection mirror/speed/crop (possédés par la partition).
+- **Conservé** : text_overlays (overlay F04 validé + captions), courbe d'énergie recalée
+  sur le climax caviar (bloc note climax_caviar_at_sec), hiérarchie audio sans SFX,
+  outro fade/pas de CTA, compliance #ad, anti-détection complémentaire
+  (sfx_background_layer, color_shift, trim) + champ owned_by_caviar.
+- **Hook** : la partition gagne — panneau posé à ~0 s ⇒ panel_at_zero, la philosophie
+  « visage d'abord » s'efface (sinon hook legacy 0-3 s conservé).
+- **Traçabilité** : bloc `caviar_binding` (run_id, candidate_id, style, checksum sha256 16).
+- **Garde** : style blur demandé sans manifeste ⇒ ValueError (jamais de fallback silencieux).
+- **CLI** : `python director.py <segment> <payload> <context> [caviar_manifest.json]`.
+- Tests : `tests/test_director_caviar_bound.py` — 13 verts (panels, duck, binding,
+  ownership, erreur blur-sans-caviar, legacy inchangé).

@@ -241,6 +241,8 @@ La progression des frégates est séquentielle : F00 doit être validée par le 
 
 Le **Mode PUR** ajoute une frégate passive de direction de montage. `F06_DIRECTOR` reçoit un segment issu de F03, le payload texte de F04 et un contexte de campagne. Il lit les règles de plateforme dans `ARCHIVUM/montage/rules/` ainsi que les patterns disponibles dans `ARCHIVUM/montage/patterns/`, puis produit `F06_DIRECTOR/OUT/montage_instructions.json`.
 
+**Hiérarchie (décision opérateur 2026-09-15)** : quand une partition caviar existe (styles blur/split de F00D), **F00D commande et F06 est consommateur soumis** — aucun cut/zoom/SFX émis par F06, anti-détection complémentaire seulement, hook hérité de la partition, bloc `caviar_binding` embarqué. Détail complet : guide 14. Sans partition (ranking/overlay_only), comportement legacy inchangé.
+
 F06_DIRECTOR ne coupe, ne rend et ne publie jamais une vidéo. Il transmet uniquement des directives structurées à `F05_PACKAGER` et à l’outil de production aval. Le **F06_TRACKER existant** conserve son rôle séparé de suivi des publications, des soumissions Whop, des vues, des payouts et des learnings.
 
 ### Entrées et sortie

@@ -658,3 +658,23 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
   et `clips` (IDs + URLs Helix) à chaque tick ; le board se recharge toutes les 60 s.
 - Validation : 15/15 vérifications statiques + rendu testé contre les données réelles
   de la session #3 re-scored (1 auto-approuvé, 9 en file, 1 clip simulé).
+
+## Session 2026-09-15 — Verrou doctrine des gates + F06 soumis à F00D
+
+- **Doctrine des gates rétablie** (audit opérateur) : un gate après CHAQUE frégate.
+  Chaîne corrigée : F00C → gate → F00D → gate → F04 → gate → F06 (soumis) →
+  gate → F05 (pack final embarquant montage_instructions) → gate → EXPORT.
+  F06 s'exécute AVANT F05 ; le bras armé lit le bloc montage_instructions du pack.
+- **Rétro-tag DRAFT** : les 6 manifestes caviar + le pack EXPORT voxc-2 marqués
+  DRAFT (commit 6487da7) — F04/F06/F05 n'avaient pas tourné.
+- **F04 PUR exécuté pour de vrai sur voxc-2** (kimi-k3/NVIDIA, clé Warsmith) :
+  contamination archivum purgée (payloads Aishah/Joe + verdict perimés en
+  _archive_TS01_AISHAH_SOFEY), liber frais SOPHIE_RAIN_CLIPIFY_US_2026,
+  transcript réel voxc-2 injecté dans le specimen A01 → overlay GO opérateur
+  « She makes MORE than LeBron James? / Top 0.1% OF earner speaks out » (83daf91).
+- **F06 v3.0.0-caviar-bound** : F00D commande (cuts/zooms/SFX/mirror/speed/crop/
+  panneaux/duck), F06 exécute le reste (texte, courbe sur climax, anti-détection
+  complémentaire, compliance) + caviar_binding + erreur blur-sans-caviar.
+  13 tests verts.
+- **Prochaine étape** : GATE opérateur sur l'output F06 voxc-2, puis F05
+  (pack final), puis gate, puis EXPORT.

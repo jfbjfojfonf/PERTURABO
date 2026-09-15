@@ -213,3 +213,16 @@
   `F00D_output_PENDING_warsmith_gate`.
 - **Prochaine étape** : F04 PUR sur voxc-2 (clé API premium à fournir par
   l'opérateur) puis reprise gate par gate.
+
+### 2026-09-15 — F04 GO + F06 soumis à F00D (chaîne gate-par-gate)
+
+- **F04 PUR exécuté** (kimi-k3/NVIDIA NIM, clé Warsmith) sur voxc-2 A01 blur :
+  contamination ARCHIVUM purgée (Aishah/Joe en _archive), liber frais
+  SOPHIE_RAIN_CLIPIFY_US_2026, transcript réel injecté → **GATE : GO opérateur**
+  sur l'overlay « She makes MORE than LeBron James? / Top 0.1% OF earner speaks out ».
+- **Conflit F06×F00D détecté et résolu** : F06 émettait cuts/zooms/SFX concurrents
+  de la partition (saturation). Décision opérateur : **F00D commande, F06 soumis**
+  (v3.0.0-caviar-bound, 13 tests verts) — hook hérité de la partition,
+  anti-détection complémentaire seulement, bloc caviar_binding.
+- **Statut** : code + docs commités. Prochain gate : output F06 réel voxc-2,
+  puis F05 → gate → EXPORT.

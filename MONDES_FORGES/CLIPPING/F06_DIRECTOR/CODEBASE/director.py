@@ -264,7 +264,183 @@ def _energy_curve(duration, emotion):
     return [{"moment": "0:00", "energy": 100}, {"moment": fmt(duration*0.3), "energy": 60},
             {"moment": fmt(duration*0.6), "energy": 80}, {"moment": fmt(duration), "energy": 50}]
 
-def generate_montage_instructions(segment, text_payload, context):
+def _caviar_owned(caviar):
+    """Ce que la partition caviar possède : liste stable pour tests/journal."""
+    return {
+        "cuts": True, "zooms": True, "sfx_events": True,
+        "mirror": True, "speed": True, "crop": True,
+        "panel_render": True, "audio_duck": True,
+    }
+
+
+def _caviar_binding(caviar, source_path=""):
+    """Traçabilité : la partition caviar a commande cet output."""
+    import hashlib
+    checksum = ""
+    if source_path and os.path.exists(source_path):
+        h = hashlib.sha256()
+        with open(source_path, "rb") as fh:
+            h.update(fh.read())
+        checksum = h.hexdigest()[:16]
+    src = caviar.get("source", {})
+    return {
+        "bound": True,
+        "run_id": src.get("run_id", "unknown"),
+        "candidate_id": src.get("candidate_id", "unknown"),
+        "style": caviar.get("style", "unknown"),
+        "manifest_path": source_path,
+        "manifest_sha256_16": checksum,
+        "hierarchy": "F00D commande — F06 execute le reste (les cuts/zooms/SFX "
+                     "et l'anti-detection de base appartiennent a la partition)",
+    }
+
+
+def _caviar_panel_events(caviar):
+    """Extraire les entrées de panneaux (flash+SFX) depuis la partition.
+    SFX UNIQUEMENT a l'entree des panneaux — doctrine broll_trio."""
+    panels = []
+    for ev in (caviar.get("events", {}).get("broll") or []):
+        if ev.get("kind") != "broll_blur":
+            continue
+        entry = {
+            "panel_id": ev.get("broll_id", "BLUR"),
+            "at_sec": ev.get("start_sec"),
+            "duration_frames": ev.get("duration_frames"),
+            "crop_zoom": ev.get("crop_zoom"),
+            "blur_radius_px": ev.get("blur_radius_px"),
+            "panel": ev.get("panel", "vertical_text_overlay"),
+            "emotion_requested": ev.get("emotion_requested", ""),
+            "entry_flash": bool(ev.get("entry_flash")),
+            "sfx": ev.get("sfx", "impact") if ev.get("entry_flash") else None,
+            "owned_by": "caviar",
+        }
+        panels.append(entry)
+    return panels
+
+
+def _caviar_audio_duck(caviar):
+    """Duck audio au climax — calé par la partition, pas recalculé."""
+    ducks = caviar.get("events", {}).get("smash_audio") or []
+    out = []
+    for d in ducks:
+        out.append({"at_sec": d.get("at_sec"), "duck_db": d.get("duck_db"),
+                    "duration_sec": d.get("duration_sec"), "owned_by": "caviar"})
+    return out
+
+
+def _caviar_energy_curve(caviar, duration):
+    """Courbe d'énergie alignée sur la partition (climax caviar), pas générique."""
+    curve = caviar.get("narrative", {}).get("energy_curve") or ["rise", "peak", "fall"]
+    climaxes = caviar.get("narrative", {}).get("is_climax") or []
+    peak_at = climaxes[0] if climaxes else round(duration * 0.5, 3)
+    shape = {"rise": (55, 85), "peak": (95, 100), "fall": (70, 45)}
+    out = []
+    for i, phase in enumerate(curve):
+        lo, hi = shape.get(phase, (60, 90))
+        out.append({"phase": phase, "from_sec": round(duration * i / len(curve), 2),
+                    "to_sec": round(duration * (i + 1) / len(curve), 2),
+                    "energy": hi if phase == "peak" else lo})
+    out.append({"note": "climax_caviar_at_sec", "value": peak_at})
+    return out
+
+
+def _anti_detection_complementary(doctrine):
+    """Seulement ce que F00D ne possède PAS : couche sonore, teinte, trim.
+    miroir/vitesse/crop sont owned_by caviar — jamais dupliqués ici."""
+    return {
+        "obligatoire": True,
+        "principe": "Complément de la partition caviar (miroir/vitesse/crop déjà possédés par F00D).",
+        "techniques": [
+            {"name": "sfx_background_layer", "action": "bruit de fond léger continu", "volume": "10-15%"},
+            {"name": "color_shift", "action": "variation de teinte 2-5 degrés"},
+            {"name": "trim", "action": "1-2 frames trimées au début/fin"},
+        ],
+        "owned_by_caviar": ["mirror", "speed", "crop"],
+    }
+
+
+def _generate_caviar_bound(caviar, seg, text_payload, context, doctrine,
+                           duration, rules, now, manifest_path=""):
+    hook_dur = int(rules.get("hook_duration_sec", 3))
+    """Mode SOUMIS : F00D commande, F06 exécute ce qui reste.
+
+    La partition possède : cuts, zooms, SFX, miroir/vitesse/crop, rendu des
+    panneaux (blur), duck audio au climax. F06 garde : text_overlays (overlay
+    F04 + captions), courbe d'énergie RECALÉE sur le climax caviar, hiérarchie
+    audio SANS aucun événement SFX, outro fade/pas de CTA, compliance,
+    anti-détection COMPLÉMENTAIRE (couche sonore/teinte/trim).
+    """
+    style = caviar.get("style", "unknown")
+    platform = context.get("platform", "youtube_shorts")
+    panels = _caviar_panel_events(caviar)
+    duck = _caviar_audio_duck(caviar)
+    # Hook : la partition gagne — un panneau posé à ~0s apparaît à 0s.
+    panel_at_zero = any(p.get("at_sec") is not None and float(p["at_sec"]) <= 1.0
+                        for p in panels)
+    first_panel_at = panels[0]["at_sec"] if panels else None
+    overlay_title = (text_payload.get("overlay_title")
+                     or caviar.get("overlay", {}).get("text", ""))
+
+    instructions = {
+        "metadata": {"generated_at": now, "generator": "F06_DIRECTOR",
+                     "version": "3.0.0-caviar-bound",
+                     "mode": "caviar_bound",
+                     "doctrine_source": "ARCHIVUM/montage/patterns/ + manifeste caviar",
+                     "campaign_id": caviar.get("source", {}).get("candidate_id", context.get("campaign_id", "unknown")),
+                     "angle_id": context.get("angle_id", seg.get("id", "unknown")),
+                     "segment_id": seg.get("id", "unknown"),
+                     "style": style},
+        "caviar_binding": _caviar_binding(caviar, manifest_path),
+        "caviar_owned": _caviar_owned(caviar),
+        "segment": {"source_url": seg["source_url"], "start_sec": seg["start_sec"],
+                    "end_sec": seg["end_sec"], "duration_sec": duration,
+                    "signal_type": seg["signal_type"],
+                    "signal_intensity": seg["signal_intensity"], "emotion": seg.get("emotion")},
+        "hook": {
+            "duration_sec": hook_dur,
+            "philosophy": ("la partition gagne : panneau blur posé dès l'entrée "
+                           "(hook climax_first) — la philosophie « visage d'abord » s'efface"
+                           if panel_at_zero else
+                           "0-3s : visage speaker, PAS de B-roll, voix claire"),
+            "first_panel_at_sec": first_panel_at,
+            "panel_at_zero": panel_at_zero,
+        },
+        "body": {
+            "duration_sec": round(duration, 1),
+            "note": "aucun cut/zoom planifiés ici — F00D possède le geste et le rythme",
+            "cuts": [],
+            "zooms": [],
+            "panels": panels,
+            "audio_duck": duck,
+            "text_overlays": _text_plan(doctrine, {
+                "overlay_title": overlay_title,
+                "overlay_lines": text_payload.get("overlay_lines", 2),
+            }, seg, platform),
+            "audio": {
+                "principle": "La voix du speaker est TOUJOURS prioritaire.",
+                "volume_hierarchy": doctrine.get("audio_presets", {}).get("volume_hierarchy", {}),
+                "sfx_events": [],
+                "sfx_note": "SFX possédés par la partition — UNIQUEMENT aux entrées de panneaux (voir body.panels[].sfx)",
+                "music_be": {"enabled": False, "note": "pas de musique sur le hook (0-3s)"},
+            },
+            "energy_curve": _caviar_energy_curve(caviar, duration),
+            "pacing": caviar.get("narrative", {}).get("pacing_note", "rapide — aucun temps mort"),
+        },
+        "outro": {"duration_sec": 1, "type": "fade_to_black",
+                  "note": "PAS de CTA en PUR — finir sur la chute"},
+        "anti_detection": _anti_detection_complementary(doctrine),
+        "platform_rules": rules,
+        "style": {"pacing": "fast", "energy_level": "high",
+                  "color_palette": "contraste fort — blanc/accent jaune",
+                  "text_treatment": "bold",
+                  "panel_render": "crop-zoom + flou + panneau vertical : exécutés par le bras armé selon body.panels"},
+        "compliance": {"disclosure": "#ad", "submit_deadline_min": 60, "platform": platform},
+    }
+    return instructions
+
+
+def generate_montage_instructions(segment, text_payload, context, caviar_manifest=None,
+                                  caviar_manifest_path=""):
     doctrine = load_doctrine()
     seg = normalize_segment(segment)
     platform = context.get("platform", "youtube_shorts")
@@ -274,6 +450,16 @@ def generate_montage_instructions(segment, text_payload, context):
     duration = float(seg["duration_sec"] or rules.get("max_duration_sec", 30))
     hook_dur = int(rules.get("hook_duration_sec", 3))
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    if caviar_manifest is not None:
+        return _generate_caviar_bound(caviar_manifest, seg, text_payload, context,
+                                      doctrine, duration, rules, now,
+                                      caviar_manifest_path)
+
+    # --- Mode legacy (aucune partition) : inchangé, warning si style blur demandé ---
+    if (context.get("style") or "").lower() == "blur":
+        raise ValueError("style blur exige un caviar_manifest — F00D commande le rendu, "
+                         "pas de fallback silencieux (doctrine des gates).")
     word_timings = seg.get("word_timings") or []
     if word_timings:
         cuts = _word_aligned_cut_plan(word_timings, duration)
@@ -315,13 +501,24 @@ def main():
         seg = _load_json(Path(sys.argv[1]))
         payload = _load_json(Path(sys.argv[2]))
         ctx = _load_json(Path(sys.argv[3]))
+        caviar = None
+        caviar_path = ""
+        if len(sys.argv) >= 5:
+            caviar_path = sys.argv[4]
+            caviar = _load_json(Path(caviar_path))
+            if not caviar:
+                print(f"[F06] ERREUR: manifeste caviar illisible: {caviar_path}")
+                sys.exit(2)
         F06_OUT.mkdir(parents=True, exist_ok=True)
-        instructions = generate_montage_instructions(seg, payload, ctx)
+        instructions = generate_montage_instructions(seg, payload, ctx,
+                                                     caviar_manifest=caviar,
+                                                     caviar_manifest_path=caviar_path)
         out = F06_OUT / "montage_instructions.json"
         out.write_text(json.dumps(instructions, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"[F06] Instructions virales -> {out}")
+        mode = instructions.get("metadata", {}).get("mode", "legacy")
+        print(f"[F06] Instructions ({mode}) -> {out}")
     else:
-        print("Usage: director.py <segment.json> <text_payload.json> <context.json>")
+        print("Usage: director.py <segment.json> <text_payload.json> <context.json> [caviar_manifest.json]")
         sys.exit(1)
 
 if __name__ == "__main__":
