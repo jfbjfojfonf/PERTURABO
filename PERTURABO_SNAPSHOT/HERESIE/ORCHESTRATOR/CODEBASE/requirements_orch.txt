@@ -1,3 +1,0 @@
-# ORCHESTRATOR — Requirements
-# Zéro dépendance externe (stdlib uniquement)
-# L'Orchestrateur coordonne — il n'appelle pas d'API

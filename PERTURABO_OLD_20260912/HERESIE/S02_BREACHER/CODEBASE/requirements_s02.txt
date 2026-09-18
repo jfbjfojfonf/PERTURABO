@@ -1,3 +1,0 @@
-# Dépendances S02_BREACHER SHORT
-# Zéro dépendance IA — l'IRON (Claude + Gemini) fait le travail cognitif
-# stdlib uniquement (json, os, pathlib, argparse)

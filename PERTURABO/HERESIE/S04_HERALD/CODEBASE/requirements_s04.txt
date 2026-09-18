@@ -1,3 +1,0 @@
-# Dépendances S04_HERALD SHORT
-# Zéro dépendance IA — l'IRON (Claude + image_generator) fait le travail cognitif
-# stdlib uniquement (json, os, pathlib, argparse)

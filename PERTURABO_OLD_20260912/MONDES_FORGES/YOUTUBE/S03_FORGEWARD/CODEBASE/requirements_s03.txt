@@ -1,3 +1,0 @@
-# Dépendances S03_FORGEWARD SHORT
-# Zéro dépendance IA — l'IRON (Claude) fait le travail cognitif
-# stdlib uniquement (json, os, pathlib, argparse)

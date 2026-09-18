@@ -1,4 +1,0 @@
-# F06_TRACKER — requirements
-# ===========================
-# Pur mécanique de log + calcul — stdlib uniquement (json, datetime, re).
-# Aucun SDK premium, aucune dépendance obligatoire.

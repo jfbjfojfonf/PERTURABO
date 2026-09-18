@@ -1,3 +1,0 @@
-# F03_FORGEWARD — Requirements
-# Zéro dépendance IA — l'IRON (Claude sandbox) fait la génération
-# Aucune librairie externe requise (stdlib uniquement)

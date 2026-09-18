@@ -1,3 +1,0 @@
-# F04_HERALD — Requirements
-requests>=2.31.0
-# Zéro dépendance IA — l'IRON (Claude sandbox) fait l'analyse + génération image

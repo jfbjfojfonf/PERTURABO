@@ -1,0 +1,13 @@
+{
+  "vod_urls": [
+    {"url": "https://www.twitch.tv/videos/2873615032", "alias": "aishahsofey_vod_2873615032"}
+  ],
+  "nb_clips_demandes": 5,
+  "budget_max_sec": 1200,
+  "plateforme": "youtube_shorts",
+  "market": "us_young_english",
+  "asset_mode": "blur",
+  "directive_ref": "ARCHIVUM/campaign/clipify_aishahsofey_directive.md",
+  "watermark": "ARCHIVUM/campaign/watermarks/aishahsofey_1.png",
+  "_operateur_note": "Session Aishah Sofey - validation operateur 2026-09-18 : VOD + 5 clips + style blur + params identiques voxc-2. Rien ne se lance sans gate."
+}

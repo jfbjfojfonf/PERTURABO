@@ -1,3 +1,0 @@
-# F02_BREACHER — Requirements
-# Zéro dépendance IA — l'IRON (Claude sandbox) fait l'analyse
-# Aucune librairie externe requise (stdlib uniquement)
