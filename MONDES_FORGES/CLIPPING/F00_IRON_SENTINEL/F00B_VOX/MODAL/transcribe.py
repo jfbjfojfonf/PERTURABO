@@ -29,7 +29,13 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 MODEL_NAME = os.environ.get("WHISPER_MODEL", "medium")
-GPU = os.environ.get("WHISPER_GPU", "T4")
+GPU_TYPE = os.environ.get("WHISPER_GPU", "T4").strip()
+
+# Modal : "cpu" n'est PAS un type de GPU valide — il faut omettre gpu= pour tourner
+# sur CPU. Le device reel (cuda vs cpu) est auto-detecte dans _device().
+_GPU_KWARGS = (
+    {} if GPU_TYPE.lower() in ("", "cpu", "none", "auto") else {"gpu": GPU_TYPE}
+)
 
 def _device():
     # GPU toujours present via @app.function(gpu=GPU) ; fallback CPU par securite.
@@ -77,7 +83,7 @@ def _get_model():
     return _model
 
 
-@app.function(image=image, gpu=GPU, scaledown_window=120)
+@app.function(image=image, scaledown_window=120, **_GPU_KWARGS)
 @modal.asgi_app()
 def fastapi_app():
     return web_app
@@ -85,7 +91,7 @@ def fastapi_app():
 
 @web_app.get("/")
 def health():
-    return {"ok": True, "model": MODEL_NAME, "gpu": GPU}
+    return {"ok": True, "model": MODEL_NAME, "gpu": GPU_TYPE or "cpu"}
 
 
 @web_app.post("/audio/transcriptions")
