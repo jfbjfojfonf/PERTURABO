@@ -23,6 +23,11 @@ on:
         required: false
         type: string
         default: 'youtube_shorts'
+      whisper_gpu:
+        description: 'GPU Modal (T4) ou cpu — si T4 non payé sur Modal, laisser cpu'
+        required: false
+        type: string
+        default: 'cpu'
 
 jobs:
   transcribe:
@@ -48,6 +53,7 @@ jobs:
         env:
           MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
           MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+          WHISPER_GPU: ${{ inputs.whisper_gpu || 'cpu' }}
         run: |
           set +e
           modal deploy transcribe.py 2>&1 | tee /tmp/modal_deploy.log
