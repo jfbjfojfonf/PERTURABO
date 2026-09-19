@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T14:57:28Z",
+  "generated_at": "2026-09-19T15:35:13Z",
   "engine": "auto_detect_matrix_v1",
   "vod_url": "https://www.twitch.tv/videos/2873615032",
   "vod_title": "unknown",
@@ -10,14 +10,14 @@
   "nb_clips_requested": 5,
   "transcription": {
     "mode": "matrix_merged",
-    "total_words": 584
+    "total_words": 18171
   },
   "chat": {
     "enabled": true,
     "total_messages": 7773
   },
   "analysis": {
-    "speech_peaks": 3,
+    "speech_peaks": 717,
     "chat_peaks": 29,
     "candidates_raw": 10,
     "accepted": 10,
