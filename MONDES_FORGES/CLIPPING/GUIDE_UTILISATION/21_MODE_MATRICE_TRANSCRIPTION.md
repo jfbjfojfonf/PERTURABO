@@ -99,6 +99,10 @@ sans validation.
 |---|---|---|
 | `Please add a payment method to use T4 GPU functions` | Modal sans carte + `whisper_gpu: T4` | Relancer avec `whisper_gpu: cpu` |
 | `CPU is not a valid GPU type` | Ancienne version du service (gpu='cpu') | Version corrigée (paramètre `gpu` omis) — redéployer |
+| `ModuleNotFoundError: fastapi` au deploy Modal | Imports top-level de `transcribe.py` non installés dans le job | Corrigé : `pip install ... fastapi python-multipart` dans `prepare` |
+| `HTTP 408` pendant la transcription | Segment trop long pour le plafond de requête Modal | Corrigé : pièces de 480 s + offset réel ffprobe + retries (`transcribe_segment.py`) |
 | `updates were rejected (fetch first)` sur le push final | Ancien workflow poussait `HEAD:main` | Corrigé : push sur la branche du run |
 | `mots < seuil 50` au merge | Segments échoués en masse | Vérifier les logs des jobs rouges ; relancer (artefacts intacts) |
-| Chat vide | GraphQL Twitch raté | Le scoring continue (speech peaks seuls) |
+| `durée VOD absente` / `vod_duration = 0` | Métadonnées du `prepare` non transmises | Corrigé : outputs titre/durée → `metadata.json` ; garde-fou STOP |
+| Tous les candidats `chat_spike` en début de VOD | Scoring chat mal normalisé (durée=0) ou salve d'accueil | Vérifier la durée dans le report ; relancer après fix métadonnées |
+| Chat vide | GraphQL Twitch raté | Le scoring continue (speech peaks seuls) ; le chat de secours est réécrit dans le transcript |

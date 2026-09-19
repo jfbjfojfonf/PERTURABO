@@ -59,6 +59,9 @@ def main() -> int:
     parser.add_argument("--out-dir", default=None,
                         help="Dossier OUT (défaut: <repo>/F00B_VOX/OUT)")
     parser.add_argument("--min-words", type=int, default=50)
+    parser.add_argument("--metadata-in", default=None,
+                        help="JSON optionnel du prepare (duration_sec, vod_title, "
+                             "upload_date) — corrige les métadonnées du transcript")
     args = parser.parse_args()
 
     out_dir = args.out_dir or os.path.join(F00B_ROOT, "OUT")
@@ -68,11 +71,29 @@ def main() -> int:
     with open(args.transcript, "r", encoding="utf-8") as f:
         transcript = json.load(f)
 
+    # Métadonnées réelles : priorité --metadata-in (job prepare), fallback
+    # transcript. Durée = 0 => STOP (le scoring chat est normalisé par la durée).
+    meta = {}
+    if args.metadata_in:
+        try:
+            with open(args.metadata_in, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+        except (OSError, json.JSONDecodeError) as e:
+            _log(f"⚠️ metadata illisible ({e}) — fallback transcript")
     words = transcript.get("words") or []
     chat_messages = transcript.get("chat_messages") or []
-    vod_duration = float(transcript.get("vod_duration") or 0)
-    vod_title = transcript.get("vod_title", "unknown")
-    upload_date = transcript.get("upload_date", "")
+    vod_duration = float(meta.get("duration_sec") or transcript.get("vod_duration") or 0)
+    vod_title = meta.get("vod_title") or transcript.get("vod_title", "unknown")
+    upload_date = str(meta.get("upload_date") or transcript.get("upload_date") or "")
+    if vod_duration <= 0:
+        _log("❌ vod_duration = 0 — métadonnées manquantes, scoring biaisé, STOP")
+        return 1
+    if (meta.get("vod_title") or meta.get("duration_sec")) and (
+            transcript.get("vod_title") != vod_title or
+            float(transcript.get("vod_duration") or 0) != vod_duration):
+        transcript["vod_title"] = vod_title
+        transcript["vod_duration"] = vod_duration
+        transcript["upload_date"] = upload_date
 
     _log(f"VOD: {vod_title} | {vod_duration:.0f}s | {len(words)} mots fusionnés")
 
@@ -84,6 +105,13 @@ def main() -> int:
     if not chat_messages:
         _log("💬 Chat absent des chunks — récupération globale...")
         chat_messages = fetch_chat_replay(args.vod_url)
+        # Réécriture : le chat de secours DOIT vivre dans le transcript committé
+        # (sinon le run suivant repart sans chat — leçon du run du 19/09).
+        if chat_messages:
+            transcript["chat_messages"] = chat_messages
+            with open(args.transcript, "w", encoding="utf-8") as f:
+                json.dump(transcript, f, ensure_ascii=False)
+            _log(f"  chat réécrit dans {args.transcript} ({len(chat_messages)} messages)")
     _log(f"💬 {len(chat_messages)} messages chat au total")
 
     # ── 6. Analyse speech + chat → peaks (identique run_auto_detect) ─────

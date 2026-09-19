@@ -128,3 +128,14 @@ En V2, la copie textuelle du tweet reste interne à F01, tandis que la capture P
   transcription.** Deploy Modal hors matrice (collision d’app), overlap 3 s entre
   segments avec déduplication par timestamp global au merge, scoring UNIQUEMENT
   global (une fenêtre virale peut chevaucher 2 segments). Détails : guide 21.
+- **Transcription ≠ requête infinie.** ~12 min d’audio en une requête sur CPU
+  Modal → HTTP 408 (plafond de requête). Pièces de 480 s max, offset global réel
+  cumulé via ffprobe, retries sur 408/429/5xx.
+- **Les métadonnées traversent les jobs comme le reste.** La durée/titre mesurés
+  dans `prepare` doivent arriver explicitement au `reassemble` (outputs + args).
+  Sinon : `duration=0` → scoring chat mal normalisé → candidats regroupés sur les
+  premières minutes (salve d’accueil du chat) — biais invisible mais réel.
+  Garde-fous : refuser duration<=0 au merge ET au scoring.
+- **Le fastapi d’un deploy Modal s’installe sur le runner.** `transcribe.py` est
+  exécuté localement par le CLI Modal (introspection) : tout import top-level doit
+  être installé dans le job (`fastapi python-multipart`).

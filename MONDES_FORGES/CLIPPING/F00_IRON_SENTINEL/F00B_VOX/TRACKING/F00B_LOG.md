@@ -282,3 +282,34 @@ Run workflow complet sur NOUVELLE VOD = validation finale de production. Le prem
   chaîne scoring, YAML workflow (3 jobs, fail-fast false, max-parallel 15).
 - **Docs** : guide 21 (nouveau), guides 15/16 mis à jour, `_PIEGES_APPRIS.md` §14,
   README_V2, CONTINUATION_F00, CLIPPING_LOG.
+
+## 2026-09-19 — Première session matrice réelle : 3 runs, 2 fixes, 1 réussite
+
+- **Run 1** (`35449619768`) : échec au deploy Modal — `ModuleNotFoundError: fastapi`.
+  Cause : le job `prepare` installait `modal` seul, or `transcribe.py` importe
+  fastapi au top-level (Modal exécute le script en local pour l'introspection).
+  Fix : `pip install yt-dlp modal fastapi python-multipart`.
+- **Run 2** (`35449873752`) : deploy OK, transcription lancée, puis **HTTP 408**
+  (Request Timeout) — un segment de ~12 min d'audio sur CPU dépasse le plafond de
+  requête Modal. Fixes : (1) service `timeout=3600` ; (2) nouveau script
+  `transcribe_segment.py` — le job matriciel découpe son segment en **pièces de
+  480 s** (stream copy), envoie chaque pièce avec son **offset global RÉEL**
+  (cumul ffprobe, pas nominal), 3 retries sur 408/429/5xx (backoff 15 s).
+  Test local : découpage 65 s → 3 pièces, offsets cumulés 0/30/60 exacts.
+- **Run 3** (`35450564679`) : **réussite**. 18 171 mots (couverture complète 4 h :
+  5 827/5 191/3 476/3 677 par heure), 7 773 messages chat, 717 speech peaks +
+  29 chat peaks, 10 candidats commités (`9d24511`).
+- **Anomalie détectée au contrôle qualité** : `vod_duration=0` + titre unknown
+  dans le transcript (les métadonnées du `prepare` ne transitaient pas au
+  `reassemble`) → scoring chat mal normalisé, 10/10 candidats `chat_spike`
+  regroupés dans les 9 premières minutes (salve d'accueil probable). Le chat de
+  secours n'était pas non plus réécrit dans le transcript committé.
+- **Correctifs métadonnées** : `segment_vod.py` publie titre/date/durée dans
+  GITHUB_OUTPUT ; le workflow les passe au `reassemble` (merge `--duration`/
+  `--vod-title`/`--upload-date` + `metadata.json` pour le scoring) ; garde-fous :
+  merge et score refusent `duration<=0` ; `matrix_score.py` réécrit le chat de
+  secours dans le transcript ; `transcribe_chunk()` garde son paramètre offset.
+- **Tests locaux verts** : chaîne complète sur données synthétiques avec
+  métadonnées réelles (200 peaks → candidats → arbitrage premium → report).
+- Leçon d'architecture : **toute donnée produite dans un job et consommée dans un
+  autre doit transiter par outputs/artefacts — jamais par supposition.**

@@ -44,8 +44,12 @@ def _log(msg: str) -> None:
     print(f"[segment_vod] {msg}", flush=True)
 
 
-def get_duration(vod_url: str, timeout: int = 60) -> float:
-    """Durée de la VOD via yt-dlp --dump-single-json (aucun téléchargement)."""
+def get_metadata(vod_url: str, timeout: int = 60) -> tuple:
+    """Métadonnées VOD via yt-dlp --dump-single-json (aucun téléchargement).
+
+    Retourne (duration, title, upload_date, channel). La durée est OBLIGATOIRE
+    (le scoring chat se normalise par la durée) ; le reste est best-effort.
+    """
     cmd = [
         "yt-dlp", "--dump-single-json", "--skip-download",
         "--no-warnings", vod_url,
@@ -65,7 +69,10 @@ def get_duration(vod_url: str, timeout: int = 60) -> float:
     duration = float(meta.get("duration") or 0)
     if duration <= 0:
         raise RuntimeError("Durée VOD inconnue (duration<=0)")
-    return duration
+    title = str(meta.get("title") or "unknown")
+    upload_date = str(meta.get("upload_date") or "")
+    channel = str(meta.get("uploader") or meta.get("channel") or "")
+    return duration, title, upload_date, channel
 
 
 def build_segments(duration: float, nb_segments: int, overlap: float) -> list:
@@ -114,12 +121,16 @@ def main() -> int:
     args = parser.parse_args()
 
     _log(f"Mesure de la VOD : {args.vod_url}")
-    duration = get_duration(args.vod_url)
-    _log(f"Durée: {duration:.0f}s ({duration / 3600:.2f}h)")
+    duration, title, upload_date, channel = get_metadata(args.vod_url)
+    _log(f"Titre: {title}")
+    _log(f"Durée: {duration:.0f}s ({duration / 3600:.2f}h) | upload: {upload_date}")
 
     segments = build_segments(duration, args.nb_segments, args.overlap_sec)
     payload = {
         "vod_url": args.vod_url,
+        "vod_title": title,
+        "upload_date": upload_date,
+        "channel": channel,
         "duration_sec": duration,
         "nb_segments": len(segments),
         "overlap_sec": args.overlap_sec,
@@ -138,7 +149,9 @@ def main() -> int:
         with open(args.github_output, "a", encoding="utf-8") as f:
             f.write(f"matrix={matrix}\n")
             f.write(f"duration={duration}\n")
-        _log(f"Matrice publiée → {args.github_output}")
+            f.write(f"title={title}\n")
+            f.write(f"upload_date={upload_date}\n")
+        _log(f"Matrice + métadonnées publiées → {args.github_output}")
 
     return 0
 

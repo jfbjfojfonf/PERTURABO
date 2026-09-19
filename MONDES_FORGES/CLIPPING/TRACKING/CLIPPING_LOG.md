@@ -813,3 +813,16 @@ F00_CAPTEURS/CODEBASE/capteurs.py
   merge_transcripts.py, matrix_score.py + champ offset optionnel cote Modal.
 - Chaine d analyse et schema candidats INCHANGES -- le gate F00B operateur reste
   le seul point humain. Details : F00B_VOX/TRACKING/F00B_LOG.md, guide 21.
+
+## [2026-09-19] Mode matrice : 1re session reelle - 3 runs, 2 fixes, reussite + correctif metadonnees
+
+- Run 1 : echec deploy (fastapi manquant dans le job prepare) - corrige.
+- Run 2 : HTTP 408 (segment 12 min > plafond requete Modal) - corrige :
+  pieces de 480 s (transcribe_segment.py), offset global reel ffprobe, retries.
+- Run 3 : reussite - 18 171 mots (4 h couvertes), 7 773 messages chat,
+  10 candidats commits (9d24511).
+- Anomalie : metadonnees (duree/titre) non transmises au reassemble ->
+  scoring chat biaise (10/10 chat_spike sur les 9 premieres minutes).
+- Correctifs : metadonnees traversant les jobs (outputs -> merge ->
+  metadata.json), garde-fous duration<=0, chat de secours reecrit dans le
+  transcript. Relance pour candidats propres -> gate F00B operateur.

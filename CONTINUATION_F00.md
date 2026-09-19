@@ -7,6 +7,19 @@
 
 ## 📅 DERNIÈRE MISE À JOUR
 
+**Date** : 2026-09-19
+**Ajout** : **Première session matrice réelle réussie** (VOD Aishah Sofey
+v2873615032). 3 runs : fix fastapi au deploy, fix HTTP 408 (pièces de 480 s +
+offset global réel ffprobe + retries — `transcribe_segment.py`), puis run vert :
+18 171 mots (couverture 4 h complète), 7 773 messages chat, 10 candidats commités
+(`9d24511`). Anomalie détectée : métadonnées (durée=0/titre unknown) non
+transmises au reassemble → candidats chat_spike biaisés sur les 9 premières
+minutes. Correctifs : métadonnées traversant les jobs (outputs → merge →
+metadata.json → score), garde-fous duration<=0, chat de secours réécrit dans le
+transcript. Relance en cours pour candidats propres → **gate F00B**.
+
+---
+
 **Date** : 2026-09-18
 **Ajout** : F00B passe en **mode matrice** — `perturabo_transcribe_matrix.yml`
 (3 jobs : prepare → 15×transcribe → reassemble). Scripts nouveaux :

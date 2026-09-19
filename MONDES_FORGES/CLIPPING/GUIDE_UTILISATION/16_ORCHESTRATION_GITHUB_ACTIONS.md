@@ -72,6 +72,17 @@ overlap, scoring global `matrix_score.py`, commit + push branche live).
 **Guide complet : `21_MODE_MATRICE_TRANSCRIPTION.md`** (flux, pièges traités,
 dépannage).
 
+> 🔑 **Métadonnées** : la durée/titre mesurés dans `prepare` transitent
+> explicitement vers `reassemble` (outputs → args du merge → `metadata.json` du
+> score). Garde-fous : merge et scoring refusent `duration<=0`. Session du 19/09 :
+> sans ce transit, `duration=0` → candidats `chat_spike` biaisés sur les 9
+> premières minutes.
+>
+> 🧩 **Transcription par pièces** : chaque job matriciel découpe son segment en
+> pièces de 480 s (`transcribe_segment.py`) — ~12 min d'audio en une requête
+> déclenche un HTTP 408 Modal. Offset global RÉEL cumulé via ffprobe, 3 retries
+> sur 408/429/5xx.
+
 ## Rotation de compte Modal (crédits gratuits)
 
 1. Nouveau compte Modal -> nouveaux tokens (Token ID + Secret).

@@ -120,7 +120,10 @@ def main() -> int:
     parser.add_argument("--out", required=True, help="transcript.json de sortie")
     parser.add_argument("--vod-url", default="unknown")
     parser.add_argument("--vod-title", default="unknown")
-    parser.add_argument("--duration", type=float, default=0.0)
+    parser.add_argument("--upload-date", default="")
+    parser.add_argument("--duration", type=float, default=0.0,
+                        help="Durée RÉELLE de la VOD (du job prepare — obligatoire : "
+                             "le scoring chat se normalise par la durée)")
     parser.add_argument("--min-words", type=int, default=50,
                         help="Échec si moins de mots fusionnés (défaut: 50)")
     args = parser.parse_args()
@@ -148,11 +151,16 @@ def main() -> int:
     # Un mot dont end < start est une anomalie Whisper rare ; on filtre.
     words = [w for w in words if w["end"] >= w["start"]]
 
+    if args.duration <= 0:
+        _log("❌ durée VOD absente (--duration) — scoring chat impossible, STOP")
+        return 1
+
     transcript = {
         "generated_at": __import__("datetime").datetime.utcnow().isoformat() + "Z",
         "mode": "matrix_merged",
         "vod_url": args.vod_url,
         "vod_title": args.vod_title,
+        "upload_date": args.upload_date,
         "vod_duration": args.duration,
         "transcription_mode": "words",
         "total_words": len(words),

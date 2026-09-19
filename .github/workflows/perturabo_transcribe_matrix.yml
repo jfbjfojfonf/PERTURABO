@@ -62,6 +62,8 @@ jobs:
     outputs:
       matrix: ${{ steps.segments.outputs.matrix }}
       duration: ${{ steps.segments.outputs.duration }}
+      title: ${{ steps.segments.outputs.title }}
+      upload_date: ${{ steps.segments.outputs.upload_date }}
       modal_url: ${{ steps.modal.outputs.url }}
     steps:
       - uses: actions/checkout@v4
@@ -239,25 +241,41 @@ jobs:
           echo "attendus: ${{ inputs.nb_segments || 15 }}"
 
       - name: Fusion + déduplication overlap
+        env:
+          VOD_DURATION: ${{ needs.prepare.outputs.duration }}
+          VOD_TITLE: ${{ needs.prepare.outputs.title }}
+          VOD_UPLOAD: ${{ needs.prepare.outputs.upload_date }}
         working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
         run: |
           VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
+          # Métadonnées RÉELLES du prepare (durée = normalisation du scoring chat) :
+          # le run du 19/09 a produit duration=0 + titre unknown -> candidats biaisés.
           python merge_transcripts.py \
             --chunks-dir "$GITHUB_WORKSPACE/chunks" \
             --out "$GITHUB_WORKSPACE/transcript_${VODID}.json" \
             --vod-url "${{ inputs.vod_url }}" \
+            --vod-title "$VOD_TITLE" \
+            --upload-date "$VOD_UPLOAD" \
+            --duration "$VOD_DURATION" \
             --min-words 50
 
       - name: Scoring global (chaîne auto_detector inchangée)
         env:
           NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
           NVIDIA_NIM_MODEL: moonshotai/kimi-k3
+          VOD_DURATION: ${{ needs.prepare.outputs.duration }}
+          VOD_TITLE: ${{ needs.prepare.outputs.title }}
+          VOD_UPLOAD: ${{ needs.prepare.outputs.upload_date }}
         working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
         run: |
+          set -e
           VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
-          DUR=$(python3 -c "import json;print(json.load(open('$GITHUB_WORKSPACE/transcript_${VODID}.json'))['vod_duration'])")
+          # metadata.json : source unique de vérité des métadonnées réelles
+          jq -n --argjson d "$VOD_DURATION" --arg t "$VOD_TITLE" --arg u "$VOD_UPLOAD" \
+            '{duration_sec:$d, vod_title:$t, upload_date:$u}' > "$GITHUB_WORKSPACE/metadata.json"
           python matrix_score.py \
             --transcript "$GITHUB_WORKSPACE/transcript_${VODID}.json" \
+            --metadata-in "$GITHUB_WORKSPACE/metadata.json" \
             --vod-url "${{ inputs.vod_url }}" \
             --nb-clips "${{ inputs.nb_clips || 5 }}" \
             --market "${{ inputs.market || 'us_young_english' }}" \
