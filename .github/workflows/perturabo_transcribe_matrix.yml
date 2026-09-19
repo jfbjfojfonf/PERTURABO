@@ -75,7 +75,9 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y ffmpeg jq
           pip install --upgrade pip
-          pip install yt-dlp modal
+          # fastapi + python-multipart : importés par MODAL/transcribe.py au
+          # moment du deploy (Modal exécute le script en local pour l'introspection)
+          pip install yt-dlp modal fastapi python-multipart
 
       - name: Deploy Modal transcription service (UNE seule fois)
         id: modal
