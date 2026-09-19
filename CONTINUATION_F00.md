@@ -16,8 +16,12 @@ Contrôle : `gate_f00b_v2873615032.html`). F00D : 5 médias extraits
 self-test et 10/10 tests verts). Climax réels diversifiés (12.5 / 6.05 / 4.7 /
 13.05 / 3.45 s), budgets 46-55/55u. Détail complet :
 `F00D_NARRATIVUM/TRACKING_F00D.md`.
-**Étape suivante : gate F00D — l'opérateur valide les 5 partitions** (émotions
-des panneaux blur à qualifier), puis F04 (kimi-k3) → F06 → F05 → EXPORT.
+**F04 exécuté** (overlay_only blur, kimi-k3/NVIDIA) : 5 titres gate-prêts
+après 2 purges (résidus Sophie Rain/Marvel dans angles.json — hérésie
+« résidu d'ancien siège » ; conformité English de la directive).
+Anti-cond vérifié par grep transcript (tous les titres ancrés dans le contenu).
+Sorties : `F04_COPYWRITER/OUT/overlay_{raw,payload}_asf_c{1..5}.json`.
+**GATE F04 soumis à l'opérateur**, puis F06 → F05 → EXPORT.
 
 ---
 

@@ -323,6 +323,24 @@ Règle de résolution : si `final_operator` est non-null, il gagne. Sinon, si `o
 
 *Fer au-dedans, Fer au-dehors. Le titre ouvre la brèche, le paragraphe la tient, le loop verrouille la victoire.*
 
+## Session Aishah Sofey (2026-09-19) — 5 overlays blur, gate F04 soumis
+
+- Mode `overlay_only` (asset_mode blur), 5 clips gate F00B/F00D (asf_c1..c5),
+  campagne `2026-07-24_AISHAH_SOFEY_MULTI`, youtube_shorts / us_young_english.
+- **Anti-résidu** : `angles.json` porte encore des hooks de la session
+  Sophie Rain/Marvel (`meme_hook "Doom..."`, `keyword "marvel doomsday"`) →
+  5 titres contaminés générés puis REFUSÉS (hérésie « résidu d'un ancien siège »).
+  Fix : champs `meme_hook`/`keyword`/`humour_spin` purgés des contextes +
+  `heresies_interdites` étendues (interdiction explicite des résidus + hors-sol).
+- **Conformité langue** : 2 titres sortis en français → régénérés avec
+  `language_rule` (directive : Language = English, marché us_young_english).
+- **Anti-cond vérifié par grep transcript** : boat/elephant présents fenêtre c1,
+  kidney/dad présents fenêtre c4 — tous les titres ancrés dans le contenu réel.
+- Robustesse : retries 429/503 (backoff 20/40/80 s) sur l'API NVIDIA.
+- Sorties : `OUT/overlay_raw_asf_c*.json` + `OUT/overlay_payload_asf_c*.json`.
+- **GATE F04** : titres soumis à l'opérateur. Rappel : F04 ne code pas les
+  émotions des panneaux blur — décision opérateur au gate F00D.
+
 ## Addendum MEME — contrat opérationnel validé
 
 Pour le mode MEME, F04 produit par angle un payload brut de revue `text_payload_raw_Axx.json` contenant au minimum le tweet, `text_emotion`, l’émotion et les métadonnées. Le tweet est un mini-récit autonome de trois lignes maximum ; il ne doit pas utiliser de marqueurs `A:` / `B:`.

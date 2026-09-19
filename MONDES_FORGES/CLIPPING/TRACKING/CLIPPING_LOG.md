@@ -836,3 +836,14 @@ F00_CAPTEURS/CODEBASE/capteurs.py
   + 10/10 tests verts.
 - Climax reels diversifies, budgets 46-55/55u, trio blur+flash+SFX respecte.
 - Gate F00D soumis a l operateur (emotions des panneaux a qualifier).
+
+## [2026-09-19] F04 execute - 5 overlays blur gate-pret
+
+- Mode overlay_only (asset blur), campagne 2026-07-24_AISHAH_SOFEY_MULTI,
+  kimi-k3/NVIDIA via CLIPPING_PREMIUM_API_KEY.
+- Purge 1 : residus Sophie Rain/Marvel dans angles.json (meme_hook Doom...) ->
+  5 titres contamines refuses, champs purges des contextes + heresies etendues.
+- Purge 2 : 2 titres en francais -> regeneres (directive Language = English).
+- Anti-cond verifie par grep transcript (boat/elephant fenetre c1, kidney/dad c4).
+- Sorties : overlay_raw_asf_c*.json + overlay_payload_asf_c*.json.
+- GATE F04 soumis a l operateur.
