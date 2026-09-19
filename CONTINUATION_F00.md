@@ -8,15 +8,15 @@
 ## 📅 DERNIÈRE MISE À JOUR
 
 **Date** : 2026-09-19
-**Ajout** : **Première session matrice réelle réussie** (VOD Aishah Sofey
-v2873615032). 3 runs : fix fastapi au deploy, fix HTTP 408 (pièces de 480 s +
-offset global réel ffprobe + retries — `transcribe_segment.py`), puis run vert :
-18 171 mots (couverture 4 h complète), 7 773 messages chat, 10 candidats commités
-(`9d24511`). Anomalie détectée : métadonnées (durée=0/titre unknown) non
-transmises au reassemble → candidats chat_spike biaisés sur les 9 premières
-minutes. Correctifs : métadonnées traversant les jobs (outputs → merge →
-metadata.json → score), garde-fous duration<=0, chat de secours réécrit dans le
-transcript. Relance en cours pour candidats propres → **gate F00B**.
+**Ajout** : **Session matrice Aishah Sofey terminée — gate F00B prêt.**
+4 runs au total (fastapi, HTTP 408 → pièces 480 s, métadonnées → garde-fous).
+Run final (`6a90bf4`) : titre réel « BACK FROM BREAK ‼️ ROBLOX WITH JOY LATER »,
+durée 3.9 h, upload 20260914, 18 034 mots, 7 773 messages chat dans le
+transcript, 709 speech + 29 chat peaks, **10 candidats sains** (6 mixed,
+3 chat_spike, 1 trigger_word) committés dans
+`ARCHIVUM/montage/transcripts/v2873615032_candidats.json`.
+**Étape suivante : gate F00B — l'opérateur valide les candidats**, puis chaîne
+F00D (blur) → F04 → F06 → F05 → EXPORT, gate à chaque frégate.
 
 ---
 
