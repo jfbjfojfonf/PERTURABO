@@ -1,0 +1,15 @@
+{
+  "gate": "F00B",
+  "vod_url": "https://www.twitch.tv/videos/2873615032",
+  "decided_at": "2026-09-19T16:44:34.875Z",
+  "decided_by": "warsmith",
+  "accepted": [
+    "62ac79ed87",
+    "1d3c465c61",
+    "4bdc43d3a1",
+    "fe6982e55c",
+    "b4a1cf9305"
+  ],
+  "rejected": [],
+  "note_oracle": "Verdict brut exporté de la vue de gate (Salle de Contrôle). Les 5 candidats non listés sont non-validés (rejetés de fait — doctrine: pas de clip sans verdict). Détail des motifs dans F00B_VOX/IN/gate_decisions.json."
+}
