@@ -88,7 +88,7 @@ def _get_model():
     return _model
 
 
-@app.function(image=image, scaledown_window=120, **_GPU_KWARGS)
+@app.function(image=image, scaledown_window=120, timeout=3600, **_GPU_KWARGS)
 @modal.asgi_app()
 def fastapi_app():
     return web_app

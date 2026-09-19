@@ -163,67 +163,27 @@ jobs:
             "${{ inputs.vod_url }}"
           ls -la chunk_out/
 
-      - name: Transcrire le segment via Modal (offset global)
+      - name: Transcrire le segment via Modal (pièces de 8 min + offset global)
         env:
           SEG: ${{ toJSON(matrix.segment) }}
           MODAL_URL: ${{ needs.prepare.outputs.modal_url }}
           MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
         run: |
           set -e
           OFFSET=$(jq -r '.offset' <<< "$SEG")
           SEG_ID=$(jq -r '.id' <<< "$SEG")
-          python3 - "$OFFSET" "$SEG_ID" <<'PYEOF'
-          import json, os, sys, urllib.request, uuid
-
-          offset, seg_id = sys.argv[1], sys.argv[2]
-          url = os.environ["MODAL_URL"].rstrip("/") + "/audio/transcriptions"
-          boundary = uuid.uuid4().hex
-
-          with open("chunk_out/segment.m4a", "rb") as f:
-              audio = f.read()
-
-          fields = {
-              "model": "whisper-medium",
-              "response_format": "verbose_json",
-              "timestamp_granularities[]": "word",
-              "language": "en",
-              "offset": offset,
-          }
-          body = b""
-          for k, v in fields.items():
-              body += f"--{boundary}\r\n".encode()
-              body += f'Content-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode()
-          body += f"--{boundary}\r\n".encode()
-          body += b'Content-Disposition: form-data; name="file"; filename="segment.m4a"\r\n'
-          body += b"Content-Type: audio/m4a\r\n\r\n" + audio + b"\r\n"
-          body += f"--{boundary}--\r\n".encode()
-
-          req = urllib.request.Request(url, data=body, method="POST", headers={
-              "Authorization": "Bearer " + os.environ.get("MODAL_TOKEN_ID", "perturabo"),
-              "Content-Type": f"multipart/form-data; boundary={boundary}",
-              "User-Agent": "PERTURABO-F00B-MATRIX",
-          })
-          with urllib.request.urlopen(req, timeout=1800) as resp:
-              result = json.loads(resp.read().decode("utf-8"))
-
-          words = result.get("words") or []
-          # Sécurité : si le service ne gère pas offset (ancienne version),
-          # on relocalise côté client avec l'offset du segment.
-          try:
-              off = float(offset)
-          except ValueError:
-              off = 0.0
-          if words and max(w["start"] for w in words) <= off:
-              for w in words:
-                  w["start"] = round(w["start"] + off, 3)
-                  w["end"] = round(w["end"] + off, 3)
-
-          out = {"words": words, "segment_id": int(seg_id), "offset": off}
-          with open(f"chunk_{int(seg_id):03d}_words.json", "w") as f:
-              json.dump(out, f)
-          print(f"seg {seg_id}: {len(words)} mots, dernier start "
-                f"{max((w['start'] for w in words), default=0):.1f}s")
-          PYEOF
+          # Pièces de 480 s : une requête Modal de ~12 min sur CPU donnait
+          # HTTP 408 (timeout requête). Chaque pièce part avec son offset
+          # global réel (cumul ffprobe) + 3 retries sur 408/429/5xx.
+          python transcribe_segment.py \
+            --segment "$GITHUB_WORKSPACE/chunk_out/segment.m4a" \
+            --offset "$OFFSET" \
+            --seg-id "$SEG_ID" \
+            --out "$GITHUB_WORKSPACE/chunk_${SEG_ID}_words.json" \
+            --modal-url "$MODAL_URL" \
+            --token "$MODAL_TOKEN_ID" \
+            --piece-sec 480
 
       - name: Chat replay du segment (portion)
         continue-on-error: true
