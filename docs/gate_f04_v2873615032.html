@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GATE F04 — Titres overlay + Émotions F00D — PERTURABO</title>
+<style>
+  :root{
+    --boltgun:#3a3f45; --steel-dark:#23272c; --steel-darkest:#17191d;
+    --gold:#d4a017; --gold-dim:#a67c00; --gold-bright:#f0c040;
+    --black-plate:#0d0f11; --text:#c9ced4; --text-dim:#7d848c;
+    --green:#2ea043; --red:#f85149;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--black-plate); color:var(--text);
+    font-family:'Segoe UI',system-ui,sans-serif; line-height:1.55; padding:2rem 1rem}
+  .wrap{max-width:980px; margin:0 auto}
+  h1{color:var(--gold); font-size:1.6rem; letter-spacing:.12em; text-transform:uppercase;
+    border-bottom:2px solid var(--gold-dim); padding-bottom:.6rem; margin-bottom:.3rem}
+  .sub{color:var(--text-dim); font-size:.92rem; margin-bottom:1.6rem}
+  .sub a{color:var(--gold-bright); text-decoration:none}
+  .sub a:hover{text-decoration:underline}
+  h2{color:var(--gold-bright); font-size:1.1rem; letter-spacing:.08em; text-transform:uppercase;
+    margin:1.8rem 0 .8rem; border-left:4px solid var(--gold); padding-left:.7rem}
+  .card{background:var(--steel-darkest); border:1px solid var(--boltgun);
+    border-radius:10px; padding:1.1rem 1.2rem; margin-bottom:1rem;
+    transition:border-color .2s}
+  .card.ok{border-color:var(--green)}
+  .card.ko{border-color:var(--red); opacity:.75}
+  .card .head{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap}
+  .clip{color:var(--gold); font-weight:700; font-size:.85rem; letter-spacing:.06em}
+  .meta{color:var(--text-dim); font-size:.78rem}
+  .title{font-size:1.28rem; color:#f2f4f6; margin:.55rem 0 .3rem; font-weight:600}
+  .rationale{color:var(--text-dim); font-size:.86rem; font-style:italic; margin-bottom:.7rem}
+  details{margin:.4rem 0 .8rem}
+  summary{cursor:pointer; color:var(--gold-bright); font-size:.85rem; user-select:none}
+  summary:hover{text-decoration:underline}
+  .extract{background:var(--steel-dark); border-left:3px solid var(--gold-dim);
+    padding:.7rem .9rem; margin-top:.5rem; font-size:.85rem; color:var(--text);
+    white-space:pre-wrap; border-radius:0 6px 6px 0}
+  .btns{display:flex; gap:.6rem; flex-wrap:wrap; align-items:center}
+  button{cursor:pointer; border-radius:6px; padding:.45rem 1.1rem; font-size:.85rem;
+    font-weight:600; border:1px solid var(--boltgun); background:var(--steel-dark); color:var(--text)}
+  button:hover{border-color:var(--gold)}
+  .btn-ok.on{background:var(--green); border-color:var(--green); color:#fff}
+  .btn-ko.on{background:var(--red); border-color:var(--red); color:#fff}
+  .tw{color:var(--gold-bright); font-size:.82rem; text-decoration:none; margin-left:auto}
+  .tw:hover{text-decoration:underline}
+  .emo-row{display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
+    background:var(--steel-darkest); border:1px solid var(--boltgun);
+    border-radius:8px; padding:.8rem 1rem; margin-bottom:.6rem}
+  .emo-row .clip{min-width:5.2rem}
+  select{background:var(--steel-dark); color:var(--gold-bright); border:1px solid var(--boltgun);
+    border-radius:6px; padding:.4rem .7rem; font-size:.9rem}
+  .emo-note{color:var(--text-dim); font-size:.8rem}
+  .export{margin-top:2rem; text-align:center}
+  .export button{background:var(--gold); border-color:var(--gold); color:var(--black-plate);
+    font-size:1rem; padding:.7rem 2.2rem; letter-spacing:.05em}
+  .export button:hover{background:var(--gold-bright)}
+  .chain{color:var(--text-dim); font-size:.8rem; text-align:center; margin-top:1rem}
+  .chain b{color:var(--green)} .chain i{color:var(--gold-bright); font-style:normal}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚔ Gate F04 — Copywriter</h1>
+  <div class="sub">
+    Campagne <b>2026-07-24_AISHAH_SOFEY_MULTI</b> · VOD
+    <a href="https://www.twitch.tv/videos/2873615032" target="_blank">v2873615032</a> ·
+    5 titres overlay à valider + <b>émotions des panneaux blur (F00D)</b> à qualifier —
+    F06 consommera les deux.
+  </div>
+
+  <h2>Section A — Verdict F04 : titres overlay</h2>
+  <div id="cards"></div>
+
+  <h2>Section B — Émotions F00D : panneaux blur</h2>
+  <div class="emo-note" style="margin-bottom:.7rem">
+    Une émotion par clip (défaut = <i>intrigue</i>, déduit du signal). Valid F06 :
+    intrigue · shock · hype · outrage. Elle pilote zooms, cuts et SFX du montage.
+  </div>
+  <div id="emos"></div>
+
+  <div class="export">
+    <button onclick="exportVerdict()">⚒ EXPORTER LE VERDICT F04</button>
+    <div class="chain">
+      <b>F00B ✓</b> → <b>F00D ✓</b> → <b>F04 <i style="color:var(--gold)">← toi</i></b> →
+      F06 (montage blur) → F05 (pack) → EXPORT
+    </div>
+  </div>
+</div>
+
+<script>
+const VOD = "2873615032";
+const CLIPS = [
+  {k:"asf_c1", id:"62ac79ed87", start:897.0, dur:60, climax:12.5, angle:"A01 · reframing/drole",
+   title:"Is your boat video secretly smuggling an elephant?",
+   rationale:"Transforme la mention anodine d'une vidéo bateau en mystère visuel absurde — curiosité + humour.",
+   extract:"To help you swap hands say thanks. Really appreciate that. You guys are like hyping me up for no reason. Um Jaystar How do I add the overlay? What the freak does that mean? Hope my break. Okay. There's a lot to talk about There's a lot to talk about and and um, that's my twitch."},
+  {k:"asf_c2", id:"1d3c465c61", start:1052.0, dur:60, climax:6.05, angle:"A03 · ironie/trahison",
+   title:"She said we share music taste… then hit me with TTS spam",
+   rationale:"Contraste ironique entre le partage musical et le spam TTS qui suit — trahison comique.",
+   extract:"Okay, you like my keyboard we have the same music taste do we because I don't really know my music cases Okay, can you stop doing that? That was to my life not to you fuck What's la piece? Okay, ask me questions. This is this is what this is all about, right?"},
+  {k:"asf_c3", id:"4bdc43d3a1", start:1747.6, dur:30, climax:4.7, angle:"A02 · parodie/drole",
+   title:"I didn't do anything to you 😂",
+   rationale:"Réplique littérale du déni face au drama chat — parodie du innocence feinte.",
+   extract:"a TV you backpack, which is so cool Are you Why is there drama in the chat? Who's Danny? Who's who's Danny? And what'd she say to you Zaylin? Why are you actually I didn't do anything to you what the fuck is going on Zaylin what is the drama Okay, you did nothing."},
+  {k:"asf_c4", id:"fe6982e55c", start:1377.0, dur:60, climax:13.05, angle:"A04 · absurde/trahison",
+   title:"DAD'S HIDDEN KIDNEY TRUTH",
+   rationale:"Style tabloïd absurde sur l'anecdote paternelle — curiosité clickbait assumée.",
+   extract:"It's it's not healthy for me to see somewhere all the time, you know, obviously and I got sick Okay. Um, if you keep up with me on Twitter, you see that I run run He's pulling my blanket away from me Dad, are you okay? Anyways, but I see do all the time."},
+  {k:"asf_c5", id:"b4a1cf9305", start:1782.0, dur:60, climax:3.45, angle:"A05 · jeu_de_mots/joie",
+   title:"Travel blocked? My chat is the new runway",
+   rationale:"Jeu de mots mode/voyage reliant le vet show manqué à l'interaction chat.",
+   extract:"um, let's look up Vivette, um, I watched the vet show. Everyone looked amazing. Everyone looks so freaking cool and fly. Um, I Really wanted to go to New York Fashion Week. I had a few events that I was supposed to be going to but because of my sickness and Everything I was n"}
+];
+const EMOS = ["intrigue","shock","hype","outrage"];
+const state = {};
+CLIPS.forEach(c => state[c.k] = {title_ok:true, emo:"intrigue"});
+
+function fmt(s){const m=Math.floor(s/60),r=Math.floor(s%60);return `${m}:${String(r).padStart(2,"0")}`;}
+
+function render(){
+  document.getElementById("cards").innerHTML = CLIPS.map(c=>{
+    const s = state[c.k];
+    return `<div class="card ${s.title_ok?'ok':'ko'}" id="card-${c.k}">
+      <div class="head">
+        <span class="clip">${c.k}</span>
+        <span class="meta">${c.angle} · candidat ${c.id} · ${fmt(c.start)} (${c.dur}s) · climax ${c.climax}s</span>
+        <a class="tw" href="https://www.twitch.tv/videos/${VOD}?t=${Math.floor(c.start)}s" target="_blank">▶ écouter sur Twitch</a>
+      </div>
+      <div class="title">« ${c.title} »</div>
+      <div class="rationale">${c.rationale}</div>
+      <details><summary>📜 extrait réel du transcript (ancrage)</summary>
+        <div class="extract">${c.extract}</div></details>
+      <div class="btns">
+        <button class="btn-ok ${s.title_ok?'on':''}" onclick="setOk('${c.k}',true)">✔ VALIDER</button>
+        <button class="btn-ko ${!s.title_ok?'on':''}" onclick="setOk('${c.k}',false)">✘ REFUSER</button>
+      </div>
+    </div>`;}).join("");
+
+  document.getElementById("emos").innerHTML = CLIPS.map(c=>{
+    const s = state[c.k];
+    return `<div class="emo-row">
+      <span class="clip">${c.k}</span>
+      <label class="emo-note">émotion :</label>
+      <select onchange="setEmo('${c.k}',this.value)">
+        ${EMOS.map(e=>`<option value="${e}" ${s.emo===e?'selected':''}>${e}</option>`).join("")}
+      </select>
+      <span class="emo-note">climax réel ${c.climax}s · smash posé là</span>
+    </div>`;}).join("");
+}
+
+function setOk(k,v){state[k].title_ok=v; render();}
+function setEmo(k,v){state[k].emo=v; render();}
+
+function exportVerdict(){
+  const verdict = {
+    gate:"F04", vod_url:`https://www.twitch.tv/videos/${VOD}`,
+    decided_at:new Date().toISOString(), decided_by:"warsmith",
+    accepted_titles: CLIPS.filter(c=>state[c.k].title_ok).map(c=>({clip_key:c.k, candidate_id:c.id, overlay_title:c.title})),
+    rejected_titles: CLIPS.filter(c=>!state[c.k].title_ok).map(c=>({clip_key:c.k, candidate_id:c.id, overlay_title:c.title})),
+    f00d_emotions: CLIPS.map(c=>({clip_key:c.k, candidate_id:c.id, emotion:state[c.k].emo}))
+  };
+  const blob = new Blob([JSON.stringify(verdict,null,2)],{type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `gate_verdict_f04_v${VOD}.json`;
+  a.click();
+}
+render();
+</script>
+</body>
+</html>
