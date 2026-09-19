@@ -8,15 +8,16 @@
 ## 📅 DERNIÈRE MISE À JOUR
 
 **Date** : 2026-09-19
-**Ajout** : **Session matrice Aishah Sofey terminée — gate F00B prêt.**
-4 runs au total (fastapi, HTTP 408 → pièces 480 s, métadonnées → garde-fous).
-Run final (`6a90bf4`) : titre réel « BACK FROM BREAK ‼️ ROBLOX WITH JOY LATER »,
-durée 3.9 h, upload 20260914, 18 034 mots, 7 773 messages chat dans le
-transcript, 709 speech + 29 chat peaks, **10 candidats sains** (6 mixed,
-3 chat_spike, 1 trigger_word) committés dans
-`ARCHIVUM/montage/transcripts/v2873615032_candidats.json`.
-**Étape suivante : gate F00B — l'opérateur valide les candidats**, puis chaîne
-F00D (blur) → F04 → F06 → F05 → EXPORT, gate à chaque frégate.
+**Ajout** : **Gate F00B fermé → F00D exécuté → GATE F00D prêt.** Verdict
+Warsmith enregistré (5 `mixed` approuvés, vue de gate dans la Salle de
+Contrôle : `gate_f00b_v2873615032.html`). F00D : 5 médias extraits
+(`--download-sections`), **5 partitions caviar blur émises** après 2 fixes
+(seuil silences 400 ms dans le Budget + arbitrage composeur dans le budget —
+self-test et 10/10 tests verts). Climax réels diversifiés (12.5 / 6.05 / 4.7 /
+13.05 / 3.45 s), budgets 46-55/55u. Détail complet :
+`F00D_NARRATIVUM/TRACKING_F00D.md`.
+**Étape suivante : gate F00D — l'opérateur valide les 5 partitions** (émotions
+des panneaux blur à qualifier), puis F04 (kimi-k3) → F06 → F05 → EXPORT.
 
 ---
 

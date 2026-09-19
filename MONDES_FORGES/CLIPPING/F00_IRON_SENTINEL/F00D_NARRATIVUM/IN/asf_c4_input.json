@@ -1,0 +1,16 @@
+{
+  "candidate": {
+    "candidate_id": "fe6982e55c",
+    "duration_sec": 60.0,
+    "score": 9.54,
+    "signal_type": "mixed",
+    "vod_url": "https://www.twitch.tv/videos/2873615032",
+    "gate": "F00B approved 2026-09-19"
+  },
+  "segment_media": "MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00D_NARRATIVUM/WORK/media/asf_c4.m4a",
+  "constraints": {
+    "style": "blur",
+    "market": "us_young_english",
+    "platform": "youtube_shorts"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "caviar.v1",
+  "generated_at": "2026-09-19T17:00:50.651464+00:00",
+  "time_reference": "segment_relative_seconds",
+  "source": {
+    "candidate_id": "4bdc43d3a1",
+    "duration_sec": 30.0,
+    "score": 9.59,
+    "signal_type": "mixed",
+    "vod_url": "https://www.twitch.tv/videos/2873615032",
+    "gate": "F00B approved 2026-09-19"
+  },
+  "style": "blur",
+  "narrative": {
+    "hook_type": "climax_first",
+    "is_climax": [
+      4.7
+    ],
+    "resolution_at": 24.0,
+    "energy_curve": [
+      "rise",
+      "peak",
+      "fall"
+    ],
+    "pacing_note": "trio broll+flash raccourcit le pacing local ; l'audio du streamer est MAINTENU sous les effets"
+  },
+  "silence_trims": [
+    {
+      "start_sec": 1.334,
+      "end_sec": 2.721,
+      "duration_sec": 1.388
+    },
+    {
+      "start_sec": 3.704,
+      "end_sec": 4.55,
+      "duration_sec": 0.845
+    },
+    {
+      "start_sec": 7.452,
+      "end_sec": 8.041,
+      "duration_sec": 0.589
+    },
+    {
+      "start_sec": 9.093,
+      "end_sec": 10.086,
+      "duration_sec": 0.993
+    },
+    {
+      "start_sec": 11.9,
+      "end_sec": 13.853,
+      "duration_sec": 1.953
+    },
+    {
+      "start_sec": 16.999,
+      "end_sec": 18.32,
+      "duration_sec": 1.321
+    },
+    {
+      "start_sec": 18.32,
+      "end_sec": 22.345,
+      "duration_sec": 4.025
+    },
+    {
+      "start_sec": 25.571,
+      "end_sec": 26.314,
+      "duration_sec": 0.743
+    }
+  ],
+  "events": {
+    "broll": [
+      {
+        "broll_id": "BLUR-01",
+        "kind": "broll_blur",
+        "crop_zoom": 1.3,
+        "blur_radius_px": 18,
+        "panel": "vertical_text_overlay",
+        "emotion_requested": "à qualifier (opérateur)",
+        "start_sec": 7.5,
+        "duration_frames": 36,
+        "entry_flash": true,
+        "sfx": "impact"
+      }
+    ],
+    "smash_audio": [
+      {
+        "at_sec": 4.7,
+        "duck_db": -12,
+        "duration_sec": 0.8
+      }
+    ],
+    "punch_ins": [
+      {
+        "at_sec": 2.75,
+        "scale": 1.2,
+        "duration_sec": 0.6,
+        "cause": "amplitude_peak"
+      },
+      {
+        "at_sec": 8.1,
+        "scale": 1.2,
+        "duration_sec": 0.6,
+        "cause": "amplitude_peak"
+      },
+      {
+        "at_sec": 23.0,
+        "scale": 1.2,
+        "duration_sec": 0.6,
+        "cause": "amplitude_peak"
+      }
+    ]
+  },
+  "budget_state": {
+    "spent_units": 46,
+    "ceiling_units": 55,
+    "breathing_units": 54,
+    "counts": {
+      "broll": 1,
+      "smash_audio": 1,
+      "punch_ins": 3,
+      "jump_cuts": 8
+    },
+    "caps_respected": true
+  },
+  "overlay": {
+    "text": "(accroche écrite/validée par l'opérateur — placeholder)",
+    "visible_from_sec": 0.0,
+    "visible_until_sec": 4.7
+  },
+  "notes": "Trio B-roll+flash+SFX inséparable. SFX uniquement à l'entrée B-roll. Flash entrée uniquement (jamais sortie — Flow Cut à la place)."
+}

@@ -826,3 +826,13 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 - Correctifs : metadonnees traversant les jobs (outputs -> merge ->
   metadata.json), garde-fous duration<=0, chat de secours reecrit dans le
   transcript. Relance pour candidats propres -> gate F00B operateur.
+
+## [2026-09-19] Gate F00B ferme -> F00D execute -> GATE F00D
+
+- Verdict Warsmith enregistre (5 mixed approuves, vue de gate Salle de Controle).
+- F00D : 5 medias extraits (download-sections, regle d or), 5 partitions caviar
+  blur emises apres 2 fixes : seuil silences 250->400 ms (Budget) + arbitrage
+  composeur dans le budget (refuse_to_emit reste derniere defense). Self-test
+  + 10/10 tests verts.
+- Climax reels diversifies, budgets 46-55/55u, trio blur+flash+SFX respecte.
+- Gate F00D soumis a l operateur (emotions des panneaux a qualifier).

@@ -31,10 +31,10 @@
       "duration_sec": [0.5, 0.8]
     },
     "jump_cut": {
-      "description": "Trim silence > 250 ms",
+      "description": "Trim silence > 400 ms (calibrage 2026-09-19 : 250 ms comptait les micro-pauses de conversation comme coupures — 12-15 jump cuts/clip, saturation artificielle)",
       "cost_units": 1,
       "max_per_clip": 8,
-      "silence_threshold_ms": 250
+      "silence_threshold_ms": 400
     }
   },
   "saturation_policy": {

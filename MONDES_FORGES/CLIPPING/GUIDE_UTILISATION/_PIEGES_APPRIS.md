@@ -139,3 +139,16 @@ En V2, la copie textuelle du tweet reste interne à F01, tandis que la capture P
 - **Le fastapi d’un deploy Modal s’installe sur le runner.** `transcribe.py` est
   exécuté localement par le CLI Modal (introspection) : tout import top-level doit
   être installé dans le job (`fastapi python-multipart`).
+- **F00D : les inputs sont racine-relatifs.** `caviar_director.py` doit être
+  exécuté depuis la racine du dépôt — sinon `segment_media` non résolu → analyse
+  audio dégradée silencieusement (climax fallback = 55 % de la durée partout,
+  trims absents). Contrôle : des climaxes identiques sur des clips différents =
+  alerte fallback.
+- **F00D : le calibrage vit dans le Budget.** Un seuil de détection (ex.
+  `silence_threshold_ms`) se règle dans `caviar_budget.json`, jamais dans le
+  code. 250 ms comptait les micro-pauses de conversation → 12-15 jump cuts/clip
+  → saturation artificielle.
+- **F00D : composeur vit dans le budget.** Un candidat validé au gate F00B ne
+  doit pas être refusé pour un trop-plein d’événements : le composeur arbitre
+  (tronquer au cap en gardant les meilleurs), `refuse_to_emit` reste la dernière
+  défense.

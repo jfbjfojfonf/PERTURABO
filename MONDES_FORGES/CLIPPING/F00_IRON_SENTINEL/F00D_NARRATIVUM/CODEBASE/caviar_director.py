@@ -249,7 +249,29 @@ def compose(input_doc: dict, media: str | Path, budget: dict) -> tuple[dict | No
             })
 
     events = {"broll": blur_panels or brolls, "smash_audio": smash, "punch_ins": punch_ins}
-    state = compute_budget_state(events, len(silences), budget)
+
+    # ── Arbitrage budget (2026-09-19) : le composeur vit DANS le budget ────
+    # Le candidat a été validé au gate F00B : refuser ici pour un trop-plein
+    # d'événements serait un échec de composition, pas un filtre. On arbitre
+    # donc : 1) jump cuts tronqués au cap en gardant les silences les plus
+    # LONGS (les plus utiles au rythme) ; 2) si le plafond déborde encore,
+    # on retire les jump cuts les moins longs puis les punch-ins tardifs.
+    # La politique « refuse_to_emit » reste la DERNIÈRE défense (minimum
+    # vital : broll trio + smash climax).
+    jc_cfg = budget["events"]["jump_cut"]
+    kept_silences = sorted(silences, key=lambda s: s.get("duration_sec", 0.0),
+                           reverse=True)[: jc_cfg["max_per_clip"]]
+    state = compute_budget_state(events, len(kept_silences), budget)
+    while (state["spent_units"] > state["ceiling_units"]
+           and (len(kept_silences) > 1 or punch_ins)):
+        if len(kept_silences) > 1:
+            kept_silences.pop()          # le moins long des gardés
+        elif punch_ins:
+            punch_ins.pop()              # le dernier punch-in (le plus tardif)
+        state = compute_budget_state(events, len(kept_silences), budget)
+    kept_silences.sort(key=lambda s: s.get("start_sec", 0.0))
+    silences = kept_silences
+
     if not state["caps_respected"] or state["spent_units"] > state["ceiling_units"]:
         return None, (f"segment saturé : dépense {state['spent_units']}u > "
                       f"{state['ceiling_units']}u ou caps violés {state['counts']} — "
