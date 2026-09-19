@@ -1,0 +1,334 @@
+name: PERTURABO — F00B_VOX Transcript MATRIX (Oracle)
+
+# Matrice de transcription : 15 jobs parallèles au lieu d'1 job séquentiel.
+#   prepare    : mesure la VOD, découpe la matrice (segment_vod.py),
+#                déploie le service Modal UNE seule fois
+#   transcribe : chaque job de la matrice télécharge SON segment
+#                (yt-dlp --download-sections), le transcrit via Modal avec
+#                offset global, uploade un ARTEFACT (rien n'est jamais perdu)
+#   reassemble : télécharge les 15 artefacts, fusionne (déduplication overlap),
+#                scoring GLOBAL (chaîne auto_detector inchangée),
+#                commit + push sur LA BRANCHE COURANTE (jamais HEAD:main)
+#
+# Pièges traités (voir GUIDE_UTILISATION/21_MODE_MATRICE_TRANSCRIPTION.md) :
+#   - deploy Modal HORS matrice (collision d'app sinon)
+#   - overlap 3 s entre segments + déduplication au merge
+#   - détection/scoring APRÈS fusion, jamais par segment
+#   - artefacts à chaque étape : un push raté ne perd plus les sorties
+
+on:
+  workflow_dispatch:
+    inputs:
+      vod_url:
+        description: 'URL de la VOD Twitch'
+        required: true
+        type: string
+        default: 'https://www.twitch.tv/videos/2873615032'
+      nb_clips:
+        description: 'Nombre de clips à scorer'
+        required: false
+        type: string
+        default: '5'
+      market:
+        description: 'Marché cible'
+        required: false
+        type: string
+        default: 'us_young_english'
+      platform:
+        description: 'Plateforme cible'
+        required: false
+        type: string
+        default: 'youtube_shorts'
+      whisper_gpu:
+        description: 'GPU Modal (T4) ou cpu — si T4 non payé sur Modal, laisser cpu'
+        required: false
+        type: string
+        default: 'cpu'
+      nb_segments:
+        description: 'Nombre de segments parallèles (15 = ~12 min de VOD/job)'
+        required: false
+        type: string
+        default: '15'
+
+permissions:
+  contents: write
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────
+  # JOB 1 — PREPARE : durée VOD → matrice des segments + deploy Modal ×1
+  # ─────────────────────────────────────────────────────────────────────
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.segments.outputs.matrix }}
+      duration: ${{ steps.segments.outputs.duration }}
+      modal_url: ${{ steps.modal.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg jq
+          pip install --upgrade pip
+          pip install yt-dlp modal
+
+      - name: Deploy Modal transcription service (UNE seule fois)
+        id: modal
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/MODAL
+        env:
+          MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+          MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+          WHISPER_GPU: ${{ inputs.whisper_gpu || 'cpu' }}
+        run: |
+          set +e
+          modal deploy transcribe.py 2>&1 | tee /tmp/modal_deploy.log
+          RC=${PIPESTATUS[0]}
+          if [ $RC -ne 0 ]; then
+            echo "::error::modal deploy failed rc=$RC"
+            exit $RC
+          fi
+          URL=$(grep -oE 'https://[a-zA-Z0-9.-]+\.modal\.run' /tmp/modal_deploy.log | head -1)
+          if [ -z "$URL" ]; then
+            echo "::error::Aucune URL .modal.run trouvee dans la sortie du deploy"
+            exit 1
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Deployed at: $URL"
+
+      - name: Découpage VOD → matrice des segments
+        id: segments
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+        run: |
+          python segment_vod.py \
+            --vod-url "${{ inputs.vod_url }}" \
+            --nb-segments "${{ inputs.nb_segments || 15 }}" \
+            --overlap-sec 3 \
+            --out segments.json \
+            --github-output "$GITHUB_OUTPUT"
+          jq -r '.segments | length' segments.json
+          echo "Segments publiés pour la matrice"
+
+      - name: Upload segments.json (traçabilité)
+        uses: actions/upload-artifact@v4
+        with:
+          name: segments-plan
+          path: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE/segments.json
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────────
+  # JOB 2 — TRANSCRIBE : matrice, 1 job = 1 segment, artefact par job
+  # ─────────────────────────────────────────────────────────────────────
+  transcribe:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false          # 1 segment raté ne tue pas les 14 autres
+      max-parallel: 15
+      matrix:
+        segment: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+          pip install --upgrade pip
+          pip install yt-dlp requests
+
+      - name: Télécharger le segment audio (${{ matrix.segment.id }})
+        env:
+          SEG: ${{ toJSON(matrix.segment) }}
+        run: |
+          set -e
+          DL_START=$(jq -r '.download_start' <<< "$SEG")
+          DL_END=$(jq -r '.download_end' <<< "$SEG")
+          mkdir -p chunk_out
+          # --download-sections : télécharge UNIQUEMENT la tranche (pas la VOD entière)
+          yt-dlp -f ba/b --no-playlist --no-warnings \
+            --download-sections "*${DL_START}-${DL_END}" \
+            --force-keyframes-at-cuts \
+            -o "chunk_out/segment.m4a" \
+            "${{ inputs.vod_url }}"
+          ls -la chunk_out/
+
+      - name: Transcrire le segment via Modal (offset global)
+        env:
+          SEG: ${{ toJSON(matrix.segment) }}
+          MODAL_URL: ${{ needs.prepare.outputs.modal_url }}
+          MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+        run: |
+          set -e
+          OFFSET=$(jq -r '.offset' <<< "$SEG")
+          SEG_ID=$(jq -r '.id' <<< "$SEG")
+          python3 - "$OFFSET" "$SEG_ID" <<'PYEOF'
+          import json, os, sys, urllib.request, uuid
+
+          offset, seg_id = sys.argv[1], sys.argv[2]
+          url = os.environ["MODAL_URL"].rstrip("/") + "/audio/transcriptions"
+          boundary = uuid.uuid4().hex
+
+          with open("chunk_out/segment.m4a", "rb") as f:
+              audio = f.read()
+
+          fields = {
+              "model": "whisper-medium",
+              "response_format": "verbose_json",
+              "timestamp_granularities[]": "word",
+              "language": "en",
+              "offset": offset,
+          }
+          body = b""
+          for k, v in fields.items():
+              body += f"--{boundary}\r\n".encode()
+              body += f'Content-Disposition: form-data; name="{k}"\r\n\r\n{v}\r\n'.encode()
+          body += f"--{boundary}\r\n".encode()
+          body += b'Content-Disposition: form-data; name="file"; filename="segment.m4a"\r\n'
+          body += b"Content-Type: audio/m4a\r\n\r\n" + audio + b"\r\n"
+          body += f"--{boundary}--\r\n".encode()
+
+          req = urllib.request.Request(url, data=body, method="POST", headers={
+              "Authorization": "Bearer " + os.environ.get("MODAL_TOKEN_ID", "perturabo"),
+              "Content-Type": f"multipart/form-data; boundary={boundary}",
+              "User-Agent": "PERTURABO-F00B-MATRIX",
+          })
+          with urllib.request.urlopen(req, timeout=1800) as resp:
+              result = json.loads(resp.read().decode("utf-8"))
+
+          words = result.get("words") or []
+          # Sécurité : si le service ne gère pas offset (ancienne version),
+          # on relocalise côté client avec l'offset du segment.
+          try:
+              off = float(offset)
+          except ValueError:
+              off = 0.0
+          if words and max(w["start"] for w in words) <= off:
+              for w in words:
+                  w["start"] = round(w["start"] + off, 3)
+                  w["end"] = round(w["end"] + off, 3)
+
+          out = {"words": words, "segment_id": int(seg_id), "offset": off}
+          with open(f"chunk_{int(seg_id):03d}_words.json", "w") as f:
+              json.dump(out, f)
+          print(f"seg {seg_id}: {len(words)} mots, dernier start "
+                f"{max((w['start'] for w in words), default=0):.1f}s")
+          PYEOF
+
+      - name: Chat replay du segment (portion)
+        continue-on-error: true
+        env:
+          SEG: ${{ toJSON(matrix.segment) }}
+        run: |
+          # Le chat replay complet est paginé une fois au reassemble (plus
+          # fiable que 15 récupérations partielles qui se chevauchent).
+          # Ce step est un placeholder volontaire — désactivé.
+          echo "chat: géré au reassemble (récupération globale, zéro doublon)"
+
+      - name: Upload artefact du segment
+        uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.segment.id }}
+          path: chunk_*_words.json
+          retention-days: 7
+
+  # ─────────────────────────────────────────────────────────────────────
+  # JOB 3 — REASSEMBLE : fusion + scoring global + commit/push branche live
+  # ─────────────────────────────────────────────────────────────────────
+  reassemble:
+    needs: [prepare, transcribe]
+    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg jq
+          pip install --upgrade pip
+          pip install yt-dlp
+
+      - name: Télécharger tous les artefacts des segments
+        uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          path: chunks_raw/
+          merge-multiple: true
+
+      - name: Inventaire des chunks reçus
+        run: |
+          mkdir -p chunks
+          find chunks_raw -name 'chunk_*_words.json' -exec cp {} chunks/ \; 2>/dev/null || true
+          echo "=== Chunks reçus ==="
+          ls -la chunks/
+          echo "attendus: ${{ inputs.nb_segments || 15 }}"
+
+      - name: Fusion + déduplication overlap
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+        run: |
+          VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
+          python merge_transcripts.py \
+            --chunks-dir "$GITHUB_WORKSPACE/chunks" \
+            --out "$GITHUB_WORKSPACE/transcript_${VODID}.json" \
+            --vod-url "${{ inputs.vod_url }}" \
+            --min-words 50
+
+      - name: Scoring global (chaîne auto_detector inchangée)
+        env:
+          NVIDIA_NIM_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
+          NVIDIA_NIM_MODEL: moonshotai/kimi-k3
+        working-directory: MONDES_FORGES/CLIPPING/F00_IRON_SENTINEL/F00B_VOX/CODEBASE
+        run: |
+          VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
+          DUR=$(python3 -c "import json;print(json.load(open('$GITHUB_WORKSPACE/transcript_${VODID}.json'))['vod_duration'])")
+          python matrix_score.py \
+            --transcript "$GITHUB_WORKSPACE/transcript_${VODID}.json" \
+            --vod-url "${{ inputs.vod_url }}" \
+            --nb-clips "${{ inputs.nb_clips || 5 }}" \
+            --market "${{ inputs.market || 'us_young_english' }}" \
+            --platform "${{ inputs.platform || 'youtube_shorts' }}" \
+            --out-dir "$GITHUB_WORKSPACE/matrix_out"
+          ls -la "$GITHUB_WORKSPACE/matrix_out"
+
+      - name: Commit + push sur LA BRANCHE COURANTE (jamais HEAD:main)
+        run: |
+          set -e
+          VODID=$(echo "${{ inputs.vod_url }}" | grep -oE '[0-9]{6,}' | head -1)
+          BRANCH="${{ github.ref_name }}"
+          DEST="MONDES_FORGES/CLIPPING/ARCHIVUM/montage/transcripts"
+          SRC="$GITHUB_WORKSPACE/matrix_out"
+          mkdir -p "$DEST"
+          cp "$GITHUB_WORKSPACE/transcript_${VODID}.json" "$DEST/v${VODID}_transcript.json"
+          cp "$GITHUB_WORKSPACE/transcript_${VODID}.txt"  "$DEST/v${VODID}_transcript.txt" 2>/dev/null || true
+          [ -f "$SRC/candidats.json" ] && cp "$SRC/candidats.json" "$DEST/v${VODID}_candidats.json"
+          [ -f "$SRC/auto_detect_report.json" ] && cp "$SRC/auto_detect_report.json" "$DEST/v${VODID}_report.json"
+          git config user.name "OracleF00B"
+          git config user.email "oracle@perturabo.iron"
+          git add "$DEST"
+          git commit -m "[F00B_MATRIX] auto_detect v${VODID}: transcript + candidats (matrice ${{ inputs.nb_segments || 15 }} segments)" || echo "nothing to commit"
+          # FIX du piège historique : pousser VERS LA BRANCHE DU RUN, jamais HEAD:main
+          git push origin "HEAD:${BRANCH}"
+
+      - name: Upload artefact final (filet de sécurité)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-candidats
+          path: |
+            transcript_*.json
+            matrix_out/candidats.json
+            matrix_out/auto_detect_report.json
+          retention-days: 14

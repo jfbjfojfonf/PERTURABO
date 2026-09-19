@@ -52,6 +52,26 @@ déclenchement appartient à l'Oracle.
 
 Inputs (non-secrets) : `vod_url`, `nb_clips`, `market`, `platform`.
 
+> ⚠️ **Push final** : le workflow pousse sur LA BRANCHE COURANTE
+> (`git push origin HEAD:${BRANCH}`), JAMAIS `HEAD:main` — le workflow tourne
+> sur `v2-live-vox-c` et `main` a une historique divergente (push rejeté,
+> sorties perdues — session 2026-09-18).
+
+## Workflow matricé (recommandé) : perturabo_transcribe_matrix.yml
+
+Le workflow ci-dessus est séquentiel (1 job : télécharge TOUTE la VOD, transcrit
+chunk par chunk). Le workflow **matricé** découpe la VOD en 15 segments et les
+transcrit en parallèle : ~10-15 min au lieu de ~40-60 min, et chaque segment est
+uploadé en ARTEFACT (un push raté ne perd plus les sorties).
+
+Architecture 3 jobs : `prepare` (durée VOD + découpage `segment_vod.py` + deploy
+Modal UNE fois) → matrice `transcribe` (1 job = 1 segment, `--download-sections`,
+offset global) → `reassemble` (fusion `merge_transcripts.py` avec déduplication
+overlap, scoring global `matrix_score.py`, commit + push branche live).
+
+**Guide complet : `21_MODE_MATRICE_TRANSCRIPTION.md`** (flux, pièges traités,
+dépannage).
+
 ## Rotation de compte Modal (crédits gratuits)
 
 1. Nouveau compte Modal -> nouveaux tokens (Token ID + Secret).

@@ -802,3 +802,14 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 - Première exécution conforme de la chaîne complète : F00C GO blur (opérateur) → F00D partition caviar → F04 GO overlay (kimi-k3/NVIDIA, transcript réel voxc-2, purges contamination ARCHIVUM) → F06 GO (v3.0.0-caviar_bound, soumis à F00D : 0 cut/zoom/SFX F06, 2 panneaux blur, duck climax 28.216 s, hook hérité, caviar_binding sha256) → F05 GO (pack final embarquant montage_instructions + chain_of_custody) → **EXPORT/production_pack_pur_voxc2_blur_v2.json (VALIDATED, ALL_GATES_GO)**.
 - Correctif infra : artefacts pytest purgés du ledger narrativum + caviar_index (voxc-9 /tmp).
 - Prochain chantier (hors pipeline) : exécution du pack par le bras armé LACRIMAE → MP4 9:16 → QA → soumission.
+
+## [2026-09-18] F00B : run perdu -> refonte en mode matrice
+
+- Run sequentiel F00B sur v2873615032 (session Aishah Sofey) : transcription
+  terminee puis push HEAD:main rejete -- sorties perdues. Deux pieges appris
+  (push code en dur + absence d artefacts) : corriges dans le nouveau workflow.
+- Refonte perturabo_transcribe_matrix.yml (3 jobs, 15 segments paralleles,
+  artefacts tout du long, push sur branche du run) + scripts segment_vod.py,
+  merge_transcripts.py, matrix_score.py + champ offset optionnel cote Modal.
+- Chaine d analyse et schema candidats INCHANGES -- le gate F00B operateur reste
+  le seul point humain. Details : F00B_VOX/TRACKING/F00B_LOG.md, guide 21.

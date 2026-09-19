@@ -254,3 +254,31 @@ Run workflow complet sur NOUVELLE VOD = validation finale de production. Le prem
   + tampons), Manifeste des clips (liens Helix), file Warsmith, télémétrie lampes.
 - **Données board** : `live_status.json` publie désormais `recent_scored` (critères
   détaillés) et `clips` (IDs/URLs Helix) à chaque tick ; refresh board 60 s.
+
+## 2026-09-18 — Mode matrice : transcription F00B en 15 jobs parallèles
+
+- **Motif réel** : run séquentiel `perturabo_transcribe.yml` sur la VOD
+  Aishah Sofey (v2873615032) : deploy Modal OK (fix cpu), transcription OK
+  (~1 h), commit OK — puis `git push origin HEAD:main` **rejeté** (historiques
+  divergents : le run tourne sur `v2-live-vox-c`). Sorties perdues avec le runner.
+- **Correctifs** : push final sur la branche du run (`HEAD:${BRANCH}`) ; artefacts
+  `chunk-{id}` (7 j) par job matriciel + artefact `final-candidats` (14 j) — un
+  échec de push ne perd plus jamais les sorties.
+- **Refonte matrice** (`perturabo_transcribe_matrix.yml`) : `prepare` (durée VOD,
+  découpe `segment_vod.py` — bornes égales, overlap 3 s, offset = download_start —
+  deploy Modal UNE fois, matrice publiée en outputs) → matrice `transcribe`
+  (1 job = 1 segment, `yt-dlp --download-sections`, transcription via Modal avec
+  champ `offset` → timestamps DÉJÀ GLOBAUX) → `reassemble` (`merge_transcripts.py` :
+  tri global + déduplication `(start,end)`, échec si < 50 mots ; chat replay
+  récupéré globalement ; `matrix_score.py` : analyze_speech → analyze_chat →
+  fuse_candidates → score_candidates → veto campagne → arbitrage premium — chaîne
+  auto_detector INCHANGÉE, schéma candidats identique au run séquentiel).
+- **Compat** : `MODAL/transcribe.py` champ `offset` optionnel (sans lui,
+  comportement historique) ; `transcribe_chunk(offset=)` paramètre optionnel.
+- **Perf attendue** : ~10-15 min de run (facteur limitant = segment le plus lent)
+  au lieu de ~40-60 min. Coût Modal identique (même volume transcrit).
+- **Tests locaux verts** : découpage (couverture continue, overlap, offsets),
+  fusion (déduplication overlap sur chunks artificiels, tri, chat vide), imports
+  chaîne scoring, YAML workflow (3 jobs, fail-fast false, max-parallel 15).
+- **Docs** : guide 21 (nouveau), guides 15/16 mis à jour, `_PIEGES_APPRIS.md` §14,
+  README_V2, CONTINUATION_F00, CLIPPING_LOG.

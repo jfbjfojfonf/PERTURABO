@@ -113,3 +113,18 @@ Le `text_emotion` est produit après la réaction et reste simple : il correspon
 F05 assemble la source, la capture, le crédit, la réaction et les métadonnées ; il ne génère rien. Le Champion valide chaque Gate, l’Oracle suggère uniquement, et l’export ainsi que la fermeture restent postérieurs à cette validation.
 
 En V2, la copie textuelle du tweet reste interne à F01, tandis que la capture PNG — qui contient le tweet et son image — est obligatoire dans le pack final. LACRIMAE l’affiche au-dessus du clip mème de sa release. `clip_id`, `meme_tag` et `channel_id` doivent être fournis par l’Opérateur ; leur absence bloque le finalizer.
+
+## 14. F00B — runs GitHub Actions (leçons du run perdu, session 2026-09-18)
+
+- **Ne jamais coder en dur la branche de push d’un workflow.** `git push origin
+  HEAD:main` depuis un run lancé sur `v2-live-vox-c` est rejeté (`fetch first` :
+  historiques divergents) — et comme les sorties ne vivaient que dans le runner,
+  TOUT était perdu (transcript + candidats d’une heure de transcription).
+  Règle : `git push origin HEAD:${BRANCH}` (branche du run).
+- **Toute sortie de workflow doit être un artefact** AVANT le commit/push.
+  Le commit est un bonus, l’artefact est la vérité. upload-artifact à chaque étape
+  qui produit quelque chose d’irremplaçable.
+- **Le mode matrice ne découpe pas le travail d’analyse, seulement la
+  transcription.** Deploy Modal hors matrice (collision d’app), overlap 3 s entre
+  segments avec déduplication par timestamp global au merge, scoring UNIQUEMENT
+  global (une fenêtre virale peut chevaucher 2 segments). Détails : guide 21.

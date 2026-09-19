@@ -10,6 +10,11 @@ Contrat d'entree (multipart/form-data, envoye par f00b_vox) :
   - language                : ex. "en"
   - response_format         : ignore (on renvoie TOUJOURS du word-level)
   - timestamp_granularities[]: ignore
+  - offset                  : OPTIONNEL (mode matrice). Offset GLOBAL en secondes
+                              du debut du segment audio dans la VOD. Les timestamps
+                              des mots renvoyes sont alors deja globaux (local+offset).
+                              Absent (ou 0) => comportement historique inchange :
+                              timestamps locaux, le client les relocalise lui-meme.
 
 Contrat de sortie (JSON) — format "Case 1" que VOX prefere pour le scoring :
   {"words": [{"word": "...", "start": 1.23, "end": 1.45}, ...], "text": "..."}
@@ -91,7 +96,7 @@ def fastapi_app():
 
 @web_app.get("/")
 def health():
-    return {"ok": True, "model": MODEL_NAME, "gpu": GPU_TYPE or "cpu"}
+    return {"ok": True, "model": MODEL_NAME, "gpu": GPU_TYPE or "cpu", "offset_mode": True}
 
 
 @web_app.post("/audio/transcriptions")
@@ -103,6 +108,14 @@ async def transcribe(request: Request):
 
     data = await upload.read()
     language = form.get("language") or None
+
+    # Mode matrice : offset global du segment dans la VOD ("0"/absent => 0.0).
+    try:
+        offset = float(form.get("offset") or 0.0)
+    except (TypeError, ValueError):
+        offset = 0.0
+    if offset < 0:
+        offset = 0.0
 
     import tempfile
 
@@ -125,7 +138,11 @@ async def transcribe(request: Request):
         for seg in segments:
             for w in getattr(seg, "words", None) or []:
                 words.append(
-                    {"word": w.word, "start": round(w.start, 3), "end": round(w.end, 3)}
+                    {
+                        "word": w.word,
+                        "start": round(w.start + offset, 3),
+                        "end": round(w.end + offset, 3),
+                    }
                 )
 
         text = " ".join(w["word"] for w in words).strip()

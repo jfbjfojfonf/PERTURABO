@@ -7,6 +7,20 @@
 
 ## 📅 DERNIÈRE MISE À JOUR
 
+**Date** : 2026-09-18
+**Ajout** : F00B passe en **mode matrice** — `perturabo_transcribe_matrix.yml`
+(3 jobs : prepare → 15×transcribe → reassemble). Scripts nouveaux :
+`F00B_VOX/CODEBASE/segment_vod.py` (découpe, overlap 3 s), `merge_transcripts.py`
+(fusion dédupliquée par timestamp global), `matrix_score.py` (scoring global,
+chaîne auto_detector inchangée). `MODAL/transcribe.py` accepte un `offset`
+optionnel (rétrocompatible). Motif : le run séquentiel du 18/09 a perdu ses
+sorties (push `HEAD:main` rejeté — corrigé : push sur branche du run + artefacts
+tout du long). Guide : `GUIDE_UTILISATION/21_MODE_MATRICE_TRANSCRIPTION.md`.
+**Prochaine étape** : run matrice sur la VOD Aishah Sofey (twitch.tv/videos/2873615032,
+5 clips, blur, us_young_english, youtube_shorts) → gate F00B opérateur.
+
+---
+
 **Date** : 2026-09-13
 **Ajout** : AUDIT WARSMITH corrigé — contrat webhook V2 (candidats enrichis +
 couverture analysée affichée) et dashboard v2 (axes gradués, tooltips, cartes

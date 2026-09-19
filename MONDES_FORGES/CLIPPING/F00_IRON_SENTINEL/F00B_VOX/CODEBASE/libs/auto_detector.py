@@ -233,8 +233,14 @@ class PremiumTranscriber:
         if not self._base_url():
             raise RuntimeError("base_url manquant pour le moteur de transcription")
 
-    def transcribe_chunk(self, chunk_path):
-        """Upload un chunk audio via multipart/form-data stdlib → word-level."""
+    def transcribe_chunk(self, chunk_path, offset: float = 0.0):
+        """Upload un chunk audio via multipart/form-data stdlib → word-level.
+
+        offset : début GLOBAL du chunk dans la VOD (secondes). Transmis au
+        service Modal (champ 'offset') qui l'ajoute aux timestamps : les mots
+        reviennent DÉJÀ GLOBAUX. 0.0 (défaut) => comportement historique :
+        timestamps locaux, relocalisés côté client (i * chunk_sec).
+        """
         self.require()
         url = self._base_url().rstrip("/") + "/audio/transcriptions"
         boundary = f"----F00B{int(time.time())}"
@@ -249,6 +255,8 @@ class PremiumTranscriber:
         }
         if self.language:
             fields["language"] = self.language
+        if offset:
+            fields["offset"] = str(float(offset))
 
         body = b""
         for key, val in fields.items():

@@ -107,3 +107,16 @@ Twitch dont l'audio est partiellement mute (segments "index-muted").
 > Limite de responsabilite : PERTURABO decrit et ordonnance ; Modal ne fait QUE
 > la transcription de l'audio. Aucune donnee n'est stockee persistante (temp file
 > supprime apres chaque requête).
+
+## Mode matrice (offset global)
+
+Le service accepte un champ optionnel `offset` (secondes) dans le formulaire :
+il représente le début GLOBAL du segment audio dans la VOD. Les timestamps des
+mots renvoyés sont alors DÉJÀ GLOBAUX (local + offset).
+
+- Sans `offset` (ou `offset=0`) : comportement historique — timestamps locaux,
+  relocalisation côté client (`i * chunk_sec`). Aucun client existant à modifier.
+- Avec `offset` : utilisé par le mode matrice (guide 21) — chaque segment renvoie
+  des mots directement positionnés dans la VOD complète.
+
+Déployer la nouvelle version ne casse rien : c'est un champ optionnel.

@@ -185,4 +185,15 @@ chaque tick — le board se rafraîchit toutes les 60 s.
 
 ---
 
+## ⚡ F00B VOD — mode matrice (2026-09-18)
+
+La transcription des VOD Twitch est désormais matricée : `perturabo_transcribe_matrix.yml`
+découpe la VOD en 15 segments (`segment_vod.py`, overlap 3 s), les transcrit en
+parallèle via Modal (offset global, timestamps déjà globaux), fusionne avec
+déduplication (`merge_transcripts.py`) puis score globalement (`matrix_score.py`,
+chaîne auto_detector inchangée). ~10-15 min de run au lieu de ~40-60, artefacts à
+chaque étape, push final sur la branche du run. Guide : `GUIDE_UTILISATION/21_MODE_MATRICE_TRANSCRIPTION.md`.
+
+---
+
 *IV Légion — le Fer qui Veille, maintenant en temps réel.*
