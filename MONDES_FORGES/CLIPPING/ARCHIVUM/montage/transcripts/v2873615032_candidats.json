@@ -1,0 +1,318 @@
+{
+  "generated_at": "2026-09-19T14:57:28Z",
+  "source": "https://www.twitch.tv/videos/2873615032",
+  "engine": "auto_detect",
+  "total_words_analyzed": 584,
+  "total_candidates_raw": 10,
+  "total_accepted": 10,
+  "total_auto_rejected": 0,
+  "candidates": [
+    {
+      "candidate_id": "a05f02d4a7",
+      "start_sec": 367.8,
+      "end_sec": 397.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 1.0,
+      "signal_start": "00:06:07.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 9.9,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.95,
+        "bonuses": [
+          {
+            "rule": "moment_unique",
+            "delta": 1.5
+          },
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 2.5,
+        "malus_total": 0,
+        "final": 8.45
+      }
+    },
+    {
+      "candidate_id": "e0a7b379f5",
+      "start_sec": 346.8,
+      "end_sec": 376.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 1.0,
+      "signal_start": "00:05:46.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.5,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.6,
+        "bonuses": [
+          {
+            "rule": "moment_unique",
+            "delta": 1.5
+          },
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 2.5,
+        "malus_total": 0,
+        "final": 8.1
+      }
+    },
+    {
+      "candidate_id": "663097e112",
+      "start_sec": 409.8,
+      "end_sec": 439.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 1.0,
+      "signal_start": "00:06:49.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.4,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.58,
+        "bonuses": [
+          {
+            "rule": "moment_unique",
+            "delta": 1.5
+          },
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 2.5,
+        "malus_total": 0,
+        "final": 8.07
+      }
+    },
+    {
+      "candidate_id": "63e0d0990d",
+      "start_sec": 430.8,
+      "end_sec": 460.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.88,
+      "signal_start": "00:07:10.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.8,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.68,
+        "bonuses": [
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 1.0,
+        "malus_total": 0,
+        "final": 6.68
+      }
+    },
+    {
+      "candidate_id": "59c66d0d40",
+      "start_sec": 31.8,
+      "end_sec": 61.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.87,
+      "signal_start": "00:00:31.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 9.5,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.85,
+        "bonuses": [
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 1.0,
+        "malus_total": 0,
+        "final": 6.85
+      }
+    },
+    {
+      "candidate_id": "55940e0e06",
+      "start_sec": 493.8,
+      "end_sec": 523.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.81,
+      "signal_start": "00:08:13.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.8,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.69,
+        "bonuses": [
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 1.0,
+        "malus_total": 0,
+        "final": 6.69
+      }
+    },
+    {
+      "candidate_id": "f114c3c5e2",
+      "start_sec": 388.8,
+      "end_sec": 418.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.79,
+      "signal_start": "00:06:28.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 7.9,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.44,
+        "bonuses": [
+          {
+            "rule": "haute_intensite",
+            "delta": 1.0
+          }
+        ],
+        "maluses": [],
+        "bonus_total": 1.0,
+        "malus_total": 0,
+        "final": 6.44
+      }
+    },
+    {
+      "candidate_id": "b971f08cd8",
+      "start_sec": 472.8,
+      "end_sec": 502.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.69,
+      "signal_start": "00:07:52.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 7.5,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.34,
+        "bonuses": [],
+        "maluses": [],
+        "bonus_total": 0,
+        "malus_total": 0,
+        "final": 5.34
+      }
+    },
+    {
+      "candidate_id": "ab447898eb",
+      "start_sec": 535.8,
+      "end_sec": 565.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.67,
+      "signal_start": "00:08:55.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.7,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.65,
+        "bonuses": [],
+        "maluses": [],
+        "bonus_total": 0,
+        "malus_total": 0,
+        "final": 5.65
+      }
+    },
+    {
+      "candidate_id": "cd37a68b89",
+      "start_sec": 451.8,
+      "end_sec": 481.8,
+      "duration_sec": 30.0,
+      "signal_type": "chat_spike",
+      "signal_intensity": 0.66,
+      "signal_start": "00:07:31.800",
+      "top_words": "",
+      "score": {
+        "raw": {
+          "hook_force": 4.0,
+          "emotion": 8.6,
+          "clarity": 5.0,
+          "quotability": 3.0,
+          "timing": 7.0,
+          "format_fit": 7.5
+        },
+        "base": 5.64,
+        "bonuses": [],
+        "maluses": [],
+        "bonus_total": 0,
+        "malus_total": 0,
+        "final": 5.64
+      }
+    }
+  ]
+}
