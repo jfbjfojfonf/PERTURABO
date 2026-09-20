@@ -152,3 +152,13 @@ En V2, la copie textuelle du tweet reste interne à F01, tandis que la capture P
   doit pas être refusé pour un trop-plein d’événements : le composeur arbitre
   (tronquer au cap en gardant les meilleurs), `refuse_to_emit` reste la dernière
   défense.
+- **Transcript matriciel : les mots vivent dans `words`, pas `segments`.**
+  Le transcript contient `words` (~18k entrées {word,start,end}) et une liste
+  `segments` vide. Tout code qui lit `segments[].text` obtient un extrait VIDE
+  silencieux — vu sur la phase métadonnées F04 : le modèle a forgé des payloads
+  sans ancrage réel. Toujours tester `if not extrait: STOP` avant d'appeler
+  le premium.
+- **Faux positif `\bof\b`** : une regex anti-OnlyFans insensible à la casse
+  attrape la préposition anglaise « of » (récurrent dans des descriptions légitimes).
+  La règle correcte : abréviation OF case-sensitive (`\bOF\b`) + mot complet
+  `onlyfans`.

@@ -847,3 +847,14 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 - Anti-cond verifie par grep transcript (boat/elephant fenetre c1, kidney/dad c4).
 - Sorties : overlay_raw_asf_c*.json + overlay_payload_asf_c*.json.
 - GATE F04 soumis a l operateur.
+
+## [2026-09-20] Gate F04 ferme -> phase metadonnees executee -> gate etendu
+
+- Verdict Warsmith enregistre : 5/5 titres overlay ACCEPTED, emotions F00D
+  `intrigue` x5 propagees dans les 5 manifestes caviar.
+- Phase METADONNEES F04 executee (kimi-k3, directive campagne integree :
+  @hiaishahsofey + #aishahsofey, English, pas de OF) -> 5 payloads
+  `metadata_payload_asf_cN.json`, garde-fous 5/5 PASS, anti-cond verifie
+  sur le transcript reel (mots dans `words`, pas `segments` - piege note).
+- Page gate F04 etendue (Section C metadonnees). En attente : verdict
+  metadonnees de l'operateur -> F06 (montage blur).

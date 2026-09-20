@@ -7,5 +7,7 @@
   "content_type": "blur",
   "overlay_title": "She said we share music taste… then hit me with TTS spam",
   "overlay_lines": 1,
-  "rationale": "Transforms a benign keyboard compliment into a punchline of betrayal: the speaker feigns shared taste, then unleashes annoying TTS, delivering the hot‑take irony that makes the clip feel like a reveal, driving curiosity and shares."
+  "rationale": "Transforms a benign keyboard compliment into a punchline of betrayal: the speaker feigns shared taste, then unleashes annoying TTS, delivering the hot‑take irony that makes the clip feel like a reveal, driving curiosity and shares.",
+  "gate_f04": "ACCEPTED",
+  "gate_decided_at": "2026-09-20T14:53:00.385Z"
 }

@@ -364,3 +364,12 @@ F04 reçoit une source sociale déjà archivée par F01. Il ne réécrit jamais 
 Le `reaction_tweet` est la pièce stratégique principale. Dix variantes lexicales du même gag sont une cannibalisation. Les angles doivent changer réellement de tension, de lecture, de public visé ou de ressort comique. `text_emotion` ne doit jamais contenir de marqueur `A:` / `B:`, de personnage absent ou de formule héritée d’une autre campagne. Le premium génère si activé ; Oracle contrôle ; seul le Champion valide la Gate F04.
 
 En MEME V2, `source_post.text` reste un input interne de compréhension archivé par F01. La capture PNG de `source_post`, qui contient déjà le tweet et son image, est l’asset visuel destiné au pack final et à LACRIMAE. F04 doit transmettre séparément `reaction_tweet`, `text_emotion` et `metadata` ; il ne doit pas transformer la copie source en faux contenu PERTURABO. Le pack final associe ensuite la capture au `clip_id`, au `meme_tag` et au `channel_id` fournis par l’Opérateur.
+
+## [2026-09-20] Session Aishah Sofey — gate F04 fermé + phase MÉTADONNÉES exécutée
+
+- **Gate F04 overlay** : verdict Warsmith enregistré (`F00B_VOX/IN/gate_f04_verdict.json`) — 5/5 titres ACCEPTED, 0 rejeté. Payloads `overlay_payload_asf_cN.json` marqués `gate_f04=ACCEPTED`.
+- **Émotions F00D propagées** : `intrigue` ×5 dans les manifestes caviar (panneaux blur compris) — F06 consommera.
+- **Phase métadonnées exécutée** (la moitié du gate qui manquait) : 5 payloads `OUT/metadata_payload_asf_cN.json` (+ .md) forgés via le client premium réel (kimi-k3/NVIDIA) avec la directive campagne câblée dans le prompt : `@hiaishahsofey` + `#aishahsofey` en description, English, Aishah focus, sans mention OF/subscribe.
+- **Garde-fous sortie** : titre ≤ 90c, description ≤ 260c, handle+hashtag requis, 5-8 tags, 3 strates hashtags, regex interdits, accents = rejet. 5/5 PASS.
+- **Hérésie attrapée** : 1er essai avec extrait VIDE (mots du transcript dans `words`, pas `segments`) → payloads non ancrés, purgés, régénérés. Anti-cond PASS (elephant/boat, tts/music, danny/drama, kidney/twitter, vivette/fashion).
+- **Gate F04 étendu** : Section C métadonnées dans `docs/gate_f04_v2873615032.html` (export avec `accepted_metadata`).

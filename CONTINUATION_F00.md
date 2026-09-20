@@ -710,3 +710,17 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
   13 tests verts.
 - **Prochaine étape** : GATE opérateur sur l'output F06 voxc-2, puis F05
   (pack final), puis gate, puis EXPORT.
+
+## [2026-09-20] Session Aishah Sofey — Gate F04 fermé → phase métadonnées
+
+- **Verdict Warsmith enregistré** (`F00B_VOX/IN/gate_f04_verdict.json`) :
+  5/5 titres overlay ACCEPTED + émotions F00D `intrigue` ×5, propagées dans
+  les 5 manifestes caviar (panneaux blur compris).
+- **Phase MÉTADONNÉES exécutée** (kimi-k3, directive campagne intégrée) :
+  `F04_COPYWRITER/OUT/metadata_payload_asf_c{1..5}.json` — titres ≤ 66c,
+  descriptions avec `@hiaishahsofey` + `#aishahsofey`, 5-8 tags, 3 strates
+  hashtags, zéro OF/subscribe, anti-cond PASS sur le transcript réel.
+- **Page gate F04 étendue** (Section C métadonnées) : `docs/gate_f04_v2873615032.html`
+  — l'export inclut désormais `accepted_metadata`.
+- **Prochain** : verdict métadonnées de l'opérateur → F06 (montage blur) →
+  gate → F05 (pack) → EXPORT.

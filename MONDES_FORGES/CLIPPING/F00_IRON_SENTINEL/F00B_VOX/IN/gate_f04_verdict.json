@@ -1,0 +1,62 @@
+{
+  "gate": "F04",
+  "vod_url": "https://www.twitch.tv/videos/2873615032",
+  "decided_at": "2026-09-20T14:53:00.385Z",
+  "decided_by": "warsmith",
+  "overlay_scope": "GO sur les 5 titres overlay",
+  "accepted_titles": [
+    {
+      "clip_key": "asf_c1",
+      "candidate_id": "62ac79ed87",
+      "overlay_title": "Is your boat video secretly smuggling an elephant?"
+    },
+    {
+      "clip_key": "asf_c2",
+      "candidate_id": "1d3c465c61",
+      "overlay_title": "She said we share music taste… then hit me with TTS spam"
+    },
+    {
+      "clip_key": "asf_c3",
+      "candidate_id": "4bdc43d3a1",
+      "overlay_title": "I didn't do anything to you 😂"
+    },
+    {
+      "clip_key": "asf_c4",
+      "candidate_id": "fe6982e55c",
+      "overlay_title": "DAD'S HIDDEN KIDNEY TRUTH"
+    },
+    {
+      "clip_key": "asf_c5",
+      "candidate_id": "b4a1cf9305",
+      "overlay_title": "Travel blocked? My chat is the new runway"
+    }
+  ],
+  "rejected_titles": [],
+  "f00d_emotions": [
+    {
+      "clip_key": "asf_c1",
+      "candidate_id": "62ac79ed87",
+      "emotion": "intrigue"
+    },
+    {
+      "clip_key": "asf_c2",
+      "candidate_id": "1d3c465c61",
+      "emotion": "intrigue"
+    },
+    {
+      "clip_key": "asf_c3",
+      "candidate_id": "4bdc43d3a1",
+      "emotion": "intrigue"
+    },
+    {
+      "clip_key": "asf_c4",
+      "candidate_id": "fe6982e55c",
+      "emotion": "intrigue"
+    },
+    {
+      "clip_key": "asf_c5",
+      "candidate_id": "b4a1cf9305",
+      "emotion": "intrigue"
+    }
+  ]
+}

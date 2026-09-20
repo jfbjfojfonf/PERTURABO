@@ -67,8 +67,9 @@
   <div class="sub">
     Campagne <b>2026-07-24_AISHAH_SOFEY_MULTI</b> · VOD
     <a href="https://www.twitch.tv/videos/2873615032" target="_blank">v2873615032</a> ·
-    5 titres overlay à valider + <b>émotions des panneaux blur (F00D)</b> à qualifier —
-    F06 consommera les deux.
+    5 titres overlay à valider + <b>émotions des panneaux blur (F00D)</b> à qualifier +
+    <b>métadonnées YouTube Shorts</b> (directive campagne : @hiaishahsofey + #aishahsofey,
+    English, Aishah focus, sans mention OF) — F06 consommera le tout.
   </div>
 
   <h2>Section A — Verdict F04 : titres overlay</h2>
@@ -80,6 +81,15 @@
     intrigue · shock · hype · outrage. Elle pilote zooms, cuts et SFX du montage.
   </div>
   <div id="emos"></div>
+
+  <h2>Section C — Métadonnées YouTube Shorts (directive campagne)</h2>
+  <div class="emo-note" style="margin-bottom:.7rem">
+    Titre de recherche + description + tags + hashtags qui accompagneront chaque clip sur
+    la plateforme. Règles vérifiées automatiquement : English · @hiaishahsofey +
+    #aishahsofey dans la description · sans mention OF/subscribe · ancrage réel
+    (anti-cond contrôlé sur le transcript).
+  </div>
+  <div id="metas"></div>
 
   <div class="export">
     <button onclick="exportVerdict()">⚒ EXPORTER LE VERDICT F04</button>
@@ -115,8 +125,30 @@ const CLIPS = [
    extract:"um, let's look up Vivette, um, I watched the vet show. Everyone looked amazing. Everyone looks so freaking cool and fly. Um, I Really wanted to go to New York Fashion Week. I had a few events that I was supposed to be going to but because of my sickness and Everything I was n"}
 ];
 const EMOS = ["intrigue","shock","hype","outrage"];
+const METAS = {
+  asf_c1:{title:"Aishah Sofey discusses her boat video and the elephant in the room",
+    desc:"Aishah Sofey chats about her boat video, the elephant in the room, and how she's setting up overlays on Twitch while opening Discord to talk with Jaystar. #aishahsofey @hiaishahsofey",
+    tags:"boat elephant twitch discord overlay jaystar aishahsofey",
+    ht:"#aishahsofey #boattalk #elephantintheroom"},
+  asf_c2:{title:"She said we share music taste… then hit me with TTS spam",
+    desc:"Aishah Sofey reacts when she discovers we share music taste, then gets hit with unexpected TTS spam during the stream. @hiaishahsofey #aishahsofey",
+    tags:"music taste tts stream adhd keyboard",
+    ht:"#aishahsofey #ttsspam #adhdstreamer"},
+  asf_c3:{title:"I didn't do anything to you – chat drama explained",
+    desc:"Aishah Sofey addresses the chat drama, saying she didn't do anything to anyone and asks who Danny is. @hiaishahsofey #aishahsofey",
+    tags:"aishahsofey chatdrama danny explanation reaction",
+    ht:"#aishahsofey #chatdrama #dannyquestion"},
+  asf_c4:{title:"Dad's Hidden Kidney Truth Revealed",
+    desc:"Aishah Sofey opens up about her scary kidney issue and her dad's hidden truth in this candid moment. @hiaishahsofey #aishahsofey",
+    tags:"kidney health dad truth story aishahsofey",
+    ht:"#aishahsofey #kidneyhealth #dadtruth"},
+  asf_c5:{title:"Travel blocked? My chat is the new runway",
+    desc:"Aishah Sofey shares why travel is on hold due to health, reflecting on missed New York Fashion Week and embracing the moment. @hiaishahsofey #aishahsofey",
+    tags:"travel health fashionweek vivette fomo chat",
+    ht:"#aishahsofey #healthfirst #vivetteshownyc"}
+};
 const state = {};
-CLIPS.forEach(c => state[c.k] = {title_ok:true, emo:"intrigue"});
+CLIPS.forEach(c => state[c.k] = {title_ok:true, emo:"intrigue", meta_ok:true});
 
 function fmt(s){const m=Math.floor(s/60),r=Math.floor(s%60);return `${m}:${String(r).padStart(2,"0")}`;}
 
@@ -139,6 +171,22 @@ function render(){
       </div>
     </div>`;}).join("");
 
+  document.getElementById("metas").innerHTML = CLIPS.map(c=>{
+    const s = state[c.k], m = METAS[c.k];
+    return `<div class="card ${s.meta_ok?'ok':'ko'}" id="meta-${c.k}">
+      <div class="head">
+        <span class="clip">${c.k}</span>
+        <span class="meta">titre métadonnée ${m.title.length}c · description ${m.desc.length}c · directive ✓</span>
+      </div>
+      <div class="title">${m.title}</div>
+      <div class="rationale">${m.desc}</div>
+      <div class="rationale" style="opacity:.75">tags : ${m.tags}<br>hashtags : ${m.ht}</div>
+      <div class="btns">
+        <button class="btn-ok ${s.meta_ok?'on':''}" onclick="setMetaOk('${c.k}',true)">✔ VALIDER</button>
+        <button class="btn-ko ${!s.meta_ok?'on':''}" onclick="setMetaOk('${c.k}',false)">✘ REFUSER</button>
+      </div>
+    </div>`;}).join("");
+
   document.getElementById("emos").innerHTML = CLIPS.map(c=>{
     const s = state[c.k];
     return `<div class="emo-row">
@@ -153,6 +201,7 @@ function render(){
 
 function setOk(k,v){state[k].title_ok=v; render();}
 function setEmo(k,v){state[k].emo=v; render();}
+function setMetaOk(k,v){state[k].meta_ok=v; render();}
 
 function exportVerdict(){
   const verdict = {
@@ -160,7 +209,9 @@ function exportVerdict(){
     decided_at:new Date().toISOString(), decided_by:"warsmith",
     accepted_titles: CLIPS.filter(c=>state[c.k].title_ok).map(c=>({clip_key:c.k, candidate_id:c.id, overlay_title:c.title})),
     rejected_titles: CLIPS.filter(c=>!state[c.k].title_ok).map(c=>({clip_key:c.k, candidate_id:c.id, overlay_title:c.title})),
-    f00d_emotions: CLIPS.map(c=>({clip_key:c.k, candidate_id:c.id, emotion:state[c.k].emo}))
+    f00d_emotions: CLIPS.map(c=>({clip_key:c.k, candidate_id:c.id, emotion:state[c.k].emo})),
+    accepted_metadata: CLIPS.filter(c=>state[c.k].meta_ok).map(c=>({clip_key:c.k, candidate_id:c.id, metadata_title:METAS[c.k].title, description:METAS[c.k].desc, tags:METAS[c.k].tags, hashtags:METAS[c.k].ht})),
+    rejected_metadata: CLIPS.filter(c=>!state[c.k].meta_ok).map(c=>({clip_key:c.k, candidate_id:c.id, metadata_title:METAS[c.k].title}))
   };
   const blob = new Blob([JSON.stringify(verdict,null,2)],{type:"application/json"});
   const a = document.createElement("a");
