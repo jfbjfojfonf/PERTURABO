@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GATE F05 — Packs de production — PERTURABO</title>
+<style>
+  :root{
+    --boltgun:#3a3f45; --steel-dark:#23272c; --steel-darkest:#17191d;
+    --gold:#d4a017; --gold-dim:#a67c00; --gold-bright:#f0c040;
+    --black-plate:#0d0f11; --text:#c9ced4; --text-dim:#7d848c;
+    --green:#2ea043; --red:#f85149;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black-plate);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;padding:24px;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{color:var(--gold);font-size:26px;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--gold-dim);padding-bottom:10px;margin-bottom:4px}
+  .sub{color:var(--text-dim);font-size:13px;margin-bottom:22px}
+  .sub b{color:var(--gold-bright)}
+  .clip{background:var(--steel-darkest);border:1px solid var(--boltgun);border-left:4px solid var(--gold);border-radius:8px;padding:18px;margin-bottom:18px}
+  .clip h2{color:var(--gold-bright);font-size:18px;margin-bottom:2px}
+  .cids{color:var(--text-dim);font-size:12px;margin-bottom:10px}
+  .custody{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+  .gate{background:var(--steel-dark);border:1px solid var(--green);color:#7ee787;border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700}
+  .ov{background:linear-gradient(135deg,var(--steel-dark),var(--steel-darkest));border:1px dashed var(--gold-dim);border-radius:6px;padding:12px;margin:10px 0;text-align:center}
+  .ov .t{color:#fff;font-weight:800;font-size:17px;text-shadow:2px 2px 4px #000}
+  .meta{background:var(--steel-dark);border:1px solid var(--boltgun);border-radius:6px;padding:12px;margin:10px 0;font-size:13px}
+  .meta .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim)}
+  .meta .dt{color:var(--gold-bright);font-weight:700;margin:4px 0 2px}
+  .meta .dd{margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
+  .chip{background:var(--boltgun);color:var(--text);border-radius:12px;padding:2px 10px;font-size:11px}
+  .row{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0}
+  .cell{flex:1 1 150px;background:var(--steel-dark);border:1px solid var(--boltgun);border-radius:6px;padding:10px}
+  .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim)}
+  .val{font-size:14px;margin-top:2px}
+  .val.gold{color:var(--gold-bright);font-weight:600}
+  .btns{display:flex;gap:10px;margin-top:12px}
+  button{flex:1;padding:10px;border-radius:6px;border:1px solid var(--boltgun);cursor:pointer;font-weight:700;letter-spacing:1px;background:var(--steel-dark);color:var(--text)}
+  button.go{border-color:var(--green);color:#7ee787}
+  button.go:hover{background:rgba(46,160,67,.15)}
+  button.no{border-color:var(--red);color:#ff7b72}
+  button.no:hover{background:rgba(248,81,73,.12)}
+  .decided.go{background:rgba(46,160,67,.25)}
+  .decided.no{background:rgba(248,81,73,.2)}
+  #verdict{margin-top:26px;background:var(--steel-dark);border:1px solid var(--gold-dim);border-radius:8px;padding:16px;display:none}
+  #verdict h3{color:var(--gold);margin-bottom:8px}
+  pre{background:var(--black-plate);border-radius:6px;padding:12px;overflow:auto;font-size:12px;color:#8bd5ca;margin-top:8px}
+  .cp{background:var(--gold);color:#000;border:none;padding:10px 18px;border-radius:6px;font-weight:800;cursor:pointer;margin-top:10px}
+  .note{color:var(--text-dim);font-size:12px;margin-top:14px;border-top:1px solid var(--boltgun);padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚔ Gate F05 — Packs de production</h1>
+  <div class="sub">VOD <b>v2873615032</b> — 5 packs <b>blur</b> complets (overlay + métadonnées + montage + partition, custody 4 gates). Dernière revue avant <b>EXPORT</b>. Warsmith, à toi.</div>
+  <div id="clips"></div>
+  <div id="verdict">
+    <h3>Verdict exporté</h3>
+    <div class="sub">Copie-colle ce JSON à Buffy pour enregistrer le gate et lancer l'EXPORT.</div>
+    <pre id="out"></pre>
+    <button class="cp" onclick="navigator.clipboard.writeText(document.getElementById('out').textContent).then(()=>this.textContent='✓ Copié')">Copier le JSON</button>
+  </div>
+  <div class="note">Doctrine : F05 est l'assembleur — il ne forge rien. Chaque pack concatène les sorties gate-validées (F00B fenêtre, F00D partition sha-liée, F04 overlay+métadonnées, F06 caviar_bound). Après GO : copie dans EXPORT/ + summary + clôture de session.</div>
+</div>
+<script>
+const CLIPS = [{"key": "asf_c1", "cid": "62ac79ed87", "score": 9.7, "start": 897.0, "end": 957.0, "dur": 60.0, "overlay": "Is your boat video secretly smuggling an elephant?", "meta_title": "Aishah Sofey discusses her boat video and the elephant in the room", "desc": "Aishah Sofey chats about her boat video, the elephant in the room, and how she’s setting up overlays on Twitch while opening Discord to talk with Jaystar. #aishahsofey @hiaishahsofey", "tags": ["boat", "elephant", "twitch", "discord", "overlay", "jaystar", "aishahsofey"], "hashtags": ["#aishahsofey", "#boattalk", "#elephantintheroom"], "panels": 2, "punch": 3, "trims": 2, "climax": [12.5], "sha": "e567d4ad00e06ab1", "emotion": "intrigue", "f00b": "2026-09-19", "f04": "2026-09-20", "f06": "2026-09-21"}, {"key": "asf_c2", "cid": "1d3c465c61", "score": 9.65, "start": 1052.0, "end": 1112.0, "dur": 60.0, "overlay": "She said we share music taste… then hit me with TTS spam", "meta_title": "She said we share music taste… then hit me with TTS spam", "desc": "Aishah Sofey reacts when she discovers we share music taste, then gets hit with unexpected TTS spam during the stream. @hiaishahsofey #aishahsofey", "tags": ["music", "taste", "tts", "stream", "adhd", "keyboard"], "hashtags": ["#aishahsofey", "#ttsspam", "#adhdstreamer"], "panels": 2, "punch": 3, "trims": 4, "climax": [6.05], "sha": "b170c0fde82e3eee", "emotion": "intrigue", "f00b": "2026-09-19", "f04": "2026-09-20", "f06": "2026-09-21"}, {"key": "asf_c3", "cid": "4bdc43d3a1", "score": 9.59, "start": 1747.6, "end": 1777.6, "dur": 30.0, "overlay": "I didn't do anything to you 😂", "meta_title": "I didn't do anything to you – chat drama explained", "desc": "Aishah Sofey addresses the chat drama, saying she didn't do anything to anyone and asks who Danny is. @hiaishahsofey #aishahsofey", "tags": ["aishahsofey", "chatdrama", "danny", "explanation", "reaction"], "hashtags": ["#aishahsofey", "#chatdrama", "#dannyquestion"], "panels": 1, "punch": 3, "trims": 8, "climax": [4.7], "sha": "ff31a095ab96d4c6", "emotion": "intrigue", "f00b": "2026-09-19", "f04": "2026-09-20", "f06": "2026-09-21"}, {"key": "asf_c4", "cid": "fe6982e55c", "score": 9.54, "start": 1377.0, "end": 1437.0, "dur": 60.0, "overlay": "DAD'S HIDDEN KIDNEY TRUTH", "meta_title": "Dad's Hidden Kidney Truth Revealed", "desc": "Aishah Sofey opens up about her scary kidney issue and her dad's hidden truth in this candid moment. @hiaishahsofey #aishahsofey", "tags": ["kidney", "health", "dad", "truth", "story", "aishahsofey"], "hashtags": ["#aishahsofey", "#kidneyhealth", "#dadtruth"], "panels": 2, "punch": 3, "trims": 0, "climax": [13.05], "sha": "f2dadbfc04ec0a4f", "emotion": "intrigue", "f00b": "2026-09-19", "f04": "2026-09-20", "f06": "2026-09-21"}, {"key": "asf_c5", "cid": "b4a1cf9305", "score": 8.57, "start": 1782.0, "end": 1842.0, "dur": 60.0, "overlay": "Travel blocked? My chat is the new runway", "meta_title": "Travel blocked? My chat is the new runway", "desc": "Aishah Sofey shares why travel is on hold due to health, reflecting on missed New York Fashion Week and embracing the moment. @hiaishahsofey #aishahsofey", "tags": ["travel", "health", "fashionweek", "vivette", "fomo", "chat"], "hashtags": ["#aishahsofey", "#healthfirst", "#vivetteshownyc"], "panels": 2, "punch": 3, "trims": 5, "climax": [3.45], "sha": "3c3ae0fe20e13bbc", "emotion": "intrigue", "f00b": "2026-09-19", "f04": "2026-09-20", "f06": "2026-09-21"}];
+const VOD = "https://www.twitch.tv/videos/2873615032";
+const state = {};
+function twitch(sec){return VOD + "?t=" + Math.floor(sec) + "s";}
+function tc(sec){const m=Math.floor(sec/60),s=Math.floor(sec%60),h=Math.floor(m/60);return h?h+":"+(m%60)+":"+String(s).padStart(2,'0'):m+":"+String(s).padStart(2,'0');}
+function render(){
+  const root = document.getElementById('clips');
+  root.innerHTML = CLIPS.map(c => {
+    state[c.key] = state[c.key] || null;
+    return `<div class="clip">
+      <h2>${c.key} — score F00B ${c.score??'?'} / 10</h2>
+      <div class="cids">candidat <b>${c.cid}</b> · fenêtre <a href="${twitch(c.start)}" target="_blank" style="color:var(--gold-bright)">${tc(c.start)} → ${tc(c.end)}</a> (${c.dur}s) · partition sha ${c.sha}</div>
+      <div class="custody">
+        <span class="gate">✓ F00B GO (${c.f00b})</span>
+        <span class="gate">✓ F00D blur · intrigue</span>
+        <span class="gate">✓ F04 GO (${c.f04})</span>
+        <span class="gate">✓ F06 GO (${c.f06})</span>
+      </div>
+      <div class="ov"><div class="t">« ${c.overlay} »</div><div class="c" style="color:var(--text-dim);font-size:12px;margin-top:6px">overlay vidéo (gate F04)</div></div>
+      <div class="meta">
+        <div class="lbl">Métadonnées plateforme (gate F04 Section C)</div>
+        <div class="dt">${c.meta_title}</div>
+        <div class="dd">${c.desc}</div>
+        <div class="chips">${c.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div>
+        <div class="chips">${c.hashtags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+      </div>
+      <div class="row">
+        <div class="cell"><div class="lbl">Panneaux blur</div><div class="val">${c.panels}</div></div>
+        <div class="cell"><div class="lbl">Climax (smash -12dB)</div><div class="val gold">${(c.climax||[]).join(', ')||'—'}s</div></div>
+        <div class="cell"><div class="lbl">Punch-ins / trims</div><div class="val">${c.punch} / ${c.trims}</div></div>
+        <div class="cell"><div class="lbl">Émotion</div><div class="val gold">${c.emotion}</div></div>
+      </div>
+      <div class="btns">
+        <button class="go" id="${c.key}-go" onclick="decide('${c.key}','GO')">⚔ GO — exporter</button>
+        <button class="no" id="${c.key}-no" onclick="decide('${c.key}','NO-GO')">✖ NO-GO — revoir</button>
+      </div>
+    </div>`;
+  }).join('');
+  for (const k in state) paint(k);
+}
+function decide(key, val){ state[key] = val; paint(key); exportv(); }
+function paint(key){
+  const go = document.getElementById(key+'-go'), no = document.getElementById(key+'-no');
+  if(!go) return;
+  go.classList.toggle('decided', state[key]==='GO');
+  no.classList.toggle('decided', state[key]==='NO-GO');
+}
+function exportv(){
+  const accepted=[],rejected=[];
+  for (const c of CLIPS) (state[c.key]==='GO'?accepted:state[c.key]==='NO-GO'?rejected:[]).push(c.key);
+  if(!accepted.length && !rejected.length){document.getElementById('verdict').style.display='none';return;}
+  const v = {gate:"F05", vod_url:VOD, decided_at:new Date().toISOString(), decided_by:"warsmith",
+    accepted_packs:accepted, rejected_packs:rejected};
+  document.getElementById('out').textContent = JSON.stringify(v, null, 2);
+  document.getElementById('verdict').style.display='block';
+}
+render();
+</script>
+</body>
+</html>
