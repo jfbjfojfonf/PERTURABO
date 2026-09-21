@@ -858,3 +858,5 @@ F00_CAPTEURS/CODEBASE/capteurs.py
   sur le transcript reel (mots dans `words`, pas `segments` - piege note).
 - Page gate F04 etendue (Section C metadonnees). En attente : verdict
   metadonnees de l'operateur -> F06 (montage blur).
+
+## [2026-09-20] F06 execute (5 instructions caviar_bound) - gate F06 ouvert : fenetres F00B + overlay F04 + emotions intrigue + partitions F00D sha-liees ; fix doctrine segment.emotion ; tests 13/13 verts.

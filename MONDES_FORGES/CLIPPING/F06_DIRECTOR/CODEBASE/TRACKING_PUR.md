@@ -168,3 +168,14 @@ Quand un manifeste caviar est fourni (styles blur/split), F06 devient **consomma
 - **CLI** : `python director.py <segment> <payload> <context> [caviar_manifest.json]`.
 - Tests : `tests/test_director_caviar_bound.py` — 13 verts (panels, duck, binding,
   ownership, erreur blur-sans-caviar, legacy inchangé).
+
+## [2026-09-20] Session AISHAH v2873615032 — 5 instructions caviar_bound
+- Entrées forgées depuis les gates : fenêtres F00B (5 candidats), overlay F04 (GO 5/5),
+  émotions intrigue (gate F04), partitions F00D (5 manifestes blur sha-liés).
+- Sorties : `OUT/montage_instructions_asf_c{1..5}.json` — mode caviar_bound,
+  binding complet (candidate_id + sha256-16 du manifeste), duck aux climaxes réels
+  (12.5 / 6.05 / 4.7 / 13.05 / 3.45 s), 0 SFX dans la couche F06 (possédés par F00D).
+- Fix doctrine : `segment.emotion` reprend désormais l'émotion validée du contexte
+  (`context.emotion`) au lieu de ressortir None en mode caviar_bound.
+- Tests : 13/13 verts (`tests/test_director_caviar_bound.py`).
+- Prochaine frégate : F05_PACKAGER (gate F06 avant).

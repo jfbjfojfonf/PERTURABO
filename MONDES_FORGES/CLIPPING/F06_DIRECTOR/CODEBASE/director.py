@@ -395,7 +395,8 @@ def _generate_caviar_bound(caviar, seg, text_payload, context, doctrine,
         "segment": {"source_url": seg["source_url"], "start_sec": seg["start_sec"],
                     "end_sec": seg["end_sec"], "duration_sec": duration,
                     "signal_type": seg["signal_type"],
-                    "signal_intensity": seg["signal_intensity"], "emotion": seg.get("emotion")},
+                    "signal_intensity": seg["signal_intensity"],
+                    "emotion": seg.get("emotion") or context.get("emotion") or _emotion_of(seg)},
         "hook": {
             "duration_sec": hook_dur,
             "philosophy": ("la partition gagne : panneau blur posé dès l'entrée "

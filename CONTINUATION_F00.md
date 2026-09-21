@@ -724,3 +724,9 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
   — l'export inclut désormais `accepted_metadata`.
 - **Prochain** : verdict métadonnées de l'opérateur → F06 (montage blur) →
   gate → F05 (pack) → EXPORT.
+
+## [2026-09-20] F06 exécuté — GATE F06 ouvert
+- 5 instructions de montage `caviar_bound` forgées (F06_DIRECTOR) à partir des gates
+  F00B (fenêtres) + F04 (overlay GO 5/5 + émotions intrigue) + partitions F00D sha-liées.
+- Fix doctrine F06 : segment.emotion = émotion gate-validée (plus de None en caviar_bound).
+- Tests 13/13 verts. Gate F06 présenté à l'opérateur ; F05 après GO.
