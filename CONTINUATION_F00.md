@@ -730,3 +730,7 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
   F00B (fenêtres) + F04 (overlay GO 5/5 + émotions intrigue) + partitions F00D sha-liées.
 - Fix doctrine F06 : segment.emotion = émotion gate-validée (plus de None en caviar_bound).
 - Tests 13/13 verts. Gate F06 présenté à l'opérateur ; F05 après GO.
+
+## [2026-09-21] F05 exécuté — GATE F05 ouvert
+- 5 production packs blur assemblés (F05_PACKAGER/OUT) au schéma voxc-2, custody 4 gates, intégrité PASS.
+- Gate F05 = revue du pack complet (overlay + métadonnées + montage + partition) avant EXPORT.

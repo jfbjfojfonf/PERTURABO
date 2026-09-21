@@ -1,0 +1,16 @@
+{
+  "gate": "F06",
+  "vod_url": "https://www.twitch.tv/videos/2873615032",
+  "decided_at": "2026-09-21T00:00:00.000Z",
+  "decided_by": "warsmith",
+  "overlay_scope": "montage_instructions caviar_bound (5)",
+  "accepted_instructions": [
+    "asf_c1",
+    "asf_c2",
+    "asf_c3",
+    "asf_c4",
+    "asf_c5"
+  ],
+  "rejected_instructions": [],
+  "notes": "5/5 GO — mode caviar_bound vérifié blur des deux côtés (F06 + F00D), climaxes réels, overlay F04, émotions intrigue."
+}

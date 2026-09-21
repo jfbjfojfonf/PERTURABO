@@ -860,3 +860,5 @@ F00_CAPTEURS/CODEBASE/capteurs.py
   metadonnees de l'operateur -> F06 (montage blur).
 
 ## [2026-09-20] F06 execute (5 instructions caviar_bound) - gate F06 ouvert : fenetres F00B + overlay F04 + emotions intrigue + partitions F00D sha-liees ; fix doctrine segment.emotion ; tests 13/13 verts.
+
+## [2026-09-21] F05 execute - 5 production packs blur assembles (custody 4 gates, integrite PASS) - gate F05 ouvert avant EXPORT.
