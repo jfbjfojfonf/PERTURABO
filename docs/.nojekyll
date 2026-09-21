@@ -1,0 +1,3 @@
+# Désactive le build Jekyll de GitHub Pages.
+# La Salle de Contrôle est un site 100 % statique (HTML purs + data JSON) :
+# Jekyll casse sur certains contenus générés et n'apporte rien ici.
