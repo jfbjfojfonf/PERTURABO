@@ -162,3 +162,12 @@ En V2, la copie textuelle du tweet reste interne à F01, tandis que la capture P
   attrape la préposition anglaise « of » (récurrent dans des descriptions légitimes).
   La règle correcte : abréviation OF case-sensitive (`\bOF\b`) + mot complet
   `onlyfans`.
+
+### §17 — [2026-09-21] Session v2873615032 : pièges F06/F05/Pages
+- **`segment.emotion` = None en caviar_bound (F06)** : `_generate_caviar_bound` lisait l'émotion du segment au lieu du contexte — l'émotion gate-validée disparaissait des instructions. Fix : `context.emotion` repris en priorité. Testé (13/13 verts).
+- **Transcript : les mots vivent dans `words[].word`** — pas de `segments[].text`. Toute extraction d'extrait (prompts F04, anti-cond, pages de gate) doit concaténer `words` dans la fenêtre, sinon extrait vide silencieux et génération hors-sol.
+- **Anti-contamination : `of`** attrapait la préposition anglaise « of » — la règle anti-OF vise l'abréviation en majuscules (`\bOF\b`), sinon 100 % de faux positifs sur l'anglais.
+- **Build Jekyll Pages en échec** sur des contenus jusque-là jamais poussés (md/json) alors que le site est un site statique pur → `docs/.nojekyll` règle définitivement ; vérifier ensuite `pages/builds/latest` et les codes 200 de toutes les pages.
+- **Push refusé pour `freebuff-web[bot]` (403)** sur ce dépôt : passer par le token KIT de l'environnement (`KIT_TOKEN`), scripts jetables qui ne l'impriment jamais, push `HEAD:v2-live-vox-c` (jamais `HEAD:main`).
+- **`.gitignore` masque les OUT des frégates** : les packs/manifestes/verdicts sont des artefacts de gate essentiels → `git add -f` systématique.
+- **Résidus d'anciens sièges dans IN/** (contextes A01-A10 Sophie Rain) : les frégates pilotées par fichier doivent forger leurs entrées depuis les gates réels de la session, jamais consommer l'IN hérité.

@@ -165,3 +165,8 @@ La **capture PNG** du tweet est en revanche obligatoire dans le pack final : ell
 Chaque entrée MEME V2 doit contenir `source_post.screenshot_png`, `reaction_tweet`, `text_emotion`, `metadata`, `clip_id`, `meme_tag` et `channel_id`. F05 ne génère pas la vidéo, ne réécrit pas la réaction et ne choisit ni le tag ni la chaîne. Il assemble ; LACRIMAE réalise le rendu final avec la capture en haut et le clip mème en bas.
 
 Le finalizer MEME V2 bloque si la capture PNG, le clip, le tag ou la chaîne manque. L’export et la fermeture restent postérieurs à la revue explicite du Champion.
+
+## [2026-09-21] Gate F05 GO -> EXPORT
+- 5/5 packs VALIDATED (ALL_GATES_GO), copies dans EXPORT/ + packager_summary_asf_v2873615032.md.
+- Verdict archivé : F00B_VOX/IN/gate_f05_verdict.json.
+- Problèmes rencontrés et corrigés cette session (détail dans _PIEGES_APPRIS §17) : emotion perdue en caviar_bound (F06 fix), transcript words[].word (extraits vides), faux positifs anti-OF, build Jekyll Pages (.nojekyll), 403 bot push (KIT_TOKEN), .gitignore sur les OUT (add -f).

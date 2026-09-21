@@ -734,3 +734,10 @@ détermine le nombre d'angles/clip packs produits par l'adaptateur.
 ## [2026-09-21] F05 exécuté — GATE F05 ouvert
 - 5 production packs blur assemblés (F05_PACKAGER/OUT) au schéma voxc-2, custody 4 gates, intégrité PASS.
 - Gate F05 = revue du pack complet (overlay + métadonnées + montage + partition) avant EXPORT.
+
+## [2026-09-21] GATE F05 GO — EXPORT — SESSION CLÔTURÉE ✅
+- Verdict F05 : 5/5 GO (gate_f05_verdict.json). Packs marqués VALIDATED / ALL_GATES_GO.
+- 5 production packs + packager_summary exportés dans MONDES_FORGES/CLIPPING/EXPORT/.
+- Chaîne complète exécutée : F00B (matrice) → F00D (blur) → F04 (overlay+métadonnées) → F06 (caviar_bound) → F05 (packs) → EXPORT. Gate opérateur à chaque frégate.
+- Infra : `.nojekyll` ajouté (le build Jekyll Pages cassait sur les nouveaux contenus ; le site est 100 % statique).
+- Prochaine session possible : nouvelle VOD via le workflow matrice (l'oracle est auto-déclenché), ou branche clipify pour l'expédition des packs.

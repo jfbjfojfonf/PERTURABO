@@ -862,3 +862,9 @@ F00_CAPTEURS/CODEBASE/capteurs.py
 ## [2026-09-20] F06 execute (5 instructions caviar_bound) - gate F06 ouvert : fenetres F00B + overlay F04 + emotions intrigue + partitions F00D sha-liees ; fix doctrine segment.emotion ; tests 13/13 verts.
 
 ## [2026-09-21] F05 execute - 5 production packs blur assembles (custody 4 gates, integrite PASS) - gate F05 ouvert avant EXPORT.
+
+## [2026-09-21] GATE F05 GO -> EXPORT (session AISHAH v2873615032)
+- 5 production packs blur VALIDATED (ALL_GATES_GO) + packager_summary copies dans EXPORT/.
+- Conformité directive verifiée a l'export : @hiaishahsofey + #aishahsofey, anglais, zero OF, longueurs OK.
+- Incident Pages : build Jekyll en echec sur les nouveaux contenus -> .nojekyll (site statique pur), toutes les pages servent 200.
+- Chaine F00B->F00D->F04->F06->F05->EXPORT fermee avec gate operateur a chaque frégate.

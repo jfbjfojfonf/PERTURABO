@@ -106,3 +106,8 @@ sans validation.
 | `durée VOD absente` / `vod_duration = 0` | Métadonnées du `prepare` non transmises | Corrigé : outputs titre/durée → `metadata.json` ; garde-fou STOP |
 | Tous les candidats `chat_spike` en début de VOD | Scoring chat mal normalisé (durée=0) ou salve d'accueil | Vérifier la durée dans le report ; relancer après fix métadonnées |
 | Chat vide | GraphQL Twitch raté | Le scoring continue (speech peaks seuls) ; le chat de secours est réécrit dans le transcript |
+
+## Bilan session 1 réelle (v2873615032, 2026-09-19→21)
+- Run v4 vert : 18 034 mots, chat 7 773 persisté, métadonnées réelles (durée 3,9 h, titre réel), 10 candidats diversifiés (6 mixed / 3 chat_spike / 1 trigger_word), 5 validés au gate F00B et menés jusqu'à EXPORT (blur complet).
+- Pièges corrigés en production : fastapi manquant à l'import Modal (ajout image), HTTP 408 (redispatch), push HEAD:main (branche v2-live-vox-c), durée/titre non transmis au merge, chat de secours non réécrit.
+- Coût/temps : ~15 min de run matrice pour 4 h de VOD, 15 jobs en parallèle, artefacts commités segment par segment (rien n'est perdu, réassemble partiel possible via filet anti-cancellation).
